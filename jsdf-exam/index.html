@@ -186,6 +186,38 @@ footer .copy{color:#5a6178}
   .content-grid{grid-template-columns:repeat(4,1fr)}
 }
 </style>
+
+<!-- ============ ANALYTICS (PostHog) — Shin Step 8 ============ -->
+<script>
+  // konan が PostHog アカウント作成後、'PLACEHOLDER_KEY' を 'phc_xxxxxxxx' に置換
+  window.POSTHOG_KEY = 'PLACEHOLDER_KEY';
+  window.POSTHOG_APP_ID = 'A-LP';
+</script>
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+
+  // プレースホルダの場合は実行しない(PostHog 公式 SDK ロードは抑止)
+  if (window.POSTHOG_KEY && window.POSTHOG_KEY !== 'PLACEHOLDER_KEY') {
+    posthog.init(window.POSTHOG_KEY, {
+      api_host: 'https://us.i.posthog.com',
+      person_profiles: 'never',
+      ip: false,
+      capture_pageview: true,
+      autocapture: false,  // クリック自動収集オフ・明示的にだけ取る
+      disable_session_recording: false,  // セッションリプレイ ON(無料5000回/月)
+    });
+    posthog.register({ app: window.POSTHOG_APP_ID });
+
+    // App Store URL クリック計測(主要 CTA)
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function(a) {
+        a.addEventListener('click', function() {
+          posthog.capture('appstore_click', { app: window.POSTHOG_APP_ID, href: a.href });
+        });
+      });
+    });
+  }
+</script>
 </head>
 <body>
 
@@ -345,16 +377,96 @@ footer .copy{color:#5a6178}
   <p class="copy">&copy; 2026 Konan / Konan Apps. All rights reserved.</p>
 </footer>
 
+<!-- PostHog Analytics — Shin Step 8 (dry-run safe until key is set) -->
 <script>
-// LP イベント計測スタブ(分析基盤導入時に PostHog/GA4 等へ差し替え)
+window.POSTHOG_KEY = 'PLACEHOLDER_KEY';
+window.POSTHOG_APP_ID = 'lp-jsdf-exam-a';
+</script>
+<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+</script>
+<script>
+// LP analytics — dry-run safe (logs only when POSTHOG_KEY === 'PLACEHOLDER_KEY')
 (function(){
+  'use strict';
+  var DRY_RUN = (window.POSTHOG_KEY === 'PLACEHOLDER_KEY');
+  var APP = window.POSTHOG_APP_ID || 'unknown';
+
+  function capture(name, props){
+    var merged = Object.assign({app: APP}, props || {});
+    if (DRY_RUN){
+      try{ console.debug('[Analytics][dry-run]', name, merged); }catch(e){}
+      return;
+    }
+    try{ window.posthog && window.posthog.capture(name, merged); }catch(e){}
+  }
+
+  // Init PostHog only when a real key is provided
+  if (!DRY_RUN){
+    try{
+      window.posthog.init(window.POSTHOG_KEY, {
+        api_host: 'https://us.i.posthog.com',
+        person_profiles: 'never',
+        ip: false,
+        capture_pageview: false,
+        persistence: 'localStorage'
+      });
+    }catch(e){}
+  }
+
+  // 1) page_viewed (LP load)
+  capture('lp_page_viewed', {
+    path: location.pathname,
+    referrer: document.referrer || 'direct'
+  });
+
+  // 2) lp_cta_click (App Store buttons)
   document.querySelectorAll('.app-store-btn').forEach(function(el){
     el.addEventListener('click', function(){
-      var id = el.id || 'cta-unknown';
-      // window.posthog && posthog.capture('lp_cta_click', {id: id});
-      if (window.gtag) gtag('event', 'lp_cta_click', {cta_id: id});
+      capture('lp_cta_click', {cta_id: el.id || 'cta-unknown'});
     });
   });
+
+  // 3) lp_faq_opened (which doubts the user has)
+  document.querySelectorAll('#faq details').forEach(function(d, i){
+    d.addEventListener('toggle', function(){
+      if (d.open){
+        var summary = (d.querySelector('summary') || {}).textContent || '';
+        capture('lp_faq_opened', {
+          index: i,
+          question: summary.trim().slice(0, 80)
+        });
+      }
+    });
+  });
+
+  // 4) lp_section_viewed (hero / features / pricing / faq) — IntersectionObserver
+  if ('IntersectionObserver' in window){
+    var seen = {};
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting && en.intersectionRatio >= 0.5){
+          var id = en.target.id || 'unknown';
+          if (seen[id]) return;
+          seen[id] = true;
+          capture('lp_section_viewed', {section: id});
+        }
+      });
+    }, {threshold: 0.5});
+    document.querySelectorAll('section[id]').forEach(function(sec){ io.observe(sec); });
+  }
+
+  // 5) lp_session_ended (visibility hidden) — engagement duration
+  var t0 = Date.now();
+  var fired = false;
+  function endSession(){
+    if (fired) return; fired = true;
+    capture('lp_session_ended', {duration_seconds: Math.round((Date.now()-t0)/1000)});
+  }
+  document.addEventListener('visibilitychange', function(){
+    if (document.visibilityState === 'hidden') endSession();
+  });
+  window.addEventListener('pagehide', endSession);
 })();
 </script>
 
