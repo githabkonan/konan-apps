@@ -22,7 +22,7 @@ seq = day_num * 24 + now.hour
 # Threads は上限250/日と余裕があるので1回の起動で複数本(別アプリ)を投稿してpaceを稼ぐ。
 # GitHubのスケジューラが大半の起動をスキップするため、1起動あたりの本数で取りこぼしを補う。
 THREADS_PER_RUN = int(os.environ.get("THREADS_PER_RUN", "3"))
-IG_PER_RUN = int(os.environ.get("IG_PER_RUN", "1"))  # IGは25/日上限なので1起動1本に抑える
+IG_PER_RUN = int(os.environ.get("IG_PER_RUN", "3"))  # IG公開上限は100/日と余裕(実測quota 5/100)。1起動3本でpaceを出す
 print(f"[{now.isoformat()}] seq={seq} threads/run={THREADS_PER_RUN} ig/run={IG_PER_RUN}")
 
 
