@@ -1,8 +1,8 @@
 name: autopost
 on:
   schedule:
-    # JST 7,12,15,18,20,22 -> UTC 22,3,6,9,11,13
-    - cron: '0 22,3,6,9,11,13 * * *'
+    # 毎時 JST 6:00-23:00(=UTC 21-23,0-14)= 18回/日。IG 25投稿/24h上限内・Threadsはテキストで安全に高頻度。
+    - cron: '0 0-14,21-23 * * *'
   workflow_dispatch: {}
 concurrency:
   group: autopost
