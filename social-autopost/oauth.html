@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>social-autopost — OAuth Redirect</title>
+<style>
+body{font-family:-apple-system,'Hiragino Sans',monospace;max-width:720px;margin:48px auto;padding:0 20px;line-height:1.7;color:#e8e8e8;background:#111}
+h1{font-size:1.2rem;color:#d9b44a}
+.box{background:#1c1c1c;border:1px solid #333;border-radius:10px;padding:16px;margin:14px 0;word-break:break-all}
+.label{color:#42c9b4;font-size:.85rem}
+code{font-size:1rem;color:#fff}
+button{background:#d9b44a;border:0;color:#111;padding:10px 16px;border-radius:8px;font-weight:700;cursor:pointer;margin-top:8px}
+.hint{color:#999;font-size:.85rem}
+</style>
+</head>
+<body>
+<h1>social-autopost — 認証コード受け取り</h1>
+<p class="hint">OAuth 認可が完了しました。下の <b>code</b> をコピーして Claude に貼ってください（access_token / refresh_token と交換します）。</p>
+<div class="box">
+  <div class="label">authorization code</div>
+  <code id="code">（コードが見つかりません）</code>
+  <br><button onclick="copyCode()">コードをコピー</button>
+</div>
+<div class="box">
+  <div class="label">state</div>
+  <code id="state">-</code>
+</div>
+<div class="box">
+  <div class="label">full callback URL</div>
+  <code id="full">-</code>
+</div>
+<script>
+function qp(n){const u=new URL(location.href);return u.searchParams.get(n)||new URLSearchParams(location.hash.replace(/^#/,'')).get(n);}
+var code=qp('code'), state=qp('state'), err=qp('error');
+document.getElementById('full').textContent=location.href;
+document.getElementById('state').textContent=state||'-';
+if(code){document.getElementById('code').textContent=code;}
+else if(err){document.getElementById('code').textContent='エラー: '+err+' / '+(qp('error_description')||'');}
+function copyCode(){var c=document.getElementById('code').textContent;navigator.clipboard.writeText(c).then(()=>{alert('コピーしました');});}
+</script>
+</body>
+</html>
