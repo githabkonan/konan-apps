@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
-<title>散財シミュレーターRPG — 10億円、使い切れる？</title>
+<title>散財シミュレーション — THE FLEX（10億円、使い切れる？）</title>
 <meta name="description" content="お前は1日で10億円使い切れるか？ 株・不動産・仮想通貨・ビジネス・カジノ・FX・労働22職種…散財の全てを体験する究極のお金ゲーム。完全無料・6言語対応。">
 <meta name="keywords" content="散財,お金ゲーム,シミュレーター,放置ゲーム,億万長者,投資,FX,カジノ,スロット,フレックス,お金持ち,ビジネス,株,日本">
 <meta name="theme-color" content="#D4AF37">
@@ -349,7 +349,7 @@ canvas#c{position:fixed;inset:0;pointer-events:none;z-index:900;}
 
     <!-- LOGO -->
     <div style="margin-bottom:8px;font-size:13px;color:rgba(212,175,55,.6);letter-spacing:5px;text-transform:uppercase;">Welcome to</div>
-    <div class="home-title" id="home-title" style="font-family:'Playfair Display',serif;font-size:52px;font-weight:900;letter-spacing:6px;background:linear-gradient(135deg,#F5D78E,#D4AF37,#B8960C);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:6px;animation:homeGlow 2s ease-in-out infinite;">散財RPG</div>
+    <div class="home-title" id="home-title" style="font-family:'Playfair Display',serif;font-size:52px;font-weight:900;letter-spacing:6px;background:linear-gradient(135deg,#F5D78E,#D4AF37,#B8960C);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:6px;animation:homeGlow 2s ease-in-out infinite;">THE FLEX</div>
     <div class="home-subtitle" style="font-size:15px;color:#aaa;letter-spacing:3px;margin-bottom:6px;">散財シミュレーター</div>
     <div class="home-tagline" style="font-size:12px;color:#555;letter-spacing:1px;margin-bottom:40px;">— お金のすべてを体験せよ —</div>
 
@@ -507,7 +507,7 @@ canvas#c{position:fixed;inset:0;pointer-events:none;z-index:900;}
   <div class="header-inner">
     <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;">
   <button onclick="document.getElementById('home-screen').style.display='flex'" style="padding:6px 12px;border-radius:8px;border:1px solid rgba(255,255,255,.15);background:transparent;color:#999;font-size:11px;font-weight:700;cursor:pointer;letter-spacing:1px;">ホーム</button>
-  <div class="logo" id="logo-text">散財RPG</div>
+  <div class="logo" id="logo-text">THE FLEX</div>
   <button onclick="openStore()" style="padding:5px 10px;border-radius:8px;border:1px solid rgba(212,175,55,.4);background:linear-gradient(135deg,#D4AF37,#8B6914);color:#000;font-size:10px;font-weight:900;cursor:pointer;letter-spacing:1px;">💎 STORE</button>
   <span id="premium-badge" style="display:none;padding:4px 8px;border-radius:6px;background:linear-gradient(135deg,#FF6B9D,#C44569);color:#fff;font-size:9px;font-weight:900;letter-spacing:1px;align-items:center;">★ PREMIUM</span>
   <span id="legendary-badge" style="display:none;padding:4px 8px;border-radius:6px;background:linear-gradient(135deg,#FFD700,#8B6914);color:#000;font-size:9px;font-weight:900;letter-spacing:1px;align-items:center;">⚜ LEGENDARY</span>
@@ -992,9 +992,12 @@ const cv=document.getElementById('c');const ctx=cv.getContext('2d');
 cv.width=window.innerWidth;cv.height=window.innerHeight;
 window.addEventListener('resize',()=>{cv.width=window.innerWidth;cv.height=window.innerHeight});
 let pieces=[];
-function spawnConf(x,y,n=30){for(let i=0;i<n;i++)pieces.push({x,y,vx:(Math.random()-.5)*14,vy:-(Math.random()*16+4),rot:Math.random()*360,rv:(Math.random()-.5)*12,sz:Math.random()*10+5,col:['#D4AF37','#F5D78E','#27AE60','#C0392B','#fff','#9B59B6'][Math.floor(Math.random()*6)],life:1,dec:Math.random()*.018+.008,sh:Math.random()>.5});}
+function spawnConf(x,y,n=30){for(let i=0;i<n;i++)pieces.push({x,y,vx:(Math.random()-.5)*14,vy:-(Math.random()*16+4),rot:Math.random()*360,rv:(Math.random()-.5)*12,sz:Math.random()*10+5,col:['#D4AF37','#F5D78E','#27AE60','#C0392B','#fff','#9B59B6'][Math.floor(Math.random()*6)],life:1,dec:Math.random()*.018+.008,sh:Math.random()>.5});startConf();}
 function megaConf(){for(let i=0;i<10;i++)setTimeout(()=>spawnConf(Math.random()*window.innerWidth,-10,40),i*80);}
-(function loop(){ctx.clearRect(0,0,cv.width,cv.height);pieces=pieces.filter(p=>p.life>0);pieces.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.4;p.rot+=p.rv;p.life-=p.dec;ctx.save();ctx.globalAlpha=p.life;ctx.translate(p.x,p.y);ctx.rotate(p.rot*Math.PI/180);ctx.fillStyle=p.col;p.sh?ctx.fillRect(-p.sz/2,-p.sz/4,p.sz,p.sz/2):(ctx.beginPath(),ctx.arc(0,0,p.sz/2,0,Math.PI*2),ctx.fill());ctx.restore();});requestAnimationFrame(loop);})();
+// ★perf: 紙吹雪がある時だけRAFを回す(無い時は完全停止=常時60fps描画をやめて軽量化)
+let confRunning=false;
+function confLoop(){ctx.clearRect(0,0,cv.width,cv.height);pieces=pieces.filter(p=>p.life>0);pieces.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.4;p.rot+=p.rv;p.life-=p.dec;ctx.save();ctx.globalAlpha=p.life;ctx.translate(p.x,p.y);ctx.rotate(p.rot*Math.PI/180);ctx.fillStyle=p.col;p.sh?ctx.fillRect(-p.sz/2,-p.sz/4,p.sz,p.sz/2):(ctx.beginPath(),ctx.arc(0,0,p.sz/2,0,Math.PI*2),ctx.fill());ctx.restore();});if(pieces.length){requestAnimationFrame(confLoop);}else{confRunning=false;ctx.clearRect(0,0,cv.width,cv.height);}}
+function startConf(){if(!confRunning){confRunning=true;requestAnimationFrame(confLoop);}}
 
 function flash(col='rgba(212,175,55,.15)'){/* disabled by konan — too flashy */}
 function particles(x,y){['💰','💵','💸','✨'].forEach((em,i)=>{const p=document.createElement('div');p.style.cssText=`position:fixed;left:${x}px;top:${y}px;font-size:${16+Math.random()*14}px;pointer-events:none;z-index:897;`;p.textContent=em;document.body.appendChild(p);const dx=(Math.random()-.5)*250,dy=-(Math.random()*220+60);requestAnimationFrame(()=>{p.style.transition='transform .95s ease-out,opacity .95s ease-out';setTimeout(()=>{p.style.transform=`translate(${dx}px,${dy}px) scale(.2)`;p.style.opacity='0';},10);});setTimeout(()=>p.remove(),1100);});}
@@ -2244,7 +2247,7 @@ function startGame(mode) {
   const hasModeSave = hasSavedGame(mode);
   const loaded = hasModeSave && loadGame(mode);
 
-  document.getElementById('logo-text').textContent = '散財RPG';
+  document.getElementById('logo-text').textContent = 'THE FLEX';
   document.getElementById('logo-text').style.fontSize = '26px';
   const hl = document.getElementById('hard-mode-label');
   if (hl) hl.style.display = hardModeActive ? 'block' : 'none';
