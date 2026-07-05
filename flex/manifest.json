@@ -1,0 +1,31 @@
+{
+  "name": "THE FLEX — 散財シミュレーター",
+  "short_name": "THE FLEX",
+  "description": "億万長者になって全部使い切れ。株、不動産、仮想通貨、ビジネス、カジノ、FX… 散財の全てを体験する究極の散財シミュレーター。",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#050507",
+  "theme_color": "#D4AF37",
+  "lang": "ja",
+  "categories": ["games", "simulation", "entertainment", "finance"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "screenshots": [
+    { "src": "screenshots/pwa-01-home.png", "sizes": "1080x1920", "type": "image/png", "form_factor": "narrow", "label": "ホーム画面" },
+    { "src": "screenshots/pwa-02-shop.png", "sizes": "1080x1920", "type": "image/png", "form_factor": "narrow", "label": "ショップ" },
+    { "src": "screenshots/pwa-03-casino.png", "sizes": "1080x1920", "type": "image/png", "form_factor": "narrow", "label": "カジノ" }
+  ],
+  "shortcuts": [
+    { "name": "新規ゲーム", "short_name": "NEW", "url": "./index.html?action=newgame", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "カジノ", "short_name": "CASINO", "url": "./index.html?tab=casino", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "FXトレード", "short_name": "FX", "url": "./index.html?tab=trade", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "ハンドスピナー", "short_name": "SPIN", "url": "./index.html?action=spinner", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] }
+  ],
+  "prefer_related_applications": false,
+  "related_applications": []
+}

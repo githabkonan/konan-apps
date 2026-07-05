@@ -1,0 +1,22 @@
+# Vercelに上げないファイル
+.git/
+.gitignore
+node_modules/
+*.py
+__pycache__/
+bughunt.py
+localtest.py
+check_404.py
+gen_*.py
+bugs.json
+localtest-shots/
+*.md
+!index.html
+package-lock.json
+yarn.lock
+.DS_Store
+ios/
+android/
+*.log
+.env
+.env.local

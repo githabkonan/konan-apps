@@ -1,0 +1,17 @@
+node_modules/
+.DS_Store
+*.log
+.env
+.env.local
+.env.production
+ios/
+android/
+www/
+build/
+dist/
+.vercel/
+__pycache__/
+*.pyc
+localtest-shots/
+bugs.json
+.vercel
