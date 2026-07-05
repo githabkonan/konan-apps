@@ -349,7 +349,7 @@ canvas#c{position:fixed;inset:0;pointer-events:none;z-index:900;}
 
     <!-- LOGO -->
     <div style="margin-bottom:8px;font-size:13px;color:rgba(212,175,55,.6);letter-spacing:5px;text-transform:uppercase;">Welcome to</div>
-    <div class="home-title" id="home-title" style="font-family:'Playfair Display',serif;font-size:52px;font-weight:900;letter-spacing:6px;background:linear-gradient(135deg,#F5D78E,#D4AF37,#B8960C);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:6px;animation:homeGlow 2s ease-in-out infinite;">THE FLEX</div>
+    <div class="home-title" id="home-title" style="font-family:'Playfair Display',serif;font-size:52px;font-weight:900;letter-spacing:6px;background:linear-gradient(135deg,#F5D78E,#D4AF37,#B8960C);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:6px;animation:homeGlow 2s ease-in-out infinite;">散財RPG</div>
     <div class="home-subtitle" style="font-size:15px;color:#aaa;letter-spacing:3px;margin-bottom:6px;">散財シミュレーター</div>
     <div class="home-tagline" style="font-size:12px;color:#555;letter-spacing:1px;margin-bottom:40px;">— お金のすべてを体験せよ —</div>
 
@@ -668,7 +668,7 @@ canvas#c{position:fixed;inset:0;pointer-events:none;z-index:900;}
       <button onclick="casinoGame('rl')" id="casino-tab-rl" class="cg-tab" style="padding:11px 4px;border-radius:10px;border:1px solid rgba(231,76,60,.4);background:linear-gradient(135deg,#2a0a0a,#1a0505);color:#e74c3c;font-size:11px;font-weight:700;cursor:pointer;">🎡 ルーレット</button>
       <button onclick="casinoGame('bj')" id="casino-tab-bj" class="cg-tab" style="padding:11px 4px;border-radius:10px;border:1px solid rgba(231,76,60,.4);background:linear-gradient(135deg,#2a0a0a,#1a0505);color:#e74c3c;font-size:11px;font-weight:700;cursor:pointer;">♠ BJ</button>
       <button onclick="casinoGame('bc')" id="casino-tab-bc" class="cg-tab" style="padding:11px 4px;border-radius:10px;border:1px solid rgba(231,76,60,.4);background:linear-gradient(135deg,#2a0a0a,#1a0505);color:#e74c3c;font-size:11px;font-weight:700;cursor:pointer;">🎴 バカラ</button>
-      <button onclick="casinoGame('pa')" id="casino-tab-pa" class="cg-tab" style="padding:11px 4px;border-radius:10px;border:1px solid rgba(231,76,60,.4);background:linear-gradient(135deg,#2a0a0a,#1a0505);color:#e74c3c;font-size:11px;font-weight:700;cursor:pointer;">🪙 パチンコ</button>
+      <button onclick="casinoGame('pa')" id="casino-tab-pa" class="cg-tab" style="padding:11px 4px;border-radius:10px;border:1px solid rgba(231,76,60,.4);background:linear-gradient(135deg,#2a0a0a,#1a0505);color:#e74c3c;font-size:10px;font-weight:700;cursor:pointer;">🪙 クラシックパチンコ</button>
     </div>
     <div id="casino-bj" style="background:radial-gradient(ellipse at center top,#0a3d1a 0%,#062810 70%,#031a08 100%);border:2px solid rgba(212,175,55,.3);border-radius:18px;padding:16px;box-shadow:0 0 30px rgba(0,0,0,0.6),inset 0 0 30px rgba(0,0,0,0.4);">
       <div style="text-align:center;margin-bottom:12px;">
@@ -1515,7 +1515,7 @@ function switchTab(id){
   if(id==='work'){setTimeout(()=>{try{initWorkCanvas();startWorkLoop();renderWorkTab();if(typeof refreshAutoWorkButton==='function')refreshAutoWorkButton();}catch(e){console.error(e);}},50);}
   if(id==='beg'){setTimeout(()=>{try{startBegAnim();}catch(e){}},100);}
 }
-function doShare(){const pct=Math.round(spent/B*100);const txt=`💰 THE FLEX\n\n散財 ${fmt(spent)} (${pct}%)\nアイテム ${owned.size}種 / 実績 ${badges.size}個\n総稼ぎ ${fmt(totalEarned)}\n\n#TheFlex #散財シミュレーター`;if(navigator.share)navigator.share({title:'THE FLEX',text:txt});else if(navigator.clipboard){navigator.clipboard.writeText(txt);toast('コピーしました');}else prompt('コピーしてシェア！',txt);}
+function doShare(){const pct=Math.round(spent/B*100);const txt=`💰 散財シミュレーターRPG\n\n散財 ${fmt(spent)} (${pct}%) — 称号 ${RANKS[_rankI||0].n}\nアイテム ${owned.size}種 / 実績 ${badges.size}個\n総稼ぎ ${fmt(totalEarned)}\n\n#散財シミュレーターRPG #散財`;if(navigator.share)navigator.share({title:'散財シミュレーターRPG',text:txt});else if(navigator.clipboard){navigator.clipboard.writeText(txt);toast('コピーしました');}else prompt('コピーしてシェア！',txt);}
 function doReset(){
   balance=B;spent=0;owned=new Set();ownedCount={};badges=new Set();sceneI=0;totalEarned=0;shownMS.clear();comboC=0;
   // ビジネス・労働・投資・FXもリセット
@@ -2244,7 +2244,7 @@ function startGame(mode) {
   const hasModeSave = hasSavedGame(mode);
   const loaded = hasModeSave && loadGame(mode);
 
-  document.getElementById('logo-text').textContent = 'THE FLEX';
+  document.getElementById('logo-text').textContent = '散財RPG';
   document.getElementById('logo-text').style.fontSize = '26px';
   const hl = document.getElementById('hard-mode-label');
   if (hl) hl.style.display = hardModeActive ? 'block' : 'none';
@@ -6044,21 +6044,25 @@ function makePersonSVG(type, happy) {
   const shine = happy
     ? '<rect x="56" y="105" width="5" height="38" fill="#fff" opacity="0.18" rx="2"/>'
     : '';
-  return '<svg viewBox="0 0 144 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;filter:drop-shadow(0 6px 16px rgba(0,0,0,0.6));">'
-    + '<ellipse cx="72" cy="210" rx="40" ry="6" fill="#000" opacity="0.5"/>'
-    + '<rect x="62" y="170" width="11" height="34" fill="' + pants + '" rx="3"/>'
-    + '<rect x="73" y="170" width="11" height="34" fill="' + pants + '" rx="3"/>'
-    + '<ellipse cx="65" cy="204" rx="9" ry="5" fill="#1a0d05"/>'
-    + '<ellipse cx="81" cy="204" rx="9" ry="5" fill="#1a0d05"/>'
-    + '<rect x="58" y="140" width="30" height="32" fill="' + pants + '" rx="3"/>'
-    + '<rect x="50" y="98" width="46" height="48" fill="' + shirt + '" rx="6"/>'
+  return '<svg viewBox="0 0 144 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;filter:drop-shadow(0 8px 18px rgba(0,0,0,0.55));">'
+    + '<ellipse cx="72" cy="212" rx="44" ry="7" fill="#000" opacity="0.45"/>'
+    // 流れるコートのボディ(曲線・一体)
+    + '<path d="M72,92 C57,92 49,103 47,122 C43,152 40,182 40,197 L104,197 C104,182 101,152 97,122 C95,103 87,92 72,92 Z" fill="' + shirt + '"/>'
+    // 裾の陰影で立体感
+    + '<path d="M41,197 L103,197 C102,184 100,171 98,159 L46,159 C44,171 42,184 41,197 Z" fill="#000" opacity="0.15"/>'
+    // コートの合わせ目(V)
+    + '<path d="M72,98 L63,144 L72,154 L81,144 Z" fill="#000" opacity="0.22"/>'
     + rags + shine
-    + '<rect x="38" y="100" width="14" height="42" fill="' + shirt + '" rx="6" transform="rotate(5 38 100)"/>'
-    + '<rect x="94" y="100" width="14" height="42" fill="' + shirt + '" rx="6" transform="rotate(-5 108 100)"/>'
-    + '<circle cx="42" cy="142" r="6" fill="' + skin + '"/>'
-    + '<circle cx="106" cy="142" r="6" fill="' + skin + '"/>'
-    + '<rect x="65" y="86" width="14" height="14" fill="' + skin + '"/>'
-    + '<ellipse cx="72" cy="58" rx="26" ry="30" fill="' + skin + '"/>'
+    // 腕(たたんだ布のライン)
+    + '<path d="M49,118 C43,127 42,143 47,159 C51,151 55,135 57,123 Z" fill="' + shirt + '"/>'
+    + '<path d="M95,118 C101,127 102,143 97,159 C93,151 89,135 87,123 Z" fill="' + shirt + '"/>'
+    + '<circle cx="47" cy="159" r="6.5" fill="' + skin + '"/>'
+    + '<circle cx="97" cy="159" r="6.5" fill="' + skin + '"/>'
+    // 首
+    + '<rect x="66" y="80" width="12" height="16" rx="5" fill="' + skin + '"/>'
+    // 頭(整った頭身+トップライト)
+    + '<ellipse cx="72" cy="57" rx="24" ry="27" fill="' + skin + '"/>'
+    + '<ellipse cx="64" cy="48" rx="9" ry="7" fill="#fff" opacity="0.10"/>'
     + hair + eyes + cheeks + mouth + tear
     + '</svg>';
 }
