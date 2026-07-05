@@ -1230,10 +1230,13 @@ function doGacha(){
   balance-=1e6;updateUI();renderShop();
   runSpin(1);
 }
-function doGachaAd(){
-  AC.resume();const btn=event.currentTarget;
-  btn.disabled=true;let cd=5;
-  const ti=setInterval(()=>{cd--;btn.textContent=`広告 ${cd}秒...`;if(!cd){clearInterval(ti);btn.disabled=false;btn.textContent='📺 広告見て3回';toast('広告完了！3回ガチャ！','green');runSpin(3);}},1000);
+let _lastFreeGacha=0;
+function doGachaAd(){ // 広告撤去→無料ガチャ(60秒毎)に
+  AC.resume();
+  const since=Date.now()-_lastFreeGacha;
+  if(since<60000){toast(`無料3回ガチャは あと${Math.ceil((60000-since)/1000)}秒`,'red');return;}
+  _lastFreeGacha=Date.now();
+  toast('無料3回ガチャ！','green');runSpin(3);
 }
 function runSpin(times){
   spinning=true;
@@ -1719,8 +1722,8 @@ window.addEventListener('load', () => {
   <div style="background:linear-gradient(135deg,#1a1a24,#0a0a14);border:1px solid rgba(212,175,55,0.3);border-radius:16px;padding:30px;max-width:340px;text-align:center;">
     <div style="font-size:9px;color:#FFD700;letter-spacing:2px;margin-bottom:14px;">AD — SPONSORED</div>
     <div style="font-size:60px;margin-bottom:14px;">💎</div>
-    <div style="font-family:'Playfair Display',serif;font-size:18px;color:#D4AF37;margin-bottom:6px;">プレミアム会員で広告除去</div>
-    <div style="font-size:11px;color:#888;margin-bottom:18px;line-height:1.6;">月額¥600で全広告非表示<br>+ 収益+50% / リワード×2</div>
+    <div style="font-family:'Playfair Display',serif;font-size:18px;color:#D4AF37;margin-bottom:6px;">プレミアム特典</div>
+    <div style="font-size:11px;color:#888;margin-bottom:18px;line-height:1.6;">収益+50% ／ ガチャ運UP<br>限定バッジ ＆ デイリー報酬×2</div>
     <button onclick="Ads.closeInterstitial();openStore()" style="width:100%;padding:12px;border-radius:10px;border:none;background:linear-gradient(135deg,#FF6B9D,#C44569);color:#fff;font-size:14px;font-weight:900;cursor:pointer;margin-bottom:10px;">💎 ストアを開く</button>
     <div id="ad-int-skip" style="font-size:11px;color:#555;">5秒後にスキップ可</div>
   </div>
@@ -1801,8 +1804,8 @@ window.addEventListener('load', () => {
         <div style="font-size:9px;color:#FFD700;background:rgba(255,215,0,.1);padding:2px 6px;border-radius:4px;letter-spacing:1px;">買い切り・永久</div>
       </div>
       <ul style="font-size:11px;color:#ccc;margin:0 0 12px 18px;padding:0;line-height:1.7;">
-        <li>すべての広告枠を非表示</li>
-        <li>広告視聴の残高ブースト ×2倍</li>
+        <li>限定プレミアムバッジ</li>
+        <li>デイリー報酬 ×2倍</li>
         <li><b style="color:#fff;">⚡ オート労働</b>（放置で自動タップ）</li>
         <li><b style="color:#fff;">🛋 ニート強化</b>（確率100% / 収入×300倍）</li>
         <li>★ PREMIUM バッジ表示</li>
@@ -4983,7 +4986,7 @@ let _lastRewardAd = 0;
 window.Ads = {
   // バナー広告（永続表示）
   showBanner() {
-    if (isPremium()) { this.hideBanner(); return; }
+    this.hideBanner(); return; // 広告撤去(konan 2026-07-06・有料/IAPモデルへ)
     const el = document.getElementById('ad-banner');
     if (!el) return;
     el.style.display = 'flex';
@@ -5001,14 +5004,14 @@ window.Ads = {
   },
   // インタースティシャル（全画面、たまに表示）
   maybeShowInterstitial() {
-    if (isPremium()) return;
+    return; // 広告撤去
     _adActionCount++;
     if (_adActionCount % window.AD_CONFIG.interstitialEveryN === 0) {
       this.showInterstitial();
     }
   },
   showInterstitial() {
-    if (isPremium()) return;
+    return; // 広告撤去
     if (isNativeIAP() && window.AD_NATIVE && window.AD_NATIVE.showInterstitial) {
       window.AD_NATIVE.showInterstitial(window.AD_CONFIG.admobInterstitialId);
       return;
