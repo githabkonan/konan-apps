@@ -131,6 +131,12 @@ window.EN_STRINGS = {
 "¥10億散財達成！":"Spent ¥1B!","¥100億散財達成！":"Spent ¥10B!","¥1000億散財達成！":"Spent ¥100B!",
 "一般人":"Nobody","成金":"New Rich","富豪":"Tycoon","大富豪":"Big Tycoon","億万長者":"Billionaire","伝説の散財王":"Legendary Big Spender",
 "称号":"Title",
+"購入したアイテムがない":"No items purchased yet",
+"ポジションなし":"No open positions",
+"受け取る":"Claim",
+"利益を受け取る":"Collect profits",
+"スーツケースを開けるか？":"Open the suitcase?",
+"受け取るか？":"Take it?",
 // ===== イベント =====
 "宝くじ 当選！":"Lottery Win!",
 "保有株が急騰！":"Your Stock Soared!",
