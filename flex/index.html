@@ -2183,9 +2183,10 @@ function applyLang() { applyLangSimple(); }
 function renderLangSelector() {
   const sel = document.getElementById('lang-selector');
   if (!sel) return;
-  sel.innerHTML = Object.entries(LANGS_SIMPLE).map(([code, l]) => {
-    const flags = {ja:'🇯🇵',en:'🇺🇸',zh:'🇨🇳',ko:'🇰🇷',es:'🇪🇸',fr:'🇫🇷'};
-    const names = {ja:'日本語',en:'English',zh:'中文',ko:'한국어',es:'Español',fr:'Français'};
+  // 言語は日本語/英語のみ(konan決定 2026-07-06: 中途半端な多言語より完全な2言語)
+  sel.innerHTML = Object.entries(LANGS_SIMPLE).filter(([code]) => code === 'ja' || code === 'en').map(([code, l]) => {
+    const flags = {ja:'🇯🇵',en:'🇺🇸'};
+    const names = {ja:'日本語',en:'English'};
     return `<button onclick="setLang('${code}')" style="padding:6px 10px;border-radius:8px;border:1px solid rgba(255,255,255,${currentLang===code?'.3':'.06'});background:rgba(255,255,255,${currentLang===code?'.1':'0'});color:${currentLang===code?'#D4AF37':'#555'};font-size:12px;cursor:pointer;">${flags[code]} ${names[code]}</button>`;
   }).join('');
 }
@@ -7262,6 +7263,7 @@ button:not([disabled]):active {
 }
 </style>
 
+<script src="./en-data.js"></script>
 <script src="./iap-native.js"></script>
 <script>
 // 画像読み込み失敗の汎用フォールバック(壊れ画像アイコンを絶対出さない・オフラインでも綺麗)
