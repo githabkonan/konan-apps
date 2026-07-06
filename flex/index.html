@@ -341,7 +341,7 @@ canvas#c{position:fixed;inset:0;pointer-events:none;z-index:900;}
 <!-- ===== HOME SCREEN ===== -->
 <div id="home-screen" style="display:flex;position:fixed;inset:0;z-index:1000;flex-direction:column;overflow:hidden;">
   <!-- BG -->
-  <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1523975980059-bec03da9b7e5?w=800&q=60') center/cover no-repeat;filter:brightness(.3);"></div>
+  <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&q=60') center/cover no-repeat;filter:brightness(.3);"></div>
   <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.3),rgba(0,0,0,.7) 60%,rgba(0,0,0,.95));"></div>
 
   <!-- CONTENT -->
@@ -1043,7 +1043,7 @@ const ITEMS=[
   {id:'rolex',name:'ラグジュアリーウォッチ DAYSTAR',price:12e6,
    img:'https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=400&h=260&fit=crop&q=80'},
   {id:'diamond',name:'50ct Blue Diamond',price:90e6,
-   img:'https://images.unsplash.com/photo-1515256722820-7edf3e9e9b00?w=400&h=260&fit=crop&q=80',
+   img:'https://images.unsplash.com/photo-1615655406736-b37c4fabf923?w=400&h=260&fit=crop&q=80',
    reward:{ch:.25,min:20e6,max:100e6,msg:'希少価値が急上昇した'}},
   {id:'space',name:'宇宙ステーション滞在3泊',price:120e6,
    img:'https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?w=400&h=260&fit=crop&q=80',
@@ -1245,6 +1245,7 @@ function runSpin(times){
   const cellW=100;
   let pos=0,speed=45,frame=0;
   function spin(){
+    if(!document.getElementById('rstrip')){spinning=false;return;} // UIが閉じたら安全に停止
     frame++;speed=Math.max(1.5,speed*(frame<30?1:0.93));
     pos=(pos+speed)%(cellW*GACHA.length*3);strip.style.transform=`translateX(-${pos}px)`;
     if(frame%4===0){try{t(300+Math.random()*200,'square',.04,.1);}catch(e){}}
@@ -1272,7 +1273,7 @@ function addGachaLog(g,v){const h=document.getElementById('gacha-hist');const d=
 const DAILY=[
   {e:'💵',img:'https://images.unsplash.com/photo-1603792907191-89e55f70099a?w=44&h=44&fit=crop',v:5e6},
   {e:'💰',img:'https://images.unsplash.com/photo-1580519542036-c47de6196ba5?w=44&h=44&fit=crop',v:15e6},
-  {e:'💎',img:'https://images.unsplash.com/photo-1515256722820-7edf3e9e9b00?w=44&h=44&fit=crop',v:30e6},
+  {e:'💎',img:'https://images.unsplash.com/photo-1615655406736-b37c4fabf923?w=44&h=44&fit=crop',v:30e6},
   {e:'🏅',img:'https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=44&h=44&fit=crop',v:60e6},
   {e:'🏆',img:'https://images.unsplash.com/photo-1559526324-593bc073d938?w=44&h=44&fit=crop',v:100e6},
   {e:'👑',img:'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=44&h=44&fit=crop',v:200e6},
@@ -1335,7 +1336,7 @@ const BEG=[
    res(){const v=Math.floor(Math.random()*9+1)*1e7;return{v,msg:`${fmt(v)}を「つまらないものだが」と差し出した`,bad:false};}},
   {photo:'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=200&h=200&fit=crop',name:'謎の人物 — スーツケース持参',suit:true,
    phases:['重厚なスーツケースを持った人物が近づいてくる...','「中身は保証しない」'],
-   suitImgs:{rocks:'https://images.unsplash.com/photo-1607283206345-e1f9a0474b63?w=200&h=200&fit=crop',cash:'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=200&h=200&fit=crop',gold:'https://images.unsplash.com/photo-1610375461246-83df859d849d?w=200&h=200&fit=crop',diamond:'https://images.unsplash.com/photo-1515256722820-7edf3e9e9b00?w=200&h=200&fit=crop'},
+   suitImgs:{rocks:'https://images.unsplash.com/photo-1607283206345-e1f9a0474b63?w=200&h=200&fit=crop',cash:'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=200&h=200&fit=crop',gold:'https://images.unsplash.com/photo-1610375461246-83df859d849d?w=200&h=200&fit=crop',diamond:'https://images.unsplash.com/photo-1615655406736-b37c4fabf923?w=200&h=200&fit=crop'},
    res(){const r=Math.random();if(r<.3)return{v:0,type:'rocks',msg:'中身は石ころだった...💀',bad:true};if(r<.55)return{v:Math.floor(Math.random()*50+10)*1e6,type:'cash',msg:'現金が入っていた！',bad:false};if(r<.8)return{v:Math.floor(Math.random()*100+50)*1e6,type:'gold',msg:'ゴールドバーが入っていた！',bad:false};return{v:Math.floor(Math.random()*200+100)*1e6,type:'diamond',msg:'ダイヤモンドで満載だった！！',bad:false};}},
   {photo:'https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=200&h=200&fit=crop',name:'謎のサンタクロース',suit:true,
    phases:['HO HO HO...','「今年は特別な年だ」'],
@@ -1830,21 +1831,6 @@ window.addEventListener('load', () => {
     </div>
     <button onclick="useCoinsForTrillion('all')" style="width:100%;padding:10px;border-radius:9px;border:none;background:linear-gradient(135deg,#D4AF37,#8B6914);color:#000;font-size:12px;font-weight:900;cursor:pointer;letter-spacing:2px;margin-bottom:14px;">💴 全コイン換金 ALL → ¥兆単位</button>
 
-    <!-- リワード広告（任意視聴） -->
-    <div style="font-size:11px;color:#888;letter-spacing:2px;margin-bottom:8px;">📺 広告を見て報酬獲得</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;">
-      <button onclick="watchAdForCoins()" style="padding:14px 8px;border-radius:10px;border:1px solid rgba(255,215,0,.35);background:linear-gradient(135deg,#3a2a00,#1a1500);color:#FFD700;font-size:12px;font-weight:900;cursor:pointer;">
-        <div style="font-size:22px;">🪙</div>
-        <div style="margin-top:4px;">+1 FlexCoin</div>
-        <div style="font-size:9px;color:#888;font-weight:400;margin-top:2px;">広告視聴で</div>
-      </button>
-      <button onclick="watchAdForBalance()" style="padding:14px 8px;border-radius:10px;border:1px solid rgba(46,204,113,.3);background:linear-gradient(135deg,#0a2a18,#051408);color:#2ecc71;font-size:12px;font-weight:900;cursor:pointer;">
-        <div style="font-size:22px;">💰</div>
-        <div style="margin-top:4px;">残高ブースト</div>
-        <div style="font-size:9px;color:#888;font-weight:400;margin-top:2px;">広告視聴で</div>
-      </button>
-    </div>
-
     <!-- FlexCoinパック -->
     <div style="font-size:11px;color:#888;letter-spacing:2px;margin-bottom:8px;">🪙 FLEXCOIN パック</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;">
@@ -1878,8 +1864,11 @@ window.addEventListener('load', () => {
       <button onclick="purchaseIAP('donate5000')" style="padding:8px;border-radius:8px;border:1px solid rgba(255,107,157,0.5);background:rgba(255,107,157,0.15);color:#fff;font-size:11px;font-weight:900;cursor:pointer;">💎 ¥5,000</button>
     </div>
 
+    <!-- 購入の復元(非消耗型) -->
+    <button onclick="restoreIAP()" style="width:100%;padding:11px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:transparent;color:#aaa;font-size:12px;cursor:pointer;margin-bottom:12px;">↺ 以前の購入を復元する</button>
+
     <div style="font-size:10px;color:#444;line-height:1.5;text-align:center;">
-      支払いは Stripe / App Store / Google Play で安全に処理されます。<br>
+      支払いは App Store / Google Play で安全に処理されます。<br>
       購入は<a href="./terms.html" target="_blank" style="color:#666;text-decoration:underline;">利用規約</a>と<a href="./privacy.html" target="_blank" style="color:#666;text-decoration:underline;">プライバシーポリシー</a>に同意したものとみなします。
     </div>
   </div>
@@ -4876,14 +4865,19 @@ async function purchaseIAP(key) {
   const item = window.IAP_CONFIG[key];
   if (!item) { console.error('Unknown IAP key:', key); return; }
 
-  // 1) ネイティブ環境ならStoreKit/Google Playにフォールバック
-  if (isNativeIAP() && window.IAP_NATIVE && typeof window.IAP_NATIVE.purchase === 'function') {
-    try {
-      const result = await window.IAP_NATIVE.purchase(item.productId);
-      if (result && result.success) { fulfillIAP(key); return; }
-    } catch (e) { console.error('Native IAP failed', e); }
-    toast('決済に失敗しました');
-    return;
+  // 1) ネイティブ環境: StoreKit実決済のみ。モック決済へのフォールスルーは絶対にしない(審査3.1.1)
+  if (isNativeIAP()) {
+    if (window.IAP_NATIVE && typeof window.IAP_NATIVE.purchase === 'function') {
+      try {
+        const result = await window.IAP_NATIVE.purchase(item.productId);
+        if (result && result.success) { fulfillIAP(key); toast('✅ 購入ありがとう！'); return; }
+        if (result && result.cancelled) return; // キャンセルは無言で戻す
+      } catch (e) { console.error('Native IAP failed', e); }
+      toast('決済に失敗しました');
+    } else {
+      toast('ストアに接続できません');
+    }
+    return; // ネイティブでは以降(Stripe/開発モック)に絶対落とさない
   }
 
   // 2) Web環境: Stripe Payment Link が設定済みなら遷移
@@ -4898,6 +4892,25 @@ async function purchaseIAP(key) {
   if (ok) {
     fulfillIAP(key);
     toast(`✅ 購入完了: ${item.productId}`);
+  }
+}
+
+// 以前の購入を復元(非消耗型: premium/legendary)— Guideline 3.1.1 必須
+async function restoreIAP() {
+  if (!isNativeIAP() || !window.IAP_NATIVE || typeof window.IAP_NATIVE.restore !== 'function') {
+    toast('復元はアプリ版でのみ利用できます'); return;
+  }
+  try {
+    const keys = await window.IAP_NATIVE.restore();
+    if (keys && keys.length) {
+      keys.forEach(k => fulfillIAP(k));
+      toast('✅ 購入を復元しました');
+    } else {
+      toast('復元できる購入がありません');
+    }
+  } catch (e) {
+    console.error('restore failed', e);
+    toast('復元に失敗しました');
   }
 }
 
@@ -7249,5 +7262,37 @@ button:not([disabled]):active {
 }
 </style>
 
+<script src="./iap-native.js"></script>
+<script>
+// 画像読み込み失敗の汎用フォールバック(壊れ画像アイコンを絶対出さない・オフラインでも綺麗)
+document.addEventListener('error',function(e){
+  var el=e.target;
+  if(el&&el.tagName==='IMG'){
+    el.style.display='none';
+    var p=el.parentElement;
+    if(p&&(!p.style.background||p.style.background==='none'))p.style.background='linear-gradient(135deg,#1a1408,#2a2010)';
+  }
+},true);
+// ストアスクショ撮影用フック(?shot= が無ければ完全に無影響)
+try{
+  var _shot=new URLSearchParams(location.search).get('shot');
+  if(_shot){
+    try{localStorage.setItem('flex_age_ok','1');}catch(e){}
+    try{var _ag=document.getElementById('age-gate');if(_ag)_ag.remove();}catch(e){}
+    var _st=document.createElement('style');
+    _st.textContent='html,body{overflow-x:hidden!important;scrollbar-width:none!important}::-webkit-scrollbar{width:0!important;height:0!important;display:none!important}';
+    document.head.appendChild(_st);
+    setTimeout(function(){
+      try{if(typeof startGame==='function')startGame('normal');}catch(e){}
+      setTimeout(function(){
+        try{
+          if(_shot==='store'&&typeof openStore==='function')openStore();
+          else if(typeof switchTab==='function')switchTab(_shot);
+        }catch(e){}
+      },500);
+    },700);
+  }
+}catch(e){}
+</script>
 </body>
 </html>
