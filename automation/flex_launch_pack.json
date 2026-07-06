@@ -17,10 +17,11 @@
       "app": "FLEX(神アプリ紹介)",
       "type": "flex",
       "appstore_url": "https://apps.apple.com/jp/app/id6787874159",
-      "video": "flex_intro.mp4",
+      "video": "flex_nisa.mp4",
       "cover": "covers/flex_nisa.jpg",
       "ig_caption": "何も考えずに10億円使い切るだけのアプリ、地味にクセになる。買うたびに称号が上がって、最後は伝説の散財王。\nApp Storeで「散財シミュレーション」で検索。\n#散財 #暇つぶしゲーム #無料ゲーム",
-      "threads_text": "10億円を意味もなく使い切るだけのゲームが意外とストレス発散になる。回転寿司100皿からプライベートジェットまで。\nhttps://apps.apple.com/jp/app/id6787874159\n#散財 #暇つぶし"
+      "threads_text": "10億円を意味もなく使い切るだけのゲームが意外とストレス発散になる。回転寿司100皿からプライベートジェットまで。\nhttps://apps.apple.com/jp/app/id6787874159\n#散財 #暇つぶし",
+      "_note": "専用の紹介動画(flex_intro.mp4)は明日制作予定。それまで同一動画×別キャプションでローテ可"
     }
   ]
 }
