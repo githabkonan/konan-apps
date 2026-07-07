@@ -1,5 +1,5 @@
 // THE FLEX Service Worker
-const CACHE_NAME = 'flex-v8'; // バージョン上げてキャッシュリフレッシュ
+const CACHE_NAME = 'flex-v9'; // バージョン上げてキャッシュリフレッシュ
 const CORE_ASSETS = [
   './manifest.json',
   './kaching.wav',

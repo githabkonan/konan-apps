@@ -43,7 +43,7 @@ window.EN_STRINGS = {
 "コーヒー":"Coffee",
 "エナジードリンク":"Energy Drink",
 "タバコ1箱":"Pack of Cigarettes",
-"宝くじ":"Lottery Ticket",
+
 "専属シェフ（1年契約）":"Private Chef (1-Year Contract)",
 "執事（住み込み）":"Live-in Butler",
 "ライオン（合法ペット）":"Pet Lion (Fully Legal)",
@@ -138,7 +138,7 @@ window.EN_STRINGS = {
 "スーツケースを開けるか？":"Open the suitcase?",
 "受け取るか？":"Take it?",
 // ===== イベント =====
-"宝くじ 当選！":"Lottery Win!",
+"懸賞 大当選！":"Sweepstakes Win!",
 "保有株が急騰！":"Your Stock Soared!",
 "謎の電話":"Mysterious Phone Call",
 "コンテスト優勝！":"Contest Winner!",
@@ -155,7 +155,7 @@ window.EN_STRINGS = {
 "オークションで評価額が急騰した":"Auction value skyrocketed",
 "博物館から高額レンタル依頼が来た":"A museum wants to rent it",
 "レアワインの価格が暴騰した":"Rare wine prices exploded",
-"宝くじが当選した！":"You won the lottery!",
+"応募していた懸賞が...":"Your sweepstakes entry came through...",
 "中身は石ころだった...💀":"It was full of rocks... 💀",
 "現金が入っていた！":"It was full of cash!",
 "ゴールドバーが入っていた！":"It was full of gold bars!",
@@ -176,9 +176,9 @@ window.EN_STRINGS = {
 "家族を養えない...":"I can't feed my family...",
 "薬を買うお金が...":"I can't afford my medicine...",
 "もう学校を辞めるしか...":"I'll have to drop out of school...",
-// ===== スロット/カジノ =====
+
 "ダイヤ":"Diamond","セブン":"Seven","マネー":"Money","チェリー":"Cherry","スター":"Star","ジョーカー":"Joker","スロット":"Slots",
-"クラシックパチンコ":"Classic Pachinko","ルーレット":"Roulette","バカラ":"Baccarat",
+
 // ===== ストーリー(購入後フレーバー) =====
 "最高級の霜降りが口の中で溶けた。これが本物の幸せだ。":"The finest marbled beef melted in my mouth. This is real happiness.",
 "全部食えなかった。でも全部注文した。それが大事だ。":"Couldn't eat it all. Ordered it all anyway. That's what matters.",
@@ -231,7 +231,7 @@ window.EN_STRINGS = {
 // ===== 共通UI =====
 "ホーム":"Home","購入する":"Buy","購入済み":"Owned","残高不足":"Not enough money",
 "残高":"Balance","散財":"Spent","アイテム":"Items","やり直す":"Restart",
-"買い物":"Shop","売却":"Sell","乞食":"Beg","あげる":"Give","カジノ":"Casino",
+"買い物":"Shop","売却":"Sell","乞食":"Beg","あげる":"Give",
 "デイリー":"Daily","投資":"Invest","事業":"Biz","労働":"Work",
 "散財シミュレーターRPG":"Money Spending Simulator RPG",
 "散財シミュレーター":"Money Spending Simulator",
@@ -248,7 +248,7 @@ Object.assign(window.EN_STRINGS, {
 "1 FlexCoin = ¥1兆":"1 FlexCoin = ¥1 trillion","で密かに取引される、":"Secretly traded by",
 "本物の超富裕層だけが扱う禁断の決済手段。":"the true ultra-rich. Forbidden money.",
 "最強・買い切り":"Ultimate / One-time","「神の領域」 — この世の理を超える権利。":"\"God Tier\" — the right to break the rules of this world.",
-"🎰 ギャンブルの神様":"🎰 God of Gambling","（全カジノ・FXで最高結果が出続ける）":"(Best results in every casino & FX trade)",
+"💹 相場の神様":"💹 God of Markets","（FXで最高結果が出続ける）":"(Best FX results every time)",
 "伝説のハンドスピナー":"Legendary Fidget Spinner","（アスリート御用達）":"(Trusted by athletes)",
 "＋ PREMIUM 全特典を内包":"+ Includes all PREMIUM perks","⚜ LEGENDARY を購入 — ¥1,000":"⚜ Buy LEGENDARY — ¥1,000",
 "買い切り・永久":"One-time / Forever","限定プレミアムバッジ":"Exclusive PREMIUM badge",
@@ -266,8 +266,8 @@ Object.assign(window.EN_STRINGS, {
 "💗 お金をあげる":"💗 Give Money","困っている人を助けて心を満たそう":"Help people in need, fill your heart",
 "助けた人":"People helped","寄付総額":"Total given","カルマ":"Karma","あげた履歴":"Giving history",
 "「お腹がすいた...」":"\"I'm starving...\"","「今日も食べるものがない...」":"\"Nothing to eat again today...\"",
-"🎰 スロット":"🎰 Slots","★ 一番人気":"★ Most popular","🎡 ルーレット":"🎡 Roulette","🎴 バカラ":"🎴 Baccarat",
-"🪙 クラシックパチンコ":"🪙 Classic Pachinko","3つ揃えろ":"Match 3 to win","勝率":"Win rate","最大勝利":"Biggest win","ゲーム数":"Games",
+
+
 "今日受け取らなければ消える":"Disappears if not claimed today","本日受取済み ✓":"Claimed today ✓",
 "ランキング":"Ranking","散財の神":"God of Spending","億万長者X":"Billionaire X","成り上がり":"Upstart","金の亡者":"Money Fiend","浪費家":"Big Spender",
 "投資ポートフォリオ":"Portfolio","投資元本":"Principal","損益":"P/L","利益率":"Return","まだ投資していません":"No investments yet","💎 投資銘柄":"💎 Investments","¥1万":"¥10K",
