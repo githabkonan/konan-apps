@@ -1,140 +1,167 @@
 {
- "video_base": "https://githabkonan.github.io/konan-apps/videos",
- "posts": [
-  {
-   "app": "入隊",
-   "type": "jsdf",
-   "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
-   "video": "jsdf_v2_iritai.mp4",
-   "cover": "covers/jsdf_v2_iritai.jpg",
-   "ig_caption": "今年、自衛官の採用がついに1万人超え。今めっちゃ入りやすい時期。今はアプリで対策問題までしっかり用意されてるから、ちゃんとやった人が普通に受かってる。\nApp Storeで「自衛官試験対策」で検索。\n#自衛官 #自衛官候補生 #一般曹候補生 #自衛官採用 #自衛隊 #試験対策 #対策問題 #勉強垢",
-   "threads_text": "今年、自衛官の採用がついに1万人超え。今めっちゃ入りやすい時期。\n対策問題までアプリで用意されてるから、ちゃんとやった人が普通に受かってる。\nhttps://apps.apple.com/jp/app/id6772919770\n#自衛官 #一般曹候補生 #試験対策 #対策問題"
-  },
-  {
-   "app": "陸曹昇任",
-   "type": "jsdf",
-   "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
-   "video": "jsdf_v2_rikuso.mp4",
-   "cover": "covers/jsdf_v2_rikuso.jpg",
-   "ig_caption": "自衛官にはなれたけど、陸曹にはまだなれてない人いませんか?\nまずはアプリで隙間時間にちょっとずつ。\nApp Storeで「陸曹昇任 試験対策」で検索。\n#自衛官 #陸曹昇任 #自衛隊 #昇任試験 #試験対策 #勉強垢",
-   "threads_text": "自衛官にはなれたけど、陸曹にはまだなれてない人いませんか?\nまずはスキマ時間にアプリでちょっとずつ。\nhttps://apps.apple.com/jp/app/id6774074604\n#自衛官 #陸曹昇任 #昇任試験 #試験対策"
-  },
-  {
-   "app": "予備自衛官補",
-   "type": "jsdf",
-   "appstore_url": "https://apps.apple.com/jp/app/id6778490302",
-   "video": "jsdf_v2_yobi.mp4",
-   "cover": "covers/jsdf_v2_yobi.jpg",
-   "ig_caption": "予備自衛官補、情報少なすぎ問題。社会人も学生もスキマ時間にスマホで対策する時代。\nApp Storeで「予備自衛官補 試験対策」で検索。\n#予備自衛官補 #自衛隊 #自衛官 #試験対策 #勉強垢 #社会人",
-   "threads_text": "予備自衛官補、情報少なすぎ問題。社会人も学生もスキマ時間にスマホで対策する時代。\nhttps://apps.apple.com/jp/app/id6778490302\n#予備自衛官補 #自衛隊 #試験対策 #社会人"
-  },
-  {
-   "app": "幹部候補生",
-   "type": "jsdf",
-   "appstore_url": "https://apps.apple.com/jp/app/id6776236258",
-   "video": "jsdf_v2_kanbu.mp4",
-   "cover": "covers/jsdf_v2_kanbu.jpg",
-   "ig_caption": "大卒なら最初から幹部候補も狙えるの知ってた?\nApp Storeで「幹部候補生 試験対策」で検索。\n#自衛官 #幹部候補生 #自衛隊 #公務員試験 #試験対策 #勉強垢",
-   "threads_text": "大卒なら最初から幹部候補も狙えるの知ってた?\nスキマ時間にアプリで対策できる。\nhttps://apps.apple.com/jp/app/id6776236258\n#自衛官 #幹部候補生 #公務員試験 #試験対策"
-  },
-  {
-   "app": "QC検定3級",
-   "type": "shikaku",
-   "appstore_url": "https://apps.apple.com/jp/app/id6780823003",
-   "video": "qc3.mp4",
-   "cover": "covers/qc3.jpg",
-   "ig_caption": "QC検定3級、テキストだけだと範囲が広くてどこから手をつけるか迷いますよね。過去問ベースの対策問題を、分野別に解説つきで。通勤や休憩のスキマ時間で進められます。\nApp Storeで「QC検定3級」で検索。\n#QC検定3級 #品質管理検定 #資格勉強",
-   "threads_text": "QC検定3級、テキストだけだと何が出るか掴みにくいんですよね。過去問ベースの対策問題を分野別・解説つきでスキマ時間に。\nhttps://apps.apple.com/jp/app/id6780823003\n#QC検定3級 #品質管理検定"
-  },
-  {
-   "app": "消防設備士乙6",
-   "type": "shikaku",
-   "appstore_url": "https://apps.apple.com/jp/app/id6783586555",
-   "video": "otsu6.mp4",
-   "cover": "covers/otsu6.jpg",
-   "ig_caption": "消防設備士 乙6(消火器)、独学だと範囲が広くてどこから手をつけるか迷いますよね。過去問ベースの対策問題を分野別に、解説つきで。通勤や休憩のスキマ時間で進められます。\nApp Storeで「消防設備士 乙6」で検索。\n#消防設備士乙6 #ビルメン #設備管理 #資格取得",
-   "threads_text": "消防設備士 乙6(消火器)、独学だと範囲が広くて手が止まりがちですよね。過去問ベースの対策問題を分野別・解説つきでスキマ時間に。\nhttps://apps.apple.com/jp/app/id6783586555\n#消防設備士乙6 #ビルメン #資格取得"
-  },
-  {
-   "app": "ライフコントロール",
-   "type": "health",
-   "appstore_url": "https://apps.apple.com/jp/app/id6782221037",
-   "video": "lc_reveal.mp4",
-   "cover": "covers/lc_reveal.jpg",
-   "ig_caption": "自分の\"健康年齢\"、実年齢とどれくらいズレてるか気になりませんか。睡眠・食事・運動・ストレスを23問答えるだけで出ます。生活習慣を整える今日のヒントも毎日ひとつ届きます。\nApp Storeで「ライフコントロール」で検索。\n#健康年齢 #生活習慣 #ヘルスケア",
-   "threads_text": "平均寿命と健康寿命の差、実は約10年あるそうです。その差を作るのは毎日の生活習慣。自分の健康年齢、23問でチェックできます。\nhttps://apps.apple.com/jp/app/id6782221037\n#健康年齢 #生活習慣"
-  },
-  {
-   "app": "入隊B",
-   "type": "jsdf",
-   "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
-   "video": "jsdf_v2_iritai_b.mp4",
-   "cover": "covers/jsdf_v2_iritai.jpg",
-   "ig_caption": "自衛官の1次試験、体力テストって無いの知ってた?筆記の対策だけで受かる。実問題ベースのアプリでスキマ時間にやるのが今は普通。\nApp Storeで「自衛官 試験対策」で検索。\n#自衛官 #自衛官候補生 #一般曹候補生 #試験対策 #勉強垢",
-   "threads_text": "自衛官の1次試験、体力テストは無い。筆記の対策だけで受かる。\n実問題ベースのアプリでスキマ時間にやるのが今は普通。\nhttps://apps.apple.com/jp/app/id6772919770\n#自衛官 #試験対策"
-  },
-  {
-   "app": "陸曹B",
-   "type": "jsdf",
-   "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
-   "video": "jsdf_v2_rikuso_b.mp4",
-   "cover": "covers/jsdf_v2_rikuso.jpg",
-   "ig_caption": "陸曹昇任試験、情報少なすぎ問題。受かる人はもうスマホでスキマ時間に対策してる。\nApp Storeで「陸曹昇任 試験対策」で検索。\n#自衛官 #陸曹昇任 #昇任試験 #試験対策 #勉強垢",
-   "threads_text": "陸曹昇任試験、情報少なすぎ問題。受かる人はもうスマホで対策してる。\nhttps://apps.apple.com/jp/app/id6774074604\n#自衛官 #陸曹昇任 #昇任試験"
-  },
-  {
-   "app": "予備自B",
-   "type": "jsdf",
-   "appstore_url": "https://apps.apple.com/jp/app/id6778490302",
-   "video": "jsdf_v2_yobi_b.mp4",
-   "cover": "covers/jsdf_v2_yobi.jpg",
-   "ig_caption": "予備自衛官補、社会人でもなれるの知ってた?スキマ時間にスマホで対策する時代。\nApp Storeで「予備自衛官補 試験対策」で検索。\n#予備自衛官補 #自衛隊 #試験対策 #社会人 #勉強垢",
-   "threads_text": "予備自衛官補、社会人でもなれる。スキマ時間にスマホで対策する時代。\nhttps://apps.apple.com/jp/app/id6778490302\n#予備自衛官補 #試験対策 #社会人"
-  },
-  {
-   "app": "幹部B",
-   "type": "jsdf",
-   "appstore_url": "https://apps.apple.com/jp/app/id6776236258",
-   "video": "jsdf_v2_kanbu_b.mp4",
-   "cover": "covers/jsdf_v2_kanbu.jpg",
-   "ig_caption": "幹部候補生、受かる人はもうスマホで対策してる。情報少ない試験こそスキマ時間で差がつく。\nApp Storeで「幹部候補生 試験対策」で検索。\n#幹部候補生 #自衛官 #自衛隊 #試験対策 #勉強垢",
-   "threads_text": "幹部候補生、受かる人はもうスマホで対策してる。情報少ない試験こそスキマ時間で差がつく。\nhttps://apps.apple.com/jp/app/id6776236258\n#幹部候補生 #試験対策"
-  },
-  {
-   "app": "甲4(時事ネタ)",
-   "type": "shoubo",
-   "appstore_url": "https://apps.apple.com/jp/app/id6786774938",
-   "video": "koushu4_news.mp4",
-   "cover": "covers/koushu4.jpg",
-   "ig_caption": "電車内のモバイルバッテリー発火、最近ニュース多いよね。ああいう火事をいち早く検知するのが自動火災報知設備で、工事や点検は消防設備士の独占業務。人手不足で需要も伸びてる。\n受かる人はもうスマホで過去問やってるだけ。\nApp Storeで「消防設備士 甲4」で検索。\n#消防設備士 #甲4 #資格 #国家資格 #試験対策",
-   "threads_text": "電車のモバイルバッテリー発火、最近多いよね。ああいう火事をいち早く検知する自動火災報知設備、工事・点検は消防設備士の独占業務で人手不足。\n受かる人はもうスマホで過去問やってる。\nhttps://apps.apple.com/jp/app/id6786774938\n#消防設備士 #甲4 #資格"
-  },
-  {
-   "app": "入隊(時事ネタ)",
-   "type": "jsdf",
-   "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
-   "video": "news_jieitai.mp4",
-   "cover": "covers/news_jieitai.jpg",
-   "ig_caption": "自衛隊の給料、いま結構変わってるの知ってる？初任給が上がって、6年で総額120万円もらえる制度までできた。\n受かる人はもうスマホで過去問やってるだけ。\nApp Storeで「自衛官 試験対策」で検索。\n#自衛官 #一般曹候補生 #自衛隊 #試験対策 #勉強垢",
-   "threads_text": "自衛隊の給料いま結構変わってる。初任給up、6年で総額120万の新給付。国が本気で人集めにきてる時期。\n受かる人はもうスマホで過去問やってるだけ。\nhttps://apps.apple.com/jp/app/id6772919770\n#自衛官 #試験対策"
-  },
-  {
-   "app": "陸曹(時事ネタ)",
-   "type": "jsdf",
-   "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
-   "video": "rikuso_news.mp4",
-   "cover": "covers/jsdf_v2_rikuso.jpg",
-   "ig_caption": "自衛隊の給料が上がってるって話、陸曹に上がれるかどうかで伸び方が全然違う。\n昇任試験は今スマホで対策できる。受かる人はもうやってる。\nApp Storeで「陸曹昇任 試験対策」で検索。\n#自衛官 #陸曹昇任 #昇任試験 #試験対策",
-   "threads_text": "給料上がってるいま、陸曹かどうかで伸び方が全然違う。昇任試験は今スマホで対策できる。\nhttps://apps.apple.com/jp/app/id6774074604\n#自衛官 #陸曹昇任"
-  },
-  {
-   "app": "幹部(時事ネタ)",
-   "type": "jsdf",
-   "appstore_url": "https://apps.apple.com/jp/app/id6776236258",
-   "video": "kanbu_news.mp4",
-   "cover": "covers/jsdf_v2_kanbu.jpg",
-   "ig_caption": "大卒なら自衛隊の\"幹部\"を最初から狙えるの、意外と知られてない。範囲は広いけど地頭より過去問。\nApp Storeで「幹部候補生 試験対策」で検索。\n#幹部候補生 #自衛隊 #公務員試験 #大卒",
-   "threads_text": "大卒なら自衛隊の幹部を最初から狙えるの意外と知られてない。範囲は広いけど地頭より過去問。\nhttps://apps.apple.com/jp/app/id6776236258\n#幹部候補生 #公務員試験"
-  }
- ]
+  "video_base": "https://githabkonan.github.io/konan-apps/videos",
+  "posts": [
+    {
+      "app": "入隊",
+      "type": "jsdf",
+      "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
+      "video": "jsdf_v2_iritai.mp4",
+      "cover": "covers/jsdf_v2_iritai.jpg",
+      "ig_caption": "今年、自衛官の採用がついに1万人超え。今めっちゃ入りやすい時期。今はアプリで対策問題までしっかり用意されてるから、ちゃんとやった人が普通に受かってる。\nApp Storeで「自衛官試験対策」で検索。\n#自衛官 #自衛官候補生 #一般曹候補生 #自衛官採用 #自衛隊 #試験対策 #対策問題 #勉強垢",
+      "threads_text": "今年、自衛官の採用がついに1万人超え。今めっちゃ入りやすい時期。\n対策問題までアプリで用意されてるから、ちゃんとやった人が普通に受かってる。\nhttps://apps.apple.com/jp/app/id6772919770\n#自衛官 #一般曹候補生 #試験対策 #対策問題"
+    },
+    {
+      "app": "陸曹昇任",
+      "type": "jsdf",
+      "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
+      "video": "jsdf_v2_rikuso.mp4",
+      "cover": "covers/jsdf_v2_rikuso.jpg",
+      "ig_caption": "自衛官にはなれたけど、陸曹にはまだなれてない人いませんか?\nまずはアプリで隙間時間にちょっとずつ。\nApp Storeで「陸曹昇任 試験対策」で検索。\n#自衛官 #陸曹昇任 #自衛隊 #昇任試験 #試験対策 #勉強垢",
+      "threads_text": "自衛官にはなれたけど、陸曹にはまだなれてない人いませんか?\nまずはスキマ時間にアプリでちょっとずつ。\nhttps://apps.apple.com/jp/app/id6774074604\n#自衛官 #陸曹昇任 #昇任試験 #試験対策"
+    },
+    {
+      "app": "予備自衛官補",
+      "type": "jsdf",
+      "appstore_url": "https://apps.apple.com/jp/app/id6778490302",
+      "video": "jsdf_v2_yobi.mp4",
+      "cover": "covers/jsdf_v2_yobi.jpg",
+      "ig_caption": "予備自衛官補、情報少なすぎ問題。社会人も学生もスキマ時間にスマホで対策する時代。\nApp Storeで「予備自衛官補 試験対策」で検索。\n#予備自衛官補 #自衛隊 #自衛官 #試験対策 #勉強垢 #社会人",
+      "threads_text": "予備自衛官補、情報少なすぎ問題。社会人も学生もスキマ時間にスマホで対策する時代。\nhttps://apps.apple.com/jp/app/id6778490302\n#予備自衛官補 #自衛隊 #試験対策 #社会人"
+    },
+    {
+      "app": "幹部候補生",
+      "type": "jsdf",
+      "appstore_url": "https://apps.apple.com/jp/app/id6776236258",
+      "video": "jsdf_v2_kanbu.mp4",
+      "cover": "covers/jsdf_v2_kanbu.jpg",
+      "ig_caption": "大卒なら最初から幹部候補も狙えるの知ってた?\nApp Storeで「幹部候補生 試験対策」で検索。\n#自衛官 #幹部候補生 #自衛隊 #公務員試験 #試験対策 #勉強垢",
+      "threads_text": "大卒なら最初から幹部候補も狙えるの知ってた?\nスキマ時間にアプリで対策できる。\nhttps://apps.apple.com/jp/app/id6776236258\n#自衛官 #幹部候補生 #公務員試験 #試験対策"
+    },
+    {
+      "app": "QC検定3級",
+      "type": "shikaku",
+      "appstore_url": "https://apps.apple.com/jp/app/id6780823003",
+      "video": "qc3.mp4",
+      "cover": "covers/qc3.jpg",
+      "ig_caption": "QC検定3級、テキストだけだと範囲が広くてどこから手をつけるか迷いますよね。過去問ベースの対策問題を、分野別に解説つきで。通勤や休憩のスキマ時間で進められます。\nApp Storeで「QC検定3級」で検索。\n#QC検定3級 #品質管理検定 #資格勉強",
+      "threads_text": "QC検定3級、テキストだけだと何が出るか掴みにくいんですよね。過去問ベースの対策問題を分野別・解説つきでスキマ時間に。\nhttps://apps.apple.com/jp/app/id6780823003\n#QC検定3級 #品質管理検定"
+    },
+    {
+      "app": "消防設備士乙6",
+      "type": "shikaku",
+      "appstore_url": "https://apps.apple.com/jp/app/id6783586555",
+      "video": "otsu6.mp4",
+      "cover": "covers/otsu6.jpg",
+      "ig_caption": "消防設備士 乙6(消火器)、独学だと範囲が広くてどこから手をつけるか迷いますよね。過去問ベースの対策問題を分野別に、解説つきで。通勤や休憩のスキマ時間で進められます。\nApp Storeで「消防設備士 乙6」で検索。\n#消防設備士乙6 #ビルメン #設備管理 #資格取得",
+      "threads_text": "消防設備士 乙6(消火器)、独学だと範囲が広くて手が止まりがちですよね。過去問ベースの対策問題を分野別・解説つきでスキマ時間に。\nhttps://apps.apple.com/jp/app/id6783586555\n#消防設備士乙6 #ビルメン #資格取得"
+    },
+    {
+      "app": "ライフコントロール",
+      "type": "health",
+      "appstore_url": "https://apps.apple.com/jp/app/id6782221037",
+      "video": "lc_reveal.mp4",
+      "cover": "covers/lc_reveal.jpg",
+      "ig_caption": "自分の\"健康年齢\"、実年齢とどれくらいズレてるか気になりませんか。睡眠・食事・運動・ストレスを23問答えるだけで出ます。生活習慣を整える今日のヒントも毎日ひとつ届きます。\nApp Storeで「ライフコントロール」で検索。\n#健康年齢 #生活習慣 #ヘルスケア",
+      "threads_text": "平均寿命と健康寿命の差、実は約10年あるそうです。その差を作るのは毎日の生活習慣。自分の健康年齢、23問でチェックできます。\nhttps://apps.apple.com/jp/app/id6782221037\n#健康年齢 #生活習慣"
+    },
+    {
+      "app": "入隊B",
+      "type": "jsdf",
+      "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
+      "video": "jsdf_v2_iritai_b.mp4",
+      "cover": "covers/jsdf_v2_iritai.jpg",
+      "ig_caption": "自衛官の1次試験、体力テストって無いの知ってた?筆記の対策だけで受かる。実問題ベースのアプリでスキマ時間にやるのが今は普通。\nApp Storeで「自衛官 試験対策」で検索。\n#自衛官 #自衛官候補生 #一般曹候補生 #試験対策 #勉強垢",
+      "threads_text": "自衛官の1次試験、体力テストは無い。筆記の対策だけで受かる。\n実問題ベースのアプリでスキマ時間にやるのが今は普通。\nhttps://apps.apple.com/jp/app/id6772919770\n#自衛官 #試験対策"
+    },
+    {
+      "app": "陸曹B",
+      "type": "jsdf",
+      "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
+      "video": "jsdf_v2_rikuso_b.mp4",
+      "cover": "covers/jsdf_v2_rikuso.jpg",
+      "ig_caption": "陸曹昇任試験、情報少なすぎ問題。受かる人はもうスマホでスキマ時間に対策してる。\nApp Storeで「陸曹昇任 試験対策」で検索。\n#自衛官 #陸曹昇任 #昇任試験 #試験対策 #勉強垢",
+      "threads_text": "陸曹昇任試験、情報少なすぎ問題。受かる人はもうスマホで対策してる。\nhttps://apps.apple.com/jp/app/id6774074604\n#自衛官 #陸曹昇任 #昇任試験"
+    },
+    {
+      "app": "予備自B",
+      "type": "jsdf",
+      "appstore_url": "https://apps.apple.com/jp/app/id6778490302",
+      "video": "jsdf_v2_yobi_b.mp4",
+      "cover": "covers/jsdf_v2_yobi.jpg",
+      "ig_caption": "予備自衛官補、社会人でもなれるの知ってた?スキマ時間にスマホで対策する時代。\nApp Storeで「予備自衛官補 試験対策」で検索。\n#予備自衛官補 #自衛隊 #試験対策 #社会人 #勉強垢",
+      "threads_text": "予備自衛官補、社会人でもなれる。スキマ時間にスマホで対策する時代。\nhttps://apps.apple.com/jp/app/id6778490302\n#予備自衛官補 #試験対策 #社会人"
+    },
+    {
+      "app": "幹部B",
+      "type": "jsdf",
+      "appstore_url": "https://apps.apple.com/jp/app/id6776236258",
+      "video": "jsdf_v2_kanbu_b.mp4",
+      "cover": "covers/jsdf_v2_kanbu.jpg",
+      "ig_caption": "幹部候補生、受かる人はもうスマホで対策してる。情報少ない試験こそスキマ時間で差がつく。\nApp Storeで「幹部候補生 試験対策」で検索。\n#幹部候補生 #自衛官 #自衛隊 #試験対策 #勉強垢",
+      "threads_text": "幹部候補生、受かる人はもうスマホで対策してる。情報少ない試験こそスキマ時間で差がつく。\nhttps://apps.apple.com/jp/app/id6776236258\n#幹部候補生 #試験対策"
+    },
+    {
+      "app": "甲4(時事ネタ)",
+      "type": "shoubo",
+      "appstore_url": "https://apps.apple.com/jp/app/id6786774938",
+      "video": "koushu4_news.mp4",
+      "cover": "covers/koushu4.jpg",
+      "ig_caption": "電車内のモバイルバッテリー発火、最近ニュース多いよね。ああいう火事をいち早く検知するのが自動火災報知設備で、工事や点検は消防設備士の独占業務。人手不足で需要も伸びてる。\n受かる人はもうスマホで過去問やってるだけ。\nApp Storeで「消防設備士 甲4」で検索。\n#消防設備士 #甲4 #資格 #国家資格 #試験対策",
+      "threads_text": "電車のモバイルバッテリー発火、最近多いよね。ああいう火事をいち早く検知する自動火災報知設備、工事・点検は消防設備士の独占業務で人手不足。\n受かる人はもうスマホで過去問やってる。\nhttps://apps.apple.com/jp/app/id6786774938\n#消防設備士 #甲4 #資格"
+    },
+    {
+      "app": "入隊(時事ネタ)",
+      "type": "jsdf",
+      "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
+      "video": "news_jieitai.mp4",
+      "cover": "covers/news_jieitai.jpg",
+      "ig_caption": "自衛隊の給料、いま結構変わってるの知ってる？初任給が上がって、6年で総額120万円もらえる制度までできた。\n受かる人はもうスマホで過去問やってるだけ。\nApp Storeで「自衛官 試験対策」で検索。\n#自衛官 #一般曹候補生 #自衛隊 #試験対策 #勉強垢",
+      "threads_text": "自衛隊の給料いま結構変わってる。初任給up、6年で総額120万の新給付。国が本気で人集めにきてる時期。\n受かる人はもうスマホで過去問やってるだけ。\nhttps://apps.apple.com/jp/app/id6772919770\n#自衛官 #試験対策"
+    },
+    {
+      "app": "陸曹(時事ネタ)",
+      "type": "jsdf",
+      "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
+      "video": "rikuso_news.mp4",
+      "cover": "covers/jsdf_v2_rikuso.jpg",
+      "ig_caption": "自衛隊の給料が上がってるって話、陸曹に上がれるかどうかで伸び方が全然違う。\n昇任試験は今スマホで対策できる。受かる人はもうやってる。\nApp Storeで「陸曹昇任 試験対策」で検索。\n#自衛官 #陸曹昇任 #昇任試験 #試験対策",
+      "threads_text": "給料上がってるいま、陸曹かどうかで伸び方が全然違う。昇任試験は今スマホで対策できる。\nhttps://apps.apple.com/jp/app/id6774074604\n#自衛官 #陸曹昇任"
+    },
+    {
+      "app": "幹部(時事ネタ)",
+      "type": "jsdf",
+      "appstore_url": "https://apps.apple.com/jp/app/id6776236258",
+      "video": "kanbu_news.mp4",
+      "cover": "covers/jsdf_v2_kanbu.jpg",
+      "ig_caption": "大卒なら自衛隊の\"幹部\"を最初から狙えるの、意外と知られてない。範囲は広いけど地頭より過去問。\nApp Storeで「幹部候補生 試験対策」で検索。\n#幹部候補生 #自衛隊 #公務員試験 #大卒",
+      "threads_text": "大卒なら自衛隊の幹部を最初から狙えるの意外と知られてない。範囲は広いけど地頭より過去問。\nhttps://apps.apple.com/jp/app/id6776236258\n#幹部候補生 #公務員試験"
+    },
+    {
+      "app": "QC検定3級B",
+      "type": "shikaku",
+      "appstore_url": "https://apps.apple.com/jp/app/id6780823003",
+      "video": "qc3_b.mp4",
+      "cover": "covers/qc3.jpg",
+      "ig_caption": "会社に「QC検定3級取れ」って言われて、分厚い参考書とにらめっこしてる人いません?\n今はスキマ時間にスマホで対策する時代です。無料で始められます。\nApp Storeで「QC検定3級」で検索。\n#QC検定 #QC検定3級 #品質管理 #資格 #勉強垢 #社会人",
+      "threads_text": "会社に「QC検定取れ」って言われた人いません?\n参考書買って満足しがちだけど、今は通勤中にスマホで対策できます。無料で始められるので、合う合わないを見るだけでも。\nhttps://apps.apple.com/jp/app/id6780823003"
+    },
+    {
+      "app": "消防設備士乙6B",
+      "type": "shoubo",
+      "appstore_url": "https://apps.apple.com/jp/app/id6783586555",
+      "video": "otsu6_b.mp4",
+      "cover": "covers/otsu6.jpg",
+      "ig_caption": "ビルメンで乙6まだの人、テキスト買ったままロッカーで寝てませんか?\n今は休憩の10分にスマホで対策する時代。無料で始められます。\nApp Storeで「消防設備士 乙6」で検索。\n#消防設備士 #乙6 #ビルメン #設備管理 #資格 #国家資格",
+      "threads_text": "ビルメンで乙6まだの人いません?\nテキスト買って満足して終わりがちだけど、今は休憩中にスマホで対策できます。無料で始められます。\nhttps://apps.apple.com/jp/app/id6783586555"
+    },
+    {
+      "app": "甲4B",
+      "type": "shoubo",
+      "appstore_url": "https://apps.apple.com/jp/app/id6786774938",
+      "video": "koushu4_b.mp4",
+      "cover": "covers/koushu4.jpg",
+      "ig_caption": "「甲4、いつか取る」って言ってた人、そのいつかもう何ヶ月経ちました?\n今は休憩の10分にスマホで対策する時代。無料で始められます。\nApp Storeで「消防設備士 甲4」で検索。\n#消防設備士 #甲種4類 #甲4 #消防設備 #資格 #国家資格",
+      "threads_text": "「甲4いつか取る」って言ってた人、そのいつか、もう何ヶ月経ちました?\n今は休憩中にスマホで対策する時代です。無料で始められるのでまず今日だけでも。\nhttps://apps.apple.com/jp/app/id6786774938"
+    }
+  ]
 }
