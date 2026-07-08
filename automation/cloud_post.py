@@ -124,12 +124,21 @@ for i in range(IG_PER_RUN):
     if ok: ok_count += 1
 
 # YouTube: 新規chなので seq%3==0 の起動のみ1本(≈2-3本/日)。secrets未設定ならskip。
-if os.environ.get("YT_REFRESH_TOKEN") and seq % 3 == 0:
+# 重複防止: GitHubスケジューラの溜め打ちで同一時刻に複数run→同じseq→同じ動画を連投した事故(2026-07-09)対策。
+# state.jsonのlast_yt_seqと同じスロットならskip。workflow側でstate.jsonをcommitして永続化。
+STATE_PATH = os.path.join(HERE, "state.json")
+try: STATE = json.load(open(STATE_PATH))
+except Exception: STATE = {}
+yt_slot_done = STATE.get("last_yt_seq") == seq
+if os.environ.get("YT_REFRESH_TOKEN") and seq % 3 == 0 and not yt_slot_done:
     yp = POSTS[(seq // 3) % N]
     ok, val = with_retry(lambda p=yp: publish_youtube(p))
     results.append({"ch": "youtube", "app": yp.get("app"), "ok": ok, ("id" if ok else "err"): val})
     print(f"  youtube[{yp.get('app')}]: {'OK ' + str(val) if ok else 'FAIL ' + str(val)}")
-    if ok: ok_count += 1
+    if ok:
+        ok_count += 1
+        STATE["last_yt_seq"] = seq
+        json.dump(STATE, open(STATE_PATH, "w"))
 
 print("RESULT", json.dumps(results, ensure_ascii=False))
 # 全滅したら赤(=気づける)。一部失敗は許容(他は投稿済)だがログには残す。
