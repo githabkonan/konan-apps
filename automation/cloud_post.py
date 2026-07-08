@@ -6,7 +6,8 @@
 - Instagram = 動画 Reel + cover(=動画内のApp Store検索フレーム。顔なし)
 - 媒体ごとに独立して成否判定+リトライ。失敗したら exit 1(Actionが赤=気づける)
 - ローテは「JST日付×24 + 時」で決定的=状態ファイル不要(毎時で別アプリに回る)
-- トークン: GitHub Secrets(env) IG_USER_ID / IG_TOKEN / THREADS_USER_ID / THREADS_ACCESS_TOKEN
+- トークン: GitHub Secrets(env) IG_USER_ID / IG_TOKEN / THREADS_USER_ID / THREADS_ACCESS_TOKEN / YT_CLIENT_ID / YT_CLIENT_SECRET / YT_REFRESH_TOKEN
+- YouTube = Shorts動画(公式API・2026-07-07監査承認済=公開可)。新規chスパム回避で seq%3==0 の起動のみ1本(≈2-3本/日)
 """
 import json, os, sys, time, datetime, urllib.parse, urllib.request
 
@@ -65,6 +66,30 @@ def publish_instagram(post):
     return _post(f"{B}/{ig}/media_publish", {"creation_id": cid, "access_token": tok}).get("id")
 
 
+def publish_youtube(post):
+    """Shorts動画を公開アップロード(resumable)。監査承認済みクライアント。"""
+    import http.client
+    cid_ = os.environ["YT_CLIENT_ID"]; sec = os.environ["YT_CLIENT_SECRET"]; ref = os.environ["YT_REFRESH_TOKEN"]
+    tok = _post("https://oauth2.googleapis.com/token",
+                {"client_id": cid_, "client_secret": sec, "refresh_token": ref, "grant_type": "refresh_token"})["access_token"]
+    video_url = f"{BASE}/{post['video']}"
+    data = urllib.request.urlopen(video_url, timeout=180).read()
+    title = post.get("yt_title") or (post["ig_caption"].split("\n")[0][:95] + " #shorts")
+    desc = post.get("yt_desc") or (post["ig_caption"] + "\n" + post.get("appstore_url", ""))
+    meta = json.dumps({"snippet": {"title": title[:100], "description": desc[:4900], "categoryId": "27"},
+                       "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False}}).encode()
+    req = urllib.request.Request(
+        "https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status",
+        data=meta, method="POST",
+        headers={"Authorization": f"Bearer {tok}", "Content-Type": "application/json; charset=UTF-8",
+                 "X-Upload-Content-Length": str(len(data)), "X-Upload-Content-Type": "video/mp4"})
+    up_url = urllib.request.urlopen(req, timeout=60).headers["Location"]
+    req2 = urllib.request.Request(up_url, data=data, method="PUT",
+                                  headers={"Authorization": f"Bearer {tok}", "Content-Type": "video/mp4"})
+    vid = json.load(urllib.request.urlopen(req2, timeout=600))["id"]
+    return f"https://youtube.com/shorts/{vid}"
+
+
 def with_retry(fn, attempts=2):
     last = None
     for i in range(attempts):
@@ -96,6 +121,14 @@ for i in range(IG_PER_RUN):
     ok, val = with_retry(lambda p=ip: publish_instagram(p))
     results.append({"ch": "instagram", "app": ip.get("app"), "ok": ok, ("id" if ok else "err"): val})
     print(f"  instagram[{ip.get('app')}]: {'OK ' + str(val) if ok else 'FAIL ' + str(val)}")
+    if ok: ok_count += 1
+
+# YouTube: 新規chなので seq%3==0 の起動のみ1本(≈2-3本/日)。secrets未設定ならskip。
+if os.environ.get("YT_REFRESH_TOKEN") and seq % 3 == 0:
+    yp = POSTS[(seq // 3) % N]
+    ok, val = with_retry(lambda p=yp: publish_youtube(p))
+    results.append({"ch": "youtube", "app": yp.get("app"), "ok": ok, ("id" if ok else "err"): val})
+    print(f"  youtube[{yp.get('app')}]: {'OK ' + str(val) if ok else 'FAIL ' + str(val)}")
     if ok: ok_count += 1
 
 print("RESULT", json.dumps(results, ensure_ascii=False))
