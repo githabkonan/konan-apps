@@ -123,21 +123,26 @@ for i in range(IG_PER_RUN):
     print(f"  instagram[{ip.get('app')}]: {'OK ' + str(val) if ok else 'FAIL ' + str(val)}")
     if ok: ok_count += 1
 
-# YouTube: 新規chなので seq%3==0 の起動のみ1本(≈2-3本/日)。secrets未設定ならskip。
-# 重複防止: GitHubスケジューラの溜め打ちで同一時刻に複数run→同じseq→同じ動画を連投した事故(2026-07-09)対策。
-# state.jsonのlast_yt_seqと同じスロットならskip。workflow側でstate.jsonをcommitして永続化。
+# YouTube: 最優秀チャンネル(初速で最高views)なので毎runに1本、1日上限まで投稿。
+# 上限=YT APIのquota(10,000units/日 ÷ videos.insert 1,600 = 6本/日)の安全圏5本。
+# state.jsonで日次カウンタ管理(日付変わったらリセット)+同一seqの二重投稿防止。
+YT_MAX_PER_DAY = int(os.environ.get("YT_MAX_PER_DAY", "5"))
 STATE_PATH = os.path.join(HERE, "state.json")
 try: STATE = json.load(open(STATE_PATH))
 except Exception: STATE = {}
-yt_slot_done = STATE.get("last_yt_seq") == seq
-if os.environ.get("YT_REFRESH_TOKEN") and seq % 3 == 0 and not yt_slot_done:
-    yp = POSTS[(seq // 3) % N]
+today = now.date().isoformat()
+if STATE.get("yt_date") != today:
+    STATE["yt_date"] = today; STATE["yt_count"] = 0; STATE["last_yt_seq"] = None
+yt_done = (STATE.get("last_yt_seq") == seq) or (STATE.get("yt_count", 0) >= YT_MAX_PER_DAY)
+if os.environ.get("YT_REFRESH_TOKEN") and not yt_done:
+    yp = POSTS[(seq + STATE.get("yt_count", 0)) % N]  # 日内で別動画に回す
     ok, val = with_retry(lambda p=yp: publish_youtube(p))
     results.append({"ch": "youtube", "app": yp.get("app"), "ok": ok, ("id" if ok else "err"): val})
-    print(f"  youtube[{yp.get('app')}]: {'OK ' + str(val) if ok else 'FAIL ' + str(val)}")
+    print(f"  youtube[{yp.get('app')}] ({STATE.get('yt_count',0)+1}/{YT_MAX_PER_DAY}): {'OK ' + str(val) if ok else 'FAIL ' + str(val)}")
     if ok:
         ok_count += 1
         STATE["last_yt_seq"] = seq
+        STATE["yt_count"] = STATE.get("yt_count", 0) + 1
         json.dump(STATE, open(STATE_PATH, "w"))
 
 print("RESULT", json.dumps(results, ensure_ascii=False))
