@@ -106,44 +106,81 @@ def with_retry(fn, attempts=2):
 results = []
 ok_count = 0
 
+# ---- 重複投稿ガード(2026-07-10 規約リスク対策) ----
+# YT: 同一ファイルの再アップはスパム/再利用コンテンツ判定リスク(2026年Shorts検出強化)→ 同じ動画は一度きり。
+# IG/Threads: 同一物の高頻度再投稿は減速/スパム様 → 1動画あたり72hクールダウン。
+STATE_PATH = os.path.join(HERE, "state.json")
+try: STATE = json.load(open(STATE_PATH))
+except Exception: STATE = {}
+HIST = STATE.setdefault("hist", {})          # {platform: {video: iso_ts}}
+YT_POSTED = STATE.setdefault("yt_posted", [])  # YTに投稿済みの動画(恒久)
+COOLDOWN_H = float(os.environ.get("REPOST_COOLDOWN_H", "72"))
+
+def save_state():
+    json.dump(STATE, open(STATE_PATH, "w"))
+
+def cooled(platform, post):
+    ts = HIST.get(platform, {}).get(post.get("video", post.get("app")), "")
+    if not ts: return True
+    try:
+        last = datetime.datetime.fromisoformat(ts)
+        return (now - last).total_seconds() >= COOLDOWN_H * 3600
+    except Exception: return True
+
+def mark(platform, post):
+    HIST.setdefault(platform, {})[post.get("video", post.get("app"))] = now.isoformat()
+    save_state()
+
+def pick(platform, start_idx):
+    """start_idxから順に、クールダウン明けの動画を探す。全滅ならNone(=見送り)。"""
+    for k in range(N):
+        p = POSTS[(start_idx + k) % N]
+        if cooled(platform, p): return p
+    return None
+
 # Threads: 1起動で別アプリを複数本(rotation: seq*K+i)。間隔を空けて連投感を緩和。
 for i in range(THREADS_PER_RUN):
-    tp = POSTS[(seq * THREADS_PER_RUN + i) % N]
+    tp = pick("threads", seq * THREADS_PER_RUN + i)
+    if tp is None:
+        print("  threads: 全動画クールダウン中=見送り"); break
     ok, val = with_retry(lambda p=tp: publish_threads(p))
     results.append({"ch": "threads", "app": tp.get("app"), "ok": ok, ("id" if ok else "err"): val})
     print(f"  threads[{tp.get('app')}]: {'OK ' + str(val) if ok else 'FAIL ' + str(val)}")
-    if ok: ok_count += 1
+    if ok: ok_count += 1; mark("threads", tp)
     if i < THREADS_PER_RUN - 1: time.sleep(45)
 
 # Instagram: 25/日上限なので1本(rotation: seq)
 for i in range(IG_PER_RUN):
-    ip = POSTS[(seq + i) % N]
+    ip = pick("instagram", seq + i)
+    if ip is None:
+        print("  instagram: 全動画クールダウン中=見送り"); break
     ok, val = with_retry(lambda p=ip: publish_instagram(p))
     results.append({"ch": "instagram", "app": ip.get("app"), "ok": ok, ("id" if ok else "err"): val})
     print(f"  instagram[{ip.get('app')}]: {'OK ' + str(val) if ok else 'FAIL ' + str(val)}")
-    if ok: ok_count += 1
+    if ok: ok_count += 1; mark("instagram", ip)
 
-# YouTube: 最優秀チャンネル(初速で最高views)なので毎runに1本、1日上限まで投稿。
-# 上限=YT APIのquota(10,000units/日 ÷ videos.insert 1,600 = 6本/日)の安全圏5本。
-# state.jsonで日次カウンタ管理(日付変わったらリセット)+同一seqの二重投稿防止。
+# YouTube: 最優秀チャンネルだが同一動画の再アップ=スパム/重複判定リスク → 各動画一度きり。
+# 未投稿の動画が無くなったら投稿しない(=新作が投入されると自動再開)。
 YT_MAX_PER_DAY = int(os.environ.get("YT_MAX_PER_DAY", "5"))
-STATE_PATH = os.path.join(HERE, "state.json")
-try: STATE = json.load(open(STATE_PATH))
-except Exception: STATE = {}
 today = now.date().isoformat()
 if STATE.get("yt_date") != today:
     STATE["yt_date"] = today; STATE["yt_count"] = 0; STATE["last_yt_seq"] = None
 yt_done = (STATE.get("last_yt_seq") == seq) or (STATE.get("yt_count", 0) >= YT_MAX_PER_DAY)
 if os.environ.get("YT_REFRESH_TOKEN") and not yt_done:
-    yp = POSTS[(seq + STATE.get("yt_count", 0)) % N]  # 日内で別動画に回す
-    ok, val = with_retry(lambda p=yp: publish_youtube(p))
-    results.append({"ch": "youtube", "app": yp.get("app"), "ok": ok, ("id" if ok else "err"): val})
-    print(f"  youtube[{yp.get('app')}] ({STATE.get('yt_count',0)+1}/{YT_MAX_PER_DAY}): {'OK ' + str(val) if ok else 'FAIL ' + str(val)}")
-    if ok:
-        ok_count += 1
-        STATE["last_yt_seq"] = seq
-        STATE["yt_count"] = STATE.get("yt_count", 0) + 1
-        json.dump(STATE, open(STATE_PATH, "w"))
+    yp = next((POSTS[(seq + k) % N] for k in range(N)
+               if POSTS[(seq + k) % N].get("video") not in YT_POSTED), None)
+    if yp is None:
+        print("  youtube: 全動画投稿済み(重複再アップ回避)=新作待ち")
+    else:
+        ok, val = with_retry(lambda p=yp: publish_youtube(p))
+        results.append({"ch": "youtube", "app": yp.get("app"), "ok": ok, ("id" if ok else "err"): val})
+        print(f"  youtube[{yp.get('app')}] ({STATE.get('yt_count',0)+1}/{YT_MAX_PER_DAY}): {'OK ' + str(val) if ok else 'FAIL ' + str(val)}")
+        if ok:
+            ok_count += 1
+            STATE["last_yt_seq"] = seq
+            STATE["yt_count"] = STATE.get("yt_count", 0) + 1
+            YT_POSTED.append(yp.get("video"))
+            save_state()
 
 print("RESULT", json.dumps(results, ensure_ascii=False))
 # 全滅したら赤(=気づける)。一部失敗は許容(他は投稿済)だがログには残す。

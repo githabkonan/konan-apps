@@ -1,1 +1,18 @@
-{"yt_date": "2026-07-10", "yt_count": 3, "last_yt_seq": 4569}
+{
+ "yt_date": "2026-07-10",
+ "yt_count": 3,
+ "last_yt_seq": 4569,
+ "yt_posted": [
+  "koushu4_news.mp4",
+  "news_jieitai.mp4",
+  "flex_nisa.mp4",
+  "kuma_news.mp4",
+  "qc2_news.mp4",
+  "qc3_news.mp4",
+  "otsu6_news.mp4",
+  "jieitai_saiyou.mp4",
+  "rikuso_news.mp4",
+  "kanbu_news.mp4"
+ ],
+ "hist": {}
+}
