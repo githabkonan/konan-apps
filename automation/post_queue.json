@@ -126,6 +126,42 @@
       "cover": "covers/jsdf_hook_shoninkyu.jpg",
       "ig_caption": "自衛官の初任給、いま月22万円を超えてるの知ってる？\n手当も30種類あって、新設や増額が続いてる。\n受かる人はもうスマホでスキマ時間に過去問やってるだけ。\nApp Storeで「自衛官 試験対策」で検索。\n#自衛隊 #自衛官 #自衛官候補生 #試験対策",
       "threads_text": "自衛官の初任給、いま月22万円超えてるの知ってる？手当も30種類ある。\n受かる人はもうスマホでスキマ時間に過去問やってる。\nhttps://apps.apple.com/jp/app/id6772919770\n#自衛隊 #自衛官"
+    },
+    {
+      "app": "QC2級(時事ネタ・スズキリコール)",
+      "type": "qc",
+      "appstore_url": "https://apps.apple.com/jp/app/id6788352237",
+      "video": "qc2_recall.mp4",
+      "cover": "covers/qc2_recall.jpg",
+      "ig_caption": "スズキの50万台リコール、ニュース見た？\nああいう品質問題を防ぐのが品質管理。その入り口がQC検定で、会社に取れって言われる人も増えてる。\n受かる人はもうスマホで対策問題やってるだけ。\nApp Storeで「QC検定2級」で検索。\n#QC検定 #品質管理 #資格 #試験対策",
+      "threads_text": "スズキの50万台リコール見た？ああいうのを防ぐのが品質管理で、その入り口がQC検定。\n受かる人はもうスマホで対策問題やってる。\nhttps://apps.apple.com/jp/app/id6788352237\n#QC検定 #品質管理"
+    },
+    {
+      "app": "QC3級(時事ネタ・スズキリコール)",
+      "type": "qc",
+      "appstore_url": "https://apps.apple.com/jp/app/id6780823003",
+      "video": "qc3_recall.mp4",
+      "cover": "covers/qc3_recall.jpg",
+      "ig_caption": "スズキの50万台リコール、見た？品質問題ってどの会社も他人事じゃない。\nだから会社にQC検定3級取れって言われるんよね。\n受かる人はもうスマホで対策問題やってるだけ。\nApp Storeで「QC検定3級」で検索。\n#QC検定 #QC検定3級 #品質管理 #資格",
+      "threads_text": "スズキの50万台リコール見た？品質問題はどの会社も他人事じゃない。会社にQC検定取れって言われた人、今はスマホで対策できるよ。\nhttps://apps.apple.com/jp/app/id6780823003\n#QC検定 #品質管理"
+    },
+    {
+      "app": "甲4(時事ネタ・機内モバ電)",
+      "type": "shoubo",
+      "appstore_url": "https://apps.apple.com/jp/app/id6786774938",
+      "video": "koushu4_kinai.mp4",
+      "cover": "covers/koushu4_kinai.jpg",
+      "ig_caption": "7月8日から、飛行機のモバイルバッテリーのルールがまた厳しくなったの知ってる？収納棚に入れるのNG。それだけ電池の火事が増えてる。\n建物でああいう火事をいち早く検知するのが自動火災報知設備で、工事・点検は消防設備士の独占業務。\n受かる人はもうスマホで過去問やってるだけ。\nApp Storeで「消防設備士 甲4」で検索。\n#消防設備士 #甲4 #資格 #国家資格",
+      "threads_text": "7/8から飛行機のモバ電ルールまた厳しくなったの知ってる？それだけ電池火災が増えてる。建物で守るのは自動火災報知設備＝消防設備士の独占業務。\n受かる人はもうスマホで過去問やってる。\nhttps://apps.apple.com/jp/app/id6786774938\n#消防設備士 #甲4"
+    },
+    {
+      "app": "乙6(時事ネタ・機内モバ電)",
+      "type": "shoubo",
+      "appstore_url": "https://apps.apple.com/jp/app/id6783586555",
+      "video": "otsu6_kinai.mp4",
+      "cover": "covers/otsu6_kinai.jpg",
+      "ig_caption": "飛行機のモバイルバッテリーのルール、7月8日からまた厳しくなったの知ってる？電池の火事がそれだけ増えてるんよ。\nそういう火事にまず備えるのが消火器で、点検・整備は消防設備士 乙6の仕事。ビルメンで需要伸びてる。\n受かる人はもうスマホで対策問題やってるだけ。\nApp Storeで「消防設備士 乙6」で検索。\n#消防設備士 #乙6 #資格 #ビルメン",
+      "threads_text": "飛行機のモバ電ルール、7/8からまた厳しくなった。電池火災がそれだけ増えてる。消火器の点検・整備は消防設備士乙6の仕事でビルメン需要増。\n受かる人はもうスマホで対策してる。\nhttps://apps.apple.com/jp/app/id6783586555\n#消防設備士 #乙6"
     }
   ]
 }
