@@ -185,6 +185,10 @@ if os.environ.get("YT_REFRESH_TOKEN") and not yt_done:
             save_state()
 
 print("RESULT", json.dumps(results, ensure_ascii=False))
-# 全滅したら赤(=気づける)。一部失敗は許容(他は投稿済)だがログには残す。
-if ok_count == 0:
+# exit 1 は「試行したのに全失敗」の本物の障害だけ(=誤アラーム排除)。
+# 全クールダウン/上限=results空=正常な見送り→exit 0。一部失敗は許容(他は投稿済)。
+if results and ok_count == 0:
+    print("ALERT: 全投稿試行が失敗")
     sys.exit(1)
+if not results:
+    print("no-op: 全動画クールダウン/上限=正常な見送り")
