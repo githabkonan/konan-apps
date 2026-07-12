@@ -180,6 +180,42 @@
       "cover": "covers/lc_reveal.jpg",
       "ig_caption": "熱中症の救急搬送、先週だけで全国1,370人。去年は年間10万人超え。\n体調管理、もう気合いじゃ無理な暑さなんよ。\n今は睡眠も食事も運動も、スマホでまとめて管理できる。無料。\nApp Storeで「ライフコントロール」で検索。\n#熱中症対策 #体調管理 #健康管理アプリ",
       "threads_text": "熱中症搬送、先週だけで全国1,370人だって。もう気合いじゃ無理な暑さ。\n睡眠・食事・運動、今はスマホでまとめて管理できるよ。無料。\nhttps://apps.apple.com/jp/app/id6782221037\n#熱中症対策 #体調管理"
+    },
+    {
+      "app": "入隊(原本1万人・v3)",
+      "type": "jsdf",
+      "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
+      "video": "jieitai_v3.mp4",
+      "cover": "covers/jieitai_saiyou.jpg",
+      "ig_caption": "自衛官の採用、今年ついに1万人を超えたの知ってた？令和7年度、3年ぶりの大台なんよ。\n受かる人はもうスマホでスキマ時間に過去問やってるだけ。\nApp Storeで「自衛官 試験対策」で検索。\n#自衛官 #自衛官候補生 #自衛隊 #試験対策 #勉強垢",
+      "threads_text": "自衛官の採用、今年ついに1万人超え。令和7年度は3年ぶりの大台。国が本気で人集めにきてる時期。\n受かる人はもうスマホでスキマ時間に過去問やってるだけ。\nhttps://apps.apple.com/jp/app/id6772919770\n#自衛官 #試験対策"
+    },
+    {
+      "app": "陸曹(原本1万人・v3)",
+      "type": "jsdf",
+      "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
+      "video": "rikuso_v3.mp4",
+      "cover": "covers/rikuso_saiyou.jpg",
+      "ig_caption": "自衛官の採用、今年1万人超えたの知ってた？人が増える=陸曹に上がるチャンスも動く時期。\n上がる人はもうスマホでスキマ時間に昇任対策やってるだけ。\nApp Storeで「陸曹昇任 試験対策」で検索。\n#陸曹 #昇任試験 #自衛隊 #試験対策",
+      "threads_text": "自衛官の採用、今年1万人超え。人が増える=陸曹に上がるチャンスも動く時期。\n上がる人はもうスマホでスキマ時間に昇任対策やってるだけ。\nhttps://apps.apple.com/jp/app/id6774074604\n#陸曹 #昇任試験"
+    },
+    {
+      "app": "QC2級(時事スズキ・v3)",
+      "type": "qc",
+      "appstore_url": "https://apps.apple.com/jp/app/id6788352237",
+      "video": "qc2_recall_v3.mp4",
+      "cover": "covers/qc2_recall.jpg",
+      "ig_caption": "スズキの50万台リコール、ニュース見た？\nああいう品質問題を防ぐのが品質管理。その入り口がQC検定で、会社に取れって言われる人も増えてる。\n受かる人はもうスマホで対策問題やってるだけ。\nApp Storeで「QC検定2級」で検索。\n#QC検定 #品質管理 #資格 #試験対策",
+      "threads_text": "スズキの50万台リコール見た？ああいうのを防ぐのが品質管理で、その入り口がQC検定。\n受かる人はもうスマホで対策問題やってる。\nhttps://apps.apple.com/jp/app/id6788352237\n#QC検定 #品質管理"
+    },
+    {
+      "app": "甲4(時事機内・v3)",
+      "type": "shoubo",
+      "appstore_url": "https://apps.apple.com/jp/app/id6786774938",
+      "video": "koushu4_kinai_v3.mp4",
+      "cover": "covers/koushu4_kinai.jpg",
+      "ig_caption": "7月8日から、飛行機のモバイルバッテリーのルールがまた厳しくなったの知ってる？収納棚に入れるのNG。それだけ電池の火事が増えてる。\n建物でああいう火事をいち早く検知するのが自動火災報知設備で、工事・点検は消防設備士の独占業務。\n受かる人はもうスマホで過去問やってるだけ。\nApp Storeで「消防設備士 甲4」で検索。\n#消防設備士 #甲4 #資格 #国家資格",
+      "threads_text": "7/8から飛行機のモバ電ルールまた厳しくなったの知ってる？それだけ電池火災が増えてる。建物で守るのは自動火災報知設備＝消防設備士の独占業務。\n受かる人はもうスマホで過去問やってる。\nhttps://apps.apple.com/jp/app/id6786774938\n#消防設備士 #甲4"
     }
   ]
 }
