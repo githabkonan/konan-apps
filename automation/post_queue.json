@@ -1,221 +1,239 @@
 {
-  "video_base": "https://githabkonan.github.io/konan-apps/videos",
-  "posts": [
-    {
-      "app": "甲4(時事ネタ)",
-      "type": "shoubo",
-      "appstore_url": "https://apps.apple.com/jp/app/id6786774938",
-      "video": "koushu4_news.mp4",
-      "cover": "covers/koushu4.jpg",
-      "ig_caption": "電車内のモバイルバッテリー発火、最近ニュース多いよね。ああいう火事をいち早く検知するのが自動火災報知設備で、工事や点検は消防設備士の独占業務。人手不足で需要も伸びてる。\n受かる人はもうスマホで過去問やってるだけ。\nApp Storeで「消防設備士 甲4」で検索。\n#消防設備士 #甲4 #資格 #国家資格 #試験対策",
-      "threads_text": "電車のモバイルバッテリー発火、最近多いよね。ああいう火事をいち早く検知する自動火災報知設備、工事・点検は消防設備士の独占業務で人手不足。\n受かる人はもうスマホで過去問やってる。\nhttps://apps.apple.com/jp/app/id6786774938\n#消防設備士 #甲4 #資格"
-    },
-    {
-      "app": "入隊(時事ネタ)",
-      "type": "jsdf",
-      "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
-      "video": "news_jieitai.mp4",
-      "cover": "covers/news_jieitai.jpg",
-      "ig_caption": "自衛隊の給料、いま結構変わってるの知ってる？初任給が上がって、6年で総額120万円もらえる制度までできた。\n受かる人はもうスマホで過去問やってるだけ。\nApp Storeで「自衛官 試験対策」で検索。\n#自衛官 #一般曹候補生 #自衛隊 #試験対策 #勉強垢",
-      "threads_text": "自衛隊の給料いま結構変わってる。初任給up、6年で総額120万の新給付。国が本気で人集めにきてる時期。\n受かる人はもうスマホで過去問やってるだけ。\nhttps://apps.apple.com/jp/app/id6772919770\n#自衛官 #試験対策"
-    },
-    {
-      "app": "陸曹(原本)",
-      "type": "jsdf",
-      "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
-      "video": "rikuso_saiyou.mp4",
-      "cover": "covers/rikuso_saiyou.jpg",
-      "ig_caption": "自衛官の採用、今年1万人超えたの知ってた？人が増える=陸曹に上がるチャンスも動く時期。\n上がる人はもうスマホでスキマ時間に昇任対策やってるだけ。\nApp Storeで「陸曹昇任 試験対策」で検索。\n#陸曹 #昇任試験 #自衛隊 #試験対策",
-      "threads_text": "自衛官の採用、今年1万人超え。人が増える=陸曹に上がるチャンスも動く時期。\n上がる人はもうスマホでスキマ時間に昇任対策やってるだけ。\nhttps://apps.apple.com/jp/app/id6774074604\n#陸曹 #昇任試験"
-    },
-    {
-      "app": "幹部(原本)",
-      "type": "jsdf",
-      "appstore_url": "https://apps.apple.com/jp/app/id6776236258",
-      "video": "kanbu_saiyou.mp4",
-      "cover": "covers/kanbu_saiyou.jpg",
-      "ig_caption": "自衛官の採用、今年1万人超えたの知ってた？大卒なら最初から幹部を狙える。\n受かる人はもうスマホでスキマ時間に過去問やってるだけ。\nApp Storeで「幹部候補生 試験対策」で検索。\n#幹部候補生 #自衛隊 #試験対策 #大学生",
-      "threads_text": "自衛官の採用、今年1万人超え。大卒なら最初から幹部を狙える。\n受かる人はもうスマホでスキマ時間に過去問やってるだけ。\nhttps://apps.apple.com/jp/app/id6776236258\n#幹部候補生 #試験対策"
-    },
-    {
-      "app": "散財RPG(NISA時事)",
-      "type": "game",
-      "appstore_url": "https://apps.apple.com/jp/app/id6787874159",
-      "video": "flex_nisa.mp4",
-      "cover": "covers/flex_nisa.jpg",
-      "ig_caption": "NISAで節約ばっかりの毎日、たまには10億円を1日で溶かす豪遊も体験しません?\n散財シミュレーションRPG、無料で遊べます。\nApp Storeで「散財」で検索。\n#散財 #ゲーム #シミュレーション #NISA #お金 #暇つぶし #無料ゲーム",
-      "threads_text": "NISAで節約してる反動で、10億円を1日で使い切るゲーム作られてるの面白すぎる。株もFXも豪遊も全部シミュレーション。無料。\nhttps://apps.apple.com/jp/app/id6787874159"
-    },
-    {
-      "app": "狩猟テスト(時事)",
-      "type": "news_test",
-      "appstore_url": "",
-      "video": "kuma_news.mp4",
-      "cover": "",
-      "ig_caption": "クマの出没、今年も過去最多ペースなの知ってました?\n去年は5万件超、その影響で狩猟免許の受験者が急増中(静岡は前年のほぼ2倍)。\n試験は知識+技能の2本立てで年に数回だけ。\n#クマ #狩猟免許 #狩猟 #ニュース #雑学 #資格",
-      "threads_text": "クマの出没が今年も過去最多ペース。その影響で狩猟免許の受験者が急増してるらしい(静岡は前年のほぼ2倍)。\n試験があるの知らなかった人、結構いそう。"
-    },
-    {
-      "app": "QC検定2級(時事)",
-      "type": "news",
-      "appstore_url": "https://apps.apple.com/jp/app/id6788352237",
-      "video": "qc2_news.mp4",
-      "cover": "covers/qc2.jpg",
-      "ig_caption": "製品リコールのニュース、最近やたら多いと思いません?\nああいうのを防ぐのが品質管理。その入り口がQC検定で、会社に取れと言われる人が増えてます。今はスマホで対策できます。\nApp Storeで「QC検定2級」で検索。\n#QC検定 #QC検定2級 #品質管理 #資格 #勉強垢",
-      "threads_text": "製品リコール最近多いよね。ああいうの防ぐのが品質管理で、その入り口がQC検定。会社に取れって言われる人増えてる。今はスマホで対策できる。\nhttps://apps.apple.com/jp/app/id6788352237"
-    },
-    {
-      "app": "QC検定3級(時事)",
-      "type": "news",
-      "appstore_url": "https://apps.apple.com/jp/app/id6780823003",
-      "video": "qc3_news.mp4",
-      "cover": "covers/qc3.jpg",
-      "ig_caption": "製品リコールのニュース、最近やたら多いと思いません?\n防ぐのは品質管理。その入り口がQC検定3級。会社に取れと言われた人、スマホで対策できます。\nApp Storeで「QC検定3級」で検索。\n#QC検定 #QC検定3級 #品質管理 #資格 #勉強垢",
-      "threads_text": "製品リコール最近多い。防ぐのが品質管理で入り口がQC検定3級。会社に取れって言われた人、今はスマホで対策できます。\nhttps://apps.apple.com/jp/app/id6780823003"
-    },
-    {
-      "app": "消防設備士乙6(時事)",
-      "type": "news",
-      "appstore_url": "https://apps.apple.com/jp/app/id6783586555",
-      "video": "otsu6_news.mp4",
-      "cover": "covers/otsu6.jpg",
-      "ig_caption": "モバイルバッテリーの発火事故、ニュースで増えてますよね。\nまず備えるのが消火器。その点検・整備は消防設備士 乙6の仕事で、ビルメンで需要が伸びてます。今はスマホで対策できます。\nApp Storeで「消防設備士 乙6」で検索。\n#消防設備士 #乙6 #ビルメン #設備管理 #資格 #国家資格",
-      "threads_text": "モバ電の発火事故、最近ニュースで多い。ああいうのに備える消火器の点検は消防設備士乙6の仕事。ビルメンで需要伸びてます。今はスマホで対策可。\nhttps://apps.apple.com/jp/app/id6783586555"
-    },
-    {
-      "app": "入隊採用増(1万人超え)",
-      "type": "jsdf",
-      "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
-      "video": "jieitai_saiyou.mp4",
-      "cover": "covers/jieitai_saiyou.jpg",
-      "ig_caption": "自衛官の採用、今年ついに1万人を超えたの知ってた？令和7年度、3年ぶりの大台なんよ。\n受かる人はもうスマホでスキマ時間に過去問やってるだけ。\nApp Storeで「自衛官 試験対策」で検索。\n#自衛官 #自衛官候補生 #自衛隊 #試験対策 #勉強垢",
-      "threads_text": "自衛官の採用、今年ついに1万人超え。令和7年度は3年ぶりの大台。国が本気で人集めにきてる時期。\n受かる人はもうスマホでスキマ時間に過去問やってるだけ。\nhttps://apps.apple.com/jp/app/id6772919770\n#自衛官 #試験対策"
-    },
-    {
-      "app": "予備自(原本)",
-      "type": "news",
-      "appstore_url": "https://apps.apple.com/jp/app/id6778490302",
-      "video": "yobi_saiyou.mp4",
-      "cover": "covers/yobi_saiyou.jpg",
-      "ig_caption": "自衛官の採用、今年1万人超えたの知ってた？社会人でも入れる予備自衛官補も今が狙い目。\n受かる人はもうスマホでスキマ時間に過去問やってるだけ。\nApp Storeで「予備自衛官補 試験対策」で検索。\n#予備自衛官補 #予備自 #社会人 #試験対策",
-      "threads_text": "自衛官の採用、今年1万人超え。社会人でも入れる予備自衛官補も今が狙い目。\n受かる人はもうスマホでスキマ時間に過去問やってるだけ。\nhttps://apps.apple.com/jp/app/id6778490302\n#予備自衛官補 #試験対策"
-    },
-    {
-      "app": "入隊(時事ネタ・一時金34万)",
-      "type": "jsdf",
-      "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
-      "video": "jsdf_hook_ichijikin.mp4",
-      "cover": "covers/jsdf_hook_ichijikin.jpg",
-      "ig_caption": "自衛隊、入隊でもらえる一時金が34万円に増額されたの知ってる？\n22万円から一気に上がった。処遇改善で待遇は毎年変わってる。\n受かる人はもうスマホでスキマ時間に過去問やってるだけ。\nApp Storeで「自衛官 試験対策」で検索。\n#自衛隊 #自衛官 #自衛官候補生 #試験対策",
-      "threads_text": "自衛隊、入隊でもらえる一時金が22万→34万円に増額されたの知ってる？待遇ほんとに変わってる。\n受かる人はもうスマホでスキマ時間に過去問やってる。\nhttps://apps.apple.com/jp/app/id6772919770\n#自衛隊 #自衛官"
-    },
-    {
-      "app": "入隊(時事ネタ・給付120万)",
-      "type": "jsdf",
-      "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
-      "video": "jsdf_hook_kyufu120.mp4",
-      "cover": "covers/jsdf_hook_kyufu120.jpg",
-      "ig_caption": "自衛隊、6年勤めると総額120万円もらえる新制度があるの知ってる？\n寮生活への給付が新設されて、若手の待遇が大きく変わってる。\n受かる人はもうスマホでスキマ時間に過去問やってるだけ。\nApp Storeで「自衛官 試験対策」で検索。\n#自衛隊 #自衛官 #自衛官候補生 #試験対策",
-      "threads_text": "自衛隊、6年勤めると総額120万円もらえる新制度できたの知ってる？若手の待遇、大きく変わってる。\n受かる人はもうスマホで過去問やってる。\nhttps://apps.apple.com/jp/app/id6772919770\n#自衛隊 #自衛官"
-    },
-    {
-      "app": "入隊(時事ネタ・初任給22万)",
-      "type": "jsdf",
-      "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
-      "video": "jsdf_hook_shoninkyu.mp4",
-      "cover": "covers/jsdf_hook_shoninkyu.jpg",
-      "ig_caption": "自衛官の初任給、いま月22万円を超えてるの知ってる？\n手当も30種類あって、新設や増額が続いてる。\n受かる人はもうスマホでスキマ時間に過去問やってるだけ。\nApp Storeで「自衛官 試験対策」で検索。\n#自衛隊 #自衛官 #自衛官候補生 #試験対策",
-      "threads_text": "自衛官の初任給、いま月22万円超えてるの知ってる？手当も30種類ある。\n受かる人はもうスマホでスキマ時間に過去問やってる。\nhttps://apps.apple.com/jp/app/id6772919770\n#自衛隊 #自衛官"
-    },
-    {
-      "app": "QC2級(時事ネタ・スズキリコール)",
-      "type": "qc",
-      "appstore_url": "https://apps.apple.com/jp/app/id6788352237",
-      "video": "qc2_recall.mp4",
-      "cover": "covers/qc2_recall.jpg",
-      "ig_caption": "スズキの50万台リコール、ニュース見た？\nああいう品質問題を防ぐのが品質管理。その入り口がQC検定で、会社に取れって言われる人も増えてる。\n受かる人はもうスマホで対策問題やってるだけ。\nApp Storeで「QC検定2級」で検索。\n#QC検定 #品質管理 #資格 #試験対策",
-      "threads_text": "スズキの50万台リコール見た？ああいうのを防ぐのが品質管理で、その入り口がQC検定。\n受かる人はもうスマホで対策問題やってる。\nhttps://apps.apple.com/jp/app/id6788352237\n#QC検定 #品質管理"
-    },
-    {
-      "app": "QC3級(時事ネタ・スズキリコール)",
-      "type": "qc",
-      "appstore_url": "https://apps.apple.com/jp/app/id6780823003",
-      "video": "qc3_recall.mp4",
-      "cover": "covers/qc3_recall.jpg",
-      "ig_caption": "スズキの50万台リコール、見た？品質問題ってどの会社も他人事じゃない。\nだから会社にQC検定3級取れって言われるんよね。\n受かる人はもうスマホで対策問題やってるだけ。\nApp Storeで「QC検定3級」で検索。\n#QC検定 #QC検定3級 #品質管理 #資格",
-      "threads_text": "スズキの50万台リコール見た？品質問題はどの会社も他人事じゃない。会社にQC検定取れって言われた人、今はスマホで対策できるよ。\nhttps://apps.apple.com/jp/app/id6780823003\n#QC検定 #品質管理"
-    },
-    {
-      "app": "甲4(時事ネタ・機内モバ電)",
-      "type": "shoubo",
-      "appstore_url": "https://apps.apple.com/jp/app/id6786774938",
-      "video": "koushu4_kinai.mp4",
-      "cover": "covers/koushu4_kinai.jpg",
-      "ig_caption": "7月8日から、飛行機のモバイルバッテリーのルールがまた厳しくなったの知ってる？収納棚に入れるのNG。それだけ電池の火事が増えてる。\n建物でああいう火事をいち早く検知するのが自動火災報知設備で、工事・点検は消防設備士の独占業務。\n受かる人はもうスマホで過去問やってるだけ。\nApp Storeで「消防設備士 甲4」で検索。\n#消防設備士 #甲4 #資格 #国家資格",
-      "threads_text": "7/8から飛行機のモバ電ルールまた厳しくなったの知ってる？それだけ電池火災が増えてる。建物で守るのは自動火災報知設備＝消防設備士の独占業務。\n受かる人はもうスマホで過去問やってる。\nhttps://apps.apple.com/jp/app/id6786774938\n#消防設備士 #甲4"
-    },
-    {
-      "app": "乙6(時事ネタ・機内モバ電)",
-      "type": "shoubo",
-      "appstore_url": "https://apps.apple.com/jp/app/id6783586555",
-      "video": "otsu6_kinai.mp4",
-      "cover": "covers/otsu6_kinai.jpg",
-      "ig_caption": "飛行機のモバイルバッテリーのルール、7月8日からまた厳しくなったの知ってる？電池の火事がそれだけ増えてるんよ。\nそういう火事にまず備えるのが消火器で、点検・整備は消防設備士 乙6の仕事。ビルメンで需要伸びてる。\n受かる人はもうスマホで対策問題やってるだけ。\nApp Storeで「消防設備士 乙6」で検索。\n#消防設備士 #乙6 #資格 #ビルメン",
-      "threads_text": "飛行機のモバ電ルール、7/8からまた厳しくなった。電池火災がそれだけ増えてる。消火器の点検・整備は消防設備士乙6の仕事でビルメン需要増。\n受かる人はもうスマホで対策してる。\nhttps://apps.apple.com/jp/app/id6783586555\n#消防設備士 #乙6"
-    },
-    {
-      "app": "散財RPG(時事ネタ・夏ボーナス・v3)",
-      "type": "game",
-      "appstore_url": "https://apps.apple.com/jp/app/id6787874159",
-      "video": "flex_bonus_v3.mp4",
-      "cover": "covers/flex_sanzai.jpg",
-      "ig_caption": "夏のボーナス、平均47万円だってさ。もう出た？\nでも現実は貯金と支払いで消えて、豪遊なんてできないんよね。\nそんな人に神アプリ。10億円を好きなだけ散財できるゲームがある。\nApp Storeで「散財」で検索。\n#ボーナス #散財 #ゲーム #スマホゲーム",
-      "threads_text": "夏のボーナス平均47万円だってさ。でも現実は貯金と支払いで消える。\nそんな人に神アプリ、10億円を好きなだけ散財できるゲームがあるんよ。\nhttps://apps.apple.com/jp/app/id6787874159\n#ボーナス #散財"
-    },
-    {
-      "app": "ライフコントロール(時事ネタ・熱中症)",
-      "type": "health",
-      "appstore_url": "https://apps.apple.com/jp/app/id6782221037",
-      "video": "lc_heat.mp4",
-      "cover": "covers/lc_reveal.jpg",
-      "ig_caption": "熱中症の救急搬送、先週だけで全国1,370人。去年は年間10万人超え。\n体調管理、もう気合いじゃ無理な暑さなんよ。\n今は睡眠も食事も運動も、スマホでまとめて管理できる。無料。\nApp Storeで「ライフコントロール」で検索。\n#熱中症対策 #体調管理 #健康管理アプリ",
-      "threads_text": "熱中症搬送、先週だけで全国1,370人だって。もう気合いじゃ無理な暑さ。\n睡眠・食事・運動、今はスマホでまとめて管理できるよ。無料。\nhttps://apps.apple.com/jp/app/id6782221037\n#熱中症対策 #体調管理"
-    },
-    {
-      "app": "入隊(原本1万人・v3)",
-      "type": "jsdf",
-      "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
-      "video": "jieitai_v3.mp4",
-      "cover": "covers/jieitai_saiyou.jpg",
-      "ig_caption": "自衛官の採用、今年ついに1万人を超えたの知ってた？令和7年度、3年ぶりの大台なんよ。\n受かる人はもうスマホでスキマ時間に過去問やってるだけ。\nApp Storeで「自衛官 試験対策」で検索。\n#自衛官 #自衛官候補生 #自衛隊 #試験対策 #勉強垢",
-      "threads_text": "自衛官の採用、今年ついに1万人超え。令和7年度は3年ぶりの大台。国が本気で人集めにきてる時期。\n受かる人はもうスマホでスキマ時間に過去問やってるだけ。\nhttps://apps.apple.com/jp/app/id6772919770\n#自衛官 #試験対策"
-    },
-    {
-      "app": "陸曹(原本1万人・v3)",
-      "type": "jsdf",
-      "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
-      "video": "rikuso_v3.mp4",
-      "cover": "covers/rikuso_saiyou.jpg",
-      "ig_caption": "自衛官の採用、今年1万人超えたの知ってた？人が増える=陸曹に上がるチャンスも動く時期。\n上がる人はもうスマホでスキマ時間に昇任対策やってるだけ。\nApp Storeで「陸曹昇任 試験対策」で検索。\n#陸曹 #昇任試験 #自衛隊 #試験対策",
-      "threads_text": "自衛官の採用、今年1万人超え。人が増える=陸曹に上がるチャンスも動く時期。\n上がる人はもうスマホでスキマ時間に昇任対策やってるだけ。\nhttps://apps.apple.com/jp/app/id6774074604\n#陸曹 #昇任試験"
-    },
-    {
-      "app": "QC2級(時事スズキ・v3)",
-      "type": "qc",
-      "appstore_url": "https://apps.apple.com/jp/app/id6788352237",
-      "video": "qc2_recall_v3.mp4",
-      "cover": "covers/qc2_recall.jpg",
-      "ig_caption": "スズキの50万台リコール、ニュース見た？\nああいう品質問題を防ぐのが品質管理。その入り口がQC検定で、会社に取れって言われる人も増えてる。\n受かる人はもうスマホで対策問題やってるだけ。\nApp Storeで「QC検定2級」で検索。\n#QC検定 #品質管理 #資格 #試験対策",
-      "threads_text": "スズキの50万台リコール見た？ああいうのを防ぐのが品質管理で、その入り口がQC検定。\n受かる人はもうスマホで対策問題やってる。\nhttps://apps.apple.com/jp/app/id6788352237\n#QC検定 #品質管理"
-    },
-    {
-      "app": "甲4(時事機内・v3)",
-      "type": "shoubo",
-      "appstore_url": "https://apps.apple.com/jp/app/id6786774938",
-      "video": "koushu4_kinai_v3.mp4",
-      "cover": "covers/koushu4_kinai.jpg",
-      "ig_caption": "7月8日から、飛行機のモバイルバッテリーのルールがまた厳しくなったの知ってる？収納棚に入れるのNG。それだけ電池の火事が増えてる。\n建物でああいう火事をいち早く検知するのが自動火災報知設備で、工事・点検は消防設備士の独占業務。\n受かる人はもうスマホで過去問やってるだけ。\nApp Storeで「消防設備士 甲4」で検索。\n#消防設備士 #甲4 #資格 #国家資格",
-      "threads_text": "7/8から飛行機のモバ電ルールまた厳しくなったの知ってる？それだけ電池火災が増えてる。建物で守るのは自動火災報知設備＝消防設備士の独占業務。\n受かる人はもうスマホで過去問やってる。\nhttps://apps.apple.com/jp/app/id6786774938\n#消防設備士 #甲4"
-    }
-  ]
+ "video_base": "https://githabkonan.github.io/konan-apps/videos",
+ "posts": [
+  {
+   "app": "甲4(時事ネタ)",
+   "type": "shoubo",
+   "appstore_url": "https://apps.apple.com/jp/app/id6786774938",
+   "video": "koushu4_news.mp4",
+   "cover": "covers/koushu4.jpg",
+   "ig_caption": "電車内のモバイルバッテリー発火、最近ニュース多いよね。ああいう火事をいち早く検知するのが自動火災報知設備で、工事や点検は消防設備士の独占業務。人手不足で需要も伸びてる。\n受かる人はもうスマホで過去問やってるだけ。\nApp Storeで「消防設備士 甲4」で検索。\n#消防設備士 #甲4 #資格 #国家資格 #試験対策",
+   "threads_text": "電車のモバイルバッテリー発火、最近多いよね。ああいう火事をいち早く検知する自動火災報知設備、工事・点検は消防設備士の独占業務で人手不足。\n受かる人はもうスマホで過去問やってる。\nhttps://apps.apple.com/jp/app/id6786774938\n#消防設備士 #甲4 #資格"
+  },
+  {
+   "app": "入隊(時事ネタ)",
+   "type": "jsdf",
+   "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
+   "video": "news_jieitai.mp4",
+   "cover": "covers/news_jieitai.jpg",
+   "ig_caption": "自衛隊の給料、いま結構変わってるの知ってる？初任給が上がって、6年で総額120万円もらえる制度までできた。\n受かる人はもうスマホで過去問やってるだけ。\nApp Storeで「自衛官 試験対策」で検索。\n#自衛官 #一般曹候補生 #自衛隊 #試験対策 #勉強垢",
+   "threads_text": "自衛隊の給料いま結構変わってる。初任給up、6年で総額120万の新給付。国が本気で人集めにきてる時期。\n受かる人はもうスマホで過去問やってるだけ。\nhttps://apps.apple.com/jp/app/id6772919770\n#自衛官 #試験対策"
+  },
+  {
+   "app": "陸曹(原本)",
+   "type": "jsdf",
+   "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
+   "video": "rikuso_saiyou.mp4",
+   "cover": "covers/rikuso_saiyou.jpg",
+   "ig_caption": "自衛官の採用、今年1万人超えたの知ってた？人が増える=陸曹に上がるチャンスも動く時期。\n上がる人はもうスマホでスキマ時間に昇任対策やってるだけ。\nApp Storeで「陸曹昇任 試験対策」で検索。\n#陸曹 #昇任試験 #自衛隊 #試験対策",
+   "threads_text": "自衛官の採用、今年1万人超え。人が増える=陸曹に上がるチャンスも動く時期。\n上がる人はもうスマホでスキマ時間に昇任対策やってるだけ。\nhttps://apps.apple.com/jp/app/id6774074604\n#陸曹 #昇任試験"
+  },
+  {
+   "app": "幹部(原本)",
+   "type": "jsdf",
+   "appstore_url": "https://apps.apple.com/jp/app/id6776236258",
+   "video": "kanbu_saiyou.mp4",
+   "cover": "covers/kanbu_saiyou.jpg",
+   "ig_caption": "自衛官の採用、今年1万人超えたの知ってた？大卒なら最初から幹部を狙える。\n受かる人はもうスマホでスキマ時間に過去問やってるだけ。\nApp Storeで「幹部候補生 試験対策」で検索。\n#幹部候補生 #自衛隊 #試験対策 #大学生",
+   "threads_text": "自衛官の採用、今年1万人超え。大卒なら最初から幹部を狙える。\n受かる人はもうスマホでスキマ時間に過去問やってるだけ。\nhttps://apps.apple.com/jp/app/id6776236258\n#幹部候補生 #試験対策"
+  },
+  {
+   "app": "散財RPG(NISA時事)",
+   "type": "game",
+   "appstore_url": "https://apps.apple.com/jp/app/id6787874159",
+   "video": "flex_nisa.mp4",
+   "cover": "covers/flex_nisa.jpg",
+   "ig_caption": "NISAで節約ばっかりの毎日、たまには10億円を1日で溶かす豪遊も体験しません?\n散財シミュレーションRPG、無料で遊べます。\nApp Storeで「散財」で検索。\n#散財 #ゲーム #シミュレーション #NISA #お金 #暇つぶし #無料ゲーム",
+   "threads_text": "NISAで節約してる反動で、10億円を1日で使い切るゲーム作られてるの面白すぎる。株もFXも豪遊も全部シミュレーション。無料。\nhttps://apps.apple.com/jp/app/id6787874159"
+  },
+  {
+   "app": "狩猟テスト(時事)",
+   "type": "news_test",
+   "appstore_url": "",
+   "video": "kuma_news.mp4",
+   "cover": "",
+   "ig_caption": "クマの出没、今年も過去最多ペースなの知ってました?\n去年は5万件超、その影響で狩猟免許の受験者が急増中(静岡は前年のほぼ2倍)。\n試験は知識+技能の2本立てで年に数回だけ。\n#クマ #狩猟免許 #狩猟 #ニュース #雑学 #資格",
+   "threads_text": "クマの出没が今年も過去最多ペース。その影響で狩猟免許の受験者が急増してるらしい(静岡は前年のほぼ2倍)。\n試験があるの知らなかった人、結構いそう。"
+  },
+  {
+   "app": "QC検定2級(時事)",
+   "type": "news",
+   "appstore_url": "https://apps.apple.com/jp/app/id6788352237",
+   "video": "qc2_news.mp4",
+   "cover": "covers/qc2.jpg",
+   "ig_caption": "製品リコールのニュース、最近やたら多いと思いません?\nああいうのを防ぐのが品質管理。その入り口がQC検定で、会社に取れと言われる人が増えてます。今はスマホで対策できます。\nApp Storeで「QC検定2級」で検索。\n#QC検定 #QC検定2級 #品質管理 #資格 #勉強垢",
+   "threads_text": "製品リコール最近多いよね。ああいうの防ぐのが品質管理で、その入り口がQC検定。会社に取れって言われる人増えてる。今はスマホで対策できる。\nhttps://apps.apple.com/jp/app/id6788352237"
+  },
+  {
+   "app": "QC検定3級(時事)",
+   "type": "news",
+   "appstore_url": "https://apps.apple.com/jp/app/id6780823003",
+   "video": "qc3_news.mp4",
+   "cover": "covers/qc3.jpg",
+   "ig_caption": "製品リコールのニュース、最近やたら多いと思いません?\n防ぐのは品質管理。その入り口がQC検定3級。会社に取れと言われた人、スマホで対策できます。\nApp Storeで「QC検定3級」で検索。\n#QC検定 #QC検定3級 #品質管理 #資格 #勉強垢",
+   "threads_text": "製品リコール最近多い。防ぐのが品質管理で入り口がQC検定3級。会社に取れって言われた人、今はスマホで対策できます。\nhttps://apps.apple.com/jp/app/id6780823003"
+  },
+  {
+   "app": "消防設備士乙6(時事)",
+   "type": "news",
+   "appstore_url": "https://apps.apple.com/jp/app/id6783586555",
+   "video": "otsu6_news.mp4",
+   "cover": "covers/otsu6.jpg",
+   "ig_caption": "モバイルバッテリーの発火事故、ニュースで増えてますよね。\nまず備えるのが消火器。その点検・整備は消防設備士 乙6の仕事で、ビルメンで需要が伸びてます。今はスマホで対策できます。\nApp Storeで「消防設備士 乙6」で検索。\n#消防設備士 #乙6 #ビルメン #設備管理 #資格 #国家資格",
+   "threads_text": "モバ電の発火事故、最近ニュースで多い。ああいうのに備える消火器の点検は消防設備士乙6の仕事。ビルメンで需要伸びてます。今はスマホで対策可。\nhttps://apps.apple.com/jp/app/id6783586555"
+  },
+  {
+   "app": "入隊採用増(1万人超え)",
+   "type": "jsdf",
+   "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
+   "video": "jieitai_saiyou.mp4",
+   "cover": "covers/jieitai_saiyou.jpg",
+   "ig_caption": "自衛官の採用、今年ついに1万人を超えたの知ってた？令和7年度、3年ぶりの大台なんよ。\n受かる人はもうスマホでスキマ時間に過去問やってるだけ。\nApp Storeで「自衛官 試験対策」で検索。\n#自衛官 #自衛官候補生 #自衛隊 #試験対策 #勉強垢",
+   "threads_text": "自衛官の採用、今年ついに1万人超え。令和7年度は3年ぶりの大台。国が本気で人集めにきてる時期。\n受かる人はもうスマホでスキマ時間に過去問やってるだけ。\nhttps://apps.apple.com/jp/app/id6772919770\n#自衛官 #試験対策"
+  },
+  {
+   "app": "予備自(原本)",
+   "type": "news",
+   "appstore_url": "https://apps.apple.com/jp/app/id6778490302",
+   "video": "yobi_saiyou.mp4",
+   "cover": "covers/yobi_saiyou.jpg",
+   "ig_caption": "自衛官の採用、今年1万人超えたの知ってた？社会人でも入れる予備自衛官補も今が狙い目。\n受かる人はもうスマホでスキマ時間に過去問やってるだけ。\nApp Storeで「予備自衛官補 試験対策」で検索。\n#予備自衛官補 #予備自 #社会人 #試験対策",
+   "threads_text": "自衛官の採用、今年1万人超え。社会人でも入れる予備自衛官補も今が狙い目。\n受かる人はもうスマホでスキマ時間に過去問やってるだけ。\nhttps://apps.apple.com/jp/app/id6778490302\n#予備自衛官補 #試験対策"
+  },
+  {
+   "app": "入隊(時事ネタ・一時金34万)",
+   "type": "jsdf",
+   "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
+   "video": "jsdf_hook_ichijikin.mp4",
+   "cover": "covers/jsdf_hook_ichijikin.jpg",
+   "ig_caption": "自衛隊、入隊でもらえる一時金が34万円に増額されたの知ってる？\n22万円から一気に上がった。処遇改善で待遇は毎年変わってる。\n受かる人はもうスマホでスキマ時間に過去問やってるだけ。\nApp Storeで「自衛官 試験対策」で検索。\n#自衛隊 #自衛官 #自衛官候補生 #試験対策",
+   "threads_text": "自衛隊、入隊でもらえる一時金が22万→34万円に増額されたの知ってる？待遇ほんとに変わってる。\n受かる人はもうスマホでスキマ時間に過去問やってる。\nhttps://apps.apple.com/jp/app/id6772919770\n#自衛隊 #自衛官"
+  },
+  {
+   "app": "入隊(時事ネタ・給付120万)",
+   "type": "jsdf",
+   "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
+   "video": "jsdf_hook_kyufu120.mp4",
+   "cover": "covers/jsdf_hook_kyufu120.jpg",
+   "ig_caption": "自衛隊、6年勤めると総額120万円もらえる新制度があるの知ってる？\n寮生活への給付が新設されて、若手の待遇が大きく変わってる。\n受かる人はもうスマホでスキマ時間に過去問やってるだけ。\nApp Storeで「自衛官 試験対策」で検索。\n#自衛隊 #自衛官 #自衛官候補生 #試験対策",
+   "threads_text": "自衛隊、6年勤めると総額120万円もらえる新制度できたの知ってる？若手の待遇、大きく変わってる。\n受かる人はもうスマホで過去問やってる。\nhttps://apps.apple.com/jp/app/id6772919770\n#自衛隊 #自衛官"
+  },
+  {
+   "app": "入隊(時事ネタ・初任給22万)",
+   "type": "jsdf",
+   "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
+   "video": "jsdf_hook_shoninkyu.mp4",
+   "cover": "covers/jsdf_hook_shoninkyu.jpg",
+   "ig_caption": "自衛官の初任給、いま月22万円を超えてるの知ってる？\n手当も30種類あって、新設や増額が続いてる。\n受かる人はもうスマホでスキマ時間に過去問やってるだけ。\nApp Storeで「自衛官 試験対策」で検索。\n#自衛隊 #自衛官 #自衛官候補生 #試験対策",
+   "threads_text": "自衛官の初任給、いま月22万円超えてるの知ってる？手当も30種類ある。\n受かる人はもうスマホでスキマ時間に過去問やってる。\nhttps://apps.apple.com/jp/app/id6772919770\n#自衛隊 #自衛官"
+  },
+  {
+   "app": "QC2級(時事ネタ・スズキリコール)",
+   "type": "qc",
+   "appstore_url": "https://apps.apple.com/jp/app/id6788352237",
+   "video": "qc2_recall.mp4",
+   "cover": "covers/qc2_recall.jpg",
+   "ig_caption": "スズキの50万台リコール、ニュース見た？\nああいう品質問題を防ぐのが品質管理。その入り口がQC検定で、会社に取れって言われる人も増えてる。\n受かる人はもうスマホで対策問題やってるだけ。\nApp Storeで「QC検定2級」で検索。\n#QC検定 #品質管理 #資格 #試験対策",
+   "threads_text": "スズキの50万台リコール見た？ああいうのを防ぐのが品質管理で、その入り口がQC検定。\n受かる人はもうスマホで対策問題やってる。\nhttps://apps.apple.com/jp/app/id6788352237\n#QC検定 #品質管理"
+  },
+  {
+   "app": "QC3級(時事ネタ・スズキリコール)",
+   "type": "qc",
+   "appstore_url": "https://apps.apple.com/jp/app/id6780823003",
+   "video": "qc3_recall.mp4",
+   "cover": "covers/qc3_recall.jpg",
+   "ig_caption": "スズキの50万台リコール、見た？品質問題ってどの会社も他人事じゃない。\nだから会社にQC検定3級取れって言われるんよね。\n受かる人はもうスマホで対策問題やってるだけ。\nApp Storeで「QC検定3級」で検索。\n#QC検定 #QC検定3級 #品質管理 #資格",
+   "threads_text": "スズキの50万台リコール見た？品質問題はどの会社も他人事じゃない。会社にQC検定取れって言われた人、今はスマホで対策できるよ。\nhttps://apps.apple.com/jp/app/id6780823003\n#QC検定 #品質管理"
+  },
+  {
+   "app": "甲4(時事ネタ・機内モバ電)",
+   "type": "shoubo",
+   "appstore_url": "https://apps.apple.com/jp/app/id6786774938",
+   "video": "koushu4_kinai.mp4",
+   "cover": "covers/koushu4_kinai.jpg",
+   "ig_caption": "7月8日から、飛行機のモバイルバッテリーのルールがまた厳しくなったの知ってる？収納棚に入れるのNG。それだけ電池の火事が増えてる。\n建物でああいう火事をいち早く検知するのが自動火災報知設備で、工事・点検は消防設備士の独占業務。\n受かる人はもうスマホで過去問やってるだけ。\nApp Storeで「消防設備士 甲4」で検索。\n#消防設備士 #甲4 #資格 #国家資格",
+   "threads_text": "7/8から飛行機のモバ電ルールまた厳しくなったの知ってる？それだけ電池火災が増えてる。建物で守るのは自動火災報知設備＝消防設備士の独占業務。\n受かる人はもうスマホで過去問やってる。\nhttps://apps.apple.com/jp/app/id6786774938\n#消防設備士 #甲4"
+  },
+  {
+   "app": "乙6(時事ネタ・機内モバ電)",
+   "type": "shoubo",
+   "appstore_url": "https://apps.apple.com/jp/app/id6783586555",
+   "video": "otsu6_kinai.mp4",
+   "cover": "covers/otsu6_kinai.jpg",
+   "ig_caption": "飛行機のモバイルバッテリーのルール、7月8日からまた厳しくなったの知ってる？電池の火事がそれだけ増えてるんよ。\nそういう火事にまず備えるのが消火器で、点検・整備は消防設備士 乙6の仕事。ビルメンで需要伸びてる。\n受かる人はもうスマホで対策問題やってるだけ。\nApp Storeで「消防設備士 乙6」で検索。\n#消防設備士 #乙6 #資格 #ビルメン",
+   "threads_text": "飛行機のモバ電ルール、7/8からまた厳しくなった。電池火災がそれだけ増えてる。消火器の点検・整備は消防設備士乙6の仕事でビルメン需要増。\n受かる人はもうスマホで対策してる。\nhttps://apps.apple.com/jp/app/id6783586555\n#消防設備士 #乙6"
+  },
+  {
+   "app": "散財RPG(時事ネタ・夏ボーナス・v3)",
+   "type": "game",
+   "appstore_url": "https://apps.apple.com/jp/app/id6787874159",
+   "video": "flex_bonus_v3.mp4",
+   "cover": "covers/flex_sanzai.jpg",
+   "ig_caption": "夏のボーナス、平均47万円だってさ。もう出た？\nでも現実は貯金と支払いで消えて、豪遊なんてできないんよね。\nそんな人に神アプリ。10億円を好きなだけ散財できるゲームがある。\nApp Storeで「散財」で検索。\n#ボーナス #散財 #ゲーム #スマホゲーム",
+   "threads_text": "夏のボーナス平均47万円だってさ。でも現実は貯金と支払いで消える。\nそんな人に神アプリ、10億円を好きなだけ散財できるゲームがあるんよ。\nhttps://apps.apple.com/jp/app/id6787874159\n#ボーナス #散財"
+  },
+  {
+   "app": "ライフコントロール(時事ネタ・熱中症)",
+   "type": "health",
+   "appstore_url": "https://apps.apple.com/jp/app/id6782221037",
+   "video": "lc_heat.mp4",
+   "cover": "covers/lc_reveal.jpg",
+   "ig_caption": "熱中症の救急搬送、先週だけで全国1,370人。去年は年間10万人超え。\n体調管理、もう気合いじゃ無理な暑さなんよ。\n今は睡眠も食事も運動も、スマホでまとめて管理できる。無料。\nApp Storeで「ライフコントロール」で検索。\n#熱中症対策 #体調管理 #健康管理アプリ",
+   "threads_text": "熱中症搬送、先週だけで全国1,370人だって。もう気合いじゃ無理な暑さ。\n睡眠・食事・運動、今はスマホでまとめて管理できるよ。無料。\nhttps://apps.apple.com/jp/app/id6782221037\n#熱中症対策 #体調管理"
+  },
+  {
+   "app": "入隊(原本1万人・v3)",
+   "type": "jsdf",
+   "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
+   "video": "jieitai_v3.mp4",
+   "cover": "covers/jieitai_saiyou.jpg",
+   "ig_caption": "自衛官の採用、今年ついに1万人を超えたの知ってた？令和7年度、3年ぶりの大台なんよ。\n受かる人はもうスマホでスキマ時間に過去問やってるだけ。\nApp Storeで「自衛官 試験対策」で検索。\n#自衛官 #自衛官候補生 #自衛隊 #試験対策 #勉強垢",
+   "threads_text": "自衛官の採用、今年ついに1万人超え。令和7年度は3年ぶりの大台。国が本気で人集めにきてる時期。\n受かる人はもうスマホでスキマ時間に過去問やってるだけ。\nhttps://apps.apple.com/jp/app/id6772919770\n#自衛官 #試験対策"
+  },
+  {
+   "app": "陸曹(原本1万人・v3)",
+   "type": "jsdf",
+   "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
+   "video": "rikuso_v3.mp4",
+   "cover": "covers/rikuso_saiyou.jpg",
+   "ig_caption": "自衛官の採用、今年1万人超えたの知ってた？人が増える=陸曹に上がるチャンスも動く時期。\n上がる人はもうスマホでスキマ時間に昇任対策やってるだけ。\nApp Storeで「陸曹昇任 試験対策」で検索。\n#陸曹 #昇任試験 #自衛隊 #試験対策",
+   "threads_text": "自衛官の採用、今年1万人超え。人が増える=陸曹に上がるチャンスも動く時期。\n上がる人はもうスマホでスキマ時間に昇任対策やってるだけ。\nhttps://apps.apple.com/jp/app/id6774074604\n#陸曹 #昇任試験"
+  },
+  {
+   "app": "QC2級(時事スズキ・v3)",
+   "type": "qc",
+   "appstore_url": "https://apps.apple.com/jp/app/id6788352237",
+   "video": "qc2_recall_v3.mp4",
+   "cover": "covers/qc2_recall.jpg",
+   "ig_caption": "スズキの50万台リコール、ニュース見た？\nああいう品質問題を防ぐのが品質管理。その入り口がQC検定で、会社に取れって言われる人も増えてる。\n受かる人はもうスマホで対策問題やってるだけ。\nApp Storeで「QC検定2級」で検索。\n#QC検定 #品質管理 #資格 #試験対策",
+   "threads_text": "スズキの50万台リコール見た？ああいうのを防ぐのが品質管理で、その入り口がQC検定。\n受かる人はもうスマホで対策問題やってる。\nhttps://apps.apple.com/jp/app/id6788352237\n#QC検定 #品質管理"
+  },
+  {
+   "app": "甲4(時事機内・v3)",
+   "type": "shoubo",
+   "appstore_url": "https://apps.apple.com/jp/app/id6786774938",
+   "video": "koushu4_kinai_v3.mp4",
+   "cover": "covers/koushu4_kinai.jpg",
+   "ig_caption": "7月8日から、飛行機のモバイルバッテリーのルールがまた厳しくなったの知ってる？収納棚に入れるのNG。それだけ電池の火事が増えてる。\n建物でああいう火事をいち早く検知するのが自動火災報知設備で、工事・点検は消防設備士の独占業務。\n受かる人はもうスマホで過去問やってるだけ。\nApp Storeで「消防設備士 甲4」で検索。\n#消防設備士 #甲4 #資格 #国家資格",
+   "threads_text": "7/8から飛行機のモバ電ルールまた厳しくなったの知ってる？それだけ電池火災が増えてる。建物で守るのは自動火災報知設備＝消防設備士の独占業務。\n受かる人はもうスマホで過去問やってる。\nhttps://apps.apple.com/jp/app/id6786774938\n#消防設備士 #甲4"
+  },
+  {
+   "app": "海曹昇任(原本・承認後投入)",
+   "type": "jsdf",
+   "appstore_url": "https://apps.apple.com/jp/app/id6789518576",
+   "video": "kaiso_saiyou.mp4",
+   "cover": "covers/kaiso_saiyou.jpg",
+   "ig_caption": "自衛官の採用、今年1万人超えたの知ってた？人が増える=海曹に上がるチャンスも動く時期。\n上がる人はもうスマホでスキマ時間に昇任対策やってるだけ。\nApp Storeで「海曹昇任 試験対策」で検索。\n#海曹 #昇任試験 #海上自衛隊 #試験対策",
+   "threads_text": "自衛官の採用、今年1万人超え。人が増える=海曹に上がるチャンスも動く時期。\n上がる人はもうスマホでスキマ時間に昇任対策やってるだけ。\nhttps://apps.apple.com/jp/app/id6789518576\n#海曹 #昇任試験"
+  },
+  {
+   "app": "空曹昇任(原本・承認後投入)",
+   "type": "jsdf",
+   "appstore_url": "https://apps.apple.com/jp/app/id6789531149",
+   "video": "kusou_saiyou.mp4",
+   "cover": "covers/kusou_saiyou.jpg",
+   "ig_caption": "自衛官の採用、今年1万人超えたの知ってた？人が増える=空曹に上がるチャンスも動く時期。\n上がる人はもうスマホでスキマ時間に昇任対策やってるだけ。\nApp Storeで「空曹昇任 試験対策」で検索。\n#空曹 #昇任試験 #航空自衛隊 #試験対策",
+   "threads_text": "自衛官の採用、今年1万人超え。人が増える=空曹に上がるチャンスも動く時期。\n上がる人はもうスマホでスキマ時間に昇任対策やってるだけ。\nhttps://apps.apple.com/jp/app/id6789531149\n#空曹 #昇任試験"
+  }
+ ]
 }
