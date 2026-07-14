@@ -17,6 +17,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
+      - name: Install ffmpeg (narration gate)
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Narration gate (ナレ無し動画は配信ライン全停止)
+        run: python3 automation/video_preflight.py
       - name: Post to IG + Threads
         env:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
