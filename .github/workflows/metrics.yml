@@ -34,5 +34,5 @@ jobs:
         run: |
           git config user.name "Chokobi Sakusaku"
           git config user.email "konakonan822@gmail.com"
-          git add automation/metrics_log.jsonl automation/competitor_state.json automation/competitor_alerts.md || true
+          for f in automation/metrics_log.jsonl automation/competitor_state.json automation/competitor_alerts.md; do [ -f "$f" ] && git add "$f"; done
           git diff --cached --quiet || (git commit -m "chore: daily metrics" && git pull --rebase && git push)
