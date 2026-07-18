@@ -317,6 +317,42 @@
    "cover": "covers/qc3_hattendo_v3.jpg",
    "ig_caption": "人気パンブランドが、まさかの自主回収。個包装の密封不良でカビが発生してたんよ。\n品質管理は見えない工程が命取りになる。その入り口がQC検定。\n今はスマホで対策問題が解ける。受かる人はもう始めてる。\nApp Storeで「QC検定3級」で検索。\n#QC検定 #品質管理 #自主回収",
    "threads_text": "人気パンブランドがまさかの自主回収。個包装の密封不良でカビ発生。\n品質管理は見えない工程が命取り。その入り口がQC検定。スマホで対策問題が解ける。\nhttps://apps.apple.com/jp/app/id6774074604"
+  },
+  {
+   "app": "QC検定(時事・スピーカー発火リコール後事故)",
+   "type": "news",
+   "appstore_url": "https://apps.apple.com/jp/app/id6784486624",
+   "video": "qc_speaker_fire_v3.mp4",
+   "cover": "covers/qc_speaker_fire_v3.jpg",
+   "ig_caption": "リコール中のBluetoothスピーカーで、異音の後に焼損する事故が起きてたって知ってた？\nリコールしても事故はゼロにならない。結局、出荷前の検査基準がどれだけ厳しいかが全て。\n今はスマホで品質管理の基礎が学べる。App Storeで「QC検定」で検索。\n#品質管理 #QC検定 #消費者庁",
+   "threads_text": "リコール中のスピーカーで異音の後に焼損する事故が今月消費者庁から公表された。リコールしても事故はゼロにならない、結局出荷前の検査基準が全て。\nhttps://apps.apple.com/jp/app/id6784486624"
+  },
+  {
+   "app": "消防設備士甲4(時事・高圧洗浄機/ふろがま発火)",
+   "type": "news",
+   "appstore_url": "https://apps.apple.com/jp/app/id6786774938",
+   "video": "k4_pressurewash_v3.mp4",
+   "cover": "covers/k4_pressurewash_v3.jpg",
+   "ig_caption": "家庭用の充電式高圧洗浄機で重大な火災事故が起きてたの知ってた？石油ふろがまでも同じような事故が起きてる。\n身近な家電からでも火は出る。それを防ぐ知識を持ってるのが消防設備士。\n今はスマホで過去問対策ができる。App Storeで「消防設備士 甲4」で検索。\n#消防設備士 #消費者庁 #資格試験",
+   "threads_text": "家庭用の高圧洗浄機や石油ふろがまで重大な火災事故が消費者庁から公表された。身近な家電から火は出る、それを防ぐ知識が消防設備士。\nhttps://apps.apple.com/jp/app/id6786774938"
+  },
+  {
+   "app": "ライフコントロール(時事・熱中症警戒アラート初発表)",
+   "type": "news",
+   "appstore_url": "https://apps.apple.com/jp/app/id6782221037",
+   "video": "lc_heatalert_v3.mp4",
+   "cover": "covers/lc_heatalert_v3.jpg",
+   "ig_caption": "京都府と福井県で今年初めての熱中症警戒アラートが出たの知ってた？まだ7月なのにもう体が限界レベル。\n気合いだけじゃ乗り切れない暑さになってきてる。今は睡眠も食事も運動も、スマホでまとめて管理できる。無料。\nApp Storeで「ライフコントロール」で検索。\n#熱中症 #気象庁 #健康管理",
+   "threads_text": "京都・福井で今年初の熱中症警戒アラート。まだ7月なのにもう限界レベル。気合いだけじゃ乗り切れない暑さ。\nhttps://apps.apple.com/jp/app/id6782221037"
+  },
+  {
+   "app": "散財RPG FLEX(時事・夏ボーナス調査)",
+   "type": "news",
+   "appstore_url": "https://apps.apple.com/jp/app/id6748245660",
+   "video": "flex_bonus2_v3.mp4",
+   "cover": "covers/flex_bonus2_v3.jpg",
+   "ig_caption": "今年の夏ボーナス平均47.7万円だったの知ってた？でも約半分の人は物価高でゆとりを感じてない。使い道1位はまさかの貯金。\nじゃあ全部散財してたら人生どうなるか、シミュレーションで見れるアプリがあるんよ。\nApp Storeで「散財」で検索してみて。\n#ボーナス #散財 #シミュレーションゲーム",
+   "threads_text": "今年の夏ボーナス平均47.7万円。でも約半分はゆとりを感じてない。じゃあ全部散財してたら人生どうなるか見れるアプリがある。\nhttps://apps.apple.com/jp/app/id6748245660"
   }
  ]
 }
