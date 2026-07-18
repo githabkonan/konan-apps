@@ -161,9 +161,9 @@ for i in range(IG_PER_RUN):
 
 # YouTube: 最優秀チャンネルだが同一動画の再アップ=スパム/重複判定リスク → 各動画一度きり。
 # 未投稿の動画が無くなったら投稿しない(=新作が投入されると自動再開)。
-YT_MAX_PER_DAY = int(os.environ.get("YT_MAX_PER_DAY", "5"))
-# YT投稿はエンゲージメント時間帯に分散(朝で5本使い切らない)。JSTの時のセット。
-YT_HOURS = {int(h) for h in os.environ.get("YT_HOURS", "7,11,14,17,20").split(",")}
+YT_MAX_PER_DAY = int(os.environ.get("YT_MAX_PER_DAY", "9"))
+# YT投稿はエンゲージメント時間帯に分散。JSTの時のセット(2026-07-19: 最強チャネルなのに枠が一番狭かったため5→9に増枠・スロットも5→9に増設)。
+YT_HOURS = {int(h) for h in os.environ.get("YT_HOURS", "6,8,11,13,15,17,19,21,23").split(",")}
 today = now.date().isoformat()
 if STATE.get("yt_date") != today:
     STATE["yt_date"] = today; STATE["yt_count"] = 0; STATE["last_yt_seq"] = None
