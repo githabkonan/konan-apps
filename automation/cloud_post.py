@@ -19,9 +19,12 @@ BASE = Q["video_base"].rstrip("/")
 POSTS = Q["posts"]
 N = len(POSTS)
 
-# 2026-07-19: revenue.db実測(SKU単位)から手動集計した加重値。App Store IDで紐付け。
-# 陸曹昇任(¥31,410)=5 / 予備自(¥11,100)=3 / 幹部(¥6,660)=2 / 未提出の新規ローンチ(英語脳等)=2(露出優先)/ 他は全部1(ゼロ課金でも完全ゼロにはしない=noise一発でapp切りしない)
-REVENUE_WEIGHT = {"6774074604": 5, "6778490302": 3, "6776236258": 2}
+# 2026-07-20: 加重値は weights.json(gen_marketing_weights.py が直近30日のASC実売上から毎日再計算しpush)を読む。
+# 未生成時のフォールバック=2026-07-19時点の手動集計。未提出の新規ローンチ(URL無し)=2(露出優先)/ ゼロ課金でも1(noise一発でapp切りしない)
+try:
+    REVENUE_WEIGHT = json.load(open(os.path.join(HERE, "weights.json")))
+except Exception:
+    REVENUE_WEIGHT = {"6774074604": 5, "6778490302": 3, "6776236258": 2}
 def _weight(p):
     url = p.get("appstore_url") or ""
     if not url:
