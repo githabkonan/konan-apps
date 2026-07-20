@@ -8,14 +8,29 @@
 - ローテは「JST日付×24 + 時」で決定的=状態ファイル不要(毎時で別アプリに回る)
 - トークン: GitHub Secrets(env) IG_USER_ID / IG_TOKEN / THREADS_USER_ID / THREADS_ACCESS_TOKEN / YT_CLIENT_ID / YT_CLIENT_SECRET / YT_REFRESH_TOKEN
 - YouTube = Shorts動画(公式API・2026-07-07監査承認済=公開可)。新規chスパム回避で seq%3==0 の起動のみ1本(≈2-3本/日)
+- Threads/IG のローテはASC実売上(revenue.db)で重み付け(2026-07-19 konan「売れるアプリをより打ってかないと・ASCの結果と紐付いてない」)。
+  重み無しの均等ローテはゼロ課金アプリ(ライフコントロール等)を稼ぎ頭(陸曹昇任等)と同じ露出にしてしまっていた。
 """
-import json, os, sys, time, datetime, urllib.parse, urllib.request
+import json, os, sys, time, datetime, urllib.parse, urllib.request, re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 Q = json.load(open(os.path.join(HERE, "post_queue.json")))
 BASE = Q["video_base"].rstrip("/")
 POSTS = Q["posts"]
 N = len(POSTS)
+
+# 2026-07-19: revenue.db実測(SKU単位)から手動集計した加重値。App Store IDで紐付け。
+# 陸曹昇任(¥31,410)=5 / 予備自(¥11,100)=3 / 幹部(¥6,660)=2 / 未提出の新規ローンチ(英語脳等)=2(露出優先)/ 他は全部1(ゼロ課金でも完全ゼロにはしない=noise一発でapp切りしない)
+REVENUE_WEIGHT = {"6774074604": 5, "6778490302": 3, "6776236258": 2}
+def _weight(p):
+    url = p.get("appstore_url") or ""
+    if not url:
+        return 2
+    m = re.search(r"id(\d+)", url)
+    return REVENUE_WEIGHT.get(m.group(1) if m else "", 1)
+
+# 加重ローテ表: pass1=全post1回ずつ、pass2以降は重み>=passの投稿だけ追加(高稼働アプリほど登場回数が増える)
+ROTATION = [i for _pass in range(1, 6) for i, p in enumerate(POSTS) if _weight(p) >= _pass]
 
 now = datetime.datetime.utcnow() + datetime.timedelta(hours=9)  # JST
 day_num = (now.date() - datetime.date(2026, 1, 1)).days
@@ -132,9 +147,10 @@ def mark(platform, post):
     save_state()
 
 def pick(platform, start_idx):
-    """start_idxから順に、クールダウン明けの動画を探す。全滅ならNone(=見送り)。"""
-    for k in range(N):
-        p = POSTS[(start_idx + k) % N]
+    """start_idxから順に(加重ローテ表を辿り)、クールダウン明けの動画を探す。全滅ならNone(=見送り)。"""
+    R = len(ROTATION)
+    for k in range(R):
+        p = POSTS[ROTATION[(start_idx + k) % R]]
         if cooled(platform, p): return p
     return None
 
