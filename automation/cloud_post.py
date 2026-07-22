@@ -181,12 +181,19 @@ for i in range(IG_PER_RUN):
 # YouTube: 最優秀チャンネルだが同一動画の再アップ=スパム/重複判定リスク → 各動画一度きり。
 # 未投稿の動画が無くなったら投稿しない(=新作が投入されると自動再開)。
 YT_MAX_PER_DAY = int(os.environ.get("YT_MAX_PER_DAY", "9"))
-# YT投稿はエンゲージメント時間帯に分散。JSTの時のセット(2026-07-19: 最強チャネルなのに枠が一番狭かったため5→9に増枠・スロットも5→9に増設)。
-YT_HOURS = {int(h) for h in os.environ.get("YT_HOURS", "6,8,11,13,15,17,19,21,23").split(",")}
+# YT投稿の分散: 2026-07-22 時刻セット判定を廃止(GitHub cronは20-50分遅延し now.hour がセットを外れて
+# 枠が丸ごと消えていた=11時/13時枠消失の実バグ)。最低間隔ベースなら遅延起動でも取りこぼさない。
+YT_MIN_GAP_MIN = int(os.environ.get("YT_MIN_GAP_MIN", "95"))  # 95分間隔×9本 ≈ 6:00-23:00に分散
 today = now.date().isoformat()
 if STATE.get("yt_date") != today:
     STATE["yt_date"] = today; STATE["yt_count"] = 0; STATE["last_yt_seq"] = None
-yt_done = (STATE.get("last_yt_seq") == seq) or (STATE.get("yt_count", 0) >= YT_MAX_PER_DAY) or (now.hour not in YT_HOURS)
+_gap_ok = True
+if STATE.get("last_yt_ts"):
+    try:
+        _gap_ok = (now - datetime.datetime.fromisoformat(STATE["last_yt_ts"])).total_seconds() >= YT_MIN_GAP_MIN * 60
+    except Exception:
+        _gap_ok = True
+yt_done = (STATE.get("yt_count", 0) >= YT_MAX_PER_DAY) or not (6 <= now.hour <= 23) or not _gap_ok
 if os.environ.get("YT_REFRESH_TOKEN") and not yt_done:
     yp = next((POSTS[(seq + k) % N] for k in range(N)
                if POSTS[(seq + k) % N].get("video") not in YT_POSTED), None)
@@ -199,6 +206,7 @@ if os.environ.get("YT_REFRESH_TOKEN") and not yt_done:
         if ok:
             ok_count += 1
             STATE["last_yt_seq"] = seq
+            STATE["last_yt_ts"] = now.isoformat()
             STATE["yt_count"] = STATE.get("yt_count", 0) + 1
             YT_POSTED.append(yp.get("video"))
             save_state()
