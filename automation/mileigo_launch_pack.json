@@ -1,0 +1,32 @@
+{
+ "_readme": "ミリタリー英語トレーナー承認後の即時ローンチ用パック。手順: ①curl -sL https://apps.apple.com/jp/app/id6793729335 で200確認 ②mil_test_1〜3.mp4 を videos/ にコピー ③postsを post_queue.json に追記 ④git push。承認前に絶対にキューへ入れない(CTAが404になる)。konan承認済み: 検証動画をそのままマーケ転用してよい(2026-07-23)",
+ "app_id": "6793729335",
+ "appstore_url": "https://apps.apple.com/jp/app/id6793729335",
+ "video_src_dir": "/Users/konan/claude-tools/marketing",
+ "posts": [
+  {
+   "app": "ミリタリー英語(無線)",
+   "type": "mileigo",
+   "appstore_url": "https://apps.apple.com/jp/app/id6793729335",
+   "video": "mil_test_1.mp4",
+   "cover": "covers/mileigo.jpg",
+   "ig_caption": "「もう一度言って」を無線でRepeatって言うと大事故になるの、知ってた?(Repeatは砲撃要求の意味がある)。正解はSay again。こういう「現場で本当に使う英語」だけ集めたアプリを見つけた。フォネティックコードから誰何・救護まで284フレーズ。App Storeで「ミリタリー英語トレーナー」で出てくる。#英語学習 #ミリタリー #無線"
+  },
+  {
+   "app": "ミリタリー英語(現場)",
+   "type": "mileigo",
+   "appstore_url": "https://apps.apple.com/jp/app/id6793729335",
+   "video": "mil_test_2.mp4",
+   "cover": "covers/mileigo.jpg",
+   "ig_caption": "Take cover(隠れろ)、Hold your fire(撃ち方待て)、Man down(負傷者発生)。映画で聞くあの英語、ちゃんと学べるアプリがある。号令・検問・報告まで12カテゴリ284フレーズ、カナ読み付き。「ミリタリー英語トレーナー」で検索。#ミリタリー英語 #英語フレーズ"
+  },
+  {
+   "app": "ミリタリー英語(フォネティック)",
+   "type": "mileigo",
+   "appstore_url": "https://apps.apple.com/jp/app/id6793729335",
+   "video": "mil_test_3.mp4",
+   "cover": "covers/mileigo.jpg",
+   "ig_caption": "AをAlpha、BをBravoって読むやつ、全部言える?無線で聞き間違えないための世界共通ルール(NATOフォネティックコード)。数字も9はNinerって読む。こういうのを反射で言えるまで鍛えるアプリ「ミリタリー英語トレーナー」、App Storeに出てた。#フォネティックコード #ミリタリー"
+  }
+ ]
+}
