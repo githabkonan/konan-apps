@@ -1,5 +1,5 @@
 {
- "_readme": "ミリタリー英語トレーナー承認後の即時ローンチ用パック。手順: ①curl -sL https://apps.apple.com/jp/app/id6793729335 で200確認 ②mil_test_1〜3.mp4 を videos/ にコピー ③postsを post_queue.json に追記 ④git push。承認前に絶対にキューへ入れない(CTAが404になる)。konan承認済み: 検証動画をそのままマーケ転用してよい(2026-07-23)",
+ "_readme": "ミリタリー英語トレーナー承認後の即時ローンチ用パック。手順: ①curl -sL https://apps.apple.com/jp/app/id6793729335 で200確認 ②mil_test_1,2,4.mp4(※mil_test_3は中国語版のためmilchugoパック専用。フォネティック投稿は新規ビルドのmil_test_4を使う=2026-07-24修正) を videos/ にコピー ③postsを post_queue.json に追記 ④git push。承認前に絶対にキューへ入れない(CTAが404になる)。konan承認済み: 検証動画をそのままマーケ転用してよい(2026-07-23)",
  "app_id": "6793729335",
  "appstore_url": "https://apps.apple.com/jp/app/id6793729335",
  "video_src_dir": "/Users/konan/claude-tools/marketing",
@@ -24,7 +24,7 @@
    "app": "ミリタリー英語(フォネティック)",
    "type": "mileigo",
    "appstore_url": "https://apps.apple.com/jp/app/id6793729335",
-   "video": "mil_test_3.mp4",
+   "video": "mil_test_4.mp4",
    "cover": "covers/mileigo.jpg",
    "ig_caption": "AをAlpha、BをBravoって読むやつ、全部言える?無線で聞き間違えないための世界共通ルール(NATOフォネティックコード)。数字も9はNinerって読む。こういうのを反射で言えるまで鍛えるアプリ「ミリタリー英語トレーナー」、App Storeに出てた。#フォネティックコード #ミリタリー"
   }
