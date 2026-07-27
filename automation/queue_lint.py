@@ -30,6 +30,9 @@ def lint(path):
                 f = p.get(key)
                 if f and not os.path.exists(os.path.join(REPO, sub, f)):
                     errs.append(f"{tag}: {key}ファイル未配置 {sub}/{f}")
+        tt = p.get("threads_text", "")
+        if re.search(r"このシーン|この動画|この映像", tt):
+            errs.append(f"{tag}: threads_textが映像参照(Threadsはテキスト専用=自己完結文にする・2026-07-27 konan指摘)")
         v = p.get("video")
         if v:
             prev = seen_video.get(v)
