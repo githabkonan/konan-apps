@@ -27,6 +27,8 @@ jobs:
           REPOST_COOLDOWN_H: "48"
           # YT実測間隔が~2hに伸び9本/日未達だったため95→75分(2026-07-27)。ランが毎時来る前提で日9本を確実に
           YT_MIN_GAP_MIN: "75"
+          # 2026-07-27 konan指示: YT頻度引き上げ 9→12本/日(在庫は同日+10本増産で担保)
+          YT_MAX_PER_DAY: "12"
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
