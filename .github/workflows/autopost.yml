@@ -23,6 +23,8 @@ jobs:
         run: python3 automation/video_preflight.py
       - name: Post to IG + Threads
         env:
+          # 【一時設定 2026-07-27 konan指示「火曜リセットまでフル充填」】72h→48h(97本ライブラリで45本/日を回すため。火曜以降に工場の新作供給を見て72hへ戻すか判断)
+          REPOST_COOLDOWN_H: "48"
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
