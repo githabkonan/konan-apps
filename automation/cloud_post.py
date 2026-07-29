@@ -41,7 +41,33 @@ seq = day_num * 24 + now.hour
 # Threads は上限250/日と余裕があるので1回の起動で複数本(別アプリ)を投稿してpaceを稼ぐ。
 # GitHubのスケジューラが大半の起動をスキップするため、1起動あたりの本数で取りこぼしを補う。
 THREADS_PER_RUN = int(os.environ.get("THREADS_PER_RUN", "3"))
-IG_PER_RUN = int(os.environ.get("IG_PER_RUN", "3"))  # IG公開上限は100/日と余裕(実測quota 5/100)。1起動3本でpaceを出す
+IG_PER_RUN = int(os.environ.get("IG_PER_RUN", "3"))
+# 【2026-07-29】IGが Media Publish Limit Exceeded で全滅した事故を受けて、勘で本数を決めるのをやめる。
+# IG Graph API の content_publishing_limit を毎回叩いて「実際の残枠」を取得し、余白を残して埋める(=ギリギリを攻める)。
+def _get(url, params):
+    return json.load(urllib.request.urlopen(url + "?" + urllib.parse.urlencode(params), timeout=60))
+
+IG_SAFETY_MARGIN = int(os.environ.get("IG_SAFETY_MARGIN", "5"))  # 上限に対して常にこれだけ残す
+
+def ig_quota():
+    """(使用済, 上限) を返す。取得失敗時は (None, None)"""
+    try:
+        ig = os.environ["IG_USER_ID"]; tok = os.environ["IG_TOKEN"]
+        d = _get(f"https://graph.instagram.com/v21.0/{ig}/content_publishing_limit",
+                 {"fields": "config,quota_usage", "access_token": tok})
+        row = d["data"][0]
+        return int(row.get("quota_usage", 0)), int(row.get("config", {}).get("quota_total", 50))
+    except Exception as e:
+        print(f"  ig quota取得失敗({str(e)[:60]}) → 保守的に1本のみ")
+        return None, None
+
+_used, _cap = ig_quota()
+if _used is not None:
+    _room = max(0, _cap - _used - IG_SAFETY_MARGIN)
+    IG_PER_RUN = min(IG_PER_RUN, _room)
+    print(f"  ig quota: {_used}/{_cap} 使用済 → 今回投稿可能 {IG_PER_RUN}本(安全余白{IG_SAFETY_MARGIN})")
+else:
+    IG_PER_RUN = min(IG_PER_RUN, 1)
 print(f"[{now.isoformat()}] seq={seq} threads/run={THREADS_PER_RUN} ig/run={IG_PER_RUN}")
 
 
@@ -50,8 +76,6 @@ def _post(url, params):
     return json.load(urllib.request.urlopen(urllib.request.Request(url, data=data, method="POST"), timeout=120))
 
 
-def _get(url, params):
-    return json.load(urllib.request.urlopen(url + "?" + urllib.parse.urlencode(params), timeout=60))
 
 
 def publish_threads(post):

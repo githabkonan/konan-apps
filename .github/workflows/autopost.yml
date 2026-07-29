@@ -25,9 +25,11 @@ jobs:
         env:
           # 【2026-07-29 復旧】IGが Media Publish Limit Exceeded で全失敗したため安全側へ戻す。48h→72h
           REPOST_COOLDOWN_H: "72"
-          # 1起動あたりの本数を絞る(45本/日→約15本/日)。IGの「短時間に集中しすぎ」制限の再発防止
-          IG_PER_RUN: "1"
-          THREADS_PER_RUN: "1"
+          # 【2026-07-29】IG本数はクォータAPI実測で自動決定(勘で決めない)。上限に安全余白5を残して埋める=ギリギリを攻める
+          # クォータ実測で自動調整するため上限だけ与える(実際の本数は content_publishing_limit の残枠で決まる)
+          IG_PER_RUN: "3"
+          IG_SAFETY_MARGIN: "5"
+          THREADS_PER_RUN: "3"
           # YT実測間隔が~2hに伸び9本/日未達だったため95→75分(2026-07-27)。ランが毎時来る前提で日9本を確実に
           YT_MIN_GAP_MIN: "75"
           # 2026-07-27 konan指示: YT頻度引き上げ 9→12本/日(在庫は同日+10本増産で担保)
