@@ -23,8 +23,11 @@ jobs:
         run: python3 automation/video_preflight.py
       - name: Post to IG + Threads
         env:
-          # 【一時設定 2026-07-27 konan指示「火曜リセットまでフル充填」】72h→48h(97本ライブラリで45本/日を回すため。火曜以降に工場の新作供給を見て72hへ戻すか判断)
-          REPOST_COOLDOWN_H: "48"
+          # 【2026-07-29 復旧】IGが Media Publish Limit Exceeded で全失敗したため安全側へ戻す。48h→72h
+          REPOST_COOLDOWN_H: "72"
+          # 1起動あたりの本数を絞る(45本/日→約15本/日)。IGの「短時間に集中しすぎ」制限の再発防止
+          IG_PER_RUN: "1"
+          THREADS_PER_RUN: "1"
           # YT実測間隔が~2hに伸び9本/日未達だったため95→75分(2026-07-27)。ランが毎時来る前提で日9本を確実に
           YT_MIN_GAP_MIN: "75"
           # 2026-07-27 konan指示: YT頻度引き上げ 9→12本/日(在庫は同日+10本増産で担保)
