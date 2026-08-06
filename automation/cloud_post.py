@@ -33,15 +33,32 @@ def _weight(p):
     return REVENUE_WEIGHT.get(m.group(1) if m else "", 1)
 
 # 加重ローテ表: pass1=全post1回ずつ、pass2以降は重み>=passの投稿だけ追加(高稼働アプリほど登場回数が増える)
-ROTATION = [i for _pass in range(1, 6) for i, p in enumerate(POSTS) if _weight(p) >= _pass]
+# 【2026-08-06 konan指示】プラットフォームで役割を分ける。
+#  - IG / Threads = 枠が多いので「偏らずいろんなアプリを紹介する」= 売上加重をかけず全アプリ均等
+#  - YouTube      = 枠が少ないので「伸びてる/DLされてるアプリに厳選」= 売上加重を効かせる
+ROTATION_WEIGHTED = [i for _pass in range(1, 6) for i, p in enumerate(POSTS) if _weight(p) >= _pass]
+ROTATION_FLAT = list(range(len(POSTS)))
+ROTATIONS = {"instagram": ROTATION_FLAT, "threads": ROTATION_FLAT, "youtube": ROTATION_WEIGHTED}
 
 now = datetime.datetime.utcnow() + datetime.timedelta(hours=9)  # JST
 day_num = (now.date() - datetime.date(2026, 1, 1)).days
 seq = day_num * 24 + now.hour
-# Threads は上限250/日と余裕があるので1回の起動で複数本(別アプリ)を投稿してpaceを稼ぐ。
-# GitHubのスケジューラが大半の起動をスキップするため、1起動あたりの本数で取りこぼしを補う。
-THREADS_PER_RUN = int(os.environ.get("THREADS_PER_RUN", "3"))
-IG_PER_RUN = int(os.environ.get("IG_PER_RUN", "3"))
+
+# 【2026-08-06 konan指示】投稿時刻を戦略化する。平日は生活動線のピーク(朝7/昼12/夕18-20)に厚く寄せ、
+# 谷の時間帯は投げない。休日は終日ばらけさせる。
+# cron 自体は毎時のまま(GitHubのスケジューラは20-50分遅延するため、cronを絞ると枠が丸ごと消える既知の事故がある)。
+# 絞るのは「起動する時刻」ではなく「その起動で何本流すか」。
+_PRIME = {7, 12, 18, 19, 20}      # 平日のピーク
+_SUB = {8, 21, 22}                # 平日の準ピーク
+def _per_run_default():
+    if now.weekday() >= 5:        # 土日=終日ばらけさせる(6-23時に1本ずつ)
+        return 1 if 6 <= now.hour <= 23 else 0
+    if now.hour in _PRIME: return 3
+    if now.hour in _SUB:   return 2
+    return 0                      # 平日の谷は投げない(IG 25本/日の上限内に収める)
+# 平日の想定本数 = 3本×5枠 + 2本×3枠 = 21本/日(IG上限25に余白4)
+THREADS_PER_RUN = int(os.environ.get("THREADS_PER_RUN") or _per_run_default())
+IG_PER_RUN = int(os.environ.get("IG_PER_RUN") or _per_run_default())
 # 【2026-07-29】IGが Media Publish Limit Exceeded で全滅した事故を受けて、勘で本数を決めるのをやめる。
 # IG Graph API の content_publishing_limit を毎回叩いて「実際の残枠」を取得し、余白を残して埋める(=ギリギリを攻める)。
 def _get(url, params):
@@ -174,10 +191,12 @@ def mark(platform, post):
     save_state()
 
 def pick(platform, start_idx):
-    """start_idxから順に(加重ローテ表を辿り)、クールダウン明けの動画を探す。全滅ならNone(=見送り)。"""
-    R = len(ROTATION)
+    """start_idxから順にローテ表を辿り、クールダウン明けの動画を探す。全滅ならNone(=見送り)。
+    ローテ表はプラットフォーム別(IG/Threads=均等・YouTube=売上加重)。"""
+    rot = ROTATIONS.get(platform, ROTATION_WEIGHTED)
+    R = len(rot)
     for k in range(R):
-        p = POSTS[ROTATION[(start_idx + k) % R]]
+        p = POSTS[rot[(start_idx + k) % R]]
         if cooled(platform, p): return p
     return None
 
@@ -219,8 +238,11 @@ if STATE.get("last_yt_ts"):
         _gap_ok = True
 yt_done = (STATE.get("yt_count", 0) >= YT_MAX_PER_DAY) or not (6 <= now.hour <= 23) or not _gap_ok
 if os.environ.get("YT_REFRESH_TOKEN") and not yt_done:
-    yp = next((POSTS[(seq + k) % N] for k in range(N)
-               if POSTS[(seq + k) % N].get("video") not in YT_POSTED), None)
+    # 【2026-08-06 konan指示】YTは枠が少ないので厳選する=売上加重ローテを辿る
+    # (DLされてる/売れてるアプリほど登場回数が増える)。IG実績連動は指標取得を実装してから。
+    _R = len(ROTATION_WEIGHTED)
+    yp = next((POSTS[ROTATION_WEIGHTED[(seq + k) % _R]] for k in range(_R)
+               if POSTS[ROTATION_WEIGHTED[(seq + k) % _R]].get("video") not in YT_POSTED), None)
     if yp is None:
         print("  youtube: 全動画投稿済み(重複再アップ回避)=新作待ち")
     else:
