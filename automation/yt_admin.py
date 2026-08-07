@@ -12,7 +12,8 @@ Shorts を公開していた(konan 指摘)。配信ラインを直しても**も
   4. --apply を付けた時だけ privacyStatus=private にする(削除はしない=取り消せる)
 
 使い方:
-  python3 automation/yt_admin.py                 # 検出のみ(既定)
+  python3 automation/yt_admin.py                 # 検出のみ(既定/GitHub Actions)
+  python3 automation/yt_admin.py --local         # Macのcredentials/youtube.jsonで実行
   python3 automation/yt_admin.py --apply         # 非公開化を実行
   python3 automation/yt_admin.py --apply --video-ids abc123,def456   # 指定IDだけ非公開化
 """
@@ -34,13 +35,18 @@ def _get(url, tok, **params):
     return json.load(urllib.request.urlopen(req, timeout=60))
 
 
-def access_token():
-    body = urllib.parse.urlencode({
-        "client_id": os.environ["YT_CLIENT_ID"],
-        "client_secret": os.environ["YT_CLIENT_SECRET"],
-        "refresh_token": os.environ["YT_REFRESH_TOKEN"],
-        "grant_type": "refresh_token",
-    }).encode()
+LOCAL_CRED = "/Users/konan/claude-tools/marketing/auto-post/credentials/youtube.json"
+
+
+def access_token(local=False):
+    """--local ならMac上の credentials/youtube.json を使う(GitHub Actions外で回すため)。"""
+    if local:
+        c = json.load(open(LOCAL_CRED))
+        cid, sec, ref = c["client_id"], c["client_secret"], c["refresh_token"]
+    else:
+        cid, sec, ref = os.environ["YT_CLIENT_ID"], os.environ["YT_CLIENT_SECRET"], os.environ["YT_REFRESH_TOKEN"]
+    body = urllib.parse.urlencode({"client_id": cid, "client_secret": sec,
+                                   "refresh_token": ref, "grant_type": "refresh_token"}).encode()
     return json.load(urllib.request.urlopen("https://oauth2.googleapis.com/token", body, timeout=30))["access_token"]
 
 
@@ -104,15 +110,20 @@ def main(argv):
         if a.startswith("--video-ids="):
             forced = [x for x in a.split("=", 1)[1].split(",") if x]
 
-    tok = access_token()
+    tok = access_token(local="--local" in argv)
     scopes = token_scopes(tok)
     can_edit = any(s.endswith("/auth/youtube") or s.endswith("/auth/youtube.force-ssl")
                    or s.endswith("/auth/youtubepartner") for s in scopes)
     print("SCOPES:", " ".join(scopes) or "(取得できず)")
+    can_read = can_edit or any(s.endswith("/auth/youtube.readonly") for s in scopes)
+    if not can_read:
+        print("NG 権限不足: このトークンは youtube.upload だけで、公開済み動画を読むことも編集することもできない。")
+        print("   → 1回だけ同意し直せば直る:")
+        print("      python3 /Users/konan/claude-tools/marketing/auto-post/yt_oauth_upgrade.py")
+        return 2
     if apply and not can_edit:
-        print("NG 権限不足: このリフレッシュトークンには videos.update の権限が無い。")
-        print("   youtube.upload だけでは公開済み動画を編集できない。")
-        print("   → OAuth を youtube.force-ssl を含めて取り直し、YT_REFRESH_TOKEN を更新する必要がある。")
+        print("NG 権限不足: videos.update には youtube.force-ssl が要る(今は無い)。")
+        print("   → python3 /Users/konan/claude-tools/marketing/auto-post/yt_oauth_upgrade.py")
         return 2
 
     vids = all_uploads(tok)
