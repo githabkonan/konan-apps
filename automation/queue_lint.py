@@ -3,7 +3,8 @@
 F-379系(キー欠落・動画参照ミス)をpush前に機械で止める。
 使い方: python3 automation/queue_lint.py [ファイル...]  # 省略時=queue+全launch_pack
 検査: 必須キー(threads_text/ig_caption/video/cover/app)・appstore_urlのid形式・
-      video/coverのローカル実在(queueのみ)・同一videoを複数エントリが別captionで参照してないか
+      video/coverのローカル実在(queueのみ)・同一videoを複数エントリが別captionで参照してないか・
+      **価格の嘘**(有料アプリなのに「無料」と言っている / F-409 2026-08-07 konan指摘)
 """
 import json, re, sys, glob, os
 
@@ -11,7 +12,45 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
 REQUIRED = ["app", "video", "ig_caption", "threads_text"]  # cover はcloud_post側で任意(あれば警告のみ)
 
-def lint(path):
+# 【F-409・2026-08-07 konan 指摘「陸曹アプリは無料じゃないぞ。なぜ嘘ついてんの?」】
+# ¥3,000 の自衛官陸曹昇任アプリを「無料でダウンロードできる」と紹介する動画をYouTubeに公開していた。
+# 広告としての虚偽表示(景表法・優良誤認)であり、ストア規約上も危険。
+# 人間のレビューに頼らず、**App Store の実価格を機械で引いて突き合わせる**。
+FREE_WORD = re.compile(r"無料|タダ|0円|ゼロ円|\bfree\b", re.I)
+PRICE_CACHE = os.path.join(HERE, ".price_cache.json")
+
+
+def fetch_prices(app_ids):
+    """App Store の実価格を引く。取得できたぶんだけ返す(ネット不通なら空=検査スキップ)。"""
+    import urllib.request
+    out = {}
+    ids = sorted(set(app_ids))
+    for i in range(0, len(ids), 10):
+        chunk = ",".join(ids[i:i + 10])
+        try:
+            url = f"https://itunes.apple.com/lookup?id={chunk}&country=jp"
+            d = json.load(urllib.request.urlopen(url, timeout=20))
+        except Exception as e:
+            print(f"WARN 価格照会に失敗({e}) — 価格検査はこのぶんだけスキップ", file=sys.stderr)
+            continue
+        for r in d.get("results", []):
+            out[str(r.get("trackId"))] = {"price": r.get("price"), "label": r.get("formattedPrice"),
+                                          "name": r.get("trackName")}
+    if out:  # 直近の実測を残しておく(ネット不通時のフォールバック)
+        try:
+            old = json.load(open(PRICE_CACHE))
+        except Exception:
+            old = {}
+        old.update(out)
+        json.dump(old, open(PRICE_CACHE, "w"), ensure_ascii=False, indent=1)
+        return old
+    try:
+        return json.load(open(PRICE_CACHE))
+    except Exception:
+        return {}
+
+def lint(path, prices=None):
+    prices = prices or {}
     errs = []
     d = json.load(open(path))
     posts = d["posts"] if isinstance(d, dict) else d
@@ -25,6 +64,13 @@ def lint(path):
         url = p.get("appstore_url", "")
         if url and not re.search(r"apps\.apple\.com/.+/id\d+", url):
             errs.append(f"{tag}: appstore_url形式不正 {url}")
+        m_id = re.search(r"/id(\d+)", url)
+        if m_id and prices.get(m_id.group(1)):
+            info = prices[m_id.group(1)]
+            blob = (p.get("ig_caption") or "") + "\n" + (p.get("threads_text") or "")
+            if (info.get("price") or 0) > 0 and FREE_WORD.search(blob):
+                errs.append(f"{tag}: 価格の嘘 — {info.get('name')} は {info.get('label')} なのに"
+                            f"「無料」と書いている(F-409)")
         if is_queue:
             for key, sub in [("video", "videos"), ("cover", "videos")]:
                 f = p.get(key)
@@ -43,9 +89,17 @@ def lint(path):
 
 def main(argv):
     targets = argv or [os.path.join(HERE, "post_queue.json")] + sorted(glob.glob(os.path.join(HERE, "*_launch_pack.json")))
+    app_ids = []
+    for t in targets:
+        d = json.load(open(t))
+        for p in (d["posts"] if isinstance(d, dict) else d):
+            m = re.search(r"/id(\d+)", p.get("appstore_url", "") or "")
+            if m:
+                app_ids.append(m.group(1))
+    prices = fetch_prices(app_ids)
     all_errs = []
     for t in targets:
-        all_errs += lint(t)
+        all_errs += lint(t, prices)
     for e in all_errs:
         print("NG", e)
     if not all_errs:

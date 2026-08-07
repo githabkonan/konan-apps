@@ -224,38 +224,57 @@ for i in range(IG_PER_RUN):
 # YouTube: 最優秀チャンネルだが同一動画の再アップ=スパム/重複判定リスク → 各動画一度きり。
 # 未投稿の動画が無くなったら投稿しない(=新作が投入されると自動再開)。
 YT_MAX_PER_DAY = int(os.environ.get("YT_MAX_PER_DAY", "9"))
-# YT投稿の分散: 2026-07-22 時刻セット判定を廃止(GitHub cronは20-50分遅延し now.hour がセットを外れて
-# 枠が丸ごと消えていた=11時/13時枠消失の実バグ)。最低間隔ベースなら遅延起動でも取りこぼさない。
-YT_MIN_GAP_MIN = int(os.environ.get("YT_MIN_GAP_MIN", "95"))  # 95分間隔×9本 ≈ 6:00-23:00に分散
+# 【F-410・2026-08-07 konan「今日youtubeで3本しか動画が上がってない。なぜ?」】
+# 原因は「1ラン=最大1本 × GitHub cron が落ちる」の掛け算。
+# schedule は毎時のはずが実測7回/11回しか発火せず(00,03,04,06,06,08,10 UTC)、
+# さらに固定75分ギャップで発火したランまで空振りし、12本/日の目標に対し実績5本だった。
+# → **ペース追従方式**に変更。今が1日の何%かで「今あるべき本数」を出し、
+#   不足していればそのランで最大 YT_CATCHUP_MAX 本まで連続投稿して取り戻す。
+#   これなら cron が何回落ちても、次に生きているランが遅れを吸収する。
+YT_WIN_START, YT_WIN_END = 6, 23          # 投稿する時間帯(JST)
+YT_CATCHUP_MAX = int(os.environ.get("YT_CATCHUP_MAX", "3"))  # 1ランで取り返す上限
 today = now.date().isoformat()
 if STATE.get("yt_date") != today:
     STATE["yt_date"] = today; STATE["yt_count"] = 0; STATE["last_yt_seq"] = None
-_gap_ok = True
-if STATE.get("last_yt_ts"):
-    try:
-        _gap_ok = (now - datetime.datetime.fromisoformat(STATE["last_yt_ts"])).total_seconds() >= YT_MIN_GAP_MIN * 60
-    except Exception:
-        _gap_ok = True
-yt_done = (STATE.get("yt_count", 0) >= YT_MAX_PER_DAY) or not (6 <= now.hour <= 23) or not _gap_ok
-if os.environ.get("YT_REFRESH_TOKEN") and not yt_done:
-    # 【2026-08-06 konan指示】YTは枠が少ないので厳選する=売上加重ローテを辿る
-    # (DLされてる/売れてるアプリほど登場回数が増える)。IG実績連動は指標取得を実装してから。
-    _R = len(ROTATION_WEIGHTED)
-    yp = next((POSTS[ROTATION_WEIGHTED[(seq + k) % _R]] for k in range(_R)
-               if POSTS[ROTATION_WEIGHTED[(seq + k) % _R]].get("video") not in YT_POSTED), None)
-    if yp is None:
-        print("  youtube: 全動画投稿済み(重複再アップ回避)=新作待ち")
+
+
+def _yt_pace_target():
+    """今の時刻なら何本上がっているべきか(6:00-23:59 に YT_MAX_PER_DAY 本を均等配分)。"""
+    span = (YT_WIN_END + 1 - YT_WIN_START) * 60
+    elapsed = (now.hour - YT_WIN_START) * 60 + now.minute
+    elapsed = max(0, min(span, elapsed))
+    return min(YT_MAX_PER_DAY, -(-YT_MAX_PER_DAY * elapsed // span))  # 切り上げ
+
+
+if os.environ.get("YT_REFRESH_TOKEN") and YT_WIN_START <= now.hour <= YT_WIN_END:
+    _target = _yt_pace_target()
+    _behind = _target - STATE.get("yt_count", 0)
+    if _behind <= 0:
+        print(f"  youtube: ペース内({STATE.get('yt_count',0)}/{_target}本)=今は見送り")
     else:
-        ok, val = with_retry(lambda p=yp: publish_youtube(p))
-        results.append({"ch": "youtube", "app": yp.get("app"), "ok": ok, ("id" if ok else "err"): val})
-        print(f"  youtube[{yp.get('app')}] ({STATE.get('yt_count',0)+1}/{YT_MAX_PER_DAY}): {'OK ' + str(val) if ok else 'FAIL ' + str(val)}")
-        if ok:
+        _n = min(_behind, YT_CATCHUP_MAX)
+        print(f"  youtube: ペース {STATE.get('yt_count',0)}/{_target}本 → {_n}本投稿して取り戻す")
+        for _i in range(_n):
+            # 【2026-08-06 konan指示】YTは枠が少ないので厳選する=売上加重ローテを辿る
+            # (DLされてる/売れてるアプリほど登場回数が増える)。IG実績連動は指標取得を実装してから。
+            _R = len(ROTATION_WEIGHTED)
+            yp = next((POSTS[ROTATION_WEIGHTED[(seq + k) % _R]] for k in range(_R)
+                       if POSTS[ROTATION_WEIGHTED[(seq + k) % _R]].get("video") not in YT_POSTED), None)
+            if yp is None:
+                print("  youtube: 全動画投稿済み(重複再アップ回避)=新作待ち")
+                break
+            ok, val = with_retry(lambda p=yp: publish_youtube(p))
+            results.append({"ch": "youtube", "app": yp.get("app"), "ok": ok, ("id" if ok else "err"): val})
+            print(f"  youtube[{yp.get('app')}] ({STATE.get('yt_count',0)+1}/{YT_MAX_PER_DAY}): {'OK ' + str(val) if ok else 'FAIL ' + str(val)}")
+            if not ok:
+                break  # 連投で同じ失敗を繰り返さない(クォータ超過等)
             ok_count += 1
             STATE["last_yt_seq"] = seq
             STATE["last_yt_ts"] = now.isoformat()
             STATE["yt_count"] = STATE.get("yt_count", 0) + 1
             YT_POSTED.append(yp.get("video"))
             save_state()
+            seq += 1  # 連投時に同じアプリが続かないようローテを進める
 
 print("RESULT", json.dumps(results, ensure_ascii=False))
 # exit 1 は「試行したのに全失敗」の本物の障害だけ(=誤アラーム排除)。

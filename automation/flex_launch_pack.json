@@ -1,27 +1,7 @@
 {
-  "_readme": "FLEX(散財シミュレーションRPG)承認後の即時ローンチ用パック。手順: ①ストアURL 200確認(curl -sL) ②下のpostsをpost_queue.jsonのposts[]に追記 ③git push(自動投稿ローテが拾う)。承認前に絶対にキューへ入れない(CTAが404になる)。",
-  "app_id": "6787874159",
-  "appstore_url": "https://apps.apple.com/jp/app/id6787874159",
-  "verify_cmd": "curl -sL -o /dev/null -w '%{http_code}' https://apps.apple.com/jp/app/id6787874159",
-  "posts": [
-    {
-      "app": "FLEX(NISA時事)",
-      "type": "flex",
-      "appstore_url": "https://apps.apple.com/jp/app/id6787874159",
-      "video": "flex_nisa.mp4",
-      "cover": "covers/flex_nisa.jpg",
-      "ig_caption": "NISAで節約疲れした人にこそ刺さるやつ。10億円渡されて、ただ使い切るだけのゲーム。スーパーカーも無人島も買い放題。現実の口座は1円も減らない。\nApp Storeで「散財シミュレーション」で検索。\n#散財 #シミュレーションゲーム #ストレス発散 #暇つぶしゲーム",
-      "threads_text": "積立と節約ばっかりの毎日だから、ゲームの中でくらい好きに使いたくて作った。10億円を使い切るだけのゲーム。スーパーカー、無人島、T-REXの化石まで買える。\nhttps://apps.apple.com/jp/app/id6787874159\n#散財 #ストレス発散"
-    },
-    {
-      "app": "FLEX(神アプリ紹介)",
-      "type": "flex",
-      "appstore_url": "https://apps.apple.com/jp/app/id6787874159",
-      "video": "flex_nisa.mp4",
-      "cover": "covers/flex_nisa.jpg",
-      "ig_caption": "何も考えずに10億円使い切るだけのアプリ、地味にクセになる。買うたびに称号が上がって、最後は伝説の散財王。\nApp Storeで「散財シミュレーション」で検索。\n#散財 #暇つぶしゲーム #無料ゲーム",
-      "threads_text": "10億円を意味もなく使い切るだけのゲームが意外とストレス発散になる。回転寿司100皿からプライベートジェットまで。\nhttps://apps.apple.com/jp/app/id6787874159\n#散財 #暇つぶし",
-      "_note": "専用の紹介動画(flex_intro.mp4)は明日制作予定。それまで同一動画×別キャプションでローテ可"
-    }
-  ]
+ "_readme": "FLEX(散財シミュレーションRPG)承認後の即時ローンチ用パック。手順: ①ストアURL 200確認(curl -sL) ②下のpostsをpost_queue.jsonのposts[]に追記 ③git push(自動投稿ローテが拾う)。承認前に絶対にキューへ入れない(CTAが404になる)。",
+ "app_id": "6787874159",
+ "appstore_url": "https://apps.apple.com/jp/app/id6787874159",
+ "verify_cmd": "curl -sL -o /dev/null -w '%{http_code}' https://apps.apple.com/jp/app/id6787874159",
+ "posts": []
 }

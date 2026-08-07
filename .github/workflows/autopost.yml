@@ -21,6 +21,9 @@ jobs:
         run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
       - name: Narration gate (ナレ無し動画は配信ライン全停止)
         run: python3 automation/video_preflight.py
+      # 【F-409】有料アプリを「無料」と紹介する投稿を配信ラインで止める(価格はApp Storeに実照会)
+      - name: Truth gate (価格の嘘・必須キー)
+        run: python3 automation/queue_lint.py
       - name: Post to IG + Threads
         env:
           # 【2026-07-29 復旧】IGが Media Publish Limit Exceeded で全失敗したため安全側へ戻す。48h→72h
@@ -30,10 +33,12 @@ jobs:
           # 【2026-08-06】本数はcloud_post.py側の時間帯戦略が決める(空=自動)
           IG_SAFETY_MARGIN: "5"
 
-          # YT実測間隔が~2hに伸び9本/日未達だったため95→75分(2026-07-27)。ランが毎時来る前提で日9本を確実に
-          YT_MIN_GAP_MIN: "75"
           # 2026-07-27 konan指示: YT頻度引き上げ 9→12本/日(在庫は同日+10本増産で担保)
           YT_MAX_PER_DAY: "12"
+          # 【F-410・2026-08-07】固定間隔(75分)は廃止。GitHub cron は毎時のはずが実測7/11回しか
+          # 発火せず、1ラン1本しか上げない設計と噛み合って実績5本/12本だった。
+          # 今はペース追従で、遅れていれば1ランで最大この本数まで取り戻す。
+          YT_CATCHUP_MAX: "3"
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}

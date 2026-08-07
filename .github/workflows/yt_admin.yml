@@ -1,0 +1,31 @@
+name: yt-admin
+# 公開済みYouTube動画の是正(F-409)。手動起動のみ=定期実行はしない。
+on:
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: '実際に非公開化する(false=検出のみ)'
+        type: boolean
+        default: false
+      video_ids:
+        description: '対象を絞る場合のvideoIdカンマ区切り(空=価格の嘘を自動検出)'
+        type: string
+        default: ''
+jobs:
+  admin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Sweep false price claims
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: |
+          ARGS=""
+          [ "${{ inputs.apply }}" = "true" ] && ARGS="$ARGS --apply"
+          [ -n "${{ inputs.video_ids }}" ] && ARGS="$ARGS --video-ids=${{ inputs.video_ids }}"
+          python3 automation/yt_admin.py $ARGS
