@@ -25,12 +25,33 @@ try:
     REVENUE_WEIGHT = json.load(open(os.path.join(HERE, "weights.json")))
 except Exception:
     REVENUE_WEIGHT = {"6774074604": 5, "6778490302": 3, "6776236258": 2}
+# 【2026-08-08 konan 明言】「この八本は確実にマーケよろしく特にようつべ」
+# 全部が有料アプリ=売上に直結する本命。ASCの実売上がまだ小さくても YouTube 枠では最優先で回す。
+# weights.json は毎日 ASC 実績から再生成されるので、そこに書くと翌日消える。
+# **消えない場所(=消費側)に下限として置く。**
+KONAN_PRIORITY = {
+    "6774074604": "自衛官陸曹昇任試験対策",
+    "6772919770": "自衛官入隊試験対策",
+    "6776236258": "自衛官一般幹部候補生試験対策",
+    "6778490302": "予備自衛官補 採用試験対策",
+    "6789518576": "自衛官海曹昇任試験対策",
+    "6789531149": "自衛官空曹昇任試験対策",
+    "6793729335": "ミリタリー英語トレーナー",
+    "6793410091": "韓国語脳トレーナー",
+}
+PRIORITY_FLOOR = 5  # ROTATION_WEIGHTED の最大パス数=ローテ内に5回出る
+
+
 def _weight(p):
     url = p.get("appstore_url") or ""
     if not url:
         return 2
     m = re.search(r"id(\d+)", url)
-    return REVENUE_WEIGHT.get(m.group(1) if m else "", 1)
+    aid = m.group(1) if m else ""
+    w = REVENUE_WEIGHT.get(aid, 1)
+    if aid in KONAN_PRIORITY:
+        return max(w, PRIORITY_FLOOR)  # 実績が下がっても優先は落とさない
+    return w
 
 # 加重ローテ表: pass1=全post1回ずつ、pass2以降は重み>=passの投稿だけ追加(高稼働アプリほど登場回数が増える)
 # 【2026-08-06 konan指示】プラットフォームで役割を分ける。
