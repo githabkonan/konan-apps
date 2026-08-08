@@ -42,6 +42,11 @@ KONAN_PRIORITY = {
 PRIORITY_FLOOR = 5  # ROTATION_WEIGHTED の最大パス数=ローテ内に5回出る
 
 
+def _app_id(p):
+    m = re.search(r"id(\d+)", p.get("appstore_url") or "")
+    return m.group(1) if m else ""
+
+
 def _weight(p):
     url = p.get("appstore_url") or ""
     if not url:
@@ -278,9 +283,18 @@ if os.environ.get("YT_REFRESH_TOKEN") and YT_WIN_START <= now.hour <= YT_WIN_END
         for _i in range(_n):
             # 【2026-08-06 konan指示】YTは枠が少ないので厳選する=売上加重ローテを辿る
             # (DLされてる/売れてるアプリほど登場回数が増える)。IG実績連動は指標取得を実装してから。
+            # 【2026-08-08 konan 明言】「残り九本のうち八本はこの8本を出せ」
+            # 加重ローテだけだと確率的にしか寄らない。**優先8本の未投稿があれば必ずそれを先に出す。**
+            # 優先枠を使い切ってから、はじめて通常の加重ローテに落ちる。
             _R = len(ROTATION_WEIGHTED)
             yp = next((POSTS[ROTATION_WEIGHTED[(seq + k) % _R]] for k in range(_R)
-                       if POSTS[ROTATION_WEIGHTED[(seq + k) % _R]].get("video") not in YT_POSTED), None)
+                       if POSTS[ROTATION_WEIGHTED[(seq + k) % _R]].get("video") not in YT_POSTED
+                       and _app_id(POSTS[ROTATION_WEIGHTED[(seq + k) % _R]]) in KONAN_PRIORITY), None)
+            if yp is not None:
+                print(f"  youtube: 優先枠 → {KONAN_PRIORITY[_app_id(yp)]}")
+            else:
+                yp = next((POSTS[ROTATION_WEIGHTED[(seq + k) % _R]] for k in range(_R)
+                           if POSTS[ROTATION_WEIGHTED[(seq + k) % _R]].get("video") not in YT_POSTED), None)
             if yp is None:
                 print("  youtube: 全動画投稿済み(重複再アップ回避)=新作待ち")
                 break
