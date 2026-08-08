@@ -1,7 +1,7 @@
 {
- "yt_date": "2026-08-08",
- "yt_count": 12,
- "last_yt_seq": 5278,
+ "yt_date": "2026-08-09",
+ "yt_count": 1,
+ "last_yt_seq": 5286,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -203,7 +203,8 @@
   "yobi_deadline_20260808_1148.mp4",
   "mileigo_kiribas_20260808_1148.mp4",
   "kankoku_yontaku_20260808_1148.mp4",
-  "kaiso_bunbetsu_20260808_1148.mp4"
+  "kaiso_bunbetsu_20260808_1148.mp4",
+  "kusou_mokuroku_20260808_1148.mp4"
  ],
  "hist": {
   "threads": {
@@ -218,7 +219,7 @@
    "jieitai_saiyou.mp4": "2026-08-03T18:04:25.500790",
    "yobi_saiyou.mp4": "2026-08-06T12:51:41.565130",
    "koushu4_news.mp4": "2026-08-03T13:48:56.159853",
-   "jsdf_hook_ichijikin.mp4": "2026-08-04T06:19:44.018372",
+   "jsdf_hook_ichijikin.mp4": "2026-08-09T06:33:38.094798",
    "jsdf_hook_kyufu120.mp4": "2026-08-04T06:19:44.018372",
    "jsdf_hook_shoninkyu.mp4": "2026-08-04T07:12:58.302509",
    "qc3_recall.mp4": "2026-08-05T14:50:42.135559",
@@ -405,7 +406,7 @@
   "instagram": {
    "otsu6_news.mp4": "2026-08-04T16:42:26.502587",
    "jieitai_saiyou.mp4": "2026-08-04T10:49:43.693098",
-   "yobi_saiyou.mp4": "2026-08-04T16:42:26.502587",
+   "yobi_saiyou.mp4": "2026-08-09T06:33:38.094798",
    "news_jieitai.mp4": "2026-08-04T09:11:53.046324",
    "rikuso_saiyou.mp4": "2026-08-04T10:49:43.693098",
    "kanbu_saiyou.mp4": "2026-08-04T10:49:43.693098",
@@ -608,5 +609,5 @@
    "eigonoh_tour_20260808_1242.mp4": "2026-08-08T23:34:16.832791"
   }
  },
- "last_yt_ts": "2026-08-08T22:48:28.440551"
+ "last_yt_ts": "2026-08-09T06:33:38.094798"
 }
