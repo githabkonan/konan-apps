@@ -25,6 +25,12 @@ import urllib.parse
 import urllib.request
 
 FREE_WORD = re.compile(r"無料|タダ|0円|ゼロ円|\bfree\b", re.I)
+
+# 【2026-08-08】価格の嘘だけでなく、konan が禁止した「試験系自己啓発」トーンも公開済みから洗う。
+# 「あくまでアプリ紹介。こんなアプリあるよ!って知ってもらうだけでいい」(2026-08-05 konan)
+HYPE_WORD = re.compile(
+    r"差(はここで開く|がついてき|が開く)|締切まで(時間がない|あと|残り)|試験まであと\s*\d"
+    r"|今(動かないと|やらないと|始めないと)|動かす側|見送る側|合格まで(あと|残り)")
 APP_ID = re.compile(r"/id(\d+)")
 API = "https://www.googleapis.com/youtube/v3"
 
@@ -135,6 +141,10 @@ def main(argv):
         if forced:
             if v["id"] in forced:
                 bad.append((v, "指定"))
+            continue
+        mh = HYPE_WORD.search(v["title"] + "\n" + v["desc"])
+        if mh:
+            bad.append((v, f"煽りトーン「{mh.group(0)}」— アプリ紹介に徹する(2026-08-05 konan明言)"))
             continue
         m = APP_ID.search(v["desc"])
         if not m:

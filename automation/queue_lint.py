@@ -19,6 +19,21 @@ REQUIRED = ["app", "video", "ig_caption", "threads_text"]  # cover はcloud_post
 FREE_WORD = re.compile(r"無料|タダ|0円|ゼロ円|\bfree\b", re.I)
 PRICE_CACHE = os.path.join(HERE, ".price_cache.json")
 
+# 【2026-08-05 konan 明言 → 2026-08-08 再発でゲート化】
+# 「自衛官の昇任系が試験系自己啓発チャンネルみたいになってて言語化できない恥ずかしさがある。
+#   こんなアプリあるよ!って知ってもらうだけでいい。あくまでアプリ紹介」
+# プロンプトに書くだけでは 2026-08-08 のバッチで「締切まで時間がない。」がすり抜けた。
+# **煽り構文を機械で落とす。** 事実の告知(「締切は9月10日だ」)は通し、焦らせる言い回しだけを弾く。
+HYPE_PATTERNS = [
+    (r"締切まで(時間がない|あと|残り)", "締切で焦らせている"),
+    (r"試験まであと\s*\d", "カウントダウンで焦らせている"),
+    (r"今(動かないと|やらないと|始めないと)", "今やらないと、で焦らせている"),
+    (r"(動かす側|見送る側|上に行く(なら|か))", "二択を突きつけて発奮させている"),
+    (r"先輩は.{0,8}(隙間時間|スキマ時間)", "成功者の習慣を語っている"),
+    (r"(差はここで開く|差が開く)", "格差を主題にしている"),
+    (r"合格まで(あと|残り)", "合否を主題にしている"),
+]
+
 
 def fetch_prices(app_ids):
     """App Store の実価格を引く。取得できたぶんだけ返す(ネット不通なら空=検査スキップ)。"""
@@ -76,6 +91,12 @@ def lint(path, prices=None):
                 f = p.get(key)
                 if f and not os.path.exists(os.path.join(REPO, sub, f)):
                     errs.append(f"{tag}: {key}ファイル未配置 {sub}/{f}")
+        blob_all = (p.get("ig_caption") or "") + "\n" + (p.get("threads_text") or "")
+        for pat, why in HYPE_PATTERNS:
+            m = re.search(pat, blob_all)
+            if m:
+                errs.append(f"{tag}: 煽り構文「{m.group(0)}」— {why}"
+                            f"(アプリ紹介に徹する・2026-08-05 konan明言)")
         tt = p.get("threads_text", "")
         if re.search(r"このシーン|この動画|この映像", tt):
             errs.append(f"{tag}: threads_textが映像参照(Threadsはテキスト専用=自己完結文にする・2026-07-27 konan指摘)")
