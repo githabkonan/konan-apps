@@ -47,10 +47,26 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
         run: python3 automation/cloud_post.py
+      # 【2026-08-08】以前は `git pull --rebase` で、こちらが同時にpushしていると
+      # "could not apply ... chore: autopost state" で落ち、**投稿は成功しているのに state だけ消える**
+      # (=72hクールダウンの記録が飛ぶ)事故が起きた。競合しても取りこぼさないよう意味を分かって合流させる。
       - name: Persist state (YT dedup)
         if: always()
         run: |
           git config user.name "Chokobi Sakusaku"
           git config user.email "konakonan822@gmail.com"
-          git add automation/state.json || true
-          git diff --cached --quiet || (git commit -m "chore: autopost state" && git pull --rebase && git push)
+          for i in 1 2 3 4 5; do
+            git fetch origin main
+            git show origin/main:automation/state.json > /tmp/remote_state.json 2>/dev/null || echo '{}' > /tmp/remote_state.json
+            python3 automation/merge_state.py /tmp/remote_state.json
+            git add automation/state.json
+            git diff --cached --quiet && { echo "state 変化なし"; exit 0; }
+            git commit -m "chore: autopost state"
+            git reset --hard HEAD >/dev/null
+            git rebase origin/main -X ours >/dev/null 2>&1 || git rebase --abort >/dev/null 2>&1
+            if git push origin HEAD:main; then echo "state 保存OK"; exit 0; fi
+            echo "push 競合 — 合流し直して再試行 ($i/5)"
+            git reset --hard origin/main >/dev/null
+            sleep 5
+          done
+          echo "WARN state を保存できなかった(投稿自体は完了している)"
