@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-08-10",
- "yt_count": 5,
- "last_yt_seq": 5316,
+ "yt_count": 7,
+ "last_yt_seq": 5320,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -220,7 +220,9 @@
   "mileigo_sobi_20260809_1605.mp4",
   "kankoku_hatsuon_20260809_1605.mp4",
   "kaiso_keyword_20260809_1605.mp4",
-  "kusou_seitouritsu_20260809_1605.mp4"
+  "kusou_seitouritsu_20260809_1605.mp4",
+  "rikuso_2taku_20260809_1637.mp4",
+  "iritai_mode_20260809_1637.mp4"
  ],
  "hist": {
   "threads": {
@@ -628,5 +630,5 @@
    "eigonoh_tour_20260808_1242.mp4": "2026-08-08T23:34:16.832791"
   }
  },
- "last_yt_ts": "2026-08-10T12:30:31.671444"
+ "last_yt_ts": "2026-08-10T15:03:03.488796"
 }
