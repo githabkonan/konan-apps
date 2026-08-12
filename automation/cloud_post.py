@@ -23,7 +23,12 @@ POSTS = Q["posts"]
 # **煽り構文を含む1本のせいで全チャンネルの配信が16時間半止まった**。
 # 不良は隔離して、健全な在庫は流す。
 _bad = set()
-for _qf in (os.path.join(HERE, "quarantine_lint.json"), os.path.join(HERE, "quarantine_media.json")):
+for _qf in (os.path.join(HERE, "quarantine_lint.json"),
+            os.path.join(HERE, "quarantine_media.json"),
+            # 【2026-08-12 konan指摘】題材からアプリへ話が飛んでいる動画。
+            # 「台湾軍が橋を封鎖した→陸曹昇任試験のアプリがある」で公開してしまい、
+            # konan が限定公開に落として処置した。直したものから外していく。
+            os.path.join(HERE, "quarantine_flow.json")):
     if os.path.exists(_qf):
         try:
             _bad |= set(json.load(open(_qf)))
