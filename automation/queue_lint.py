@@ -64,15 +64,26 @@ def fetch_prices(app_ids):
     except Exception:
         return {}
 
-def lint(path, prices=None):
+def lint(path, prices=None, bad_keys=None):
+    """NG を検出する。bad_keys(set) を渡すと、NG になった投稿の識別子をそこに入れる。
+
+    【2026-08-12】以前は NG が1件でも exit 1 にしてワークフローごと落としていた。
+    その結果、煽り構文を含む**1本**のせいで IG/Threads/YouTube の配信が
+    16時間半すべて止まった。**不良品は隔離し、健全な在庫は流す**のが正しい。
+    """
     prices = prices or {}
     errs = []
+    bad_keys = bad_keys if bad_keys is not None else set()
     d = json.load(open(path))
     posts = d["posts"] if isinstance(d, dict) else d
     is_queue = os.path.basename(path) == "post_queue.json"
     seen_video = {}
+    def _key(post, idx):
+        return post.get("video") or f"{os.path.basename(path)}#{idx}"
+
     for i, p in enumerate(posts):
         tag = f"{os.path.basename(path)}[{i}] {p.get('app','?')}"
+        _n0 = len(errs)
         for k in REQUIRED:
             if not p.get(k):
                 errs.append(f"{tag}: 必須キー欠落 {k}")
@@ -106,6 +117,8 @@ def lint(path, prices=None):
             if prev is not None and posts[prev].get("appstore_url") != p.get("appstore_url"):
                 errs.append(f"{tag}: 同一video {v} を別アプリと共用(F-379)")
             seen_video[v] = i
+        if len(errs) > _n0:
+            bad_keys.add(_key(p, i))
     return errs
 
 def main(argv):
@@ -119,13 +132,32 @@ def main(argv):
                 app_ids.append(m.group(1))
     prices = fetch_prices(app_ids)
     all_errs = []
+    bad_keys = set()
+    total = 0
     for t in targets:
-        all_errs += lint(t, prices)
+        d = json.load(open(t))
+        total += len(d["posts"] if isinstance(d, dict) else d)
+        all_errs += lint(t, prices, bad_keys)
     for e in all_errs:
         print("NG", e)
-    if not all_errs:
+
+    # 【2026-08-12】NG は「隔離」であって「全停止」ではない。
+    # 以前は1本の煽り構文で exit 1 → ワークフロー全体が落ち、
+    # IG/Threads/YouTube の配信が16時間半止まった。被害が不良1本分で収まる形にする。
+    qpath = os.path.join(HERE, "quarantine.json")
+    if bad_keys:
+        json.dump(sorted(bad_keys), open(qpath, "w"), ensure_ascii=False, indent=1)
+        print(f"\n🚧 隔離 {len(bad_keys)}件 / 全{total}件 — この分だけ配信から外して続行します")
+        print(f"   → {qpath}(cloud_post.py がこれを読んで除外する)")
+        # 全滅なら配信するものが無いので、これは本当に止める
+        if len(bad_keys) >= total:
+            print("❌ 全件NG — 配信できるものが無いので停止します")
+            return 1
+    else:
+        if os.path.exists(qpath):
+            os.remove(qpath)
         print(f"OK {len(targets)} files clean")
-    return 1 if all_errs else 0
+    return 0
 
 if __name__ == "__main__":
     sys.exit(main(sys.argv[1:]))

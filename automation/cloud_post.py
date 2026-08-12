@@ -17,6 +17,22 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 Q = json.load(open(os.path.join(HERE, "post_queue.json")))
 BASE = Q["video_base"].rstrip("/")
 POSTS = Q["posts"]
+
+# 【2026-08-12】queue_lint が NG と判定した投稿だけを配信から外す。
+# 以前は queue_lint が exit 1 でワークフローごと落としており、
+# **煽り構文を含む1本のせいで全チャンネルの配信が16時間半止まった**。
+# 不良は隔離して、健全な在庫は流す。
+_qf = os.path.join(HERE, "quarantine.json")
+if os.path.exists(_qf):
+    try:
+        _bad = set(json.load(open(_qf)))
+        _before = len(POSTS)
+        POSTS = [p for p in POSTS if p.get("video") not in _bad]
+        if len(POSTS) != _before:
+            print(f"🚧 隔離により {_before - len(POSTS)}本を配信から除外(残 {len(POSTS)}本)")
+    except Exception as e:
+        print(f"WARN quarantine.json を読めない({e}) — 隔離なしで続行")
+
 N = len(POSTS)
 
 # 2026-07-20: 加重値は weights.json(gen_marketing_weights.py が直近30日のASC実売上から毎日再計算しpush)を読む。
