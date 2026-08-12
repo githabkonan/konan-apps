@@ -170,6 +170,14 @@ def _catchup(platform, base):
 
 THREADS_PER_RUN = int(os.environ.get("THREADS_PER_RUN") or _catchup("threads", _per_run_default()))
 IG_PER_RUN = int(os.environ.get("IG_PER_RUN") or _catchup("instagram", _per_run_default()))
+
+# 【F-412 / 2026-08-13】Threads は7/30以降に4件をスパム削除されて 8/12 に完全停止した。
+# 動画つきに作り替えて再開するが、いきなり元の本数(21本/日想定)には戻さない。
+# 1ランに1本・1日6本から始めて、削除が出ないことを確認してから上げる。
+# 動画は Threads 側の取り込みに数分かかるので、1ラン複数本は時間的にも現実的でない。
+THREADS_MAX_PER_DAY = int(os.environ.get("THREADS_MAX_PER_DAY", "6"))
+_th_today = _today_count("threads")
+THREADS_PER_RUN = min(THREADS_PER_RUN, 1, max(0, THREADS_MAX_PER_DAY - _th_today))
 # 【2026-07-29】IGが Media Publish Limit Exceeded で全滅した事故を受けて、勘で本数を決めるのをやめる。
 # IG Graph API の content_publishing_limit を毎回叩いて「実際の残枠」を取得し、余白を残して埋める(=ギリギリを攻める)。
 def _get(url, params):
@@ -206,12 +214,37 @@ def _post(url, params):
 
 
 
+def threads_text(post):
+    """Threads本文。**App Storeリンクを外す**。
+
+    【F-412 / 2026-08-13】7/30以降4件がスパム削除された。直近50本で総表示51回・32本が0回。
+    毎回「宣伝文 + apps.apple.com リンク + 同じ締め」という同型を1日5回投げていたのが原因。
+    リンクは動画の最終シーン(App Storeでこう検索)が担うので、本文からは落とす。
+    """
+    lines = [l for l in (post.get("threads_text") or "").splitlines()
+             if "apps.apple.com" not in l]
+    return "\n".join(lines).strip()[:500]
+
+
 def publish_threads(post):
-    """テキスト + URL のみ(動画は使わない)。"""
+    """動画つきで投稿する(テキストだけの使い回しはスパム判定を受けた・F-412)。"""
     uid = os.environ["THREADS_USER_ID"]; tok = os.environ["THREADS_ACCESS_TOKEN"]
     B = "https://graph.threads.net/v1.0"
-    cid = _post(f"{B}/{uid}/threads", {"media_type": "TEXT", "text": post["threads_text"], "access_token": tok})["id"]
-    time.sleep(3)
+    cid = _post(f"{B}/{uid}/threads", {"media_type": "VIDEO",
+                                       "video_url": f"{BASE}/{post['video']}",
+                                       "text": threads_text(post),
+                                       "access_token": tok})["id"]
+    # 動画は Threads 側の取り込みが終わるまで publish できない。公式の目安は30秒。
+    st = None
+    for _ in range(30):
+        time.sleep(6)
+        st = _get(f"{B}/{cid}", {"fields": "status,error_message", "access_token": tok})
+        if st.get("status") == "FINISHED":
+            break
+        if st.get("status") == "ERROR":
+            raise RuntimeError(f"Threads取り込み失敗 {st.get('error_message')}")
+    if (st or {}).get("status") != "FINISHED":
+        raise RuntimeError(f"Threads取り込みが終わらない status={(st or {}).get('status')}")
     return _post(f"{B}/{uid}/threads_publish", {"creation_id": cid, "access_token": tok}).get("id")
 
 
