@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-08-12",
- "yt_count": 10,
- "last_yt_seq": 5372,
+ "yt_count": 11,
+ "last_yt_seq": 5374,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -247,7 +247,8 @@
   "kankoku_travel_20260812_0046.mp4",
   "milchugo_new_20260808_1148.mp4",
   "unkan_kaisetsu_20260808_1242.mp4",
-  "rikuso_tankou_20260812_1829.mp4"
+  "rikuso_tankou_20260812_1829.mp4",
+  "iritai_jiji_20260812_1829.mp4"
  ],
  "hist": {
   "threads": {
@@ -545,9 +546,9 @@
    "rikuso_kyotsu_v3.mp4": "2026-08-03T13:48:56.159853",
    "yobi_kunren_v3.mp4": "2026-08-03T13:48:56.159853",
    "kusou_michi_v3.mp4": "2026-08-03T11:58:23.394325",
-   "kankokugo_quiz1_v3.mp4": "2026-08-03T15:32:34.714203",
-   "kankokugo_oshi_v3.mp4": "2026-08-03T15:32:34.714203",
-   "milchugo_zhanzhu_v3.mp4": "2026-08-03T15:32:34.714203",
+   "kankokugo_quiz1_v3.mp4": "2026-08-12T22:15:32.133164",
+   "kankokugo_oshi_v3.mp4": "2026-08-12T22:15:32.133164",
+   "milchugo_zhanzhu_v3.mp4": "2026-08-12T22:15:32.133164",
    "eigo_scene5_v3.mp4": "2026-08-08T12:29:08.831281",
    "oshilog_countdown_v3.mp4": "2026-08-03T18:04:25.500790",
    "qc3_cbt2_v3.mp4": "2026-08-03T18:04:25.500790",
@@ -665,5 +666,5 @@
    "iritai_search_20260805_1821.mp4": "2026-08-11T20:45:51.714601"
   }
  },
- "last_yt_ts": "2026-08-12T20:49:11.287383"
+ "last_yt_ts": "2026-08-12T22:15:32.133164"
 }
