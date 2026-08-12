@@ -12,12 +12,14 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
 REQUIRED = ["app", "video", "ig_caption", "threads_text"]  # cover はcloud_post側で任意(あれば警告のみ)
 
-# 【F-409・2026-08-07 konan 指摘「陸曹アプリは無料じゃないぞ。なぜ嘘ついてんの?」】
-# ¥3,000 の自衛官陸曹昇任アプリを「無料でダウンロードできる」と紹介する動画をYouTubeに公開していた。
-# 広告としての虚偽表示(景表法・優良誤認)であり、ストア規約上も危険。
-# 人間のレビューに頼らず、**App Store の実価格を機械で引いて突き合わせる**。
-FREE_WORD = re.compile(r"無料|タダ|0円|ゼロ円|\bfree\b", re.I)
-PRICE_CACHE = os.path.join(HERE, ".price_cache.json")
+# 【2026-08-13 konan 明言「無料、有料の件あるけどどちらもわざわざ投稿で言う必要ないからね?
+#   無料だから!とか有料だが!とかわざわざいらんから」】
+# 以前は「有料アプリを無料と書いていないか」を App Store の実価格と突き合わせていた(F-409)。
+# だが値段は動く(審査中の買い切り移行9本など)し、映像は焼き込んだら直せない。
+# **投稿では値段の話を一切しない**なら、価格が動いても在庫が嘘にならない。
+# 値段はストアの製品ページと課金シートが示す。こちらは存在を知らせるだけでよい。
+PRICE_TALK = re.compile(r"無料|有料|タダ|0円|ゼロ円|買い切り|サブスク|課金|"
+                        r"\bfree\b|\bpaid\b|\bgratis\b|\bkostenlos\b", re.I)
 
 # 【2026-08-05 konan 明言 → 2026-08-08 再発でゲート化】
 # 「自衛官の昇任系が試験系自己啓発チャンネルみたいになってて言語化できない恥ずかしさがある。
@@ -44,43 +46,13 @@ HYPE_PATTERNS = [
 ]
 
 
-def fetch_prices(app_ids):
-    """App Store の実価格を引く。取得できたぶんだけ返す(ネット不通なら空=検査スキップ)。"""
-    import urllib.request
-    out = {}
-    ids = sorted(set(app_ids))
-    for i in range(0, len(ids), 10):
-        chunk = ",".join(ids[i:i + 10])
-        try:
-            url = f"https://itunes.apple.com/lookup?id={chunk}&country=jp"
-            d = json.load(urllib.request.urlopen(url, timeout=20))
-        except Exception as e:
-            print(f"WARN 価格照会に失敗({e}) — 価格検査はこのぶんだけスキップ", file=sys.stderr)
-            continue
-        for r in d.get("results", []):
-            out[str(r.get("trackId"))] = {"price": r.get("price"), "label": r.get("formattedPrice"),
-                                          "name": r.get("trackName")}
-    if out:  # 直近の実測を残しておく(ネット不通時のフォールバック)
-        try:
-            old = json.load(open(PRICE_CACHE))
-        except Exception:
-            old = {}
-        old.update(out)
-        json.dump(old, open(PRICE_CACHE, "w"), ensure_ascii=False, indent=1)
-        return old
-    try:
-        return json.load(open(PRICE_CACHE))
-    except Exception:
-        return {}
-
-def lint(path, prices=None, bad_keys=None):
+def lint(path, bad_keys=None):
     """NG を検出する。bad_keys(set) を渡すと、NG になった投稿の識別子をそこに入れる。
 
     【2026-08-12】以前は NG が1件でも exit 1 にしてワークフローごと落としていた。
     その結果、煽り構文を含む**1本**のせいで IG/Threads/YouTube の配信が
     16時間半すべて止まった。**不良品は隔離し、健全な在庫は流す**のが正しい。
     """
-    prices = prices or {}
     errs = []
     bad_keys = bad_keys if bad_keys is not None else set()
     d = json.load(open(path))
@@ -99,13 +71,6 @@ def lint(path, prices=None, bad_keys=None):
         url = p.get("appstore_url", "")
         if url and not re.search(r"apps\.apple\.com/.+/id\d+", url):
             errs.append(f"{tag}: appstore_url形式不正 {url}")
-        m_id = re.search(r"/id(\d+)", url)
-        if m_id and prices.get(m_id.group(1)):
-            info = prices[m_id.group(1)]
-            blob = (p.get("ig_caption") or "") + "\n" + (p.get("threads_text") or "")
-            if (info.get("price") or 0) > 0 and FREE_WORD.search(blob):
-                errs.append(f"{tag}: 価格の嘘 — {info.get('name')} は {info.get('label')} なのに"
-                            f"「無料」と書いている(F-409)")
         if is_queue:
             for key, sub in [("video", "videos"), ("cover", "videos")]:
                 f = p.get(key)
@@ -117,6 +82,10 @@ def lint(path, prices=None, bad_keys=None):
         for word, why in BANNED_WORDS:
             if word in blob_every:
                 errs.append(f"{tag}: 禁止語「{word}」— {why}")
+        m = PRICE_TALK.search(blob_every)
+        if m:
+            errs.append(f"{tag}: 値段の話「{m.group(0)}」— 投稿で無料/有料に触れない"
+                        f"(2026-08-13 konan明言)。存在を知らせるだけでよい")
         for pat, why in HYPE_PATTERNS:
             m = re.search(pat, blob_all)
             if m:
@@ -137,21 +106,13 @@ def lint(path, prices=None, bad_keys=None):
 
 def main(argv):
     targets = argv or [os.path.join(HERE, "post_queue.json")] + sorted(glob.glob(os.path.join(HERE, "*_launch_pack.json")))
-    app_ids = []
-    for t in targets:
-        d = json.load(open(t))
-        for p in (d["posts"] if isinstance(d, dict) else d):
-            m = re.search(r"/id(\d+)", p.get("appstore_url", "") or "")
-            if m:
-                app_ids.append(m.group(1))
-    prices = fetch_prices(app_ids)
     all_errs = []
     bad_keys = set()
     total = 0
     for t in targets:
         d = json.load(open(t))
         total += len(d["posts"] if isinstance(d, dict) else d)
-        all_errs += lint(t, prices, bad_keys)
+        all_errs += lint(t, bad_keys)
     for e in all_errs:
         print("NG", e)
 

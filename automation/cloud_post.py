@@ -28,7 +28,11 @@ for _qf in (os.path.join(HERE, "quarantine_lint.json"),
             # 【2026-08-12 konan指摘】題材からアプリへ話が飛んでいる動画。
             # 「台湾軍が橋を封鎖した→陸曹昇任試験のアプリがある」で公開してしまい、
             # konan が限定公開に落として処置した。直したものから外していく。
-            os.path.join(HERE, "quarantine_flow.json")):
+            os.path.join(HERE, "quarantine_flow.json"),
+            # 【2026-08-13】映像に焼き込まれた文字(テロップ・CTA)の禁止語。
+            # JSONのキャプションを直しても映像は直らないので、OCRで別途見る。
+            # 生成: claude-tools/scripts/video_text_audit.py
+            os.path.join(HERE, "quarantine_video_text.json")):
     if os.path.exists(_qf):
         try:
             _bad |= set(json.load(open(_qf)))
