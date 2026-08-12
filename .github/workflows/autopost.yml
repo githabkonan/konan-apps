@@ -41,6 +41,12 @@ jobs:
           # 発火せず、1ラン1本しか上げない設計と噛み合って実績5本/12本だった。
           # 今はペース追従で、遅れていれば1ランで最大この本数まで取り戻す。
           YT_CATCHUP_MAX: "3"
+          # 【2026-08-12】Threads停止。cloud_post.py:204 が media_type=TEXT で、動画を送らず
+          # 宣伝テキスト+App Storeリンクだけを1日5回投げていた(189本中188本がリンク付き・締めは同一テンプレ)。
+          # 実測は直近50本で総表示51回・32本が0回・いいね0。Threads公式が抑制理由として明言する
+          # 「低オリジナリティ・使い回し」に該当。7/30以降4件がスパム削除済み。
+          # 頻度は無関係(上限250件/日に対し5件/日)。再開は動画配信に作り替えてから。
+          THREADS_PER_RUN: "0"
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
