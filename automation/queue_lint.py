@@ -24,6 +24,15 @@ PRICE_CACHE = os.path.join(HERE, ".price_cache.json")
 #   こんなアプリあるよ!って知ってもらうだけでいい。あくまでアプリ紹介」
 # プロンプトに書くだけでは 2026-08-08 のバッチで「締切まで時間がない。」がすり抜けた。
 # **煽り構文を機械で落とす。** 事実の告知(「締切は9月10日だ」)は通し、焦らせる言い回しだけを弾く。
+# 【2026-08-12 konan 指摘「過去問っていうのは法的にアウトなのかどうか調べてから使え」→調査してNG】
+# うちの問題は全部こちらで作った類題で、実際の試験問題ではない。それを「過去問」と書くのは
+# 景表法の優良誤認 + App Store Guideline 2.3.1(正確なメタデータ)。「予想問題」は konan 却下。
+# 189本中71本がこの文言で出荷寸前だったので、人間の目でなく機械で落とす。
+BANNED_WORDS = [
+    ("過去問", "実際の試験問題ではないので優良誤認(2026-08-12)。「対策問題」「問題を回す」に言い換える"),
+    ("予想問題", "根拠のない当て物に見える(konan却下)。「対策問題」に言い換える"),
+]
+
 HYPE_PATTERNS = [
     (r"締切まで(時間がない|あと|残り)", "締切で焦らせている"),
     (r"試験まであと\s*\d", "カウントダウンで焦らせている"),
@@ -103,6 +112,11 @@ def lint(path, prices=None, bad_keys=None):
                 if f and not os.path.exists(os.path.join(REPO, sub, f)):
                     errs.append(f"{tag}: {key}ファイル未配置 {sub}/{f}")
         blob_all = (p.get("ig_caption") or "") + "\n" + (p.get("threads_text") or "")
+        # 禁止語はキャプションだけでなく全テキスト項目(yt_title/yt_desc/app 名まで)を見る
+        blob_every = "\n".join(v for v in p.values() if isinstance(v, str))
+        for word, why in BANNED_WORDS:
+            if word in blob_every:
+                errs.append(f"{tag}: 禁止語「{word}」— {why}")
         for pat, why in HYPE_PATTERNS:
             m = re.search(pat, blob_all)
             if m:
