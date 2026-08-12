@@ -22,10 +22,15 @@ POSTS = Q["posts"]
 # 以前は queue_lint が exit 1 でワークフローごと落としており、
 # **煽り構文を含む1本のせいで全チャンネルの配信が16時間半止まった**。
 # 不良は隔離して、健全な在庫は流す。
-_qf = os.path.join(HERE, "quarantine.json")
-if os.path.exists(_qf):
+_bad = set()
+for _qf in (os.path.join(HERE, "quarantine_lint.json"), os.path.join(HERE, "quarantine_media.json")):
+    if os.path.exists(_qf):
+        try:
+            _bad |= set(json.load(open(_qf)))
+        except Exception as e:
+            print(f"WARN {os.path.basename(_qf)} を読めない({e})")
+if _bad:
     try:
-        _bad = set(json.load(open(_qf)))
         _before = len(POSTS)
         POSTS = [p for p in POSTS if p.get("video") not in _bad]
         if len(POSTS) != _before:

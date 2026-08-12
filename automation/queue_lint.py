@@ -144,7 +144,7 @@ def main(argv):
     # 【2026-08-12】NG は「隔離」であって「全停止」ではない。
     # 以前は1本の煽り構文で exit 1 → ワークフロー全体が落ち、
     # IG/Threads/YouTube の配信が16時間半止まった。被害が不良1本分で収まる形にする。
-    qpath = os.path.join(HERE, "quarantine.json")
+    qpath = os.path.join(HERE, "quarantine_lint.json")   # ゲートごとに分ける(相互上書き防止)
     if bad_keys:
         json.dump(sorted(bad_keys), open(qpath, "w"), ensure_ascii=False, indent=1)
         print(f"\n🚧 隔離 {len(bad_keys)}件 / 全{total}件 — この分だけ配信から外して続行します")

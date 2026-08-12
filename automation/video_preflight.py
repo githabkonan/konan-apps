@@ -52,11 +52,23 @@ def main():
         print(f"{'OK  ' if ok else 'FAIL'} {os.path.basename(t)}  voiced={vr:.0%} dur={dur:.0f}s")
         if not ok:
             fails.append((os.path.basename(t), f"発話量{vr:.0%} < {MIN_VOICED_RATIO:.0%}=ナレ無し/無音疑い"))
+    # 【2026-08-12・F-418】以前はここで sys.exit(1) し、**1本のNGで配信ライン全体を止めていた**。
+    # 同型の作りだった queue_lint が、煽り構文1本で IG/Threads/YouTube を16時間半止めた。
+    # 不良は隔離し、健全な在庫は流す。全滅の時だけ本当に止める。
+    qpath = os.path.join(HERE, "quarantine_media.json")  # ゲートごとに分ける(相互上書き防止)
     if fails:
-        print("\n🔴 GATE FAIL — 以下は配信禁止(ナレーション必須):")
+        print("\n🚧 ナレ無し/不正として隔離(配信からは外すが、他は流す):")
         for n, why in fails:
             print(f"  {n}: {why}")
-        sys.exit(1)
+        cur = sorted({n for n, _ in fails})
+        json.dump(cur, open(qpath, "w"), ensure_ascii=False, indent=1)
+        print(f"   → {qpath}({len(cur)}件・cloud_post.py が除外する)")
+        if len(fails) >= len(targets):
+            print("❌ 全件NG — 配信できる在庫が無いので停止します")
+            sys.exit(1)
+        return
+    if os.path.exists(qpath):
+        os.remove(qpath)      # 直ったら隔離を解除する(残り続けて良品を締め出さない)
     print(f"\n✅ 全{len(targets)}本 PASS(ナレーションゲート)")
 
 if __name__ == "__main__":

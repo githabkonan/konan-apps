@@ -9,7 +9,6 @@ concurrency:
   cancel-in-progress: false
 permissions:
   contents: write
-  issues: write   # 【2026-08-12・F-418】失敗時にissueを立てて配信停止を可視化するため
 jobs:
   post:
     runs-on: ubuntu-latest
@@ -53,26 +52,6 @@ jobs:
       # 【2026-08-08】以前は `git pull --rebase` で、こちらが同時にpushしていると
       # "could not apply ... chore: autopost state" で落ち、**投稿は成功しているのに state だけ消える**
       # (=72hクールダウンの記録が飛ぶ)事故が起きた。競合しても取りこぼさないよう意味を分かって合流させる。
-      # 【2026-08-12・F-418】失敗をクラウド側に残す。
-      # ローカルの watchdog は Mac が閉じていると動かない(konan 指摘)。
-      # 配信は GitHub 側で動いているので、**気づく仕組みも GitHub 側に置く**。
-      # 同じ障害でissueを量産しないよう、既存のopen issueがあれば追記に留める。
-      - name: 失敗をissueに記録(配信停止の可視化)
-        if: failure()
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          TITLE="🚨 autopost が失敗しています(配信停止)"
-          BODY="Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          発生: $(date -u '+%Y-%m-%d %H:%M UTC')
-          IG/Threads/YouTube の配信が止まっている可能性があります。"
-          EXIST=$(gh issue list --state open --search "$TITLE in:title" --json number --jq '.[0].number' || true)
-          if [ -n "$EXIST" ]; then
-            gh issue comment "$EXIST" --body "$BODY" || true
-          else
-            gh issue create --title "$TITLE" --body "$BODY" --label "" || true
-          fi
-
       - name: Persist state (YT dedup)
         if: always()
         run: |
