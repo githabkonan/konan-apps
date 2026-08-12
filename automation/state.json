@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-08-12",
- "yt_count": 9,
- "last_yt_seq": 5371,
+ "yt_count": 10,
+ "last_yt_seq": 5372,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -246,7 +246,8 @@
   "mileigo_exercise_20260812_0046.mp4",
   "kankoku_travel_20260812_0046.mp4",
   "milchugo_new_20260808_1148.mp4",
-  "unkan_kaisetsu_20260808_1242.mp4"
+  "unkan_kaisetsu_20260808_1242.mp4",
+  "rikuso_tankou_20260812_1829.mp4"
  ],
  "hist": {
   "threads": {
@@ -504,7 +505,7 @@
    "qc2_67d_v3.mp4": "2026-08-03T00:04:43.347182",
    "mil_test_1.mp4": "2026-08-04T08:49:44.650237",
    "mil_test_2.mp4": "2026-08-04T08:49:44.650237",
-   "mil_test_3.mp4": "2026-08-03T08:02:41.526577",
+   "mil_test_3.mp4": "2026-08-12T20:49:11.287383",
    "flex_nikkei_v3.mp4": "2026-08-03T00:04:43.347182",
    "lc_peak_v3.mp4": "2026-08-03T00:04:43.347182",
    "rikuso_shonin_v3.mp4": "2026-08-04T21:20:23.281326",
@@ -513,11 +514,11 @@
    "rikuso_shonin_kyuyo_v3.mp4": "2026-08-04T21:20:23.281326",
    "yobi_jieikanho_v3.mp4": "2026-08-04T22:04:44.358836",
    "kanbu_kohosei_v3.mp4": "2026-08-04T22:04:44.358836",
-   "oshilog_launch.mp4": "2026-08-09T16:58:15.525500",
+   "oshilog_launch.mp4": "2026-08-12T20:49:11.287383",
    "iritai_chuutonchi_matsuri_v3.mp4": "2026-08-03T06:59:04.588215",
    "rikuso_kyuyo_taikei_v3.mp4": "2026-08-02T15:06:53.743960",
    "yobi_teate_3bai_v3.mp4": "2026-08-02T19:48:01.613740",
-   "kankokugo_launch.mp4": "2026-08-03T08:02:41.526577",
+   "kankokugo_launch.mp4": "2026-08-12T20:49:11.287383",
    "yobi_2kai_boshu_v3.mp4": "2026-08-02T19:48:01.613740",
    "kusou_1kai_goukaku_v3.mp4": "2026-08-03T08:02:41.526577",
    "kanbu_saishu_happyo_v3.mp4": "2026-08-02T22:18:32.876996",
@@ -664,5 +665,5 @@
    "iritai_search_20260805_1821.mp4": "2026-08-11T20:45:51.714601"
   }
  },
- "last_yt_ts": "2026-08-12T19:08:56.177540"
+ "last_yt_ts": "2026-08-12T20:49:11.287383"
 }
