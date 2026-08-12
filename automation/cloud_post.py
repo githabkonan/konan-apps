@@ -97,15 +97,70 @@ seq = day_num * 24 + now.hour
 # 絞るのは「起動する時刻」ではなく「その起動で何本流すか」。
 _PRIME = {7, 12, 18, 19, 20}      # 平日のピーク
 _SUB = {8, 21, 22}                # 平日の準ピーク
+# 【2026-08-12 konan 指摘】「今世間は夏季休暇の連休中」。
+# 曜日だけで平日/休日を決めると、お盆や年末年始に**実態と真逆の配信**になる。
+# 連休中は水曜でも生活動線は休日型(終日ばらける)なので、休日扱いにする。
+_HOLIDAY_RANGES = [
+    ("2026-08-08", "2026-08-16"),   # お盆(夏季休暇)
+    ("2026-12-27", "2027-01-04"),   # 年末年始
+    ("2027-04-29", "2027-05-06"),   # GW
+]
+
+
+def _is_holiday_season():
+    d = now.date().isoformat()
+    return any(a <= d <= b for a, b in _HOLIDAY_RANGES)
+
+
 def _per_run_default():
-    if now.weekday() >= 5:        # 土日=終日ばらけさせる(6-23時に1本ずつ)
+    if now.weekday() >= 5 or _is_holiday_season():   # 土日・連休=終日ばらけさせる
         return 1 if 6 <= now.hour <= 23 else 0
     if now.hour in _PRIME: return 3
     if now.hour in _SUB:   return 2
     return 0                      # 平日の谷は投げない(IG 25本/日の上限内に収める)
 # 平日の想定本数 = 3本×5枠 + 2本×3枠 = 21本/日(IG上限25に余白4)
-THREADS_PER_RUN = int(os.environ.get("THREADS_PER_RUN") or _per_run_default())
-IG_PER_RUN = int(os.environ.get("IG_PER_RUN") or _per_run_default())
+# 【2026-08-12・F-418】ピーク枠を落とした日は、その分が丸ごと失われていた。
+# 8/11 22:10 を最後に配信が16時間半止まり、復旧後も「今は谷だから0本」で
+# **一日分が消えたまま**だった。YouTube には取り返す仕組み(F-410 ペース追従)があるのに
+# IG/Threads には無かった。同じものを入れる。
+_DAILY_TARGET = 18 if now.weekday() >= 5 else 21   # _per_run_default() の想定合計
+_CATCHUP_MAX = int(os.environ.get("SOCIAL_CATCHUP_MAX", "3"))
+_WIN_S, _WIN_E = 7, 22                              # 投稿する時間帯(JST)
+
+
+def _today_count(platform):
+    """今日その媒体に何本出したか。hist(動画→最終使用時刻)から数える。
+
+    ※ グローバル STATE はこの位置より後(250行目付近)で定義されるため参照できない。
+      ここで state.json を直接読む。**STATE を使うと NameError で配信ライン全体が落ちる。**
+    """
+    try:
+        _st = json.load(open(os.path.join(HERE, "state.json")))
+    except Exception:
+        return 0
+    d = (_st.get("hist") or {}).get(platform, {})
+    today = now.date().isoformat()
+    return sum(1 for v in d.values() if str(v)[:10] == today)
+
+
+def _catchup(platform, base):
+    """今の時刻なら何本出ているべきか。遅れていれば谷でも取り返す。"""
+    if not (_WIN_S <= now.hour <= _WIN_E):
+        return base
+    span = (_WIN_E + 1 - _WIN_S) * 60
+    elapsed = max(0, min(span, (now.hour - _WIN_S) * 60 + now.minute))
+    should = -(-_DAILY_TARGET * elapsed // span)          # 切り上げ
+    behind = should - _today_count(platform)
+    if behind <= 0:
+        return base
+    n = max(base, min(behind, _CATCHUP_MAX))
+    if n > base:
+        print(f"  {platform}: ペース {_today_count(platform)}/{should}本 → {n}本で取り返す")
+    return n
+
+
+THREADS_PER_RUN = int(os.environ.get("THREADS_PER_RUN") or _catchup("threads", _per_run_default()))
+IG_PER_RUN = int(os.environ.get("IG_PER_RUN") or _catchup("instagram", _per_run_default()))
 # 【2026-07-29】IGが Media Publish Limit Exceeded で全滅した事故を受けて、勘で本数を決めるのをやめる。
 # IG Graph API の content_publishing_limit を毎回叩いて「実際の残枠」を取得し、余白を残して埋める(=ギリギリを攻める)。
 def _get(url, params):
