@@ -1,1 +1,3 @@
 videos/_pre_reprice/
+# 動画を目視確認したときのフレーム書き出し。配信には要らない
+videos/*_eyes.png
