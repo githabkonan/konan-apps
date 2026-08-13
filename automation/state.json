@@ -1,7 +1,7 @@
 {
- "yt_date": "2026-08-13",
- "yt_count": 11,
- "last_yt_seq": 5398,
+ "yt_date": "2026-08-14",
+ "yt_count": 1,
+ "last_yt_seq": 5406,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -259,7 +259,8 @@
   "rikuso_tsushin_20260813_0544.mp4",
   "kanbu_kogeki_20260813_0544.mp4",
   "mileigo_repeat_20260813_0544.mp4",
-  "kaiso_senkaku_20260813_0544.mp4"
+  "kaiso_senkaku_20260813_0544.mp4",
+  "kankokugonoh_nomikai_20260813_0544.mp4"
  ],
  "hist": {
   "threads": {
@@ -338,7 +339,7 @@
    "kusou_asa_v3.mp4": "2026-08-02T06:58:50.070723",
    "kankokugo_quiz2_v3.mp4": "2026-08-10T22:13:22.575704",
    "kankokugo_quiz3_v3.mp4": "2026-08-05T09:05:59.313388",
-   "milchugo_biedong_v3.mp4": "2026-08-05T09:05:59.313388",
+   "milchugo_biedong_v3.mp4": "2026-08-14T06:20:53.987943",
    "oshilog_budget_v3.mp4": "2026-08-12T16:56:27.229179",
    "sololevel_intro_v3.mp4": "2026-08-12T16:56:27.229179",
    "qc2_next_v3.mp4": "2026-08-02T11:47:43.783292",
@@ -545,7 +546,7 @@
    "kankokugo_quiz3_v3.mp4": "2026-08-04T01:28:34.288054",
    "milchugo_biedong_v3.mp4": "2026-08-13T06:17:39.046720",
    "milchugo_jiuhu_v3.mp4": "2026-08-13T06:49:40.949927",
-   "eigo_scene6_v3.mp4": "2026-08-04T06:19:44.018372",
+   "eigo_scene6_v3.mp4": "2026-08-14T06:20:53.987943",
    "eigo_scene7_v3.mp4": "2026-08-04T06:19:44.018372",
    "oshilog_budget_v3.mp4": "2026-08-04T07:12:58.302509",
    "sololevel_intro_v3.mp4": "2026-08-04T07:12:58.302509",
@@ -688,5 +689,5 @@
    "kankoku_travel_20260812_0046.mp4": "2026-08-13T22:16:43.018043"
   }
  },
- "last_yt_ts": "2026-08-13T22:16:43.018043"
+ "last_yt_ts": "2026-08-14T06:20:53.987943"
 }
