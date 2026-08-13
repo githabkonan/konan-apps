@@ -13,7 +13,12 @@ jobs:
   post:
     runs-on: ubuntu-latest
     steps:
+      # 【2026-08-13】ref を明示しないと**発火した時点の SHA** を取りに行く。concurrency で
+      # 順番待ちにされた2本目は、1本目が state.json を更新し終えた後に走るのに古い state を読み、
+      # 同じ動画をもう一度上げる。実際 8/13 に同じ動画が5分差で2本公開された。
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
