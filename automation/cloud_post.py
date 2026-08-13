@@ -32,7 +32,15 @@ for _qf in (os.path.join(HERE, "quarantine_lint.json"),
             # 【2026-08-13】映像に焼き込まれた文字(テロップ・CTA)の禁止語。
             # JSONのキャプションを直しても映像は直らないので、OCRで別途見る。
             # 生成: claude-tools/scripts/video_text_audit.py
-            os.path.join(HERE, "quarantine_video_text.json")):
+            os.path.join(HERE, "quarantine_video_text.json"),
+            # 【2026-08-13】テロップと背景の映像が別の話をしている動画、
+            # および同じロットの中で使い回された素材。
+            # 「レーダーを動かすのが空曹だ」の後ろがカフェの店内、で公開しかけた。
+            # 生成: claude-tools/scripts/scene_match_gate.py
+            os.path.join(HERE, "quarantine_scene.json"),
+            # 【2026-08-13】事実として間違っている動画。機械では見つからないので手で書く。
+            # 例: 「コンビニで一番聞く英語は手荷物の確認」— コンビニで手荷物確認はしない。
+            os.path.join(HERE, "quarantine_fact.json")):
     if os.path.exists(_qf):
         try:
             _bad |= set(json.load(open(_qf)))
@@ -172,12 +180,11 @@ THREADS_PER_RUN = int(os.environ.get("THREADS_PER_RUN") or _catchup("threads", _
 IG_PER_RUN = int(os.environ.get("IG_PER_RUN") or _catchup("instagram", _per_run_default()))
 
 # 【F-412 / 2026-08-13】Threads は7/30以降に4件をスパム削除されて 8/12 に完全停止した。
-# 動画つきに作り替えて再開するが、いきなり元の本数(21本/日想定)には戻さない。
-# 1ランに1本・1日6本から始めて、削除が出ないことを確認してから上げる。
-# 動画は Threads 側の取り込みに数分かかるので、1ラン複数本は時間的にも現実的でない。
+# 削除されたのは1日21本想定で同型を投げていた頃のもの。形式(テキスト)は konan 指示どおり戻し、
+# 本数だけ絞る。1日6本で削除が出ないことを確認してから上げる。
 THREADS_MAX_PER_DAY = int(os.environ.get("THREADS_MAX_PER_DAY", "6"))
 _th_today = _today_count("threads")
-THREADS_PER_RUN = min(THREADS_PER_RUN, 1, max(0, THREADS_MAX_PER_DAY - _th_today))
+THREADS_PER_RUN = min(THREADS_PER_RUN, 2, max(0, THREADS_MAX_PER_DAY - _th_today))
 # 【2026-07-29】IGが Media Publish Limit Exceeded で全滅した事故を受けて、勘で本数を決めるのをやめる。
 # IG Graph API の content_publishing_limit を毎回叩いて「実際の残枠」を取得し、余白を残して埋める(=ギリギリを攻める)。
 def _get(url, params):
@@ -215,36 +222,22 @@ def _post(url, params):
 
 
 def threads_text(post):
-    """Threads本文。**App Storeリンクを外す**。
+    """Threads本文。文字 + App Store の URL だけ。
 
-    【F-412 / 2026-08-13】7/30以降4件がスパム削除された。直近50本で総表示51回・32本が0回。
-    毎回「宣伝文 + apps.apple.com リンク + 同じ締め」という同型を1日5回投げていたのが原因。
-    リンクは動画の最終シーン(App Storeでこう検索)が担うので、本文からは落とす。
+    【2026-08-13 konan再指示】「スレッドは文字の投稿とアップストアのURLだけでいい。
+    昔も同じ指摘したと思う」— 実際 2026-06-29 に同じ指示を受けている(このファイル冒頭)。
+    F-412(スパム削除)の対策として動画つき+リンク削除に作り替えたのは指示に反していた。
     """
-    lines = [l for l in (post.get("threads_text") or "").splitlines()
-             if "apps.apple.com" not in l]
-    return "\n".join(lines).strip()[:500]
+    return (post.get("threads_text") or "").strip()[:500]
 
 
 def publish_threads(post):
-    """動画つきで投稿する(テキストだけの使い回しはスパム判定を受けた・F-412)。"""
+    """テキスト投稿(動画なし)。本文に App Store の URL を含める。"""
     uid = os.environ["THREADS_USER_ID"]; tok = os.environ["THREADS_ACCESS_TOKEN"]
     B = "https://graph.threads.net/v1.0"
-    cid = _post(f"{B}/{uid}/threads", {"media_type": "VIDEO",
-                                       "video_url": f"{BASE}/{post['video']}",
+    cid = _post(f"{B}/{uid}/threads", {"media_type": "TEXT",
                                        "text": threads_text(post),
                                        "access_token": tok})["id"]
-    # 動画は Threads 側の取り込みが終わるまで publish できない。公式の目安は30秒。
-    st = None
-    for _ in range(30):
-        time.sleep(6)
-        st = _get(f"{B}/{cid}", {"fields": "status,error_message", "access_token": tok})
-        if st.get("status") == "FINISHED":
-            break
-        if st.get("status") == "ERROR":
-            raise RuntimeError(f"Threads取り込み失敗 {st.get('error_message')}")
-    if (st or {}).get("status") != "FINISHED":
-        raise RuntimeError(f"Threads取り込みが終わらない status={(st or {}).get('status')}")
     return _post(f"{B}/{uid}/threads_publish", {"creation_id": cid, "access_token": tok}).get("id")
 
 
