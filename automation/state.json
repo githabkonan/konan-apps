@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-08-13",
- "yt_count": 10,
- "last_yt_seq": 5396,
+ "yt_count": 11,
+ "last_yt_seq": 5398,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -258,7 +258,8 @@
   "kusou_kogen_20260813_0544.mp4",
   "rikuso_tsushin_20260813_0544.mp4",
   "kanbu_kogeki_20260813_0544.mp4",
-  "mileigo_repeat_20260813_0544.mp4"
+  "mileigo_repeat_20260813_0544.mp4",
+  "kaiso_senkaku_20260813_0544.mp4"
  ],
  "hist": {
   "threads": {
@@ -682,8 +683,10 @@
    "iritai_scramble_20260813_0923.mp4": "2026-08-13T19:10:39.015220",
    "iritai_hakusho_20260812_0046.mp4": "2026-08-13T20:48:29.774360",
    "sololevel_anime_20260812_0046.mp4": "2026-08-13T20:48:29.774360",
-   "mileigo_exercise_20260812_0046.mp4": "2026-08-13T20:48:29.774360"
+   "mileigo_exercise_20260812_0046.mp4": "2026-08-13T20:48:29.774360",
+   "milchugo_hakusho_20260812_0046.mp4": "2026-08-13T22:16:43.018043",
+   "kankoku_travel_20260812_0046.mp4": "2026-08-13T22:16:43.018043"
   }
  },
- "last_yt_ts": "2026-08-13T20:48:29.774360"
+ "last_yt_ts": "2026-08-13T22:16:43.018043"
 }
