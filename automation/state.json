@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-08-14",
- "yt_count": 1,
- "last_yt_seq": 5406,
+ "yt_count": 2,
+ "last_yt_seq": 5407,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -260,7 +260,8 @@
   "kanbu_kogeki_20260813_0544.mp4",
   "mileigo_repeat_20260813_0544.mp4",
   "kaiso_senkaku_20260813_0544.mp4",
-  "kankokugonoh_nomikai_20260813_0544.mp4"
+  "kankokugonoh_nomikai_20260813_0544.mp4",
+  "iritai_nyuyoku_20260813_0544.mp4"
  ],
  "hist": {
   "threads": {
@@ -357,7 +358,7 @@
    "qc3_cbt2_v3.mp4": "2026-08-01T23:28:29.689912",
    "koushu4_battery2_v3.mp4": "2026-08-02T06:17:23.406311",
    "milchugo_jiuhu_v3.mp4": "2026-08-14T06:49:40.408634",
-   "eigo_scene6_v3.mp4": "2026-08-05T10:50:30.121726",
+   "eigo_scene6_v3.mp4": "2026-08-14T07:44:50.216310",
    "eigo_scene7_v3.mp4": "2026-08-12T16:56:27.229179",
    "lc_natsu_v3.mp4": "2026-08-02T11:47:43.783292",
    "mil_test_1.mp4": "2026-08-12T17:20:02.870174",
@@ -548,7 +549,7 @@
    "milchugo_jiuhu_v3.mp4": "2026-08-13T06:49:40.949927",
    "eigo_scene6_v3.mp4": "2026-08-14T06:20:53.987943",
    "eigo_scene7_v3.mp4": "2026-08-14T06:49:40.408634",
-   "oshilog_budget_v3.mp4": "2026-08-04T07:12:58.302509",
+   "oshilog_budget_v3.mp4": "2026-08-14T07:44:50.216310",
    "sololevel_intro_v3.mp4": "2026-08-04T07:12:58.302509",
    "qc2_next_v3.mp4": "2026-08-04T07:12:58.302509",
    "lc_natsu_v3.mp4": "2026-08-04T08:49:44.650237",
@@ -689,5 +690,5 @@
    "kankoku_travel_20260812_0046.mp4": "2026-08-13T22:16:43.018043"
   }
  },
- "last_yt_ts": "2026-08-14T06:20:53.987943"
+ "last_yt_ts": "2026-08-14T07:44:50.216310"
 }
