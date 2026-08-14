@@ -180,11 +180,19 @@ THREADS_PER_RUN = int(os.environ.get("THREADS_PER_RUN") or _catchup("threads", _
 IG_PER_RUN = int(os.environ.get("IG_PER_RUN") or _catchup("instagram", _per_run_default()))
 
 # 【F-412 / 2026-08-13】Threads は7/30以降に4件をスパム削除されて 8/12 に完全停止した。
-# 削除されたのは1日21本想定で同型を投げていた頃のもの。形式(テキスト)は konan 指示どおり戻し、
-# 本数だけ絞る。1日6本で削除が出ないことを確認してから上げる。
-THREADS_MAX_PER_DAY = int(os.environ.get("THREADS_MAX_PER_DAY", "6"))
+# 削除されたのは1日21本想定で同型を投げていた頃のもの。形式(テキスト)は konan 指示どおり戻し、本数を絞った。
+# 【2026-08-15】6本/日を3日間回して削除は再発せず。ただし _catchup が窓の頭で上限を食い切り、
+# 6本すべてが14時までに固まって以降10時間無投稿になっていた(konan 指摘「全然投稿されてなかった」)。
+# 上限を12本へ上げたうえで、窓の経過時間に比例した本数までしか解禁しない。前倒しの固め打ちを構造的に止める。
+THREADS_MAX_PER_DAY = int(os.environ.get("THREADS_MAX_PER_DAY", "12"))
 _th_today = _today_count("threads")
-THREADS_PER_RUN = min(THREADS_PER_RUN, 2, max(0, THREADS_MAX_PER_DAY - _th_today))
+if _WIN_S <= now.hour <= _WIN_E:
+    _th_span = (_WIN_E + 1 - _WIN_S) * 60
+    _th_elapsed = max(0, min(_th_span, (now.hour - _WIN_S) * 60 + now.minute))
+    _th_unlocked = -(-THREADS_MAX_PER_DAY * _th_elapsed // _th_span)
+else:
+    _th_unlocked = 0
+THREADS_PER_RUN = min(THREADS_PER_RUN, 1, max(0, min(THREADS_MAX_PER_DAY, _th_unlocked) - _th_today))
 # 【2026-07-29】IGが Media Publish Limit Exceeded で全滅した事故を受けて、勘で本数を決めるのをやめる。
 # IG Graph API の content_publishing_limit を毎回叩いて「実際の残枠」を取得し、余白を残して埋める(=ギリギリを攻める)。
 def _get(url, params):
