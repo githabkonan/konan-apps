@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-08-14",
- "yt_count": 10,
- "last_yt_seq": 5420,
+ "yt_count": 11,
+ "last_yt_seq": 5422,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -269,7 +269,8 @@
   "kaiso_ise_20260813_0923.mp4",
   "kusou_chijouin_20260813_0923.mp4",
   "yobi_saigai_20260813_0544.mp4",
-  "rikuso_yonaguni_20260814_0043.mp4"
+  "rikuso_yonaguni_20260814_0043.mp4",
+  "kaiso_senkaku_20260814_0043.mp4"
  ],
  "hist": {
   "threads": {
@@ -594,7 +595,7 @@
    "milchugo_senkaku_20260729.mp4": "2026-08-14T20:46:26.768491",
    "yobi_9_10_shimekiri_20260729.mp4": "2026-08-05T07:15:28.134271",
    "kanbu_kashimany_20260729.mp4": "2026-08-05T16:41:46.976244",
-   "kusou_kaihen_20260729.mp4": "2026-08-05T21:21:09.623812",
+   "kusou_kaihen_20260729.mp4": "2026-08-14T22:11:18.878974",
    "rikuso_kyoukan_20260729.mp4": "2026-08-05T01:15:36.083765",
    "rikuso_kyufu_20260730_1205.mp4": "2026-08-05T16:41:46.976244",
    "rikuso_shonin_20260730_1205.mp4": "2026-08-05T16:41:46.976244",
@@ -698,5 +699,5 @@
    "kankoku_travel_20260812_0046.mp4": "2026-08-13T22:16:43.018043"
   }
  },
- "last_yt_ts": "2026-08-14T20:46:26.768491"
+ "last_yt_ts": "2026-08-14T22:11:18.878974"
 }
