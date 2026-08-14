@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-08-14",
- "yt_count": 4,
- "last_yt_seq": 5412,
+ "yt_count": 6,
+ "last_yt_seq": 5414,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -263,7 +263,9 @@
   "kankokugonoh_nomikai_20260813_0544.mp4",
   "iritai_nyuyoku_20260813_0544.mp4",
   "iritai_scramble_20260813_0923.mp4",
-  "kanbu_ipd26_20260813_0923.mp4"
+  "kanbu_ipd26_20260813_0923.mp4",
+  "mileigo_phonetic_20260813_0923.mp4",
+  "kankoku_summersonic_20260813_0923.mp4"
  ],
  "hist": {
   "threads": {
@@ -403,8 +405,8 @@
    "rikuso_kumamoto_20260731_1748.mp4": "2026-08-09T17:53:53.100469",
    "rikuso_osprey_20260801_1150.mp4": "2026-08-09T22:52:04.968020",
    "rikuso_ninki_20260801_1150.mp4": "2026-08-09T23:37:24.848794",
-   "rikuso_desk_vs_hand_20260801_1150.mp4": "2026-08-04T12:49:57.040568",
-   "yobi_kumamoto_uketsuke_20260801_1150.mp4": "2026-08-04T14:50:03.589987",
+   "rikuso_desk_vs_hand_20260801_1150.mp4": "2026-08-14T13:45:52.418341",
+   "yobi_kumamoto_uketsuke_20260801_1150.mp4": "2026-08-14T13:45:52.418341",
    "kanbu_3rd_september_20260801_1150.mp4": "2026-08-04T14:50:03.589987",
    "rikuso_shoninkyu_20260801_1226.mp4": "2026-08-10T07:34:44.681236",
    "rikuso_oitsuku_20260801_1226.mp4": "2026-08-10T07:34:44.681236",
@@ -570,11 +572,11 @@
    "oshilog_countdown_v3.mp4": "2026-08-13T08:44:06.451421",
    "qc3_cbt2_v3.mp4": "2026-08-03T18:04:25.500790",
    "koushu4_battery2_v3.mp4": "2026-08-03T19:45:09.290175",
-   "mil_test_4.mp4": "2026-08-04T09:11:53.046324",
-   "rikuso_ichiya_v3.mp4": "2026-08-03T09:48:31.430128",
+   "mil_test_4.mp4": "2026-08-14T13:45:52.418341",
+   "rikuso_ichiya_v3.mp4": "2026-08-14T13:45:52.418341",
    "yobi_heijitsu_v3.mp4": "2026-08-03T09:48:31.430128",
    "kanbu_shitsu_v3.mp4": "2026-08-03T11:48:41.168042",
-   "iritai_fuan_v3.mp4": "2026-08-04T09:11:53.046324",
+   "iritai_fuan_v3.mp4": "2026-08-14T13:45:52.418341",
    "kaiso_fune_v3.mp4": "2026-08-04T13:16:35.988158",
    "kankokugo_juseyo_v3.mp4": "2026-08-04T13:16:35.988158",
    "milchugo_fangxia_v3.mp4": "2026-08-04T13:16:35.988158",
@@ -692,5 +694,5 @@
    "kankoku_travel_20260812_0046.mp4": "2026-08-13T22:16:43.018043"
   }
  },
- "last_yt_ts": "2026-08-14T11:06:35.264253"
+ "last_yt_ts": "2026-08-14T13:45:52.418341"
 }
