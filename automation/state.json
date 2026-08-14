@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-08-14",
- "yt_count": 7,
- "last_yt_seq": 5415,
+ "yt_count": 8,
+ "last_yt_seq": 5417,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -266,7 +266,8 @@
   "kanbu_ipd26_20260813_0923.mp4",
   "mileigo_phonetic_20260813_0923.mp4",
   "kankoku_summersonic_20260813_0923.mp4",
-  "kaiso_ise_20260813_0923.mp4"
+  "kaiso_ise_20260813_0923.mp4",
+  "kusou_chijouin_20260813_0923.mp4"
  ],
  "hist": {
   "threads": {
@@ -580,9 +581,9 @@
    "iritai_fuan_v3.mp4": "2026-08-14T13:45:52.418341",
    "kaiso_fune_v3.mp4": "2026-08-14T13:51:28.214007",
    "kankokugo_juseyo_v3.mp4": "2026-08-14T15:16:53.034151",
-   "milchugo_fangxia_v3.mp4": "2026-08-04T13:16:35.988158",
-   "mileigo_sayagain_v3.mp4": "2026-08-04T22:04:44.358836",
-   "eigo_scene8_v3.mp4": "2026-08-05T19:38:08.700505",
+   "milchugo_fangxia_v3.mp4": "2026-08-14T17:18:40.340951",
+   "mileigo_sayagain_v3.mp4": "2026-08-14T17:18:40.340951",
+   "eigo_scene8_v3.mp4": "2026-08-14T17:18:40.340951",
    "sololevel_quest_v3.mp4": "2026-08-05T19:38:08.700505",
    "rikuso_yobi_teate3x_20260729.mp4": "2026-08-05T01:15:36.083765",
    "mileigo_boueihi_9chou_20260729.mp4": "2026-08-05T19:38:08.700505",
@@ -695,5 +696,5 @@
    "kankoku_travel_20260812_0046.mp4": "2026-08-13T22:16:43.018043"
   }
  },
- "last_yt_ts": "2026-08-14T15:16:53.034151"
+ "last_yt_ts": "2026-08-14T17:18:40.340951"
 }
