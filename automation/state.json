@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-08-15",
- "yt_count": 11,
- "last_yt_seq": 5445,
+ "yt_count": 12,
+ "last_yt_seq": 5446,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -282,7 +282,8 @@
   "eigonoh_4taku_20260809_1637.mp4",
   "sololevel_anime_20260812_0046.mp4",
   "milchugo_hakusho_20260812_0046.mp4",
-  "sololevel_horisan_20260813_0544.mp4"
+  "sololevel_horisan_20260813_0544.mp4",
+  "milchugo_senkaku_20260813_0544.mp4"
  ],
  "hist": {
   "threads": {
@@ -639,7 +640,7 @@
    "yobi_kumamoto_uketsuke_20260801_1150.mp4": "2026-08-15T19:26:22.142917",
    "kanbu_3rd_september_20260801_1150.mp4": "2026-08-15T20:23:25.092299",
    "rikuso_shoninkyu_20260801_1226.mp4": "2026-08-08T08:36:09.762179",
-   "rikuso_oitsuku_20260801_1226.mp4": "2026-08-08T10:46:54.447695",
+   "rikuso_oitsuku_20260801_1226.mp4": "2026-08-15T22:33:33.554191",
    "rikuso_august_start_20260801_1226.mp4": "2026-08-08T12:24:58.946162",
    "yobi_51sai_20260801_1226.mp4": "2026-08-10T07:34:44.681236",
    "kanbu_shoninkyu_20260801_1226.mp4": "2026-08-10T08:34:04.816214",
@@ -711,5 +712,5 @@
    "kankoku_travel_20260812_0046.mp4": "2026-08-13T22:16:43.018043"
   }
  },
- "last_yt_ts": "2026-08-15T21:41:47.188188"
+ "last_yt_ts": "2026-08-15T22:33:33.554191"
 }
