@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-08-15",
- "yt_count": 6,
- "last_yt_seq": 5437,
+ "yt_count": 7,
+ "last_yt_seq": 5439,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -277,7 +277,8 @@
   "yobi_shiken_20260814_0043.mp4",
   "mileigo_sayagain_20260814_0043.mp4",
   "eigonoh_tour_20260808_1242.mp4",
-  "oshilog_multicard_20260809_1605.mp4"
+  "oshilog_multicard_20260809_1605.mp4",
+  "sololevel_taskui_20260809_1605.mp4"
  ],
  "hist": {
   "threads": {
@@ -626,7 +627,7 @@
    "iritai_kumamoto_20260731_1748.mp4": "2026-08-15T12:42:09.514376",
    "qc3_book_hell_20260731_1748.mp4": "2026-08-15T13:35:11.161930",
    "koushu4_grade_20260731_1748.mp4": "2026-08-15T14:28:15.626842",
-   "mileigo_kumamoto_train_20260731_1748.mp4": "2026-08-09T22:52:04.968020",
+   "mileigo_kumamoto_train_20260731_1748.mp4": "2026-08-15T15:42:12.618686",
    "eigonoh_order_20260731_1748.mp4": "2026-08-09T23:37:24.848794",
    "rikuso_osprey_20260801_1150.mp4": "2026-08-12T16:56:27.229179",
    "rikuso_ninki_20260801_1150.mp4": "2026-08-12T17:20:02.870174",
@@ -706,5 +707,5 @@
    "kankoku_travel_20260812_0046.mp4": "2026-08-13T22:16:43.018043"
   }
  },
- "last_yt_ts": "2026-08-15T13:35:11.161930"
+ "last_yt_ts": "2026-08-15T15:42:12.618686"
 }
