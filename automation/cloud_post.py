@@ -280,7 +280,14 @@ def publish_youtube(post):
     data = urllib.request.urlopen(video_url, timeout=180).read()
     title = post.get("yt_title") or (post["ig_caption"].split("\n")[0][:95] + " #shorts")
     desc = post.get("yt_desc") or (post["ig_caption"] + "\n" + post.get("appstore_url", ""))
-    meta = json.dumps({"snippet": {"title": title[:100], "description": desc[:4900], "categoryId": "27"},
+    snip = {"title": title[:100], "description": desc[:4900], "categoryId": "27"}
+    if post.get("yt_tags"):
+        tags, n = [], 0
+        for t in post["yt_tags"]:
+            if n + len(t) > 480: break
+            tags.append(t); n += len(t) + 1
+        snip["tags"] = tags
+    meta = json.dumps({"snippet": snip,
                        "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False}}).encode()
     req = urllib.request.Request(
         "https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status",
@@ -291,6 +298,20 @@ def publish_youtube(post):
     req2 = urllib.request.Request(up_url, data=data, method="PUT",
                                   headers={"Authorization": f"Bearer {tok}", "Content-Type": "video/mp4"})
     vid = json.load(urllib.request.urlopen(req2, timeout=600))["id"]
+    # カスタムサムネ。チャンネル未確認だと403で落ちるが、動画自体は公開済みなので投稿は失敗させない。
+    if post.get("yt_thumb"):
+        try:
+            img = urllib.request.urlopen(f"{BASE}/{post['yt_thumb']}", timeout=120).read()
+            treq = urllib.request.Request(
+                f"https://www.googleapis.com/upload/youtube/v3/thumbnails/set?videoId={vid}",
+                data=img, method="POST",
+                headers={"Authorization": f"Bearer {tok}", "Content-Type": "image/jpeg"})
+            urllib.request.urlopen(treq, timeout=180)
+            print(f"  thumbnail set: {post['yt_thumb']}")
+        except Exception as e:
+            body = getattr(e, "read", lambda: b"")()
+            print(f"  THUMBNAIL FAILED (動画は公開済み): {str(e)[:120]} "
+                  f"{body[:200].decode('utf-8', 'replace') if body else ''}")
     return f"https://youtube.com/shorts/{vid}"
 
 

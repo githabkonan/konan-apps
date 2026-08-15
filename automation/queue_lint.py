@@ -12,6 +12,11 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
 REQUIRED = ["app", "video", "ig_caption", "threads_text"]  # cover はcloud_post側で任意(あれば警告のみ)
 
+try:
+    YT_POSTED = set(json.load(open(os.path.join(HERE, "state.json"))).get("yt_posted", []))
+except Exception:
+    YT_POSTED = set()
+
 # 【2026-08-13 konan 明言「無料、有料の件あるけどどちらもわざわざ投稿で言う必要ないからね?
 #   無料だから!とか有料だが!とかわざわざいらんから」】
 # 以前は「有料アプリを無料と書いていないか」を App Store の実価格と突き合わせていた(F-409)。
@@ -72,13 +77,15 @@ def lint(path, bad_keys=None):
         if url and not re.search(r"apps\.apple\.com/.+/id\d+", url):
             errs.append(f"{tag}: appstore_url形式不正 {url}")
         if is_queue:
-            for key, sub in [("video", "videos"), ("cover", "videos")]:
+            for key, sub in [("video", "videos"), ("cover", "videos"), ("yt_thumb", "videos")]:
                 f = p.get(key)
                 if f and not os.path.exists(os.path.join(REPO, sub, f)):
                     errs.append(f"{tag}: {key}ファイル未配置 {sub}/{f}")
         blob_all = (p.get("ig_caption") or "") + "\n" + (p.get("threads_text") or "")
         # 禁止語はキャプションだけでなく全テキスト項目(yt_title/yt_desc/app 名まで)を見る
-        blob_every = "\n".join(v for v in p.values() if isinstance(v, str))
+        blob_every = "\n".join(
+            v if isinstance(v, str) else "\n".join(v)
+            for v in p.values() if isinstance(v, (str, list)))
         for word, why in BANNED_WORDS:
             if word in blob_every:
                 errs.append(f"{tag}: 禁止語「{word}」— {why}")
@@ -94,6 +101,29 @@ def lint(path, bad_keys=None):
         tt = p.get("threads_text", "")
         if re.search(r"このシーン|この動画|この映像", tt):
             errs.append(f"{tag}: threads_textが映像参照(Threadsはテキスト専用=自己完結文にする・2026-07-27 konan指摘)")
+        # ── YouTube メタデータ ──
+        # 自チャンネル239本の実測: タイトルに「アプリ」= 平均48再生 / 入っていない = 241。
+        # 問いかけ形 = 324 / それ以外 = 166。だから「アプリの説明」を書いた時点で負ける。
+        # 投稿済みの動画はYouTube側をもう直せない(隔離するとIG/Threadsの再投稿まで止まる)ので対象外。
+        yt = "" if p.get("video") in YT_POSTED else p.get("yt_title", "")
+        if yt:
+            if len(yt) > 100:
+                errs.append(f"{tag}: yt_titleが100字超({len(yt)}字)— YouTubeが切る")
+            if "アプリ" in yt:
+                errs.append(f"{tag}: yt_titleに「アプリ」— 実測で平均48再生(入れない場合241)。中身でなく話題で釣る")
+            if not re.search(r"[?？0-9０-９]", yt):
+                errs.append(f"{tag}: yt_titleに問いかけも数字も無い — 実測で問いかけ形は平均324、それ以外166")
+            if "#shorts" not in yt.lower():
+                errs.append(f"{tag}: yt_titleに #shorts が無い")
+            if not p.get("yt_tags"):
+                errs.append(f"{tag}: yt_tags未設定 — 検索の入口を捨てている")
+            if not p.get("yt_thumb"):
+                errs.append(f"{tag}: yt_thumb未設定 — YouTubeが勝手に1フレーム選ぶ(検索でクリックされない)")
+            yd = p.get("yt_desc", "")
+            if "#" not in yd:
+                errs.append(f"{tag}: yt_descにハッシュタグが無い")
+            if url and url not in yd:
+                errs.append(f"{tag}: yt_descにApp StoreのURLが無い")
         v = p.get("video")
         if v:
             prev = seen_video.get(v)
