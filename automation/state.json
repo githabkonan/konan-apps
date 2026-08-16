@@ -1,7 +1,7 @@
 {
- "yt_date": "2026-08-16",
- "yt_count": 9,
- "last_yt_seq": 5466,
+ "yt_date": "2026-08-17",
+ "yt_count": 1,
+ "last_yt_seq": 5478,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -292,7 +292,8 @@
   "eigonoh_kankoukyaku_20260813_0923.mp4",
   "task_natsuyasumi_20260816_0400.mp4",
   "milchugo_chuutou_20260816_0400.mp4",
-  "game_kakikyuuka_20260816_0400.mp4"
+  "game_kakikyuuka_20260816_0400.mp4",
+  "iritai_seido_20260816_1700.mp4"
  ],
  "hist": {
   "threads": {
@@ -743,5 +744,5 @@
    "game_kakikyuuka_20260816_0400.mp4": "2026-08-16T20:22:42.514139"
   }
  },
- "last_yt_ts": "2026-08-16T18:29:54.593913"
+ "last_yt_ts": "2026-08-17T06:22:55.370952"
 }
