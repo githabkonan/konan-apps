@@ -113,8 +113,10 @@ def lint(path, bad_keys=None):
                 errs.append(f"{tag}: yt_titleに「アプリ」— 実測で平均48再生(入れない場合241)。中身でなく話題で釣る")
             if not re.search(r"[?？0-9０-９]", yt):
                 errs.append(f"{tag}: yt_titleに問いかけも数字も無い — 実測で問いかけ形は平均324、それ以外166")
-            if "#shorts" not in yt.lower():
-                errs.append(f"{tag}: yt_titleに #shorts が無い")
+            # 【2026-08-16 konan 指示「タイトルにハッシュタグつけるようにね」】
+            # 縦3分未満は #shorts が無くてもShorts判定されるので、枠を題材ハッシュタグに使う。
+            if not re.search(r"#\S", yt):
+                errs.append(f"{tag}: yt_titleにハッシュタグが無い — 検索の入口を捨てている")
             if not p.get("yt_tags"):
                 errs.append(f"{tag}: yt_tags未設定 — 検索の入口を捨てている")
             if not p.get("yt_thumb"):
