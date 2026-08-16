@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-08-16",
- "yt_count": 7,
- "last_yt_seq": 5463,
+ "yt_count": 8,
+ "last_yt_seq": 5464,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -290,7 +290,8 @@
   "mileigo_gouddoenshu_20260816_0400.mp4",
   "kankokugo_kankokugonou_20260816_0400.mp4",
   "eigonoh_kankoukyaku_20260813_0923.mp4",
-  "task_natsuyasumi_20260816_0400.mp4"
+  "task_natsuyasumi_20260816_0400.mp4",
+  "milchugo_chuutou_20260816_0400.mp4"
  ],
  "hist": {
   "threads": {
@@ -730,8 +731,9 @@
    "yobi_shiken_20260814_0043.mp4": "2026-08-16T13:38:30.991286",
    "mileigo_sayagain_20260814_0043.mp4": "2026-08-16T13:38:30.991286",
    "iritai_nyutai_20260816_0400.mp4": "2026-08-16T14:30:55.243900",
-   "rikuso_ichisenbatsu_20260816_0400.mp4": "2026-08-16T15:42:59.837644"
+   "rikuso_ichisenbatsu_20260816_0400.mp4": "2026-08-16T15:42:59.837644",
+   "kanbu_kiro_20260816_0400.mp4": "2026-08-16T16:34:17.595818"
   }
  },
- "last_yt_ts": "2026-08-16T15:42:59.837644"
+ "last_yt_ts": "2026-08-16T16:34:17.595818"
 }
