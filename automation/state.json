@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-08-18",
- "yt_count": 1,
- "last_yt_seq": 5502,
+ "yt_count": 2,
+ "last_yt_seq": 5504,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -305,7 +305,8 @@
   "rikuso_shikaku_20260816_1630.mp4",
   "yobi_jishin_20260816_2300.mp4",
   "eigonoh_eiken_20260816_1950.mp4",
-  "eigonoh_ryugaku_20260817_0145.mp4"
+  "eigonoh_ryugaku_20260817_0145.mp4",
+  "koushu4_juukei_20260816_2315.mp4"
  ],
  "hist": {
   "threads": {
@@ -596,8 +597,8 @@
    "iritai_kakomon_v3.mp4": "2026-08-03T21:19:33.397448",
    "kaiso_michi_v3.mp4": "2026-08-03T21:19:33.397448",
    "kusou_asa_v3.mp4": "2026-08-03T21:19:33.397448",
-   "kankokugo_quiz2_v3.mp4": "2026-08-03T22:43:51.344504",
-   "kankokugo_quiz3_v3.mp4": "2026-08-04T01:28:34.288054",
+   "kankokugo_quiz2_v3.mp4": "2026-08-18T08:26:17.585821",
+   "kankokugo_quiz3_v3.mp4": "2026-08-18T08:26:17.585821",
    "milchugo_biedong_v3.mp4": "2026-08-13T06:17:39.046720",
    "milchugo_jiuhu_v3.mp4": "2026-08-13T06:49:40.949927",
    "eigo_scene6_v3.mp4": "2026-08-14T06:20:53.987943",
@@ -768,5 +769,5 @@
    "yobi_jishin_20260816_2300.mp4": "2026-08-17T12:06:01.637631"
   }
  },
- "last_yt_ts": "2026-08-18T06:04:25.023880"
+ "last_yt_ts": "2026-08-18T08:26:17.585821"
 }
