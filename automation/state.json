@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-08-17",
- "yt_count": 9,
- "last_yt_seq": 5490,
+ "yt_count": 10,
+ "last_yt_seq": 5491,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -301,7 +301,8 @@
   "kankoku_hangul_20260816_2000.mp4",
   "kankoku_hanken_20260817_0130.mp4",
   "kusou_scramble_20260817_0000.mp4",
-  "mileigo_phonetic_20260816_2100.mp4"
+  "mileigo_phonetic_20260816_2100.mp4",
+  "rikuso_shikaku_20260816_1630.mp4"
  ],
  "hist": {
   "threads": {
@@ -549,11 +550,11 @@
    "eigo_noh_1.mp4": "2026-08-17T18:44:47.500963",
    "qc1kyu_news_v3.mp4": "2026-08-02T11:47:43.783292",
    "eigo_noh_2.mp4": "2026-08-17T18:44:47.500963",
-   "qc3_daihatsu_v3.mp4": "2026-08-05T13:12:38.018742",
+   "qc3_daihatsu_v3.mp4": "2026-08-17T19:34:58.936267",
    "koushu4_shiken719_v3.mp4": "2026-07-24T12:51:25.719726",
-   "lc_heatstroke2_v3.mp4": "2026-08-05T13:12:38.018742",
+   "lc_heatstroke2_v3.mp4": "2026-08-17T19:34:58.936267",
    "koushu4_kasai_v3.mp4": "2026-08-05T13:12:38.018742",
-   "qc3_hattendo_v3.mp4": "2026-08-08T12:35:43.690668",
+   "qc3_hattendo_v3.mp4": "2026-08-17T19:34:58.936267",
    "qc_speaker_fire_v3.mp4": "2026-08-02T15:06:53.743960",
    "k4_pressurewash_v3.mp4": "2026-08-02T20:18:45.385914",
    "lc_heatalert_v3.mp4": "2026-08-02T20:18:45.385914",
@@ -764,5 +765,5 @@
    "yobi_jishin_20260816_2300.mp4": "2026-08-17T12:06:01.637631"
   }
  },
- "last_yt_ts": "2026-08-17T18:44:47.500963"
+ "last_yt_ts": "2026-08-17T19:34:58.936267"
 }
