@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-08-17",
- "yt_count": 6,
- "last_yt_seq": 5485,
+ "yt_count": 7,
+ "last_yt_seq": 5487,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -298,7 +298,8 @@
   "iritai_zangyo_20260816_1745.mp4",
   "kaiso_umi_20260816_2215.mp4",
   "kanbu_teisu_20260817_0115.mp4",
-  "kankoku_hangul_20260816_2000.mp4"
+  "kankoku_hangul_20260816_2000.mp4",
+  "kankoku_hanken_20260817_0130.mp4"
  ],
  "hist": {
   "threads": {
@@ -532,7 +533,7 @@
    "jsdf_hook_shoninkyu.mp4": "2026-08-04T19:42:19.036404",
    "otsu6_kinai.mp4": "2026-08-02T06:17:23.406311",
    "qc2_recall.mp4": "2026-08-17T12:06:01.637631",
-   "qc3_recall.mp4": "2026-08-13T17:18:18.296233",
+   "qc3_recall.mp4": "2026-08-17T15:59:48.337599",
    "koushu4_kinai.mp4": "2026-08-02T06:17:23.406311",
    "flex_bonus_v3.mp4": "2026-08-13T17:24:19.529226",
    "lc_heat.mp4": "2026-08-02T06:58:50.070723",
@@ -761,5 +762,5 @@
    "yobi_jishin_20260816_2300.mp4": "2026-08-17T12:06:01.637631"
   }
  },
- "last_yt_ts": "2026-08-17T13:44:34.181916"
+ "last_yt_ts": "2026-08-17T15:59:48.337599"
 }
