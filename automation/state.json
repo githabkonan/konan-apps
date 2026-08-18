@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-08-18",
- "yt_count": 10,
- "last_yt_seq": 5515,
+ "yt_count": 11,
+ "last_yt_seq": 5517,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -314,7 +314,8 @@
   "qc3_recall_20260816_2045.mp4",
   "shoubo6_kensu_20260817_0015.mp4",
   "shoubo6_sutekata_20260816_1815.mp4",
-  "shoubo6_tabako_20260816_2330.mp4"
+  "shoubo6_tabako_20260816_2330.mp4",
+  "unkan_4jikan_20260816_1840.mp4"
  ],
  "hist": {
   "threads": {
@@ -643,8 +644,8 @@
    "sololevel_quest_v3.mp4": "2026-08-18T20:28:39.611382",
    "rikuso_yobi_teate3x_20260729.mp4": "2026-08-05T01:15:36.083765",
    "mileigo_boueihi_9chou_20260729.mp4": "2026-08-18T20:28:39.611382",
-   "rikuso_akishiken_20260729.mp4": "2026-08-14T20:46:26.768491",
-   "mileigo_kashimany_20260729.mp4": "2026-08-14T20:46:26.768491",
+   "rikuso_akishiken_20260729.mp4": "2026-08-18T21:51:40.810549",
+   "mileigo_kashimany_20260729.mp4": "2026-08-18T21:51:40.810549",
    "milchugo_senkaku_20260729.mp4": "2026-08-14T20:46:26.768491",
    "yobi_9_10_shimekiri_20260729.mp4": "2026-08-05T07:15:28.134271",
    "kanbu_kashimany_20260729.mp4": "2026-08-05T16:41:46.976244",
@@ -777,5 +778,5 @@
    "yobi_jishin_20260816_2300.mp4": "2026-08-17T12:06:01.637631"
   }
  },
- "last_yt_ts": "2026-08-18T19:32:02.709268"
+ "last_yt_ts": "2026-08-18T21:51:40.810549"
 }
