@@ -1,7 +1,7 @@
 {
- "yt_date": "2026-08-18",
- "yt_count": 12,
- "last_yt_seq": 5518,
+ "yt_date": "2026-08-19",
+ "yt_count": 1,
+ "last_yt_seq": 5526,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -316,7 +316,8 @@
   "shoubo6_sutekata_20260816_1815.mp4",
   "shoubo6_tabako_20260816_2330.mp4",
   "unkan_4jikan_20260816_1840.mp4",
-  "unkan_jikayou_20260817_0030.mp4"
+  "unkan_jikayou_20260817_0030.mp4",
+  "unkan_truck_20260816_2345.mp4"
  ],
  "hist": {
   "threads": {
@@ -779,5 +780,5 @@
    "yobi_jishin_20260816_2300.mp4": "2026-08-17T12:06:01.637631"
   }
  },
- "last_yt_ts": "2026-08-18T22:45:10.403202"
+ "last_yt_ts": "2026-08-19T06:27:47.830917"
 }
