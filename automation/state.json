@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-08-18",
- "yt_count": 5,
- "last_yt_seq": 5508,
+ "yt_count": 6,
+ "last_yt_seq": 5509,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -309,7 +309,8 @@
   "koushu4_juukei_20260816_2315.mp4",
   "koushu4_keihouki_20260816_1925.mp4",
   "koushu4_shisha_20260817_0045.mp4",
-  "milchugo_boueki_20260816_2115.mp4"
+  "milchugo_boueki_20260816_2115.mp4",
+  "qc2_seizou_20260816_2200.mp4"
  ],
  "hist": {
   "threads": {
@@ -772,5 +773,5 @@
    "yobi_jishin_20260816_2300.mp4": "2026-08-17T12:06:01.637631"
   }
  },
- "last_yt_ts": "2026-08-18T12:51:52.063549"
+ "last_yt_ts": "2026-08-18T13:38:48.291531"
 }
