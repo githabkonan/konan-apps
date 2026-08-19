@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-08-19",
- "yt_count": 7,
- "last_yt_seq": 5543,
+ "yt_count": 10,
+ "last_yt_seq": 5544,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -323,7 +323,10 @@
   "kusou_scramble_20260819.mp4",
   "iritai_koho_20260819.mp4",
   "rikuso_shoku2_20260819.mp4",
-  "rikuso_ninki_20260819.mp4"
+  "rikuso_ninki_20260819.mp4",
+  "kusou_kichi_20260819.mp4",
+  "iritai_ninki_20260819.mp4",
+  "kankokugonoh_kpop_20260819.mp4"
  ],
  "hist": {
   "threads": {
@@ -685,8 +688,8 @@
    "eigonoh_order_20260731_1748.mp4": "2026-08-19T21:54:59.828291",
    "rikuso_osprey_20260801_1150.mp4": "2026-08-12T16:56:27.229179",
    "rikuso_ninki_20260801_1150.mp4": "2026-08-19T21:54:59.828291",
-   "rikuso_desk_vs_hand_20260801_1150.mp4": "2026-08-15T18:29:25.571430",
-   "yobi_kumamoto_uketsuke_20260801_1150.mp4": "2026-08-15T19:26:22.142917",
+   "rikuso_desk_vs_hand_20260801_1150.mp4": "2026-08-19T22:48:08.821658",
+   "yobi_kumamoto_uketsuke_20260801_1150.mp4": "2026-08-19T22:48:08.821658",
    "kanbu_3rd_september_20260801_1150.mp4": "2026-08-15T20:23:25.092299",
    "rikuso_shoninkyu_20260801_1226.mp4": "2026-08-08T08:36:09.762179",
    "rikuso_oitsuku_20260801_1226.mp4": "2026-08-15T22:33:33.554191",
@@ -786,5 +789,5 @@
    "yobi_jishin_20260816_2300.mp4": "2026-08-17T12:06:01.637631"
   }
  },
- "last_yt_ts": "2026-08-19T21:54:59.828291"
+ "last_yt_ts": "2026-08-19T22:48:08.821658"
 }
