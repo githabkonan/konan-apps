@@ -1,6 +1,6 @@
 {
  "yt_date": "2026-08-19",
- "yt_count": 10,
+ "yt_count": 12,
  "last_yt_seq": 5544,
  "yt_posted": [
   "koushu4_news.mp4",
@@ -326,7 +326,9 @@
   "rikuso_ninki_20260819.mp4",
   "kusou_kichi_20260819.mp4",
   "iritai_ninki_20260819.mp4",
-  "kankokugonoh_kpop_20260819.mp4"
+  "kankokugonoh_kpop_20260819.mp4",
+  "shoubo6_seibi_20260819.mp4",
+  "sololevel_exp_20260819.mp4"
  ],
  "hist": {
   "threads": {
@@ -789,5 +791,5 @@
    "yobi_jishin_20260816_2300.mp4": "2026-08-17T12:06:01.637631"
   }
  },
- "last_yt_ts": "2026-08-19T22:48:08.821658"
+ "last_yt_ts": "2026-08-19T23:37:21.915895"
 }
