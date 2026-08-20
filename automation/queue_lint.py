@@ -47,6 +47,47 @@ BANNED_WORDS = [
 #       automation/audio_lang.json(whisper実測キャッシュ)で音声言語を確認する。
 #       未検査は fail-closed(F-422「検査スキップ=合格」の錯覚を許さない)。
 #       キャッシュは `python3 automation/queue_lint.py --probe` が生成する(ローカル・whisper tiny)。
+# 【2026-08-20 F-424・konan指摘】SARメタデータ壊れ(ピクセル比が横長扱い)の動画74本が在庫に混入し、
+# IGリールで横に引き伸ばされ文字も潰れて公開されていた。コード上の解像度だけでなく
+# 「表示上の縦横比」を実測して 9:16 以外を隔離する。ffmpeg必須(無ければ設定不備として全停止)。
+import subprocess as _sp
+DIMS_CACHE_FILE = os.path.join(HERE, "video_dims_cache.json")
+_FFMPEG_CANDIDATES = ["/Users/konan/.local/bin/ffmpeg", "ffmpeg", "/usr/bin/ffmpeg", "/opt/homebrew/bin/ffmpeg"]
+
+def _ffmpeg_bin():
+    import shutil as _sh
+    for c in _FFMPEG_CANDIDATES:
+        if os.path.sep in c and os.path.exists(c):
+            return c
+        w = _sh.which(c)
+        if w:
+            return w
+    return None
+
+def check_display_aspect(path, cache):
+    """(ok, why) — 表示縦横比が9:16(±2%)か。結果はmtime付きでキャッシュ。"""
+    st = os.stat(path)
+    key = f"{os.path.basename(path)}:{st.st_size}:{int(st.st_mtime)}"
+    if key in cache:
+        return tuple(cache[key])
+    ff = _ffmpeg_bin()
+    if not ff:
+        raise SystemExit("ffmpeg が見つからない — 画面比検査ができないので停止(設定不備)")
+    r = _sp.run([ff, "-i", path], capture_output=True, text=True)
+    m = re.search(r"Video:.*?(\d{3,4})x(\d{3,4})", r.stderr)
+    if not m:
+        res = (False, "映像ストリームを読めない")
+    else:
+        w, h = int(m.group(1)), int(m.group(2))
+        sar = re.search(r"\[?SAR (\d+):(\d+)", r.stderr)
+        disp = (w / h) * (int(sar.group(1)) / int(sar.group(2)) if sar else 1.0)
+        if abs(disp - 9 / 16) > 0.02 * (9 / 16):
+            res = (False, f"表示比 {disp:.3f}(SAR込み)が9:16でない")
+        else:
+            res = (True, "")
+    cache[key] = list(res)
+    return res
+
 JA_CHARS = re.compile(r"[ぁ-んァ-ン一-龥]")
 AUDIO_LANG_FILE = os.path.join(HERE, "audio_lang.json")
 
@@ -97,6 +138,19 @@ def lint(path, bad_keys=None):
                 f = p.get(key)
                 if f and not os.path.exists(os.path.join(REPO, sub, f)):
                     errs.append(f"{tag}: {key}ファイル未配置 {sub}/{f}")
+        if is_queue and p.get("video"):
+            vpath = os.path.join(REPO, "videos", p["video"])
+            if os.path.exists(vpath):
+                _c = getattr(lint, "_dims_cache", None)
+                if _c is None:
+                    try:
+                        _c = json.load(open(DIMS_CACHE_FILE))
+                    except Exception:
+                        _c = {}
+                    lint._dims_cache = _c
+                okv, why = check_display_aspect(vpath, _c)
+                if not okv:
+                    errs.append(f"{tag}: 画面比NG — {why}(9:16必須・F-424)")
         blob_all = (p.get("ig_caption") or "") + "\n" + (p.get("threads_text") or "")
         # 禁止語はキャプションだけでなく全テキスト項目(yt_title/yt_desc/app 名まで)を見る
         blob_every = "\n".join(
@@ -222,6 +276,8 @@ def main(argv):
         if len(bad_keys) >= total:
             print("❌ 全件NG — 配信できるものが無いので停止します")
             return 1
+    if getattr(lint, "_dims_cache", None) is not None:
+        json.dump(lint._dims_cache, open(DIMS_CACHE_FILE, "w"))
     else:
         if os.path.exists(qpath):
             os.remove(qpath)
