@@ -40,6 +40,22 @@ BANNED_WORDS = [
     ("予想問題", "根拠のない当て物に見える(konan却下)。「対策問題」に言い換える"),
 ]
 
+# 【2026-08-20 F-423・konan激怒】海外向けアプリの動画に日本語ナレーションが焼き込まれたまま
+# YouTube公開された(Esthetician 2本)。キャプションが英語でも映像の中の音声が日本語なら
+# その国の視聴者には無意味 = 「海外は映像も音声も全部その国の言語」(2026-08-09 konan明言)違反。
+# 判定: キャプションに日本語が1文字も無い = 海外向け投稿とみなし、
+#       automation/audio_lang.json(whisper実測キャッシュ)で音声言語を確認する。
+#       未検査は fail-closed(F-422「検査スキップ=合格」の錯覚を許さない)。
+#       キャッシュは `python3 automation/queue_lint.py --probe` が生成する(ローカル・whisper tiny)。
+JA_CHARS = re.compile(r"[ぁ-んァ-ン一-龥]")
+AUDIO_LANG_FILE = os.path.join(HERE, "audio_lang.json")
+
+def _audio_lang_cache():
+    try:
+        return json.load(open(AUDIO_LANG_FILE))
+    except Exception:
+        return {}
+
 HYPE_PATTERNS = [
     (r"締切まで(時間がない|あと|残り)", "締切で焦らせている"),
     (r"試験まであと\s*\d", "カウントダウンで焦らせている"),
@@ -98,6 +114,16 @@ def lint(path, bad_keys=None):
             if m:
                 errs.append(f"{tag}: 煽り構文「{m.group(0)}」— {why}"
                             f"(アプリ紹介に徹する・2026-08-05 konan明言)")
+        # ── 海外向け×音声言語(F-423) ──
+        cap_blob = (p.get("ig_caption") or "") + (p.get("threads_text") or "") + (p.get("yt_title") or "")
+        if is_queue and cap_blob.strip() and not JA_CHARS.search(cap_blob):
+            vlang = _audio_lang_cache().get(p.get("video") or "")
+            if vlang is None:
+                errs.append(f"{tag}: 海外向け投稿なのに音声言語が未検査 — "
+                            f"`python3 automation/queue_lint.py --probe` で実測してから流す(F-423)")
+            elif vlang == "ja":
+                errs.append(f"{tag}: 海外向け投稿に日本語音声(whisper実測) — "
+                            f"その国の言語で作り直す(2026-08-09 konan明言/F-423)")
         tt = p.get("threads_text", "")
         if re.search(r"このシーン|この動画|この映像", tt):
             errs.append(f"{tag}: threads_textが映像参照(Threadsはテキスト専用=自己完結文にする・2026-07-27 konan指摘)")
@@ -136,7 +162,43 @@ def lint(path, bad_keys=None):
             bad_keys.add(_key(p, i))
     return errs
 
+def probe_audio_langs():
+    """海外向け(キャプション無日本語)エントリの動画音声をwhisper tinyで実測してキャッシュする。"""
+    q = json.load(open(os.path.join(HERE, "post_queue.json")))
+    cache = _audio_lang_cache()
+    import subprocess, tempfile
+    FF = "/Users/konan/.local/bin/ffmpeg"
+    try:
+        import whisper
+        model = whisper.load_model("tiny")
+    except Exception as e:
+        print("whisper不可:", e); return 1
+    for p in q["posts"]:
+        v = p.get("video") or ""
+        cap = (p.get("ig_caption") or "") + (p.get("threads_text") or "") + (p.get("yt_title") or "")
+        if not v or v in cache or not cap.strip() or JA_CHARS.search(cap):
+            continue
+        path = os.path.join(REPO, "videos", v)
+        if not os.path.exists(path):
+            continue
+        wav = tempfile.mktemp(suffix=".wav")
+        subprocess.run([FF, "-y", "-i", path, "-t", "25", "-ar", "16000", "-ac", "1", wav],
+                       capture_output=True)
+        try:
+            r = model.transcribe(wav, fp16=False)
+            lang = "ja" if JA_CHARS.search(r.get("text", "")) else (r.get("language") or "?")
+            cache[v] = lang
+            print(f"probe: {v} → {lang}")
+        finally:
+            os.remove(wav)
+    json.dump(cache, open(AUDIO_LANG_FILE, "w"), ensure_ascii=False, indent=1)
+    print(f"audio_lang.json 更新({len(cache)}件)")
+    return 0
+
+
 def main(argv):
+    if argv and argv[0] == "--probe":
+        return probe_audio_langs()
     targets = argv or [os.path.join(HERE, "post_queue.json")] + sorted(glob.glob(os.path.join(HERE, "*_launch_pack.json")))
     all_errs = []
     bad_keys = set()
