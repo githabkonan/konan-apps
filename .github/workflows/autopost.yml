@@ -12,6 +12,7 @@ permissions:
 jobs:
   post:
     runs-on: ubuntu-latest
+    timeout-minutes: 25   # 2026-08-20: ハング1本が3時間渋滞を作った(F記録)。25分で自動killして後続を通す
     steps:
       # 【2026-08-13】ref を明示しないと**発火した時点の SHA** を取りに行く。concurrency で
       # 順番待ちにされた2本目は、1本目が state.json を更新し終えた後に走るのに古い state を読み、
