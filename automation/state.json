@@ -1,7 +1,7 @@
 {
- "yt_date": "2026-08-20",
- "yt_count": 5,
- "last_yt_seq": 5556,
+ "yt_date": "2026-08-21",
+ "yt_count": 3,
+ "last_yt_seq": 5580,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -333,7 +333,10 @@
   "qc2_nanatsu_20260819.mp4",
   "koushu4_300sqm_20260819.mp4",
   "oshilog_kiroku_20260819.mp4",
-  "estheticianexam_license_20260819.mp4"
+  "estheticianexam_license_20260819.mp4",
+  "rikuso_fact_20260821_0240.mp4",
+  "rikuso_app_20260821_0240.mp4",
+  "kusou_20260821_0240.mp4"
  ],
  "hist": {
   "threads": {
@@ -810,5 +813,5 @@
    "mileigo_ryakugo_20260809_1637.mp4": "2026-08-21T08:29:24.325867"
   }
  },
- "last_yt_ts": "2026-08-20T12:04:48.577273"
+ "last_yt_ts": "2026-08-21T10:06:25.328533"
 }
