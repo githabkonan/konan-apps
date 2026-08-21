@@ -26,7 +26,14 @@ LOCAL = os.path.join(HERE, "state.json")
 
 def merge(local, remote):
     out = dict(remote)
-    out.update({k: v for k, v in local.items() if k not in ("yt_posted", "hist", "yt_count", "yt_date")})
+    out.update({k: v for k, v in local.items()
+                if k not in ("yt_posted", "hist", "yt_count", "yt_date", "th_var")})
+
+    # Threads の言い回し送り(何番まで使ったか)は大きい方を採る = 同じ文を二度出さない安全側
+    th = dict(remote.get("th_var", {}))
+    for key, i in (local.get("th_var", {}) or {}).items():
+        th[key] = max(int(i), int(th.get(key, -1)))
+    out["th_var"] = th
 
     # 投稿済みは和集合。順序は remote を土台に、local の新規を後ろへ
     seen, posted = set(), []

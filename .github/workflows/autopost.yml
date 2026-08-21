@@ -1,8 +1,10 @@
 name: autopost
 on:
   schedule:
-    # 毎時 JST 6:00-23:00(=UTC 21-23,0-14)= 18回/日。IG 25投稿/24h上限内・Threadsはテキストで安全に高頻度。
-    - cron: '0 0-14,21-23 * * *'
+    # 【2026-08-22 konan「スレッドは24時間で240本出す設計にしろ」】毎時24回/日へ。
+    # 深夜帯に増えるのは Threads だけ: IG は _per_run_default() が窓外で0本、
+    # YouTube は YT_WIN_START/END(6-23)で守られているので、この変更では動かない。
+    - cron: '0 * * * *'
   workflow_dispatch: {}
 concurrency:
   group: autopost
@@ -56,6 +58,11 @@ jobs:
           # **この env が 6 のまま勝ち続けていた**ので「ペースが遅い」指摘が解消しなかった。
           # コードの既定値と設定ファイルが食い違うと、必ず設定ファイルが勝つ。両方直すこと。
           # 実際の天井は cloud_post.py が threads_publishing_limit を毎回叩いて守る。
+          # 【2026-08-22 konan指示】240本/24時間。公式上限250の枠内で、残枠はAPI実測で毎回確認する。
+          # 本数を上げる前提条件は「毎回言い回しが変わること」= automation/threads_variants.json。
+          # これが空だと同型連投になり F-412 を再発させるので、増やす時は必ず作り置きを確認する。
+          # 作り置きが全336投稿ぶん揃うまでは 24 のまま(env はコード既定240に勝つ)。
+          # 揃ったらここを "240" に書き換えるだけで切り替わる。
           THREADS_MAX_PER_DAY: "24"
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_TOKEN: ${{ secrets.IG_TOKEN }}

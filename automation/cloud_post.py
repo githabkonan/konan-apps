@@ -213,7 +213,6 @@ def _catchup(platform, base):
     return n
 
 
-THREADS_PER_RUN = int(os.environ.get("THREADS_PER_RUN") or _catchup("threads", _per_run_default()))
 IG_PER_RUN = int(os.environ.get("IG_PER_RUN") or _catchup("instagram", _per_run_default()))
 
 # 【F-412 / 2026-08-13】Threads は7/30以降に4件をスパム削除されて 8/12 に完全停止した。
@@ -221,18 +220,22 @@ IG_PER_RUN = int(os.environ.get("IG_PER_RUN") or _catchup("instagram", _per_run_
 # 【2026-08-15】6本/日を3日間回して削除は再発せず。ただし _catchup が窓の頭で上限を食い切り、
 # 6本すべてが14時までに固まって以降10時間無投稿になっていた(konan 指摘「全然投稿されてなかった」)。
 # 上限を12本へ上げたうえで、窓の経過時間に比例した本数までしか解禁しない。前倒しの固め打ちを構造的に止める。
-THREADS_MAX_PER_DAY = int(os.environ.get("THREADS_MAX_PER_DAY", "24"))
+# 【2026-08-22 konan指示】「スレッドは24時間で240本出す設計にしろ」「毎回言い回し変えて、
+# バンされないようにして」「これだけ枠が多いから、全部のアプリね」。
+# 公式上限は250投稿/24h(threads_publishing_limit で実測)なので240は枠内。ただし
+# **F-412の削除は本数ではなく同型テキストの反復が原因**だったので、本数を上げる条件は
+# 言い回しの作り置き(threads_variants.json)が入っていること。1投稿1文型の使い回しはしない。
+# 窓は IG(7-22)と切り離して24時間。240本を17時間に詰めるより、24時間へ均すほうが機械的に見えない。
+THREADS_MAX_PER_DAY = int(os.environ.get("THREADS_MAX_PER_DAY", "240"))
+THREADS_RUN_CAP = int(os.environ.get("THREADS_RUN_CAP", "14"))   # 1ランの上限(cron間引きの取り返し幅)
+THREADS_GAP_S = int(os.environ.get("THREADS_GAP_S", "25"))       # 連投間隔。25s×14本=6分弱
 _th_today = _today_count("threads")
-if _WIN_S <= now.hour <= _WIN_E:
-    _th_span = (_WIN_E + 1 - _WIN_S) * 60
-    _th_elapsed = max(0, min(_th_span, (now.hour - _WIN_S) * 60 + now.minute))
-    _th_unlocked = -(-THREADS_MAX_PER_DAY * _th_elapsed // _th_span)
-else:
-    _th_unlocked = 0
-# 【2026-08-21 konan「スレッドも投稿ペース遅い。改善しろ」】1ラン1本固定だとランの間引き(GitHub cron遅延)で
-# 解禁ペースに追いつけない。遅れ2本以上なら1ランで2本まで挽回(45秒間隔は既存)。日次12・段階解禁は維持
+# 0:00 からの経過分に比例した本数までしか解禁しない(窓の頭での固め打ちを構造的に止める)
+# 「今の時間帯ぶんまで」を解禁する(+60分)。これが無いと最終ラン23時でも230本止まりで240に届かない
+_th_elapsed = min(24 * 60, now.hour * 60 + now.minute + 60)
+_th_unlocked = -(-THREADS_MAX_PER_DAY * _th_elapsed // (24 * 60))
 _th_behind = max(0, min(THREADS_MAX_PER_DAY, _th_unlocked) - _th_today)
-THREADS_PER_RUN = min(THREADS_PER_RUN, (2 if _th_behind >= 2 else 1), _th_behind)
+THREADS_PER_RUN = min(THREADS_RUN_CAP, _th_behind)
 
 
 def threads_quota():
@@ -291,14 +294,32 @@ def _post(url, params):
 
 
 
+try:
+    THREADS_VARIANTS = json.load(open(os.path.join(HERE, "threads_variants.json")))
+except Exception:
+    THREADS_VARIANTS = {}
+
+
 def threads_text(post):
     """Threads本文。文字 + App Store の URL だけ。
 
     【2026-08-13 konan再指示】「スレッドは文字の投稿とアップストアのURLだけでいい。
     昔も同じ指摘したと思う」— 実際 2026-06-29 に同じ指示を受けている(このファイル冒頭)。
     F-412(スパム削除)の対策として動画つき+リンク削除に作り替えたのは指示に反していた。
+
+    【2026-08-22 konan「毎回言い回し変えて」】同じ投稿を出す時は毎回違う言い回しを使う。
+    候補は手元のローカルLLMで作り置きしてある(scripts/threads_variants.py → threads_variants.json)。
+    どこまで使ったかは state.json に持つので、作り置きを一周するまで同じ文は二度出ない。
     """
-    return (post.get("threads_text") or "").strip()[:500]
+    base = (post.get("threads_text") or "").strip()
+    key = post.get("video") or post.get("app")
+    pool = THREADS_VARIANTS.get(key) or []
+    if not pool:
+        return base[:500]
+    used = STATE.setdefault("th_var", {})
+    i = int(used.get(key, -1)) + 1
+    used[key] = i
+    return pool[i % len(pool)].strip()[:500]
 
 
 def publish_threads(post):
@@ -406,12 +427,18 @@ COOLDOWN_H = float(os.environ.get("REPOST_COOLDOWN_H", "72"))
 def save_state():
     json.dump(STATE, open(STATE_PATH, "w"))
 
+# 【2026-08-22】Threads だけクールダウンを分ける。240本/日をキュー336本から出すので、
+# 72h のままだと3日で必要960本に対し在庫336本=枯れる。言い回しは毎回変わる(threads_variants)ので
+# 同じアプリが翌日また出ること自体は問題にならない。IG/YT は 72h のまま触らない。
+COOLDOWN_BY_PLATFORM = {"threads": float(os.environ.get("THREADS_COOLDOWN_H", "18"))}
+
+
 def cooled(platform, post):
     ts = HIST.get(platform, {}).get(post.get("video", post.get("app")), "")
     if not ts: return True
     try:
         last = datetime.datetime.fromisoformat(ts)
-        return (now - last).total_seconds() >= COOLDOWN_H * 3600
+        return (now - last).total_seconds() >= COOLDOWN_BY_PLATFORM.get(platform, COOLDOWN_H) * 3600
     except Exception: return True
 
 def mark(platform, post):
@@ -437,7 +464,7 @@ for i in range(THREADS_PER_RUN):
     results.append({"ch": "threads", "app": tp.get("app"), "ok": ok, ("id" if ok else "err"): val})
     print(f"  threads[{tp.get('app')}]: {'OK ' + str(val) if ok else 'FAIL ' + str(val)}")
     if ok: ok_count += 1; mark("threads", tp)
-    if i < THREADS_PER_RUN - 1: time.sleep(45)
+    if i < THREADS_PER_RUN - 1: time.sleep(THREADS_GAP_S)
 
 # Instagram: 25/日上限なので1本(rotation: seq)
 for i in range(IG_PER_RUN):
