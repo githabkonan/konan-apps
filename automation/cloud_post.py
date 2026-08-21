@@ -389,7 +389,9 @@ for i in range(IG_PER_RUN):
 
 # YouTube: 最優秀チャンネルだが同一動画の再アップ=スパム/重複判定リスク → 各動画一度きり。
 # 未投稿の動画が無くなったら投稿しない(=新作が投入されると自動再開)。
-YT_MAX_PER_DAY = int(os.environ.get("YT_MAX_PER_DAY", "9"))
+# 【2026-08-21 konan指示】新クォータ(1回=1pt・100/日)確認済みにつき24本/日へ。
+# ただしYouTubeのスパム量産検知は別問題なので、多様化ルール(1アプリ2本まで・角度分散)を前提とする
+YT_MAX_PER_DAY = int(os.environ.get("YT_MAX_PER_DAY", "24"))
 # 【F-410・2026-08-07 konan「今日youtubeで3本しか動画が上がってない。なぜ?」】
 # 原因は「1ラン=最大1本 × GitHub cron が落ちる」の掛け算。
 # schedule は毎時のはずが実測7回/11回しか発火せず(00,03,04,06,06,08,10 UTC)、
