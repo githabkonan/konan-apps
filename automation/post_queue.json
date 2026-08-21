@@ -3641,6 +3641,151 @@
         "勉強法",
         "独学"
       ]
+    },
+    {
+      "app": "自衛官陸曹昇任試験対策",
+      "type": "rikuso",
+      "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
+      "video": "rikuso_fact_20260821_0240.mp4",
+      "cover": "covers/rikuso_fact_20260821_0240_cover.jpg",
+      "ig_caption": "陸士から陸曹に上がる試験がある。学科試験が中心で、対策アプリがある。iPhoneで「陸曹昇任」と検索。\n#自衛隊 #陸曹昇任 #試験対策 #自衛官",
+      "threads_text": "陸士から陸曹に上がる試験がある。学科試験が中心で、対策アプリがある。iPhoneで「陸曹昇任」と検索すると出てくる。",
+      "yt_title": "陸士から陸曹へ、何が試される? #shorts",
+      "yt_desc": "陸曹昇任試験は学科が中心。分野別の対策手段も紹介。\n#自衛隊 #陸曹昇任 #昇任試験\nhttps://apps.apple.com/jp/app/id6774074604",
+      "yt_tags": [
+        "自衛隊",
+        "陸曹昇任",
+        "昇任試験",
+        "陸上自衛隊",
+        "試験対策"
+      ],
+      "yt_thumb": "rikuso_fact_20260821_0240_thumb.jpg"
+    },
+    {
+      "app": "自衛官陸曹昇任試験対策",
+      "type": "rikuso",
+      "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
+      "video": "rikuso_app_20260821_0240.mp4",
+      "cover": "covers/rikuso_app_20260821_0240_cover.jpg",
+      "ig_caption": "陸曹昇任の対策アプリがある。分野別の問題と解説が入っていて、タップして確認していく。iPhoneで「陸曹昇任」と検索。\n#自衛隊 #陸曹昇任 #試験対策",
+      "threads_text": "陸曹昇任の対策アプリがある。分野別の問題と解説が入っていて、タップして確認していく。iPhoneで「陸曹昇任」と検索すると出てくる。",
+      "yt_title": "陸曹昇任の勉強、スマホで足りる? #shorts",
+      "yt_desc": "陸曹昇任試験対策をスマホでやる方法。\n#自衛隊 #陸曹昇任 #試験対策\nhttps://apps.apple.com/jp/app/id6774074604",
+      "yt_tags": [
+        "自衛隊",
+        "陸曹昇任",
+        "試験対策",
+        "スマホ学習"
+      ],
+      "yt_thumb": "rikuso_app_20260821_0240_thumb.jpg"
+    },
+    {
+      "app": "自衛官空曹昇任試験対策",
+      "type": "kusou",
+      "appstore_url": "https://apps.apple.com/jp/app/id6789531149",
+      "video": "kusou_20260821_0240.mp4",
+      "cover": "covers/kusou_20260821_0240_cover.jpg",
+      "ig_caption": "空曹昇任試験の対策アプリがある。分野ごとに問題が収録されていて、選択肢を選ぶ形式。iPhoneで「空曹昇任」と検索。\n#自衛隊 #空曹昇任 #試験対策",
+      "threads_text": "空曹昇任試験の対策アプリがある。分野ごとに問題が収録されていて、選択肢を選ぶ形式。iPhoneで「空曹昇任」と検索すると出てくる。",
+      "yt_title": "空曹昇任試験、何が出るか知ってる? #shorts",
+      "yt_desc": "航空自衛隊の空曹昇任試験の中身と対策。\n#自衛隊 #航空自衛隊 #空曹\nhttps://apps.apple.com/jp/app/id6789531149",
+      "yt_tags": [
+        "自衛隊",
+        "航空自衛隊",
+        "空曹",
+        "昇任試験"
+      ],
+      "yt_thumb": "kusou_20260821_0240_thumb.jpg"
+    },
+    {
+      "app": "自衛官入隊試験対策",
+      "type": "iritai",
+      "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
+      "video": "iritai_20260821_0240.mp4",
+      "cover": "covers/iritai_20260821_0240_cover.jpg",
+      "ig_caption": "自衛官入隊試験の対策アプリがある。陸海空それぞれの試験範囲が入っていて、分野ごとに解ける。iPhoneで「自衛官入隊試験対策」と検索。\n#自衛隊 #入隊 #試験対策",
+      "threads_text": "自衛官入隊試験の対策アプリがある。陸海空それぞれの試験範囲が入っていて、分野ごとに解ける。iPhoneで「自衛官入隊試験対策」と検索すると出てくる。",
+      "yt_title": "自衛官の試験、陸海空で何が違う? #shorts",
+      "yt_desc": "自衛官入隊試験の構造。陸海空それぞれの範囲。\n#自衛隊 #入隊 #自衛官候補生\nhttps://apps.apple.com/jp/app/id6772919770",
+      "yt_tags": [
+        "自衛隊",
+        "入隊",
+        "自衛官候補生",
+        "一般曹候補生"
+      ],
+      "yt_thumb": "iritai_20260821_0240_thumb.jpg"
+    },
+    {
+      "app": "TASK LEVELING",
+      "type": "sololevel",
+      "appstore_url": "https://apps.apple.com/jp/app/id6791684373",
+      "video": "sololevel_20260821_0240.mp4",
+      "cover": "covers/sololevel_20260821_0240_cover.jpg",
+      "ig_caption": "タスクをこなすとレベルが上がる。日々のタスクをゲームにするアプリがある。iPhoneで「TASK LEVELING」と検索。\n#タスク管理 #ゲーム化 #RPG #生産性",
+      "threads_text": "タスクをこなすとレベルが上がる。日々のタスクをゲームにするアプリがある。iPhoneで「TASK LEVELING」と検索すると出てくる。",
+      "yt_title": "タスク1個で経験値いくつ入る? #shorts",
+      "yt_desc": "日々のタスクをRPGにする仕組み。\n#タスク管理 #習慣化 #RPG\nhttps://apps.apple.com/jp/app/id6791684373",
+      "yt_tags": [
+        "タスク管理",
+        "習慣化",
+        "RPG",
+        "生産性"
+      ],
+      "yt_thumb": "sololevel_20260821_0240_thumb.jpg"
+    },
+    {
+      "app": "消防設備士 甲4 試験対策",
+      "type": "koushu4",
+      "appstore_url": "https://apps.apple.com/jp/app/id6786774938",
+      "video": "koushu4_20260821_0240.mp4",
+      "cover": "covers/koushu4_20260821_0240_cover.jpg",
+      "ig_caption": "甲4は自動火災報知設備の工事もできる資格。消防設備士甲4の試験対策アプリがある。iPhoneで「消防設備士甲4」と検索。\n#消防設備士 #甲4 #試験対策",
+      "threads_text": "甲4は自動火災報知設備の工事もできる資格。消防設備士甲4の試験対策アプリがある。iPhoneで「消防設備士甲4」と検索すると出てくる。",
+      "yt_title": "甲4があると何ができる? #shorts",
+      "yt_desc": "甲4で何ができるか。自動火災報知設備の話。\n#消防設備士 #甲4 #資格\nhttps://apps.apple.com/jp/app/id6786774938",
+      "yt_tags": [
+        "消防設備士",
+        "甲4",
+        "資格",
+        "試験対策"
+      ],
+      "yt_thumb": "koushu4_20260821_0240_thumb.jpg"
+    },
+    {
+      "app": "運行管理者(旅客) 試験対策",
+      "type": "unkan",
+      "appstore_url": "https://apps.apple.com/jp/app/id6795834934",
+      "video": "unkan_ryo_20260821_0240.mp4",
+      "cover": "covers/unkan_ryo_20260821_0240_cover.jpg",
+      "ig_caption": "運行管理者(旅客)試験の対策アプリが出た。令和8年度第1回CBT実施中(8/8〜9/6)。iPhoneで「運行管理者(旅客)」と検索。\n#運行管理者 #旅客 #試験対策 #CBT",
+      "threads_text": "運行管理者(旅客)試験の対策アプリが出た。令和8年度第1回CBT実施中(8/8〜9/6)。iPhoneで「運行管理者(旅客)」と検索すると出てくる。",
+      "yt_title": "運行管理者(旅客)、CBTは9月6日まで #shorts",
+      "yt_desc": "令和8年度第1回CBTの日程と対策。\n#運行管理者 #旅客 #CBT\nhttps://apps.apple.com/jp/app/id6795834934",
+      "yt_tags": [
+        "運行管理者",
+        "旅客",
+        "CBT",
+        "資格"
+      ],
+      "yt_thumb": "unkan_ryo_20260821_0240_thumb.jpg"
+    },
+    {
+      "app": "運行管理者(貨物) 試験対策",
+      "type": "unkan",
+      "appstore_url": "https://apps.apple.com/jp/app/id6795367683",
+      "video": "unkan_kamo_20260821_0240.mp4",
+      "cover": "covers/unkan_kamo_20260821_0240_cover.jpg",
+      "ig_caption": "運行管理者(貨物)試験の対策アプリがある。トラック運転手が取る資格の試験向け。iPhoneで「運行管理者 貨物」と検索。\n#運行管理者 #貨物 #試験対策 #トラック",
+      "threads_text": "運行管理者(貨物)試験の対策アプリがある。トラック運転手が取る資格の試験向け。iPhoneで「運行管理者 貨物」と検索すると出てくる。",
+      "yt_title": "トラック業界で効く資格、どれ? #shorts",
+      "yt_desc": "運行管理者(貨物)の価値と試験対策。\n#運行管理者 #貨物 #トラック\nhttps://apps.apple.com/jp/app/id6795367683",
+      "yt_tags": [
+        "運行管理者",
+        "貨物",
+        "トラック",
+        "物流"
+      ],
+      "yt_thumb": "unkan_kamo_20260821_0240_thumb.jpg"
     }
   ]
 }
