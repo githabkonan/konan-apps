@@ -55,6 +55,43 @@ if _bad:
     except Exception as e:
         print(f"WARN quarantine.json を読めない({e}) — 隔離なしで続行")
 
+
+# 【2026-08-21 konan 指摘】「ショートスリーパーのやつはアプリが公開されるまであげなくていい
+# ゆうたやんけ、何勝手にあげてんの」= まだ App Store に無いアプリの宣伝動画を2本公開していた。
+# 見た人が検索しても何も出ない=集客にならず、チャンネルの信用だけ削る。
+# 文章のルールでは止まらないので、配信の直前にストアへ実在を照会して落とす。
+# 判定できなかった時(通信断)は落とさない — 1本の不明で配信全体を止めない
+# ([[feedback_gates_must_quarantine_not_halt]])。
+def _live_app_ids(posts):
+    ids = sorted({m.group(1) for p in posts
+                  for m in [re.search(r"/id(\d+)", p.get("appstore_url") or "")] if m})
+    live, unknown = set(), False
+    for i in range(0, len(ids), 10):
+        chunk = ids[i:i + 10]
+        try:
+            d = json.load(urllib.request.urlopen(
+                f"https://itunes.apple.com/lookup?id={','.join(chunk)}&country=jp", timeout=20))
+            live |= {str(r["trackId"]) for r in d.get("results", [])}
+        except Exception as e:
+            print(f"WARN ストア照会失敗({str(e)[:60]}) → この分は未判定として通す")
+            live |= set(chunk)
+            unknown = True
+    return live, unknown
+
+
+try:
+    _live, _ = _live_app_ids(POSTS)
+    _unpub = [p for p in POSTS
+              if not re.search(r"/id(\d+)", p.get("appstore_url") or "")
+              or re.search(r"/id(\d+)", p["appstore_url"]).group(1) not in _live]
+    if _unpub:
+        for p in _unpub[:10]:
+            print(f"  ⛔ 未公開アプリ: {p.get('app')} / {p.get('video')}")
+        POSTS = [p for p in POSTS if p not in _unpub]
+        print(f"⛔ 未公開アプリの宣伝 {len(_unpub)}本を配信から除外(残 {len(POSTS)}本)")
+except Exception as e:
+    print(f"WARN 未公開アプリ判定に失敗({str(e)[:80]}) — 判定なしで続行")
+
 N = len(POSTS)
 
 # 2026-07-20: 加重値は weights.json(gen_marketing_weights.py が直近30日のASC実売上から毎日再計算しpush)を読む。
