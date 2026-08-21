@@ -221,7 +221,7 @@ IG_PER_RUN = int(os.environ.get("IG_PER_RUN") or _catchup("instagram", _per_run_
 # 【2026-08-15】6本/日を3日間回して削除は再発せず。ただし _catchup が窓の頭で上限を食い切り、
 # 6本すべてが14時までに固まって以降10時間無投稿になっていた(konan 指摘「全然投稿されてなかった」)。
 # 上限を12本へ上げたうえで、窓の経過時間に比例した本数までしか解禁しない。前倒しの固め打ちを構造的に止める。
-THREADS_MAX_PER_DAY = int(os.environ.get("THREADS_MAX_PER_DAY", "12"))
+THREADS_MAX_PER_DAY = int(os.environ.get("THREADS_MAX_PER_DAY", "24"))
 _th_today = _today_count("threads")
 if _WIN_S <= now.hour <= _WIN_E:
     _th_span = (_WIN_E + 1 - _WIN_S) * 60
@@ -233,6 +233,24 @@ else:
 # 解禁ペースに追いつけない。遅れ2本以上なら1ランで2本まで挽回(45秒間隔は既存)。日次12・段階解禁は維持
 _th_behind = max(0, min(THREADS_MAX_PER_DAY, _th_unlocked) - _th_today)
 THREADS_PER_RUN = min(THREADS_PER_RUN, (2 if _th_behind >= 2 else 1), _th_behind)
+
+
+def threads_quota():
+    """Threads の公式な残枠を API に聞く。勘で本数を決めない(IG と同じやり方)。
+
+    【2026-08-22】公式上限は 250投稿/24時間(threads_publishing_limit)。
+    F-412 の削除は本数ではなく「同型テキスト+App Storeリンクの使い回し」が原因だったので、
+    上限そのものは遠い。ただし上限に触れると一気に止まるので、実測値を毎回見て天井は必ず守る。
+    """
+    try:
+        uid = os.environ["THREADS_USER_ID"]; tok = os.environ["THREADS_ACCESS_TOKEN"]
+        d = _get(f"https://graph.threads.net/v1.0/{uid}/threads_publishing_limit",
+                 {"fields": "quota_usage,config", "access_token": tok})
+        row = d["data"][0]
+        return int(row.get("quota_usage", 0)), int(row.get("config", {}).get("quota_total", 250))
+    except Exception as e:
+        print(f"  threads quota取得失敗({str(e)[:60]}) → 日次上限だけで判断")
+        return None, None
 # 【2026-07-29】IGが Media Publish Limit Exceeded で全滅した事故を受けて、勘で本数を決めるのをやめる。
 # IG Graph API の content_publishing_limit を毎回叩いて「実際の残枠」を取得し、余白を残して埋める(=ギリギリを攻める)。
 def _get(url, params):
@@ -259,6 +277,10 @@ if _used is not None:
     print(f"  ig quota: {_used}/{_cap} 使用済 → 今回投稿可能 {IG_PER_RUN}本(安全余白{IG_SAFETY_MARGIN})")
 else:
     IG_PER_RUN = min(IG_PER_RUN, 1)
+_th_used, _th_cap = threads_quota()   # _get の定義後に呼ぶ
+if _th_used is not None:
+    THREADS_PER_RUN = min(THREADS_PER_RUN, max(0, _th_cap - _th_used - 10))
+    print(f"  threads quota: {_th_used}/{_th_cap} 使用済(公式上限)")
 print(f"[{now.isoformat()}] seq={seq} threads/run={THREADS_PER_RUN} ig/run={IG_PER_RUN}")
 
 
