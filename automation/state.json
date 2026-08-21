@@ -1,6 +1,6 @@
 {
  "yt_date": "2026-08-21",
- "yt_count": 3,
+ "yt_count": 6,
  "last_yt_seq": 5580,
  "yt_posted": [
   "koushu4_news.mp4",
@@ -336,7 +336,10 @@
   "estheticianexam_license_20260819.mp4",
   "rikuso_fact_20260821_0240.mp4",
   "rikuso_app_20260821_0240.mp4",
-  "kusou_20260821_0240.mp4"
+  "kusou_20260821_0240.mp4",
+  "iritai_20260821_0240.mp4",
+  "kanbu_20260821_B.mp4",
+  "sleephack_jiji_20260821.mp4"
  ],
  "hist": {
   "threads": {
@@ -813,5 +816,5 @@
    "mileigo_ryakugo_20260809_1637.mp4": "2026-08-21T08:29:24.325867"
   }
  },
- "last_yt_ts": "2026-08-21T10:06:25.328533"
+ "last_yt_ts": "2026-08-21T10:26:06.545365"
 }
