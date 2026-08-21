@@ -3919,10 +3919,10 @@
       "appstore_url": "https://apps.apple.com/jp/app/id6792884427",
       "video": "oshilog_20260821_C.mp4",
       "cover": "covers/oshilog_20260821_C_cover.jpg",
-      "ig_caption": "推し活の出費、把握できてる?現場も課金も入力できる推し活専用の記録帳アプリ。iPhoneで「推しログ」と検索。\n#推し活 #オタ活 #推し",
-      "threads_text": "推し活の出費、把握できてる?現場も課金も入力できる記録帳アプリ。iPhoneで「推しログ」と検索すると出てくる。",
+      "ig_caption": "推し活の出費、把握できてる?現場もグッズも入力できる推し活専用の記録帳アプリ。iPhoneで「推しログ」と検索。\n#推し活 #オタ活 #推し",
+      "threads_text": "推し活の出費、把握できてる?現場もグッズも入力できる記録帳アプリ。iPhoneで「推しログ」と検索すると出てくる。",
       "yt_title": "推し活の出費、月いくら使ってる? #shorts",
-      "yt_desc": "現場も課金も記録する推し活管理術。\n#推し活 #オタ活 #家計簿\nhttps://apps.apple.com/jp/app/id6792884427",
+      "yt_desc": "現場もグッズも記録する推し活管理術。\n#推し活 #オタ活 #家計簿\nhttps://apps.apple.com/jp/app/id6792884427",
       "yt_tags": [
         "推し活",
         "オタ活",
@@ -4038,6 +4038,159 @@
         "韓国旅行"
       ],
       "yt_thumb": "kankoku_keigo_20260815_0109_thumb.jpg"
+    },
+    {
+      "app": "自衛官陸曹昇任試験対策(復習)",
+      "type": "jsdf",
+      "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
+      "video": "rikusoA_20260821_1725.mp4",
+      "cover": "covers/rikusoA_20260821_1725_cover.jpg",
+      "ig_caption": "昇任試験の科目は広い。全部やり直す時間はない。間違えた問題だけあとで解き直せると、残り時間の使い方が変わる。iPhoneで「陸曹昇任」と検索。\n#自衛隊 #陸曹 #昇任試験",
+      "threads_text": "昇任試験の科目は広い。全部やり直す時間はない。間違えた問題だけあとで解き直せると、残り時間の使い方が変わる。\nhttps://apps.apple.com/jp/app/id6774074604",
+      "yt_title": "間違えた問題だけ、あとで解き直せますか? #shorts #自衛隊",
+      "yt_desc": "昇任試験の科目は広い。全部やり直す時間はない。間違えた問題だけあとで解き直せると、残り時間の使い方が変わる。iPhoneで「陸曹昇任」と検索。\n\nhttps://apps.apple.com/jp/app/id6774074604\n\n#自衛隊 #陸曹 #昇任試験 #shorts",
+      "yt_tags": [
+        "自衛隊",
+        "陸曹",
+        "昇任試験"
+      ],
+      "yt_thumb": "rikusoA_20260821_1725_thumb.jpg"
+    },
+    {
+      "app": "自衛官陸曹昇任試験対策(オフライン)",
+      "type": "jsdf",
+      "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
+      "video": "rikusoB_20260821_1725.mp4",
+      "cover": "covers/rikusoB_20260821_1725_cover.jpg",
+      "ig_caption": "演習地は電波が届かない。空き時間に開こうとして繋がらなければ、その日はもう開かない。電波ゼロで動くかどうかは、続くかどうかの分かれ目になる。iPhoneで「陸曹昇任」と検索。\n#自衛隊 #陸曹 #昇任試験",
+      "threads_text": "演習地は電波が届かない。空き時間に開こうとして繋がらなければ、その日はもう開かない。電波ゼロで動くかどうかは、続くかどうかの分かれ目になる。\nhttps://apps.apple.com/jp/app/id6774074604",
+      "yt_title": "演習中は電波が届かない、それでも勉強は続く? #shorts #自衛隊",
+      "yt_desc": "演習地は電波が届かない。空き時間に開こうとして繋がらなければ、その日はもう開かない。電波ゼロで動くかどうかは、続くかどうかの分かれ目になる。iPhoneで「陸曹昇任」と検索。\n\nhttps://apps.apple.com/jp/app/id6774074604\n\n#自衛隊 #陸曹 #昇任試験 #shorts",
+      "yt_tags": [
+        "自衛隊",
+        "陸曹",
+        "昇任試験"
+      ],
+      "yt_thumb": "rikusoB_20260821_1725_thumb.jpg"
+    },
+    {
+      "app": "自衛官海曹昇任試験対策",
+      "type": "jsdf",
+      "appstore_url": "https://apps.apple.com/jp/app/id6789518576",
+      "video": "kaiso_20260821_1725.mp4",
+      "cover": "covers/kaiso_20260821_1725_cover.jpg",
+      "ig_caption": "海曹の試験は分野が分かれていて、まとめて詰め込むと穴が残る。分野ごとに潰していくほうが結局早い。iPhoneで「海曹昇任」と検索。\n#海上自衛隊 #海曹 #昇任試験",
+      "threads_text": "海曹の試験は分野が分かれていて、まとめて詰め込むと穴が残る。分野ごとに潰していくほうが結局早い。\nhttps://apps.apple.com/jp/app/id6789518576",
+      "yt_title": "海曹の試験、まとめて詰め込むと穴が残る? #shorts #海上自衛隊",
+      "yt_desc": "海曹の試験は分野が分かれていて、まとめて詰め込むと穴が残る。分野ごとに潰していくほうが結局早い。iPhoneで「海曹昇任」と検索。\n\nhttps://apps.apple.com/jp/app/id6789518576\n\n#海上自衛隊 #海曹 #昇任試験 #shorts",
+      "yt_tags": [
+        "海上自衛隊",
+        "海曹",
+        "昇任試験"
+      ],
+      "yt_thumb": "kaiso_20260821_1725_thumb.jpg"
+    },
+    {
+      "app": "予備自衛官補 採用試験対策",
+      "type": "jsdf",
+      "appstore_url": "https://apps.apple.com/jp/app/id6778490302",
+      "video": "yobi_20260821_1725.mp4",
+      "cover": "covers/yobi_20260821_1725_cover.jpg",
+      "ig_caption": "会社を辞めなくても自衛官になる道がある。予備自衛官補は週末を中心にした訓練で、社会人のまま受けられる制度。iPhoneで「予備自衛官補」と検索。\n#予備自衛官補 #自衛隊 #社会人",
+      "threads_text": "会社を辞めなくても自衛官になる道がある。予備自衛官補は週末を中心にした訓練で、社会人のまま受けられる制度。\nhttps://apps.apple.com/jp/app/id6778490302",
+      "yt_title": "会社員のまま自衛官になれるって知ってました? #shorts #予備自衛官補",
+      "yt_desc": "会社を辞めなくても自衛官になる道がある。予備自衛官補は週末を中心にした訓練で、社会人のまま受けられる制度。iPhoneで「予備自衛官補」と検索。\n\nhttps://apps.apple.com/jp/app/id6778490302\n\n#予備自衛官補 #自衛隊 #社会人 #shorts",
+      "yt_tags": [
+        "予備自衛官補",
+        "自衛隊",
+        "社会人"
+      ],
+      "yt_thumb": "yobi_20260821_1725_thumb.jpg"
+    },
+    {
+      "app": "ライフコントロール",
+      "type": "life",
+      "appstore_url": "https://apps.apple.com/jp/app/id6782221037",
+      "video": "bioboss_20260821_1725.mp4",
+      "cover": "covers/bioboss_20260821_1725_cover.jpg",
+      "ig_caption": "何に時間を使ったか思い出せない日がある。記録して並べると、消えていた時間の行き先が見えてくる。iPhoneで「ライフコントロール」と検索。\n#時間管理 #習慣化 #ライフログ",
+      "threads_text": "何に時間を使ったか思い出せない日がある。記録して並べると、消えていた時間の行き先が見えてくる。\nhttps://apps.apple.com/jp/app/id6782221037",
+      "yt_title": "1日24時間、どこに消えたか言えますか? #shorts #時間管理",
+      "yt_desc": "何に時間を使ったか思い出せない日がある。記録して並べると、消えていた時間の行き先が見えてくる。iPhoneで「ライフコントロール」と検索。\n\nhttps://apps.apple.com/jp/app/id6782221037\n\n#時間管理 #習慣化 #ライフログ #shorts",
+      "yt_tags": [
+        "時間管理",
+        "習慣化",
+        "ライフログ"
+      ],
+      "yt_thumb": "bioboss_20260821_1725_thumb.jpg"
+    },
+    {
+      "app": "TASK LEVELING",
+      "type": "life",
+      "appstore_url": "https://apps.apple.com/jp/app/id6791684373",
+      "video": "sololevel_20260821_1725.mp4",
+      "cover": "covers/sololevel_20260821_1725_cover.jpg",
+      "ig_caption": "大きいままのタスクは手が止まる。細かく割ると、進んだ分がその都度見える。小さいタスクほど積み上がるのはそのため。iPhoneで「TASK LEVELING」と検索。\n#タスク管理 #習慣化 #積み上げ",
+      "threads_text": "大きいままのタスクは手が止まる。細かく割ると、進んだ分がその都度見える。小さいタスクほど積み上がるのはそのため。\nhttps://apps.apple.com/jp/app/id6791684373",
+      "yt_title": "小さいタスクほど積み上がるのはなぜ? #shorts #タスク管理",
+      "yt_desc": "大きいままのタスクは手が止まる。細かく割ると、進んだ分がその都度見える。小さいタスクほど積み上がるのはそのため。iPhoneで「TASK LEVELING」と検索。\n\nhttps://apps.apple.com/jp/app/id6791684373\n\n#タスク管理 #習慣化 #積み上げ #shorts",
+      "yt_tags": [
+        "タスク管理",
+        "習慣化",
+        "積み上げ"
+      ],
+      "yt_thumb": "sololevel_20260821_1725_thumb.jpg"
+    },
+    {
+      "app": "運行管理者(旅客) 試験対策",
+      "type": "shikaku",
+      "appstore_url": "https://apps.apple.com/jp/app/id6795834934",
+      "video": "unkan_20260821_1725.mp4",
+      "cover": "covers/unkan_20260821_1725_cover.jpg",
+      "ig_caption": "運行管理者(旅客)の試験は8月8日から9月6日までCBTで実施中。範囲を分野別に区切ると、残り時間でも回しやすい。iPhoneで「運行管理者 旅客」と検索。\n#運行管理者 #資格試験 #CBT",
+      "threads_text": "運行管理者(旅客)の試験は8月8日から9月6日までCBTで実施中。範囲を分野別に区切ると、残り時間でも回しやすい。\nhttps://apps.apple.com/jp/app/id6795834934",
+      "yt_title": "運行管理者(旅客)、試験期間は9月6日まで #shorts #運行管理者",
+      "yt_desc": "運行管理者(旅客)の試験は8月8日から9月6日までCBTで実施中。範囲を分野別に区切ると、残り時間でも回しやすい。iPhoneで「運行管理者 旅客」と検索。\n\nhttps://apps.apple.com/jp/app/id6795834934\n\n#運行管理者 #資格試験 #CBT #shorts",
+      "yt_tags": [
+        "運行管理者",
+        "資格試験",
+        "CBT"
+      ],
+      "yt_thumb": "unkan_20260821_1725_thumb.jpg"
+    },
+    {
+      "app": "推しログ:推し活の記録帳",
+      "type": "life",
+      "appstore_url": "https://apps.apple.com/jp/app/id6792884427",
+      "video": "oshilog_20260821_1725.mp4",
+      "cover": "covers/oshilog_20260821_1725_cover.jpg",
+      "ig_caption": "現場、遠征、物販。使った分をあとから合計すると、だいたい記憶と違う。月ごとに振り返れると次の予定が組みやすくなる。iPhoneで「推しログ」と検索。\n#推し活 #オタ活 #記録",
+      "threads_text": "現場、遠征、物販。使った分をあとから合計すると、だいたい記憶と違う。月ごとに振り返れると次の予定が組みやすくなる。\nhttps://apps.apple.com/jp/app/id6792884427",
+      "yt_title": "推しに使った金額、正確に言えますか? #shorts #推し活",
+      "yt_desc": "現場、遠征、物販。使った分をあとから合計すると、だいたい記憶と違う。月ごとに振り返れると次の予定が組みやすくなる。iPhoneで「推しログ」と検索。\n\nhttps://apps.apple.com/jp/app/id6792884427\n\n#推し活 #オタ活 #記録 #shorts",
+      "yt_tags": [
+        "推し活",
+        "オタ活",
+        "記録"
+      ],
+      "yt_thumb": "oshilog_20260821_1725_thumb.jpg"
+    },
+    {
+      "app": "ミリタリー中国語トレーナー",
+      "type": "gogaku",
+      "appstore_url": "https://apps.apple.com/jp/app/id6793817475",
+      "video": "milchugo_20260821_1725.mp4",
+      "cover": "covers/milchugo_20260821_1725_cover.jpg",
+      "ig_caption": "軍事ニュースの中国語は専門用語が多くて、普通の教材にはまず出てこない。その壁だけに絞った教材がある。iPhoneで「ミリタリー中国語」と検索。\n#中国語 #語学学習 #ミリタリー",
+      "threads_text": "軍事ニュースの中国語は専門用語が多くて、普通の教材にはまず出てこない。その壁だけに絞った教材がある。\nhttps://apps.apple.com/jp/app/id6793817475",
+      "yt_title": "軍事ニュースの中国語が読めないのはなぜ? #shorts #中国語",
+      "yt_desc": "軍事ニュースの中国語は専門用語が多くて、普通の教材にはまず出てこない。その壁だけに絞った教材がある。iPhoneで「ミリタリー中国語」と検索。\n\nhttps://apps.apple.com/jp/app/id6793817475\n\n#中国語 #語学学習 #ミリタリー #shorts",
+      "yt_tags": [
+        "中国語",
+        "語学学習",
+        "ミリタリー"
+      ],
+      "yt_thumb": "milchugo_20260821_1725_thumb.jpg"
     }
   ]
 }
