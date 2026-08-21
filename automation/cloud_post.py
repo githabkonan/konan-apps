@@ -192,7 +192,10 @@ if _WIN_S <= now.hour <= _WIN_E:
     _th_unlocked = -(-THREADS_MAX_PER_DAY * _th_elapsed // _th_span)
 else:
     _th_unlocked = 0
-THREADS_PER_RUN = min(THREADS_PER_RUN, 1, max(0, min(THREADS_MAX_PER_DAY, _th_unlocked) - _th_today))
+# 【2026-08-21 konan「スレッドも投稿ペース遅い。改善しろ」】1ラン1本固定だとランの間引き(GitHub cron遅延)で
+# 解禁ペースに追いつけない。遅れ2本以上なら1ランで2本まで挽回(45秒間隔は既存)。日次12・段階解禁は維持
+_th_behind = max(0, min(THREADS_MAX_PER_DAY, _th_unlocked) - _th_today)
+THREADS_PER_RUN = min(THREADS_PER_RUN, (2 if _th_behind >= 2 else 1), _th_behind)
 # 【2026-07-29】IGが Media Publish Limit Exceeded で全滅した事故を受けて、勘で本数を決めるのをやめる。
 # IG Graph API の content_publishing_limit を毎回叩いて「実際の残枠」を取得し、余白を残して埋める(=ギリギリを攻める)。
 def _get(url, params):
