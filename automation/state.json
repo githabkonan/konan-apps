@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-08-21",
- "yt_count": 14,
- "last_yt_seq": 5583,
+ "yt_count": 15,
+ "last_yt_seq": 5584,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -347,7 +347,8 @@
   "unkan_ryo_20260821_0240.mp4",
   "unkan_kamo_20260821_0240.mp4",
   "qc3_cbt_20260821_0240.mp4",
-  "qc2_20260821_B.mp4"
+  "qc2_20260821_B.mp4",
+  "shoubo6_20260821_B.mp4"
  ],
  "hist": {
   "threads": {
@@ -835,5 +836,5 @@
    "kusou_20260821_0240.mp4": "2026-08-21T12:52:07.946314"
   }
  },
- "last_yt_ts": "2026-08-21T15:53:16.408429"
+ "last_yt_ts": "2026-08-21T16:37:36.983579"
 }
