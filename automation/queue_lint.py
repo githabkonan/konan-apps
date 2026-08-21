@@ -88,6 +88,19 @@ def check_display_aspect(path, cache):
     cache[key] = list(res)
     return res
 
+# 【2026-08-21 F-433】映像に焼き込まれた文字は JSON を直しても消えない。検出器
+# (claude-tools/scripts/video_text_audit.py)は前からあったのに、**新しく作った動画に
+# 誰も掛けていなかった**。「課金」が焼かれた推しログ2本が配信キューに入っていた。
+# 未検査は fail-closed(F-422「検査スキップ=合格」の錯覚を許さない)。
+# 台帳生成: python3 /Users/konan/claude-tools/scripts/video_text_audit.py <動画...>
+VIDEO_TEXT_LEDGER = os.path.join(HERE, "video_text_audit.json")
+
+def _video_text_ledger():
+    try:
+        return json.load(open(VIDEO_TEXT_LEDGER))
+    except Exception:
+        return {}
+
 JA_CHARS = re.compile(r"[ぁ-んァ-ン一-龥]")
 AUDIO_LANG_FILE = os.path.join(HERE, "audio_lang.json")
 
@@ -151,6 +164,18 @@ def lint(path, bad_keys=None):
                 okv, why = check_display_aspect(vpath, _c)
                 if not okv:
                     errs.append(f"{tag}: 画面比NG — {why}(9:16必須・F-424)")
+                # 焼き込み文字の検査(F-433)。投稿済みは映像を差し替えられないので対象外。
+                if p["video"] not in YT_POSTED:
+                    st = os.stat(vpath)
+                    rec = _video_text_ledger().get(
+                        f"{p['video']}:{st.st_size}:{int(st.st_mtime)}")
+                    if rec is None:
+                        errs.append(f"{tag}: 映像の焼き込み文字が未検査 — "
+                                    f"`python3 /Users/konan/claude-tools/scripts/video_text_audit.py "
+                                    f"videos/{p['video']}` を通してから流す(F-433)")
+                    elif not rec.get("ok"):
+                        errs.append(f"{tag}: 映像に禁止語が焼き込まれている — "
+                                    f"{' '.join(rec.get('hits') or [])[:120]}(直すには作り直すしかない・F-433)")
         blob_all = (p.get("ig_caption") or "") + "\n" + (p.get("threads_text") or "")
         # 禁止語はキャプションだけでなく全テキスト項目(yt_title/yt_desc/app 名まで)を見る
         blob_every = "\n".join(
