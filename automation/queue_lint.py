@@ -166,9 +166,9 @@ def lint(path, bad_keys=None):
                     errs.append(f"{tag}: 画面比NG — {why}(9:16必須・F-424)")
                 # 焼き込み文字の検査(F-433)。投稿済みは映像を差し替えられないので対象外。
                 if p["video"] not in YT_POSTED:
-                    st = os.stat(vpath)
+                    # 鍵は名前+サイズ。checkout で mtime が変わるクラウド側でも一致する
                     rec = _video_text_ledger().get(
-                        f"{p['video']}:{st.st_size}:{int(st.st_mtime)}")
+                        f"{p['video']}:{os.path.getsize(vpath)}")
                     if rec is None:
                         errs.append(f"{tag}: 映像の焼き込み文字が未検査 — "
                                     f"`python3 /Users/konan/claude-tools/scripts/video_text_audit.py "
