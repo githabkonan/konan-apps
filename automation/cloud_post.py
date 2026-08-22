@@ -138,7 +138,25 @@ def _weight(p):
 #  - IG / Threads = 枠が多いので「偏らずいろんなアプリを紹介する」= 売上加重をかけず全アプリ均等
 #  - YouTube      = 枠が少ないので「伸びてる/DLされてるアプリに厳選」= 売上加重を効かせる
 ROTATION_WEIGHTED = [i for _pass in range(1, 6) for i, p in enumerate(POSTS) if _weight(p) >= _pass]
-ROTATION_FLAT = list(range(len(POSTS)))
+
+
+def _spread_by_app(posts):
+    """【2026-08-22 konan指摘】「なぜ同じアプリの投稿が3個あんの? 24このアプリ全部ぶんで24本」。
+    キューは工場がアプリごとにまとめて追記するので、並び順そのものがアプリの塊になっていた。
+    ローテ表を素直に前から辿ると、1ランの中で同じアプリが4本並ぶ(11:51のランで陸曹が4本出た)。
+
+    直し方: アプリごとに自分の投稿を 0〜1 の等間隔に置き、その位置で全体を並べ直す。
+    57本あるアプリは6.2枠に1回、5本しかないアプリは71枠に1回、と全体に散らばる。
+    塊はできないが、本数比は保たれる(在庫の多いアプリを捨てない)。"""
+    by = {}
+    for i, p in enumerate(posts):
+        by.setdefault(_app_id(p), []).append(i)
+    keyed = [((k + 0.5) / len(idxs), aid, i)
+             for aid, idxs in by.items() for k, i in enumerate(idxs)]
+    return [i for _pos, _aid, i in sorted(keyed)]
+
+
+ROTATION_FLAT = _spread_by_app(POSTS)
 ROTATIONS = {"instagram": ROTATION_FLAT, "threads": ROTATION_FLAT, "youtube": ROTATION_WEIGHTED}
 
 now = datetime.datetime.utcnow() + datetime.timedelta(hours=9)  # JST
@@ -446,6 +464,9 @@ def mark(platform, post):
     HIST.setdefault(platform, {})[post.get("video", post.get("app"))] = now.isoformat()
     save_state()
 
+_RUN_APPS = {}   # {platform: 今回のランで既に出したアプリID} — 1ラン内の重複を止める
+
+
 def pick(platform, start_idx):
     """start_idxから順にローテ表を辿り、クールダウン明けの動画を探す。全滅ならNone(=見送り)。
     ローテ表はプラットフォーム別(IG/Threads=均等・YouTube=売上加重)。
@@ -456,15 +477,25 @@ def pick(platform, start_idx):
     rot = ROTATIONS.get(platform, ROTATION_WEIGHTED)
     R = len(rot)
     fallback = None
+    used = _RUN_APPS.setdefault(platform, set())
     for k in range(R):
         p = POSTS[rot[(start_idx + k) % R]]
         if not cooled(platform, p):
+            continue
+        # 【2026-08-22 konan指摘】1ランの中で同じアプリを二度出さない。
+        # 並べ替え(_spread_by_app)だけだと在庫の多いアプリが同じランに二度来ることがある。
+        # ここは最後の砦なので、アプリが尽きた時だけ(=候補が全部使用済みの時だけ)緩める。
+        if _app_id(p) in used:
+            fallback = fallback or p
             continue
         if platform == "threads" and THREADS_VARIANTS:
             if not THREADS_VARIANTS.get(p.get("video") or p.get("app")):
                 fallback = fallback or p
                 continue
+        used.add(_app_id(p))
         return p
+    if fallback is not None:
+        used.add(_app_id(fallback))
     return fallback
 
 # Threads: 1起動で別アプリを複数本(rotation: seq*K+i)。間隔を空けて連投感を緩和。
