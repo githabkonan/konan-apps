@@ -30,13 +30,33 @@
   <h1><img src="brand_icon.png" alt="チョコビさくさく" style="width:34px;height:34px;border-radius:8px;vertical-align:middle;margin-right:10px;">Privacy Policy</h1>
   <div class="date">Effective date: June 26, 2026</div>
 
-  <p>This Privacy Policy describes how <strong>social-autopost</strong> ("the application", "we", "I") handles information. social-autopost is a personal automation tool operated solely by its developer to publish the developer's own promotional videos to the developer's own connected social media channels. It is not offered to other users.</p>
+  <p>This Privacy Policy describes how <strong>social-autopost</strong> ("the application", "we", "I") handles information. social-autopost is a personal automation tool operated solely by its developer to publish the developer's own promotional content to the developer's own connected social media channels, and to take part in public conversations from that same profile. It is not offered to other users.</p>
 
   <h2>1. Information the application accesses</h2>
   <ul>
     <li><strong>Google / YouTube account authorization.</strong> With your explicit consent through Google's OAuth 2.0 flow, the application is granted the YouTube Data API v3 <code>youtube.upload</code> permission. This permission is used only to upload videos to your own YouTube channel.</li>
     <li>The application does <strong>not</strong> request or access your viewing history, subscriptions, comments, other users' data, or any personal profile information beyond what is strictly required to upload to your own channel.</li>
   </ul>
+
+  <h2>1b. Threads (Meta) authorization</h2>
+  <p>With your explicit consent through the Threads OAuth flow, the application is granted the following Threads API permissions, used solely to operate the operator's own Threads profile:</p>
+  <ul>
+    <li><code>threads_basic</code> &mdash; read the connected profile's own identifier and posts.</li>
+    <li><code>threads_content_publish</code> &mdash; publish posts to the connected profile.</li>
+    <li><code>threads_manage_replies</code> and <code>threads_read_replies</code> &mdash; read and post replies belonging to the conversation the connected profile takes part in.</li>
+    <li><code>threads_manage_insights</code> &mdash; read view and engagement counts for the connected profile's own posts, in order to decide what to publish next.</li>
+    <li><code>threads_keyword_search</code> &mdash; find public Threads posts on a small set of fixed topics so that the connected profile can reply to them publicly, in the same way a person using the Threads app would.</li>
+  </ul>
+  <p>Public post content returned by keyword search is held in memory only for the duration of a single run in order to decide whether to reply. It is not written to any database, not profiled, not used for advertising or training, and not retained after the run ends. The application does not read private accounts, direct messages, follower lists, or any content that is not publicly visible on Threads.</p>
+
+  <h2>1c. Meta Platform Terms</h2>
+  <p>The application's use of the Threads API is subject to the
+  <a href="https://developers.facebook.com/terms/" target="_blank" rel="noopener">Meta Platform Terms</a>,
+  the <a href="https://developers.facebook.com/devpolicy/" target="_blank" rel="noopener">Meta Developer Policies</a>, and the
+  <a href="https://help.instagram.com/769983657850450" target="_blank" rel="noopener">Threads Terms of Use</a>.
+  No data obtained from Meta is sold, transferred, or shared with any third party.
+  To revoke access or request deletion, see the
+  <a href="../threads-delete.html">data deletion page</a>.</p>
 
   <h2>2. How information is used</h2>
   <ul>
