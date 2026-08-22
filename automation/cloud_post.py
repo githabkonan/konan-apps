@@ -215,9 +215,19 @@ IG_PER_RUN = int(os.environ.get("IG_PER_RUN") or
 # **F-412の削除は本数ではなく同型テキストの反復が原因**だったので、本数を上げる条件は
 # 言い回しの作り置き(threads_variants.json)が入っていること。1投稿1文型の使い回しはしない。
 # 窓は24時間。240本を17時間に詰めるより、24時間へ均すほうが機械的に見えない(IGも同じ形にした)。
-THREADS_MAX_PER_DAY = int(os.environ.get("THREADS_MAX_PER_DAY", "240"))
+# 【2026-08-22 16:10 実測で240本を撤回】konan「スレッドでほとんどの投稿が全く再生されてない」。
+# video_metrics.db を投稿日ごとに集計した実数(平均views):
+#     7/06-7/09  2〜26本/日 → 6.4〜9.9
+#     7/30-8/06 22〜48本/日 → 0.7〜4.0   ← ここで崩れた(F-412のスパム削除と同時期)
+#     8/12-8/21  1〜7本/日  → 0.3〜4.7   ← 本数を戻しても回復しなかった
+#     8/22       50本/23分  → 0.04       ← 240本設計の初日。過去最低
+# 同じ本文がInstagramでは平均447views出ている(今日50本で22,373views)ので、中身の問題ではない。
+# **本数はアカウント制限を悪化させる要因であって根本原因ではない**。まず悪化を止める。
+# 240本は「公式APIの上限250に収まる」から出した数字だったが、上限内でも配信は止まる。
+# 枠の空きを本数の根拠にしない([[feedback_rule_bar_legal_or_sales]]の逆で、実測が理由)。
+THREADS_MAX_PER_DAY = int(os.environ.get("THREADS_MAX_PER_DAY", "6"))
 THREADS_RUNS_PER_DAY = int(os.environ.get("THREADS_RUNS_PER_DAY", "24"))  # cron は毎時
-THREADS_GAP_S = int(os.environ.get("THREADS_GAP_S", "25"))       # 連投間隔。25s×10本=4分強
+THREADS_GAP_S = int(os.environ.get("THREADS_GAP_S", "25"))       # 連投間隔
 _th_today = _today_count("threads")
 # 【2026-08-22 konan指示】「24時間かけて240本だから、仮に何かのトラブルで4時間くらい
 # 投稿できてなかったとしても、そこから元取るように240本投稿しようとしなくていい」。
