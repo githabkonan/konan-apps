@@ -540,12 +540,39 @@ if STATE.get("yt_date") != today:
     STATE["yt_apps_today"] = []
 
 
+# 【2026-08-22 konan指示】「youtubeは火曜日の22時まで持つ設計にしろ」
+# 在庫は有限で、作り足す工場は konan の週間利用上限を食うので回し続けられない。
+# 24本/日で流し続けると在庫が期限前に尽きて、チャンネルが数日まる無音になる。
+# → 1日の本数を **在庫 ÷ 期限までの残り日数** で自動的に絞る。薄い日は自然に減り、
+#   期限までゼロにならない。期限を過ぎたら絞りは自動で外れる(古い日付が足枷にならない)。
+YT_HORIZON = os.environ.get("YT_HORIZON", "2026-08-25T22:00")
+
+
+def _yt_daily_budget():
+    """今日出してよい本数。在庫と期限から機械で決める。"""
+    left = [p for p in POSTS if p.get("video") not in YT_POSTED]
+    apps = {_app_id(p) for p in left if _app_id(p)}
+    # 1日1アプリ1本の仕様なので、在庫のあるアプリ数を超えては出せない
+    cap = min(YT_MAX_PER_DAY, len(apps))
+    try:
+        horizon = datetime.datetime.fromisoformat(YT_HORIZON)
+    except ValueError:
+        return cap
+    days = -(-int((horizon - now).total_seconds()) // 86400)  # 切り上げ
+    if days <= 0:
+        return cap
+    return max(1, min(cap, -(-len(left) // days)))
+
+
+YT_TODAY_MAX = _yt_daily_budget()
+
+
 def _yt_pace_target():
-    """今の時刻なら何本上がっているべきか(6:00-23:59 に YT_MAX_PER_DAY 本を均等配分)。"""
+    """今の時刻なら何本上がっているべきか(6:00-23:59 に YT_TODAY_MAX 本を均等配分)。"""
     span = (YT_WIN_END + 1 - YT_WIN_START) * 60
     elapsed = (now.hour - YT_WIN_START) * 60 + now.minute
     elapsed = max(0, min(span, elapsed))
-    return min(YT_MAX_PER_DAY, -(-YT_MAX_PER_DAY * elapsed // span))  # 切り上げ
+    return min(YT_TODAY_MAX, -(-YT_TODAY_MAX * elapsed // span))  # 切り上げ
 
 
 # 【2026-08-22 konan指摘・これが仕様】「24このアプリのための24本を1日でって言ったよな?」
@@ -583,7 +610,8 @@ if os.environ.get("YT_REFRESH_TOKEN") and YT_WIN_START <= now.hour <= YT_WIN_END
     _target = _yt_pace_target()
     _behind = _target - STATE.get("yt_count", 0)
     if _behind <= 0:
-        print(f"  youtube: ペース内({STATE.get('yt_count',0)}/{_target}本)=今は見送り")
+        print(f"  youtube: ペース内({STATE.get('yt_count',0)}/{_target}本"
+              f" 本日上限{YT_TODAY_MAX}本)=今は見送り")
     else:
         _n = min(_behind, YT_CATCHUP_MAX)
         print(f"  youtube: ペース {STATE.get('yt_count',0)}/{_target}本 → {_n}本投稿して取り戻す")
@@ -608,7 +636,7 @@ if os.environ.get("YT_REFRESH_TOKEN") and YT_WIN_START <= now.hour <= YT_WIN_END
                 break
             ok, val = with_retry(lambda p=yp: publish_youtube(p))
             results.append({"ch": "youtube", "app": yp.get("app"), "ok": ok, ("id" if ok else "err"): val})
-            print(f"  youtube[{yp.get('app')}] ({STATE.get('yt_count',0)+1}/{YT_MAX_PER_DAY}): {'OK ' + str(val) if ok else 'FAIL ' + str(val)}")
+            print(f"  youtube[{yp.get('app')}] ({STATE.get('yt_count',0)+1}/{YT_TODAY_MAX}): {'OK ' + str(val) if ok else 'FAIL ' + str(val)}")
             if not ok:
                 break  # 連投で同じ失敗を繰り返さない(クォータ超過等)
             ok_count += 1
