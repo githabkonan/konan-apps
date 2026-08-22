@@ -197,7 +197,11 @@ def _today_count(platform):
 # IG の公式上限は **100投稿 / 24時間の移動窓**(2026-08-22 に content_publishing_limit で実測。
 # Meta のフィールド解説ページは50のまま古い)。カルーセルも1投稿として数える。
 # 実際の天井は下の ig_quota() が毎回 API に聞いて守るので、ここは「均等に割る」だけの役目。
-IG_MAX_PER_DAY = int(os.environ.get("IG_MAX_PER_DAY", "100"))
+# 【2026-08-23】content_publishing_limit は quota_total=100 と返すが、このアカウントの実際の
+# 天井は 50本/24h。8/22 は 50本で quota_usage が止まり、以降のランは全部
+# 「User is performing too many actions」(code 9 / subcode 2207042)で全滅した。
+# API の申告値ではなく実測の天井を使う。
+IG_MAX_PER_DAY = int(os.environ.get("IG_MAX_PER_DAY", "50"))
 IG_RUNS_PER_DAY = int(os.environ.get("IG_RUNS_PER_DAY", "24"))   # cron は毎時
 _ig_today = _today_count("instagram")
 IG_PER_RUN = int(os.environ.get("IG_PER_RUN") or
@@ -269,6 +273,7 @@ def ig_quota():
 
 _used, _cap = ig_quota()
 if _used is not None:
+    _cap = min(_cap, IG_MAX_PER_DAY)   # APIの申告値(100)より実測の天井(50)を優先する
     _room = max(0, _cap - _used - IG_SAFETY_MARGIN)
     IG_PER_RUN = min(IG_PER_RUN, _room)
     print(f"  ig quota: {_used}/{_cap} 使用済 → 今回投稿可能 {IG_PER_RUN}本(安全余白{IG_SAFETY_MARGIN})")
