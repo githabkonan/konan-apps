@@ -61,9 +61,9 @@ jobs:
           # 【2026-08-22 konan指示】240本/24時間。公式上限250の枠内で、残枠はAPI実測で毎回確認する。
           # 本数を上げる前提条件は「毎回言い回しが変わること」= automation/threads_variants.json。
           # これが空だと同型連投になり F-412 を再発させるので、増やす時は必ず作り置きを確認する。
-          # 作り置きが全336投稿ぶん揃うまでは 24 のまま(env はコード既定240に勝つ)。
-          # 揃ったらここを "240" に書き換えるだけで切り替わる。
-          THREADS_MAX_PER_DAY: "24"
+          # 【2026-08-22 09:40 切替】作り置きが 250投稿ぶん・1243通り 揃ったので 240 へ。
+          # 作り置きの無い86投稿は cloud_post.py の pick() が後回しにする(全部埋まった時だけ使う)。
+          THREADS_MAX_PER_DAY: "240"
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}

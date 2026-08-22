@@ -447,13 +447,24 @@ def mark(platform, post):
 
 def pick(platform, start_idx):
     """start_idxから順にローテ表を辿り、クールダウン明けの動画を探す。全滅ならNone(=見送り)。
-    ローテ表はプラットフォーム別(IG/Threads=均等・YouTube=売上加重)。"""
+    ローテ表はプラットフォーム別(IG/Threads=均等・YouTube=売上加重)。
+
+    【2026-08-22】Threads は**言い回しの作り置きがある投稿を先に使う**。
+    240本/日は同じ文の繰り返しが一番危ない(F-412の真因は本数でなく同型テキストの反復)。
+    作り置きが無い投稿しか残っていない時だけ、それを使う(止めるよりは出す)。"""
     rot = ROTATIONS.get(platform, ROTATION_WEIGHTED)
     R = len(rot)
+    fallback = None
     for k in range(R):
         p = POSTS[rot[(start_idx + k) % R]]
-        if cooled(platform, p): return p
-    return None
+        if not cooled(platform, p):
+            continue
+        if platform == "threads" and THREADS_VARIANTS:
+            if not THREADS_VARIANTS.get(p.get("video") or p.get("app")):
+                fallback = fallback or p
+                continue
+        return p
+    return fallback
 
 # Threads: 1起動で別アプリを複数本(rotation: seq*K+i)。間隔を空けて連投感を緩和。
 for i in range(THREADS_PER_RUN):
