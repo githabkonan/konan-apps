@@ -133,71 +133,50 @@ def _weight(p):
         return max(w, PRIORITY_FLOOR)  # 実績が下がっても優先は落とさない
     return w
 
-# 加重ローテ表: pass1=全post1回ずつ、pass2以降は重み>=passの投稿だけ追加(高稼働アプリほど登場回数が増える)
 # 【2026-08-06 konan指示】プラットフォームで役割を分ける。
 #  - IG / Threads = 枠が多いので「偏らずいろんなアプリを紹介する」= 売上加重をかけず全アプリ均等
 #  - YouTube      = 枠が少ないので「伸びてる/DLされてるアプリに厳選」= 売上加重を効かせる
-ROTATION_WEIGHTED = [i for _pass in range(1, 6) for i, p in enumerate(POSTS) if _weight(p) >= _pass]
-
-
-def _spread_by_app(posts):
-    """【2026-08-22 konan指摘】「なぜ同じアプリの投稿が3個あんの? 24このアプリ全部ぶんで24本」。
+def _spread(idxs):
+    """【2026-08-22 konan指摘】「なぜ同じアプリの投稿が3個あんの?」「陸曹が3つ立て続けに出されてる」。
     キューは工場がアプリごとにまとめて追記するので、並び順そのものがアプリの塊になっていた。
-    ローテ表を素直に前から辿ると、1ランの中で同じアプリが4本並ぶ(11:51のランで陸曹が4本出た)。
+    ローテ表を素直に前から辿ると、1ランの中で同じアプリが3〜4本並ぶ。
 
     直し方: アプリごとに自分の投稿を 0〜1 の等間隔に置き、その位置で全体を並べ直す。
     57本あるアプリは6.2枠に1回、5本しかないアプリは71枠に1回、と全体に散らばる。
     塊はできないが、本数比は保たれる(在庫の多いアプリを捨てない)。"""
     by = {}
-    for i, p in enumerate(posts):
-        by.setdefault(_app_id(p), []).append(i)
-    keyed = [((k + 0.5) / len(idxs), aid, i)
-             for aid, idxs in by.items() for k, i in enumerate(idxs)]
+    for i in idxs:
+        by.setdefault(_app_id(POSTS[i]), []).append(i)
+    keyed = [((k + 0.5) / len(v), aid, i)
+             for aid, v in by.items() for k, i in enumerate(v)]
     return [i for _pos, _aid, i in sorted(keyed)]
 
 
-ROTATION_FLAT = _spread_by_app(POSTS)
+# 加重ローテ表: pass1=全post1回ずつ、pass2以降は重み>=passの投稿だけ追加(高稼働アプリほど登場回数が増える)
+# 各パスの中を _spread でばらすので、加重(=登場回数の比)は保ったままアプリの塊が消える。
+ROTATION_WEIGHTED = [i for _pass in range(1, 6)
+                     for i in _spread([j for j, p in enumerate(POSTS) if _weight(p) >= _pass])]
+ROTATION_FLAT = _spread(range(len(POSTS)))
 ROTATIONS = {"instagram": ROTATION_FLAT, "threads": ROTATION_FLAT, "youtube": ROTATION_WEIGHTED}
 
 now = datetime.datetime.utcnow() + datetime.timedelta(hours=9)  # JST
 day_num = (now.date() - datetime.date(2026, 1, 1)).days
 seq = day_num * 24 + now.hour
 
-# 【2026-08-06 konan指示】投稿時刻を戦略化する。平日は生活動線のピーク(朝7/昼12/夕18-20)に厚く寄せ、
-# 谷の時間帯は投げない。休日は終日ばらけさせる。
-# cron 自体は毎時のまま(GitHubのスケジューラは20-50分遅延するため、cronを絞ると枠が丸ごと消える既知の事故がある)。
-# 絞るのは「起動する時刻」ではなく「その起動で何本流すか」。
-_PRIME = {7, 12, 18, 19, 20}      # 平日のピーク
-_SUB = {8, 21, 22}                # 平日の準ピーク
-# 【2026-08-12 konan 指摘】「今世間は夏季休暇の連休中」。
-# 曜日だけで平日/休日を決めると、お盆や年末年始に**実態と真逆の配信**になる。
-# 連休中は水曜でも生活動線は休日型(終日ばらける)なので、休日扱いにする。
-_HOLIDAY_RANGES = [
-    ("2026-08-08", "2026-08-16"),   # お盆(夏季休暇)
-    ("2026-12-27", "2027-01-04"),   # 年末年始
-    ("2027-04-29", "2027-05-06"),   # GW
-]
+# 【2026-08-22 konan指示】「インスタも100本上限なら24時間で100本出す設計にしろ。
+# もちろんトラブルあった場合、元取ろうとしてスパム投稿はするな」。
+#
+# これ以前は平日ピーク(朝7/昼12/夕18-20)に厚く寄せて1日21本、谷は0本、という配分だった。
+# 1日100本=毎時4〜5本になると「ピークに寄せる」意味が無くなる(どの時間も投げるので)ため廃止した。
+# あわせて遅れの取り戻し(_catchup)も廃止。止まった直後にまとめ出しすると一番スパムらしく見える。
+# 落ちたランのぶんは捨てる。これは Threads 側と同じ判断。
+def _even_share(total, runs, i):
+    """total 本を runs 回へ均等割りしたときの、i 回目の本数。合計はぴったり total になる。
 
-
-def _is_holiday_season():
-    d = now.date().isoformat()
-    return any(a <= d <= b for a, b in _HOLIDAY_RANGES)
-
-
-def _per_run_default():
-    if now.weekday() >= 5 or _is_holiday_season():   # 土日・連休=終日ばらけさせる
-        return 1 if 6 <= now.hour <= 23 else 0
-    if now.hour in _PRIME: return 3
-    if now.hour in _SUB:   return 2
-    return 0                      # 平日の谷は投げない(IG 25本/日の上限内に収める)
-# 平日の想定本数 = 3本×5枠 + 2本×3枠 = 21本/日(IG上限25に余白4)
-# 【2026-08-12・F-418】ピーク枠を落とした日は、その分が丸ごと失われていた。
-# 8/11 22:10 を最後に配信が16時間半止まり、復旧後も「今は谷だから0本」で
-# **一日分が消えたまま**だった。YouTube には取り返す仕組み(F-410 ペース追従)があるのに
-# IG/Threads には無かった。同じものを入れる。
-_DAILY_TARGET = 18 if now.weekday() >= 5 else 21   # _per_run_default() の想定合計
-_CATCHUP_MAX = int(os.environ.get("SOCIAL_CATCHUP_MAX", "3"))
-_WIN_S, _WIN_E = 7, 22                              # 投稿する時間帯(JST)
+    100本/24回なら 4,4,4,5,4,4,4,5,... と散る。切り上げ(=5固定)にすると
+    日の前半で上限を食い切って後半が無投稿になるので、必ずこの形で割る。
+    """
+    return total * (i + 1) // runs - total * i // runs
 
 
 def _today_count(platform):
@@ -215,23 +194,15 @@ def _today_count(platform):
     return sum(1 for v in d.values() if str(v)[:10] == today)
 
 
-def _catchup(platform, base):
-    """今の時刻なら何本出ているべきか。遅れていれば谷でも取り返す。"""
-    if not (_WIN_S <= now.hour <= _WIN_E):
-        return base
-    span = (_WIN_E + 1 - _WIN_S) * 60
-    elapsed = max(0, min(span, (now.hour - _WIN_S) * 60 + now.minute))
-    should = -(-_DAILY_TARGET * elapsed // span)          # 切り上げ
-    behind = should - _today_count(platform)
-    if behind <= 0:
-        return base
-    n = max(base, min(behind, _CATCHUP_MAX))
-    if n > base:
-        print(f"  {platform}: ペース {_today_count(platform)}/{should}本 → {n}本で取り返す")
-    return n
-
-
-IG_PER_RUN = int(os.environ.get("IG_PER_RUN") or _catchup("instagram", _per_run_default()))
+# IG の公式上限は **100投稿 / 24時間の移動窓**(2026-08-22 に content_publishing_limit で実測。
+# Meta のフィールド解説ページは50のまま古い)。カルーセルも1投稿として数える。
+# 実際の天井は下の ig_quota() が毎回 API に聞いて守るので、ここは「均等に割る」だけの役目。
+IG_MAX_PER_DAY = int(os.environ.get("IG_MAX_PER_DAY", "100"))
+IG_RUNS_PER_DAY = int(os.environ.get("IG_RUNS_PER_DAY", "24"))   # cron は毎時
+_ig_today = _today_count("instagram")
+IG_PER_RUN = int(os.environ.get("IG_PER_RUN") or
+                 max(0, min(_even_share(IG_MAX_PER_DAY, IG_RUNS_PER_DAY, now.hour),
+                            IG_MAX_PER_DAY - _ig_today)))
 
 # 【F-412 / 2026-08-13】Threads は7/30以降に4件をスパム削除されて 8/12 に完全停止した。
 # 削除されたのは1日21本想定で同型を投げていた頃のもの。形式(テキスト)は konan 指示どおり戻し、本数を絞った。
@@ -243,7 +214,7 @@ IG_PER_RUN = int(os.environ.get("IG_PER_RUN") or _catchup("instagram", _per_run_
 # 公式上限は250投稿/24h(threads_publishing_limit で実測)なので240は枠内。ただし
 # **F-412の削除は本数ではなく同型テキストの反復が原因**だったので、本数を上げる条件は
 # 言い回しの作り置き(threads_variants.json)が入っていること。1投稿1文型の使い回しはしない。
-# 窓は IG(7-22)と切り離して24時間。240本を17時間に詰めるより、24時間へ均すほうが機械的に見えない。
+# 窓は24時間。240本を17時間に詰めるより、24時間へ均すほうが機械的に見えない(IGも同じ形にした)。
 THREADS_MAX_PER_DAY = int(os.environ.get("THREADS_MAX_PER_DAY", "240"))
 THREADS_RUNS_PER_DAY = int(os.environ.get("THREADS_RUNS_PER_DAY", "24"))  # cron は毎時
 THREADS_GAP_S = int(os.environ.get("THREADS_GAP_S", "25"))       # 連投間隔。25s×10本=4分強
@@ -253,7 +224,7 @@ _th_today = _today_count("threads")
 # = 遅れは取り戻さない。1ランの本数は 240/24=10本 の固定で、落ちたランのぶんは捨てる。
 # 取り戻す設計だと、止まった直後にまとめ出しが起きて一番スパムらしく見える。
 # 日次上限だけは別に見て、その日の合計が THREADS_MAX_PER_DAY を超えないようにする。
-_th_per_run = -(-THREADS_MAX_PER_DAY // THREADS_RUNS_PER_DAY)
+_th_per_run = _even_share(THREADS_MAX_PER_DAY, THREADS_RUNS_PER_DAY, now.hour)
 THREADS_PER_RUN = max(0, min(_th_per_run, THREADS_MAX_PER_DAY - _th_today))
 
 
@@ -341,6 +312,35 @@ def threads_text(post):
     return pool[i % len(pool)].strip()[:500]
 
 
+def ig_caption(post):
+    """IGのキャプション。本文だけ言い回しを差し替え、CTA(検索語)とタグは元のまま残す。
+
+    【2026-08-22】IGを1日100本へ上げた。354投稿を100本/日で回すと同じ投稿が3.5日ごとに戻る。
+    そこで**毎回同じ文**を出すと、F-412(Threadsの同型連投でスパム削除)と同じ条件になる。
+    言い回しは Threads 用に作り置きした `threads_variants.json` を流用する
+    (別媒体なので同じ文が両方に出ても「その媒体の中での反復」にはならない)。
+    ただし IG はリンクが機能しないので URL は落とし、タグは元キャプションのものを使う。
+    どこまで使ったかは Threads と別カウンタ(`ig_var`)で持つ。作り置きが無い投稿は元の文のまま。
+    """
+    base = post.get("ig_caption") or ""
+    key = post.get("video") or post.get("app")
+    pool = THREADS_VARIANTS.get(key) or []
+    tail = [l for l in base.split("\n")
+            if l.startswith("App Store") or l.lstrip().startswith("#")]
+    if not pool or not tail:
+        return base[:2200]
+    used = STATE.setdefault("ig_var", {})
+    i = int(used.get(key, -1)) + 1
+    used[key] = i
+    body = pool[i % len(pool)]
+    body = re.sub(r"https?://\S+", "", body)     # IGは本文リンクが効かないので消す
+    body = re.sub(r"#\S+", "", body)             # タグは元キャプションの並びを使う
+    body = "\n".join(l.rstrip() for l in body.split("\n") if l.strip())
+    if not body:
+        return base[:2200]
+    return "\n".join([body] + tail)[:2200]
+
+
 def publish_threads(post):
     """テキスト投稿(動画なし)。本文に App Store の URL を含める。"""
     uid = os.environ["THREADS_USER_ID"]; tok = os.environ["THREADS_ACCESS_TOKEN"]
@@ -356,7 +356,7 @@ def publish_instagram(post):
     ig = os.environ["IG_USER_ID"]; tok = os.environ["IG_TOKEN"]
     B = "https://graph.instagram.com/v21.0"
     video_url = f"{BASE}/{post['video']}"
-    params = {"media_type": "REELS", "video_url": video_url, "caption": post["ig_caption"],
+    params = {"media_type": "REELS", "video_url": video_url, "caption": ig_caption(post),
               "share_to_feed": "true", "access_token": tok}
     if post.get("cover"):
         params["cover_url"] = f"{BASE}/{post['cover']}"
@@ -488,7 +488,8 @@ def pick(platform, start_idx):
         if _app_id(p) in used:
             fallback = fallback or p
             continue
-        if platform == "threads" and THREADS_VARIANTS:
+        # 言い回しの作り置きがある投稿を先に使う(無い投稿は毎回同じ文になるので後回し)。
+        if platform in ("threads", "instagram") and THREADS_VARIANTS:
             if not THREADS_VARIANTS.get(p.get("video") or p.get("app")):
                 fallback = fallback or p
                 continue
@@ -509,9 +510,9 @@ for i in range(THREADS_PER_RUN):
     if ok: ok_count += 1; mark("threads", tp)
     if i < THREADS_PER_RUN - 1: time.sleep(THREADS_GAP_S)
 
-# Instagram: 25/日上限なので1本(rotation: seq)
+# Instagram: 公式上限100/24h を毎時4〜5本に均して埋める(rotation: seq)
 for i in range(IG_PER_RUN):
-    ip = pick("instagram", seq + i)
+    ip = pick("instagram", seq * 5 + i)
     if ip is None:
         print("  instagram: 全動画クールダウン中=見送り"); break
     ok, val = with_retry(lambda p=ip: publish_instagram(p))
@@ -546,6 +547,24 @@ def _yt_pace_target():
     return min(YT_MAX_PER_DAY, -(-YT_MAX_PER_DAY * elapsed // span))  # 切り上げ
 
 
+_yt_run_apps = set()   # 今回のランで既に上げたアプリID(同じアプリの連投を止める)
+
+
+def _yt_next(priority_only, avoid):
+    """加重ローテを seq から辿って、まだ上げていない動画を1本返す。"""
+    _R = len(ROTATION_WEIGHTED)
+    for k in range(_R):
+        p = POSTS[ROTATION_WEIGHTED[(seq + k) % _R]]
+        if p.get("video") in YT_POSTED:
+            continue
+        if priority_only and _app_id(p) not in KONAN_PRIORITY:
+            continue
+        if _app_id(p) in avoid:
+            continue
+        return p
+    return None
+
+
 if os.environ.get("YT_REFRESH_TOKEN") and YT_WIN_START <= now.hour <= YT_WIN_END:
     _target = _yt_pace_target()
     _behind = _target - STATE.get("yt_count", 0)
@@ -560,15 +579,20 @@ if os.environ.get("YT_REFRESH_TOKEN") and YT_WIN_START <= now.hour <= YT_WIN_END
             # 【2026-08-08 konan 明言】「残り九本のうち八本はこの8本を出せ」
             # 加重ローテだけだと確率的にしか寄らない。**優先8本の未投稿があれば必ずそれを先に出す。**
             # 優先枠を使い切ってから、はじめて通常の加重ローテに落ちる。
-            _R = len(ROTATION_WEIGHTED)
-            yp = next((POSTS[ROTATION_WEIGHTED[(seq + k) % _R]] for k in range(_R)
-                       if POSTS[ROTATION_WEIGHTED[(seq + k) % _R]].get("video") not in YT_POSTED
-                       and _app_id(POSTS[ROTATION_WEIGHTED[(seq + k) % _R]]) in KONAN_PRIORITY), None)
+            # 【2026-08-22 konan指摘】「陸曹が3つ立て続けに出されてる」。
+            # このループは毎回**同じ開始位置 seq から**探す。1本上げると YT_POSTED に入るので、
+            # 次の周は「その隣」が当たる。キューは工場がアプリごとにまとめて追記するので、
+            # 隣は同じアプリ = rikusoA → rikusoB → rikusoC と並んで上がっていた。
+            # 1ランの中では同じアプリを二度出さない。候補が尽きた時だけ緩める。
+            yp = _yt_next(priority_only=True, avoid=_yt_run_apps)
             if yp is not None:
                 print(f"  youtube: 優先枠 → {KONAN_PRIORITY[_app_id(yp)]}")
             else:
-                yp = next((POSTS[ROTATION_WEIGHTED[(seq + k) % _R]] for k in range(_R)
-                           if POSTS[ROTATION_WEIGHTED[(seq + k) % _R]].get("video") not in YT_POSTED), None)
+                yp = (_yt_next(priority_only=False, avoid=_yt_run_apps)
+                      or _yt_next(priority_only=True, avoid=set())
+                      or _yt_next(priority_only=False, avoid=set()))
+            if yp is not None:
+                _yt_run_apps.add(_app_id(yp))
             if yp is None:
                 print("  youtube: 全動画投稿済み(重複再アップ回避)=新作待ち")
                 break
