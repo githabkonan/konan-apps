@@ -331,8 +331,12 @@ def ig_caption(post):
     pool = THREADS_VARIANTS.get(key) or []
     tail = [l for l in base.split("\n")
             if l.startswith("App Store") or l.lstrip().startswith("#")]
+    # 【2026-08-22】Threadsが1投稿1〜5再生で止まっている原因はフォロワー1人=届く先が無いこと。
+    # 返信で外に出るにはMeta審査が要るので、当面はこちら側から観客を渡すしかない。
+    # IGは1日2.2万再生あり、同じ@名なのでタップ不要で辿れる。ハンドル1行だけ足す。
     if not pool or not tail:
-        return base[:2200]
+        return "\n".join([base, "Threads @tyokobisakusaku"])[:2200]
+    tail = tail + ["Threads @tyokobisakusaku"]
     used = STATE.setdefault("ig_var", {})
     i = int(used.get(key, -1)) + 1
     used[key] = i
@@ -341,7 +345,7 @@ def ig_caption(post):
     body = re.sub(r"#\S+", "", body)             # タグは元キャプションの並びを使う
     body = "\n".join(l.rstrip() for l in body.split("\n") if l.strip())
     if not body:
-        return base[:2200]
+        return "\n".join([base, "Threads @tyokobisakusaku"])[:2200]
     return "\n".join([body] + tail)[:2200]
 
 
