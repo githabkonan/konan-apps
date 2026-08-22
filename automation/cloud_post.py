@@ -537,6 +537,7 @@ YT_CATCHUP_MAX = int(os.environ.get("YT_CATCHUP_MAX", "3"))  # 1ランで取り�
 today = now.date().isoformat()
 if STATE.get("yt_date") != today:
     STATE["yt_date"] = today; STATE["yt_count"] = 0; STATE["last_yt_seq"] = None
+    STATE["yt_apps_today"] = []
 
 
 def _yt_pace_target():
@@ -547,11 +548,24 @@ def _yt_pace_target():
     return min(YT_MAX_PER_DAY, -(-YT_MAX_PER_DAY * elapsed // span))  # 切り上げ
 
 
-_yt_run_apps = set()   # 今回のランで既に上げたアプリID(同じアプリの連投を止める)
+# 【2026-08-22 konan指摘・これが仕様】「24このアプリのための24本を1日でって言ったよな?」
+# YouTube の1日24本は **24アプリ × 各1本**。同じアプリを1日に2本出した時点で仕様違反。
+#
+# 前の直し(1ランの中だけ重複を止める)では足りなかった。YT は毎時走るので、
+# ランをまたげば同じアプリがまた選ばれる。しかも ROTATION_WEIGHTED は
+# PRIORITY_FLOOR=5 で優先アプリをローテ内に5回置くので、**加重そのものが重複の発生源**だった。
+# 結果 2026-08-22 は陸曹が1日5本上がった。
+#
+# 対策: 「今日どのアプリを上げたか」を日付つきで STATE に持ち、**その日はもう選ばない**。
+# 加重ローテは「どのアプリを先に出すか」の優先順としてだけ効かせる(登場回数では効かせない)。
+_yt_apps_today = set(STATE.get("yt_apps_today") or [])
 
 
 def _yt_next(priority_only, avoid):
-    """加重ローテを seq から辿って、まだ上げていない動画を1本返す。"""
+    """加重ローテを seq から辿って、まだ上げていない動画を1本返す。
+
+    avoid には「今日すでに上げたアプリ」が入る。同じアプリの2本目は返さない。
+    """
     _R = len(ROTATION_WEIGHTED)
     for k in range(_R):
         p = POSTS[ROTATION_WEIGHTED[(seq + k) % _R]]
@@ -579,22 +593,18 @@ if os.environ.get("YT_REFRESH_TOKEN") and YT_WIN_START <= now.hour <= YT_WIN_END
             # 【2026-08-08 konan 明言】「残り九本のうち八本はこの8本を出せ」
             # 加重ローテだけだと確率的にしか寄らない。**優先8本の未投稿があれば必ずそれを先に出す。**
             # 優先枠を使い切ってから、はじめて通常の加重ローテに落ちる。
-            # 【2026-08-22 konan指摘】「陸曹が3つ立て続けに出されてる」。
-            # このループは毎回**同じ開始位置 seq から**探す。1本上げると YT_POSTED に入るので、
-            # 次の周は「その隣」が当たる。キューは工場がアプリごとにまとめて追記するので、
-            # 隣は同じアプリ = rikusoA → rikusoB → rikusoC と並んで上がっていた。
-            # 1ランの中では同じアプリを二度出さない。候補が尽きた時だけ緩める。
-            yp = _yt_next(priority_only=True, avoid=_yt_run_apps)
+            # 【2026-08-22 konan指摘】「24このアプリのための24本を1日でって言ったよな?」
+            # 1日 = 24アプリ × 各1本。今日すでに上げたアプリは、優先枠であっても二度と選ばない。
+            # **ここで avoid を緩めてはいけない**。緩めた結果が陸曹5本だった。
+            # 出せる新しいアプリが無くなったら、水増しせずその日は打ち止めにする。
+            yp = _yt_next(priority_only=True, avoid=_yt_apps_today)
             if yp is not None:
                 print(f"  youtube: 優先枠 → {KONAN_PRIORITY[_app_id(yp)]}")
             else:
-                yp = (_yt_next(priority_only=False, avoid=_yt_run_apps)
-                      or _yt_next(priority_only=True, avoid=set())
-                      or _yt_next(priority_only=False, avoid=set()))
-            if yp is not None:
-                _yt_run_apps.add(_app_id(yp))
+                yp = _yt_next(priority_only=False, avoid=_yt_apps_today)
             if yp is None:
-                print("  youtube: 全動画投稿済み(重複再アップ回避)=新作待ち")
+                print(f"  youtube: 今日まだ出していないアプリの在庫なし"
+                      f"(本日 {len(_yt_apps_today)}アプリ投稿済み)=同じアプリの2本目は出さない")
                 break
             ok, val = with_retry(lambda p=yp: publish_youtube(p))
             results.append({"ch": "youtube", "app": yp.get("app"), "ok": ok, ("id" if ok else "err"): val})
@@ -605,6 +615,8 @@ if os.environ.get("YT_REFRESH_TOKEN") and YT_WIN_START <= now.hour <= YT_WIN_END
             STATE["last_yt_seq"] = seq
             STATE["last_yt_ts"] = now.isoformat()
             STATE["yt_count"] = STATE.get("yt_count", 0) + 1
+            _yt_apps_today.add(_app_id(yp))
+            STATE["yt_apps_today"] = sorted(_yt_apps_today)
             YT_POSTED.append(yp.get("video"))
             save_state()
             seq += 1  # 連投時に同じアプリが続かないようローテを進める
