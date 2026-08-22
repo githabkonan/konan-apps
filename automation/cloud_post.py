@@ -227,15 +227,16 @@ IG_PER_RUN = int(os.environ.get("IG_PER_RUN") or _catchup("instagram", _per_run_
 # 言い回しの作り置き(threads_variants.json)が入っていること。1投稿1文型の使い回しはしない。
 # 窓は IG(7-22)と切り離して24時間。240本を17時間に詰めるより、24時間へ均すほうが機械的に見えない。
 THREADS_MAX_PER_DAY = int(os.environ.get("THREADS_MAX_PER_DAY", "240"))
-THREADS_RUN_CAP = int(os.environ.get("THREADS_RUN_CAP", "14"))   # 1ランの上限(cron間引きの取り返し幅)
-THREADS_GAP_S = int(os.environ.get("THREADS_GAP_S", "25"))       # 連投間隔。25s×14本=6分弱
+THREADS_RUNS_PER_DAY = int(os.environ.get("THREADS_RUNS_PER_DAY", "24"))  # cron は毎時
+THREADS_GAP_S = int(os.environ.get("THREADS_GAP_S", "25"))       # 連投間隔。25s×10本=4分強
 _th_today = _today_count("threads")
-# 0:00 からの経過分に比例した本数までしか解禁しない(窓の頭での固め打ちを構造的に止める)
-# 「今の時間帯ぶんまで」を解禁する(+60分)。これが無いと最終ラン23時でも230本止まりで240に届かない
-_th_elapsed = min(24 * 60, now.hour * 60 + now.minute + 60)
-_th_unlocked = -(-THREADS_MAX_PER_DAY * _th_elapsed // (24 * 60))
-_th_behind = max(0, min(THREADS_MAX_PER_DAY, _th_unlocked) - _th_today)
-THREADS_PER_RUN = min(THREADS_RUN_CAP, _th_behind)
+# 【2026-08-22 konan指示】「24時間かけて240本だから、仮に何かのトラブルで4時間くらい
+# 投稿できてなかったとしても、そこから元取るように240本投稿しようとしなくていい」。
+# = 遅れは取り戻さない。1ランの本数は 240/24=10本 の固定で、落ちたランのぶんは捨てる。
+# 取り戻す設計だと、止まった直後にまとめ出しが起きて一番スパムらしく見える。
+# 日次上限だけは別に見て、その日の合計が THREADS_MAX_PER_DAY を超えないようにする。
+_th_per_run = -(-THREADS_MAX_PER_DAY // THREADS_RUNS_PER_DAY)
+THREADS_PER_RUN = max(0, min(_th_per_run, THREADS_MAX_PER_DAY - _th_today))
 
 
 def threads_quota():
