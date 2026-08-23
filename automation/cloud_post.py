@@ -717,15 +717,17 @@ def _yt_daily_budget():
     """今日出してよい本数。在庫と期限から機械で決める。"""
     left = [p for p in POSTS if p.get("video") not in YT_POSTED]
     apps = {_app_id(p) for p in left if _app_id(p)}
-    # 1日1アプリ1本の仕様なので、在庫のあるアプリ数を超えては出せない
-    cap = min(YT_MAX_PER_DAY, len(apps))
+    # 【2026-08-23 konan「本数は関係ないと分かったのに減らすな」】1アプリ2本/日まで(在庫アプリ数×2)。
+    # 期限までの按分(YT_HORIZON)は「在庫が24本/日に足りない時だけ」効かせ、足りる時は上限まで出す。
+    # 在庫の補充は自走ループ(残弾<6で工場起動)が担う
+    cap = min(YT_MAX_PER_DAY, len(apps) * YT_PER_APP_PER_DAY, len(left))
     try:
         horizon = datetime.datetime.fromisoformat(YT_HORIZON)
     except ValueError:
-        return cap
+        return max(1, cap)
     days = -(-int((horizon - now).total_seconds()) // 86400)  # 切り上げ
-    if days <= 0:
-        return cap
+    if days <= 0 or len(left) >= YT_MAX_PER_DAY * days:
+        return max(1, cap)
     return max(1, min(cap, -(-len(left) // days)))
 
 
@@ -750,7 +752,9 @@ def _yt_pace_target():
 #
 # 対策: 「今日どのアプリを上げたか」を日付つきで STATE に持ち、**その日はもう選ばない**。
 # 加重ローテは「どのアプリを先に出すか」の優先順としてだけ効かせる(登場回数では効かせない)。
-_yt_apps_today = set(STATE.get("yt_apps_today") or [])
+YT_PER_APP_PER_DAY = int(os.environ.get("YT_PER_APP_PER_DAY", "2"))   # 1アプリ2本/日まで(2026-08-23)
+_yt_apps_today_list = list(STATE.get("yt_apps_today") or [])
+_yt_apps_today = {a for a in set(_yt_apps_today_list) if _yt_apps_today_list.count(a) >= YT_PER_APP_PER_DAY}  # 上限到達アプリだけ避ける
 
 
 def _yt_next(priority_only, avoid):
@@ -810,8 +814,10 @@ if os.environ.get("YT_REFRESH_TOKEN") and YT_WIN_START <= now.hour <= YT_WIN_END
             STATE["last_yt_seq"] = seq
             STATE["last_yt_ts"] = now.isoformat()
             STATE["yt_count"] = STATE.get("yt_count", 0) + 1
-            _yt_apps_today.add(_app_id(yp))
-            STATE["yt_apps_today"] = sorted(_yt_apps_today)
+            _yt_apps_today_list.append(_app_id(yp))
+            if _yt_apps_today_list.count(_app_id(yp)) >= YT_PER_APP_PER_DAY:
+                _yt_apps_today.add(_app_id(yp))
+            STATE["yt_apps_today"] = _yt_apps_today_list
             YT_POSTED.append(yp.get("video"))
             save_state()
             seq += 1  # 連投時に同じアプリが続かないようローテを進める
