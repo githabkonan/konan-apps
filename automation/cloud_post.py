@@ -292,6 +292,10 @@ try:
     THREADS_VARIANTS = json.load(open(os.path.join(HERE, "threads_variants.json")))
 except Exception:
     THREADS_VARIANTS = {}
+try:
+    THREADS_REPLIES = json.load(open(os.path.join(HERE, "threads_replies.json")))
+except Exception:
+    THREADS_REPLIES = {}
 
 
 def threads_text(post):
@@ -375,7 +379,17 @@ def publish_threads(post):
     if pid and url:
         try:
             time.sleep(3)   # 公開直後は返信先が未反映のことがある
-            rc = _post(f"{B}/{uid}/threads", {"media_type": "TEXT", "text": url,
+            # 返信文=アプリ名+サブタイトル+URL(threads_replies.json・審査済み文言から機械生成)。
+            # 言い回しは投稿ごとに順繰り。作り置きが無ければURLだけ
+            key = post.get("video") or post.get("app")
+            pool = THREADS_REPLIES.get(key) or []
+            if pool:
+                used = STATE.setdefault("th_rep", {})
+                j = int(used.get(key, -1)) + 1; used[key] = j
+                reply_text = pool[j % len(pool)]
+            else:
+                reply_text = url
+            rc = _post(f"{B}/{uid}/threads", {"media_type": "TEXT", "text": reply_text,
                                               "reply_to_id": pid, "access_token": tok})["id"]
             _post(f"{B}/{uid}/threads_publish", {"creation_id": rc, "access_token": tok})
         except Exception as e:
