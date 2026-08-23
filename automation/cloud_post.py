@@ -420,7 +420,9 @@ def publish_instagram(post):
         params["cover_url"] = f"{BASE}/{post['cover']}"
     cid = _post(f"{B}/{ig}/media", params)["id"]
     sc = None
-    for _ in range(40):
+    # 【2026-08-23】24h枠超過時にコンテナが永遠にIN_PROGRESSのままになり、40回×6秒×2試行×5本=40分固まって
+    # ランが落ちた(12:21)。待ちは最大2分、超えたらそのランのIGは打ち切る
+    for _ in range(20):
         time.sleep(6)
         sc = _get(f"{B}/{cid}", {"fields": "status_code", "access_token": tok}).get("status_code")
         if sc == "FINISHED": break
@@ -667,7 +669,10 @@ for i in range(IG_PER_RUN):
     ip = pick("instagram", seq * 5 + i)
     if ip is None:
         print("  instagram: 全動画クールダウン中=見送り"); break
-    ok, val = with_retry(lambda p=ip: publish_instagram(p))
+    ok, val = with_retry(lambda p=ip: publish_instagram(p), attempts=1)   # IGは再試行しない(枠超過で固まる)
+    if not ok and ("Limit" in str(val) or "too many actions" in str(val) or "timeout status" in str(val)):
+        results.append({"ch": "instagram", "app": ip.get("app"), "ok": False, "err": str(val)[:120]})
+        print(f"  instagram: 24h枠超過/処理停滞 → このランのIGは打ち切り"); break
     results.append({"ch": "instagram", "app": ip.get("app"), "ok": ok, ("id" if ok else "err"): val})
     print(f"  instagram[{ip.get('app')}]: {'OK ' + str(val) if ok else 'FAIL ' + str(val)}")
     if ok: ok_count += 1; mark("instagram", ip)
