@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-08-23",
- "yt_count": 2,
- "last_yt_seq": 5623,
+ "yt_count": 3,
+ "last_yt_seq": 5625,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -373,7 +373,8 @@
   "rikuso_a_20260822_0304.mp4",
   "kanbu_20260822_0543.mp4",
   "rikuso_b_20260822_0304.mp4",
-  "mileigo_kaiky_20260822_0304.mp4"
+  "mileigo_kaiky_20260822_0304.mp4",
+  "yobi_seido_20260822_0304.mp4"
  ],
  "hist": {
   "threads": {
@@ -1031,10 +1032,11 @@
    "koushu4_shisha_20260817_0045.mp4": "2026-08-22T23:17:32.342485",
    "kusou_scramble_20260817_0000.mp4": "2026-08-23T07:05:02.403719",
    "iritai_seido_20260816_1700.mp4": "2026-08-23T08:04:56.188419",
-   "kanbu_penghu_20260812_1829.mp4": "2026-08-23T08:04:56.188419"
+   "kanbu_penghu_20260812_1829.mp4": "2026-08-23T08:04:56.188419",
+   "kaiso_umi_20260816_2215.mp4": "2026-08-23T09:05:19.742354"
   }
  },
- "last_yt_ts": "2026-08-23T07:19:11.029414",
+ "last_yt_ts": "2026-08-23T09:05:19.742354",
  "th_var": {
   "iritai_fuan_v3.mp4": 0,
   "kaiso_fune_v3.mp4": 0,
@@ -1245,6 +1247,7 @@
  },
  "yt_apps_today": [
   "6774074604",
+  "6778490302",
   "6793729335"
  ],
  "ig_var": {
@@ -1286,7 +1289,9 @@
   "kusou_scramble_20260817_0000.mp4": 0,
   "iritai_seido_20260816_1700.mp4": 2,
   "kanbu_penghu_20260812_1829.mp4": 2,
-  "kaiso_umi_20260816_2215.mp4": 1,
-  "rikusoB_20260821_1725.mp4": 1
+  "kaiso_umi_20260816_2215.mp4": 2,
+  "rikusoB_20260821_1725.mp4": 3,
+  "mileigo_phonetic_20260813_0923.mp4": 1,
+  "eigonoh_tour_20260808_1242.mp4": 1
  }
 }
