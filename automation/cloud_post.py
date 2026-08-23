@@ -639,7 +639,8 @@ def _threads_plan():
         plan[h] = ranked[idx]
     return plan
 
-_th_done = STATE.setdefault("th_slots", {}).setdefault(today, [])
+_today_jst = now.date().isoformat()
+_th_done = STATE.setdefault("th_slots", {}).setdefault(_today_jst, [])
 _plan = _threads_plan()
 _slots = [now.hour]
 if now.minute < 30 and (now.hour - 1) >= 0 and (now.hour - 1) not in _th_done:
