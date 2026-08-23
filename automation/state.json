@@ -1041,7 +1041,10 @@
    "kankoku_sarange_20260812_1829.mp4": "2026-08-23T11:01:24.184975",
    "mileigo_phonetic_20260813_0923.mp4": "2026-08-23T11:01:24.184975",
    "rikuso_20260821_2001.mp4": "2026-08-23T11:01:24.184975",
-   "iritai_white_20260816_1755.mp4": "2026-08-23T12:26:57.397648"
+   "iritai_white_20260816_1755.mp4": "2026-08-23T12:26:57.397648",
+   "kankoku_summersonic_20260813_0923.mp4": "2026-08-23T13:33:20.489120",
+   "rikusoA_20260821_2241.mp4": "2026-08-23T13:33:20.489120",
+   "kusou_scramble_20260819.mp4": "2026-08-23T13:33:20.489120"
   }
  },
  "last_yt_ts": "2026-08-23T12:26:57.397648",
@@ -1307,7 +1310,9 @@
   "rikuso_20260821_2001.mp4": 2,
   "unkan_kamotsu_20260821_2001.mp4": 1,
   "iritai_white_20260816_1755.mp4": 0,
-  "kankoku_summersonic_20260813_0923.mp4": 0
+  "kankoku_summersonic_20260813_0923.mp4": 1,
+  "rikusoA_20260821_2241.mp4": 0,
+  "kusou_scramble_20260819.mp4": 0
  },
  "th_slots": {
   "2026-08-23": [
@@ -1630,7 +1635,10 @@
   "kankoku_sarange_20260812_1829.mp4",
   "mileigo_phonetic_20260813_0923.mp4",
   "rikuso_20260821_2001.mp4",
-  "iritai_white_20260816_1755.mp4"
+  "iritai_white_20260816_1755.mp4",
+  "kankoku_summersonic_20260813_0923.mp4",
+  "rikusoA_20260821_2241.mp4",
+  "kusou_scramble_20260819.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0
