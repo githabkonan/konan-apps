@@ -200,7 +200,15 @@ def _today_count(platform):
 # 【2026-08-23 IG一次調査】Instagram Ranking Explained(公式)は「すでに投稿済みのリール」を表示抑制対象と明記、
 # Community Guidelinesは反復投稿をスパム行為と明記。100/24hは技術上限であって安全量ではない。
 # → 各動画1回限り(再投稿ローテ廃止)・1日12本・売れ筋優先(konan 8/23「絞るなら売れ筋トップ優先」)
-IG_MAX_PER_DAY = int(os.environ.get("IG_MAX_PER_DAY", "24"))   # 2026-08-23 konan「本数は関係ない」→新作24本を全部1回ずつ(再投稿だけ廃止)
+IG_MAX_PER_DAY = int(os.environ.get("IG_MAX_PER_DAY", "24"))
+# 【2026-08-23 konan】利用上限中は動画を作れない → 新作在庫を火曜22時(YT_HORIZONと同じ)まで按分して切らさない
+try:
+    _ig_left = [p for p in POSTS if p.get("video") and p["video"] not in STATE.get("ig_posted", []) and p["video"] not in STATE.get("hist", {}).get("instagram", {})]
+    _ig_days = -(-int((datetime.datetime.fromisoformat(os.environ.get("YT_HORIZON", "2026-08-25T22:00")) - now).total_seconds()) // 86400)
+    if _ig_days > 0 and len(_ig_left) < IG_MAX_PER_DAY * _ig_days:
+        IG_MAX_PER_DAY = max(1, min(IG_MAX_PER_DAY, -(-len(_ig_left) // _ig_days)))
+except Exception:
+    pass   # 2026-08-23 konan「本数は関係ない」→新作24本を全部1回ずつ(再投稿だけ廃止)
 IG_RUNS_PER_DAY = int(os.environ.get("IG_RUNS_PER_DAY", "24"))   # cron は毎時
 _ig_today = _today_count("instagram")
 IG_PER_RUN = int(os.environ.get("IG_PER_RUN") or
