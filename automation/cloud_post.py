@@ -349,14 +349,38 @@ def ig_caption(post):
     return "\n".join([body] + tail)[:2200]
 
 
+_URL_RE = re.compile(r"https?://\S+")
+
+def _split_body_and_url(post):
+    """本文からURLを抜き、返信用URLを返す。
+    【2026-08-23 konan指示】Threadsは本文に外部URLがあると配信が絞られる傾向。
+    → 本文はURLなし、URLは自分の投稿への返信に貼る「二段構え」に変更。
+    在庫(threads_text・言い回しの作り置き)は触らず、ここで機械的に分離する。"""
+    text = threads_text(post)
+    urls = _URL_RE.findall(text)
+    body = _URL_RE.sub("", text)
+    body = re.sub(r"[ \t]+\n", "\n", body).strip()
+    body = re.sub(r"\n{3,}", "\n\n", body)
+    url = post.get("appstore_url") or (urls[0].rstrip(")。、") if urls else "")
+    return body[:500], url
+
+
 def publish_threads(post):
-    """テキスト投稿(動画なし)。本文に App Store の URL を含める。"""
+    """二段構え: ①本文(URLなし)を投稿 → ②その投稿への返信でApp Store URLを貼る。"""
     uid = os.environ["THREADS_USER_ID"]; tok = os.environ["THREADS_ACCESS_TOKEN"]
     B = "https://graph.threads.net/v1.0"
-    cid = _post(f"{B}/{uid}/threads", {"media_type": "TEXT",
-                                       "text": threads_text(post),
-                                       "access_token": tok})["id"]
-    return _post(f"{B}/{uid}/threads_publish", {"creation_id": cid, "access_token": tok}).get("id")
+    body, url = _split_body_and_url(post)
+    cid = _post(f"{B}/{uid}/threads", {"media_type": "TEXT", "text": body, "access_token": tok})["id"]
+    pid = _post(f"{B}/{uid}/threads_publish", {"creation_id": cid, "access_token": tok}).get("id")
+    if pid and url:
+        try:
+            time.sleep(3)   # 公開直後は返信先が未反映のことがある
+            rc = _post(f"{B}/{uid}/threads", {"media_type": "TEXT", "text": url,
+                                              "reply_to_id": pid, "access_token": tok})["id"]
+            _post(f"{B}/{uid}/threads_publish", {"creation_id": rc, "access_token": tok})
+        except Exception as e:
+            print(f"  threads: URL返信に失敗(本文は公開済み) {str(e)[:120]}")
+    return pid
 
 
 def publish_instagram(post):
