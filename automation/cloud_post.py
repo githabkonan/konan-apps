@@ -219,7 +219,7 @@ IG_PER_RUN = int(os.environ.get("IG_PER_RUN") or
 # 根本原因は解決されないからやめろ」で撤回し 240 に戻した。実測(video_metrics.db)でも
 # 7/30以降は 1〜7本/日に落としても平均viewsは 0.3〜4.7 のままで、**本数を減らしても回復しない**。
 # = 本数は原因ではない。減らすと露出だけ失って原因は残る。本数はここで触らない。
-THREADS_MAX_PER_DAY = int(os.environ.get("THREADS_MAX_PER_DAY", "240"))
+THREADS_MAX_PER_DAY = int(os.environ.get("THREADS_MAX_PER_DAY", "4"))   # 2026-08-23 回復期(旧240)
 THREADS_RUNS_PER_DAY = int(os.environ.get("THREADS_RUNS_PER_DAY", "24"))  # cron は毎時
 THREADS_GAP_S = int(os.environ.get("THREADS_GAP_S", "25"))       # 連投間隔
 _th_today = _today_count("threads")
@@ -551,50 +551,60 @@ def pick(platform, start_idx):
     return fallback
 
 # Threads: 1起動で別アプリを複数本(rotation: seq*K+i)。間隔を空けて連投感を緩和。
-# ===== Threads【2026-08-23 konan指示・運用変更】=====
-# ・投稿枠: 1日最大6件(07/10/13/16/19/22 JST を枠の起点とし、各枠は次の起点まで=3時間以上空く)
-# ・対象: 24アプリから「売上/人気順の上位6」(weights.json=ASC実績。konan優先枠は下限として加味)を
-#   毎日抽出し、Top1→07時枠 … Top6→22時枠 に1枠1アプリで割り振る
-# ・投稿の仕方: 二段構え(本文URLなし→自分への返信でアプリ名+サブタイトル+URL)
-# ・cronの遅延(最大50分)があっても枠を落とさないよう、「枠の時間帯内で未投稿なら投稿」とし、
-#   1枠1回を state(th_slots: {日付: [済み枠]}) で保証する
-TH_SLOTS = [7, 10, 13, 16, 19, 22]
+# ===== Threads【2026-08-23 konan指示・運用変更(改)】=====
+# ・1日24枠=毎時1本。全アプリ(24本前後)を毎日1回ずつ網羅する
+# ・売上順(weights.json=ASC実績+konan優先の下限)で並べ、**売れているアプリほど人が見ている時間帯**に置く
+#   時間帯の人気順(日本のThreads・平日夜〜昼が主戦場): 20,19,21,18,12,7,22,8,13,17,23,9,11,10,16,14,15,6,0,1,2,3,4,5
+# ・投稿の仕方は二段構え(本文URLなし→自分への返信でアプリ名+サブタイトル+URL)
+# ・1枠1回を state(th_slots: {日付: [済み時]}) で保証。cron遅延で落ちた枠は直前1枠だけ拾う(まとめ出しはしない)
+# 【2026-08-23 一次調査】日本語圏Threadsの山は 7-9時 / 12-14時 / 21-24時(SOP/threads-operation-2026-08.md)
+TH_HOUR_RANK = [21, 12, 8, 19, 22, 13, 7, 20, 23, 9, 18, 14, 17, 11, 10, 16, 15, 6, 0, 1, 2, 3, 4, 5]
+# 回復期(2026-08-23〜): 1日4本。アカウント制限(5週間1本1再生)の固定化を避ける。
+# 1本あたり再生が20を超えたら 6→8 へ段階増(morning_check/metrics_log.jsonl で判定)。24本は数字が許した時だけ
+THREADS_DAILY_SLOTS = int(os.environ.get("THREADS_DAILY_SLOTS", "4"))
+TH_ACTIVE_HOURS = TH_HOUR_RANK[:THREADS_DAILY_SLOTS]
 
-def _threads_top_apps(k=6):
+def _threads_ranked_apps():
     ids = {}
     for p_ in POSTS:
         aid = _app_id(p_)
-        if aid: ids[aid] = p_.get("app")
-    ranked = sorted(ids, key=lambda a: (-float(REVENUE_WEIGHT.get(a, 0)) - (0.5 if a in KONAN_PRIORITY else 0), a))
-    return ranked[:k]
+        if aid and p_.get("threads_text"): ids[aid] = p_.get("app")
+    return sorted(ids, key=lambda a: (-float(REVENUE_WEIGHT.get(a, 0)) - (0.5 if a in KONAN_PRIORITY else 0), a))
 
-def _threads_slot_now():
-    h = now.hour
-    cur = None
-    for i, s in enumerate(TH_SLOTS):
-        if h >= s: cur = i
-    return cur   # 07時未満は None(投稿しない)
+def _threads_plan():
+    """{時: アプリID}。Top1→最も人が見る時間。アプリが24本未満なら余った枠は上位から2巡目"""
+    ranked = _threads_ranked_apps()
+    plan = {}
+    # 全アプリ網羅は「日」でなく「週」で達成する: 日ごとに上位から回す起点をずらす
+    day_off = (day_num * THREADS_DAILY_SLOTS) % max(1, len(ranked)) if ranked else 0
+    for i, h in enumerate(TH_ACTIVE_HOURS):
+        if not ranked: break
+        # 最も人が見る枠には常に売上Top1〜を置き、残り枠で全アプリを日替わり巡回
+        idx = i if i < 2 else (day_off + i) % len(ranked)
+        plan[h] = ranked[idx]
+    return plan
 
-_slot = _threads_slot_now()
-_th_date = now.date().isoformat()
-_th_done = STATE.setdefault("th_slots", {}).setdefault(_th_date, [])
-if os.environ.get("THREADS_ACCESS_TOKEN") and _slot is not None and _slot not in _th_done:
-    top = _threads_top_apps(6)
-    target = top[_slot] if _slot < len(top) else None
+_th_done = STATE.setdefault("th_slots", {}).setdefault(today, [])
+_plan = _threads_plan()
+_slots = [now.hour]
+if now.minute < 30 and (now.hour - 1) >= 0 and (now.hour - 1) not in _th_done:
+    _slots.insert(0, now.hour - 1)   # 直前の枠がcron遅延で落ちていれば1枠だけ拾う
+for _h in _slots:
+    if not os.environ.get("THREADS_ACCESS_TOKEN") or _h in _th_done:
+        continue
+    target = _plan.get(_h)
     cands = [p_ for p_ in POSTS if target and _app_id(p_) == target and p_.get("threads_text")]
     if not cands:
-        print(f"  threads: 枠{_slot}({TH_SLOTS[_slot]}時) 対象アプリ{target}の投稿が無い=見送り")
-    else:
-        rot = STATE.setdefault("th_app_seq", {})
-        j = int(rot.get(target, -1)) + 1; rot[target] = j
-        tp = cands[j % len(cands)]
-        ok, val = with_retry(lambda p=tp: publish_threads(p))
-        results.append({"ch": "threads", "app": tp.get("app"), "ok": ok, ("id" if ok else "err"): val})
-        print(f"  threads[枠{_slot}/{TH_SLOTS[_slot]}時 Top{_slot+1} {tp.get('app')}]: {'OK ' + str(val) if ok else 'FAIL ' + str(val)}")
-        if ok:
-            ok_count += 1; mark("threads", tp); _th_done.append(_slot)
-else:
-    print(f"  threads: 枠{_slot}は投稿済み or 時間外=見送り")
+        print(f"  threads: {_h}時枠 対象アプリ{target}の投稿が無い=見送り"); continue
+    rot = STATE.setdefault("th_app_seq", {})
+    j = int(rot.get(target, -1)) + 1; rot[target] = j
+    tp = cands[j % len(cands)]
+    ok, val = with_retry(lambda p=tp: publish_threads(p))
+    results.append({"ch": "threads", "app": tp.get("app"), "ok": ok, ("id" if ok else "err"): val})
+    print(f"  threads[{_h}時枠 順位{list(_plan.values()).index(target)+1 if target in _plan.values() else '?'} {tp.get('app')}]: {'OK ' + str(val) if ok else 'FAIL ' + str(val)}")
+    if ok:
+        ok_count += 1; mark("threads", tp); _th_done.append(_h)
+    if len(_slots) > 1: time.sleep(THREADS_GAP_S)
 
 # Instagram: 公式上限100/24h を毎時4〜5本に均して埋める(rotation: seq)
 for i in range(IG_PER_RUN):
