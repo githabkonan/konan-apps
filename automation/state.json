@@ -1044,7 +1044,8 @@
    "iritai_white_20260816_1755.mp4": "2026-08-23T12:26:57.397648",
    "kankoku_summersonic_20260813_0923.mp4": "2026-08-23T13:33:20.489120",
    "rikusoA_20260821_2241.mp4": "2026-08-23T13:33:20.489120",
-   "kusou_scramble_20260819.mp4": "2026-08-23T13:33:20.489120"
+   "kusou_scramble_20260819.mp4": "2026-08-23T13:33:20.489120",
+   "iritai_zangyo_20260816_1745.mp4": "2026-08-23T14:07:53.429331"
   }
  },
  "last_yt_ts": "2026-08-23T12:26:57.397648",
@@ -1312,7 +1313,8 @@
   "iritai_white_20260816_1755.mp4": 0,
   "kankoku_summersonic_20260813_0923.mp4": 1,
   "rikusoA_20260821_2241.mp4": 0,
-  "kusou_scramble_20260819.mp4": 0
+  "kusou_scramble_20260819.mp4": 0,
+  "iritai_zangyo_20260816_1745.mp4": 0
  },
  "th_slots": {
   "2026-08-23": [
@@ -1638,18 +1640,13 @@
   "iritai_white_20260816_1755.mp4",
   "kankoku_summersonic_20260813_0923.mp4",
   "rikusoA_20260821_2241.mp4",
-  "kusou_scramble_20260819.mp4"
+  "kusou_scramble_20260819.mp4",
+  "iritai_zangyo_20260816_1745.mp4"
  ],
  "th_rep": {
-  "iritai_soukoho_20260730_1205.mp4": 0
+  "iritai_soukoho_20260730_1205.mp4": 0,
+  "rikuso_saiyou.mp4": 0
  },
  "yt_playlists": {},
- "th_pending_replies": [
-  {
-   "pid": "18084926699371523",
-   "key": "rikuso_saiyou.mp4",
-   "url": "https://apps.apple.com/jp/app/id6772919770",
-   "note": "12時枠 入隊"
-  }
- ]
+ "th_pending_replies": []
 }
