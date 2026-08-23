@@ -200,7 +200,7 @@ def _today_count(platform):
 # 【2026-08-23 IG一次調査】Instagram Ranking Explained(公式)は「すでに投稿済みのリール」を表示抑制対象と明記、
 # Community Guidelinesは反復投稿をスパム行為と明記。100/24hは技術上限であって安全量ではない。
 # → 各動画1回限り(再投稿ローテ廃止)・1日12本・売れ筋優先(konan 8/23「絞るなら売れ筋トップ優先」)
-IG_MAX_PER_DAY = int(os.environ.get("IG_MAX_PER_DAY", "12"))
+IG_MAX_PER_DAY = int(os.environ.get("IG_MAX_PER_DAY", "24"))   # 2026-08-23 konan「本数は関係ない」→新作24本を全部1回ずつ(再投稿だけ廃止)
 IG_RUNS_PER_DAY = int(os.environ.get("IG_RUNS_PER_DAY", "24"))   # cron は毎時
 _ig_today = _today_count("instagram")
 IG_PER_RUN = int(os.environ.get("IG_PER_RUN") or
