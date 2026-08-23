@@ -481,7 +481,7 @@
    "rikuso_ichiya_v3.mp4": "2026-08-22T15:09:42.404010",
    "yobi_heijitsu_v3.mp4": "2026-08-06T09:02:06.712828",
    "kanbu_shitsu_v3.mp4": "2026-08-06T13:15:26.408420",
-   "iritai_fuan_v3.mp4": "2026-08-22T10:53:57.067573",
+   "iritai_fuan_v3.mp4": "2026-08-23T10:05:40.695302",
    "kaiso_fune_v3.mp4": "2026-08-22T10:53:57.067573",
    "kankokugo_juseyo_v3.mp4": "2026-08-22T10:53:57.067573",
    "milchugo_fangxia_v3.mp4": "2026-08-22T10:53:57.067573",
@@ -1040,7 +1040,7 @@
  },
  "last_yt_ts": "2026-08-23T09:59:34.521085",
  "th_var": {
-  "iritai_fuan_v3.mp4": 0,
+  "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
   "kankokugo_juseyo_v3.mp4": 0,
   "milchugo_fangxia_v3.mp4": 0,
@@ -1298,5 +1298,11 @@
   "eigonoh_tour_20260808_1242.mp4": 3,
   "rikuso_20260821_2001.mp4": 1,
   "unkan_kamotsu_20260821_2001.mp4": 1
+ },
+ "th_slots": {
+  "2026-08-23": []
+ },
+ "th_app_seq": {
+  "6772919770": 0
  }
 }
