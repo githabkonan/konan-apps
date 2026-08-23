@@ -713,6 +713,9 @@ if STATE.get("yt_date") != today:
 YT_HORIZON = os.environ.get("YT_HORIZON", "2026-08-25T22:00")
 
 
+YT_PER_APP_PER_DAY = int(os.environ.get("YT_PER_APP_PER_DAY", "2"))   # 1アプリ2本/日まで(2026-08-23)
+
+
 def _yt_daily_budget():
     """今日出してよい本数。在庫と期限から機械で決める。"""
     left = [p for p in POSTS if p.get("video") not in YT_POSTED]
@@ -752,7 +755,6 @@ def _yt_pace_target():
 #
 # 対策: 「今日どのアプリを上げたか」を日付つきで STATE に持ち、**その日はもう選ばない**。
 # 加重ローテは「どのアプリを先に出すか」の優先順としてだけ効かせる(登場回数では効かせない)。
-YT_PER_APP_PER_DAY = int(os.environ.get("YT_PER_APP_PER_DAY", "2"))   # 1アプリ2本/日まで(2026-08-23)
 _yt_apps_today_list = list(STATE.get("yt_apps_today") or [])
 _yt_apps_today = {a for a in set(_yt_apps_today_list) if _yt_apps_today_list.count(a) >= YT_PER_APP_PER_DAY}  # 上限到達アプリだけ避ける
 
