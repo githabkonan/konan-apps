@@ -157,7 +157,7 @@ def _spread(idxs):
 ROTATION_WEIGHTED = [i for _pass in range(1, 6)
                      for i in _spread([j for j, p in enumerate(POSTS) if _weight(p) >= _pass])]
 ROTATION_FLAT = _spread(range(len(POSTS)))
-ROTATIONS = {"instagram": ROTATION_FLAT, "threads": ROTATION_FLAT, "youtube": ROTATION_WEIGHTED}
+ROTATIONS = {"instagram": ROTATION_WEIGHTED, "threads": ROTATION_FLAT, "youtube": ROTATION_WEIGHTED}  # IGも売上加重(2026-08-23)
 
 now = datetime.datetime.utcnow() + datetime.timedelta(hours=9)  # JST
 day_num = (now.date() - datetime.date(2026, 1, 1)).days
@@ -197,7 +197,10 @@ def _today_count(platform):
 # IG の公式上限は **100投稿 / 24時間の移動窓**(2026-08-22 に content_publishing_limit で実測。
 # Meta のフィールド解説ページは50のまま古い)。カルーセルも1投稿として数える。
 # 実際の天井は下の ig_quota() が毎回 API に聞いて守るので、ここは「均等に割る」だけの役目。
-IG_MAX_PER_DAY = int(os.environ.get("IG_MAX_PER_DAY", "100"))
+# 【2026-08-23 IG一次調査】Instagram Ranking Explained(公式)は「すでに投稿済みのリール」を表示抑制対象と明記、
+# Community Guidelinesは反復投稿をスパム行為と明記。100/24hは技術上限であって安全量ではない。
+# → 各動画1回限り(再投稿ローテ廃止)・1日12本・売れ筋優先(konan 8/23「絞るなら売れ筋トップ優先」)
+IG_MAX_PER_DAY = int(os.environ.get("IG_MAX_PER_DAY", "12"))
 IG_RUNS_PER_DAY = int(os.environ.get("IG_RUNS_PER_DAY", "24"))   # cron は毎時
 _ig_today = _today_count("instagram")
 IG_PER_RUN = int(os.environ.get("IG_PER_RUN") or
@@ -350,7 +353,16 @@ def ig_caption(post):
     body = "\n".join(l.rstrip() for l in body.split("\n") if l.strip())
     if not body:
         return "\n".join([base, "Threads @tyokobisakusaku"])[:2200]
-    return "\n".join([body] + tail)[:2200]
+    # 【2026-08-23 IG一次調査】ハッシュタグは1投稿5個まで(2025年仕様)。超過分は落とす
+    tail2, ntag = [], 0
+    for l in tail:
+        if l.lstrip().startswith("#"):
+            tags = [t for t in l.split() if t.startswith("#")][: max(0, 5 - ntag)]
+            ntag += len(tags)
+            if tags: tail2.append(" ".join(tags))
+        else:
+            tail2.append(l)
+    return "\n".join([body] + tail2)[:2200]
 
 
 _URL_RE = re.compile(r"https?://\S+")
@@ -465,7 +477,43 @@ def publish_youtube(post):
             body = getattr(e, "read", lambda: b"")()
             print(f"  THUMBNAIL FAILED (動画は公開済み): {str(e)[:120]} "
                   f"{body[:200].decode('utf-8', 'replace') if body else ''}")
+    # 【2026-08-23 YT一次調査・ルール2】題材混在チャンネルはおすすめ精度が落ちる→ジャンル別プレイリストで分離
+    try:
+        _yt_add_to_playlist(tok, vid, post)
+    except Exception as e:
+        print(f"  playlist skip: {str(e)[:100]}")
     return f"https://youtube.com/shorts/{vid}"
+
+
+YT_GENRES = [
+    ("自衛官 試験対策", ("自衛官", "予備自衛官", "陸曹", "海曹", "空曹", "幹部候補", "入隊")),
+    ("消防設備士 試験対策", ("消防設備士",)),
+    ("QC検定 試験対策", ("QC検定",)),
+    ("運行管理者 試験対策", ("運行管理者",)),
+    ("語学トレーナー", ("英語", "韓国語", "中国語", "語学")),
+    ("生活・習慣アプリ", ("TASK", "推し", "散財", "ライフ", "スリーパー", "睡眠")),
+]
+
+def _yt_add_to_playlist(tok, vid, post):
+    app = post.get("app") or ""
+    name = next((n for n, keys in YT_GENRES if any(k in app for k in keys)), None)
+    if not name:
+        return
+    pls = STATE.setdefault("yt_playlists", {})
+    plid = pls.get(name)
+    H = {"Authorization": f"Bearer {tok}", "Content-Type": "application/json"}
+    if not plid:
+        body = json.dumps({"snippet": {"title": name}, "status": {"privacyStatus": "public"}}).encode()
+        req = urllib.request.Request("https://www.googleapis.com/youtube/v3/playlists?part=snippet,status",
+                                     data=body, method="POST", headers=H)
+        plid = json.load(urllib.request.urlopen(req, timeout=60))["id"]
+        pls[name] = plid
+    body = json.dumps({"snippet": {"playlistId": plid,
+                                   "resourceId": {"kind": "youtube#video", "videoId": vid}}}).encode()
+    req = urllib.request.Request("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet",
+                                 data=body, method="POST", headers=H)
+    urllib.request.urlopen(req, timeout=60)
+    print(f"  playlist: {name}")
 
 
 def with_retry(fn, attempts=2):
@@ -492,6 +540,9 @@ try: STATE = json.load(open(STATE_PATH))
 except Exception: STATE = {}
 HIST = STATE.setdefault("hist", {})          # {platform: {video: iso_ts}}
 YT_POSTED = STATE.setdefault("yt_posted", [])  # YTに投稿済みの動画(恒久)
+IG_POSTED = STATE.setdefault("ig_posted", [])  # IGに投稿済みの動画(恒久・2026-08-23 再投稿廃止)
+for _v in HIST.get("instagram", {}):
+    if _v not in IG_POSTED: IG_POSTED.append(_v)   # 履歴にある=一度出している
 COOLDOWN_H = float(os.environ.get("REPOST_COOLDOWN_H", "72"))
 
 def save_state():
@@ -504,6 +555,8 @@ COOLDOWN_BY_PLATFORM = {"threads": float(os.environ.get("THREADS_COOLDOWN_H", "1
 
 
 def cooled(platform, post):
+    if platform == "instagram" and post.get("video") in IG_POSTED:
+        return False   # IGは各動画1回限り(公式: 投稿済みリールは表示抑制)
     ts = HIST.get(platform, {}).get(post.get("video", post.get("app")), "")
     if not ts: return True
     try:
@@ -513,6 +566,8 @@ def cooled(platform, post):
 
 def mark(platform, post):
     HIST.setdefault(platform, {})[post.get("video", post.get("app"))] = now.isoformat()
+    if platform == "instagram" and post.get("video") and post["video"] not in IG_POSTED:
+        IG_POSTED.append(post["video"])
     save_state()
 
 _RUN_APPS = {}   # {platform: 今回のランで既に出したアプリID} — 1ラン内の重複を止める
@@ -621,6 +676,19 @@ for i in range(IG_PER_RUN):
 # 【2026-08-21 konan指示】新クォータ(1回=1pt・100/日)確認済みにつき24本/日へ。
 # ただしYouTubeのスパム量産検知は別問題なので、多様化ルール(1アプリ2本まで・角度分散)を前提とする
 YT_MAX_PER_DAY = int(os.environ.get("YT_MAX_PER_DAY", "24"))
+# 【2026-08-23 YT一次調査・ルール8】緊急ブレーキ: スパム規約は全動画対象(90日3ストライクで終了)。
+# 1本あたり再生が直近7日平均の半分を切ったら 8本/日に絞り、売れ筋(優先枠)だけ出す(konan「絞るなら売れ筋優先」)
+YT_BRAKE = False
+try:
+    _ml = [json.loads(l) for l in open(os.path.join(HERE, "metrics_log.jsonl")) if l.strip()]
+    _pv = [r["by_platform"]["youtube"]["views"] / max(r["by_platform"]["youtube"]["n"], 1)
+           for r in _ml if r.get("by_platform", {}).get("youtube", {}).get("n")]
+    if len(_pv) >= 8 and _pv[-1] < 0.5 * (sum(_pv[-8:-1]) / 7):
+        YT_BRAKE = True
+        YT_MAX_PER_DAY = min(YT_MAX_PER_DAY, 8)
+        print(f"  youtube: ⚠️ 緊急ブレーキ(1本あたり再生 {_pv[-1]:.0f} < 7日平均の半分) → {YT_MAX_PER_DAY}本/日・売れ筋のみ")
+except Exception:
+    pass
 # 【F-410・2026-08-07 konan「今日youtubeで3本しか動画が上がってない。なぜ?」】
 # 原因は「1ラン=最大1本 × GitHub cron が落ちる」の掛け算。
 # schedule は毎時のはずが実測7回/11回しか発火せず(00,03,04,06,06,08,10 UTC)、
@@ -724,6 +792,8 @@ if os.environ.get("YT_REFRESH_TOKEN") and YT_WIN_START <= now.hour <= YT_WIN_END
             yp = _yt_next(priority_only=True, avoid=_yt_apps_today)
             if yp is not None:
                 print(f"  youtube: 優先枠 → {KONAN_PRIORITY[_app_id(yp)]}")
+            elif YT_BRAKE:
+                yp = None   # ブレーキ中は売れ筋(優先枠)以外を出さない(2026-08-23)
             else:
                 yp = _yt_next(priority_only=False, avoid=_yt_apps_today)
             if yp is None:
