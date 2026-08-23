@@ -389,8 +389,48 @@ def publish_threads(post):
     cid = _post(f"{B}/{uid}/threads", {"media_type": "TEXT", "text": body, "access_token": tok})["id"]
     pid = _post(f"{B}/{uid}/threads_publish", {"creation_id": cid, "access_token": tok}).get("id")
     if pid and url:
+        STATE.setdefault("th_pending_replies", []).append({"pid": pid, "key": post.get("video") or post.get("app"), "url": url})
+        _threads_flush_replies(uid, tok)
+    return pid
+
+
+def _threads_flush_replies(uid, tok):
+    """未完了のURL返信を試す。失敗はエラー本文ごと記録し、次のランで再試行(konan 8/23「本文だけで返信が無い」)。"""
+    B = "https://graph.threads.net/v1.0"
+    pend = STATE.setdefault("th_pending_replies", [])
+    keep = []
+    for it in pend:
+        pid, key, url = it["pid"], it["key"], it["url"]
+        pool = THREADS_REPLIES.get(key) or []
+        if pool:
+            used = STATE.setdefault("th_rep", {})
+            j = int(used.get(key, -1)) + 1; used[key] = j
+            reply_text = pool[j % len(pool)]
+        else:
+            reply_text = url
         try:
-            time.sleep(3)   # 公開直後は返信先が未反映のことがある
+            time.sleep(20)   # 公開直後は返信先が未反映のことがある(3秒では400だった)
+            rc = _post(f"{B}/{uid}/threads", {"media_type": "TEXT", "text": reply_text,
+                                              "reply_to_id": pid, "access_token": tok})["id"]
+            time.sleep(5)
+            _post(f"{B}/{uid}/threads_publish", {"creation_id": rc, "access_token": tok})
+            print(f"  threads: URL返信OK → {pid}")
+        except Exception as e:
+            body = ""
+            try: body = e.read().decode("utf-8", "replace")[:300]
+            except Exception: pass
+            it["tries"] = it.get("tries", 0) + 1
+            print(f"  threads: URL返信に失敗(再試行{it['tries']}回目) {str(e)[:80]} {body}")
+            if it["tries"] < 6:
+                keep.append(it)
+    STATE["th_pending_replies"] = keep
+    save_state()
+
+
+def _unused_old_reply_block(uid, tok, pid, url, post):
+    if pid and url:
+        try:
+            time.sleep(3)
             # 返信文=アプリ名+サブタイトル+URL(threads_replies.json・審査済み文言から機械生成)。
             # 言い回しは投稿ごとに順繰り。作り置きが無ければURLだけ
             key = post.get("video") or post.get("app")
@@ -643,6 +683,8 @@ def _threads_plan():
 
 _today_jst = now.date().isoformat()
 _th_done = STATE.setdefault("th_slots", {}).setdefault(_today_jst, [])
+if os.environ.get("THREADS_ACCESS_TOKEN") and STATE.get("th_pending_replies"):
+    _threads_flush_replies(os.environ["THREADS_USER_ID"], os.environ["THREADS_ACCESS_TOKEN"])
 _plan = _threads_plan()
 _slots = [now.hour]
 if now.minute < 30 and (now.hour - 1) >= 0 and (now.hour - 1) not in _th_done:

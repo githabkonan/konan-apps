@@ -1643,5 +1643,13 @@
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0
  },
- "yt_playlists": {}
+ "yt_playlists": {},
+ "th_pending_replies": [
+  {
+   "pid": "18084926699371523",
+   "key": "rikuso_saiyou.mp4",
+   "url": "https://apps.apple.com/jp/app/id6772919770",
+   "note": "12時枠 入隊"
+  }
+ ]
 }
