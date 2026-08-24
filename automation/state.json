@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-08-25",
- "yt_count": 1,
- "last_yt_seq": 5670,
+ "yt_count": 2,
+ "last_yt_seq": 5672,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -403,7 +403,8 @@
   "qc3_cbt_20260822_0304.mp4",
   "shoubo4_20260822_0118.mp4",
   "sololevel_look_20260822_0304.mp4",
-  "rikuso_c_20260822_0543.mp4"
+  "rikuso_c_20260822_0543.mp4",
+  "rikuso_c_20260822_1013.mp4"
  ],
  "hist": {
   "threads": {
@@ -421,7 +422,7 @@
    "jsdf_hook_ichijikin.mp4": "2026-08-09T06:33:38.094798",
    "jsdf_hook_kyufu120.mp4": "2026-08-09T07:32:05.688637",
    "jsdf_hook_shoninkyu.mp4": "2026-08-09T08:31:54.514284",
-   "qc3_recall.mp4": "2026-08-22T15:09:42.404010",
+   "qc3_recall.mp4": "2026-08-25T08:20:20.386941",
    "koushu4_kinai.mp4": "2026-08-02T13:47:51.628143",
    "otsu6_kinai.mp4": "2026-08-02T13:47:51.628143",
    "qc2_recall.mp4": "2026-08-22T16:24:46.572816",
@@ -1150,7 +1151,7 @@
    "milchugo_20260822_0543.mp4": "2026-08-25T00:36:30.709794"
   }
  },
- "last_yt_ts": "2026-08-25T06:08:58.187200",
+ "last_yt_ts": "2026-08-25T08:20:20.386941",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -1360,9 +1361,11 @@
   "rikusoA_20260821_1725.mp4": 0,
   "unkan_20260821_1725.mp4": 1,
   "yobi_saiyou.mp4": 1,
-  "rikuso_ichiya_v3.mp4": 0
+  "rikuso_ichiya_v3.mp4": 0,
+  "qc3_recall.mp4": 0
  },
  "yt_apps_today": [
+  "6774074604",
   "6774074604"
  ],
  "ig_var": {
@@ -1454,14 +1457,17 @@
    12,
    21
   ],
-  "2026-08-25": []
+  "2026-08-25": [
+   8
+  ]
  },
  "th_app_seq": {
   "6772919770": 2,
   "6795834934": 1,
   "6774074604": 1,
   "6776236258": 0,
-  "6778490302": 1
+  "6778490302": 1,
+  "6780823003": 0
  },
  "ig_posted": [
   "otsu6_news.mp4",
@@ -1863,7 +1869,8 @@
   "rikuso_saiyou.mp4": 1,
   "kanbu_saiyou.mp4": 0,
   "iritai_soukoho828_20260730_1855.mp4": 0,
-  "rikuso_ichiya_v3.mp4": 0
+  "rikuso_ichiya_v3.mp4": 0,
+  "qc3_recall.mp4": 0
  },
  "yt_playlists": {},
  "th_pending_replies": []
