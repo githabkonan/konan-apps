@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-08-25",
- "yt_count": 5,
- "last_yt_seq": 5677,
+ "yt_count": 6,
+ "last_yt_seq": 5680,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -407,7 +407,8 @@
   "rikuso_c_20260822_1013.mp4",
   "unkan_ryo_new_20260822_0304.mp4",
   "unkan_ryo_new_20260822_0543.mp4",
-  "milchugo_goi_20260822_0304.mp4"
+  "milchugo_goi_20260822_0304.mp4",
+  "unkan_kam_20260822_0118.mp4"
  ],
  "hist": {
   "threads": {
@@ -1154,7 +1155,7 @@
    "milchugo_20260822_0543.mp4": "2026-08-25T00:36:30.709794"
   }
  },
- "last_yt_ts": "2026-08-25T13:35:52.253763",
+ "last_yt_ts": "2026-08-25T16:42:48.235165",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -1372,7 +1373,8 @@
   "6774074604",
   "6795834934",
   "6795834934",
-  "6793817475"
+  "6793817475",
+  "6795367683"
  ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
