@@ -211,11 +211,17 @@ try:
         IG_MAX_PER_DAY = max(1, min(IG_MAX_PER_DAY, -(-len(_ig_left) // _ig_days)))
 except Exception:
     pass   # 2026-08-23 konan「本数は関係ない」→新作24本を全部1回ずつ(再投稿だけ廃止)
-IG_RUNS_PER_DAY = int(os.environ.get("IG_RUNS_PER_DAY", "24"))   # cron は毎時
+# 【2026-08-26 konan指示「時間も一番バズりやすい時間にしろ」】均等割りをやめ、バズりやすい枠だけに出す。
+# 日本のIGリールの山は 7-8時 / 12-13時 / 20-21時(2026年調査・複数媒体一致)。アルゴリズムが初速を
+# 評価する時間を確保するため「山の1〜2時間前に出す」が定石 → 山の1時間前に枠を置く。
+# 2本/日なら 19時(夜の主戦場)と 11時(昼)。cronが落ちた枠は後続ランが日次上限の範囲で拾う
+# (上限2本なので、まとめ出しでスパムに見える量にはならない)。
+IG_HOUR_RANK = [19, 11, 20, 12, 7, 21, 8, 13, 18, 22, 10, 17, 9, 16, 23, 15, 14, 6]
+IG_ACTIVE_HOURS = IG_HOUR_RANK[:max(0, IG_MAX_PER_DAY)]
 _ig_today = _today_count("instagram")
+_ig_slot_target = sum(1 for h in IG_ACTIVE_HOURS if now.hour >= h)
 IG_PER_RUN = int(os.environ.get("IG_PER_RUN") or
-                 max(0, min(_even_share(IG_MAX_PER_DAY, IG_RUNS_PER_DAY, now.hour),
-                            IG_MAX_PER_DAY - _ig_today)))
+                 max(0, min(_ig_slot_target, IG_MAX_PER_DAY) - _ig_today))
 
 # 【F-412 / 2026-08-13】Threads は7/30以降に4件をスパム削除されて 8/12 に完全停止した。
 # 削除されたのは1日21本想定で同型を投げていた頃のもの。形式(テキスト)は konan 指示どおり戻し、本数を絞った。
@@ -716,7 +722,7 @@ for _h in _slots:
         ok_count += 1; mark("threads", tp); _th_done.append(_h)
     if len(_slots) > 1: time.sleep(THREADS_GAP_S)
 
-# Instagram: 公式上限100/24h を毎時4〜5本に均して埋める(rotation: seq)
+# Instagram: バズりやすい時間帯の枠(IG_ACTIVE_HOURS)だけに投稿(rotation: seq)
 for i in range(IG_PER_RUN):
     ip = pick("instagram", seq * 5 + i)
     if ip is None:
@@ -796,12 +802,20 @@ def _yt_daily_budget():
 YT_TODAY_MAX = _yt_daily_budget()
 
 
+# 【2026-08-26 konan指示「時間も一番バズりやすい時間にしろ」】6-24時の均等配分をやめ、
+# バズりやすい時間帯の枠を上から使う。日本のYTショートの視聴の山は 20-23時(夜が最強)・
+# 平日は17-20時投稿が定石・土日は10-12時にも山(2026年調査・複数媒体一致)。
+# 初速評価の時間を確保するため山の1時間前に置く: 平日=19時・12時 / 土日=11時・19時。
+# ペース追従(F-410: cronが落ちても次の生きたランが遅れを吸収)はそのまま残る。
+YT_HOUR_RANK = [19, 12, 18, 20, 7, 17, 21, 8, 13, 22, 11, 16, 23, 10, 15, 9, 14, 6]
+if now.weekday() >= 5:   # 土日は午前の山(10-12時)を先に使う
+    YT_HOUR_RANK = [11, 19, 12, 18, 20, 7, 17, 21, 8, 13, 22, 16, 23, 10, 15, 9, 14, 6]
+
+
 def _yt_pace_target():
-    """今の時刻なら何本上がっているべきか(6:00-23:59 に YT_TODAY_MAX 本を均等配分)。"""
-    span = (YT_WIN_END + 1 - YT_WIN_START) * 60
-    elapsed = (now.hour - YT_WIN_START) * 60 + now.minute
-    elapsed = max(0, min(span, elapsed))
-    return min(YT_TODAY_MAX, -(-YT_TODAY_MAX * elapsed // span))  # 切り上げ
+    """今の時刻なら何本上がっているべきか(バズりやすい枠のうち、時刻が過ぎた枠の数)。"""
+    return min(YT_TODAY_MAX,
+               sum(1 for h in YT_HOUR_RANK[:YT_TODAY_MAX] if now.hour >= h))
 
 
 # 【2026-08-22 konan指摘・これが仕様】「24このアプリのための24本を1日でって言ったよな?」
