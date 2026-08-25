@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-08-25",
- "yt_count": 6,
- "last_yt_seq": 5680,
+ "yt_count": 7,
+ "last_yt_seq": 5684,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -408,7 +408,8 @@
   "unkan_ryo_new_20260822_0304.mp4",
   "unkan_ryo_new_20260822_0543.mp4",
   "milchugo_goi_20260822_0304.mp4",
-  "unkan_kam_20260822_0118.mp4"
+  "unkan_kam_20260822_0118.mp4",
+  "qc2_20260822_0543.mp4"
  ],
  "hist": {
   "threads": {
@@ -735,7 +736,7 @@
    "unkan_20260821_1725.mp4": "2026-08-23T00:17:25.753222",
    "kanbu_penghu_20260812_1829.mp4": "2026-08-23T01:19:37.093749",
    "unkan_ryokaku_20260821_2001.mp4": "2026-08-23T01:19:37.093749",
-   "lifecontrol_seikatsu_reset_20260803_1600.mp4": "2026-08-23T01:19:37.093749",
+   "lifecontrol_seikatsu_reset_20260803_1600.mp4": "2026-08-25T20:24:13.227037",
    "mileigo_kiribas_20260808_1148.mp4": "2026-08-23T01:19:37.093749",
    "iritai_nyuyoku_20260813_0544.mp4": "2026-08-23T01:19:37.093749",
    "unkan_ryokaku_20260821_2241.mp4": "2026-08-23T01:19:37.093749",
@@ -1155,7 +1156,7 @@
    "milchugo_20260822_0543.mp4": "2026-08-25T00:36:30.709794"
   }
  },
- "last_yt_ts": "2026-08-25T16:42:48.235165",
+ "last_yt_ts": "2026-08-25T20:24:13.227037",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -1366,7 +1367,8 @@
   "unkan_20260821_1725.mp4": 1,
   "yobi_saiyou.mp4": 1,
   "rikuso_ichiya_v3.mp4": 0,
-  "qc3_recall.mp4": 0
+  "qc3_recall.mp4": 0,
+  "lifecontrol_seikatsu_reset_20260803_1600.mp4": 0
  },
  "yt_apps_today": [
   "6774074604",
@@ -1374,7 +1376,8 @@
   "6795834934",
   "6795834934",
   "6793817475",
-  "6795367683"
+  "6795367683",
+  "6788352237"
  ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
@@ -1466,7 +1469,8 @@
    21
   ],
   "2026-08-25": [
-   8
+   8,
+   19
   ]
  },
  "th_app_seq": {
@@ -1476,7 +1480,7 @@
   "6776236258": 0,
   "6778490302": 1,
   "6780823003": 0,
-  "6782221037": 0
+  "6782221037": 1
  },
  "ig_posted": [
   "otsu6_news.mp4",
@@ -1880,7 +1884,8 @@
   "iritai_soukoho828_20260730_1855.mp4": 0,
   "rikuso_ichiya_v3.mp4": 0,
   "qc3_recall.mp4": 0,
-  "lc_heatstroke2_v3.mp4": 0
+  "lc_heatstroke2_v3.mp4": 0,
+  "lifecontrol_seikatsu_reset_20260803_1600.mp4": 0
  },
  "yt_playlists": {},
  "th_pending_replies": []
