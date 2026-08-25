@@ -200,7 +200,9 @@ def _today_count(platform):
 # 【2026-08-23 IG一次調査】Instagram Ranking Explained(公式)は「すでに投稿済みのリール」を表示抑制対象と明記、
 # Community Guidelinesは反復投稿をスパム行為と明記。100/24hは技術上限であって安全量ではない。
 # → 各動画1回限り(再投稿ローテ廃止)・1日12本・売れ筋優先(konan 8/23「絞るなら売れ筋トップ優先」)
-IG_MAX_PER_DAY = int(os.environ.get("IG_MAX_PER_DAY", "24"))
+# 【v4・2026-08-26 konan全面改修】最適投稿数調査(二次ソース)で IG Reels は1〜2本/日が最適、
+# 3本超は既存投稿の露出を食い合う。物量24本/日は12倍過剰で自滅路線だった。
+IG_MAX_PER_DAY = int(os.environ.get("IG_MAX_PER_DAY", "2"))
 # 【2026-08-23 konan】利用上限中は動画を作れない → 新作在庫を火曜22時(YT_HORIZONと同じ)まで按分して切らさない
 try:
     _ig_left = [p for p in POSTS if p.get("video") and p["video"] not in STATE.get("ig_posted", []) and p["video"] not in STATE.get("hist", {}).get("instagram", {})]
@@ -230,7 +232,7 @@ IG_PER_RUN = int(os.environ.get("IG_PER_RUN") or
 # 根本原因は解決されないからやめろ」で撤回し 240 に戻した。実測(video_metrics.db)でも
 # 7/30以降は 1〜7本/日に落としても平均viewsは 0.3〜4.7 のままで、**本数を減らしても回復しない**。
 # = 本数は原因ではない。減らすと露出だけ失って原因は残る。本数はここで触らない。
-THREADS_MAX_PER_DAY = int(os.environ.get("THREADS_MAX_PER_DAY", "4"))   # 2026-08-23 回復期(旧240)
+THREADS_MAX_PER_DAY = int(os.environ.get("THREADS_MAX_PER_DAY", "3"))   # v4(2026-08-26): 最適2〜3本/日調査に合わせる(旧240→回復期4→3)
 THREADS_RUNS_PER_DAY = int(os.environ.get("THREADS_RUNS_PER_DAY", "24"))  # cron は毎時
 THREADS_GAP_S = int(os.environ.get("THREADS_GAP_S", "25"))       # 連投間隔
 _th_today = _today_count("threads")
@@ -731,7 +733,9 @@ for i in range(IG_PER_RUN):
 # 未投稿の動画が無くなったら投稿しない(=新作が投入されると自動再開)。
 # 【2026-08-21 konan指示】新クォータ(1回=1pt・100/日)確認済みにつき24本/日へ。
 # ただしYouTubeのスパム量産検知は別問題なので、多様化ルール(1アプリ2本まで・角度分散)を前提とする
-YT_MAX_PER_DAY = int(os.environ.get("YT_MAX_PER_DAY", "24"))
+# 【v4・2026-08-26 konan全面改修】最適投稿数調査で YT Shorts は1〜2本/日が最適(3本超は逆効果)。
+# 実測でも本数2.8倍で1本平均23%に低下(量産で自滅)。質量転換: konan台本形式×少数精鋭へ。
+YT_MAX_PER_DAY = int(os.environ.get("YT_MAX_PER_DAY", "2"))
 # 【2026-08-23 YT一次調査・ルール8】緊急ブレーキ: スパム規約は全動画対象(90日3ストライクで終了)。
 # 1本あたり再生が直近7日平均の半分を切ったら 8本/日に絞り、売れ筋(優先枠)だけ出す(konan「絞るなら売れ筋優先」)
 YT_BRAKE = False
@@ -765,7 +769,7 @@ if STATE.get("yt_date") != today:
 # 24本/日で流し続けると在庫が期限前に尽きて、チャンネルが数日まる無音になる。
 # → 1日の本数を **在庫 ÷ 期限までの残り日数** で自動的に絞る。薄い日は自然に減り、
 #   期限までゼロにならない。期限を過ぎたら絞りは自動で外れる(古い日付が足枷にならない)。
-YT_HORIZON = os.environ.get("YT_HORIZON", "2026-08-25T22:00")
+YT_HORIZON = os.environ.get("YT_HORIZON", "2026-09-01T22:00")   # v4: 8/26〜9/1(火)22:00 の1週間分
 
 
 YT_PER_APP_PER_DAY = int(os.environ.get("YT_PER_APP_PER_DAY", "2"))   # 1アプリ2本/日まで(2026-08-23)
