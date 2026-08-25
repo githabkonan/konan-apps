@@ -206,7 +206,7 @@ IG_MAX_PER_DAY = int(os.environ.get("IG_MAX_PER_DAY", "2"))
 # 【2026-08-23 konan】利用上限中は動画を作れない → 新作在庫を火曜22時(YT_HORIZONと同じ)まで按分して切らさない
 try:
     _ig_left = [p for p in POSTS if p.get("video") and p["video"] not in STATE.get("ig_posted", []) and p["video"] not in STATE.get("hist", {}).get("instagram", {})]
-    _ig_days = -(-int((datetime.datetime.fromisoformat(os.environ.get("YT_HORIZON", "2026-08-25T22:00")) - now).total_seconds()) // 86400)
+    _ig_days = -(-int((datetime.datetime.fromisoformat(os.environ.get("YT_HORIZON", "2026-09-01T22:00")) - now).total_seconds()) // 86400)
     if _ig_days > 0 and len(_ig_left) < IG_MAX_PER_DAY * _ig_days:
         IG_MAX_PER_DAY = max(1, min(IG_MAX_PER_DAY, -(-len(_ig_left) // _ig_days)))
 except Exception:
