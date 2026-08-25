@@ -444,7 +444,7 @@
    "eigo_noh_2.mp4": "2026-08-22T17:23:43.509979",
    "qc3_daihatsu_v3.mp4": "2026-08-22T16:24:46.572816",
    "koushu4_shiken719_v3.mp4": "2026-07-24T13:16:17.368273",
-   "lc_heatstroke2_v3.mp4": "2026-08-22T16:24:46.572816",
+   "lc_heatstroke2_v3.mp4": "2026-08-25T19:27:49.025014",
    "koushu4_kasai_v3.mp4": "2026-08-11T19:07:55.724745",
    "qc3_hattendo_v3.mp4": "2026-08-22T16:38:35.446483",
    "qc_speaker_fire_v3.mp4": "2026-08-04T08:49:44.650237",
@@ -1253,7 +1253,7 @@
   "mil_test_1.mp4": 0,
   "oshilog_launch.mp4": 0,
   "qc3_daihatsu_v3.mp4": 0,
-  "lc_heatstroke2_v3.mp4": 0,
+  "lc_heatstroke2_v3.mp4": 1,
   "kanbu_kiro_20260816_0400.mp4": 0,
   "kankokugo_launch.mp4": 0,
   "eigo_noh_1.mp4": 0,
@@ -1475,7 +1475,8 @@
   "6774074604": 1,
   "6776236258": 0,
   "6778490302": 1,
-  "6780823003": 0
+  "6780823003": 0,
+  "6782221037": 0
  },
  "ig_posted": [
   "otsu6_news.mp4",
@@ -1878,7 +1879,8 @@
   "kanbu_saiyou.mp4": 0,
   "iritai_soukoho828_20260730_1855.mp4": 0,
   "rikuso_ichiya_v3.mp4": 0,
-  "qc3_recall.mp4": 0
+  "qc3_recall.mp4": 0,
+  "lc_heatstroke2_v3.mp4": 0
  },
  "yt_playlists": {},
  "th_pending_replies": []
