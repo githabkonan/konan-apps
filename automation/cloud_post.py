@@ -719,11 +719,23 @@ for _h in _slots:
     rot = STATE.setdefault("th_app_seq", {})
     j = int(rot.get(target, -1)) + 1; rot[target] = j
     tp = cands[j % len(cands)]
-    ok, val = with_retry(lambda p=tp: publish_threads(p))
+    # 【F-442・2026-08-27】同文二重投稿ガード(最後の砦)。枠記録(th_slots)が何かの理由で
+    # 消えても、同じ動画の18h以内の再投稿はここで止める(hist は毎回確実に保存されている)。
+    # 8/26 に12時枠・21時枠で完全同文が2回ずつ出た。枠は消化扱いにする(出し損ね < 同文連投)。
+    if not cooled("threads", tp):
+        _th_done.append(_h); save_state()
+        print(f"  threads: {_h}時枠 {tp.get('app')} は18h以内に投稿済み=見送り(二重投稿ガード)")
+        continue
+    # 再試行しない: threads_publish がタイムアウトしても実際は成功している場合があり、
+    # 再試行=同文二重投稿になる。失敗時は枠が未消化のまま残るので、次のランが自然に拾う。
+    ok, val = with_retry(lambda p=tp: publish_threads(p), attempts=1)
     results.append({"ch": "threads", "app": tp.get("app"), "ok": ok, ("id" if ok else "err"): val})
     print(f"  threads[{_h}時枠 順位{list(_plan.values()).index(target)+1 if target in _plan.values() else '?'} {tp.get('app')}]: {'OK ' + str(val) if ok else 'FAIL ' + str(val)}")
     if ok:
-        ok_count += 1; mark("threads", tp); _th_done.append(_h)
+        # 【F-442】枠消化(_th_done.append)を mark(=save_state) より先に。逆順だと保存後に
+        # append する形になり、後続のIG/YT投稿が無いラン(v4で2本/日に絞って以降は大半)では
+        # 枠記録がディスクに載らず、次のランが同じ枠をもう一度出す=同文二重投稿の根本原因。
+        ok_count += 1; _th_done.append(_h); mark("threads", tp)
     if len(_slots) > 1: time.sleep(THREADS_GAP_S)
 
 # Instagram: バズりやすい時間帯の枠(IG_ACTIVE_HOURS)だけに投稿(rotation: seq)
@@ -901,6 +913,9 @@ if os.environ.get("YT_REFRESH_TOKEN") and YT_WIN_START <= now.hour <= YT_WIN_END
             save_state()
             seq += 1  # 連投時に同じアプリが続かないようローテを進める
 
+# 【F-442】終了前に必ず保存。「最後の投稿の後に別の save が来る」前提の書き方が
+# 二重投稿の温床だった。メモリ上の STATE とディスクを最後に一致させる。
+save_state()
 print("RESULT", json.dumps(results, ensure_ascii=False))
 # exit 1 は「試行したのに全失敗」の本物の障害だけ(=誤アラーム排除)。
 # 全クールダウン/上限=results空=正常な見送り→exit 0。一部失敗は許容(他は投稿済)。

@@ -35,6 +35,23 @@ def merge(local, remote):
         th[key] = max(int(i), int(th.get(key, -1)))
     out["th_var"] = th
 
+    # 【F-442・2026-08-27】th_slots(枠の消化記録)は日付ごとに和集合。片方にしか無くても
+    # 消化済み扱い=同じ枠をもう一度出さない安全側。丸ごと上書きだと古い側が勝った時に
+    # 記録が消えて同文二重投稿になる(8/26 実発生)。
+    sl = {d: list(v) for d, v in (remote.get("th_slots", {}) or {}).items()}
+    for d, hrs in (local.get("th_slots", {}) or {}).items():
+        cur = sl.setdefault(d, [])
+        for h in hrs:
+            if h not in cur:
+                cur.append(h)
+    out["th_slots"] = sl
+
+    # th_app_seq(アプリ別の投稿送り)も大きい方 = 同じ投稿を二度出さない安全側
+    sq = dict(remote.get("th_app_seq", {}) or {})
+    for k, v in (local.get("th_app_seq", {}) or {}).items():
+        sq[k] = max(int(v), int(sq.get(k, -1)))
+    out["th_app_seq"] = sq
+
     # 投稿済みは和集合。順序は remote を土台に、local の新規を後ろへ
     seen, posted = set(), []
     for v in list(remote.get("yt_posted", [])) + list(local.get("yt_posted", [])):

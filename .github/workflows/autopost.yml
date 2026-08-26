@@ -93,9 +93,13 @@ jobs:
         run: |
           git config user.name "Chokobi Sakusaku"
           git config user.email "konakonan822@gmail.com"
+          # 【F-442】このランが書いた state を退避。リトライ時の reset --hard で作業ツリーの
+          # state.json が origin の古い版に戻り、ランの投稿記録ごと消えていた(=次のランが同じ枠を再投稿)。
+          cp automation/state.json /tmp/run_state.json
           for i in 1 2 3 4 5; do
             git fetch origin main
             git show origin/main:automation/state.json > /tmp/remote_state.json 2>/dev/null || echo '{}' > /tmp/remote_state.json
+            cp /tmp/run_state.json automation/state.json
             python3 automation/merge_state.py /tmp/remote_state.json
             git add automation/state.json
             git diff --cached --quiet && { echo "state 変化なし"; exit 0; }
