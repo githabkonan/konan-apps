@@ -676,6 +676,10 @@ TH_HOUR_RANK = [21, 12, 8, 19, 22, 13, 7, 20, 23, 9, 18, 14, 17, 11, 10, 16, 15,
 # 1本あたり再生が20を超えたら 6→8 へ段階増(morning_check/metrics_log.jsonl で判定)。24本は数字が許した時だけ
 THREADS_DAILY_SLOTS = int(os.environ.get("THREADS_DAILY_SLOTS", "4"))
 TH_ACTIVE_HOURS = TH_HOUR_RANK[:THREADS_DAILY_SLOTS]
+# 【2026-08-26 konan 12:14指示「スレッドの今日の分は今、18時、21時にしろ」】
+# 8時枠を隔離事故で逃した今日だけ18時に補填枠を置く。日付条件なので明日から自然に消える
+if now.date().isoformat() == "2026-08-26":
+    TH_ACTIVE_HOURS = [21, 12, 18]
 
 def _threads_ranked_apps():
     ids = {}
