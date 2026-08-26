@@ -216,8 +216,8 @@ def lint(path, bad_keys=None):
                 errs.append(f"{tag}: yt_titleが100字超({len(yt)}字)— YouTubeが切る")
             if "アプリ" in yt:
                 errs.append(f"{tag}: yt_titleに「アプリ」— 実測で平均48再生(入れない場合241)。中身でなく話題で釣る")
-            if not re.search(r"[?？0-9０-９]", yt):
-                errs.append(f"{tag}: yt_titleに問いかけも数字も無い — 実測で問いかけ形は平均324、それ以外166")
+            # 「問いかけ/数字が無ければ却下」は廃止(2026-08-26 konan「厳しすぎるし極端なゲート辞めろ」。
+            # konanが判定器。実測傾向(問いかけ形324/それ以外166)は作る段階の参考値に留め、却下条件にしない)
             # 【2026-08-16 konan 指示「タイトルにハッシュタグつけるようにね」】
             # 縦3分未満は #shorts が無くてもShorts判定されるので、枠を題材ハッシュタグに使う。
             if not re.search(r"#\S", yt):
