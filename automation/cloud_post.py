@@ -393,13 +393,32 @@ def _split_body_and_url(post):
     body = _URL_RE.sub("", text)
     body = re.sub(r"[ \t]+\n", "\n", body).strip()
     body = re.sub(r"\n{3,}", "\n\n", body)
-    url = post.get("appstore_url") or (urls[0].rstrip(")。、") if urls else "")
+    url = post.get("appstore_url") or post.get("url") or (urls[0].rstrip(")。、") if urls else "")
     return body[:500], url
+
+
+def threads_account(post):
+    """投稿の中身から出し先アカウントを決める。**手元にあるトークンで決めない。**
+
+    konan 2026-08-28「ノートの宣伝投稿はサクッとじゃないの?」
+    アプリ宣伝=@tyokobisakusaku(さくさく) / note集客=@sakuttotyokobi(さくっと)で
+    商品ごとに導線を分ける、が konan の設計。さくっとのトークンが無いからといって
+    さくさくに出すのは違反(実際にそれで誤投稿した)。無いなら**出さない**。
+    """
+    if post.get("type") == "note":
+        uid = os.environ.get("NOTE_THREADS_USER_ID")
+        tok = os.environ.get("NOTE_THREADS_ACCESS_TOKEN")
+        if not (uid and tok):
+            raise RuntimeError(
+                "note枠は @sakuttotyokobi 専用。NOTE_THREADS_USER_ID / "
+                "NOTE_THREADS_ACCESS_TOKEN が無いので投稿しない(さくさくには絶対に出さない)")
+        return uid, tok
+    return os.environ["THREADS_USER_ID"], os.environ["THREADS_ACCESS_TOKEN"]
 
 
 def publish_threads(post):
     """二段構え: ①本文(URLなし)を投稿 → ②その投稿への返信でApp Store URLを貼る。"""
-    uid = os.environ["THREADS_USER_ID"]; tok = os.environ["THREADS_ACCESS_TOKEN"]
+    uid, tok = threads_account(post)
     B = "https://graph.threads.net/v1.0"
     body, url = _split_body_and_url(post)
     cid = _post(f"{B}/{uid}/threads", {"media_type": "TEXT", "text": body, "access_token": tok})["id"]
@@ -503,6 +522,10 @@ def publish_youtube(post):
     # 会話に入る(返信)にはMeta審査が要るので、当面の無料の入口はここしかない。
     # YouTubeは1日8.7万再生出ているので、説明欄が唯一まとまった観客に触れる面になる。
     desc += "\n\nThreads: https://www.threads.com/@tyokobisakusaku"
+    # 【2026-08-28 konan指示】note の宣伝も投稿工場に載せる。YT説明欄は唯一まとまった
+    # 観客に触れる面(1日8.7万再生)で、審査も要らず貼り替えも効く。最新記事1本だけ出す
+    if NOTE_NOTES and NOTE_NOTES[0].get("url"):
+        desc += f"\nnote: {NOTE_NOTES[0]['url']}"
     snip = {"title": title[:100], "description": desc[:4900], "categoryId": "27"}
     if post.get("yt_tags"):
         tags, n = [], 0
@@ -681,6 +704,35 @@ TH_ACTIVE_HOURS = TH_HOUR_RANK[:THREADS_DAILY_SLOTS]
 if now.date().isoformat() == "2026-08-26":
     TH_ACTIVE_HOURS = [21, 12, 18]
 
+# 【2026-08-28 konan指示】「ノートの宣伝も投稿工場の内容に組み込む」
+# note有料記事の集客ポストは note工場が output/<slug>/05_sns_posts.md に5本作っている。
+# それを note-factory/sns_queue.py が note_queue.json に落とし、ここが1日1枠で消費する。
+# **枠は増やさずアプリ枠から1つ借りる**(本数を増やすとF-412=同型連投の再発条件に近づく)。
+# 投稿の形はアプリと同じ二段構え(本文はURLなし → 自分への返信でnoteのURL)。
+# 出し先は **@sakuttotyokobi 固定**(threads_account 参照)。専用トークンが無い間は枠ごと作らない。
+try:
+    NOTE_NOTES = json.load(open(os.path.join(HERE, "note_queue.json")))["notes"]
+except Exception:
+    NOTE_NOTES = []
+NOTE_READY = bool(os.environ.get("NOTE_THREADS_USER_ID") and os.environ.get("NOTE_THREADS_ACCESS_TOKEN"))
+NOTE_HOUR = TH_ACTIVE_HOURS[-1] if (NOTE_NOTES and NOTE_READY and len(TH_ACTIVE_HOURS) > 1) else None
+if NOTE_HOUR is not None:
+    TH_ACTIVE_HOURS = TH_ACTIVE_HOURS[:-1]
+
+
+def _note_post():
+    """公開済みnoteの集客ポストを1本。記事も言い回しも順に回して同じ文を二度出さない。"""
+    if not NOTE_NOTES:
+        return None
+    st = STATE.setdefault("note_var", {})
+    i = int(st.get("_article", -1)) + 1
+    st["_article"] = i
+    n = NOTE_NOTES[i % len(NOTE_NOTES)]
+    j = int(st.get(n["key"], -1)) + 1
+    st[n["key"]] = j
+    return {"app": n["key"], "type": "note", "url": n.get("url", ""),
+            "threads_text": n["variants"][j % len(n["variants"])]}
+
 def _threads_ranked_apps():
     ids = {}
     for p_ in POSTS:
@@ -711,6 +763,19 @@ if now.minute < 30 and (now.hour - 1) >= 0 and (now.hour - 1) not in _th_done:
     _slots.insert(0, now.hour - 1)   # 直前の枠がcron遅延で落ちていれば1枠だけ拾う
 for _h in _slots:
     if not os.environ.get("THREADS_ACCESS_TOKEN") or _h in _th_done:
+        continue
+    if _h == NOTE_HOUR:
+        np_ = _note_post()
+        if np_ is None:
+            continue
+        if not cooled("threads", np_):
+            _th_done.append(_h); save_state()
+            print(f"  threads: {_h}時枠 note は18h以内に投稿済み=見送り"); continue
+        ok, val = with_retry(lambda p=np_: publish_threads(p), attempts=1)
+        results.append({"ch": "threads", "app": np_["app"], "ok": ok, ("id" if ok else "err"): val})
+        print(f"  threads[{_h}時枠 note {np_['app']}]: {'OK ' + str(val) if ok else 'FAIL ' + str(val)}")
+        if ok:
+            ok_count += 1; _th_done.append(_h); mark("threads", np_)
         continue
     target = _plan.get(_h)
     cands = [p_ for p_ in POSTS if target and _app_id(p_) == target and p_.get("threads_text")]
