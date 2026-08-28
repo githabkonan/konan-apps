@@ -424,17 +424,25 @@ def publish_threads(post):
     cid = _post(f"{B}/{uid}/threads", {"media_type": "TEXT", "text": body, "access_token": tok})["id"]
     pid = _post(f"{B}/{uid}/threads_publish", {"creation_id": cid, "access_token": tok}).get("id")
     if pid and url:
-        STATE.setdefault("th_pending_replies", []).append({"pid": pid, "key": post.get("video") or post.get("app"), "url": url})
-        _threads_flush_replies(uid, tok)
+        STATE.setdefault("th_pending_replies", []).append(
+            {"pid": pid, "key": post.get("video") or post.get("app"), "url": url,
+             "acct": "note" if post.get("type") == "note" else "main"})
+        _threads_flush_replies(uid, tok, "note" if post.get("type") == "note" else "main")
     return pid
 
 
-def _threads_flush_replies(uid, tok):
-    """未完了のURL返信を試す。失敗はエラー本文ごと記録し、次のランで再試行(konan 8/23「本文だけで返信が無い」)。"""
+def _threads_flush_replies(uid, tok, acct="main"):
+    """未完了のURL返信を試す。失敗はエラー本文ごと記録し、次のランで再試行(konan 8/23「本文だけで返信が無い」)。
+
+    親投稿を出したアカウントでしか返信しない。混ざると「さくさくがさくっとの投稿に返信」になる
+    ([[feedback_route_by_audience_not_by_token]])。
+    """
     B = "https://graph.threads.net/v1.0"
     pend = STATE.setdefault("th_pending_replies", [])
     keep = []
     for it in pend:
+        if it.get("acct", "main") != acct:
+            keep.append(it); continue
         pid, key, url = it["pid"], it["key"], it["url"]
         pool = THREADS_REPLIES.get(key) or []
         if pool:
@@ -756,7 +764,9 @@ def _threads_plan():
 _today_jst = now.date().isoformat()
 _th_done = STATE.setdefault("th_slots", {}).setdefault(_today_jst, [])
 if os.environ.get("THREADS_ACCESS_TOKEN") and STATE.get("th_pending_replies"):
-    _threads_flush_replies(os.environ["THREADS_USER_ID"], os.environ["THREADS_ACCESS_TOKEN"])
+    _threads_flush_replies(os.environ["THREADS_USER_ID"], os.environ["THREADS_ACCESS_TOKEN"], "main")
+if NOTE_READY and STATE.get("th_pending_replies"):
+    _threads_flush_replies(os.environ["NOTE_THREADS_USER_ID"], os.environ["NOTE_THREADS_ACCESS_TOKEN"], "note")
 _plan = _threads_plan()
 _slots = [now.hour]
 if now.minute < 30 and (now.hour - 1) >= 0 and (now.hour - 1) not in _th_done:
