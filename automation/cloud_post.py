@@ -769,8 +769,16 @@ if NOTE_READY and STATE.get("th_pending_replies"):
     _threads_flush_replies(os.environ["NOTE_THREADS_USER_ID"], os.environ["NOTE_THREADS_ACCESS_TOKEN"], "note")
 _plan = _threads_plan()
 _slots = [now.hour]
-if now.minute < 30 and (now.hour - 1) >= 0 and (now.hour - 1) not in _th_done:
-    _slots.insert(0, now.hour - 1)   # 直前の枠がcron遅延で落ちていれば1枠だけ拾う
+# 【2026-08-29】GitHubのスケジュールは1時間ではなく数時間まとめて落ちる(8/28は17:24→翌05:34で
+# 一度も発火せず、21時枠=最上位枠を2日連続で失った)。旧実装は「直前1時間・:30まで」しか拾わない
+# ので、その窓の外で復帰したランは枠を永久に取りこぼす。遡りを3時間に広げる。
+# 拾うのは1枠だけ(まとめ出しはF-412の同型連投条件に近づくのでやらない)。
+_th_slot_hours = set(TH_ACTIVE_HOURS) | ({NOTE_HOUR} if NOTE_HOUR is not None else set())
+for _back in range(1, 4):
+    _h_miss = now.hour - _back
+    if _h_miss >= 0 and _h_miss in _th_slot_hours and _h_miss not in _th_done:
+        _slots.insert(0, _h_miss)
+        break
 for _h in _slots:
     if not os.environ.get("THREADS_ACCESS_TOKEN") or _h in _th_done:
         continue
