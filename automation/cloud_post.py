@@ -783,6 +783,12 @@ for _back in range(1, 4):
         _slots.insert(0, _h_miss)
         break
 for _h in _slots:
+    # 【2026-08-29 リグレッション修正】旧実装は枠ごとに割り当て先(target)を持ち、枠でない時間は
+    # target が無いので落ちていた。ローテーション化でその暗黙のフィルタごと消えてしまい、
+    # 実測で 13時(枠でない)に投稿された。放置すると6-23時の毎時=1日16本になり、
+    # 1日3本の設計とF-412(スパム判定で投稿削除)の両方に反する。枠の時間だけに戻す。
+    if _h not in _th_slot_hours:
+        continue
     if not os.environ.get("THREADS_ACCESS_TOKEN") or _h in _th_done:
         continue
     if _h == NOTE_HOUR:
