@@ -46,11 +46,19 @@ def merge(local, remote):
                 cur.append(h)
     out["th_slots"] = sl
 
-    # th_app_seq(アプリ別の投稿送り)も大きい方 = 同じ投稿を二度出さない安全側
-    sq = dict(remote.get("th_app_seq", {}) or {})
-    for k, v in (local.get("th_app_seq", {}) or {}).items():
-        sq[k] = max(int(v), int(sq.get(k, -1)))
-    out["th_app_seq"] = sq
+    # 【2026-08-29】th_cycle(全アプリ一巡の消化記録)。周回番号 th_cycle_n が進んでいる方を採る。
+    # 単純な和集合だと、一巡し終えてリセットした側の空リストに古い14件が復活して周回が進まなくなる。
+    lg, rg = int(local.get("th_cycle_n", 0)), int(remote.get("th_cycle_n", 0))
+    if lg > rg:
+        cyc = list(local.get("th_cycle", []) or [])
+    elif rg > lg:
+        cyc = list(remote.get("th_cycle", []) or [])
+    else:
+        cyc = list(remote.get("th_cycle", []) or [])
+        for k in (local.get("th_cycle", []) or []):
+            if k not in cyc:
+                cyc.append(k)
+    out["th_cycle"], out["th_cycle_n"] = cyc, max(lg, rg)
 
     # 投稿済みは和集合。順序は remote を土台に、local の新規を後ろへ
     seen, posted = set(), []

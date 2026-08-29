@@ -11,7 +11,7 @@
 - Threads/IG のローテはASC実売上(revenue.db)で重み付け(2026-07-19 konan「売れるアプリをより打ってかないと・ASCの結果と紐付いてない」)。
   重み無しの均等ローテはゼロ課金アプリ(ライフコントロール等)を稼ぎ頭(陸曹昇任等)と同じ露出にしてしまっていた。
 """
-import json, os, sys, time, datetime, urllib.parse, urllib.request, re
+import json, os, sys, time, datetime, urllib.parse, urllib.request, re, hashlib
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 Q = json.load(open(os.path.join(HERE, "post_queue.json")))
@@ -759,25 +759,11 @@ def _note_post():
     return {"app": n["key"], "type": "note", "url": n.get("url", ""),
             "threads_text": n["variants"][j % len(n["variants"])]}
 
-def _threads_ranked_apps():
-    ids = {}
-    for p_ in POSTS:
-        aid = _app_id(p_)
-        if aid and p_.get("threads_text"): ids[aid] = p_.get("app")
-    return sorted(ids, key=lambda a: (-float(REVENUE_WEIGHT.get(a, 0)) - (0.5 if a in KONAN_PRIORITY else 0), a))
-
-def _threads_plan():
-    """{時: アプリID}。Top1→最も人が見る時間。アプリが24本未満なら余った枠は上位から2巡目"""
-    ranked = _threads_ranked_apps()
-    plan = {}
-    # 全アプリ網羅は「日」でなく「週」で達成する: 日ごとに上位から回す起点をずらす
-    day_off = (day_num * THREADS_DAILY_SLOTS) % max(1, len(ranked)) if ranked else 0
-    for i, h in enumerate(TH_ACTIVE_HOURS):
-        if not ranked: break
-        # 最も人が見る枠には常に売上Top1〜を置き、残り枠で全アプリを日替わり巡回
-        idx = i if i < 2 else (day_off + i) % len(ranked)
-        plan[h] = ranked[idx]
-    return plan
+def _threads_order_key(p_):
+    """周回の中での並び順。売上加重はかけない(2026-08-06 konan指示: Threadsは全アプリ均等)。
+    周回番号を混ぜて毎周ばらす = 毎週まったく同じ曜日に同じアプリ、にならないようにする。"""
+    seed = f"{_app_id(p_)}|{int(STATE.get('th_cycle_n', 0))}"
+    return hashlib.md5(seed.encode()).hexdigest()
 
 _today_jst = now.date().isoformat()
 _th_done = STATE.setdefault("th_slots", {}).setdefault(_today_jst, [])
@@ -785,7 +771,6 @@ if os.environ.get("THREADS_ACCESS_TOKEN") and STATE.get("th_pending_replies"):
     _threads_flush_replies(os.environ["THREADS_USER_ID"], os.environ["THREADS_ACCESS_TOKEN"], "main")
 if NOTE_READY and STATE.get("th_pending_replies"):
     _threads_flush_replies(os.environ["NOTE_THREADS_USER_ID"], os.environ["NOTE_THREADS_ACCESS_TOKEN"], "note")
-_plan = _threads_plan()
 _slots = [now.hour]
 # 【2026-08-29】GitHubのスケジュールは1時間ではなく数時間まとめて落ちる(8/28は17:24→翌05:34で
 # 一度も発火せず、21時枠=最上位枠を2日連続で失った)。旧実装は「直前1時間・:30まで」しか拾わない
@@ -824,25 +809,38 @@ for _h in _slots:
                 print(f"  threads: note {np_['app']} を3回連続失敗で隔離(以後選ばない)")
         _th_done.append(_h); save_state()
         continue
-    target = _plan.get(_h)
-    cands = [p_ for p_ in POSTS if target and _app_id(p_) == target and p_.get("threads_text")]
-    if not cands:
-        print(f"  threads: {_h}時枠 対象アプリ{target}の投稿が無い=見送り"); continue
-    rot = STATE.setdefault("th_app_seq", {})
-    j = int(rot.get(target, -1)) + 1; rot[target] = j
-    tp = cands[j % len(cands)]
+    # 【2026-08-29 konan「再利用じゃなくてローテーションにして。毎回同じ投稿とか論外」】
+    # 旧: 枠ごとに売上上位アプリを固定割り当て(上位2枠は常に同じアプリ)、18h経てば同じ投稿が再登場。
+    # 14投稿=14アプリで1アプリ1本しかないため上位が延々と戻り、予備自衛官補だけが10回出ていた。
+    # 新: 全アプリを1本ずつ出し切るまで同じアプリを出さない。売上は周回内の並び順にだけ効かせる。
+    _all_th = [p_ for p_ in POSTS if p_.get("threads_text")]
+    if not _all_th:
+        print(f"  threads: {_h}時枠 投稿候補が無い=見送り"); continue
+    _all_th.sort(key=_threads_order_key)
+    _cyc = STATE.setdefault("th_cycle", [])
+    _pool = [p_ for p_ in _all_th if (p_.get("video") or p_.get("app")) not in _cyc]
+    if not _pool:
+        # 周回の切れ目で「前周の最後」と「次周の最初」が同じアプリになると連日同じ物が出る。除く。
+        _last = _cyc[-1] if _cyc else None
+        del _cyc[:]
+        STATE["th_cycle_n"] = int(STATE.get("th_cycle_n", 0)) + 1
+        _all_th.sort(key=_threads_order_key)
+        _pool = [p_ for p_ in _all_th if (p_.get("video") or p_.get("app")) != _last] or list(_all_th)
+        print(f"  threads: 全{len(_all_th)}アプリを一巡したので次の周回({STATE['th_cycle_n']})に入る")
     # 【F-442・2026-08-27】同文二重投稿ガード(最後の砦)。枠記録(th_slots)が何かの理由で
     # 消えても、同じ動画の18h以内の再投稿はここで止める(hist は毎回確実に保存されている)。
-    # 8/26 に12時枠・21時枠で完全同文が2回ずつ出た。枠は消化扱いにする(出し損ね < 同文連投)。
-    if not cooled("threads", tp):
+    tp = next((p_ for p_ in _pool if cooled("threads", p_)), None)
+    if tp is None:
         _th_done.append(_h); save_state()
-        print(f"  threads: {_h}時枠 {tp.get('app')} は18h以内に投稿済み=見送り(二重投稿ガード)")
-        continue
+        print(f"  threads: {_h}時枠 周回内に出せる投稿が無い=見送り"); continue
+    # 成否にかかわらず周回から外す(先に保存する)。外さないと失敗した1本が周回を止めて
+    # 同じアプリを30分おきに掴み続け、他のアプリが一生出なくなる。
+    _cyc.append(tp.get("video") or tp.get("app")); save_state()
     # 再試行しない: threads_publish がタイムアウトしても実際は成功している場合があり、
     # 再試行=同文二重投稿になる。失敗時は枠が未消化のまま残るので、次のランが自然に拾う。
     ok, val = with_retry(lambda p=tp: publish_threads(p), attempts=1)
     results.append({"ch": "threads", "app": tp.get("app"), "ok": ok, ("id" if ok else "err"): val})
-    print(f"  threads[{_h}時枠 順位{list(_plan.values()).index(target)+1 if target in _plan.values() else '?'} {tp.get('app')}]: {'OK ' + str(val) if ok else 'FAIL ' + str(val)}")
+    print(f"  threads[{_h}時枠 周回{len(_cyc)}/{len(_all_th)} {tp.get('app')}]: {'OK ' + str(val) if ok else 'FAIL ' + str(val)}")
     if ok:
         # 【F-442】枠消化(_th_done.append)を mark(=save_state) より先に。逆順だと保存後に
         # append する形になり、後続のIG/YT投稿が無いラン(v4で2本/日に絞って以降は大半)では
