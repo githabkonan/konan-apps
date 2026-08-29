@@ -732,10 +732,14 @@ def _note_post():
     """公開済みnoteの集客ポストを1本。記事も言い回しも順に回して同じ文を二度出さない。"""
     if not NOTE_NOTES:
         return None
+    qua = set(STATE.get("note_quarantine") or [])
+    pool = [x for x in NOTE_NOTES if x["key"] not in qua]
+    if not pool:
+        return None
     st = STATE.setdefault("note_var", {})
     i = int(st.get("_article", -1)) + 1
     st["_article"] = i
-    n = NOTE_NOTES[i % len(NOTE_NOTES)]
+    n = pool[i % len(pool)]
     j = int(st.get(n["key"], -1)) + 1
     st[n["key"]] = j
     return {"app": n["key"], "type": "note", "url": n.get("url", ""),
@@ -793,7 +797,18 @@ for _h in _slots:
         results.append({"ch": "threads", "app": np_["app"], "ok": ok, ("id" if ok else "err"): val})
         print(f"  threads[{_h}時枠 note {np_['app']}]: {'OK ' + str(val) if ok else 'FAIL ' + str(val)}")
         if ok:
-            ok_count += 1; _th_done.append(_h); mark("threads", np_)
+            ok_count += 1; mark("threads", np_)
+            STATE.setdefault("note_fail", {}).pop(np_["app"], None)
+        else:
+            # 【F-451・2026-08-29】失敗しても枠は消化する。消化しないと同じ投稿を30分おきに
+            # 再試行し続け、note枠(8時)を恒久占有した上に autopost 全体を exit 1 にする。
+            # 実際 8/25〜8/29 で 8時枠を毎日落としていた。3回連続で落ちる記事は隔離する。
+            nf = STATE.setdefault("note_fail", {})
+            nf[np_["app"]] = int(nf.get(np_["app"], 0)) + 1
+            if nf[np_["app"]] >= 3:
+                STATE.setdefault("note_quarantine", []).append(np_["app"])
+                print(f"  threads: note {np_['app']} を3回連続失敗で隔離(以後選ばない)")
+        _th_done.append(_h); save_state()
         continue
     target = _plan.get(_h)
     cands = [p_ for p_ in POSTS if target and _app_id(p_) == target and p_.get("threads_text")]
