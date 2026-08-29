@@ -734,17 +734,20 @@ if now.date().isoformat() == "2026-08-26":
 # 【2026-08-28 konan指示】「ノートの宣伝も投稿工場の内容に組み込む」
 # note有料記事の集客ポストは note工場が output/<slug>/05_sns_posts.md に5本作っている。
 # それを note-factory/sns_queue.py が note_queue.json に落とし、ここが1日1枠で消費する。
-# **枠は増やさずアプリ枠から1つ借りる**(本数を増やすとF-412=同型連投の再発条件に近づく)。
 # 投稿の形はアプリと同じ二段構え(本文はURLなし → 自分への返信でnoteのURL)。
 # 出し先は **@sakuttotyokobi 固定**(threads_account 参照)。専用トークンが無い間は枠ごと作らない。
+# 【F-460・2026-08-30】旧実装は note にアプリ枠を1つ貸していた(TH_ACTIVE_HOURS[-1] を奪う)。
+# konan指示で枠が 7/12/19 になった結果、貸し出されるのが**朝の7時枠**になり、
+# さくさく本体の朝の投稿が2日連続で消えた。F-412(同型連投)は同一アカウント内の話で、
+# note は別アカウント(@sakuttotyokobi)なので、本体の枠を削っても何も守っていない。
+# → note は順位表の「アプリ枠の次の時間」を自分の枠として持つ。本体の枠は削らない。
 try:
     NOTE_NOTES = json.load(open(os.path.join(HERE, "note_queue.json")))["notes"]
 except Exception:
     NOTE_NOTES = []
 NOTE_READY = bool(os.environ.get("NOTE_THREADS_USER_ID") and os.environ.get("NOTE_THREADS_ACCESS_TOKEN"))
-NOTE_HOUR = TH_ACTIVE_HOURS[-1] if (NOTE_NOTES and NOTE_READY and len(TH_ACTIVE_HOURS) > 1) else None
-if NOTE_HOUR is not None:
-    TH_ACTIVE_HOURS = TH_ACTIVE_HOURS[:-1]
+NOTE_HOUR = (TH_HOUR_RANK[THREADS_DAILY_SLOTS] if NOTE_NOTES and NOTE_READY
+             and THREADS_DAILY_SLOTS < len(TH_HOUR_RANK) else None)
 
 
 def _note_post():
