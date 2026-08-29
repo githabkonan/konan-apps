@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-08-29",
- "yt_count": 1,
- "last_yt_seq": 5771,
+ "yt_count": 2,
+ "last_yt_seq": 5779,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -416,7 +416,8 @@
   "rikuso_douki.mp4",
   "kanbu_22sai.mp4",
   "yobi_heijitsu.mp4",
-  "kaiso_uminoue.mp4"
+  "kaiso_uminoue.mp4",
+  "kusou_scramble.mp4"
  ],
  "hist": {
   "threads": {
@@ -771,7 +772,8 @@
    "rikuso_douki.mp4": "2026-08-26T21:40:01.106583",
    "iritai_shoninkyu.mp4": "2026-08-27T08:00:02.307952",
    "milchugo_horyo.mp4": "2026-08-28T08:29:37.366344",
-   "kusou_scramble.mp4": "2026-08-29T13:11:51.849288"
+   "kusou_scramble.mp4": "2026-08-29T13:11:51.849288",
+   "sololevel_rpg.mp4": "2026-08-29T19:11:04.270802"
   },
   "instagram": {
    "otsu6_news.mp4": "2026-08-21T20:22:38.289102",
@@ -1173,10 +1175,11 @@
    "kankokugonoh_kantan.mp4": "2026-08-27T20:23:39.585912",
    "kaiso_uminoue.mp4": "2026-08-28T11:37:54.603004",
    "mileigo_torinokosareru.mp4": "2026-08-28T19:31:04.506134",
-   "rikuso_douki.mp4": "2026-08-29T11:54:30.660830"
+   "rikuso_douki.mp4": "2026-08-29T11:54:30.660830",
+   "kanbu_22sai.mp4": "2026-08-29T19:11:04.270802"
   }
  },
- "last_yt_ts": "2026-08-29T11:54:30.660830",
+ "last_yt_ts": "2026-08-29T19:11:04.270802",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -1391,7 +1394,8 @@
   "lifecontrol_seikatsu_reset_20260803_1600.mp4": 0
  },
  "yt_apps_today": [
-  "6789518576"
+  "6789518576",
+  "6789531149"
  ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
@@ -1497,7 +1501,8 @@
   ],
   "2026-08-29": [
    12,
-   13
+   13,
+   19
   ]
  },
  "ig_posted": [
@@ -1900,7 +1905,8 @@
   "kankokugonoh_kantan.mp4",
   "kaiso_uminoue.mp4",
   "mileigo_torinokosareru.mp4",
-  "rikuso_douki.mp4"
+  "rikuso_douki.mp4",
+  "kanbu_22sai.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
@@ -1920,7 +1926,8 @@
   "note:n1aa8ce0e5bdc": 2
  },
  "th_cycle": [
-  "kusou_scramble.mp4"
+  "kusou_scramble.mp4",
+  "sololevel_rpg.mp4"
  ],
  "th_cycle_n": 0
 }
