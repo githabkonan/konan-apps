@@ -773,7 +773,8 @@
    "iritai_shoninkyu.mp4": "2026-08-27T08:00:02.307952",
    "milchugo_horyo.mp4": "2026-08-28T08:29:37.366344",
    "kusou_scramble.mp4": "2026-08-29T13:11:51.849288",
-   "sololevel_rpg.mp4": "2026-08-29T19:11:04.270802"
+   "sololevel_rpg.mp4": "2026-08-29T19:11:04.270802",
+   "note:n1aa8ce0e5bdc": "2026-08-30T07:28:58.561213"
   },
   "instagram": {
    "otsu6_news.mp4": "2026-08-21T20:22:38.289102",
@@ -1501,7 +1502,9 @@
    13,
    19
   ],
-  "2026-08-30": []
+  "2026-08-30": [
+   7
+  ]
  },
  "ig_posted": [
   "otsu6_news.mp4",
@@ -1920,12 +1923,13 @@
  "yt_playlists": {},
  "th_pending_replies": [],
  "note_var": {
-  "_article": 2,
-  "note:n1aa8ce0e5bdc": 2
+  "_article": 3,
+  "note:n1aa8ce0e5bdc": 3
  },
  "th_cycle": [
   "kusou_scramble.mp4",
   "sololevel_rpg.mp4"
  ],
- "th_cycle_n": 0
+ "th_cycle_n": 0,
+ "note_fail": {}
 }
