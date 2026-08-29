@@ -770,7 +770,8 @@
    "unkan_untenseki.mp4": "2026-08-26T18:37:50.936608",
    "rikuso_douki.mp4": "2026-08-26T21:40:01.106583",
    "iritai_shoninkyu.mp4": "2026-08-27T08:00:02.307952",
-   "milchugo_horyo.mp4": "2026-08-28T08:29:37.366344"
+   "milchugo_horyo.mp4": "2026-08-28T08:29:37.366344",
+   "kusou_scramble.mp4": "2026-08-29T13:11:51.849288"
   },
   "instagram": {
    "otsu6_news.mp4": "2026-08-21T20:22:38.289102",
@@ -1495,7 +1496,8 @@
    12
   ],
   "2026-08-29": [
-   12
+   12,
+   13
   ]
  },
  "ig_posted": [
@@ -1917,6 +1919,8 @@
   "_article": 2,
   "note:n1aa8ce0e5bdc": 2
  },
- "th_cycle": [],
+ "th_cycle": [
+  "kusou_scramble.mp4"
+ ],
  "th_cycle_n": 0
 }
