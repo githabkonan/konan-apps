@@ -422,7 +422,21 @@ def publish_threads(post):
     B = "https://graph.threads.net/v1.0"
     body, url = _split_body_and_url(post)
     cid = _post(f"{B}/{uid}/threads", {"media_type": "TEXT", "text": body, "access_token": tok})["id"]
-    pid = _post(f"{B}/{uid}/threads_publish", {"creation_id": cid, "access_token": tok}).get("id")
+    # 【F-451・2026-08-29】作成直後に publish すると "Media Not Found"(code 24/4279009)で落ちる。
+    # コンテナが反映されるまで待つ。返信処理は同じ理由で既に sleep(20) を入れてあった。
+    pid = None
+    for _i in range(5):
+        time.sleep(20)
+        try:
+            pid = _post(f"{B}/{uid}/threads_publish", {"creation_id": cid, "access_token": tok}).get("id")
+            break
+        except Exception as e:
+            detail = ""
+            try: detail = e.read().decode("utf-8", "replace")[:200]
+            except Exception: pass
+            if "4279009" not in detail or _i == 4:
+                raise
+            print(f"  threads: コンテナ未反映で公開を再試行({_i + 1}/5)")
     if pid and url:
         STATE.setdefault("th_pending_replies", []).append(
             {"pid": pid, "key": post.get("video") or post.get("app"), "url": url,
