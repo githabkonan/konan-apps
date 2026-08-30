@@ -84,12 +84,15 @@ jobs:
           # API上限(250投稿/24h)は別の話で、余っていることは増やす根拠にならない
           # (2026-08-30 に6へ上げて konan 差し戻し)。枠数と日次上限は必ず同じ数字にする
           THREADS_MAX_PER_DAY: "3"
-          THREADS_DAILY_SLOTS: "3"   # さくさく(アプリ)=7/12/19時。note枠(21時)は別勘定
+          THREADS_DAILY_SLOTS: "3"   # さくさく(アプリ)=7/19/21時。note枠(12時)は別勘定
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
           # note集客は別アカ @sakuttotyokobi。未設定なら note枠は作られない(さくさくには絶対に出さない)
+          # 【2026-08-30 konan指示】「ノート投稿も1日1投稿毎日昼の12:00ね。他のアプリ宣伝の
+          # スレッドとは全くの別だから」。12時は さくさくの候補から自動で外れる(TH_ACTIVE_HOURS)
+          NOTE_THREADS_HOUR: "12"
           NOTE_THREADS_USER_ID: ${{ secrets.NOTE_THREADS_USER_ID }}
           NOTE_THREADS_ACCESS_TOKEN: ${{ secrets.NOTE_THREADS_ACCESS_TOKEN }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
