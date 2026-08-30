@@ -191,7 +191,11 @@ def _today_count(platform):
         return 0
     d = (_st.get("hist") or {}).get(platform, {})
     today = now.date().isoformat()
-    return sum(1 for v in d.values() if str(v)[:10] == today)
+    # 【F-460】threads の hist にはさくさく(アプリ)とさくっと(note)が同居している。
+    # ここが数えるのは**さくさくの本数だけ**。note を混ぜると別アカウントの投稿で
+    # さくさくの日次上限が減る。note のキーは "note:" で始まる。
+    return sum(1 for k, v in d.items()
+               if str(v)[:10] == today and not (platform == "threads" and str(k).startswith("note:")))
 
 
 # IG の公式上限は **100投稿 / 24時間の移動窓**(2026-08-22 に content_publishing_limit で実測。
@@ -719,8 +723,8 @@ def pick(platform, start_idx):
 # ・1枠1回を state(th_slots: {日付: [済み時]}) で保証。cron遅延で落ちた枠は直前1枠だけ拾う(まとめ出しはしない)
 # 【2026-08-23 一次調査】日本語圏Threadsの山は 7-9時 / 12-14時 / 21-24時(SOP/threads-operation-2026-08.md)
 # 【2026-08-29 konan指示「7:00、12:00、19:00にしろ。あわせろ」】全媒体で時刻を揃える。
-# 先頭3つが枠になる。並び順の最後(=7時)が note集客枠に回る(NOTE_HOUR の決め方に合わせ、
-# 朝をnote・昼夜をアプリにする)。
+# 先頭 THREADS_DAILY_SLOTS 個(=3枠: 12/19/7時)が**さくさく(アプリ)専用**。
+# note集客(さくっと)はこの並びから枠を取らない。NOTE_THREADS_HOUR で別に持つ。
 TH_HOUR_RANK = [12, 19, 7, 21, 8, 22, 13, 20, 23, 9, 18, 14, 17, 11, 10, 16, 15, 6, 0, 1, 2, 3, 4, 5]
 # 回復期(2026-08-23〜): 1日4本。アカウント制限(5週間1本1再生)の固定化を避ける。
 # 1本あたり再生が20を超えたら 6→8 へ段階増(morning_check/metrics_log.jsonl で判定)。24本は数字が許した時だけ
@@ -740,14 +744,20 @@ if now.date().isoformat() == "2026-08-26":
 # konan指示で枠が 7/12/19 になった結果、貸し出されるのが**朝の7時枠**になり、
 # さくさく本体の朝の投稿が2日連続で消えた。F-412(同型連投)は同一アカウント内の話で、
 # note は別アカウント(@sakuttotyokobi)なので、本体の枠を削っても何も守っていない。
-# → note は順位表の「アプリ枠の次の時間」を自分の枠として持つ。本体の枠は削らない。
+# → note は NOTE_THREADS_HOUR(既定21時)を自分の枠として持ち、本体の枠には一切触らない。
 try:
     NOTE_NOTES = json.load(open(os.path.join(HERE, "note_queue.json")))["notes"]
 except Exception:
     NOTE_NOTES = []
 NOTE_READY = bool(os.environ.get("NOTE_THREADS_USER_ID") and os.environ.get("NOTE_THREADS_ACCESS_TOKEN"))
-NOTE_HOUR = (TH_HOUR_RANK[THREADS_DAILY_SLOTS] if NOTE_NOTES and NOTE_READY
-             and THREADS_DAILY_SLOTS < len(TH_HOUR_RANK) else None)
+# note の枠はアプリ側の設定(THREADS_DAILY_SLOTS)から独立させる。連動させると、
+# konan がアプリの枠数を変えた日に note の時間まで勝手に動く(F-460 の再発形)。
+NOTE_HOUR = int(os.environ.get("NOTE_THREADS_HOUR", "21")) if (NOTE_NOTES and NOTE_READY) else None
+if NOTE_HOUR is not None and NOTE_HOUR in TH_ACTIVE_HOURS:
+    # 同じ時間に両アカウントの枠が来るとループが先に note を処理してアプリ枠が消える。
+    # アプリ枠は konan 指定なので動かさず、note を空いている次の時間へ逃がす。
+    NOTE_HOUR = next((h for h in TH_HOUR_RANK if h not in TH_ACTIVE_HOURS), None)
+    print(f"  threads: note枠がアプリ枠と重なったので {NOTE_HOUR}時へ移動")
 
 
 def _note_post():
@@ -774,7 +784,12 @@ def _threads_order_key(p_):
     return hashlib.md5(seed.encode()).hexdigest()
 
 _today_jst = now.date().isoformat()
-_th_done = STATE.setdefault("th_slots", {}).setdefault(_today_jst, [])
+# 【F-460】枠の消化記録もアカウントごとに分ける。1本のリストに両方入れていたため、
+# 「note が7時を消化した」と「さくさくが7時を消化した」が区別できなかった。
+_th_done = STATE.setdefault("th_slots", {}).setdefault(_today_jst, [])        # さくさく(アプリ)
+_note_done = STATE.setdefault("th_slots_note", {}).setdefault(_today_jst, []) # さくっと(note)
+def _slot_ledger(h):
+    return _note_done if (NOTE_HOUR is not None and h == NOTE_HOUR) else _th_done
 if os.environ.get("THREADS_ACCESS_TOKEN") and STATE.get("th_pending_replies"):
     _threads_flush_replies(os.environ["THREADS_USER_ID"], os.environ["THREADS_ACCESS_TOKEN"], "main")
 if NOTE_READY and STATE.get("th_pending_replies"):
@@ -785,9 +800,13 @@ _slots = [now.hour]
 # ので、その窓の外で復帰したランは枠を永久に取りこぼす。遡りを3時間に広げる。
 # 拾うのは1枠だけ(まとめ出しはF-412の同型連投条件に近づくのでやらない)。
 _th_slot_hours = set(TH_ACTIVE_HOURS) | ({NOTE_HOUR} if NOTE_HOUR is not None else set())
+# 【F-460】投稿するかどうかを実際に決めているのはこの枠。旧ログは threads/run= しか出さず、
+# 枠が0本の日も「正常な見送り」に見えて、朝の投稿が2日消えたのに気づけなかった。
+print(f"  threads枠 さくさく={sorted(TH_ACTIVE_HOURS)}時(消化済{sorted(_th_done)}) / "
+      f"さくっと(note)={NOTE_HOUR}時(消化済{sorted(_note_done)}) / 今{now.hour}時")
 for _back in range(1, 4):
     _h_miss = now.hour - _back
-    if _h_miss >= 0 and _h_miss in _th_slot_hours and _h_miss not in _th_done:
+    if _h_miss >= 0 and _h_miss in _th_slot_hours and _h_miss not in _slot_ledger(_h_miss):
         _slots.insert(0, _h_miss)
         break
 for _h in _slots:
@@ -797,14 +816,18 @@ for _h in _slots:
     # 1日3本の設計とF-412(スパム判定で投稿削除)の両方に反する。枠の時間だけに戻す。
     if _h not in _th_slot_hours:
         continue
-    if not os.environ.get("THREADS_ACCESS_TOKEN") or _h in _th_done:
+    if _h in _slot_ledger(_h):
         continue
+    # 【F-460】トークンの有無は**その枠を持つアカウント**で見る。旧実装は note枠でも
+    # さくさくのトークンを見ていたので、さくさく側が失効すると さくっと まで止まった。
     if _h == NOTE_HOUR:
+        if not NOTE_READY:
+            continue
         np_ = _note_post()
         if np_ is None:
             continue
         if not cooled("threads", np_):
-            _th_done.append(_h); save_state()
+            _note_done.append(_h); save_state()
             print(f"  threads: {_h}時枠 note は18h以内に投稿済み=見送り"); continue
         ok, val = with_retry(lambda p=np_: publish_threads(p), attempts=1)
         results.append({"ch": "threads", "app": np_["app"], "ok": ok, ("id" if ok else "err"): val})
@@ -821,7 +844,9 @@ for _h in _slots:
             if nf[np_["app"]] >= 3:
                 STATE.setdefault("note_quarantine", []).append(np_["app"])
                 print(f"  threads: note {np_['app']} を3回連続失敗で隔離(以後選ばない)")
-        _th_done.append(_h); save_state()
+        _note_done.append(_h); save_state()
+        continue
+    if not os.environ.get("THREADS_ACCESS_TOKEN"):
         continue
     # 【2026-08-29 konan「再利用じゃなくてローテーションにして。毎回同じ投稿とか論外」】
     # 旧: 枠ごとに売上上位アプリを固定割り当て(上位2枠は常に同じアプリ)、18h経てば同じ投稿が再登場。

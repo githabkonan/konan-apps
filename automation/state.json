@@ -1504,7 +1504,6 @@
    19
   ],
   "2026-08-30": [
-   21,
    7
   ]
  },
@@ -1934,5 +1933,10 @@
   "kankokugonoh_kantan.mp4"
  ],
  "th_cycle_n": 0,
- "note_fail": {}
+ "note_fail": {},
+ "th_slots_note": {
+  "2026-08-30": [
+   21
+  ]
+ }
 }
