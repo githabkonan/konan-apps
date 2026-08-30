@@ -748,13 +748,12 @@ NOTE_HOUR = int(os.environ.get("NOTE_THREADS_HOUR", "21")) if (NOTE_NOTES and NO
 
 # さくさく(アプリ)の枠。**note の時間は最初から候補から抜く**ので、枠数を増やしても
 # 両アカウントが同じ時間で衝突しない(F-460 の「間借り」を構造的に不可能にする)。
-# 【2026-08-30 konan「そもそも枠の上限なんてそんな少なくないんだから」】3本→6本。
-# 公式上限は 250投稿/24h(developers.facebook.com/docs/threads/troubleshooting・quota_total=250)。
-# 3本は上限の1.2%で、絞っていたのは F-412(7/30 スパム判定で4件削除)後の回復期の名残。
-# 実測(memory/video_metrics.db): 1本あたり200〜400再生・8/26は6本出して無風・最高11,317再生。
-# 「1本20再生を超えたら段階増」という自分で書いた条件をとうに満たしたまま放置していた。
-# 次の段階増(8本)は1週間 削除・リーチ低下が無いことを確認してから。
-THREADS_DAILY_SLOTS = int(os.environ.get("THREADS_DAILY_SLOTS", "6"))
+# 本数は **3本/日**。これは API の上限(250投稿/24h)とは別の話で、
+# 「1本あたりが伸びる本数」として v4 全面改修(2026-08-26 konan)で決めた値
+# (Threads=2〜3本/日・[[feedback_konan_script_format_v4]])。旧24本/日の物量路線は自滅だった。
+# 【2026-08-30】ここを一度 6 に上げたが konan 差し戻し。「上限が広い」は増やす根拠にならない。
+# 増やすなら v4 の判断(1本あたりの伸び)を覆す実測が要る。上限の余りを理由にしないこと。
+THREADS_DAILY_SLOTS = int(os.environ.get("THREADS_DAILY_SLOTS", "3"))
 TH_ACTIVE_HOURS = [h for h in TH_HOUR_RANK if h != NOTE_HOUR][:THREADS_DAILY_SLOTS]
 
 
