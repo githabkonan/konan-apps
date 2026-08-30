@@ -723,17 +723,9 @@ def pick(platform, start_idx):
 # ・1枠1回を state(th_slots: {日付: [済み時]}) で保証。cron遅延で落ちた枠は直前1枠だけ拾う(まとめ出しはしない)
 # 【2026-08-23 一次調査】日本語圏Threadsの山は 7-9時 / 12-14時 / 21-24時(SOP/threads-operation-2026-08.md)
 # 【2026-08-29 konan指示「7:00、12:00、19:00にしろ。あわせろ」】全媒体で時刻を揃える。
-# 先頭 THREADS_DAILY_SLOTS 個(=3枠: 12/19/7時)が**さくさく(アプリ)専用**。
-# note集客(さくっと)はこの並びから枠を取らない。NOTE_THREADS_HOUR で別に持つ。
+# この並びから note の時間(NOTE_THREADS_HOUR)を除いた先頭 THREADS_DAILY_SLOTS 個が
+# **さくさく(アプリ)専用**の枠。note集客(さくっと)はこの並びから枠を取らない。
 TH_HOUR_RANK = [12, 19, 7, 21, 8, 22, 13, 20, 23, 9, 18, 14, 17, 11, 10, 16, 15, 6, 0, 1, 2, 3, 4, 5]
-# 回復期(2026-08-23〜): 1日4本。アカウント制限(5週間1本1再生)の固定化を避ける。
-# 1本あたり再生が20を超えたら 6→8 へ段階増(morning_check/metrics_log.jsonl で判定)。24本は数字が許した時だけ
-THREADS_DAILY_SLOTS = int(os.environ.get("THREADS_DAILY_SLOTS", "4"))
-TH_ACTIVE_HOURS = TH_HOUR_RANK[:THREADS_DAILY_SLOTS]
-# 【2026-08-26 konan 12:14指示「スレッドの今日の分は今、18時、21時にしろ」】
-# 8時枠を隔離事故で逃した今日だけ18時に補填枠を置く。日付条件なので明日から自然に消える
-if now.date().isoformat() == "2026-08-26":
-    TH_ACTIVE_HOURS = [21, 12, 18]
 
 # 【2026-08-28 konan指示】「ノートの宣伝も投稿工場の内容に組み込む」
 # note有料記事の集客ポストは note工場が output/<slug>/05_sns_posts.md に5本作っている。
@@ -753,11 +745,17 @@ NOTE_READY = bool(os.environ.get("NOTE_THREADS_USER_ID") and os.environ.get("NOT
 # note の枠はアプリ側の設定(THREADS_DAILY_SLOTS)から独立させる。連動させると、
 # konan がアプリの枠数を変えた日に note の時間まで勝手に動く(F-460 の再発形)。
 NOTE_HOUR = int(os.environ.get("NOTE_THREADS_HOUR", "21")) if (NOTE_NOTES and NOTE_READY) else None
-if NOTE_HOUR is not None and NOTE_HOUR in TH_ACTIVE_HOURS:
-    # 同じ時間に両アカウントの枠が来るとループが先に note を処理してアプリ枠が消える。
-    # アプリ枠は konan 指定なので動かさず、note を空いている次の時間へ逃がす。
-    NOTE_HOUR = next((h for h in TH_HOUR_RANK if h not in TH_ACTIVE_HOURS), None)
-    print(f"  threads: note枠がアプリ枠と重なったので {NOTE_HOUR}時へ移動")
+
+# さくさく(アプリ)の枠。**note の時間は最初から候補から抜く**ので、枠数を増やしても
+# 両アカウントが同じ時間で衝突しない(F-460 の「間借り」を構造的に不可能にする)。
+# 【2026-08-30 konan「そもそも枠の上限なんてそんな少なくないんだから」】3本→6本。
+# 公式上限は 250投稿/24h(developers.facebook.com/docs/threads/troubleshooting・quota_total=250)。
+# 3本は上限の1.2%で、絞っていたのは F-412(7/30 スパム判定で4件削除)後の回復期の名残。
+# 実測(memory/video_metrics.db): 1本あたり200〜400再生・8/26は6本出して無風・最高11,317再生。
+# 「1本20再生を超えたら段階増」という自分で書いた条件をとうに満たしたまま放置していた。
+# 次の段階増(8本)は1週間 削除・リーチ低下が無いことを確認してから。
+THREADS_DAILY_SLOTS = int(os.environ.get("THREADS_DAILY_SLOTS", "6"))
+TH_ACTIVE_HOURS = [h for h in TH_HOUR_RANK if h != NOTE_HOUR][:THREADS_DAILY_SLOTS]
 
 
 def _note_post():
@@ -800,6 +798,9 @@ _slots = [now.hour]
 # ので、その窓の外で復帰したランは枠を永久に取りこぼす。遡りを3時間に広げる。
 # 拾うのは1枠だけ(まとめ出しはF-412の同型連投条件に近づくのでやらない)。
 _th_slot_hours = set(TH_ACTIVE_HOURS) | ({NOTE_HOUR} if NOTE_HOUR is not None else set())
+# その日に実際に使った枠を残す。朝チェックが「来るはずだった枠」をここから読む。
+# 監視側に時刻を書き写すと設定が二重管理になり、片方だけ変えた日に見逃す(F-460 と同じ形)
+STATE.setdefault("th_slot_plan", {})[_today_jst] = {"main": sorted(TH_ACTIVE_HOURS), "note": NOTE_HOUR}
 # 【F-460】投稿するかどうかを実際に決めているのはこの枠。旧ログは threads/run= しか出さず、
 # 枠が0本の日も「正常な見送り」に見えて、朝の投稿が2日消えたのに気づけなかった。
 print(f"  threads枠 さくさく={sorted(TH_ACTIVE_HOURS)}時(消化済{sorted(_th_done)}) / "
