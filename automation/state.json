@@ -769,7 +769,7 @@
    "rikuso_app_20260821_0240.mp4": "2026-08-23T03:22:20.092994",
    "iritai_20260821_2001.mp4": "2026-08-23T04:21:39.945358",
    "rikusoA_20260821_1725.mp4": "2026-08-23T04:21:39.945358",
-   "yobi_heijitsu.mp4": "2026-08-29T12:18:51.621784",
+   "yobi_heijitsu.mp4": "2026-08-31T07:43:13.078339",
    "unkan_untenseki.mp4": "2026-08-26T18:37:50.936608",
    "rikuso_douki.mp4": "2026-08-26T21:40:01.106583",
    "iritai_shoninkyu.mp4": "2026-08-30T21:01:58.737105",
@@ -1513,7 +1513,9 @@
    19,
    21
   ],
-  "2026-08-31": []
+  "2026-08-31": [
+   7
+  ]
  },
  "ig_posted": [
   "otsu6_news.mp4",
@@ -1942,7 +1944,8 @@
   "sololevel_rpg.mp4",
   "kankokugonoh_kantan.mp4",
   "kanbu_22sai.mp4",
-  "iritai_shoninkyu.mp4"
+  "iritai_shoninkyu.mp4",
+  "yobi_heijitsu.mp4"
  ],
  "th_cycle_n": 0,
  "note_fail": {},
