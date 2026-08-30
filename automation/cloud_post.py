@@ -767,6 +767,13 @@ def _note_post():
         return None
     st = STATE.setdefault("note_var", {})
     i = int(st.get("_article", -1)) + 1
+    # 【2026-08-30】クールダウン中の記事を掴むと枠だけ焼けてその日の1本が丸ごと消える。
+    # 8/30 は 07:29 に出した記事を12時枠が掴み、未宣伝の新記事があるのに投稿ゼロだった。
+    # 明けている記事へ送る。全滅なら i のまま返し、呼び出し側の見送りに任せる。
+    for k in range(len(pool)):
+        if cooled("threads", {"app": pool[(i + k) % len(pool)]["key"]}):
+            i += k
+            break
     st["_article"] = i
     n = pool[i % len(pool)]
     j = int(st.get(n["key"], -1)) + 1
