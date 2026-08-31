@@ -773,7 +773,7 @@
    "rikusoA_20260821_1725.mp4": "2026-08-23T04:21:39.945358",
    "yobi_heijitsu.mp4": "2026-08-31T07:43:13.078339",
    "unkan_untenseki.mp4": "2026-08-26T18:37:50.936608",
-   "rikuso_douki.mp4": "2026-08-26T21:40:01.106583",
+   "rikuso_douki.mp4": "2026-08-31T21:31:46.316352",
    "iritai_shoninkyu.mp4": "2026-08-30T21:01:58.737105",
    "milchugo_horyo.mp4": "2026-08-28T08:29:37.366344",
    "kusou_scramble.mp4": "2026-08-29T13:11:51.849288",
@@ -1527,7 +1527,8 @@
   "2026-08-31": [
    7,
    10,
-   19
+   19,
+   21
   ]
  },
  "ig_posted": [
@@ -1964,7 +1965,8 @@
   "iritai_shoninkyu.mp4",
   "yobi_heijitsu.mp4",
   "sleephack_shomei.mp4",
-  "sleephack_kingaku.mp4"
+  "sleephack_kingaku.mp4",
+  "rikuso_douki.mp4"
  ],
  "th_cycle_n": 0,
  "note_fail": {},
