@@ -170,6 +170,16 @@ seq = day_num * 24 + now.hour
 # 1日100本=毎時4〜5本になると「ピークに寄せる」意味が無くなる(どの時間も投げるので)ため廃止した。
 # あわせて遅れの取り戻し(_catchup)も廃止。止まった直後にまとめ出しすると一番スパムらしく見える。
 # 落ちたランのぶんは捨てる。これは Threads 側と同じ判断。
+# 【2026-08-31 konan指示】「今日と明日で、YouTubeとインスタ2→3本、スレッド3→4本に変わる
+# イメージ」。日付を指定した投稿(pin)がある日だけ、その本数ぶん枠を増やす。
+# env の上限を 3/4 に書き換えると**その後もずっと増えたまま**になり、v4で決めた最適本数
+# (IG/YT 2本・Threads 3本)が静かに壊れる。pin の日付が過ぎれば自動で元に戻る形にする。
+_PIN_TODAY = [str(p.get("pin")) for p in POSTS
+              if str(p.get("pin") or "")[:10] == now.date().isoformat()]
+_PIN_BONUS = len(_PIN_TODAY)
+_PIN_HOURS = sorted({int(s.split()[1]) for s in _PIN_TODAY})
+
+
 def _even_share(total, runs, i):
     """total 本を runs 回へ均等割りしたときの、i 回目の本数。合計はぴったり total になる。
 
@@ -206,7 +216,7 @@ def _today_count(platform):
 # → 各動画1回限り(再投稿ローテ廃止)・1日12本・売れ筋優先(konan 8/23「絞るなら売れ筋トップ優先」)
 # 【v4・2026-08-26 konan全面改修】最適投稿数調査(二次ソース)で IG Reels は1〜2本/日が最適、
 # 3本超は既存投稿の露出を食い合う。物量24本/日は12倍過剰で自滅路線だった。
-IG_MAX_PER_DAY = int(os.environ.get("IG_MAX_PER_DAY", "2"))
+IG_MAX_PER_DAY = int(os.environ.get("IG_MAX_PER_DAY", "2")) + _PIN_BONUS
 # 【2026-08-23 konan】利用上限中は動画を作れない → 新作在庫を火曜22時(YT_HORIZONと同じ)まで按分して切らさない
 try:
     _ig_left = [p for p in POSTS if p.get("video") and p["video"] not in STATE.get("ig_posted", []) and p["video"] not in STATE.get("hist", {}).get("instagram", {})]
@@ -224,6 +234,7 @@ except Exception:
 # IGは2本枠なので 12時(昼)と19時(夜)。
 IG_HOUR_RANK = [12, 19, 7, 20, 11, 21, 8, 13, 18, 22, 10, 17, 9, 16, 23, 15, 14, 6]
 IG_ACTIVE_HOURS = IG_HOUR_RANK[:max(0, IG_MAX_PER_DAY)]
+IG_ACTIVE_HOURS += [h for h in _PIN_HOURS if h not in IG_ACTIVE_HOURS]  # pin の時刻も枠にする
 _ig_today = _today_count("instagram")
 _ig_slot_target = sum(1 for h in IG_ACTIVE_HOURS if now.hour >= h)
 IG_PER_RUN = int(os.environ.get("IG_PER_RUN") or
@@ -244,7 +255,7 @@ IG_PER_RUN = int(os.environ.get("IG_PER_RUN") or
 # 根本原因は解決されないからやめろ」で撤回し 240 に戻した。実測(video_metrics.db)でも
 # 7/30以降は 1〜7本/日に落としても平均viewsは 0.3〜4.7 のままで、**本数を減らしても回復しない**。
 # = 本数は原因ではない。減らすと露出だけ失って原因は残る。本数はここで触らない。
-THREADS_MAX_PER_DAY = int(os.environ.get("THREADS_MAX_PER_DAY", "3"))   # v4(2026-08-26): 最適2〜3本/日調査に合わせる(旧240→回復期4→3)
+THREADS_MAX_PER_DAY = int(os.environ.get("THREADS_MAX_PER_DAY", "3")) + _PIN_BONUS   # v4(2026-08-26): 最適2〜3本/日調査に合わせる(旧240→回復期4→3)
 THREADS_RUNS_PER_DAY = int(os.environ.get("THREADS_RUNS_PER_DAY", "24"))  # cron は毎時
 THREADS_GAP_S = int(os.environ.get("THREADS_GAP_S", "25"))       # 連投間隔
 _th_today = _today_count("threads")
@@ -682,6 +693,31 @@ def mark(platform, post):
 _RUN_APPS = {}   # {platform: 今回のランで既に出したアプリID} — 1ラン内の重複を止める
 
 
+# 【2026-08-31 konan指示】「今日の今と明日の朝に分けて出して」。
+# ローテは在庫全体から選ぶ仕組みなので、特定の動画を特定の日時に出す手段が無かった。
+# post に `"pin": "YYYY-MM-DD HH"`(JST)を書くと、その日時を過ぎた最初のランで
+# ローテより先に出す。出し終われば通常のローテに戻る(pin は残っていても効かない)。
+# 上限(YT_MAX_PER_DAY 等)は pin にも効かせる — 枠を無視すると konan が増枠を指示した意味が消える。
+def _pinned(platform):
+    for p in POSTS:
+        try:
+            d, h = str(p.get("pin") or "").split()
+        except ValueError:
+            continue
+        if d != now.date().isoformat() or now.hour < int(h):
+            continue
+        if platform == "youtube" and p.get("video") in YT_POSTED:
+            continue
+        if platform != "youtube" and not cooled(platform, p):
+            continue
+        if _app_id(p) in _RUN_APPS.get(platform, set()):
+            continue
+        _RUN_APPS.setdefault(platform, set()).add(_app_id(p))
+        print(f"  {platform}: pin({p['pin']}) → {p.get('app')} / {p.get('video')}")
+        return p
+    return None
+
+
 def pick(platform, start_idx):
     """start_idxから順にローテ表を辿り、クールダウン明けの動画を探す。全滅ならNone(=見送り)。
     ローテ表はプラットフォーム別(IG/Threads=均等・YouTube=売上加重)。
@@ -755,6 +791,9 @@ NOTE_HOUR = int(os.environ.get("NOTE_THREADS_HOUR", "21")) if (NOTE_NOTES and NO
 # 増やすなら v4 の判断(1本あたりの伸び)を覆す実測が要る。上限の余りを理由にしないこと。
 THREADS_DAILY_SLOTS = int(os.environ.get("THREADS_DAILY_SLOTS", "3"))
 TH_ACTIVE_HOURS = [h for h in TH_HOUR_RANK if h != NOTE_HOUR][:THREADS_DAILY_SLOTS]
+# 【2026-08-31】pin の時刻を枠として足す。Threads は「枠の時間でなければ投稿しない」ので、
+# 枠数だけ増やしても pin の時刻(konan の言う「今」)には出ない。時刻そのものを枠にする。
+TH_ACTIVE_HOURS += [h for h in _PIN_HOURS if h not in TH_ACTIVE_HOURS and h != NOTE_HOUR]
 
 
 def _note_post():
@@ -875,7 +914,7 @@ for _h in _slots:
         print(f"  threads: 全{len(_all_th)}アプリを一巡したので次の周回({STATE['th_cycle_n']})に入る")
     # 【F-442・2026-08-27】同文二重投稿ガード(最後の砦)。枠記録(th_slots)が何かの理由で
     # 消えても、同じ動画の18h以内の再投稿はここで止める(hist は毎回確実に保存されている)。
-    tp = next((p_ for p_ in _pool if cooled("threads", p_)), None)
+    tp = _pinned("threads") or next((p_ for p_ in _pool if cooled("threads", p_)), None)
     if tp is None:
         _th_done.append(_h); save_state()
         print(f"  threads: {_h}時枠 周回内に出せる投稿が無い=見送り"); continue
@@ -895,8 +934,9 @@ for _h in _slots:
     if len(_slots) > 1: time.sleep(THREADS_GAP_S)
 
 # Instagram: バズりやすい時間帯の枠(IG_ACTIVE_HOURS)だけに投稿(rotation: seq)
-for i in range(IG_PER_RUN):
-    ip = pick("instagram", seq * 5 + i)
+_ig_pin = _pinned("instagram")
+for i in range(max(IG_PER_RUN, 1 if _ig_pin else 0)):
+    ip = _ig_pin if (i == 0 and _ig_pin) else pick("instagram", seq * 5 + i)
     if ip is None:
         print("  instagram: 全動画クールダウン中=見送り"); break
     ok, val = with_retry(lambda p=ip: publish_instagram(p), attempts=1)   # IGは再試行しない(枠超過で固まる)
@@ -913,7 +953,7 @@ for i in range(IG_PER_RUN):
 # ただしYouTubeのスパム量産検知は別問題なので、多様化ルール(1アプリ2本まで・角度分散)を前提とする
 # 【v4・2026-08-26 konan全面改修】最適投稿数調査で YT Shorts は1〜2本/日が最適(3本超は逆効果)。
 # 実測でも本数2.8倍で1本平均23%に低下(量産で自滅)。質量転換: konan台本形式×少数精鋭へ。
-YT_MAX_PER_DAY = int(os.environ.get("YT_MAX_PER_DAY", "2"))
+YT_MAX_PER_DAY = int(os.environ.get("YT_MAX_PER_DAY", "2")) + _PIN_BONUS
 # 【2026-08-23 YT一次調査・ルール8】緊急ブレーキ: スパム規約は全動画対象(90日3ストライクで終了)。
 # 1本あたり再生が直近7日平均の半分を切ったら 8本/日に絞り、売れ筋(優先枠)だけ出す(konan「絞るなら売れ筋優先」)
 YT_BRAKE = False
@@ -1025,11 +1065,12 @@ def _yt_next(priority_only, avoid):
 if os.environ.get("YT_REFRESH_TOKEN") and YT_WIN_START <= now.hour <= YT_WIN_END:
     _target = _yt_pace_target()
     _behind = _target - STATE.get("yt_count", 0)
-    if _behind <= 0:
+    _yt_pin = _pinned("youtube")
+    if _behind <= 0 and not _yt_pin:
         print(f"  youtube: ペース内({STATE.get('yt_count',0)}/{_target}本"
               f" 本日上限{YT_TODAY_MAX}本)=今は見送り")
     else:
-        _n = min(_behind, YT_CATCHUP_MAX)
+        _n = max(1, min(_behind, YT_CATCHUP_MAX)) if _yt_pin else min(_behind, YT_CATCHUP_MAX)
         print(f"  youtube: ペース {STATE.get('yt_count',0)}/{_target}本 → {_n}本投稿して取り戻す")
         for _i in range(_n):
             # 【2026-08-06 konan指示】YTは枠が少ないので厳選する=売上加重ローテを辿る
@@ -1041,13 +1082,12 @@ if os.environ.get("YT_REFRESH_TOKEN") and YT_WIN_START <= now.hour <= YT_WIN_END
             # 1日 = 24アプリ × 各1本。今日すでに上げたアプリは、優先枠であっても二度と選ばない。
             # **ここで avoid を緩めてはいけない**。緩めた結果が陸曹5本だった。
             # 出せる新しいアプリが無くなったら、水増しせずその日は打ち止めにする。
-            yp = _yt_next(priority_only=True, avoid=_yt_apps_today)
-            if yp is not None:
-                print(f"  youtube: 優先枠 → {KONAN_PRIORITY[_app_id(yp)]}")
-            elif YT_BRAKE:
-                yp = None   # ブレーキ中は売れ筋(優先枠)以外を出さない(2026-08-23)
-            else:
+            yp = _yt_pin if (_i == 0 and _yt_pin) else _yt_next(priority_only=True, avoid=_yt_apps_today)
+            if yp is None and not YT_BRAKE:
+                # ブレーキ中は売れ筋(優先枠)以外を出さない(2026-08-23)
                 yp = _yt_next(priority_only=False, avoid=_yt_apps_today)
+            if yp is not None and _app_id(yp) in KONAN_PRIORITY:
+                print(f"  youtube: 優先枠 → {KONAN_PRIORITY[_app_id(yp)]}")
             if yp is None:
                 print(f"  youtube: 今日まだ出していないアプリの在庫なし"
                       f"(本日 {len(_yt_apps_today)}アプリ投稿済み)=同じアプリの2本目は出さない")
