@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-08-31",
- "yt_count": 0,
- "last_yt_seq": null,
+ "yt_count": 1,
+ "last_yt_seq": 5818,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -419,7 +419,8 @@
   "kaiso_uminoue.mp4",
   "kusou_scramble.mp4",
   "milchugo_horyo.mp4",
-  "qc3_hyouka.mp4"
+  "qc3_hyouka.mp4",
+  "sleephack_shomei.mp4"
  ],
  "hist": {
   "threads": {
@@ -1187,7 +1188,7 @@
    "milchugo_horyo.mp4": "2026-08-30T19:30:56.281748"
   }
  },
- "last_yt_ts": "2026-08-30T19:30:56.281748",
+ "last_yt_ts": "2026-08-31T10:37:39.886702",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -1401,7 +1402,9 @@
   "qc3_recall.mp4": 0,
   "lifecontrol_seikatsu_reset_20260803_1600.mp4": 0
  },
- "yt_apps_today": [],
+ "yt_apps_today": [
+  "6803121721"
+ ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
   "sololevel_ui_20260805_1315.mp4": 0,
