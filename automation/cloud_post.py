@@ -538,9 +538,13 @@ def publish_instagram(post):
     # ランが落ちた(12:21)。待ちは最大2分、超えたらそのランのIGは打ち切る
     for _ in range(20):
         time.sleep(6)
-        sc = _get(f"{B}/{cid}", {"fields": "status_code", "access_token": tok}).get("status_code")
+        # 【2026-08-31】status_code だけ見ていたので ERROR の理由がログに一切残らず、
+        # 尺なのか形式なのか枠なのか切り分けられなかった(ショートスリーパー1本目で判明)。
+        # Instagram は status に理由を文で返すので、それをそのまま例外に載せる。
+        st = _get(f"{B}/{cid}", {"fields": "status_code,status", "access_token": tok})
+        sc = st.get("status_code")
         if sc == "FINISHED": break
-        if sc == "ERROR": raise RuntimeError("IG status ERROR")
+        if sc == "ERROR": raise RuntimeError(f"IG status ERROR: {st.get('status')}")
     if sc != "FINISHED": raise RuntimeError(f"IG timeout status={sc}")
     time.sleep(2)
     return _post(f"{B}/{ig}/media_publish", {"creation_id": cid, "access_token": tok}).get("id")
