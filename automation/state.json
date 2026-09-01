@@ -781,7 +781,7 @@
    "milchugo_horyo.mp4": "2026-08-28T08:29:37.366344",
    "kusou_scramble.mp4": "2026-08-29T13:11:51.849288",
    "sololevel_rpg.mp4": "2026-08-29T19:11:04.270802",
-   "note:n1aa8ce0e5bdc": "2026-08-30T07:28:58.561213",
+   "note:n1aa8ce0e5bdc": "2026-09-01T12:01:59.208143",
    "kankokugonoh_kantan.mp4": "2026-08-30T08:49:12.509710",
    "kanbu_22sai.mp4": "2026-08-30T19:30:56.281748",
    "sleephack_shomei.mp4": "2026-08-31T10:32:25.408183",
@@ -1198,7 +1198,8 @@
    "qc3_hyouka.mp4": "2026-08-31T10:49:33.206124",
    "sololevel_rpg.mp4": "2026-08-31T12:28:52.666106",
    "oshilog_gaku.mp4": "2026-09-01T07:31:35.283490",
-   "sleephack_kingaku.mp4": "2026-09-01T10:31:41.046560"
+   "sleephack_kingaku.mp4": "2026-09-01T10:31:41.046560",
+   "unkan_untenseki.mp4": "2026-09-01T12:01:59.208143"
   }
  },
  "last_yt_ts": "2026-09-01T10:31:41.046560",
@@ -1950,7 +1951,8 @@
   "qc3_hyouka.mp4",
   "sololevel_rpg.mp4",
   "oshilog_gaku.mp4",
-  "sleephack_kingaku.mp4"
+  "sleephack_kingaku.mp4",
+  "unkan_untenseki.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
@@ -1966,8 +1968,8 @@
  "yt_playlists": {},
  "th_pending_replies": [],
  "note_var": {
-  "_article": 4,
-  "note:n1aa8ce0e5bdc": 3,
+  "_article": 5,
+  "note:n1aa8ce0e5bdc": 4,
   "note:nfc591feddd5e": 0
  },
  "th_cycle": [
@@ -1992,7 +1994,9 @@
   "2026-08-31": [
    12
   ],
-  "2026-09-01": []
+  "2026-09-01": [
+   12
+  ]
  },
  "th_slot_plan": {
   "2026-08-30": {
