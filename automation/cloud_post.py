@@ -830,6 +830,18 @@ def _threads_order_key(p_):
     seed = f"{_app_id(p_)}|{int(STATE.get('th_cycle_n', 0))}"
     return hashlib.md5(seed.encode()).hexdigest()
 
+def _threads_sorted(posts):
+    """【2026-09-02 konan「均等」】1アプリに複数本ある時の並び。
+    _threads_order_key はアプリ単位のハッシュなので、同じアプリの3本が隣接して
+    3枠連続で同じアプリが出る。各アプリの n 本目を n 番目のブロックに置いて散らす。"""
+    seen, keyed = {}, []
+    for p_ in posts:
+        a = _app_id(p_)
+        seen[a] = seen.get(a, -1) + 1
+        keyed.append((seen[a], _threads_order_key(p_), p_))
+    keyed.sort(key=lambda t: (t[0], t[1]))
+    return [t[2] for t in keyed]
+
 _today_jst = now.date().isoformat()
 # 【F-460】枠の消化記録もアカウントごとに分ける。1本のリストに両方入れていたため、
 # 「note が7時を消化した」と「さくさくが7時を消化した」が区別できなかった。
@@ -905,7 +917,7 @@ for _h in _slots:
     _all_th = [p_ for p_ in POSTS if p_.get("threads_text")]
     if not _all_th:
         print(f"  threads: {_h}時枠 投稿候補が無い=見送り"); continue
-    _all_th.sort(key=_threads_order_key)
+    _all_th = _threads_sorted(_all_th)
     _cyc = STATE.setdefault("th_cycle", [])
     _pool = [p_ for p_ in _all_th if (p_.get("video") or p_.get("app")) not in _cyc]
     if not _pool:
@@ -913,7 +925,7 @@ for _h in _slots:
         _last = _cyc[-1] if _cyc else None
         del _cyc[:]
         STATE["th_cycle_n"] = int(STATE.get("th_cycle_n", 0)) + 1
-        _all_th.sort(key=_threads_order_key)
+        _all_th = _threads_sorted(_all_th)
         _pool = [p_ for p_ in _all_th if (p_.get("video") or p_.get("app")) != _last] or list(_all_th)
         print(f"  threads: 全{len(_all_th)}アプリを一巡したので次の周回({STATE['th_cycle_n']})に入る")
     # 【F-442・2026-08-27】同文二重投稿ガード(最後の砦)。枠記録(th_slots)が何かの理由で
