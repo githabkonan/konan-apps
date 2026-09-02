@@ -794,7 +794,8 @@
    "mileigo_torinokosareru.mp4": "2026-09-01T07:31:35.283490",
    "eigonoh_1month.mp4": "2026-09-01T10:31:41.046560",
    "kaiso_uminoue.mp4": "2026-09-02T07:05:03.080624",
-   "yobi_dai3kai.mp4": "2026-09-02T10:06:31.410791"
+   "yobi_dai3kai.mp4": "2026-09-02T10:06:31.410791",
+   "kusou_series.mp4": "2026-09-02T21:37:06.330217"
   },
   "instagram": {
    "otsu6_news.mp4": "2026-08-21T20:22:38.289102",
@@ -1559,7 +1560,8 @@
   "2026-09-02": [
    7,
    10,
-   19
+   19,
+   21
   ]
  },
  "ig_posted": [
@@ -2010,7 +2012,8 @@
   "unkan_untenseki.mp4",
   "kaiso_uminoue.mp4",
   "yobi_dai3kai.mp4",
-  "milchugo_horyo.mp4"
+  "milchugo_horyo.mp4",
+  "kusou_series.mp4"
  ],
  "th_cycle_n": 0,
  "note_fail": {},
