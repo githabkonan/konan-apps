@@ -787,7 +787,7 @@
    "kankokugonoh_kantan.mp4": "2026-08-30T08:49:12.509710",
    "kanbu_22sai.mp4": "2026-08-30T19:30:56.281748",
    "sleephack_shomei.mp4": "2026-08-31T10:32:25.408183",
-   "note:nfc591feddd5e": "2026-08-31T12:28:52.666106",
+   "note:nfc591feddd5e": "2026-09-02T12:05:57.767862",
    "sleephack_kingaku.mp4": "2026-09-01T19:22:44.316038",
    "mileigo_torinokosareru.mp4": "2026-09-01T07:31:35.283490",
    "eigonoh_1month.mp4": "2026-09-01T10:31:41.046560",
@@ -1205,7 +1205,8 @@
    "sleephack_kingaku.mp4": "2026-09-01T10:31:41.046560",
    "unkan_untenseki.mp4": "2026-09-01T12:01:59.208143",
    "yobi_dai3kai.mp4": "2026-09-02T07:05:03.080624",
-   "an07_kanbu.mp4": "2026-09-02T10:06:31.410791"
+   "an07_kanbu.mp4": "2026-09-02T10:06:31.410791",
+   "iritai_dai3kai.mp4": "2026-09-02T12:05:57.767862"
   }
  },
  "last_yt_ts": "2026-09-02T10:06:31.410791",
@@ -1966,7 +1967,8 @@
   "sleephack_kingaku.mp4",
   "unkan_untenseki.mp4",
   "yobi_dai3kai.mp4",
-  "an07_kanbu.mp4"
+  "an07_kanbu.mp4",
+  "iritai_dai3kai.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
@@ -1982,9 +1984,9 @@
  "yt_playlists": {},
  "th_pending_replies": [],
  "note_var": {
-  "_article": 5,
+  "_article": 6,
   "note:n1aa8ce0e5bdc": 4,
-  "note:nfc591feddd5e": 0
+  "note:nfc591feddd5e": 1
  },
  "th_cycle": [
   "kusou_scramble.mp4",
@@ -2014,7 +2016,9 @@
   "2026-09-01": [
    12
   ],
-  "2026-09-02": []
+  "2026-09-02": [
+   12
+  ]
  },
  "th_slot_plan": {
   "2026-08-30": {
