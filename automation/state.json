@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-09-03",
- "yt_count": 0,
- "last_yt_seq": null,
+ "yt_count": 1,
+ "last_yt_seq": 5887,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -428,7 +428,8 @@
   "iritai_dai3kai.mp4",
   "yobi_dai3kai.mp4",
   "kaiso_offline.mp4",
-  "kusou_series.mp4"
+  "kusou_series.mp4",
+  "an06_iritai.mp4"
  ],
  "hist": {
   "threads": {
@@ -795,7 +796,8 @@
    "eigonoh_1month.mp4": "2026-09-01T10:31:41.046560",
    "kaiso_uminoue.mp4": "2026-09-02T07:05:03.080624",
    "yobi_dai3kai.mp4": "2026-09-02T10:06:31.410791",
-   "kusou_series.mp4": "2026-09-02T21:37:06.330217"
+   "kusou_series.mp4": "2026-09-02T21:37:06.330217",
+   "kanbu_zero_number.mp4": "2026-09-03T07:37:43.317906"
   },
   "instagram": {
    "otsu6_news.mp4": "2026-08-21T20:22:38.289102",
@@ -1210,10 +1212,11 @@
    "yobi_dai3kai.mp4": "2026-09-02T07:05:03.080624",
    "an07_kanbu.mp4": "2026-09-02T10:06:31.410791",
    "iritai_dai3kai.mp4": "2026-09-02T12:05:57.767862",
-   "rikuso_jikan.mp4": "2026-09-02T19:23:15.781366"
+   "rikuso_jikan.mp4": "2026-09-02T19:23:15.781366",
+   "kanbu_zero_number.mp4": "2026-09-03T07:37:43.317906"
   }
  },
- "last_yt_ts": "2026-09-02T19:23:15.781366",
+ "last_yt_ts": "2026-09-03T07:37:43.317906",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -1427,7 +1430,9 @@
   "qc3_recall.mp4": 0,
   "lifecontrol_seikatsu_reset_20260803_1600.mp4": 0
  },
- "yt_apps_today": [],
+ "yt_apps_today": [
+  "6772919770"
+ ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
   "sololevel_ui_20260805_1315.mp4": 0,
@@ -1558,7 +1563,9 @@
    19,
    21
   ],
-  "2026-09-03": []
+  "2026-09-03": [
+   7
+  ]
  },
  "ig_posted": [
   "otsu6_news.mp4",
@@ -1973,7 +1980,8 @@
   "yobi_dai3kai.mp4",
   "an07_kanbu.mp4",
   "iritai_dai3kai.mp4",
-  "rikuso_jikan.mp4"
+  "rikuso_jikan.mp4",
+  "kanbu_zero_number.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
@@ -2009,7 +2017,8 @@
   "kaiso_uminoue.mp4",
   "yobi_dai3kai.mp4",
   "milchugo_horyo.mp4",
-  "kusou_series.mp4"
+  "kusou_series.mp4",
+  "kanbu_zero_number.mp4"
  ],
  "th_cycle_n": 0,
  "note_fail": {},
