@@ -797,7 +797,8 @@
    "kaiso_uminoue.mp4": "2026-09-02T07:05:03.080624",
    "yobi_dai3kai.mp4": "2026-09-02T10:06:31.410791",
    "kusou_series.mp4": "2026-09-02T21:37:06.330217",
-   "kanbu_zero_number.mp4": "2026-09-03T07:37:43.317906"
+   "kanbu_zero_number.mp4": "2026-09-03T07:37:43.317906",
+   "iritai_dai3kai.mp4": "2026-09-03T10:08:07.153045"
   },
   "instagram": {
    "otsu6_news.mp4": "2026-08-21T20:22:38.289102",
@@ -1213,7 +1214,8 @@
    "an07_kanbu.mp4": "2026-09-02T10:06:31.410791",
    "iritai_dai3kai.mp4": "2026-09-02T12:05:57.767862",
    "rikuso_jikan.mp4": "2026-09-02T19:23:15.781366",
-   "kanbu_zero_number.mp4": "2026-09-03T07:37:43.317906"
+   "kanbu_zero_number.mp4": "2026-09-03T07:37:43.317906",
+   "an01_rikuso.mp4": "2026-09-03T10:08:07.153045"
   }
  },
  "last_yt_ts": "2026-09-03T07:37:43.317906",
@@ -1564,7 +1566,8 @@
    21
   ],
   "2026-09-03": [
-   7
+   7,
+   10
   ]
  },
  "ig_posted": [
@@ -1981,7 +1984,8 @@
   "an07_kanbu.mp4",
   "iritai_dai3kai.mp4",
   "rikuso_jikan.mp4",
-  "kanbu_zero_number.mp4"
+  "kanbu_zero_number.mp4",
+  "an01_rikuso.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
@@ -2018,7 +2022,8 @@
   "yobi_dai3kai.mp4",
   "milchugo_horyo.mp4",
   "kusou_series.mp4",
-  "kanbu_zero_number.mp4"
+  "kanbu_zero_number.mp4",
+  "iritai_dai3kai.mp4"
  ],
  "th_cycle_n": 0,
  "note_fail": {},
