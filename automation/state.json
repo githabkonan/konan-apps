@@ -802,7 +802,8 @@
    "kusou_series.mp4": "2026-09-02T21:37:06.330217",
    "kanbu_zero_number.mp4": "2026-09-03T07:37:43.317906",
    "iritai_dai3kai.mp4": "2026-09-03T10:08:07.153045",
-   "rikuso_jikan.mp4": "2026-09-03T19:40:06.992300"
+   "rikuso_jikan.mp4": "2026-09-03T19:40:06.992300",
+   "mileigo_tokushu.mp4": "2026-09-03T21:10:23.404166"
   },
   "instagram": {
    "otsu6_news.mp4": "2026-08-21T20:22:38.289102",
@@ -1577,7 +1578,8 @@
   "2026-09-03": [
    7,
    10,
-   19
+   19,
+   21
   ]
  },
  "ig_posted": [
@@ -2036,7 +2038,8 @@
   "kusou_series.mp4",
   "kanbu_zero_number.mp4",
   "iritai_dai3kai.mp4",
-  "rikuso_jikan.mp4"
+  "rikuso_jikan.mp4",
+  "mileigo_tokushu.mp4"
  ],
  "th_cycle_n": 0,
  "note_fail": {},
