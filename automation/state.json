@@ -808,7 +808,8 @@
    "rikuso_jikan.mp4": "2026-09-03T19:40:06.992300",
    "mileigo_tokushu.mp4": "2026-09-03T21:10:23.404166",
    "kaiso_offline.mp4": "2026-09-04T07:35:58.481163",
-   "milchugo_bepan.mp4": "2026-09-04T19:55:03.669977"
+   "milchugo_bepan.mp4": "2026-09-04T19:55:03.669977",
+   "kusou_bunbetsu_20260902.mp4": "2026-09-04T21:24:01.406988"
   },
   "instagram": {
    "otsu6_news.mp4": "2026-08-21T20:22:38.289102",
@@ -1590,7 +1591,8 @@
   ],
   "2026-09-04": [
    7,
-   19
+   19,
+   21
   ]
  },
  "ig_posted": [
@@ -2055,7 +2057,8 @@
   "rikuso_jikan.mp4",
   "mileigo_tokushu.mp4",
   "kaiso_offline.mp4",
-  "milchugo_bepan.mp4"
+  "milchugo_bepan.mp4",
+  "kusou_bunbetsu_20260902.mp4"
  ],
  "th_cycle_n": 0,
  "note_fail": {},
