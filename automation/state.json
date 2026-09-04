@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-09-04",
- "yt_count": 2,
- "last_yt_seq": 5916,
+ "yt_count": 3,
+ "last_yt_seq": 5923,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -434,7 +434,8 @@
   "rikuso_jikan.mp4",
   "kanbu_zero_number.mp4",
   "iritai_ichiji0916_20260902.mp4",
-  "kusou_bunbetsu_20260902.mp4"
+  "kusou_bunbetsu_20260902.mp4",
+  "an03_kusou.mp4"
  ],
  "hist": {
   "threads": {
@@ -806,7 +807,8 @@
    "iritai_dai3kai.mp4": "2026-09-03T10:08:07.153045",
    "rikuso_jikan.mp4": "2026-09-03T19:40:06.992300",
    "mileigo_tokushu.mp4": "2026-09-03T21:10:23.404166",
-   "kaiso_offline.mp4": "2026-09-04T07:35:58.481163"
+   "kaiso_offline.mp4": "2026-09-04T07:35:58.481163",
+   "milchugo_bepan.mp4": "2026-09-04T19:55:03.669977"
   },
   "instagram": {
    "otsu6_news.mp4": "2026-08-21T20:22:38.289102",
@@ -1227,10 +1229,11 @@
    "an04_kaiso.mp4": "2026-09-03T12:23:55.319383",
    "an06_iritai.mp4": "2026-09-03T19:40:06.992300",
    "iritai_ichiji0916_20260902.mp4": "2026-09-04T07:35:58.481163",
-   "kaiso_offline.mp4": "2026-09-04T12:29:59.144583"
+   "kaiso_offline.mp4": "2026-09-04T12:29:59.144583",
+   "kusou_series.mp4": "2026-09-04T19:55:03.669977"
   }
  },
- "last_yt_ts": "2026-09-04T12:29:59.144583",
+ "last_yt_ts": "2026-09-04T19:55:03.669977",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -1446,6 +1449,7 @@
  },
  "yt_apps_today": [
   "6772919770",
+  "6789531149",
   "6789531149"
  ],
  "ig_var": {
@@ -1585,7 +1589,8 @@
    21
   ],
   "2026-09-04": [
-   7
+   7,
+   19
   ]
  },
  "ig_posted": [
@@ -2007,7 +2012,8 @@
   "an04_kaiso.mp4",
   "an06_iritai.mp4",
   "iritai_ichiji0916_20260902.mp4",
-  "kaiso_offline.mp4"
+  "kaiso_offline.mp4",
+  "kusou_series.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
@@ -2048,7 +2054,8 @@
   "iritai_dai3kai.mp4",
   "rikuso_jikan.mp4",
   "mileigo_tokushu.mp4",
-  "kaiso_offline.mp4"
+  "kaiso_offline.mp4",
+  "milchugo_bepan.mp4"
  ],
  "th_cycle_n": 0,
  "note_fail": {},
