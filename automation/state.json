@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-09-06",
- "yt_count": 0,
- "last_yt_seq": null,
+ "yt_count": 1,
+ "last_yt_seq": 5960,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -438,7 +438,8 @@
   "an03_kusou.mp4",
   "mileigo_tokushu.mp4",
   "an01_rikuso.mp4",
-  "an07_kanbu.mp4"
+  "an07_kanbu.mp4",
+  "rikuso_bunbetsu_20260902.mp4"
  ],
  "hist": {
   "threads": {
@@ -815,7 +816,8 @@
    "kusou_bunbetsu_20260902.mp4": "2026-09-04T21:24:01.406988",
    "kanbu_hanni_20260902.mp4": "2026-09-05T07:46:00.033908",
    "iritai_ichiji0916_20260902.mp4": "2026-09-05T19:18:24.753206",
-   "yobi_ichiji0916_20260902.mp4": "2026-09-05T21:06:48.729422"
+   "yobi_ichiji0916_20260902.mp4": "2026-09-05T21:06:48.729422",
+   "rikuso_bunbetsu_20260902.mp4": "2026-09-06T08:21:22.711458"
   },
   "instagram": {
    "otsu6_news.mp4": "2026-08-21T20:22:38.289102",
@@ -1240,10 +1242,11 @@
    "kusou_series.mp4": "2026-09-04T19:55:03.669977",
    "an03_kusou.mp4": "2026-09-05T07:46:00.033908",
    "an02_yobi.mp4": "2026-09-05T12:17:07.719410",
-   "rikuso_bunbetsu_20260902.mp4": "2026-09-05T19:18:24.753206"
+   "rikuso_bunbetsu_20260902.mp4": "2026-09-05T19:18:24.753206",
+   "an05_mileigo.mp4": "2026-09-06T08:21:22.711458"
   }
  },
- "last_yt_ts": "2026-09-05T19:18:24.753206",
+ "last_yt_ts": "2026-09-06T08:21:22.711458",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -1457,7 +1460,9 @@
   "qc3_recall.mp4": 0,
   "lifecontrol_seikatsu_reset_20260803_1600.mp4": 0
  },
- "yt_apps_today": [],
+ "yt_apps_today": [
+  "6774074604"
+ ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
   "sololevel_ui_20260805_1315.mp4": 0,
@@ -1604,7 +1609,9 @@
    19,
    21
   ],
-  "2026-09-06": []
+  "2026-09-06": [
+   7
+  ]
  },
  "ig_posted": [
   "otsu6_news.mp4",
@@ -2029,7 +2036,8 @@
   "kusou_series.mp4",
   "an03_kusou.mp4",
   "an02_yobi.mp4",
-  "rikuso_bunbetsu_20260902.mp4"
+  "rikuso_bunbetsu_20260902.mp4",
+  "an05_mileigo.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
@@ -2075,7 +2083,8 @@
   "kusou_bunbetsu_20260902.mp4",
   "kanbu_hanni_20260902.mp4",
   "iritai_ichiji0916_20260902.mp4",
-  "yobi_ichiji0916_20260902.mp4"
+  "yobi_ichiji0916_20260902.mp4",
+  "rikuso_bunbetsu_20260902.mp4"
  ],
  "th_cycle_n": 0,
  "note_fail": {},
