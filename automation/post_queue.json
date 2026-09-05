@@ -1,999 +1,1094 @@
 {
- "video_base": "https://githabkonan.github.io/konan-apps/videos",
- "posts": [
-  {
-   "app": "英語脳トレーナー",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6791685174",
-   "video": "eigonoh_1month.mp4",
-   "cover": "covers/eigonoh_1month_cover.jpg",
-   "ig_caption": "日本の英語教育は試験に受かるための勉強。だから海外では通用しない。必要なのは脳を英語脳にすること。\n#英語学習 #英会話 #英語脳\nBGM: 野良猫は宇宙を目指した - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "yt_title": "英語を最短1ヶ月で身に付ける方法 #shorts #英語学習",
-   "yt_desc": "日本の英語教育は試験に受かるための勉強。だから海外では通用しない。必要なのは脳を英語脳にすること。\n#英語学習 #英会話 #英語脳\nhttps://apps.apple.com/jp/app/id6791685174\n\nBGM: 野良猫は宇宙を目指した - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "yt_tags": [
-    "英語",
-    "英語学習",
-    "英会話",
-    "英語脳"
-   ],
-   "yt_thumb": "eigonoh_1month_thumb.jpg",
-   "threads_text_off": "日本人が英語を話せないのは、試験に受かるための勉強しかしてこなかったから。和訳を介さず「見た瞬間に英語で言う」訓練=英語脳を作るのが近道。そのためのアプリもある。https://apps.apple.com/jp/app/id6791685174"
-  },
-  {
-   "app": "自衛官入隊試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
-   "video": "iritai_shoninkyu.mp4",
-   "cover": "covers/iritai_shoninkyu_cover.jpg",
-   "ig_caption": "自衛官の待遇が大きく改善されている。衣食住はほぼ無償で手取りは意外と残る。入隊には教養試験と作文がある。\n#自衛隊 #入隊 #就職\nBGM: Parade - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "threads_text": "自衛官の初任給が23万円に引き上げられた。衣食住はほぼ無償だから手取りは意外と残る。入隊には教養試験と作文があって、対策アプリまである。https://apps.apple.com/jp/app/id6772919770",
-   "yt_title": "【朗報】自衛官の初任給、23万円になった。 #shorts #自衛隊",
-   "yt_desc": "自衛官の待遇が大きく改善されている。衣食住はほぼ無償で手取りは意外と残る。入隊には教養試験と作文がある。\n#自衛隊 #入隊 #就職\nhttps://apps.apple.com/jp/app/id6772919770\n\nBGM: Parade - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "yt_tags": [
-    "自衛隊",
-    "入隊",
-    "初任給",
-    "就職"
-   ],
-   "yt_thumb": "iritai_shoninkyu_thumb.jpg"
-  },
-  {
-   "app": "自衛官海曹昇任試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6789518576",
-   "video": "kaiso_uminoue.mp4",
-   "cover": "covers/kaiso_uminoue_cover.jpg",
-   "ig_caption": "長期の航海に分厚い教本は持ち込めない。でも今はスマホ1台が教本になる。\n#海上自衛隊 #海曹 #昇任試験\nBGM: 10℃ - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 写真: 護衛艦あさゆき (Public domain, Wikimedia Commons)",
-   "threads_text": "海上自衛隊の昇任試験、長期航海中は勉強環境が限られる。分厚い教本の代わりにスマホ1台で対策できる時代になった。海曹昇任の対策アプリがある。https://apps.apple.com/jp/app/id6789518576",
-   "yt_title": "海の上でも、昇任試験は来る。 #shorts #海上自衛隊",
-   "yt_desc": "長期の航海に分厚い教本は持ち込めない。でも今はスマホ1台が教本になる。\n#海上自衛隊 #海曹 #昇任試験\nhttps://apps.apple.com/jp/app/id6789518576\n\nBGM: 10℃ - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 写真: 護衛艦あさゆき (Public domain, Wikimedia Commons)",
-   "yt_tags": [
-    "海上自衛隊",
-    "海曹",
-    "昇任試験",
-    "自衛隊"
-   ],
-   "yt_thumb": "kaiso_uminoue_thumb.jpg"
-  },
-  {
-   "app": "自衛官一般幹部候補生試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6776236258",
-   "video": "kanbu_22sai.mp4",
-   "cover": "covers/kanbu_22sai_cover.jpg",
-   "ig_caption": "幹部候補生試験は大卒なら誰でも受けられる。でも倍率は高い。対策した者だけが受かる。\n#自衛隊 #幹部候補生 #就活\nBGM: Escort - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "threads_text": "自衛隊は22歳で幹部になれる数少ない組織。幹部候補生試験は大卒なら誰でも受けられるけど倍率は高い。対策アプリまである時代。https://apps.apple.com/jp/app/id6776236258",
-   "yt_title": "22歳で、幹部になれる組織。 #shorts #幹部候補生",
-   "yt_desc": "幹部候補生試験は大卒なら誰でも受けられる。でも倍率は高い。対策した者だけが受かる。\n#自衛隊 #幹部候補生 #就活\nhttps://apps.apple.com/jp/app/id6776236258\n\nBGM: Escort - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "yt_tags": [
-    "自衛隊",
-    "幹部候補生",
-    "就活",
-    "公務員"
-   ],
-   "yt_thumb": "kanbu_22sai_thumb.jpg"
-  },
-  {
-   "app": "kankokugonoh",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6793410091",
-   "video": "kankokugonoh_kantan.mp4",
-   "cover": "covers/kankokugonoh_kantan_cover.jpg",
-   "ig_caption": "韓国行きたい！でも韓国語が…って人へ。実は韓国語は英語より覚えるのが簡単。韓国語脳という勉強法がある。\n#韓国語 #韓国旅行 #韓国語勉強\nBGM: しゅわしゅわハニーレモン350ml - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成・自社アプリ画面",
-   "yt_title": "韓国語、実は英語より簡単だった。 #shorts #韓国語",
-   "yt_desc": "韓国行きたい！でも韓国語が…って人へ。実は韓国語は英語より覚えるのが簡単。韓国語脳という勉強法がある。\n#韓国語 #韓国旅行 #韓国語勉強\nhttps://apps.apple.com/jp/app/id6793410091\n\nBGM: しゅわしゅわハニーレモン350ml - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成・自社アプリ画面",
-   "yt_tags": [
-    "韓国語",
-    "韓国旅行",
-    "韓国語勉強",
-    "語学"
-   ],
-   "yt_thumb": "kankokugonoh_kantan_thumb.jpg",
-   "threads_text_off": "韓国語って実は英語より簡単。語順が日本語とほぼ同じだから。「韓国語脳」= 日本語に訳さずイメージで覚える勉強法が近道。https://apps.apple.com/jp/app/id6793410091"
-  },
-  {
-   "app": "自衛官空曹昇任試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6789531149",
-   "video": "kusou_scramble.mp4",
-   "cover": "covers/kusou_scramble_cover.jpg",
-   "ig_caption": "空自の現場は休む暇がない。それでも昇任試験は来る。勉強時間は自分で作るしかない。\n#航空自衛隊 #空曹 #昇任試験\nBGM: 風切 - ゆうり(Yuli Audio Craft) (DOVA-SYNDROME) / 音声: VOICEVOX / 写真: JASDF F-15J (U.S. Air Force, Public domain, Wikimedia Commons)",
-   "threads_text": "航空自衛隊のスクランブル発進は年595回。現場は忙しいのに昇任試験は待ってくれない。スキマ時間で空曹昇任の対策ができるアプリがある。https://apps.apple.com/jp/app/id6789531149",
-   "yt_title": "スクランブル発進、年595回。 #shorts #航空自衛隊",
-   "yt_desc": "空自の現場は休む暇がない。それでも昇任試験は来る。勉強時間は自分で作るしかない。\n#航空自衛隊 #空曹 #昇任試験\nhttps://apps.apple.com/jp/app/id6789531149\n\nBGM: 風切 - ゆうり(Yuli Audio Craft) (DOVA-SYNDROME) / 音声: VOICEVOX / 写真: JASDF F-15J (U.S. Air Force, Public domain, Wikimedia Commons)",
-   "yt_tags": [
-    "航空自衛隊",
-    "空曹",
-    "昇任試験",
-    "スクランブル"
-   ],
-   "yt_thumb": "kusou_scramble_thumb.jpg"
-  },
-  {
-   "app": "ミリタリー英語トレーナー",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6793729335",
-   "video": "mileigo_torinokosareru.mp4",
-   "cover": "covers/mileigo_torinokosareru_cover.jpg",
-   "ig_caption": "日米共同訓練は年々増えている。現場の号令も無線も全部英語。できる隊員はもう勉強を始めている。\n#自衛隊 #日米共同訓練 #軍事英語\nBGM: 2:23 AM - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 写真: U.S. Army/Navy, Exercise Keen Sword 25 (Public domain, Wikimedia Commons)",
-   "threads_text": "日米共同訓練は年々増えていて、現場の号令も無線も全部英語。英語ができるかどうかで任務の幅が変わる時代になった。軍事英語を学べるアプリまである。https://apps.apple.com/jp/app/id6793729335",
-   "yt_title": "英語ができない自衛官は、取り残される。 #shorts #自衛隊",
-   "yt_desc": "日米共同訓練は年々増えている。現場の号令も無線も全部英語。できる隊員はもう勉強を始めている。\n#自衛隊 #日米共同訓練 #軍事英語\nhttps://apps.apple.com/jp/app/id6793729335\n\nBGM: 2:23 AM - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 写真: U.S. Army/Navy, Exercise Keen Sword 25 (Public domain, Wikimedia Commons)",
-   "yt_tags": [
-    "自衛隊",
-    "日米共同訓練",
-    "軍事英語",
-    "英語学習"
-   ],
-   "yt_thumb": "mileigo_torinokosareru_thumb.jpg"
-  },
-  {
-   "app": "推しログ:推し活の記録帳",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6792884427",
-   "video": "oshilog_gaku.mp4",
-   "cover": "covers/oshilog_gaku_cover.jpg",
-   "ig_caption": "チケット、グッズ、遠征。気づけばすごい額に。でも推し活は記録するともっと楽しくなる。\n#推し活 #オタ活 #推し\nBGM: ハッピーイレイロ - こおろぎ (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "yt_title": "推しに使った額、言える？ #shorts #推し活",
-   "yt_desc": "チケット、グッズ、遠征。気づけばすごい額に。でも推し活は記録するともっと楽しくなる。\n#推し活 #オタ活 #推し\nhttps://apps.apple.com/jp/app/id6792884427\n\nBGM: ハッピーイレイロ - こおろぎ (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "yt_tags": [
-    "推し活",
-    "オタ活",
-    "推し",
-    "ライブ"
-   ],
-   "yt_thumb": "oshilog_gaku_thumb.jpg",
-   "threads_text_off": "チケット、グッズ、遠征。推しに使った額、正確に言える人少ないと思う。推し活は記録するともっと楽しくなるし、思い出も残る。推し活の記録帳アプリがある。https://apps.apple.com/jp/app/id6792884427"
-  },
-  {
-   "app": "QC検定3級 総合対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6780823003",
-   "video": "qc3_hyouka.mp4",
-   "cover": "covers/qc3_hyouka_cover.jpg",
-   "ig_caption": "QC検定3級は品質管理の登竜門。昇進や配置転換で持ってる人から選ばれる。\n#QC検定 #品質管理 #工場勤務\nBGM: かえるのピアノ - こおろぎ (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "yt_title": "工場勤務で、評価される資格。 #shorts #QC検定",
-   "yt_desc": "QC検定3級は品質管理の登竜門。昇進や配置転換で持ってる人から選ばれる。\n#QC検定 #品質管理 #工場勤務\nhttps://apps.apple.com/jp/app/id6780823003\n\nBGM: かえるのピアノ - こおろぎ (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "yt_tags": [
-    "QC検定",
-    "品質管理",
-    "工場勤務",
-    "資格"
-   ],
-   "yt_thumb": "qc3_hyouka_thumb.jpg",
-   "threads_text_off": "工場勤務で評価されたいならQC検定3級。品質管理の登竜門で、昇進や配置転換の場面で持ってる人から選ばれていく。スマホで対策できるアプリがある。https://apps.apple.com/jp/app/id6780823003"
-  },
-  {
-   "app": "自衛官陸曹昇任試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
-   "video": "rikuso_douki.mp4",
-   "cover": "covers/rikuso_douki_cover.jpg",
-   "ig_caption": "陸曹昇任試験はとにかく情報が少ない。分厚い教本を持ち歩く時代は終わった。\n#自衛隊 #陸曹 #昇任試験\nBGM: SUMMER TRIANGLE - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "threads_text": "陸曹昇任試験は隊内試験だから情報が少ない。同期と差がつくのは勉強量より勉強のやり方。スマホで昇任対策できるアプリがある。https://apps.apple.com/jp/app/id6774074604",
-   "yt_title": "【悲報】同期はもう、陸曹になった。 #shorts #自衛隊",
-   "yt_desc": "陸曹昇任試験はとにかく情報が少ない。分厚い教本を持ち歩く時代は終わった。\n#自衛隊 #陸曹 #昇任試験\nhttps://apps.apple.com/jp/app/id6774074604\n\nBGM: SUMMER TRIANGLE - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "yt_tags": [
-    "自衛隊",
-    "陸曹",
-    "昇任試験",
-    "陸上自衛隊"
-   ],
-   "yt_thumb": "rikuso_douki_thumb.jpg"
-  },
-  {
-   "app": "TASK LEVELING",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6791684373",
-   "video": "sololevel_rpg.mp4",
-   "cover": "covers/sololevel_rpg_cover.jpg",
-   "ig_caption": "何もやる気が出ない。でもゲームなら何時間でもできる。やる事をクエストにして経験値が貯まるなら、人生はゲームみたいに攻略できる。\n#タスク管理 #習慣化 #やる気\nBGM: シャイニングスター(inst) - 森田交一 (魔王魂) / 音声: VOICEVOX / 画像: AI生成",
-   "yt_title": "人生をRPGにしたら、動けるようになった。 #shorts",
-   "yt_desc": "何もやる気が出ない。でもゲームなら何時間でもできる。やる事をクエストにして経験値が貯まるなら、人生はゲームみたいに攻略できる。\n#タスク管理 #習慣化 #やる気\nhttps://apps.apple.com/jp/app/id6791684373\n\nBGM: シャイニングスター(inst) - 森田交一 (魔王魂) / 音声: VOICEVOX / 画像: AI生成",
-   "yt_tags": [
-    "タスク管理",
-    "習慣化",
-    "RPG",
-    "やる気"
-   ],
-   "yt_thumb": "sololevel_rpg_thumb.jpg",
-   "threads_text_off": "何もやる気が出ないのに、ゲームなら何時間でもできる。だったらやる事をクエストにして経験値が貯まるようにすればいい。タスクをRPG化するアプリがある。https://apps.apple.com/jp/app/id6791684373"
-  },
-  {
-   "app": "運行管理者(貨物) 試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6795367683",
-   "video": "unkan_untenseki.mp4",
-   "cover": "covers/unkan_untenseki_cover.jpg",
-   "ig_caption": "運行管理者の資格があれば現場を管理する側になれる。試験はマークシート。スキマ時間で対策できる。\n#運行管理者 #トラックドライバー #資格\nBGM: サンタは中央線でやってくる - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "yt_title": "一生、運転席のままでいいのか。 #shorts #運行管理者",
-   "yt_desc": "運行管理者の資格があれば現場を管理する側になれる。試験はマークシート。スキマ時間で対策できる。\n#運行管理者 #トラックドライバー #資格\nhttps://apps.apple.com/jp/app/id6795367683\n\nBGM: サンタは中央線でやってくる - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "yt_tags": [
-    "運行管理者",
-    "トラックドライバー",
-    "資格",
-    "物流"
-   ],
-   "yt_thumb": "unkan_untenseki_thumb.jpg",
-   "threads_text_off": "トラックドライバーからキャリアを広げるなら運行管理者(貨物)。現場を管理する側に回れる国家資格で、試験はマークシート。スマホで対策できるアプリがある。https://apps.apple.com/jp/app/id6795367683"
-  },
-  {
-   "app": "予備自衛官補 採用試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6778490302",
-   "video": "yobi_heijitsu.mp4",
-   "cover": "covers/yobi_heijitsu_cover.jpg",
-   "ig_caption": "平日は会社員、有事は自衛官。予備自衛官補という制度が日本にはある。社会人でも応募できて、採用には試験がある。\n#予備自衛官補 #自衛隊 #社会人\nBGM: Cassette Tape Dream - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "threads_text": "平日は会社員、有事は自衛官。「予備自衛官補」という制度が日本にはある。社会人でも応募できて、採用には筆記試験がある。その対策ができるアプリまである。https://apps.apple.com/jp/app/id6778490302",
-   "yt_title": "平日は会社員、有事は自衛官。 #shorts #予備自衛官補",
-   "yt_desc": "平日は会社員、有事は自衛官。予備自衛官補という制度が日本にはある。社会人でも応募できて、採用には試験がある。\n#予備自衛官補 #自衛隊 #社会人\nhttps://apps.apple.com/jp/app/id6778490302\n\nBGM: Cassette Tape Dream - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "yt_tags": [
-    "予備自衛官補",
-    "自衛隊",
-    "社会人",
-    "採用試験"
-   ],
-   "yt_thumb": "yobi_heijitsu_thumb.jpg"
-  },
-  {
-   "app": "ミリタリー中国語トレーナー",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6793817475",
-   "video": "milchugo_horyo.mp4",
-   "cover": "covers/milchugo_horyo_cover.jpg",
-   "ig_caption": "台湾有事になれば、日米条約で日本も他人事では済まない。現職の自衛官は最悪の事態に備えて中国語の勉強も進めているらしい。\n#自衛隊 #台湾有事 #中国語\nBGM: 審判の日 - KK (DOVA-SYNDROME) / 音声: VOICEVOX / 写真: Wikimedia Commons(習近平=PD, 高市早苗=内閣官房 CC BY 4.0), 尖閣諸島=内閣官房",
-   "threads_text": "台湾有事が起きると、米国が参戦し、日米条約で日本も無関係ではいられない。現職の自衛官には、最悪の事態に備えて中国語を勉強している人もいるらしい。軍事中国語を学べるアプリまである。https://apps.apple.com/jp/app/id6793817475",
-   "yt_title": "【悲報】自衛官、中国軍の捕虜にされる。 #shorts",
-   "yt_desc": "台湾有事になれば、日米条約で日本も他人事では済まない。現職の自衛官は最悪の事態に備えて中国語の勉強も進めているらしい。\n#自衛隊 #台湾有事 #中国語\nhttps://apps.apple.com/jp/app/id6793817475\n\nBGM: 審判の日 - KK (DOVA-SYNDROME) / 音声: VOICEVOX / 写真: Wikimedia Commons(習近平=PD, 高市早苗=内閣官房 CC BY 4.0), 尖閣諸島=内閣官房",
-   "yt_tags": [
-    "自衛隊",
-    "台湾有事",
-    "中国語",
-    "軍事"
-   ],
-   "yt_thumb": "milchugo_horyo_thumb.jpg"
-  },
-  {
-   "app": "ショートスリーパー育成プログラム",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6803121721",
-   "pin": "2026-08-31 10",
-   "video": "sleephack_shomei.mp4",
-   "cover": "covers/sleephack_shomei_cover.jpg",
-   "ig_caption": "堀大輔氏が9月に7日間連続の生配信を宣言。30分睡眠は本当に可能なのか、答えは9月に出る。\n#堀大輔 #ショートスリーパー #短時間睡眠\nBGM: 風切 - ゆうり(Yuli Audio Craft) (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_title": "堀大輔、本物のショートスリーパーであることを証明 #shorts",
-   "yt_desc": "堀大輔氏が9月に7日間連続の生配信を宣言。30分睡眠は本当に可能なのか、答えは9月に出る。\n#堀大輔 #ショートスリーパー #短時間睡眠\nhttps://apps.apple.com/jp/app/id6803121721\n\nBGM: 風切 - ゆうり(Yuli Audio Craft) (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "堀大輔",
-    "ショートスリーパー",
-    "短時間睡眠",
-    "睡眠"
-   ],
-   "yt_thumb": "sleephack_shomei_thumb.jpg",
-   "threads_text_off": "うそでしょ。App Storeに『ショートスリーパー育成プログラム』ってアプリが出てるんだけど。堀大輔さんが9月に7日間ぶっ通しで生配信して短時間睡眠を証明するって宣言してる、まさにあの流れ。1日が実質2回分になったら何しよう…って考えてたら夜が明けそう。https://apps.apple.com/jp/app/id6803121721"
-  },
-  {
-   "app": "ショートスリーパー育成プログラム",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6803121721",
-   "pin": "2026-09-01 10",
-   "video": "sleephack_kingaku.mp4",
-   "cover": "covers/sleephack_kingaku_cover.jpg",
-   "ig_caption": "堀大輔氏の睡眠改善プログラムは基本受講料16万5千円、継続は月3万3千円。高いと見るか、時間が増えるなら安いと見るか。\n#堀大輔 #ショートスリーパー #短時間睡眠\nBGM: 2:23 AM - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_title": "堀大輔の睡眠プログラム、16万5千円の中身 #shorts",
-   "yt_desc": "堀大輔氏の睡眠改善プログラムは基本受講料16万5千円、継続は月3万3千円。高いと見るか、時間が増えるなら安いと見るか。\n#堀大輔 #ショートスリーパー #短時間睡眠\nhttps://apps.apple.com/jp/app/id6803121721\n\nBGM: 2:23 AM - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "堀大輔",
-    "ショートスリーパー",
-    "短時間睡眠",
-    "睡眠"
-   ],
-   "yt_thumb": "sleephack_kingaku_thumb.jpg",
-   "threads_text_off": "例の『ショートスリーパー育成プログラム』ってアプリ、気になって堀大輔さんの睡眠改善プログラムの方も調べてみた。公式サイトの受講料が16万5千円で、継続は月3万3千円。1日の時間が増えるなら安いと見るか、高いと見るか…。アプリの方も同じ短時間睡眠のトレーニングを扱ってた。https://apps.apple.com/jp/app/id6803121721"
-  },
-  {
-   "app": "自衛官陸曹昇任試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
-   "video": "rikuso_jikan.mp4",
-   "cover": "covers/cta_rikuso.jpg",
-   "ig_caption": "陸曹昇任試験の対策アプリがある。分野別に問題が並んでいて解説つき。移動中でも待機中でも開ける。\n#自衛隊 #陸曹 #昇任試験\nBGM: 10℃ - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "陸曹昇任試験の対策アプリがある。分野別に問題が並んでいて、解説がついている。移動中でも待機中でも開ける。 https://apps.apple.com/jp/app/id6774074604",
-   "yt_title": "陸曹昇任試験、スマホで全部解ける？ #shorts",
-   "yt_desc": "自衛官陸曹昇任試験対策。分野別に問題が並んでいて、移動中でもスマホで解ける。\n#自衛隊 #陸曹 #昇任試験\nhttps://apps.apple.com/jp/app/id6774074604\n\nBGM: 10℃ - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "自衛隊",
-    "陸曹",
-    "昇任試験",
-    "陸上自衛隊"
-   ],
-   "yt_thumb": "rikuso_jikan_thumb.jpg"
-  },
-  {
-   "app": "予備自衛官補 採用試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6778490302",
-   "pin": "2026-09-02 10",
-   "video": "yobi_dai3kai.mp4",
-   "cover": "covers/cta_yobi.jpg",
-   "ig_caption": "令和8年度 予備自衛官補 第3回の受付が今日9/1から始まっている。9/25必着。出してから本番までは短い。対策アプリがある。\n#予備自衛官補 #自衛隊\nBGM: 風切 - ゆうり(Yuli Audio Craft) (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "令和8年度 予備自衛官補 第3回の受付が今日9月1日から始まっている。締切は9月25日必着(防衛省サイトに載っている)。出してから本番までは短い。範囲を一周しておきたい人向けに、予備自衛官補の対策アプリがある。 https://apps.apple.com/jp/app/id6778490302",
-   "yt_title": "令和8年度 予備自衛官補、第3回の受付が今日から。 #shorts",
-   "yt_desc": "令和8年度 予備自衛官補 第3回。受付9月1日〜9月25日必着(防衛省サイト)。分野別に問題が並んだ対策アプリがある。\n#予備自衛官補 #自衛隊 #令和8年度\nhttps://apps.apple.com/jp/app/id6778490302\n\nBGM: 風切 - ゆうり(Yuli Audio Craft) (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "予備自衛官補",
-    "自衛隊",
-    "令和8年度",
-    "採用試験"
-   ],
-   "yt_thumb": "yobi_dai3kai_thumb.jpg"
-  },
-  {
-   "app": "自衛官空曹昇任試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6789531149",
-   "video": "kusou_series.mp4",
-   "cover": "covers/cta_kusou.jpg",
-   "ig_caption": "陸曹・海曹に続いて、空曹昇任試験の対策アプリがある。分野別に問題が並んでいて、スマホで解ける。\n#自衛隊 #空曹 #昇任試験\nBGM: 2:23 AM - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "陸曹・海曹に続いて、空曹昇任試験の対策アプリがある。分野別に問題が並んでいて、スマホで解ける。 https://apps.apple.com/jp/app/id6789531149",
-   "yt_title": "空曹昇任試験、スマホで解ける？ #shorts",
-   "yt_desc": "自衛官空曹昇任試験対策。分野別に問題が並んでいて、スマホで解ける。\n#自衛隊 #空曹 #昇任試験\nhttps://apps.apple.com/jp/app/id6789531149\n\nBGM: 2:23 AM - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "自衛隊",
-    "空曹",
-    "昇任試験",
-    "航空自衛隊"
-   ],
-   "yt_thumb": "kusou_series_thumb.jpg"
-  },
-  {
-   "app": "自衛官海曹昇任試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6789518576",
-   "video": "kaiso_offline.mp4",
-   "cover": "covers/cta_kaiso.jpg",
-   "ig_caption": "艦上では電波がない。それでも使える海曹昇任試験の対策アプリがある。分野別に問題が並んでいる。\n#自衛隊 #海曹 #昇任試験\nBGM: Escort - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "艦上では電波が入らない。それでも使える海曹昇任試験の対策アプリがある。分野別に問題が並んでいて、オフラインで動く。 https://apps.apple.com/jp/app/id6789518576",
-   "yt_title": "海曹昇任試験、艦上でオフライン対策できる？ #shorts",
-   "yt_desc": "自衛官海曹昇任試験対策。分野別に問題が並んでいて、オフラインで解ける。\n#自衛隊 #海曹 #昇任試験\nhttps://apps.apple.com/jp/app/id6789518576\n\nBGM: Escort - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "自衛隊",
-    "海曹",
-    "昇任試験",
-    "海上自衛隊"
-   ],
-   "yt_thumb": "kaiso_offline_thumb.jpg"
-  },
-  {
-   "app": "ミリタリー英語トレーナー",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6793729335",
-   "video": "mileigo_tokushu.mp4",
-   "cover": "covers/cta_mileigo.jpg",
-   "ig_caption": "陸上自衛隊に特殊部隊がある。習志野・2004年創設。陸自の情報学校では英語・ロシア語・中国語・韓国語の語学教育がある(mod.go.jp公示)。\n個人向けにはミリタリー英語のアプリがある。\n#自衛隊 #特殊作戦群 #英語\nBGM: 審判の日 - KK (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "陸上自衛隊に特殊部隊がある。習志野に、2004年3月に作られた。陸自の情報学校の語学教育で、英語・ロシア語・中国語・韓国語が扱われている(mod.go.jp の公示に載っている)。個人向けには、ミリタリー英語のアプリがある。階級・装備・部隊行動の英語語彙。 https://apps.apple.com/jp/app/id6793729335",
-   "yt_title": "陸上自衛隊に、特殊部隊はある？ #shorts",
-   "yt_desc": "陸上自衛隊の特殊部隊。習志野、2004年創設。情報学校の語学教育(英語・ロシア語・中国語・韓国語)。個人向けにミリタリー英語の語彙トレーニング。\n#自衛隊 #特殊作戦群 #英語\nhttps://apps.apple.com/jp/app/id6793729335\n\nBGM: 審判の日 - KK (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "特殊作戦群",
-    "陸上自衛隊",
-    "自衛隊",
-    "英語"
-   ],
-   "yt_thumb": "mileigo_tokushu_thumb.jpg"
-  },
-  {
-   "app": "自衛官入隊試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
-   "pin": "2026-09-03 10",
-   "video": "iritai_dai3kai.mp4",
-   "cover": "covers/cta_iritai.jpg",
-   "ig_caption": "令和8年度 一般曹候補生 第3回の受付が今日9/1から始まっている。9/25必着。出してから本番までは短い。入隊試験向けの対策アプリがある。\n#一般曹候補生 #自衛隊\nBGM: シャイニングスター(inst) - 森田交一 (魔王魂) / 音声: VOICEVOX",
-   "threads_text": "令和8年度 一般曹候補生 第3回の受付が今日9月1日から始まっている。締切は9月25日必着(防衛省サイトに載っている)。出してから本番までは短い。範囲を一周しておきたい人向けに、入隊試験向けの対策アプリがある。 https://apps.apple.com/jp/app/id6772919770",
-   "yt_title": "令和8年度 一般曹候補生 第3回、今日から。 #shorts",
-   "yt_desc": "令和8年度 一般曹候補生 第3回。受付9月1日〜9月25日必着(防衛省サイト)。分野別に問題が並んだ入隊試験対策。\n#一般曹候補生 #自衛隊 #令和8年度\nhttps://apps.apple.com/jp/app/id6772919770\n\nBGM: シャイニングスター(inst) - 森田交一 (魔王魂) / 音声: VOICEVOX",
-   "yt_tags": [
-    "一般曹候補生",
-    "自衛隊",
-    "令和8年度",
-    "入隊試験"
-   ],
-   "yt_thumb": "iritai_dai3kai_thumb.jpg"
-  },
-  {
-   "app": "自衛官一般幹部候補生試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6776236258",
-   "video": "kanbu_zero_number.mp4",
-   "cover": "covers/cta_kanbu.jpg",
-   "ig_caption": "一般幹部候補生の対策アプリがある。1次試験の一般教養・専門が分野別に並んでいて、スマホで解ける。\n#自衛隊 #幹部候補生\nBGM: Cassette Tape Dream - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "一般幹部候補生の対策アプリがある。1次試験の一般教養と専門が分野別に並んでいて、スマホで解ける。 https://apps.apple.com/jp/app/id6776236258",
-   "yt_title": "一般幹部候補生、1次試験の一般教養と専門をスマホで。 #shorts",
-   "yt_desc": "自衛官一般幹部候補生試験対策。1次試験の一般教養・専門が分野別に並んでいて、スマホで解ける。\n#自衛隊 #幹部候補生 #自衛官\nhttps://apps.apple.com/jp/app/id6776236258\n\nBGM: Cassette Tape Dream - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "幹部候補生",
-    "自衛隊",
-    "自衛官",
-    "採用試験"
-   ],
-   "yt_thumb": "kanbu_zero_number_thumb.jpg"
-  },
-  {
-   "app": "ミリタリー中国語トレーナー",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6793817475",
-   "video": "milchugo_bepan.mp4",
-   "cover": "covers/cta_milchugo.jpg",
-   "ig_caption": "令和8年7月28日、防衛大臣が記者会見で「陸上自衛隊の別班といったような組織は存在しない」と発言(mod.go.jp)。陸自情報学校の語学教育で中国語が扱われている。個人向けにはミリタリー中国語アプリがある。\n#別班 #自衛隊 #中国語\nBGM: サンタは中央線でやってくる - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "べっぱんって、結局あるのか無いのか。令和8年7月28日、防衛大臣が記者会見で「陸上自衛隊の別班といったような組織は、これまで存在しておらず、また現在も存在しない」と発言している(mod.go.jpに記者会見録が載っている)。陸自の情報学校の語学教育で、中国語が扱われている(mod.go.jp公示に載っている)。個人向けには、ミリタリー中国語のアプリがある。中国軍関連の語彙・階級・装備。 https://apps.apple.com/jp/app/id6793817475",
-   "yt_title": "「別班」、結局あるのかないのか。 #shorts",
-   "yt_desc": "令和8年7月28日、防衛大臣が記者会見で「陸上自衛隊の別班といったような組織は存在しない」と発言。陸自の情報学校では中国語が扱われている(mod.go.jp公示)。個人向けにミリタリー中国語アプリがある。\n#別班 #自衛隊 #中国語\nhttps://apps.apple.com/jp/app/id6793817475\n\nBGM: サンタは中央線でやってくる - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "別班",
-    "自衛隊",
-    "中国語",
-    "防衛省"
-   ],
-   "yt_thumb": "milchugo_bepan_thumb.jpg"
-  },
-  {
-   "app": "自衛官陸曹昇任試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
-   "video": "rikuso_bunbetsu_20260902.mp4",
-   "cover": "covers/cta_rikuso.jpg",
-   "ig_caption": "昇任試験の勉強、分野を絞って回すのが一番速い。\n#陸上自衛隊 #陸曹 #昇任試験\nBGM: 10℃ - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "陸曹昇任の試験、本番と同じ形式で分野別に対策できる。App Storeで「陸曹昇任」と検索すると出てくる。https://apps.apple.com/jp/app/id6774074604",
-   "yt_title": "陸曹昇任の試験、何分野から出るか知ってる？ #shorts #陸上自衛隊",
-   "yt_desc": "本番と同じ形式で、分野別に問題を解ける。\n#陸上自衛隊 #陸曹 #昇任試験\nhttps://apps.apple.com/jp/app/id6774074604\n\nBGM: 10℃ - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "陸上自衛隊",
-    "陸曹",
-    "昇任試験",
-    "自衛隊"
-   ],
-   "yt_thumb": "rikuso_bunbetsu_20260902_thumb.jpg"
-  },
-  {
-   "app": "予備自衛官補 採用試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6778490302",
-   "video": "yobi_ichiji0916_20260902.mp4",
-   "cover": "covers/cta_yobi.jpg",
-   "ig_caption": "予備自衛官補の1次試験が9月16日から始まる。まだ時間はある。\n#予備自衛官補 #自衛隊 #採用試験\nBGM: 風切 - ゆうり(Yuli Audio Craft) (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "予備自衛官補の1次試験は9月16日から。対策できる期間は短い。問題を解いて感覚をつかんでおくと違う。https://apps.apple.com/jp/app/id6778490302",
-   "yt_title": "予備自衛官補の1次試験、9月16日に始まる。 #shorts #予備自衛官補",
-   "yt_desc": "一般科目と技能認定がある。9月16日から試験が始まる。\n#予備自衛官補 #自衛隊 #採用試験\nhttps://apps.apple.com/jp/app/id6778490302\n\nBGM: 風切 - ゆうり(Yuli Audio Craft) (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "予備自衛官補",
-    "自衛隊",
-    "採用試験",
-    "1次試験"
-   ],
-   "yt_thumb": "yobi_ichiji0916_20260902_thumb.jpg"
-  },
-  {
-   "app": "自衛官空曹昇任試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6789531149",
-   "video": "kusou_bunbetsu_20260902.mp4",
-   "cover": "covers/cta_kusou.jpg",
-   "ig_caption": "空曹昇任の対策、苦手な分野だけに絞って解けるのが理にかなってる。\n#航空自衛隊 #空曹 #昇任試験\nBGM: Parade - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "空曹昇任の筆記、分野を選んでそこだけ解けるので、苦手分野の集中対策がしやすい。https://apps.apple.com/jp/app/id6789531149",
-   "yt_title": "空曹昇任の試験、どの分野から手をつければいい？ #shorts #航空自衛隊",
-   "yt_desc": "分野を選んでそこだけ集中して解ける。苦手を潰す対策に向いてる。\n#航空自衛隊 #空曹 #昇任試験\nhttps://apps.apple.com/jp/app/id6789531149\n\nBGM: Parade - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "航空自衛隊",
-    "空曹",
-    "昇任試験",
-    "自衛隊"
-   ],
-   "yt_thumb": "kusou_bunbetsu_20260902_thumb.jpg"
-  },
-  {
-   "app": "自衛官海曹昇任試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6789518576",
-   "video": "kaiso_kensaku_20260902.mp4",
-   "cover": "covers/cta_kaiso.jpg",
-   "ig_caption": "App Storeで「海曹昇任」って検索したら、対策できるものが出てくる。\n#海上自衛隊 #海曹 #昇任試験\nBGM: Escort - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "App Storeで「海曹昇任」と検索すると、対策できるものが出てくる。海曹昇任を目指している人はチェックしてみて。https://apps.apple.com/jp/app/id6789518576",
-   "yt_title": "App Storeで「海曹昇任」と検索すると何が出てくる？ #shorts #海上自衛隊",
-   "yt_desc": "海曹昇任の対策に使えるものが出てくる。\n#海上自衛隊 #海曹 #昇任試験\nhttps://apps.apple.com/jp/app/id6789518576\n\nBGM: Escort - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "海上自衛隊",
-    "海曹",
-    "昇任試験",
-    "自衛隊"
-   ],
-   "yt_thumb": "kaiso_kensaku_20260902_thumb.jpg"
-  },
-  {
-   "app": "ミリタリー英語トレーナー",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6793729335",
-   "video": "mileigo_senbatsu_20260902.mp4",
-   "cover": "covers/cta_mileigo.jpg",
-   "ig_caption": "陸上自衛隊唯一の特殊部隊。その選抜の詳細は公表されていない。こういう場所で使われる英語を知りたくなった。\n#自衛隊 #ミリタリー英語 #特殊部隊\nBGM: 2:23 AM - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "陸自唯一の特殊部隊、選抜の詳細は公表されていない。そういう組織で使われるミリタリー英語を学べる。App Storeで「ミリタリー英語トレーナー」と検索してみて。https://apps.apple.com/jp/app/id6793729335",
-   "yt_title": "陸自唯一の特殊部隊。選抜の条件が明かされていない理由は？ #shorts #自衛隊",
-   "yt_desc": "特殊部隊に関わる英語を、実際に使われる場面から学ぶ。\n#自衛隊 #ミリタリー英語 #特殊部隊\nhttps://apps.apple.com/jp/app/id6793729335\n\nBGM: 2:23 AM - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "自衛隊",
-    "ミリタリー英語",
-    "特殊部隊",
-    "英語学習"
-   ],
-   "yt_thumb": "mileigo_senbatsu_20260902_thumb.jpg"
-  },
-  {
-   "app": "自衛官入隊試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
-   "video": "iritai_ichiji0916_20260902.mp4",
-   "cover": "covers/cta_iritai.jpg",
-   "ig_caption": "一般曹候補生の1次試験が9月16日から始まる。筆記対策は今からでも間に合う。\n#自衛官 #入隊 #曹候補生\nBGM: SUMMER TRIANGLE - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "一般曹候補生の1次試験は9月16日から。対策問題を解いて、感覚をつかんでおくとちがう。https://apps.apple.com/jp/app/id6772919770",
-   "yt_title": "一般曹候補生の1次試験、9月16日に何がある？ #shorts #自衛官",
-   "yt_desc": "一般曹候補生の1次試験は9月16日から。筆記と適性検査がある。\n#自衛官 #入隊 #曹候補生\nhttps://apps.apple.com/jp/app/id6772919770\n\nBGM: SUMMER TRIANGLE - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "自衛官",
-    "入隊",
-    "曹候補生",
-    "一般曹候補生"
-   ],
-   "yt_thumb": "iritai_ichiji0916_20260902_thumb.jpg"
-  },
-  {
-   "app": "自衛官一般幹部候補生試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6776236258",
-   "video": "kanbu_hanni_20260902.mp4",
-   "cover": "covers/cta_kanbu.jpg",
-   "ig_caption": "幹部候補生の筆記、とにかく範囲が広い。全部をやろうとすると時間が足りなくなる。\n#自衛官 #幹部候補生 #筆記試験\nBGM: Cassette Tape Dream - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "幹部候補生の筆記試験、範囲がとにかく広い。分野を絞って集中的に対策するのが現実的。対策できるものがある。https://apps.apple.com/jp/app/id6776236258",
-   "yt_title": "幹部候補生の筆記、範囲は全部で何科目ある？ #shorts #自衛官幹部",
-   "yt_desc": "範囲がとにかく広い。分野を絞って対策するのが現実的。\n#自衛官 #幹部候補生 #筆記試験\nhttps://apps.apple.com/jp/app/id6776236258\n\nBGM: Cassette Tape Dream - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "自衛官",
-    "幹部候補生",
-    "筆記試験",
-    "自衛隊"
-   ],
-   "yt_thumb": "kanbu_hanni_20260902_thumb.jpg"
-  },
-  {
-   "app": "ミリタリー中国語トレーナー",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6793817475",
-   "video": "milchugo_tokushubutai_20260902.mp4",
-   "cover": "covers/cta_milchugo.jpg",
-   "ig_caption": "陸上自衛隊に唯一の特殊部隊がある。そこで必要になる言語の一つが中国語。実戦的なミリタリー中国語を学ぶ方法がある。\n#自衛隊 #ミリタリー中国語 #中国語\nBGM: 審判の日 - KK (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "陸上自衛隊に特殊部隊が1つだけある。そこで使われる中国語を、実戦フレーズから学べる。App Storeで「ミリタリー中国語トレーナー」と検索。https://apps.apple.com/jp/app/id6793817475",
-   "yt_title": "陸上自衛隊に特殊部隊が1つある。そこで使われる中国語とは？ #shorts #自衛隊",
-   "yt_desc": "特殊作戦群と情報学校で使われるミリタリー中国語を学ぶ。\n#自衛隊 #ミリタリー中国語 #中国語\nhttps://apps.apple.com/jp/app/id6793817475\n\nBGM: 審判の日 - KK (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "自衛隊",
-    "ミリタリー中国語",
-    "中国語",
-    "特殊部隊"
-   ],
-   "yt_thumb": "milchugo_tokushubutai_20260902_thumb.jpg"
-  },
-  {
-   "app": "自衛官陸曹昇任試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
-   "video": "an01_rikuso.mp4",
-   "cover": "covers/cta_rikuso.jpg",
-   "ig_caption": "陸曹昇任の対策、間違えた問題だけ後でまとめて解き直せる仕組みがある。解説もついていて理由もわかる。\n#自衛隊 #陸自 #昇任試験\nBGM: 野良猫は宇宙を目指した - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "陸曹昇任の対策アプリ、間違えた問題が自動で残って、後でまとめて解き直せる。解説もついていて理由もわかる。陸曹昇任試験を準備中の人向け。https://apps.apple.com/jp/app/id6774074604",
-   "yt_title": "陸曹昇任、間違えた問題だけ後でまとめて解き直せる？ #shorts #自衛隊",
-   "yt_desc": "陸曹昇任の対策、間違えた問題だけ後でまとめて解き直せる仕組みがある。解説もついていて理由もわかる。\n#自衛隊 #陸自 #昇任試験\nhttps://apps.apple.com/jp/app/id6774074604\n\nBGM: 野良猫は宇宙を目指した - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "自衛隊",
-    "陸曹",
-    "昇任試験",
-    "自衛官"
-   ],
-   "yt_thumb": "an01_rikuso_thumb.jpg"
-  },
-  {
-   "app": "予備自衛官補 採用試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6778490302",
-   "video": "an02_yobi.mp4",
-   "cover": "covers/cta_yobi.jpg",
-   "ig_caption": "予備自衛官補という制度がある。防衛省が公式に設けていて、採用試験がある。分野別に問題が並んで、解説つき。\n#自衛隊 #予備自衛官 #防衛省\nBGM: かえるのピアノ - こおろぎ (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "予備自衛官補という制度がある。防衛省が公式に設けている制度で、採用試験がある。その対策アプリがApp Storeにある。分野別に問題が並んで、解説つき。https://apps.apple.com/jp/app/id6778490302",
-   "yt_title": "予備自衛官補って制度、知ってる？ #shorts #自衛隊",
-   "yt_desc": "予備自衛官補という制度がある。防衛省が公式に設けていて、採用試験がある。分野別に問題が並んで、解説つき。\n#自衛隊 #予備自衛官 #防衛省\nhttps://apps.apple.com/jp/app/id6778490302\n\nBGM: かえるのピアノ - こおろぎ (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "自衛隊",
-    "予備自衛官",
-    "採用試験",
-    "防衛省"
-   ],
-   "yt_thumb": "an02_yobi_thumb.jpg"
-  },
-  {
-   "app": "自衛官空曹昇任試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6789531149",
-   "video": "an03_kusou.mp4",
-   "cover": "covers/cta_kusou.jpg",
-   "ig_caption": "空曹昇任の対策、空自の分野(機体・整備・気象など)で問題が分かれて並んでいる。本番と同じ形式で、解説つき。\n#自衛隊 #空自 #昇任試験\nBGM: ハッピーイレイロ - こおろぎ (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "空曹昇任の対策アプリ、空自の分野(機体・整備・気象など)で問題が分かれて並んでいる。本番と同じ形式で、解説つき。スマホで解ける。https://apps.apple.com/jp/app/id6789531149",
-   "yt_title": "空曹昇任の対策、機体・整備・気象の3分野に分かれてることを知ってた？ #shorts #自衛隊",
-   "yt_desc": "空曹昇任の対策、空自の分野(機体・整備・気象など)で問題が分かれて並んでいる。本番と同じ形式で、解説つき。\n#自衛隊 #空自 #昇任試験\nhttps://apps.apple.com/jp/app/id6789531149\n\nBGM: ハッピーイレイロ - こおろぎ (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "自衛隊",
-    "空曹",
-    "昇任試験",
-    "航空自衛隊"
-   ],
-   "yt_thumb": "an03_kusou_thumb.jpg"
-  },
-  {
-   "app": "自衛官海曹昇任試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6789518576",
-   "video": "an04_kaiso.mp4",
-   "cover": "covers/cta_kaiso.jpg",
-   "ig_caption": "海曹昇任の対策、各問に解説がついている。間違えても「なぜそうなるか」がわかる仕組み。分野別に並んで、本番と同じ形式。\n#自衛隊 #海自 #昇任試験\nBGM: サンタは中央線でやってくる - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "海曹昇任の対策アプリ、各問に解説がついている。間違えても「なぜそうなるか」がわかる仕組み。分野別に並んで、本番と同じ形式。https://apps.apple.com/jp/app/id6789518576",
-   "yt_title": "海曹昇任の勉強、各問に解説ついてることを知ってた？ #shorts #自衛隊",
-   "yt_desc": "海曹昇任の対策、各問に解説がついている。間違えても「なぜそうなるか」がわかる仕組み。分野別に並んで、本番と同じ形式。\n#自衛隊 #海自 #昇任試験\nhttps://apps.apple.com/jp/app/id6789518576\n\nBGM: サンタは中央線でやってくる - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "自衛隊",
-    "海曹",
-    "昇任試験",
-    "海上自衛隊"
-   ],
-   "yt_thumb": "an04_kaiso_thumb.jpg"
-  },
-  {
-   "app": "ミリタリー英語トレーナー",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6793729335",
-   "video": "an05_mileigo.mp4",
-   "cover": "covers/cta_mileigo.jpg",
-   "ig_caption": "「べっぱん」って、結局あるのか無いのか。2026年7月28日の記者会見で防衛大臣は存在しないと否定している。陸自の情報学校では4言語を教えている(英語・ロシア語・中国語・韓国語)。\n#自衛隊 #ミリタリー #軍事英語\nBGM: シャイニングスター(inst) - 森田交一 (魔王魂) / 音声: VOICEVOX / 情報出典: 防衛省記者会見 2026/07/28",
-   "threads_text": "「べっぱん」って、結局あるのか無いのか。2026年7月28日の記者会見で、防衛大臣は「これまで存在しておらず現在も存在しない」と否定している。別の話として、陸自の情報学校では英語・ロシア語・中国語・韓国語の4言語を教えている(公示文書に載っている)。ミリタリー英語のアプリがある。https://apps.apple.com/jp/app/id6793729335",
-   "yt_title": "べっぱんって、結局あるのか無いのか #shorts #自衛隊",
-   "yt_desc": "「べっぱん」って、結局あるのか無いのか。2026年7月28日の記者会見で防衛大臣は存在しないと否定している。陸自の情報学校では4言語を教えている(英語・ロシア語・中国語・韓国語)。\n#自衛隊 #ミリタリー #軍事英語\nhttps://apps.apple.com/jp/app/id6793729335\n\nBGM: シャイニングスター(inst) - 森田交一 (魔王魂) / 音声: VOICEVOX / 情報出典: 防衛省記者会見 2026/07/28・防衛省公示文書 令和3年度情報学校語学教育",
-   "yt_tags": [
-    "自衛隊",
-    "別班",
-    "軍事英語",
-    "ミリタリー"
-   ],
-   "yt_thumb": "an05_mileigo_thumb.jpg"
-  },
-  {
-   "app": "自衛官入隊試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
-   "video": "an06_iritai.mp4",
-   "cover": "covers/cta_iritai.jpg",
-   "ig_caption": "App Storeで「自衛官入隊」と検索すると、対策アプリが出てくる。一般曹候補生・自衛官候補生などの入隊試験に向けて、分野別に問題が並ぶ。解説つき。\n#自衛隊 #入隊 #一般曹候補生\nBGM: しゅわしゅわハニーレモン350ml - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "App Storeで「自衛官入隊」と検索すると、対策アプリが出てくる。一般曹候補生・自衛官候補生などの入隊試験に向けて、分野別に問題が並ぶ。解説つき。https://apps.apple.com/jp/app/id6772919770",
-   "yt_title": "App Storeで「自衛官入隊」と検索すると何が出てくるか知ってる？ #shorts #自衛隊",
-   "yt_desc": "App Storeで「自衛官入隊」と検索すると、対策アプリが出てくる。一般曹候補生・自衛官候補生などの入隊試験に向けて、分野別に問題が並ぶ。解説つき。\n#自衛隊 #入隊 #一般曹候補生\nhttps://apps.apple.com/jp/app/id6772919770\n\nBGM: しゅわしゅわハニーレモン350ml - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "自衛隊",
-    "入隊",
-    "一般曹候補生",
-    "採用試験"
-   ],
-   "yt_thumb": "an06_iritai_thumb.jpg"
-  },
-  {
-   "app": "自衛官一般幹部候補生試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6776236258",
-   "video": "an07_kanbu.mp4",
-   "cover": "covers/cta_kanbu.jpg",
-   "ig_caption": "幹部候補生って、隊員から昇任するのとは別で、最初から幹部枠で入るルートの試験。教養と専門の両方に問題が並んで、本番と同じ形式、解説つき。\n#自衛隊 #幹部候補生 #幹部自衛官\nBGM: You and Me - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "幹部候補生って、隊員から昇任するのとは別で、最初から幹部枠で入るルートの試験。その対策アプリがある。教養と専門の両方に問題が並んで、本番と同じ形式、解説つき。https://apps.apple.com/jp/app/id6776236258",
-   "yt_title": "幹部候補生って、昇任とはまったく別ルートって知ってた？ #shorts #自衛隊",
-   "yt_desc": "幹部候補生って、隊員から昇任するのとは別で、最初から幹部枠で入るルートの試験。教養と専門の両方に問題が並んで、本番と同じ形式、解説つき。\n#自衛隊 #幹部候補生 #幹部自衛官\nhttps://apps.apple.com/jp/app/id6776236258\n\nBGM: You and Me - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "自衛隊",
-    "幹部候補生",
-    "一般幹部",
-    "幹部自衛官"
-   ],
-   "yt_thumb": "an07_kanbu_thumb.jpg"
-  },
-  {
-   "app": "ミリタリー中国語トレーナー",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6793817475",
-   "video": "an08_milchugo.mp4",
-   "cover": "covers/cta_milchugo.jpg",
-   "ig_caption": "陸自唯一の特殊部隊に入るには、何が要るのか。選抜の中身は公表されていない。陸自の情報学校では4言語を教えている(英語・ロシア語・中国語・韓国語)。\n#自衛隊 #特殊部隊 #軍事中国語\nBGM: 審判の日 - KK (DOVA-SYNDROME) / 音声: VOICEVOX / 写真: 尖閣諸島=内閣官房(政府標準利用規約)",
-   "threads_text": "陸自唯一の特殊部隊に入るには、何が要るのか。選抜の中身は公表されていない。別の話として、陸自の情報学校では英語・ロシア語・中国語・韓国語の4言語を教えている(公示文書に載っている)。ミリタリー中国語のアプリがある。https://apps.apple.com/jp/app/id6793817475",
-   "yt_title": "陸自唯一の特殊部隊に入るには、何が要るのか #shorts #自衛隊",
-   "yt_desc": "陸自唯一の特殊部隊に入るには、何が要るのか。選抜の中身は公表されていない。陸自の情報学校では4言語を教えている(英語・ロシア語・中国語・韓国語)。\n#自衛隊 #特殊部隊 #軍事中国語\nhttps://apps.apple.com/jp/app/id6793817475\n\nBGM: 審判の日 - KK (DOVA-SYNDROME) / 音声: VOICEVOX / 写真: 尖閣諸島=内閣官房(政府標準利用規約・出典明記)",
-   "yt_tags": [
-    "自衛隊",
-    "特殊作戦群",
-    "軍事中国語",
-    "ミリタリー"
-   ],
-   "yt_thumb": "an08_milchugo_thumb.jpg"
-  },
-  {
-   "app": "自衛官陸曹昇任試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
-   "video": "an01_rikuso.mp4",
-   "cover": "covers/cta_rikuso.jpg",
-   "ig_caption": "陸曹昇任試験の問題、演習中でもスマホで回せる。電波ないところでも動くのが地味に便利。\n#自衛隊 #陸上自衛隊 #陸曹\nBGM: 10℃ - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "threads_text": "陸曹昇任試験の対策、演習中でも回せる。オフライン動作するので電波のない場所でも普通に使える。App Storeで「陸曹昇任」と検索すると出てくる。https://apps.apple.com/jp/app/id6774074604",
-   "yt_title": "陸曹昇任試験、演習場でも電波なしで回せるの知ってた？ #自衛隊",
-   "yt_desc": "陸曹昇任試験の対策問題をオフラインで回せる。電波のない演習場でも使えるので、すき間時間を無駄にしない。\n#自衛隊 #陸上自衛隊 #陸曹昇任\nhttps://apps.apple.com/jp/app/id6774074604\n\nBGM: 10℃ - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "yt_tags": [
-    "自衛隊",
-    "陸上自衛隊",
-    "陸曹昇任",
-    "昇任試験"
-   ],
-   "yt_thumb": "an01_rikuso_thumb.jpg"
-  },
-  {
-   "app": "予備自衛官補 採用試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6778490302",
-   "video": "an02_yobi.mp4",
-   "cover": "covers/cta_yobi.jpg",
-   "ig_caption": "予備自衛官補の試験、いまWEB試験形式なんだよね。スマホで対策できるのが普通に強い。\n#予備自衛官 #自衛隊 #防衛省\nBGM: 2:23 AM - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "threads_text": "予備自衛官補の採用試験、実はWEB試験形式で実施されてる。スマホで同じ形式を解ける対策がある。App Storeで「予備自衛官補」と検索。https://apps.apple.com/jp/app/id6778490302",
-   "yt_title": "予備自衛官補の試験がWEB形式になってるって知ってた？ #自衛隊",
-   "yt_desc": "予備自衛官補の採用試験はWEB試験形式。スマホで本番と同じ形式を繰り返せる対策がある。\n#予備自衛官 #自衛隊 #防衛省\nhttps://apps.apple.com/jp/app/id6778490302\n\nBGM: 2:23 AM - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "yt_tags": [
-    "予備自衛官",
-    "予備自衛官補",
-    "自衛隊",
-    "採用試験"
-   ],
-   "yt_thumb": "an02_yobi_thumb.jpg"
-  },
-  {
-   "app": "自衛官空曹昇任試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6789531149",
-   "video": "an03_kusou.mp4",
-   "cover": "covers/cta_kusou.jpg",
-   "ig_caption": "空曹昇任試験、本番と同じ形式で解けて各問に解説もつく。これは効率いい。\n#自衛隊 #航空自衛隊 #空曹\nBGM: Parade - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "threads_text": "空曹昇任試験の対策、本番と同じ形式で問題を解いて、各問に解説がついてくる。解き直しで実力をつけやすい。App Storeで「空曹昇任」で検索。https://apps.apple.com/jp/app/id6789531149",
-   "yt_title": "空曹昇任試験、本番形式で解けて解説もついてくるの知ってた？ #自衛隊",
-   "yt_desc": "空曹昇任試験の対策問題、本番と同じ形式で各問に解説付き。解き直しで実力がつく。\n#自衛隊 #航空自衛隊 #空曹昇任\nhttps://apps.apple.com/jp/app/id6789531149\n\nBGM: Parade - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "yt_tags": [
-    "自衛隊",
-    "航空自衛隊",
-    "空曹昇任",
-    "昇任試験"
-   ],
-   "yt_thumb": "an03_kusou_thumb.jpg"
-  },
-  {
-   "app": "自衛官海曹昇任試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6789518576",
-   "video": "an04_kaiso.mp4",
-   "cover": "covers/cta_kaiso.jpg",
-   "ig_caption": "海曹昇任試験の問題、海自の分野ごとに並んでるのが地味に使いやすい。\n#自衛隊 #海上自衛隊 #海曹\nBGM: Escort - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "threads_text": "海曹昇任試験の対策問題、海自の専門分野ごとに整理されてて探しやすい。苦手な分野に絞り込んで回せる。App Storeで「海曹昇任」で検索。https://apps.apple.com/jp/app/id6789518576",
-   "yt_title": "海曹昇任試験の問題集、分野別に整理されてるとどう違う？ #海上自衛隊",
-   "yt_desc": "海曹昇任試験の対策問題を海自の分野別で解ける。得意・苦手の把握がしやすい。\n#自衛隊 #海上自衛隊 #海曹昇任\nhttps://apps.apple.com/jp/app/id6789518576\n\nBGM: Escort - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "yt_tags": [
-    "自衛隊",
-    "海上自衛隊",
-    "海曹昇任",
-    "昇任試験"
-   ],
-   "yt_thumb": "an04_kaiso_thumb.jpg"
-  },
-  {
-   "app": "ミリタリー英語トレーナー",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6793729335",
-   "video": "an05_mileigo.mp4",
-   "cover": "covers/cta_mileigo.jpg",
-   "ig_caption": "情報学校で英語・中国語・ロシア語・韓国語の4言語を教えてるって知ってた。軍事英語は独特の語彙が多い。\n#自衛隊 #英語 #ミリタリー\nBGM: Kazakiri (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "threads_text": "自衛隊の情報学校では4言語を教育してる。英語だけでも軍事系の用語は独特で、一般英語とは別物に近い。そのミリタリー英語をまとめたのがある。App Storeで「ミリタリー英語」で検索。https://apps.apple.com/jp/app/id6793729335",
-   "yt_title": "情報学校で教える4言語、ミリタリー英語はどう違う？ #自衛隊",
-   "yt_desc": "自衛隊情報学校は英語・中国語・ロシア語・韓国語の4言語を教育する。ミリタリー英語は一般英語とは語彙が全然違う。\n#自衛隊 #英語 #ミリタリー英語\nhttps://apps.apple.com/jp/app/id6793729335\n\nBGM: Kazakiri (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "yt_tags": [
-    "自衛隊",
-    "ミリタリー英語",
-    "英語学習",
-    "情報学校"
-   ],
-   "yt_thumb": "an05_mileigo_thumb.jpg"
-  },
-  {
-   "app": "自衛官入隊試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
-   "video": "an06_iritai.mp4",
-   "cover": "covers/cta_iritai.jpg",
-   "ig_caption": "自衛官入隊試験、本番と同じ形式で解けて分野別にも絞れる。形式に慣れるのが最初の壁。\n#自衛隊 #入隊試験 #自衛官\nBGM: Summer Triangle - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "threads_text": "自衛官入隊試験の対策、本番形式で解けて分野別にも絞れる。形式慣れと弱点対策が同時にできる。App Storeで「自衛官入隊試験対策」で検索。https://apps.apple.com/jp/app/id6772919770",
-   "yt_title": "自衛官入隊試験、本番形式で何問回せる？ #自衛隊",
-   "yt_desc": "自衛官入隊試験の問題を本番と同じ形式で解ける。分野別にも絞れるので弱点を集中的に潰せる。\n#自衛隊 #入隊試験 #自衛官\nhttps://apps.apple.com/jp/app/id6772919770\n\nBGM: Summer Triangle - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "yt_tags": [
-    "自衛隊",
-    "自衛官",
-    "入隊試験",
-    "採用試験"
-   ],
-   "yt_thumb": "an06_iritai_thumb.jpg"
-  },
-  {
-   "app": "自衛官一般幹部候補生試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6776236258",
-   "video": "an07_kanbu.mp4",
-   "cover": "covers/cta_kanbu.jpg",
-   "ig_caption": "幹部候補生、実は一般・歯科・薬剤科の3コースと音楽要員もいるって知ってた。試験対策も全コース対応してる。\n#自衛隊 #幹部自衛官 #防衛省\nBGM: Cassette Tape Dream - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "threads_text": "一般幹部候補生試験、一般・歯科・薬剤科の3コースのほかに音楽要員も対象。全コースの対策問題を回せるのがある。App Storeで「幹部候補生」と検索。https://apps.apple.com/jp/app/id6776236258",
-   "yt_title": "幹部候補生に音楽要員が含まれるって知ってた？3コース全部解説 #自衛隊",
-   "yt_desc": "自衛官一般幹部候補生試験は一般・歯科・薬剤科の3コース＋音楽要員が対象。全コース対応の対策問題が一つにある。\n#自衛隊 #幹部自衛官 #幹部候補生\nhttps://apps.apple.com/jp/app/id6776236258\n\nBGM: Cassette Tape Dream - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
-   "yt_tags": [
-    "自衛隊",
-    "幹部自衛官",
-    "幹部候補生",
-    "防衛省"
-   ],
-   "yt_thumb": "an07_kanbu_thumb.jpg"
-  },
-  {
-   "app": "自衛官陸曹昇任試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
-   "video": "an01_rikuso.mp4",
-   "cover": "covers/cta_rikuso.jpg",
-   "ig_caption": "陸曹昇任試験の対策アプリがある。目次から分野に飛べて、見たいところだけ集中して解ける。分野別に問題が並んでいて、本番と同じ形式で解説つき。\n#自衛隊 #陸曹昇任 #昇任試験\nBGM: 10℃ - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "陸曹昇任試験の対策アプリがある。目次から見たい分野に一発で飛べる。分野別に問題が並んでいて、本番と同じ形式で解説つき。App Storeで「陸曹昇任」と検索。https://apps.apple.com/jp/app/id6774074604",
-   "yt_title": "陸曹昇任、目次から見たい分野に一発で飛べる #shorts",
-   "yt_desc": "陸曹昇任試験の対策アプリがある。目次から分野に飛べて、見たいところだけ集中して解ける。分野別に問題が並んでいて、本番と同じ形式で解説つき。\n#自衛隊 #陸曹昇任 #昇任試験\nhttps://apps.apple.com/jp/app/id6774074604\n\nBGM: 10℃ - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "自衛隊",
-    "陸曹昇任",
-    "昇任試験",
-    "自衛官"
-   ],
-   "yt_thumb": "an01_rikuso_thumb.jpg"
-  },
-  {
-   "app": "予備自衛官補 採用試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6778490302",
-   "video": "an02_yobi.mp4",
-   "cover": "covers/cta_yobi.jpg",
-   "ig_caption": "予備自衛官補と予備自衛官は別の制度。まず補として採用され、教育訓練を経て予備自衛官に任用される（防衛省サイトに載っている）。その補の採用試験の対策アプリがある。\n#自衛隊 #予備自衛官補 #予備自衛官\nBGM: 2:23 AM - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "予備自衛官補と予備自衛官は別の制度。まず補として採用され、教育訓練を経て予備自衛官に任用される（防衛省サイト）。その補の採用試験の対策アプリがある。分野別に問題が並んでいてスマホで解ける。App Storeで「予備自衛官補」と検索。https://apps.apple.com/jp/app/id6778490302",
-   "yt_title": "予備自衛官補と予備自衛官って、別の制度なんだよね #shorts",
-   "yt_desc": "予備自衛官補と予備自衛官は別の制度。まず補として採用され、教育訓練を経て予備自衛官に任用される（防衛省サイトに載っている）。その補の採用試験の対策アプリがある。\n#自衛隊 #予備自衛官補 #予備自衛官\nhttps://apps.apple.com/jp/app/id6778490302\n\nBGM: 2:23 AM - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "自衛隊",
-    "予備自衛官補",
-    "予備自衛官",
-    "採用試験"
-   ],
-   "yt_thumb": "an02_yobi_thumb.jpg"
-  },
-  {
-   "app": "自衛官空曹昇任試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6789531149",
-   "video": "an03_kusou.mp4",
-   "cover": "covers/cta_kusou.jpg",
-   "ig_caption": "空曹昇任試験の対策アプリがある。分野ごとに正答率が数字で出て、学習履歴も残る。どこが足りていないかが見える。分野別に問題が並んでいて、本番と同じ形式で解説つき。\n#自衛隊 #空曹昇任 #昇任試験\nBGM: 風切 - ゆうり(Yuli Audio Craft) (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "空曹昇任試験の対策アプリがある。分野ごとに正答率が数字で出て、学習履歴も残る。どこが足りていないかが見える。分野別に問題が並んでいて解説つき。App Storeで「空曹昇任」と検索。https://apps.apple.com/jp/app/id6789531149",
-   "yt_title": "空曹昇任、正答率が分野ごとに数字で見える #shorts",
-   "yt_desc": "空曹昇任試験の対策アプリがある。分野ごとに正答率が数字で出て、学習履歴も残る。どこが足りていないかが見える。分野別に問題が並んでいて、本番と同じ形式で解説つき。\n#自衛隊 #空曹昇任 #昇任試験\nhttps://apps.apple.com/jp/app/id6789531149\n\nBGM: 風切 - ゆうり(Yuli Audio Craft) (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "自衛隊",
-    "空曹昇任",
-    "昇任試験",
-    "航空自衛隊"
-   ],
-   "yt_thumb": "an03_kusou_thumb.jpg"
-  },
-  {
-   "app": "自衛官海曹昇任試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6789518576",
-   "video": "an04_kaiso.mp4",
-   "cover": "covers/cta_kaiso.jpg",
-   "ig_caption": "自衛官の試験対策シリーズがある。陸曹・海曹・空曹の昇任、幹部候補生・自衛官入隊・予備自衛官補まで、区分ごとに1本ずつ。海曹の1本も分野別に問題が並んでいて、本番と同じ形式で解説つき。\n#自衛隊 #海曹昇任 #昇任試験\nBGM: Cassette Tape Dream - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "自衛官の試験対策シリーズがある。陸曹・海曹・空曹の昇任から、幹部候補生・自衛官入隊・予備自衛官補まで区分ごとに1本ずつ。分野別に問題が並んでいて解説つき。App Storeで「海曹昇任」と検索（他区分は「陸曹昇任」「空曹昇任」等）。https://apps.apple.com/jp/app/id6789518576",
-   "yt_title": "自衛官の試験対策、陸海空から幹部・入隊・予備自補までシリーズが揃ってる #shorts",
-   "yt_desc": "自衛官の試験対策シリーズがある。陸曹・海曹・空曹の昇任、幹部候補生・自衛官入隊・予備自衛官補まで、区分ごとに1本ずつ。海曹の1本も分野別に問題が並んでいて、本番と同じ形式で解説つき。\n#自衛隊 #海曹昇任 #昇任試験\nhttps://apps.apple.com/jp/app/id6789518576\n\nBGM: Cassette Tape Dream - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "自衛隊",
-    "海曹昇任",
-    "昇任試験",
-    "海上自衛隊"
-   ],
-   "yt_thumb": "an04_kaiso_thumb.jpg"
-  },
-  {
-   "app": "ミリタリー英語トレーナー",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6793729335",
-   "video": "an05_mileigo.mp4",
-   "cover": "covers/cta_mileigo.jpg",
-   "ig_caption": "陸上自衛隊の情報学校は、英語・ロシア語・中国語・韓国語の4言語の教育を行っている（防衛省サイトの契約公示に載っている）。その英語の分野をスマホで学べるアプリがある。ミリタリー英語のトレーナー。\n#自衛隊 #ミリタリー英語 #情報学校\nBGM: 野良猫は宇宙を目指した - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "陸上自衛隊の情報学校は英語・ロシア語・中国語・韓国語の4言語の教育を行っている（防衛省サイト契約公示）。その英語の分野をスマホで学べるアプリがある。ミリタリー英語のトレーナー。分野別に問題が並んでいて解説つき。App Storeで「ミリタリー英語」と検索。https://apps.apple.com/jp/app/id6793729335",
-   "yt_title": "陸自の情報学校、英語・ロシア語・中国語・韓国語の4言語を教えてる #shorts",
-   "yt_desc": "陸上自衛隊の情報学校は、英語・ロシア語・中国語・韓国語の4言語の教育を行っている（防衛省サイトの契約公示に載っている）。その英語の分野をスマホで学べるアプリがある。ミリタリー英語のトレーナー。\n#自衛隊 #ミリタリー英語 #情報学校\nhttps://apps.apple.com/jp/app/id6793729335\n\nBGM: 野良猫は宇宙を目指した - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "自衛隊",
-    "ミリタリー英語",
-    "情報学校",
-    "語学"
-   ],
-   "yt_thumb": "an05_mileigo_thumb.jpg"
-  },
-  {
-   "app": "自衛官入隊試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
-   "video": "an06_iritai.mp4",
-   "cover": "covers/cta_iritai.jpg",
-   "ig_caption": "自衛官の入隊には「一般曹候補生」と「自衛官候補生」の2つの採用区分がある（防衛省サイトで並列に載っている）。その両方を対策できるアプリがある。分野別に問題が並んでいて、本番と同じ形式で解説つき。\n#自衛隊 #自衛官入隊 #一般曹候補生\nBGM: Parade - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "自衛官の入隊には「一般曹候補生」と「自衛官候補生」の2つの採用区分がある（防衛省サイト）。その両方を対策できるアプリがある。分野別に問題が並んでいて解説つき。App Storeで「自衛官入隊」と検索。https://apps.apple.com/jp/app/id6772919770",
-   "yt_title": "自衛官の入隊、「一般曹候補生」と「自衛官候補生」で別の枠なんだよね #shorts",
-   "yt_desc": "自衛官の入隊には「一般曹候補生」と「自衛官候補生」の2つの採用区分がある（防衛省サイトで並列に載っている）。その両方を対策できるアプリがある。分野別に問題が並んでいて、本番と同じ形式で解説つき。\n#自衛隊 #自衛官入隊 #一般曹候補生\nhttps://apps.apple.com/jp/app/id6772919770\n\nBGM: Parade - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "自衛隊",
-    "自衛官入隊",
-    "一般曹候補生",
-    "自衛官候補生"
-   ],
-   "yt_thumb": "an06_iritai_thumb.jpg"
-  },
-  {
-   "app": "自衛官一般幹部候補生試験対策",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6776236258",
-   "video": "an07_kanbu.mp4",
-   "cover": "covers/cta_kanbu.jpg",
-   "ig_caption": "幹部候補生の試験は、1次と2次の2段構え。2次では複数の試験を受ける（防衛省の募集ページに載っている）。その1次筆記の対策アプリがある。分野別に問題が並んでいて、本番と同じ形式で解説つき。\n#自衛隊 #幹部候補生 #自衛官\nBGM: Escort - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "幹部候補生の試験は1次と2次の2段構え。2次では複数の試験を受ける（防衛省の募集ページ）。その1次筆記の対策アプリがある。分野別に問題が並んでいて解説つき。App Storeで「幹部候補生」と検索。https://apps.apple.com/jp/app/id6776236258",
-   "yt_title": "幹部候補生の試験、1次筆記と2次で2段構えになってる #shorts",
-   "yt_desc": "幹部候補生の試験は、1次と2次の2段構え。2次では複数の試験を受ける（防衛省の募集ページに載っている）。その1次筆記の対策アプリがある。分野別に問題が並んでいて、本番と同じ形式で解説つき。\n#自衛隊 #幹部候補生 #自衛官\nhttps://apps.apple.com/jp/app/id6776236258\n\nBGM: Escort - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "自衛隊",
-    "幹部候補生",
-    "自衛官",
-    "試験対策"
-   ],
-   "yt_thumb": "an07_kanbu_thumb.jpg"
-  },
-  {
-   "app": "ミリタリー中国語トレーナー",
-   "type": "app",
-   "appstore_url": "https://apps.apple.com/jp/app/id6793817475",
-   "video": "an08_milchugo.mp4",
-   "cover": "covers/cta_milchugo.jpg",
-   "ig_caption": "別班について、令和8年7月28日の会見で防衛大臣が「これまで存在しておらず現在も存在しない」と述べている（防衛省会見録）。その一方で陸自の情報学校は英語・ロシア語・中国語・韓国語の4言語を教育している。その中国語を学べるアプリがある。\n#自衛隊 #別班 #情報学校\nBGM: 審判の日 - KK (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "threads_text": "別班について、令和8年7月28日の記者会見で防衛大臣が「これまで存在しておらず現在も存在しない」と述べている（防衛省会見録）。その一方で陸自情報学校は英語・ロシア語・中国語・韓国語の4言語を教育している（契約公示）。その中国語をスマホで学べるアプリがある。App Storeで「ミリタリー中国語トレーナー」と検索。https://apps.apple.com/jp/app/id6793817475",
-   "yt_title": "別班って結局あるのか無いのか。防衛大臣は7月に「存在しない」と言った #shorts",
-   "yt_desc": "別班について、令和8年7月28日の会見で防衛大臣が「これまで存在しておらず現在も存在しない」と述べている（防衛省会見録）。その一方で陸自の情報学校は英語・ロシア語・中国語・韓国語の4言語を教育している。その中国語を学べるアプリがある。\n#自衛隊 #別班 #情報学校\nhttps://apps.apple.com/jp/app/id6793817475\n\nBGM: 審判の日 - KK (DOVA-SYNDROME) / 音声: VOICEVOX",
-   "yt_tags": [
-    "自衛隊",
-    "別班",
-    "情報学校",
-    "中国語"
-   ],
-   "yt_thumb": "an08_milchugo_thumb.jpg"
-  }
- ]
+  "video_base": "https://githabkonan.github.io/konan-apps/videos",
+  "posts": [
+    {
+      "app": "英語脳トレーナー",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6791685174",
+      "video": "eigonoh_1month.mp4",
+      "cover": "covers/eigonoh_1month_cover.jpg",
+      "ig_caption": "日本の英語教育は試験に受かるための勉強。だから海外では通用しない。必要なのは脳を英語脳にすること。\n#英語学習 #英会話 #英語脳\nBGM: 野良猫は宇宙を目指した - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_title": "英語を最短1ヶ月で身に付ける方法 #shorts #英語学習",
+      "yt_desc": "日本の英語教育は試験に受かるための勉強。だから海外では通用しない。必要なのは脳を英語脳にすること。\n#英語学習 #英会話 #英語脳\nhttps://apps.apple.com/jp/app/id6791685174\n\nBGM: 野良猫は宇宙を目指した - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "英語",
+        "英語学習",
+        "英会話",
+        "英語脳"
+      ],
+      "yt_thumb": "eigonoh_1month_thumb.jpg",
+      "threads_text_off": "日本人が英語を話せないのは、試験に受かるための勉強しかしてこなかったから。和訳を介さず「見た瞬間に英語で言う」訓練=英語脳を作るのが近道。そのためのアプリもある。https://apps.apple.com/jp/app/id6791685174"
+    },
+    {
+      "app": "自衛官入隊試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
+      "video": "iritai_shoninkyu.mp4",
+      "cover": "covers/iritai_shoninkyu_cover.jpg",
+      "ig_caption": "自衛官の待遇が大きく改善されている。衣食住はほぼ無償で手取りは意外と残る。入隊には教養試験と作文がある。\n#自衛隊 #入隊 #就職\nBGM: Parade - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "threads_text": "自衛官の初任給が23万円に引き上げられた。衣食住はほぼ無償だから手取りは意外と残る。入隊には教養試験と作文があって、対策アプリまである。https://apps.apple.com/jp/app/id6772919770",
+      "yt_title": "【朗報】自衛官の初任給、23万円になった。 #shorts #自衛隊",
+      "yt_desc": "自衛官の待遇が大きく改善されている。衣食住はほぼ無償で手取りは意外と残る。入隊には教養試験と作文がある。\n#自衛隊 #入隊 #就職\nhttps://apps.apple.com/jp/app/id6772919770\n\nBGM: Parade - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "自衛隊",
+        "入隊",
+        "初任給",
+        "就職"
+      ],
+      "yt_thumb": "iritai_shoninkyu_thumb.jpg"
+    },
+    {
+      "app": "自衛官海曹昇任試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6789518576",
+      "video": "kaiso_uminoue.mp4",
+      "cover": "covers/kaiso_uminoue_cover.jpg",
+      "ig_caption": "長期の航海に分厚い教本は持ち込めない。でも今はスマホ1台が教本になる。\n#海上自衛隊 #海曹 #昇任試験\nBGM: 10℃ - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 写真: 護衛艦あさゆき (Public domain, Wikimedia Commons)",
+      "threads_text": "海上自衛隊の昇任試験、長期航海中は勉強環境が限られる。分厚い教本の代わりにスマホ1台で対策できる時代になった。海曹昇任の対策アプリがある。https://apps.apple.com/jp/app/id6789518576",
+      "yt_title": "海の上でも、昇任試験は来る。 #shorts #海上自衛隊",
+      "yt_desc": "長期の航海に分厚い教本は持ち込めない。でも今はスマホ1台が教本になる。\n#海上自衛隊 #海曹 #昇任試験\nhttps://apps.apple.com/jp/app/id6789518576\n\nBGM: 10℃ - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 写真: 護衛艦あさゆき (Public domain, Wikimedia Commons)",
+      "yt_tags": [
+        "海上自衛隊",
+        "海曹",
+        "昇任試験",
+        "自衛隊"
+      ],
+      "yt_thumb": "kaiso_uminoue_thumb.jpg"
+    },
+    {
+      "app": "自衛官一般幹部候補生試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6776236258",
+      "video": "kanbu_22sai.mp4",
+      "cover": "covers/kanbu_22sai_cover.jpg",
+      "ig_caption": "幹部候補生試験は大卒なら誰でも受けられる。でも倍率は高い。対策した者だけが受かる。\n#自衛隊 #幹部候補生 #就活\nBGM: Escort - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "threads_text": "自衛隊は22歳で幹部になれる数少ない組織。幹部候補生試験は大卒なら誰でも受けられるけど倍率は高い。対策アプリまである時代。https://apps.apple.com/jp/app/id6776236258",
+      "yt_title": "22歳で、幹部になれる組織。 #shorts #幹部候補生",
+      "yt_desc": "幹部候補生試験は大卒なら誰でも受けられる。でも倍率は高い。対策した者だけが受かる。\n#自衛隊 #幹部候補生 #就活\nhttps://apps.apple.com/jp/app/id6776236258\n\nBGM: Escort - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "自衛隊",
+        "幹部候補生",
+        "就活",
+        "公務員"
+      ],
+      "yt_thumb": "kanbu_22sai_thumb.jpg"
+    },
+    {
+      "app": "kankokugonoh",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6793410091",
+      "video": "kankokugonoh_kantan.mp4",
+      "cover": "covers/kankokugonoh_kantan_cover.jpg",
+      "ig_caption": "韓国行きたい！でも韓国語が…って人へ。実は韓国語は英語より覚えるのが簡単。韓国語脳という勉強法がある。\n#韓国語 #韓国旅行 #韓国語勉強\nBGM: しゅわしゅわハニーレモン350ml - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成・自社アプリ画面",
+      "yt_title": "韓国語、実は英語より簡単だった。 #shorts #韓国語",
+      "yt_desc": "韓国行きたい！でも韓国語が…って人へ。実は韓国語は英語より覚えるのが簡単。韓国語脳という勉強法がある。\n#韓国語 #韓国旅行 #韓国語勉強\nhttps://apps.apple.com/jp/app/id6793410091\n\nBGM: しゅわしゅわハニーレモン350ml - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成・自社アプリ画面",
+      "yt_tags": [
+        "韓国語",
+        "韓国旅行",
+        "韓国語勉強",
+        "語学"
+      ],
+      "yt_thumb": "kankokugonoh_kantan_thumb.jpg",
+      "threads_text_off": "韓国語って実は英語より簡単。語順が日本語とほぼ同じだから。「韓国語脳」= 日本語に訳さずイメージで覚える勉強法が近道。https://apps.apple.com/jp/app/id6793410091"
+    },
+    {
+      "app": "自衛官空曹昇任試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6789531149",
+      "video": "kusou_scramble.mp4",
+      "cover": "covers/kusou_scramble_cover.jpg",
+      "ig_caption": "空自の現場は休む暇がない。それでも昇任試験は来る。勉強時間は自分で作るしかない。\n#航空自衛隊 #空曹 #昇任試験\nBGM: 風切 - ゆうり(Yuli Audio Craft) (DOVA-SYNDROME) / 音声: VOICEVOX / 写真: JASDF F-15J (U.S. Air Force, Public domain, Wikimedia Commons)",
+      "threads_text": "航空自衛隊のスクランブル発進は年595回。現場は忙しいのに昇任試験は待ってくれない。スキマ時間で空曹昇任の対策ができるアプリがある。https://apps.apple.com/jp/app/id6789531149",
+      "yt_title": "スクランブル発進、年595回。 #shorts #航空自衛隊",
+      "yt_desc": "空自の現場は休む暇がない。それでも昇任試験は来る。勉強時間は自分で作るしかない。\n#航空自衛隊 #空曹 #昇任試験\nhttps://apps.apple.com/jp/app/id6789531149\n\nBGM: 風切 - ゆうり(Yuli Audio Craft) (DOVA-SYNDROME) / 音声: VOICEVOX / 写真: JASDF F-15J (U.S. Air Force, Public domain, Wikimedia Commons)",
+      "yt_tags": [
+        "航空自衛隊",
+        "空曹",
+        "昇任試験",
+        "スクランブル"
+      ],
+      "yt_thumb": "kusou_scramble_thumb.jpg"
+    },
+    {
+      "app": "ミリタリー英語トレーナー",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6793729335",
+      "video": "mileigo_torinokosareru.mp4",
+      "cover": "covers/mileigo_torinokosareru_cover.jpg",
+      "ig_caption": "日米共同訓練は年々増えている。現場の号令も無線も全部英語。できる隊員はもう勉強を始めている。\n#自衛隊 #日米共同訓練 #軍事英語\nBGM: 2:23 AM - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 写真: U.S. Army/Navy, Exercise Keen Sword 25 (Public domain, Wikimedia Commons)",
+      "threads_text": "日米共同訓練は年々増えていて、現場の号令も無線も全部英語。英語ができるかどうかで任務の幅が変わる時代になった。軍事英語を学べるアプリまである。https://apps.apple.com/jp/app/id6793729335",
+      "yt_title": "英語ができない自衛官は、取り残される。 #shorts #自衛隊",
+      "yt_desc": "日米共同訓練は年々増えている。現場の号令も無線も全部英語。できる隊員はもう勉強を始めている。\n#自衛隊 #日米共同訓練 #軍事英語\nhttps://apps.apple.com/jp/app/id6793729335\n\nBGM: 2:23 AM - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 写真: U.S. Army/Navy, Exercise Keen Sword 25 (Public domain, Wikimedia Commons)",
+      "yt_tags": [
+        "自衛隊",
+        "日米共同訓練",
+        "軍事英語",
+        "英語学習"
+      ],
+      "yt_thumb": "mileigo_torinokosareru_thumb.jpg"
+    },
+    {
+      "app": "推しログ:推し活の記録帳",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6792884427",
+      "video": "oshilog_gaku.mp4",
+      "cover": "covers/oshilog_gaku_cover.jpg",
+      "ig_caption": "チケット、グッズ、遠征。気づけばすごい額に。でも推し活は記録するともっと楽しくなる。\n#推し活 #オタ活 #推し\nBGM: ハッピーイレイロ - こおろぎ (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_title": "推しに使った額、言える？ #shorts #推し活",
+      "yt_desc": "チケット、グッズ、遠征。気づけばすごい額に。でも推し活は記録するともっと楽しくなる。\n#推し活 #オタ活 #推し\nhttps://apps.apple.com/jp/app/id6792884427\n\nBGM: ハッピーイレイロ - こおろぎ (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "推し活",
+        "オタ活",
+        "推し",
+        "ライブ"
+      ],
+      "yt_thumb": "oshilog_gaku_thumb.jpg",
+      "threads_text_off": "チケット、グッズ、遠征。推しに使った額、正確に言える人少ないと思う。推し活は記録するともっと楽しくなるし、思い出も残る。推し活の記録帳アプリがある。https://apps.apple.com/jp/app/id6792884427"
+    },
+    {
+      "app": "QC検定3級 総合対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6780823003",
+      "video": "qc3_hyouka.mp4",
+      "cover": "covers/qc3_hyouka_cover.jpg",
+      "ig_caption": "QC検定3級は品質管理の登竜門。昇進や配置転換で持ってる人から選ばれる。\n#QC検定 #品質管理 #工場勤務\nBGM: かえるのピアノ - こおろぎ (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_title": "工場勤務で、評価される資格。 #shorts #QC検定",
+      "yt_desc": "QC検定3級は品質管理の登竜門。昇進や配置転換で持ってる人から選ばれる。\n#QC検定 #品質管理 #工場勤務\nhttps://apps.apple.com/jp/app/id6780823003\n\nBGM: かえるのピアノ - こおろぎ (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "QC検定",
+        "品質管理",
+        "工場勤務",
+        "資格"
+      ],
+      "yt_thumb": "qc3_hyouka_thumb.jpg",
+      "threads_text_off": "工場勤務で評価されたいならQC検定3級。品質管理の登竜門で、昇進や配置転換の場面で持ってる人から選ばれていく。スマホで対策できるアプリがある。https://apps.apple.com/jp/app/id6780823003"
+    },
+    {
+      "app": "自衛官陸曹昇任試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
+      "video": "rikuso_douki.mp4",
+      "cover": "covers/rikuso_douki_cover.jpg",
+      "ig_caption": "陸曹昇任試験はとにかく情報が少ない。分厚い教本を持ち歩く時代は終わった。\n#自衛隊 #陸曹 #昇任試験\nBGM: SUMMER TRIANGLE - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "threads_text": "陸曹昇任試験は隊内試験だから情報が少ない。同期と差がつくのは勉強量より勉強のやり方。スマホで昇任対策できるアプリがある。https://apps.apple.com/jp/app/id6774074604",
+      "yt_title": "【悲報】同期はもう、陸曹になった。 #shorts #自衛隊",
+      "yt_desc": "陸曹昇任試験はとにかく情報が少ない。分厚い教本を持ち歩く時代は終わった。\n#自衛隊 #陸曹 #昇任試験\nhttps://apps.apple.com/jp/app/id6774074604\n\nBGM: SUMMER TRIANGLE - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "自衛隊",
+        "陸曹",
+        "昇任試験",
+        "陸上自衛隊"
+      ],
+      "yt_thumb": "rikuso_douki_thumb.jpg"
+    },
+    {
+      "app": "TASK LEVELING",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6791684373",
+      "video": "sololevel_rpg.mp4",
+      "cover": "covers/sololevel_rpg_cover.jpg",
+      "ig_caption": "何もやる気が出ない。でもゲームなら何時間でもできる。やる事をクエストにして経験値が貯まるなら、人生はゲームみたいに攻略できる。\n#タスク管理 #習慣化 #やる気\nBGM: シャイニングスター(inst) - 森田交一 (魔王魂) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_title": "人生をRPGにしたら、動けるようになった。 #shorts",
+      "yt_desc": "何もやる気が出ない。でもゲームなら何時間でもできる。やる事をクエストにして経験値が貯まるなら、人生はゲームみたいに攻略できる。\n#タスク管理 #習慣化 #やる気\nhttps://apps.apple.com/jp/app/id6791684373\n\nBGM: シャイニングスター(inst) - 森田交一 (魔王魂) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "タスク管理",
+        "習慣化",
+        "RPG",
+        "やる気"
+      ],
+      "yt_thumb": "sololevel_rpg_thumb.jpg",
+      "threads_text_off": "何もやる気が出ないのに、ゲームなら何時間でもできる。だったらやる事をクエストにして経験値が貯まるようにすればいい。タスクをRPG化するアプリがある。https://apps.apple.com/jp/app/id6791684373"
+    },
+    {
+      "app": "運行管理者(貨物) 試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6795367683",
+      "video": "unkan_untenseki.mp4",
+      "cover": "covers/unkan_untenseki_cover.jpg",
+      "ig_caption": "運行管理者の資格があれば現場を管理する側になれる。試験はマークシート。スキマ時間で対策できる。\n#運行管理者 #トラックドライバー #資格\nBGM: サンタは中央線でやってくる - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_title": "一生、運転席のままでいいのか。 #shorts #運行管理者",
+      "yt_desc": "運行管理者の資格があれば現場を管理する側になれる。試験はマークシート。スキマ時間で対策できる。\n#運行管理者 #トラックドライバー #資格\nhttps://apps.apple.com/jp/app/id6795367683\n\nBGM: サンタは中央線でやってくる - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "運行管理者",
+        "トラックドライバー",
+        "資格",
+        "物流"
+      ],
+      "yt_thumb": "unkan_untenseki_thumb.jpg",
+      "threads_text_off": "トラックドライバーからキャリアを広げるなら運行管理者(貨物)。現場を管理する側に回れる国家資格で、試験はマークシート。スマホで対策できるアプリがある。https://apps.apple.com/jp/app/id6795367683"
+    },
+    {
+      "app": "予備自衛官補 採用試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6778490302",
+      "video": "yobi_heijitsu.mp4",
+      "cover": "covers/yobi_heijitsu_cover.jpg",
+      "ig_caption": "平日は会社員、有事は自衛官。予備自衛官補という制度が日本にはある。社会人でも応募できて、採用には試験がある。\n#予備自衛官補 #自衛隊 #社会人\nBGM: Cassette Tape Dream - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "threads_text": "平日は会社員、有事は自衛官。「予備自衛官補」という制度が日本にはある。社会人でも応募できて、採用には筆記試験がある。その対策ができるアプリまである。https://apps.apple.com/jp/app/id6778490302",
+      "yt_title": "平日は会社員、有事は自衛官。 #shorts #予備自衛官補",
+      "yt_desc": "平日は会社員、有事は自衛官。予備自衛官補という制度が日本にはある。社会人でも応募できて、採用には試験がある。\n#予備自衛官補 #自衛隊 #社会人\nhttps://apps.apple.com/jp/app/id6778490302\n\nBGM: Cassette Tape Dream - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "予備自衛官補",
+        "自衛隊",
+        "社会人",
+        "採用試験"
+      ],
+      "yt_thumb": "yobi_heijitsu_thumb.jpg"
+    },
+    {
+      "app": "ミリタリー中国語トレーナー",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6793817475",
+      "video": "milchugo_horyo.mp4",
+      "cover": "covers/milchugo_horyo_cover.jpg",
+      "ig_caption": "台湾有事になれば、日米条約で日本も他人事では済まない。現職の自衛官は最悪の事態に備えて中国語の勉強も進めているらしい。\n#自衛隊 #台湾有事 #中国語\nBGM: 審判の日 - KK (DOVA-SYNDROME) / 音声: VOICEVOX / 写真: Wikimedia Commons(習近平=PD, 高市早苗=内閣官房 CC BY 4.0), 尖閣諸島=内閣官房",
+      "threads_text": "台湾有事が起きると、米国が参戦し、日米条約で日本も無関係ではいられない。現職の自衛官には、最悪の事態に備えて中国語を勉強している人もいるらしい。軍事中国語を学べるアプリまである。https://apps.apple.com/jp/app/id6793817475",
+      "yt_title": "【悲報】自衛官、中国軍の捕虜にされる。 #shorts",
+      "yt_desc": "台湾有事になれば、日米条約で日本も他人事では済まない。現職の自衛官は最悪の事態に備えて中国語の勉強も進めているらしい。\n#自衛隊 #台湾有事 #中国語\nhttps://apps.apple.com/jp/app/id6793817475\n\nBGM: 審判の日 - KK (DOVA-SYNDROME) / 音声: VOICEVOX / 写真: Wikimedia Commons(習近平=PD, 高市早苗=内閣官房 CC BY 4.0), 尖閣諸島=内閣官房",
+      "yt_tags": [
+        "自衛隊",
+        "台湾有事",
+        "中国語",
+        "軍事"
+      ],
+      "yt_thumb": "milchugo_horyo_thumb.jpg"
+    },
+    {
+      "app": "ショートスリーパー育成プログラム",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6803121721",
+      "pin": "2026-08-31 10",
+      "video": "sleephack_shomei.mp4",
+      "cover": "covers/sleephack_shomei_cover.jpg",
+      "ig_caption": "堀大輔氏が9月に7日間連続の生配信を宣言。30分睡眠は本当に可能なのか、答えは9月に出る。\n#堀大輔 #ショートスリーパー #短時間睡眠\nBGM: 風切 - ゆうり(Yuli Audio Craft) (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_title": "堀大輔、本物のショートスリーパーであることを証明 #shorts",
+      "yt_desc": "堀大輔氏が9月に7日間連続の生配信を宣言。30分睡眠は本当に可能なのか、答えは9月に出る。\n#堀大輔 #ショートスリーパー #短時間睡眠\nhttps://apps.apple.com/jp/app/id6803121721\n\nBGM: 風切 - ゆうり(Yuli Audio Craft) (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "堀大輔",
+        "ショートスリーパー",
+        "短時間睡眠",
+        "睡眠"
+      ],
+      "yt_thumb": "sleephack_shomei_thumb.jpg",
+      "threads_text_off": "うそでしょ。App Storeに『ショートスリーパー育成プログラム』ってアプリが出てるんだけど。堀大輔さんが9月に7日間ぶっ通しで生配信して短時間睡眠を証明するって宣言してる、まさにあの流れ。1日が実質2回分になったら何しよう…って考えてたら夜が明けそう。https://apps.apple.com/jp/app/id6803121721"
+    },
+    {
+      "app": "ショートスリーパー育成プログラム",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6803121721",
+      "pin": "2026-09-01 10",
+      "video": "sleephack_kingaku.mp4",
+      "cover": "covers/sleephack_kingaku_cover.jpg",
+      "ig_caption": "堀大輔氏の睡眠改善プログラムは基本受講料16万5千円、継続は月3万3千円。高いと見るか、時間が増えるなら安いと見るか。\n#堀大輔 #ショートスリーパー #短時間睡眠\nBGM: 2:23 AM - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_title": "堀大輔の睡眠プログラム、16万5千円の中身 #shorts",
+      "yt_desc": "堀大輔氏の睡眠改善プログラムは基本受講料16万5千円、継続は月3万3千円。高いと見るか、時間が増えるなら安いと見るか。\n#堀大輔 #ショートスリーパー #短時間睡眠\nhttps://apps.apple.com/jp/app/id6803121721\n\nBGM: 2:23 AM - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "堀大輔",
+        "ショートスリーパー",
+        "短時間睡眠",
+        "睡眠"
+      ],
+      "yt_thumb": "sleephack_kingaku_thumb.jpg",
+      "threads_text_off": "例の『ショートスリーパー育成プログラム』ってアプリ、気になって堀大輔さんの睡眠改善プログラムの方も調べてみた。公式サイトの受講料が16万5千円で、継続は月3万3千円。1日の時間が増えるなら安いと見るか、高いと見るか…。アプリの方も同じ短時間睡眠のトレーニングを扱ってた。https://apps.apple.com/jp/app/id6803121721"
+    },
+    {
+      "app": "自衛官陸曹昇任試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
+      "video": "rikuso_jikan.mp4",
+      "cover": "covers/cta_rikuso.jpg",
+      "ig_caption": "陸曹昇任試験の対策アプリがある。分野別に問題が並んでいて解説つき。移動中でも待機中でも開ける。\n#自衛隊 #陸曹 #昇任試験\nBGM: 10℃ - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "陸曹昇任試験の対策アプリがある。分野別に問題が並んでいて、解説がついている。移動中でも待機中でも開ける。 https://apps.apple.com/jp/app/id6774074604",
+      "yt_title": "陸曹昇任試験、スマホで全部解ける？ #shorts",
+      "yt_desc": "自衛官陸曹昇任試験対策。分野別に問題が並んでいて、移動中でもスマホで解ける。\n#自衛隊 #陸曹 #昇任試験\nhttps://apps.apple.com/jp/app/id6774074604\n\nBGM: 10℃ - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "自衛隊",
+        "陸曹",
+        "昇任試験",
+        "陸上自衛隊"
+      ],
+      "yt_thumb": "rikuso_jikan_thumb.jpg"
+    },
+    {
+      "app": "予備自衛官補 採用試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6778490302",
+      "pin": "2026-09-02 10",
+      "video": "yobi_dai3kai.mp4",
+      "cover": "covers/cta_yobi.jpg",
+      "ig_caption": "令和8年度 予備自衛官補 第3回の受付が今日9/1から始まっている。9/25必着。出してから本番までは短い。対策アプリがある。\n#予備自衛官補 #自衛隊\nBGM: 風切 - ゆうり(Yuli Audio Craft) (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "令和8年度 予備自衛官補 第3回の受付が今日9月1日から始まっている。締切は9月25日必着(防衛省サイトに載っている)。出してから本番までは短い。範囲を一周しておきたい人向けに、予備自衛官補の対策アプリがある。 https://apps.apple.com/jp/app/id6778490302",
+      "yt_title": "令和8年度 予備自衛官補、第3回の受付が今日から。 #shorts",
+      "yt_desc": "令和8年度 予備自衛官補 第3回。受付9月1日〜9月25日必着(防衛省サイト)。分野別に問題が並んだ対策アプリがある。\n#予備自衛官補 #自衛隊 #令和8年度\nhttps://apps.apple.com/jp/app/id6778490302\n\nBGM: 風切 - ゆうり(Yuli Audio Craft) (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "予備自衛官補",
+        "自衛隊",
+        "令和8年度",
+        "採用試験"
+      ],
+      "yt_thumb": "yobi_dai3kai_thumb.jpg"
+    },
+    {
+      "app": "自衛官空曹昇任試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6789531149",
+      "video": "kusou_series.mp4",
+      "cover": "covers/cta_kusou.jpg",
+      "ig_caption": "陸曹・海曹に続いて、空曹昇任試験の対策アプリがある。分野別に問題が並んでいて、スマホで解ける。\n#自衛隊 #空曹 #昇任試験\nBGM: 2:23 AM - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "陸曹・海曹に続いて、空曹昇任試験の対策アプリがある。分野別に問題が並んでいて、スマホで解ける。 https://apps.apple.com/jp/app/id6789531149",
+      "yt_title": "空曹昇任試験、スマホで解ける？ #shorts",
+      "yt_desc": "自衛官空曹昇任試験対策。分野別に問題が並んでいて、スマホで解ける。\n#自衛隊 #空曹 #昇任試験\nhttps://apps.apple.com/jp/app/id6789531149\n\nBGM: 2:23 AM - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "自衛隊",
+        "空曹",
+        "昇任試験",
+        "航空自衛隊"
+      ],
+      "yt_thumb": "kusou_series_thumb.jpg"
+    },
+    {
+      "app": "自衛官海曹昇任試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6789518576",
+      "video": "kaiso_offline.mp4",
+      "cover": "covers/cta_kaiso.jpg",
+      "ig_caption": "艦上では電波がない。それでも使える海曹昇任試験の対策アプリがある。分野別に問題が並んでいる。\n#自衛隊 #海曹 #昇任試験\nBGM: Escort - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "艦上では電波が入らない。それでも使える海曹昇任試験の対策アプリがある。分野別に問題が並んでいて、オフラインで動く。 https://apps.apple.com/jp/app/id6789518576",
+      "yt_title": "海曹昇任試験、艦上でオフライン対策できる？ #shorts",
+      "yt_desc": "自衛官海曹昇任試験対策。分野別に問題が並んでいて、オフラインで解ける。\n#自衛隊 #海曹 #昇任試験\nhttps://apps.apple.com/jp/app/id6789518576\n\nBGM: Escort - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "自衛隊",
+        "海曹",
+        "昇任試験",
+        "海上自衛隊"
+      ],
+      "yt_thumb": "kaiso_offline_thumb.jpg"
+    },
+    {
+      "app": "ミリタリー英語トレーナー",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6793729335",
+      "video": "mileigo_tokushu.mp4",
+      "cover": "covers/cta_mileigo.jpg",
+      "ig_caption": "陸上自衛隊に特殊部隊がある。習志野・2004年創設。陸自の情報学校では英語・ロシア語・中国語・韓国語の語学教育がある(mod.go.jp公示)。\n個人向けにはミリタリー英語のアプリがある。\n#自衛隊 #特殊作戦群 #英語\nBGM: 審判の日 - KK (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "陸上自衛隊に特殊部隊がある。習志野に、2004年3月に作られた。陸自の情報学校の語学教育で、英語・ロシア語・中国語・韓国語が扱われている(mod.go.jp の公示に載っている)。個人向けには、ミリタリー英語のアプリがある。階級・装備・部隊行動の英語語彙。 https://apps.apple.com/jp/app/id6793729335",
+      "yt_title": "陸上自衛隊に、特殊部隊はある？ #shorts",
+      "yt_desc": "陸上自衛隊の特殊部隊。習志野、2004年創設。情報学校の語学教育(英語・ロシア語・中国語・韓国語)。個人向けにミリタリー英語の語彙トレーニング。\n#自衛隊 #特殊作戦群 #英語\nhttps://apps.apple.com/jp/app/id6793729335\n\nBGM: 審判の日 - KK (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "特殊作戦群",
+        "陸上自衛隊",
+        "自衛隊",
+        "英語"
+      ],
+      "yt_thumb": "mileigo_tokushu_thumb.jpg"
+    },
+    {
+      "app": "自衛官入隊試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
+      "pin": "2026-09-03 10",
+      "video": "iritai_dai3kai.mp4",
+      "cover": "covers/cta_iritai.jpg",
+      "ig_caption": "令和8年度 一般曹候補生 第3回の受付が今日9/1から始まっている。9/25必着。出してから本番までは短い。入隊試験向けの対策アプリがある。\n#一般曹候補生 #自衛隊\nBGM: シャイニングスター(inst) - 森田交一 (魔王魂) / 音声: VOICEVOX",
+      "threads_text": "令和8年度 一般曹候補生 第3回の受付が今日9月1日から始まっている。締切は9月25日必着(防衛省サイトに載っている)。出してから本番までは短い。範囲を一周しておきたい人向けに、入隊試験向けの対策アプリがある。 https://apps.apple.com/jp/app/id6772919770",
+      "yt_title": "令和8年度 一般曹候補生 第3回、今日から。 #shorts",
+      "yt_desc": "令和8年度 一般曹候補生 第3回。受付9月1日〜9月25日必着(防衛省サイト)。分野別に問題が並んだ入隊試験対策。\n#一般曹候補生 #自衛隊 #令和8年度\nhttps://apps.apple.com/jp/app/id6772919770\n\nBGM: シャイニングスター(inst) - 森田交一 (魔王魂) / 音声: VOICEVOX",
+      "yt_tags": [
+        "一般曹候補生",
+        "自衛隊",
+        "令和8年度",
+        "入隊試験"
+      ],
+      "yt_thumb": "iritai_dai3kai_thumb.jpg"
+    },
+    {
+      "app": "自衛官一般幹部候補生試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6776236258",
+      "video": "kanbu_zero_number.mp4",
+      "cover": "covers/cta_kanbu.jpg",
+      "ig_caption": "一般幹部候補生の対策アプリがある。1次試験の一般教養・専門が分野別に並んでいて、スマホで解ける。\n#自衛隊 #幹部候補生\nBGM: Cassette Tape Dream - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "一般幹部候補生の対策アプリがある。1次試験の一般教養と専門が分野別に並んでいて、スマホで解ける。 https://apps.apple.com/jp/app/id6776236258",
+      "yt_title": "一般幹部候補生、1次試験の一般教養と専門をスマホで。 #shorts",
+      "yt_desc": "自衛官一般幹部候補生試験対策。1次試験の一般教養・専門が分野別に並んでいて、スマホで解ける。\n#自衛隊 #幹部候補生 #自衛官\nhttps://apps.apple.com/jp/app/id6776236258\n\nBGM: Cassette Tape Dream - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "幹部候補生",
+        "自衛隊",
+        "自衛官",
+        "採用試験"
+      ],
+      "yt_thumb": "kanbu_zero_number_thumb.jpg"
+    },
+    {
+      "app": "ミリタリー中国語トレーナー",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6793817475",
+      "video": "milchugo_bepan.mp4",
+      "cover": "covers/cta_milchugo.jpg",
+      "ig_caption": "令和8年7月28日、防衛大臣が記者会見で「陸上自衛隊の別班といったような組織は存在しない」と発言(mod.go.jp)。陸自情報学校の語学教育で中国語が扱われている。個人向けにはミリタリー中国語アプリがある。\n#別班 #自衛隊 #中国語\nBGM: サンタは中央線でやってくる - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "べっぱんって、結局あるのか無いのか。令和8年7月28日、防衛大臣が記者会見で「陸上自衛隊の別班といったような組織は、これまで存在しておらず、また現在も存在しない」と発言している(mod.go.jpに記者会見録が載っている)。陸自の情報学校の語学教育で、中国語が扱われている(mod.go.jp公示に載っている)。個人向けには、ミリタリー中国語のアプリがある。中国軍関連の語彙・階級・装備。 https://apps.apple.com/jp/app/id6793817475",
+      "yt_title": "「別班」、結局あるのかないのか。 #shorts",
+      "yt_desc": "令和8年7月28日、防衛大臣が記者会見で「陸上自衛隊の別班といったような組織は存在しない」と発言。陸自の情報学校では中国語が扱われている(mod.go.jp公示)。個人向けにミリタリー中国語アプリがある。\n#別班 #自衛隊 #中国語\nhttps://apps.apple.com/jp/app/id6793817475\n\nBGM: サンタは中央線でやってくる - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "別班",
+        "自衛隊",
+        "中国語",
+        "防衛省"
+      ],
+      "yt_thumb": "milchugo_bepan_thumb.jpg"
+    },
+    {
+      "app": "自衛官陸曹昇任試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
+      "video": "rikuso_bunbetsu_20260902.mp4",
+      "cover": "covers/cta_rikuso.jpg",
+      "ig_caption": "昇任試験の勉強、分野を絞って回すのが一番速い。\n#陸上自衛隊 #陸曹 #昇任試験\nBGM: 10℃ - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "陸曹昇任の試験、本番と同じ形式で分野別に対策できる。App Storeで「陸曹昇任」と検索すると出てくる。https://apps.apple.com/jp/app/id6774074604",
+      "yt_title": "陸曹昇任の試験、何分野から出るか知ってる？ #shorts #陸上自衛隊",
+      "yt_desc": "本番と同じ形式で、分野別に問題を解ける。\n#陸上自衛隊 #陸曹 #昇任試験\nhttps://apps.apple.com/jp/app/id6774074604\n\nBGM: 10℃ - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "陸上自衛隊",
+        "陸曹",
+        "昇任試験",
+        "自衛隊"
+      ],
+      "yt_thumb": "rikuso_bunbetsu_20260902_thumb.jpg"
+    },
+    {
+      "app": "予備自衛官補 採用試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6778490302",
+      "video": "yobi_ichiji0916_20260902.mp4",
+      "cover": "covers/cta_yobi.jpg",
+      "ig_caption": "予備自衛官補の1次試験が9月16日から始まる。まだ時間はある。\n#予備自衛官補 #自衛隊 #採用試験\nBGM: 風切 - ゆうり(Yuli Audio Craft) (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "予備自衛官補の1次試験は9月16日から。対策できる期間は短い。問題を解いて感覚をつかんでおくと違う。https://apps.apple.com/jp/app/id6778490302",
+      "yt_title": "予備自衛官補の1次試験、9月16日に始まる。 #shorts #予備自衛官補",
+      "yt_desc": "一般科目と技能認定がある。9月16日から試験が始まる。\n#予備自衛官補 #自衛隊 #採用試験\nhttps://apps.apple.com/jp/app/id6778490302\n\nBGM: 風切 - ゆうり(Yuli Audio Craft) (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "予備自衛官補",
+        "自衛隊",
+        "採用試験",
+        "1次試験"
+      ],
+      "yt_thumb": "yobi_ichiji0916_20260902_thumb.jpg"
+    },
+    {
+      "app": "自衛官空曹昇任試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6789531149",
+      "video": "kusou_bunbetsu_20260902.mp4",
+      "cover": "covers/cta_kusou.jpg",
+      "ig_caption": "空曹昇任の対策、苦手な分野だけに絞って解けるのが理にかなってる。\n#航空自衛隊 #空曹 #昇任試験\nBGM: Parade - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "空曹昇任の筆記、分野を選んでそこだけ解けるので、苦手分野の集中対策がしやすい。https://apps.apple.com/jp/app/id6789531149",
+      "yt_title": "空曹昇任の試験、どの分野から手をつければいい？ #shorts #航空自衛隊",
+      "yt_desc": "分野を選んでそこだけ集中して解ける。苦手を潰す対策に向いてる。\n#航空自衛隊 #空曹 #昇任試験\nhttps://apps.apple.com/jp/app/id6789531149\n\nBGM: Parade - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "航空自衛隊",
+        "空曹",
+        "昇任試験",
+        "自衛隊"
+      ],
+      "yt_thumb": "kusou_bunbetsu_20260902_thumb.jpg"
+    },
+    {
+      "app": "自衛官海曹昇任試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6789518576",
+      "video": "kaiso_kensaku_20260902.mp4",
+      "cover": "covers/cta_kaiso.jpg",
+      "ig_caption": "App Storeで「海曹昇任」って検索したら、対策できるものが出てくる。\n#海上自衛隊 #海曹 #昇任試験\nBGM: Escort - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "App Storeで「海曹昇任」と検索すると、対策できるものが出てくる。海曹昇任を目指している人はチェックしてみて。https://apps.apple.com/jp/app/id6789518576",
+      "yt_title": "App Storeで「海曹昇任」と検索すると何が出てくる？ #shorts #海上自衛隊",
+      "yt_desc": "海曹昇任の対策に使えるものが出てくる。\n#海上自衛隊 #海曹 #昇任試験\nhttps://apps.apple.com/jp/app/id6789518576\n\nBGM: Escort - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "海上自衛隊",
+        "海曹",
+        "昇任試験",
+        "自衛隊"
+      ],
+      "yt_thumb": "kaiso_kensaku_20260902_thumb.jpg"
+    },
+    {
+      "app": "ミリタリー英語トレーナー",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6793729335",
+      "video": "mileigo_senbatsu_20260902.mp4",
+      "cover": "covers/cta_mileigo.jpg",
+      "ig_caption": "陸上自衛隊唯一の特殊部隊。その選抜の詳細は公表されていない。こういう場所で使われる英語を知りたくなった。\n#自衛隊 #ミリタリー英語 #特殊部隊\nBGM: 2:23 AM - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "陸自唯一の特殊部隊、選抜の詳細は公表されていない。そういう組織で使われるミリタリー英語を学べる。App Storeで「ミリタリー英語トレーナー」と検索してみて。https://apps.apple.com/jp/app/id6793729335",
+      "yt_title": "陸自唯一の特殊部隊。選抜の条件が明かされていない理由は？ #shorts #自衛隊",
+      "yt_desc": "特殊部隊に関わる英語を、実際に使われる場面から学ぶ。\n#自衛隊 #ミリタリー英語 #特殊部隊\nhttps://apps.apple.com/jp/app/id6793729335\n\nBGM: 2:23 AM - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "自衛隊",
+        "ミリタリー英語",
+        "特殊部隊",
+        "英語学習"
+      ],
+      "yt_thumb": "mileigo_senbatsu_20260902_thumb.jpg"
+    },
+    {
+      "app": "自衛官入隊試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
+      "video": "iritai_ichiji0916_20260902.mp4",
+      "cover": "covers/cta_iritai.jpg",
+      "ig_caption": "一般曹候補生の1次試験が9月16日から始まる。筆記対策は今からでも間に合う。\n#自衛官 #入隊 #曹候補生\nBGM: SUMMER TRIANGLE - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "一般曹候補生の1次試験は9月16日から。対策問題を解いて、感覚をつかんでおくとちがう。https://apps.apple.com/jp/app/id6772919770",
+      "yt_title": "一般曹候補生の1次試験、9月16日に何がある？ #shorts #自衛官",
+      "yt_desc": "一般曹候補生の1次試験は9月16日から。筆記と適性検査がある。\n#自衛官 #入隊 #曹候補生\nhttps://apps.apple.com/jp/app/id6772919770\n\nBGM: SUMMER TRIANGLE - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "自衛官",
+        "入隊",
+        "曹候補生",
+        "一般曹候補生"
+      ],
+      "yt_thumb": "iritai_ichiji0916_20260902_thumb.jpg"
+    },
+    {
+      "app": "自衛官一般幹部候補生試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6776236258",
+      "video": "kanbu_hanni_20260902.mp4",
+      "cover": "covers/cta_kanbu.jpg",
+      "ig_caption": "幹部候補生の筆記、とにかく範囲が広い。全部をやろうとすると時間が足りなくなる。\n#自衛官 #幹部候補生 #筆記試験\nBGM: Cassette Tape Dream - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "幹部候補生の筆記試験、範囲がとにかく広い。分野を絞って集中的に対策するのが現実的。対策できるものがある。https://apps.apple.com/jp/app/id6776236258",
+      "yt_title": "幹部候補生の筆記、範囲は全部で何科目ある？ #shorts #自衛官幹部",
+      "yt_desc": "範囲がとにかく広い。分野を絞って対策するのが現実的。\n#自衛官 #幹部候補生 #筆記試験\nhttps://apps.apple.com/jp/app/id6776236258\n\nBGM: Cassette Tape Dream - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "自衛官",
+        "幹部候補生",
+        "筆記試験",
+        "自衛隊"
+      ],
+      "yt_thumb": "kanbu_hanni_20260902_thumb.jpg"
+    },
+    {
+      "app": "ミリタリー中国語トレーナー",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6793817475",
+      "video": "milchugo_tokushubutai_20260902.mp4",
+      "cover": "covers/cta_milchugo.jpg",
+      "ig_caption": "陸上自衛隊に唯一の特殊部隊がある。そこで必要になる言語の一つが中国語。実戦的なミリタリー中国語を学ぶ方法がある。\n#自衛隊 #ミリタリー中国語 #中国語\nBGM: 審判の日 - KK (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "陸上自衛隊に特殊部隊が1つだけある。そこで使われる中国語を、実戦フレーズから学べる。App Storeで「ミリタリー中国語トレーナー」と検索。https://apps.apple.com/jp/app/id6793817475",
+      "yt_title": "陸上自衛隊に特殊部隊が1つある。そこで使われる中国語とは？ #shorts #自衛隊",
+      "yt_desc": "特殊作戦群と情報学校で使われるミリタリー中国語を学ぶ。\n#自衛隊 #ミリタリー中国語 #中国語\nhttps://apps.apple.com/jp/app/id6793817475\n\nBGM: 審判の日 - KK (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "自衛隊",
+        "ミリタリー中国語",
+        "中国語",
+        "特殊部隊"
+      ],
+      "yt_thumb": "milchugo_tokushubutai_20260902_thumb.jpg"
+    },
+    {
+      "app": "自衛官陸曹昇任試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
+      "video": "an01_rikuso.mp4",
+      "cover": "covers/cta_rikuso.jpg",
+      "ig_caption": "陸曹昇任の対策、間違えた問題だけ後でまとめて解き直せる仕組みがある。解説もついていて理由もわかる。\n#自衛隊 #陸自 #昇任試験\nBGM: 野良猫は宇宙を目指した - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "陸曹昇任の対策アプリ、間違えた問題が自動で残って、後でまとめて解き直せる。解説もついていて理由もわかる。陸曹昇任試験を準備中の人向け。https://apps.apple.com/jp/app/id6774074604",
+      "yt_title": "陸曹昇任、間違えた問題だけ後でまとめて解き直せる？ #shorts #自衛隊",
+      "yt_desc": "陸曹昇任の対策、間違えた問題だけ後でまとめて解き直せる仕組みがある。解説もついていて理由もわかる。\n#自衛隊 #陸自 #昇任試験\nhttps://apps.apple.com/jp/app/id6774074604\n\nBGM: 野良猫は宇宙を目指した - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "自衛隊",
+        "陸曹",
+        "昇任試験",
+        "自衛官"
+      ],
+      "yt_thumb": "an01_rikuso_thumb.jpg"
+    },
+    {
+      "app": "予備自衛官補 採用試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6778490302",
+      "video": "an02_yobi.mp4",
+      "cover": "covers/cta_yobi.jpg",
+      "ig_caption": "予備自衛官補という制度がある。防衛省が公式に設けていて、採用試験がある。分野別に問題が並んで、解説つき。\n#自衛隊 #予備自衛官 #防衛省\nBGM: かえるのピアノ - こおろぎ (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "予備自衛官補という制度がある。防衛省が公式に設けている制度で、採用試験がある。その対策アプリがApp Storeにある。分野別に問題が並んで、解説つき。https://apps.apple.com/jp/app/id6778490302",
+      "yt_title": "予備自衛官補って制度、知ってる？ #shorts #自衛隊",
+      "yt_desc": "予備自衛官補という制度がある。防衛省が公式に設けていて、採用試験がある。分野別に問題が並んで、解説つき。\n#自衛隊 #予備自衛官 #防衛省\nhttps://apps.apple.com/jp/app/id6778490302\n\nBGM: かえるのピアノ - こおろぎ (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "自衛隊",
+        "予備自衛官",
+        "採用試験",
+        "防衛省"
+      ],
+      "yt_thumb": "an02_yobi_thumb.jpg"
+    },
+    {
+      "app": "自衛官空曹昇任試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6789531149",
+      "video": "an03_kusou.mp4",
+      "cover": "covers/cta_kusou.jpg",
+      "ig_caption": "空曹昇任の対策、空自の分野(機体・整備・気象など)で問題が分かれて並んでいる。本番と同じ形式で、解説つき。\n#自衛隊 #空自 #昇任試験\nBGM: ハッピーイレイロ - こおろぎ (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "空曹昇任の対策アプリ、空自の分野(機体・整備・気象など)で問題が分かれて並んでいる。本番と同じ形式で、解説つき。スマホで解ける。https://apps.apple.com/jp/app/id6789531149",
+      "yt_title": "空曹昇任の対策、機体・整備・気象の3分野に分かれてることを知ってた？ #shorts #自衛隊",
+      "yt_desc": "空曹昇任の対策、空自の分野(機体・整備・気象など)で問題が分かれて並んでいる。本番と同じ形式で、解説つき。\n#自衛隊 #空自 #昇任試験\nhttps://apps.apple.com/jp/app/id6789531149\n\nBGM: ハッピーイレイロ - こおろぎ (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "自衛隊",
+        "空曹",
+        "昇任試験",
+        "航空自衛隊"
+      ],
+      "yt_thumb": "an03_kusou_thumb.jpg"
+    },
+    {
+      "app": "自衛官海曹昇任試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6789518576",
+      "video": "an04_kaiso.mp4",
+      "cover": "covers/cta_kaiso.jpg",
+      "ig_caption": "海曹昇任の対策、各問に解説がついている。間違えても「なぜそうなるか」がわかる仕組み。分野別に並んで、本番と同じ形式。\n#自衛隊 #海自 #昇任試験\nBGM: サンタは中央線でやってくる - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "海曹昇任の対策アプリ、各問に解説がついている。間違えても「なぜそうなるか」がわかる仕組み。分野別に並んで、本番と同じ形式。https://apps.apple.com/jp/app/id6789518576",
+      "yt_title": "海曹昇任の勉強、各問に解説ついてることを知ってた？ #shorts #自衛隊",
+      "yt_desc": "海曹昇任の対策、各問に解説がついている。間違えても「なぜそうなるか」がわかる仕組み。分野別に並んで、本番と同じ形式。\n#自衛隊 #海自 #昇任試験\nhttps://apps.apple.com/jp/app/id6789518576\n\nBGM: サンタは中央線でやってくる - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "自衛隊",
+        "海曹",
+        "昇任試験",
+        "海上自衛隊"
+      ],
+      "yt_thumb": "an04_kaiso_thumb.jpg"
+    },
+    {
+      "app": "ミリタリー英語トレーナー",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6793729335",
+      "video": "an05_mileigo.mp4",
+      "cover": "covers/cta_mileigo.jpg",
+      "ig_caption": "「べっぱん」って、結局あるのか無いのか。2026年7月28日の記者会見で防衛大臣は存在しないと否定している。陸自の情報学校では4言語を教えている(英語・ロシア語・中国語・韓国語)。\n#自衛隊 #ミリタリー #軍事英語\nBGM: シャイニングスター(inst) - 森田交一 (魔王魂) / 音声: VOICEVOX / 情報出典: 防衛省記者会見 2026/07/28",
+      "threads_text": "「べっぱん」って、結局あるのか無いのか。2026年7月28日の記者会見で、防衛大臣は「これまで存在しておらず現在も存在しない」と否定している。別の話として、陸自の情報学校では英語・ロシア語・中国語・韓国語の4言語を教えている(公示文書に載っている)。ミリタリー英語のアプリがある。https://apps.apple.com/jp/app/id6793729335",
+      "yt_title": "べっぱんって、結局あるのか無いのか #shorts #自衛隊",
+      "yt_desc": "「べっぱん」って、結局あるのか無いのか。2026年7月28日の記者会見で防衛大臣は存在しないと否定している。陸自の情報学校では4言語を教えている(英語・ロシア語・中国語・韓国語)。\n#自衛隊 #ミリタリー #軍事英語\nhttps://apps.apple.com/jp/app/id6793729335\n\nBGM: シャイニングスター(inst) - 森田交一 (魔王魂) / 音声: VOICEVOX / 情報出典: 防衛省記者会見 2026/07/28・防衛省公示文書 令和3年度情報学校語学教育",
+      "yt_tags": [
+        "自衛隊",
+        "別班",
+        "軍事英語",
+        "ミリタリー"
+      ],
+      "yt_thumb": "an05_mileigo_thumb.jpg"
+    },
+    {
+      "app": "自衛官入隊試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
+      "video": "an06_iritai.mp4",
+      "cover": "covers/cta_iritai.jpg",
+      "ig_caption": "App Storeで「自衛官入隊」と検索すると、対策アプリが出てくる。一般曹候補生・自衛官候補生などの入隊試験に向けて、分野別に問題が並ぶ。解説つき。\n#自衛隊 #入隊 #一般曹候補生\nBGM: しゅわしゅわハニーレモン350ml - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "App Storeで「自衛官入隊」と検索すると、対策アプリが出てくる。一般曹候補生・自衛官候補生などの入隊試験に向けて、分野別に問題が並ぶ。解説つき。https://apps.apple.com/jp/app/id6772919770",
+      "yt_title": "App Storeで「自衛官入隊」と検索すると何が出てくるか知ってる？ #shorts #自衛隊",
+      "yt_desc": "App Storeで「自衛官入隊」と検索すると、対策アプリが出てくる。一般曹候補生・自衛官候補生などの入隊試験に向けて、分野別に問題が並ぶ。解説つき。\n#自衛隊 #入隊 #一般曹候補生\nhttps://apps.apple.com/jp/app/id6772919770\n\nBGM: しゅわしゅわハニーレモン350ml - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "自衛隊",
+        "入隊",
+        "一般曹候補生",
+        "採用試験"
+      ],
+      "yt_thumb": "an06_iritai_thumb.jpg"
+    },
+    {
+      "app": "自衛官一般幹部候補生試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6776236258",
+      "video": "an07_kanbu.mp4",
+      "cover": "covers/cta_kanbu.jpg",
+      "ig_caption": "幹部候補生って、隊員から昇任するのとは別で、最初から幹部枠で入るルートの試験。教養と専門の両方に問題が並んで、本番と同じ形式、解説つき。\n#自衛隊 #幹部候補生 #幹部自衛官\nBGM: You and Me - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "幹部候補生って、隊員から昇任するのとは別で、最初から幹部枠で入るルートの試験。その対策アプリがある。教養と専門の両方に問題が並んで、本番と同じ形式、解説つき。https://apps.apple.com/jp/app/id6776236258",
+      "yt_title": "幹部候補生って、昇任とはまったく別ルートって知ってた？ #shorts #自衛隊",
+      "yt_desc": "幹部候補生って、隊員から昇任するのとは別で、最初から幹部枠で入るルートの試験。教養と専門の両方に問題が並んで、本番と同じ形式、解説つき。\n#自衛隊 #幹部候補生 #幹部自衛官\nhttps://apps.apple.com/jp/app/id6776236258\n\nBGM: You and Me - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "自衛隊",
+        "幹部候補生",
+        "一般幹部",
+        "幹部自衛官"
+      ],
+      "yt_thumb": "an07_kanbu_thumb.jpg"
+    },
+    {
+      "app": "ミリタリー中国語トレーナー",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6793817475",
+      "video": "an08_milchugo.mp4",
+      "cover": "covers/cta_milchugo.jpg",
+      "ig_caption": "陸自唯一の特殊部隊に入るには、何が要るのか。選抜の中身は公表されていない。陸自の情報学校では4言語を教えている(英語・ロシア語・中国語・韓国語)。\n#自衛隊 #特殊部隊 #軍事中国語\nBGM: 審判の日 - KK (DOVA-SYNDROME) / 音声: VOICEVOX / 写真: 尖閣諸島=内閣官房(政府標準利用規約)",
+      "threads_text": "陸自唯一の特殊部隊に入るには、何が要るのか。選抜の中身は公表されていない。別の話として、陸自の情報学校では英語・ロシア語・中国語・韓国語の4言語を教えている(公示文書に載っている)。ミリタリー中国語のアプリがある。https://apps.apple.com/jp/app/id6793817475",
+      "yt_title": "陸自唯一の特殊部隊に入るには、何が要るのか #shorts #自衛隊",
+      "yt_desc": "陸自唯一の特殊部隊に入るには、何が要るのか。選抜の中身は公表されていない。陸自の情報学校では4言語を教えている(英語・ロシア語・中国語・韓国語)。\n#自衛隊 #特殊部隊 #軍事中国語\nhttps://apps.apple.com/jp/app/id6793817475\n\nBGM: 審判の日 - KK (DOVA-SYNDROME) / 音声: VOICEVOX / 写真: 尖閣諸島=内閣官房(政府標準利用規約・出典明記)",
+      "yt_tags": [
+        "自衛隊",
+        "特殊作戦群",
+        "軍事中国語",
+        "ミリタリー"
+      ],
+      "yt_thumb": "an08_milchugo_thumb.jpg"
+    },
+    {
+      "app": "自衛官陸曹昇任試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
+      "video": "an01_rikuso.mp4",
+      "cover": "covers/cta_rikuso.jpg",
+      "ig_caption": "陸曹昇任試験の問題、演習中でもスマホで回せる。電波ないところでも動くのが地味に便利。\n#自衛隊 #陸上自衛隊 #陸曹\nBGM: 10℃ - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "threads_text": "陸曹昇任試験の対策、演習中でも回せる。オフライン動作するので電波のない場所でも普通に使える。App Storeで「陸曹昇任」と検索すると出てくる。https://apps.apple.com/jp/app/id6774074604",
+      "yt_title": "陸曹昇任試験、演習場でも電波なしで回せるの知ってた？ #自衛隊",
+      "yt_desc": "陸曹昇任試験の対策問題をオフラインで回せる。電波のない演習場でも使えるので、すき間時間を無駄にしない。\n#自衛隊 #陸上自衛隊 #陸曹昇任\nhttps://apps.apple.com/jp/app/id6774074604\n\nBGM: 10℃ - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "自衛隊",
+        "陸上自衛隊",
+        "陸曹昇任",
+        "昇任試験"
+      ],
+      "yt_thumb": "an01_rikuso_thumb.jpg"
+    },
+    {
+      "app": "予備自衛官補 採用試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6778490302",
+      "video": "an02_yobi.mp4",
+      "cover": "covers/cta_yobi.jpg",
+      "ig_caption": "予備自衛官補の試験、いまWEB試験形式なんだよね。スマホで対策できるのが普通に強い。\n#予備自衛官 #自衛隊 #防衛省\nBGM: 2:23 AM - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "threads_text": "予備自衛官補の採用試験、実はWEB試験形式で実施されてる。スマホで同じ形式を解ける対策がある。App Storeで「予備自衛官補」と検索。https://apps.apple.com/jp/app/id6778490302",
+      "yt_title": "予備自衛官補の試験がWEB形式になってるって知ってた？ #自衛隊",
+      "yt_desc": "予備自衛官補の採用試験はWEB試験形式。スマホで本番と同じ形式を繰り返せる対策がある。\n#予備自衛官 #自衛隊 #防衛省\nhttps://apps.apple.com/jp/app/id6778490302\n\nBGM: 2:23 AM - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "予備自衛官",
+        "予備自衛官補",
+        "自衛隊",
+        "採用試験"
+      ],
+      "yt_thumb": "an02_yobi_thumb.jpg"
+    },
+    {
+      "app": "自衛官空曹昇任試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6789531149",
+      "video": "an03_kusou.mp4",
+      "cover": "covers/cta_kusou.jpg",
+      "ig_caption": "空曹昇任試験、本番と同じ形式で解けて各問に解説もつく。これは効率いい。\n#自衛隊 #航空自衛隊 #空曹\nBGM: Parade - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "threads_text": "空曹昇任試験の対策、本番と同じ形式で問題を解いて、各問に解説がついてくる。解き直しで実力をつけやすい。App Storeで「空曹昇任」で検索。https://apps.apple.com/jp/app/id6789531149",
+      "yt_title": "空曹昇任試験、本番形式で解けて解説もついてくるの知ってた？ #自衛隊",
+      "yt_desc": "空曹昇任試験の対策問題、本番と同じ形式で各問に解説付き。解き直しで実力がつく。\n#自衛隊 #航空自衛隊 #空曹昇任\nhttps://apps.apple.com/jp/app/id6789531149\n\nBGM: Parade - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "自衛隊",
+        "航空自衛隊",
+        "空曹昇任",
+        "昇任試験"
+      ],
+      "yt_thumb": "an03_kusou_thumb.jpg"
+    },
+    {
+      "app": "自衛官海曹昇任試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6789518576",
+      "video": "an04_kaiso.mp4",
+      "cover": "covers/cta_kaiso.jpg",
+      "ig_caption": "海曹昇任試験の問題、海自の分野ごとに並んでるのが地味に使いやすい。\n#自衛隊 #海上自衛隊 #海曹\nBGM: Escort - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "threads_text": "海曹昇任試験の対策問題、海自の専門分野ごとに整理されてて探しやすい。苦手な分野に絞り込んで回せる。App Storeで「海曹昇任」で検索。https://apps.apple.com/jp/app/id6789518576",
+      "yt_title": "海曹昇任試験の問題集、分野別に整理されてるとどう違う？ #海上自衛隊",
+      "yt_desc": "海曹昇任試験の対策問題を海自の分野別で解ける。得意・苦手の把握がしやすい。\n#自衛隊 #海上自衛隊 #海曹昇任\nhttps://apps.apple.com/jp/app/id6789518576\n\nBGM: Escort - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "自衛隊",
+        "海上自衛隊",
+        "海曹昇任",
+        "昇任試験"
+      ],
+      "yt_thumb": "an04_kaiso_thumb.jpg"
+    },
+    {
+      "app": "ミリタリー英語トレーナー",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6793729335",
+      "video": "an05_mileigo.mp4",
+      "cover": "covers/cta_mileigo.jpg",
+      "ig_caption": "情報学校で英語・中国語・ロシア語・韓国語の4言語を教えてるって知ってた。軍事英語は独特の語彙が多い。\n#自衛隊 #英語 #ミリタリー\nBGM: Kazakiri (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "threads_text": "自衛隊の情報学校では4言語を教育してる。英語だけでも軍事系の用語は独特で、一般英語とは別物に近い。そのミリタリー英語をまとめたのがある。App Storeで「ミリタリー英語」で検索。https://apps.apple.com/jp/app/id6793729335",
+      "yt_title": "情報学校で教える4言語、ミリタリー英語はどう違う？ #自衛隊",
+      "yt_desc": "自衛隊情報学校は英語・中国語・ロシア語・韓国語の4言語を教育する。ミリタリー英語は一般英語とは語彙が全然違う。\n#自衛隊 #英語 #ミリタリー英語\nhttps://apps.apple.com/jp/app/id6793729335\n\nBGM: Kazakiri (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "自衛隊",
+        "ミリタリー英語",
+        "英語学習",
+        "情報学校"
+      ],
+      "yt_thumb": "an05_mileigo_thumb.jpg"
+    },
+    {
+      "app": "自衛官入隊試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
+      "video": "an06_iritai.mp4",
+      "cover": "covers/cta_iritai.jpg",
+      "ig_caption": "自衛官入隊試験、本番と同じ形式で解けて分野別にも絞れる。形式に慣れるのが最初の壁。\n#自衛隊 #入隊試験 #自衛官\nBGM: Summer Triangle - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "threads_text": "自衛官入隊試験の対策、本番形式で解けて分野別にも絞れる。形式慣れと弱点対策が同時にできる。App Storeで「自衛官入隊試験対策」で検索。https://apps.apple.com/jp/app/id6772919770",
+      "yt_title": "自衛官入隊試験、本番形式で何問回せる？ #自衛隊",
+      "yt_desc": "自衛官入隊試験の問題を本番と同じ形式で解ける。分野別にも絞れるので弱点を集中的に潰せる。\n#自衛隊 #入隊試験 #自衛官\nhttps://apps.apple.com/jp/app/id6772919770\n\nBGM: Summer Triangle - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "自衛隊",
+        "自衛官",
+        "入隊試験",
+        "採用試験"
+      ],
+      "yt_thumb": "an06_iritai_thumb.jpg"
+    },
+    {
+      "app": "自衛官一般幹部候補生試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6776236258",
+      "video": "an07_kanbu.mp4",
+      "cover": "covers/cta_kanbu.jpg",
+      "ig_caption": "幹部候補生、実は一般・歯科・薬剤科の3コースと音楽要員もいるって知ってた。試験対策も全コース対応してる。\n#自衛隊 #幹部自衛官 #防衛省\nBGM: Cassette Tape Dream - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "threads_text": "一般幹部候補生試験、一般・歯科・薬剤科の3コースのほかに音楽要員も対象。全コースの対策問題を回せるのがある。App Storeで「幹部候補生」と検索。https://apps.apple.com/jp/app/id6776236258",
+      "yt_title": "幹部候補生に音楽要員が含まれるって知ってた？3コース全部解説 #自衛隊",
+      "yt_desc": "自衛官一般幹部候補生試験は一般・歯科・薬剤科の3コース＋音楽要員が対象。全コース対応の対策問題が一つにある。\n#自衛隊 #幹部自衛官 #幹部候補生\nhttps://apps.apple.com/jp/app/id6776236258\n\nBGM: Cassette Tape Dream - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "自衛隊",
+        "幹部自衛官",
+        "幹部候補生",
+        "防衛省"
+      ],
+      "yt_thumb": "an07_kanbu_thumb.jpg"
+    },
+    {
+      "app": "自衛官陸曹昇任試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
+      "video": "an01_rikuso.mp4",
+      "cover": "covers/cta_rikuso.jpg",
+      "ig_caption": "陸曹昇任試験の対策アプリがある。目次から分野に飛べて、見たいところだけ集中して解ける。分野別に問題が並んでいて、本番と同じ形式で解説つき。\n#自衛隊 #陸曹昇任 #昇任試験\nBGM: 10℃ - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "陸曹昇任試験の対策アプリがある。目次から見たい分野に一発で飛べる。分野別に問題が並んでいて、本番と同じ形式で解説つき。App Storeで「陸曹昇任」と検索。https://apps.apple.com/jp/app/id6774074604",
+      "yt_title": "陸曹昇任、目次から見たい分野に一発で飛べる #shorts",
+      "yt_desc": "陸曹昇任試験の対策アプリがある。目次から分野に飛べて、見たいところだけ集中して解ける。分野別に問題が並んでいて、本番と同じ形式で解説つき。\n#自衛隊 #陸曹昇任 #昇任試験\nhttps://apps.apple.com/jp/app/id6774074604\n\nBGM: 10℃ - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "自衛隊",
+        "陸曹昇任",
+        "昇任試験",
+        "自衛官"
+      ],
+      "yt_thumb": "an01_rikuso_thumb.jpg"
+    },
+    {
+      "app": "予備自衛官補 採用試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6778490302",
+      "video": "an02_yobi.mp4",
+      "cover": "covers/cta_yobi.jpg",
+      "ig_caption": "予備自衛官補と予備自衛官は別の制度。まず補として採用され、教育訓練を経て予備自衛官に任用される（防衛省サイトに載っている）。その補の採用試験の対策アプリがある。\n#自衛隊 #予備自衛官補 #予備自衛官\nBGM: 2:23 AM - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "予備自衛官補と予備自衛官は別の制度。まず補として採用され、教育訓練を経て予備自衛官に任用される（防衛省サイト）。その補の採用試験の対策アプリがある。分野別に問題が並んでいてスマホで解ける。App Storeで「予備自衛官補」と検索。https://apps.apple.com/jp/app/id6778490302",
+      "yt_title": "予備自衛官補と予備自衛官って、別の制度なんだよね #shorts",
+      "yt_desc": "予備自衛官補と予備自衛官は別の制度。まず補として採用され、教育訓練を経て予備自衛官に任用される（防衛省サイトに載っている）。その補の採用試験の対策アプリがある。\n#自衛隊 #予備自衛官補 #予備自衛官\nhttps://apps.apple.com/jp/app/id6778490302\n\nBGM: 2:23 AM - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "自衛隊",
+        "予備自衛官補",
+        "予備自衛官",
+        "採用試験"
+      ],
+      "yt_thumb": "an02_yobi_thumb.jpg"
+    },
+    {
+      "app": "自衛官空曹昇任試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6789531149",
+      "video": "an03_kusou.mp4",
+      "cover": "covers/cta_kusou.jpg",
+      "ig_caption": "空曹昇任試験の対策アプリがある。分野ごとに正答率が数字で出て、学習履歴も残る。どこが足りていないかが見える。分野別に問題が並んでいて、本番と同じ形式で解説つき。\n#自衛隊 #空曹昇任 #昇任試験\nBGM: 風切 - ゆうり(Yuli Audio Craft) (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "空曹昇任試験の対策アプリがある。分野ごとに正答率が数字で出て、学習履歴も残る。どこが足りていないかが見える。分野別に問題が並んでいて解説つき。App Storeで「空曹昇任」と検索。https://apps.apple.com/jp/app/id6789531149",
+      "yt_title": "空曹昇任、正答率が分野ごとに数字で見える #shorts",
+      "yt_desc": "空曹昇任試験の対策アプリがある。分野ごとに正答率が数字で出て、学習履歴も残る。どこが足りていないかが見える。分野別に問題が並んでいて、本番と同じ形式で解説つき。\n#自衛隊 #空曹昇任 #昇任試験\nhttps://apps.apple.com/jp/app/id6789531149\n\nBGM: 風切 - ゆうり(Yuli Audio Craft) (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "自衛隊",
+        "空曹昇任",
+        "昇任試験",
+        "航空自衛隊"
+      ],
+      "yt_thumb": "an03_kusou_thumb.jpg"
+    },
+    {
+      "app": "自衛官海曹昇任試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6789518576",
+      "video": "an04_kaiso.mp4",
+      "cover": "covers/cta_kaiso.jpg",
+      "ig_caption": "自衛官の試験対策シリーズがある。陸曹・海曹・空曹の昇任、幹部候補生・自衛官入隊・予備自衛官補まで、区分ごとに1本ずつ。海曹の1本も分野別に問題が並んでいて、本番と同じ形式で解説つき。\n#自衛隊 #海曹昇任 #昇任試験\nBGM: Cassette Tape Dream - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "自衛官の試験対策シリーズがある。陸曹・海曹・空曹の昇任から、幹部候補生・自衛官入隊・予備自衛官補まで区分ごとに1本ずつ。分野別に問題が並んでいて解説つき。App Storeで「海曹昇任」と検索（他区分は「陸曹昇任」「空曹昇任」等）。https://apps.apple.com/jp/app/id6789518576",
+      "yt_title": "自衛官の試験対策、陸海空から幹部・入隊・予備自補までシリーズが揃ってる #shorts",
+      "yt_desc": "自衛官の試験対策シリーズがある。陸曹・海曹・空曹の昇任、幹部候補生・自衛官入隊・予備自衛官補まで、区分ごとに1本ずつ。海曹の1本も分野別に問題が並んでいて、本番と同じ形式で解説つき。\n#自衛隊 #海曹昇任 #昇任試験\nhttps://apps.apple.com/jp/app/id6789518576\n\nBGM: Cassette Tape Dream - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "自衛隊",
+        "海曹昇任",
+        "昇任試験",
+        "海上自衛隊"
+      ],
+      "yt_thumb": "an04_kaiso_thumb.jpg"
+    },
+    {
+      "app": "ミリタリー英語トレーナー",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6793729335",
+      "video": "an05_mileigo.mp4",
+      "cover": "covers/cta_mileigo.jpg",
+      "ig_caption": "陸上自衛隊の情報学校は、英語・ロシア語・中国語・韓国語の4言語の教育を行っている（防衛省サイトの契約公示に載っている）。その英語の分野をスマホで学べるアプリがある。ミリタリー英語のトレーナー。\n#自衛隊 #ミリタリー英語 #情報学校\nBGM: 野良猫は宇宙を目指した - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "陸上自衛隊の情報学校は英語・ロシア語・中国語・韓国語の4言語の教育を行っている（防衛省サイト契約公示）。その英語の分野をスマホで学べるアプリがある。ミリタリー英語のトレーナー。分野別に問題が並んでいて解説つき。App Storeで「ミリタリー英語」と検索。https://apps.apple.com/jp/app/id6793729335",
+      "yt_title": "陸自の情報学校、英語・ロシア語・中国語・韓国語の4言語を教えてる #shorts",
+      "yt_desc": "陸上自衛隊の情報学校は、英語・ロシア語・中国語・韓国語の4言語の教育を行っている（防衛省サイトの契約公示に載っている）。その英語の分野をスマホで学べるアプリがある。ミリタリー英語のトレーナー。\n#自衛隊 #ミリタリー英語 #情報学校\nhttps://apps.apple.com/jp/app/id6793729335\n\nBGM: 野良猫は宇宙を目指した - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "自衛隊",
+        "ミリタリー英語",
+        "情報学校",
+        "語学"
+      ],
+      "yt_thumb": "an05_mileigo_thumb.jpg"
+    },
+    {
+      "app": "自衛官入隊試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
+      "video": "an06_iritai.mp4",
+      "cover": "covers/cta_iritai.jpg",
+      "ig_caption": "自衛官の入隊には「一般曹候補生」と「自衛官候補生」の2つの採用区分がある（防衛省サイトで並列に載っている）。その両方を対策できるアプリがある。分野別に問題が並んでいて、本番と同じ形式で解説つき。\n#自衛隊 #自衛官入隊 #一般曹候補生\nBGM: Parade - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "自衛官の入隊には「一般曹候補生」と「自衛官候補生」の2つの採用区分がある（防衛省サイト）。その両方を対策できるアプリがある。分野別に問題が並んでいて解説つき。App Storeで「自衛官入隊」と検索。https://apps.apple.com/jp/app/id6772919770",
+      "yt_title": "自衛官の入隊、「一般曹候補生」と「自衛官候補生」で別の枠なんだよね #shorts",
+      "yt_desc": "自衛官の入隊には「一般曹候補生」と「自衛官候補生」の2つの採用区分がある（防衛省サイトで並列に載っている）。その両方を対策できるアプリがある。分野別に問題が並んでいて、本番と同じ形式で解説つき。\n#自衛隊 #自衛官入隊 #一般曹候補生\nhttps://apps.apple.com/jp/app/id6772919770\n\nBGM: Parade - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "自衛隊",
+        "自衛官入隊",
+        "一般曹候補生",
+        "自衛官候補生"
+      ],
+      "yt_thumb": "an06_iritai_thumb.jpg"
+    },
+    {
+      "app": "自衛官一般幹部候補生試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6776236258",
+      "video": "an07_kanbu.mp4",
+      "cover": "covers/cta_kanbu.jpg",
+      "ig_caption": "幹部候補生の試験は、1次と2次の2段構え。2次では複数の試験を受ける（防衛省の募集ページに載っている）。その1次筆記の対策アプリがある。分野別に問題が並んでいて、本番と同じ形式で解説つき。\n#自衛隊 #幹部候補生 #自衛官\nBGM: Escort - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "幹部候補生の試験は1次と2次の2段構え。2次では複数の試験を受ける（防衛省の募集ページ）。その1次筆記の対策アプリがある。分野別に問題が並んでいて解説つき。App Storeで「幹部候補生」と検索。https://apps.apple.com/jp/app/id6776236258",
+      "yt_title": "幹部候補生の試験、1次筆記と2次で2段構えになってる #shorts",
+      "yt_desc": "幹部候補生の試験は、1次と2次の2段構え。2次では複数の試験を受ける（防衛省の募集ページに載っている）。その1次筆記の対策アプリがある。分野別に問題が並んでいて、本番と同じ形式で解説つき。\n#自衛隊 #幹部候補生 #自衛官\nhttps://apps.apple.com/jp/app/id6776236258\n\nBGM: Escort - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "自衛隊",
+        "幹部候補生",
+        "自衛官",
+        "試験対策"
+      ],
+      "yt_thumb": "an07_kanbu_thumb.jpg"
+    },
+    {
+      "app": "ミリタリー中国語トレーナー",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6793817475",
+      "video": "an08_milchugo.mp4",
+      "cover": "covers/cta_milchugo.jpg",
+      "ig_caption": "別班について、令和8年7月28日の会見で防衛大臣が「これまで存在しておらず現在も存在しない」と述べている（防衛省会見録）。その一方で陸自の情報学校は英語・ロシア語・中国語・韓国語の4言語を教育している。その中国語を学べるアプリがある。\n#自衛隊 #別班 #情報学校\nBGM: 審判の日 - KK (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "別班について、令和8年7月28日の記者会見で防衛大臣が「これまで存在しておらず現在も存在しない」と述べている（防衛省会見録）。その一方で陸自情報学校は英語・ロシア語・中国語・韓国語の4言語を教育している（契約公示）。その中国語をスマホで学べるアプリがある。App Storeで「ミリタリー中国語トレーナー」と検索。https://apps.apple.com/jp/app/id6793817475",
+      "yt_title": "別班って結局あるのか無いのか。防衛大臣は7月に「存在しない」と言った #shorts",
+      "yt_desc": "別班について、令和8年7月28日の会見で防衛大臣が「これまで存在しておらず現在も存在しない」と述べている（防衛省会見録）。その一方で陸自の情報学校は英語・ロシア語・中国語・韓国語の4言語を教育している。その中国語を学べるアプリがある。\n#自衛隊 #別班 #情報学校\nhttps://apps.apple.com/jp/app/id6793817475\n\nBGM: 審判の日 - KK (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "自衛隊",
+        "別班",
+        "情報学校",
+        "中国語"
+      ],
+      "yt_thumb": "an08_milchugo_thumb.jpg"
+    },
+    {
+      "app": "自衛官陸曹昇任試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
+      "video": "rikuso_sleeve.mp4",
+      "cover": "covers/cta_rikuso.jpg",
+      "ig_caption": "同じ訓練をして同じ迷彩を着ていても、士と曹では袖の章が違う。その章を変えるための関門が陸曹昇任試験。陸曹昇任試験を対策できるアプリがある。\n#自衛隊 #陸曹昇任試験 #自衛官\nBGM: 風切 - ゆうり(Yuli Audio Craft) (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "同じ訓練をして同じ迷彩を着ていても、士と曹では袖の章が違う。その章を変えるための関門が陸曹昇任試験。陸曹昇任試験を対策できるアプリがある。 https://apps.apple.com/jp/app/id6774074604",
+      "yt_title": "士と曹では袖の章が変わる。陸曹昇任試験を知っている陸士は何人いるか #shorts",
+      "yt_desc": "#自衛隊 #陸曹昇任試験 #自衛官\nhttps://apps.apple.com/jp/app/id6774074604\n\nBGM: 風切 - ゆうり(Yuli Audio Craft) (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "自衛隊",
+        "陸曹昇任試験",
+        "自衛官",
+        "陸上自衛隊"
+      ],
+      "yt_thumb": "rikuso_sleeve_thumb.jpg",
+      "credits": "BGM: 風切 - ゆうり(Yuli Audio Craft) (DOVA-SYNDROME) / 音声: VOICEVOX"
+    },
+    {
+      "app": "自衛官空曹昇任試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6789531149",
+      "video": "kusou_tonari.mp4",
+      "cover": "covers/cta_kusou.jpg",
+      "ig_caption": "同じ機体の隣で同じ作業をしていても、3等空曹を取った瞬間に担当できる範囲が変わる。その関門が空曹昇任試験。空曹昇任試験を対策できるアプリがある。\n#自衛隊 #空曹昇任試験 #航空自衛隊\nBGM: 2:23 AM - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "同じ機体の隣で同じ作業をしていても、3等空曹を取った瞬間に担当できる範囲が変わる。その関門が空曹昇任試験。空曹昇任試験を対策できるアプリがある。 https://apps.apple.com/jp/app/id6789531149",
+      "yt_title": "隣の同期が来月から3等空曹になる。空曹昇任試験に合格したからだ #shorts",
+      "yt_desc": "#自衛隊 #空曹昇任試験 #航空自衛隊\nhttps://apps.apple.com/jp/app/id6789531149\n\nBGM: 2:23 AM - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "自衛隊",
+        "空曹昇任試験",
+        "航空自衛隊",
+        "自衛官"
+      ],
+      "yt_thumb": "kusou_tonari_thumb.jpg",
+      "credits": "BGM: 2:23 AM - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX"
+    },
+    {
+      "app": "自衛官海曹昇任試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6789518576",
+      "video": "kaiso_kanchoku.mp4",
+      "cover": "covers/cta_kaiso.jpg",
+      "ig_caption": "艦艇の当直は交代制で、当直が明けても次の当直まで長くはない。海曹への昇任試験は待ってくれない。その隙間に開く1冊がある。海曹昇任試験を対策できるアプリがある。\n#自衛隊 #海曹昇任試験 #海上自衛隊\nBGM: 10℃ - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "艦艇の当直は交代制で、当直が明けても次の当直まで長くはない。海曹への昇任試験は待ってくれない。その隙間に開く1冊がある。海曹昇任試験を対策できるアプリがある。 https://apps.apple.com/jp/app/id6789518576",
+      "yt_title": "当直明けの艦艇で海曹昇任試験の勉強をしている人がいる #shorts",
+      "yt_desc": "#自衛隊 #海曹昇任試験 #海上自衛隊\nhttps://apps.apple.com/jp/app/id6789518576\n\nBGM: 10℃ - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "自衛隊",
+        "海曹昇任試験",
+        "海上自衛隊",
+        "自衛官"
+      ],
+      "yt_thumb": "kaiso_kanchoku_thumb.jpg",
+      "credits": "BGM: 10℃ - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX"
+    },
+    {
+      "app": "自衛官入隊試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
+      "video": "iritai_32sai.mp4",
+      "cover": "covers/cta_iritai.jpg",
+      "ig_caption": "一般曹候補生の応募資格は18歳以上33歳未満。採用予定月の末日現在で33歳に達していなければ応募できる。32歳の会社員でも来年の試験に間に合う。入隊試験を対策できるアプリがある。\n#自衛官入隊 #一般曹候補生 #自衛隊\nBGM: Cassette Tape Dream - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "threads_text": "一般曹候補生の応募資格は18歳以上33歳未満。採用予定月の末日現在で33歳に達していなければ応募できる。32歳の会社員でも来年の試験に間に合う。入隊試験を対策できるアプリがある。 https://apps.apple.com/jp/app/id6772919770",
+      "yt_title": "32歳の会社員でも自衛官に応募できる。一般曹候補生の年齢上限を確認してほしい #shorts",
+      "yt_desc": "#自衛官入隊 #一般曹候補生 #自衛隊\nhttps://apps.apple.com/jp/app/id6772919770\n\nBGM: Cassette Tape Dream - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX",
+      "yt_tags": [
+        "自衛官入隊",
+        "一般曹候補生",
+        "自衛隊",
+        "入隊試験"
+      ],
+      "yt_thumb": "iritai_32sai_thumb.jpg",
+      "credits": "BGM: Cassette Tape Dream - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX"
+    },
+    {
+      "app": "ミリタリー中国語トレーナー",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6793817475",
+      "video": "chugo_senkaku.mp4",
+      "cover": "covers/cta_milchugo.jpg",
+      "ig_caption": "尖閣周辺では中国公船が荒天の日を除きほぼ毎日、接続水域に入域している。これは海上保安庁が公表している現実。この現場で中国語が分かる人間は戦力になる。軍事中国語を学べるアプリがある。\n#自衛隊 #尖閣 #中国語\nBGM: 審判の日 - KK (DOVA-SYNDROME) / 音声: VOICEVOX / 出典: 海上保安庁「尖閣諸島周辺海域における中国公船等の動向と我が国の対処」(https://www.kaiho.mlit.go.jp/mission/senkaku/)",
+      "threads_text": "尖閣周辺では中国公船が荒天の日を除きほぼ毎日、接続水域に入域している。これは海上保安庁が公表している現実。この現場で中国語が分かる人間は戦力になる。軍事中国語を学べるアプリがある。 https://apps.apple.com/jp/app/id6793817475",
+      "yt_title": "中国公船は荒天の日を除きほぼ毎日、尖閣周辺に来ている。海上保安庁が公表している事実 #shorts",
+      "yt_desc": "#自衛隊 #尖閣 #中国語\nhttps://apps.apple.com/jp/app/id6793817475\n\nBGM: 審判の日 - KK (DOVA-SYNDROME) / 音声: VOICEVOX\n出典: 海上保安庁「尖閣諸島周辺海域における中国公船等の動向と我が国の対処」(https://www.kaiho.mlit.go.jp/mission/senkaku/)",
+      "yt_tags": [
+        "自衛隊",
+        "尖閣",
+        "中国語",
+        "ミリタリー"
+      ],
+      "yt_thumb": "chugo_senkaku_thumb.jpg",
+      "credits": "BGM: 審判の日 - KK (DOVA-SYNDROME) / 音声: VOICEVOX / 出典: 海上保安庁「尖閣諸島周辺海域における中国公船等の動向と我が国の対処」(https://www.kaiho.mlit.go.jp/mission/senkaku/)"
+    }
+  ]
 }
