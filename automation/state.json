@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-09-06",
- "yt_count": 1,
- "last_yt_seq": 5960,
+ "yt_count": 2,
+ "last_yt_seq": 5964,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -439,7 +439,8 @@
   "mileigo_tokushu.mp4",
   "an01_rikuso.mp4",
   "an07_kanbu.mp4",
-  "rikuso_bunbetsu_20260902.mp4"
+  "rikuso_bunbetsu_20260902.mp4",
+  "kaiso_kensaku_20260902.mp4"
  ],
  "hist": {
   "threads": {
@@ -800,7 +801,7 @@
    "kankokugonoh_kantan.mp4": "2026-08-30T08:49:12.509710",
    "kanbu_22sai.mp4": "2026-08-30T19:30:56.281748",
    "sleephack_shomei.mp4": "2026-08-31T10:32:25.408183",
-   "note:nfc591feddd5e": "2026-09-04T12:29:59.144583",
+   "note:nfc591feddd5e": "2026-09-06T12:36:53.091282",
    "sleephack_kingaku.mp4": "2026-09-01T19:22:44.316038",
    "mileigo_torinokosareru.mp4": "2026-09-01T07:31:35.283490",
    "eigonoh_1month.mp4": "2026-09-01T10:31:41.046560",
@@ -1243,10 +1244,11 @@
    "an03_kusou.mp4": "2026-09-05T07:46:00.033908",
    "an02_yobi.mp4": "2026-09-05T12:17:07.719410",
    "rikuso_bunbetsu_20260902.mp4": "2026-09-05T19:18:24.753206",
-   "an05_mileigo.mp4": "2026-09-06T08:21:22.711458"
+   "an05_mileigo.mp4": "2026-09-06T08:21:22.711458",
+   "mileigo_tokushu.mp4": "2026-09-06T12:36:53.091282"
   }
  },
- "last_yt_ts": "2026-09-06T08:21:22.711458",
+ "last_yt_ts": "2026-09-06T12:36:53.091282",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -1461,7 +1463,8 @@
   "lifecontrol_seikatsu_reset_20260803_1600.mp4": 0
  },
  "yt_apps_today": [
-  "6774074604"
+  "6774074604",
+  "6789518576"
  ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
@@ -2037,7 +2040,8 @@
   "an03_kusou.mp4",
   "an02_yobi.mp4",
   "rikuso_bunbetsu_20260902.mp4",
-  "an05_mileigo.mp4"
+  "an05_mileigo.mp4",
+  "mileigo_tokushu.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
@@ -2053,9 +2057,9 @@
  "yt_playlists": {},
  "th_pending_replies": [],
  "note_var": {
-  "_article": 9,
+  "_article": 10,
   "note:n1aa8ce0e5bdc": 6,
-  "note:nfc591feddd5e": 2
+  "note:nfc591feddd5e": 3
  },
  "th_cycle": [
   "kusou_scramble.mp4",
@@ -2110,7 +2114,9 @@
   "2026-09-05": [
    12
   ],
-  "2026-09-06": []
+  "2026-09-06": [
+   12
+  ]
  },
  "th_slot_plan": {
   "2026-08-30": {
