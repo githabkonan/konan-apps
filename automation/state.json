@@ -820,7 +820,8 @@
    "iritai_ichiji0916_20260902.mp4": "2026-09-05T19:18:24.753206",
    "yobi_ichiji0916_20260902.mp4": "2026-09-05T21:06:48.729422",
    "rikuso_bunbetsu_20260902.mp4": "2026-09-06T08:21:22.711458",
-   "mileigo_senbatsu_20260902.mp4": "2026-09-06T19:23:45.313240"
+   "mileigo_senbatsu_20260902.mp4": "2026-09-06T19:23:45.313240",
+   "kaiso_kensaku_20260902.mp4": "2026-09-06T21:32:35.290051"
   },
   "instagram": {
    "otsu6_news.mp4": "2026-08-21T20:22:38.289102",
@@ -1618,7 +1619,8 @@
   ],
   "2026-09-06": [
    7,
-   19
+   19,
+   21
   ]
  },
  "ig_posted": [
@@ -2095,7 +2097,8 @@
   "iritai_ichiji0916_20260902.mp4",
   "yobi_ichiji0916_20260902.mp4",
   "rikuso_bunbetsu_20260902.mp4",
-  "mileigo_senbatsu_20260902.mp4"
+  "mileigo_senbatsu_20260902.mp4",
+  "kaiso_kensaku_20260902.mp4"
  ],
  "th_cycle_n": 0,
  "note_fail": {},
