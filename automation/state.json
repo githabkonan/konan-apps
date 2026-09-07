@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-09-07",
- "yt_count": 1,
- "last_yt_seq": 5983,
+ "yt_count": 2,
+ "last_yt_seq": 5988,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -442,7 +442,8 @@
   "rikuso_bunbetsu_20260902.mp4",
   "kaiso_kensaku_20260902.mp4",
   "an02_yobi.mp4",
-  "kanbu_hanni_20260902.mp4"
+  "kanbu_hanni_20260902.mp4",
+  "yobi_ichiji0916_20260902.mp4"
  ],
  "hist": {
   "threads": {
@@ -799,7 +800,7 @@
    "milchugo_horyo.mp4": "2026-09-02T19:23:15.781366",
    "kusou_scramble.mp4": "2026-08-29T13:11:51.849288",
    "sololevel_rpg.mp4": "2026-08-29T19:11:04.270802",
-   "note:n1aa8ce0e5bdc": "2026-09-05T12:17:07.719410",
+   "note:n1aa8ce0e5bdc": "2026-09-07T12:17:02.867939",
    "kankokugonoh_kantan.mp4": "2026-08-30T08:49:12.509710",
    "kanbu_22sai.mp4": "2026-08-30T19:30:56.281748",
    "sleephack_shomei.mp4": "2026-08-31T10:32:25.408183",
@@ -1252,10 +1253,11 @@
    "an05_mileigo.mp4": "2026-09-06T08:21:22.711458",
    "mileigo_tokushu.mp4": "2026-09-06T12:36:53.091282",
    "milchugo_bepan.mp4": "2026-09-06T19:23:45.313240",
-   "kaiso_kensaku_20260902.mp4": "2026-09-07T07:31:26.369696"
+   "kaiso_kensaku_20260902.mp4": "2026-09-07T07:31:26.369696",
+   "an08_milchugo.mp4": "2026-09-07T12:17:02.867939"
   }
  },
- "last_yt_ts": "2026-09-07T07:31:26.369696",
+ "last_yt_ts": "2026-09-07T12:17:02.867939",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -1470,7 +1472,8 @@
   "lifecontrol_seikatsu_reset_20260803_1600.mp4": 0
  },
  "yt_apps_today": [
-  "6776236258"
+  "6776236258",
+  "6778490302"
  ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
@@ -2054,7 +2057,8 @@
   "an05_mileigo.mp4",
   "mileigo_tokushu.mp4",
   "milchugo_bepan.mp4",
-  "kaiso_kensaku_20260902.mp4"
+  "kaiso_kensaku_20260902.mp4",
+  "an08_milchugo.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
@@ -2070,8 +2074,8 @@
  "yt_playlists": {},
  "th_pending_replies": [],
  "note_var": {
-  "_article": 10,
-  "note:n1aa8ce0e5bdc": 6,
+  "_article": 11,
+  "note:n1aa8ce0e5bdc": 7,
   "note:nfc591feddd5e": 3
  },
  "th_cycle": [
@@ -2133,7 +2137,9 @@
   "2026-09-06": [
    12
   ],
-  "2026-09-07": []
+  "2026-09-07": [
+   12
+  ]
  },
  "th_slot_plan": {
   "2026-08-30": {
