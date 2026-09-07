@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-09-08",
- "yt_count": 0,
- "last_yt_seq": null,
+ "yt_count": 1,
+ "last_yt_seq": 6007,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -444,7 +444,8 @@
   "an02_yobi.mp4",
   "kanbu_hanni_20260902.mp4",
   "yobi_ichiji0916_20260902.mp4",
-  "mileigo_senbatsu_20260902.mp4"
+  "mileigo_senbatsu_20260902.mp4",
+  "an05_mileigo.mp4"
  ],
  "hist": {
   "threads": {
@@ -827,7 +828,8 @@
    "kaiso_kensaku_20260902.mp4": "2026-09-06T21:32:35.290051",
    "milchugo_tokushubutai_20260902.mp4": "2026-09-07T07:31:26.369696",
    "an03_kusou.mp4": "2026-09-07T19:03:52.257324",
-   "an07_kanbu.mp4": "2026-09-07T21:27:38.960757"
+   "an07_kanbu.mp4": "2026-09-07T21:27:38.960757",
+   "an06_iritai.mp4": "2026-09-08T07:17:34.002403"
   },
   "instagram": {
    "otsu6_news.mp4": "2026-08-21T20:22:38.289102",
@@ -1258,10 +1260,11 @@
    "milchugo_bepan.mp4": "2026-09-06T19:23:45.313240",
    "kaiso_kensaku_20260902.mp4": "2026-09-07T07:31:26.369696",
    "an08_milchugo.mp4": "2026-09-07T12:17:02.867939",
-   "kusou_bunbetsu_20260902.mp4": "2026-09-07T19:03:52.257324"
+   "kusou_bunbetsu_20260902.mp4": "2026-09-07T19:03:52.257324",
+   "kanbu_hanni_20260902.mp4": "2026-09-08T07:17:34.002403"
   }
  },
- "last_yt_ts": "2026-09-07T19:03:52.257324",
+ "last_yt_ts": "2026-09-08T07:17:34.002403",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -1475,7 +1478,9 @@
   "qc3_recall.mp4": 0,
   "lifecontrol_seikatsu_reset_20260803_1600.mp4": 0
  },
- "yt_apps_today": [],
+ "yt_apps_today": [
+  "6793729335"
+ ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
   "sololevel_ui_20260805_1315.mp4": 0,
@@ -1632,7 +1637,9 @@
    19,
    21
   ],
-  "2026-09-08": []
+  "2026-09-08": [
+   7
+  ]
  },
  "ig_posted": [
   "otsu6_news.mp4",
@@ -2063,7 +2070,8 @@
   "milchugo_bepan.mp4",
   "kaiso_kensaku_20260902.mp4",
   "an08_milchugo.mp4",
-  "kusou_bunbetsu_20260902.mp4"
+  "kusou_bunbetsu_20260902.mp4",
+  "kanbu_hanni_20260902.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
@@ -2115,7 +2123,8 @@
   "kaiso_kensaku_20260902.mp4",
   "milchugo_tokushubutai_20260902.mp4",
   "an03_kusou.mp4",
-  "an07_kanbu.mp4"
+  "an07_kanbu.mp4",
+  "an06_iritai.mp4"
  ],
  "th_cycle_n": 0,
  "note_fail": {},
