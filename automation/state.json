@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-09-09",
- "yt_count": 0,
- "last_yt_seq": null,
+ "yt_count": 1,
+ "last_yt_seq": 6031,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -447,7 +447,8 @@
   "mileigo_senbatsu_20260902.mp4",
   "an05_mileigo.mp4",
   "iritai_32sai.mp4",
-  "rikuso_sleeve.mp4"
+  "rikuso_sleeve.mp4",
+  "kaiso_kanchoku.mp4"
  ],
  "hist": {
   "threads": {
@@ -834,7 +835,8 @@
    "an06_iritai.mp4": "2026-09-08T07:17:34.002403",
    "note:nae2b715cad4d": "2026-09-08T12:06:15.866562",
    "an02_yobi.mp4": "2026-09-08T19:22:40.779574",
-   "an01_rikuso.mp4": "2026-09-08T21:38:56.001962"
+   "an01_rikuso.mp4": "2026-09-08T21:38:56.001962",
+   "an05_mileigo.mp4": "2026-09-09T07:39:01.900136"
   },
   "instagram": {
    "otsu6_news.mp4": "2026-08-21T20:22:38.289102",
@@ -1268,10 +1270,11 @@
    "kusou_bunbetsu_20260902.mp4": "2026-09-07T19:03:52.257324",
    "kanbu_hanni_20260902.mp4": "2026-09-08T07:17:34.002403",
    "iritai_32sai.mp4": "2026-09-08T12:06:15.866562",
-   "yobi_ichiji0916_20260902.mp4": "2026-09-08T19:22:40.779574"
+   "yobi_ichiji0916_20260902.mp4": "2026-09-08T19:22:40.779574",
+   "milchugo_tokushubutai_20260902.mp4": "2026-09-09T07:39:01.900136"
   }
  },
- "last_yt_ts": "2026-09-08T19:22:40.779574",
+ "last_yt_ts": "2026-09-09T07:39:01.900136",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -1485,7 +1488,9 @@
   "qc3_recall.mp4": 0,
   "lifecontrol_seikatsu_reset_20260803_1600.mp4": 0
  },
- "yt_apps_today": [],
+ "yt_apps_today": [
+  "6789518576"
+ ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
   "sololevel_ui_20260805_1315.mp4": 0,
@@ -1647,7 +1652,9 @@
    19,
    21
   ],
-  "2026-09-09": []
+  "2026-09-09": [
+   7
+  ]
  },
  "ig_posted": [
   "otsu6_news.mp4",
@@ -2081,7 +2088,8 @@
   "kusou_bunbetsu_20260902.mp4",
   "kanbu_hanni_20260902.mp4",
   "iritai_32sai.mp4",
-  "yobi_ichiji0916_20260902.mp4"
+  "yobi_ichiji0916_20260902.mp4",
+  "milchugo_tokushubutai_20260902.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
@@ -2137,7 +2145,8 @@
   "an07_kanbu.mp4",
   "an06_iritai.mp4",
   "an02_yobi.mp4",
-  "an01_rikuso.mp4"
+  "an01_rikuso.mp4",
+  "an05_mileigo.mp4"
  ],
  "th_cycle_n": 0,
  "note_fail": {},
