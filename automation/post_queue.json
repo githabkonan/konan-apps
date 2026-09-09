@@ -1393,6 +1393,139 @@
         "安全保障",
         "ミリタリー"
       ]
+    },
+    {
+      "app": "自衛官陸曹昇任試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
+      "video": "rikuso_kanbukohoso.mp4",
+      "cover": "covers/rikuso_kanbukohoso_cover.jpg",
+      "ig_caption": "陸曹から幹部になれるルートは、一般幹部候補生試験だけじゃない。幹部候補曹という制度があって、数年の曹経験を積んだ後に幹部として採用される道がある。\n#自衛隊 #昇任 #自衛官\nBGM: 野良猫は宇宙を目指した - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "threads_text": "陸曹から幹部になるルートとして「幹部候補曹」という制度がある。数年の曹勤務を経て幹部に採用される仕組みで、防衛省が公式に案内している。https://apps.apple.com/jp/app/id6774074604",
+      "yt_title": "【知ってる?】陸曹から幹部になる、もう一つのルート。 #shorts #自衛隊",
+      "yt_desc": "#自衛隊 #陸上自衛隊 #昇任試験\nhttps://apps.apple.com/jp/app/id6774074604\nBGM: 野良猫は宇宙を目指した - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "自衛隊",
+        "陸上自衛隊",
+        "昇任試験",
+        "幹部"
+      ],
+      "yt_thumb": "rikuso_kanbukohoso_thumb.jpg",
+      "credits": "BGM: 野良猫は宇宙を目指した - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成"
+    },
+    {
+      "app": "予備自衛官補 採用試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6778490302",
+      "video": "yobi_nenrei.mp4",
+      "cover": "covers/yobi_nenrei_cover.jpg",
+      "ig_caption": "予備自衛官補(一般)の年齢上限がいつの間にか変わっていた。旧34歳未満から52歳未満に引き上げられて、制度改正で対象者が大幅に広がっている。\n#自衛隊 #予備自衛官 #制度改正\nBGM: かえるのピアノ - こおろぎ (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "threads_text": "予備自衛官補(一般)の年齢上限が34歳未満から52歳未満に引き上げられた。制度改正による変更で、防衛省が公式 PDF で案内している事実。https://apps.apple.com/jp/app/id6778490302",
+      "yt_title": "【実は】予備自衛官補の年齢上限、34歳から52歳に上がっていた。 #shorts #自衛隊",
+      "yt_desc": "#自衛隊 #予備自衛官 #制度改正\nhttps://apps.apple.com/jp/app/id6778490302\nBGM: かえるのピアノ - こおろぎ (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "自衛隊",
+        "予備自衛官",
+        "採用試験",
+        "制度改正"
+      ],
+      "yt_thumb": "yobi_nenrei_thumb.jpg",
+      "credits": "BGM: かえるのピアノ - こおろぎ (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成"
+    },
+    {
+      "app": "自衛官空曹昇任試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6789531149",
+      "video": "kusou_scramble411.mp4",
+      "cover": "covers/kusou_scramble411_cover.jpg",
+      "ig_caption": "令和6年度の緊急発進が704回あって、そのうち411回が南西航空方面隊の担当エリア。沖縄を中心とした南西方面で半分以上が起きていた。\n#自衛隊 #航空自衛隊 #スクランブル\nBGM: 風切 - ゆうり (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "threads_text": "令和6年度の緊急発進704回のうち、411回(58.4%)が南西航空方面隊。統合幕僚監部の PDF に数字が出ている。https://apps.apple.com/jp/app/id6789531149",
+      "yt_title": "【令和6年度】スクランブル704回、半分以上が沖縄だった。 #shorts #自衛隊",
+      "yt_desc": "#自衛隊 #航空自衛隊 #スクランブル\nhttps://apps.apple.com/jp/app/id6789531149\nBGM: 風切 - ゆうり (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "自衛隊",
+        "航空自衛隊",
+        "スクランブル",
+        "空曹"
+      ],
+      "yt_thumb": "kusou_scramble411_thumb.jpg",
+      "credits": "BGM: 風切 - ゆうり (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成"
+    },
+    {
+      "app": "自衛官海曹昇任試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6789518576",
+      "video": "kaiso_mogami.mp4",
+      "cover": "covers/kaiso_mogami_cover.jpg",
+      "ig_caption": "海自の新型護衛艦「もがみ」型は、従来型より少人数で運用できるように設計されている。平時の乗員は約90名。\n#自衛隊 #海上自衛隊 #護衛艦\nBGM: サンタは中央線でやってくる - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "threads_text": "海自のもがみ型護衛艦(FFM)は、少人数運用を設計思想に持つ新型艦。平時の乗員は約90名で動かしている。https://apps.apple.com/jp/app/id6789518576",
+      "yt_title": "【海自の新型艦】もがみ型護衛艦、約90人で動かしている。 #shorts #自衛隊",
+      "yt_desc": "#自衛隊 #海上自衛隊 #護衛艦\nhttps://apps.apple.com/jp/app/id6789518576\nBGM: サンタは中央線でやってくる - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "自衛隊",
+        "海上自衛隊",
+        "護衛艦",
+        "海曹"
+      ],
+      "yt_thumb": "kaiso_mogami_thumb.jpg",
+      "credits": "BGM: サンタは中央線でやってくる - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成"
+    },
+    {
+      "app": "ミリタリー英語トレーナー",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6793729335",
+      "video": "mileigo_4gengo.mp4",
+      "cover": "covers/mileigo_4gengo_cover.jpg",
+      "ig_caption": "陸上自衛隊の情報学校が外部委託していた語学教育は英語・ロシア語・中国語・韓国語の4言語。防衛省の公式書類に出てくる話。\n#自衛隊 #陸上自衛隊 #語学\nBGM: シャイニングスター(inst) - 森田交一 (魔王魂) / 音声: VOICEVOX / 画像: AI生成",
+      "threads_text": "陸自の情報学校が語学教育として外部委託していたのは英・露・中・韓の4言語。令和3年度の防衛省公式書類に書かれている事実。https://apps.apple.com/jp/app/id6793729335",
+      "yt_title": "【陸自の情報教育】語学委託は英・露・中・韓の4言語だった。 #shorts #自衛隊",
+      "yt_desc": "#自衛隊 #陸上自衛隊 #語学\nhttps://apps.apple.com/jp/app/id6793729335\nBGM: シャイニングスター(inst) - 森田交一 (魔王魂) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "自衛隊",
+        "陸上自衛隊",
+        "語学",
+        "ミリタリー英語"
+      ],
+      "yt_thumb": "mileigo_4gengo_thumb.jpg",
+      "credits": "BGM: シャイニングスター(inst) - 森田交一 (魔王魂) / 音声: VOICEVOX / 画像: AI生成"
+    },
+    {
+      "app": "自衛官入隊試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
+      "video": "iritai_kamoku.mp4",
+      "cover": "covers/iritai_kamoku_cover.jpg",
+      "ig_caption": "自衛官の一次試験は国語・数学・英語の3科目、合計120分。加えて作文30分。学校で習う科目がそのまま出題範囲になっている。\n#自衛隊 #入隊 #試験\nBGM: ハッピーイレイロ - こおろぎ (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "threads_text": "一般曹候補生の一次試験は国語・数学・英語(3科目120分)+作文(30分)。防衛省の要綱 PDF に科目と試験時間が明記されている。https://apps.apple.com/jp/app/id6772919770",
+      "yt_title": "【意外と知らない】自衛官の入隊試験、国語・数学・英語だった。 #shorts #自衛隊",
+      "yt_desc": "#自衛隊 #入隊試験 #就職\nhttps://apps.apple.com/jp/app/id6772919770\nBGM: ハッピーイレイロ - こおろぎ (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "自衛隊",
+        "自衛官",
+        "入隊試験",
+        "就職"
+      ],
+      "yt_thumb": "iritai_kamoku_thumb.jpg",
+      "credits": "BGM: ハッピーイレイロ - こおろぎ (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成"
+    },
+    {
+      "app": "自衛官一般幹部候補生試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6776236258",
+      "video": "kanbu_3ko.mp4",
+      "cover": "covers/kanbu_3ko_cover.jpg",
+      "ig_caption": "幹部候補生学校は3か所ある。陸上自衛隊は福岡県久留米市、海上自衛隊は広島県江田島市、航空自衛隊は奈良県奈良市。\n#自衛隊 #幹部候補生 #防衛\nBGM: Cassette Tape Dream - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "threads_text": "幹部候補生学校は3か所ある。陸=久留米、海=江田島、空=奈良。防衛省公式ページに所在地が記載されている。https://apps.apple.com/jp/app/id6776236258",
+      "yt_title": "【地理の話】幹部候補生学校は3か所、陸=久留米・海=江田島・空=奈良。 #shorts #自衛隊",
+      "yt_desc": "#自衛隊 #幹部候補生 #防衛\nhttps://apps.apple.com/jp/app/id6776236258\nBGM: Cassette Tape Dream - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "自衛隊",
+        "幹部候補生",
+        "防衛",
+        "幹部試験"
+      ],
+      "yt_thumb": "kanbu_3ko_thumb.jpg",
+      "credits": "BGM: Cassette Tape Dream - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成"
     }
   ]
 }
