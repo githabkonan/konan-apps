@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-09-10",
- "yt_count": 0,
- "last_yt_seq": null,
+ "yt_count": 1,
+ "last_yt_seq": 6055,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -450,7 +450,8 @@
   "rikuso_sleeve.mp4",
   "kaiso_kanchoku.mp4",
   "yobi_nenrei.mp4",
-  "rikuso_2michi.mp4"
+  "rikuso_2michi.mp4",
+  "mileigo_yamasakura.mp4"
  ],
  "hist": {
   "threads": {
@@ -840,7 +841,8 @@
    "an01_rikuso.mp4": "2026-09-08T21:38:56.001962",
    "an05_mileigo.mp4": "2026-09-09T07:39:01.900136",
    "an04_kaiso.mp4": "2026-09-09T19:41:37.265707",
-   "an08_milchugo.mp4": "2026-09-09T21:11:57.934529"
+   "an08_milchugo.mp4": "2026-09-09T21:11:57.934529",
+   "chugo_senkaku.mp4": "2026-09-10T07:15:12.836549"
   },
   "instagram": {
    "otsu6_news.mp4": "2026-08-21T20:22:38.289102",
@@ -1277,10 +1279,11 @@
    "yobi_ichiji0916_20260902.mp4": "2026-09-08T19:22:40.779574",
    "milchugo_tokushubutai_20260902.mp4": "2026-09-09T07:39:01.900136",
    "yobi_nenrei.mp4": "2026-09-09T12:25:11.646463",
-   "rikuso_sleeve.mp4": "2026-09-09T19:41:37.265707"
+   "rikuso_sleeve.mp4": "2026-09-09T19:41:37.265707",
+   "mileigo_senbatsu_20260902.mp4": "2026-09-10T07:15:12.836549"
   }
  },
- "last_yt_ts": "2026-09-09T19:41:37.265707",
+ "last_yt_ts": "2026-09-10T07:15:12.836549",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -1494,7 +1497,9 @@
   "qc3_recall.mp4": 0,
   "lifecontrol_seikatsu_reset_20260803_1600.mp4": 0
  },
- "yt_apps_today": [],
+ "yt_apps_today": [
+  "6793729335"
+ ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
   "sololevel_ui_20260805_1315.mp4": 0,
@@ -1661,7 +1666,9 @@
    19,
    21
   ],
-  "2026-09-10": []
+  "2026-09-10": [
+   7
+  ]
  },
  "ig_posted": [
   "otsu6_news.mp4",
@@ -2098,7 +2105,8 @@
   "yobi_ichiji0916_20260902.mp4",
   "milchugo_tokushubutai_20260902.mp4",
   "yobi_nenrei.mp4",
-  "rikuso_sleeve.mp4"
+  "rikuso_sleeve.mp4",
+  "mileigo_senbatsu_20260902.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
@@ -2157,7 +2165,8 @@
   "an01_rikuso.mp4",
   "an05_mileigo.mp4",
   "an04_kaiso.mp4",
-  "an08_milchugo.mp4"
+  "an08_milchugo.mp4",
+  "chugo_senkaku.mp4"
  ],
  "th_cycle_n": 0,
  "note_fail": {},
