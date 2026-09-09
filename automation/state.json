@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-09-09",
- "yt_count": 2,
- "last_yt_seq": 6036,
+ "yt_count": 3,
+ "last_yt_seq": 6043,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -449,7 +449,8 @@
   "iritai_32sai.mp4",
   "rikuso_sleeve.mp4",
   "kaiso_kanchoku.mp4",
-  "yobi_nenrei.mp4"
+  "yobi_nenrei.mp4",
+  "rikuso_2michi.mp4"
  ],
  "hist": {
   "threads": {
@@ -837,7 +838,8 @@
    "note:nae2b715cad4d": "2026-09-09T12:25:11.646463",
    "an02_yobi.mp4": "2026-09-08T19:22:40.779574",
    "an01_rikuso.mp4": "2026-09-08T21:38:56.001962",
-   "an05_mileigo.mp4": "2026-09-09T07:39:01.900136"
+   "an05_mileigo.mp4": "2026-09-09T07:39:01.900136",
+   "an04_kaiso.mp4": "2026-09-09T19:41:37.265707"
   },
   "instagram": {
    "otsu6_news.mp4": "2026-08-21T20:22:38.289102",
@@ -1273,10 +1275,11 @@
    "iritai_32sai.mp4": "2026-09-08T12:06:15.866562",
    "yobi_ichiji0916_20260902.mp4": "2026-09-08T19:22:40.779574",
    "milchugo_tokushubutai_20260902.mp4": "2026-09-09T07:39:01.900136",
-   "yobi_nenrei.mp4": "2026-09-09T12:25:11.646463"
+   "yobi_nenrei.mp4": "2026-09-09T12:25:11.646463",
+   "rikuso_sleeve.mp4": "2026-09-09T19:41:37.265707"
   }
  },
- "last_yt_ts": "2026-09-09T12:25:11.646463",
+ "last_yt_ts": "2026-09-09T19:41:37.265707",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -1492,7 +1495,8 @@
  },
  "yt_apps_today": [
   "6789518576",
-  "6778490302"
+  "6778490302",
+  "6774074604"
  ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
@@ -1656,7 +1660,8 @@
    21
   ],
   "2026-09-09": [
-   7
+   7,
+   19
   ]
  },
  "ig_posted": [
@@ -2093,7 +2098,8 @@
   "iritai_32sai.mp4",
   "yobi_ichiji0916_20260902.mp4",
   "milchugo_tokushubutai_20260902.mp4",
-  "yobi_nenrei.mp4"
+  "yobi_nenrei.mp4",
+  "rikuso_sleeve.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
@@ -2150,7 +2156,8 @@
   "an06_iritai.mp4",
   "an02_yobi.mp4",
   "an01_rikuso.mp4",
-  "an05_mileigo.mp4"
+  "an05_mileigo.mp4",
+  "an04_kaiso.mp4"
  ],
  "th_cycle_n": 0,
  "note_fail": {},
