@@ -845,7 +845,8 @@
    "an04_kaiso.mp4": "2026-09-09T19:41:37.265707",
    "an08_milchugo.mp4": "2026-09-09T21:11:57.934529",
    "chugo_senkaku.mp4": "2026-09-10T07:15:12.836549",
-   "kusou_tonari.mp4": "2026-09-10T19:01:47.575330"
+   "kusou_tonari.mp4": "2026-09-10T19:01:47.575330",
+   "iritai_32sai.mp4": "2026-09-10T21:17:20.812724"
   },
   "instagram": {
    "otsu6_news.mp4": "2026-08-21T20:22:38.289102",
@@ -1675,7 +1676,8 @@
   ],
   "2026-09-10": [
    7,
-   19
+   19,
+   21
   ]
  },
  "ig_posted": [
@@ -2177,7 +2179,8 @@
   "an04_kaiso.mp4",
   "an08_milchugo.mp4",
   "chugo_senkaku.mp4",
-  "kusou_tonari.mp4"
+  "kusou_tonari.mp4",
+  "iritai_32sai.mp4"
  ],
  "th_cycle_n": 0,
  "note_fail": {},
