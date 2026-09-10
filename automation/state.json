@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-09-10",
- "yt_count": 2,
- "last_yt_seq": 6060,
+ "yt_count": 3,
+ "last_yt_seq": 6067,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -452,7 +452,8 @@
   "yobi_nenrei.mp4",
   "rikuso_2michi.mp4",
   "mileigo_yamasakura.mp4",
-  "kusou_tonari.mp4"
+  "kusou_tonari.mp4",
+  "kanbu_6week.mp4"
  ],
  "hist": {
   "threads": {
@@ -843,7 +844,8 @@
    "an05_mileigo.mp4": "2026-09-09T07:39:01.900136",
    "an04_kaiso.mp4": "2026-09-09T19:41:37.265707",
    "an08_milchugo.mp4": "2026-09-09T21:11:57.934529",
-   "chugo_senkaku.mp4": "2026-09-10T07:15:12.836549"
+   "chugo_senkaku.mp4": "2026-09-10T07:15:12.836549",
+   "kusou_tonari.mp4": "2026-09-10T19:01:47.575330"
   },
   "instagram": {
    "otsu6_news.mp4": "2026-08-21T20:22:38.289102",
@@ -1282,10 +1284,11 @@
    "yobi_nenrei.mp4": "2026-09-09T12:25:11.646463",
    "rikuso_sleeve.mp4": "2026-09-09T19:41:37.265707",
    "mileigo_senbatsu_20260902.mp4": "2026-09-10T07:15:12.836549",
-   "kaiso_kanchoku.mp4": "2026-09-10T12:00:28.816997"
+   "kaiso_kanchoku.mp4": "2026-09-10T12:00:28.816997",
+   "mileigo_4gengo.mp4": "2026-09-10T19:01:47.575330"
   }
  },
- "last_yt_ts": "2026-09-10T12:00:28.816997",
+ "last_yt_ts": "2026-09-10T19:01:47.575330",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -1501,7 +1504,8 @@
  },
  "yt_apps_today": [
   "6793729335",
-  "6789531149"
+  "6789531149",
+  "6776236258"
  ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
@@ -1670,7 +1674,8 @@
    21
   ],
   "2026-09-10": [
-   7
+   7,
+   19
   ]
  },
  "ig_posted": [
@@ -2110,7 +2115,8 @@
   "yobi_nenrei.mp4",
   "rikuso_sleeve.mp4",
   "mileigo_senbatsu_20260902.mp4",
-  "kaiso_kanchoku.mp4"
+  "kaiso_kanchoku.mp4",
+  "mileigo_4gengo.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
@@ -2170,7 +2176,8 @@
   "an05_mileigo.mp4",
   "an04_kaiso.mp4",
   "an08_milchugo.mp4",
-  "chugo_senkaku.mp4"
+  "chugo_senkaku.mp4",
+  "kusou_tonari.mp4"
  ],
  "th_cycle_n": 0,
  "note_fail": {},
