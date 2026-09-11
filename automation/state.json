@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-09-11",
- "yt_count": 1,
- "last_yt_seq": 6079,
+ "yt_count": 2,
+ "last_yt_seq": 6084,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -454,7 +454,8 @@
   "mileigo_yamasakura.mp4",
   "kusou_tonari.mp4",
   "kanbu_6week.mp4",
-  "yobi_5bai.mp4"
+  "yobi_5bai.mp4",
+  "mileigo_gouddoenshu.mp4"
  ],
  "hist": {
   "threads": {
@@ -811,7 +812,7 @@
    "milchugo_horyo.mp4": "2026-09-02T19:23:15.781366",
    "kusou_scramble.mp4": "2026-08-29T13:11:51.849288",
    "sololevel_rpg.mp4": "2026-08-29T19:11:04.270802",
-   "note:n1aa8ce0e5bdc": "2026-09-07T12:17:02.867939",
+   "note:n1aa8ce0e5bdc": "2026-09-11T12:19:11.293666",
    "kankokugonoh_kantan.mp4": "2026-08-30T08:49:12.509710",
    "kanbu_22sai.mp4": "2026-08-30T19:30:56.281748",
    "sleephack_shomei.mp4": "2026-08-31T10:32:25.408183",
@@ -1289,10 +1290,11 @@
    "mileigo_senbatsu_20260902.mp4": "2026-09-10T07:15:12.836549",
    "kaiso_kanchoku.mp4": "2026-09-10T12:00:28.816997",
    "mileigo_4gengo.mp4": "2026-09-10T19:01:47.575330",
-   "kusou_tonari.mp4": "2026-09-11T07:32:52.580576"
+   "kusou_tonari.mp4": "2026-09-11T07:32:52.580576",
+   "iritai_kamoku.mp4": "2026-09-11T12:19:11.293666"
   }
  },
- "last_yt_ts": "2026-09-11T07:32:52.580576",
+ "last_yt_ts": "2026-09-11T12:19:11.293666",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -1507,7 +1509,8 @@
   "lifecontrol_seikatsu_reset_20260803_1600.mp4": 0
  },
  "yt_apps_today": [
-  "6778490302"
+  "6778490302",
+  "6793729335"
  ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
@@ -2123,7 +2126,8 @@
   "mileigo_senbatsu_20260902.mp4",
   "kaiso_kanchoku.mp4",
   "mileigo_4gengo.mp4",
-  "kusou_tonari.mp4"
+  "kusou_tonari.mp4",
+  "iritai_kamoku.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
@@ -2139,8 +2143,8 @@
  "yt_playlists": {},
  "th_pending_replies": [],
  "note_var": {
-  "_article": 14,
-  "note:n1aa8ce0e5bdc": 7,
+  "_article": 15,
+  "note:n1aa8ce0e5bdc": 8,
   "note:nfc591feddd5e": 4,
   "note:nae2b715cad4d": 1
  },
@@ -2227,7 +2231,9 @@
   "2026-09-10": [
    12
   ],
-  "2026-09-11": []
+  "2026-09-11": [
+   12
+  ]
  },
  "th_slot_plan": {
   "2026-08-30": {
