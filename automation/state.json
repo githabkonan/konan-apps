@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-09-12",
- "yt_count": 0,
- "last_yt_seq": null,
+ "yt_count": 1,
+ "last_yt_seq": 6103,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -456,7 +456,8 @@
   "kanbu_6week.mp4",
   "yobi_5bai.mp4",
   "mileigo_gouddoenshu.mp4",
-  "kaiso_edajima.mp4"
+  "kaiso_edajima.mp4",
+  "kanbu_3ko.mp4"
  ],
  "hist": {
   "threads": {
@@ -852,7 +853,8 @@
    "iritai_32sai.mp4": "2026-09-10T21:17:20.812724",
    "rikuso_sleeve.mp4": "2026-09-11T07:32:52.580576",
    "kaiso_kanchoku.mp4": "2026-09-11T19:35:18.631799",
-   "kanbu_6week.mp4": "2026-09-11T21:05:31.637657"
+   "kanbu_6week.mp4": "2026-09-11T21:05:31.637657",
+   "yobi_5bai.mp4": "2026-09-12T07:11:04.502363"
   },
   "instagram": {
    "otsu6_news.mp4": "2026-08-21T20:22:38.289102",
@@ -1295,10 +1297,11 @@
    "mileigo_4gengo.mp4": "2026-09-10T19:01:47.575330",
    "kusou_tonari.mp4": "2026-09-11T07:32:52.580576",
    "iritai_kamoku.mp4": "2026-09-11T12:19:11.293666",
-   "kanbu_6week.mp4": "2026-09-11T19:35:18.631799"
+   "kanbu_6week.mp4": "2026-09-11T19:35:18.631799",
+   "nyutai_v4.mp4": "2026-09-12T07:11:04.502363"
   }
  },
- "last_yt_ts": "2026-09-11T19:35:18.631799",
+ "last_yt_ts": "2026-09-12T07:11:04.502363",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -1512,7 +1515,9 @@
   "qc3_recall.mp4": 0,
   "lifecontrol_seikatsu_reset_20260803_1600.mp4": 0
  },
- "yt_apps_today": [],
+ "yt_apps_today": [
+  "6776236258"
+ ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
   "sololevel_ui_20260805_1315.mp4": 0,
@@ -1689,7 +1694,9 @@
    19,
    21
   ],
-  "2026-09-12": []
+  "2026-09-12": [
+   7
+  ]
  },
  "ig_posted": [
   "otsu6_news.mp4",
@@ -2132,7 +2139,8 @@
   "mileigo_4gengo.mp4",
   "kusou_tonari.mp4",
   "iritai_kamoku.mp4",
-  "kanbu_6week.mp4"
+  "kanbu_6week.mp4",
+  "nyutai_v4.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
@@ -2197,7 +2205,8 @@
   "iritai_32sai.mp4",
   "rikuso_sleeve.mp4",
   "kaiso_kanchoku.mp4",
-  "kanbu_6week.mp4"
+  "kanbu_6week.mp4",
+  "yobi_5bai.mp4"
  ],
  "th_cycle_n": 0,
  "note_fail": {},
