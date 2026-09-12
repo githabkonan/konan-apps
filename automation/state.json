@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-09-12",
- "yt_count": 1,
- "last_yt_seq": 6103,
+ "yt_count": 2,
+ "last_yt_seq": 6108,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -457,7 +457,8 @@
   "yobi_5bai.mp4",
   "mileigo_gouddoenshu.mp4",
   "kaiso_edajima.mp4",
-  "kanbu_3ko.mp4"
+  "kanbu_3ko.mp4",
+  "mileigo_4gengo.mp4"
  ],
  "hist": {
   "threads": {
@@ -842,7 +843,7 @@
    "an03_kusou.mp4": "2026-09-07T19:03:52.257324",
    "an07_kanbu.mp4": "2026-09-07T21:27:38.960757",
    "an06_iritai.mp4": "2026-09-08T07:17:34.002403",
-   "note:nae2b715cad4d": "2026-09-09T12:25:11.646463",
+   "note:nae2b715cad4d": "2026-09-12T12:06:46.846917",
    "an02_yobi.mp4": "2026-09-08T19:22:40.779574",
    "an01_rikuso.mp4": "2026-09-08T21:38:56.001962",
    "an05_mileigo.mp4": "2026-09-09T07:39:01.900136",
@@ -1298,10 +1299,11 @@
    "kusou_tonari.mp4": "2026-09-11T07:32:52.580576",
    "iritai_kamoku.mp4": "2026-09-11T12:19:11.293666",
    "kanbu_6week.mp4": "2026-09-11T19:35:18.631799",
-   "nyutai_v4.mp4": "2026-09-12T07:11:04.502363"
+   "nyutai_v4.mp4": "2026-09-12T07:11:04.502363",
+   "yobi_5bai.mp4": "2026-09-12T12:06:46.846917"
   }
  },
- "last_yt_ts": "2026-09-12T07:11:04.502363",
+ "last_yt_ts": "2026-09-12T12:06:46.846917",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -1516,7 +1518,8 @@
   "lifecontrol_seikatsu_reset_20260803_1600.mp4": 0
  },
  "yt_apps_today": [
-  "6776236258"
+  "6776236258",
+  "6793729335"
  ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
@@ -2140,7 +2143,8 @@
   "kusou_tonari.mp4",
   "iritai_kamoku.mp4",
   "kanbu_6week.mp4",
-  "nyutai_v4.mp4"
+  "nyutai_v4.mp4",
+  "yobi_5bai.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
@@ -2156,10 +2160,10 @@
  "yt_playlists": {},
  "th_pending_replies": [],
  "note_var": {
-  "_article": 15,
+  "_article": 16,
   "note:n1aa8ce0e5bdc": 8,
   "note:nfc591feddd5e": 4,
-  "note:nae2b715cad4d": 1
+  "note:nae2b715cad4d": 2
  },
  "th_cycle": [
   "kusou_scramble.mp4",
@@ -2250,7 +2254,9 @@
   "2026-09-11": [
    12
   ],
-  "2026-09-12": []
+  "2026-09-12": [
+   12
+  ]
  },
  "th_slot_plan": {
   "2026-08-30": {
