@@ -857,7 +857,8 @@
    "kaiso_kanchoku.mp4": "2026-09-11T19:35:18.631799",
    "kanbu_6week.mp4": "2026-09-11T21:05:31.637657",
    "yobi_5bai.mp4": "2026-09-12T07:11:04.502363",
-   "mileigo_gouddoenshu.mp4": "2026-09-12T19:23:21.923542"
+   "mileigo_gouddoenshu.mp4": "2026-09-12T19:23:21.923542",
+   "milchugo_wujing.mp4": "2026-09-12T21:08:29.612042"
   },
   "instagram": {
    "otsu6_news.mp4": "2026-08-21T20:22:38.289102",
@@ -1703,7 +1704,8 @@
   ],
   "2026-09-12": [
    7,
-   19
+   19,
+   21
   ]
  },
  "ig_posted": [
@@ -2217,7 +2219,8 @@
   "kaiso_kanchoku.mp4",
   "kanbu_6week.mp4",
   "yobi_5bai.mp4",
-  "mileigo_gouddoenshu.mp4"
+  "mileigo_gouddoenshu.mp4",
+  "milchugo_wujing.mp4"
  ],
  "th_cycle_n": 0,
  "note_fail": {},
