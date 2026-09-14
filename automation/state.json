@@ -869,7 +869,8 @@
    "yobi_nenrei.mp4": "2026-09-13T19:41:34.908435",
    "rikuso_2michi.mp4": "2026-09-13T21:11:45.661144",
    "mileigo_4gengo.mp4": "2026-09-14T08:33:45.792433",
-   "kaiso_edajima.mp4": "2026-09-14T19:03:36.290639"
+   "kaiso_edajima.mp4": "2026-09-14T19:03:36.290639",
+   "milchugo_senkaku.mp4": "2026-09-14T21:18:13.514462"
   },
   "instagram": {
    "otsu6_news.mp4": "2026-08-21T20:22:38.289102",
@@ -1731,7 +1732,8 @@
   ],
   "2026-09-14": [
    7,
-   19
+   19,
+   21
   ]
  },
  "ig_posted": [
@@ -2257,7 +2259,8 @@
   "yobi_nenrei.mp4",
   "rikuso_2michi.mp4",
   "mileigo_4gengo.mp4",
-  "kaiso_edajima.mp4"
+  "kaiso_edajima.mp4",
+  "milchugo_senkaku.mp4"
  ],
  "th_cycle_n": 0,
  "note_fail": {},
