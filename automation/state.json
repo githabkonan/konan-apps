@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-09-14",
- "yt_count": 1,
- "last_yt_seq": 6152,
+ "yt_count": 2,
+ "last_yt_seq": 6160,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -463,7 +463,8 @@
   "mileigo_v4.mp4",
   "iritai_kamoku.mp4",
   "rikuso_kanbukohoso.mp4",
-  "kaiso_mogami.mp4"
+  "kaiso_mogami.mp4",
+  "kanbu_nensai.mp4"
  ],
  "hist": {
   "threads": {
@@ -1316,10 +1317,11 @@
    "chugo_senkaku.mp4": "2026-09-13T07:24:14.494117",
    "mileigo_gouddoenshu.mp4": "2026-09-13T12:40:26.802827",
    "kaiso_edajima.mp4": "2026-09-13T19:41:34.908435",
-   "rikuso_kanbukohoso.mp4": "2026-09-14T08:33:45.792433"
+   "rikuso_kanbukohoso.mp4": "2026-09-14T08:33:45.792433",
+   "kanbu_3ko.mp4": "2026-09-14T16:08:39.592124"
   }
  },
- "last_yt_ts": "2026-09-14T08:33:45.792433",
+ "last_yt_ts": "2026-09-14T16:08:39.592124",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -1534,7 +1536,8 @@
   "lifecontrol_seikatsu_reset_20260803_1600.mp4": 0
  },
  "yt_apps_today": [
-  "6789518576"
+  "6789518576",
+  "6776236258"
  ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
@@ -2174,7 +2177,8 @@
   "chugo_senkaku.mp4",
   "mileigo_gouddoenshu.mp4",
   "kaiso_edajima.mp4",
-  "rikuso_kanbukohoso.mp4"
+  "rikuso_kanbukohoso.mp4",
+  "kanbu_3ko.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
