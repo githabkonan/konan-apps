@@ -875,7 +875,8 @@
    "kaiso_edajima.mp4": "2026-09-14T19:03:36.290639",
    "milchugo_senkaku.mp4": "2026-09-14T21:18:13.514462",
    "kusou_scramble411.mp4": "2026-09-15T07:33:49.617038",
-   "kanbu_nensai.mp4": "2026-09-15T19:10:23.925538"
+   "kanbu_nensai.mp4": "2026-09-15T19:10:23.925538",
+   "iritai_kamoku.mp4": "2026-09-15T21:36:28.964855"
   },
   "instagram": {
    "otsu6_news.mp4": "2026-08-21T20:22:38.289102",
@@ -1745,7 +1746,8 @@
   ],
   "2026-09-15": [
    7,
-   19
+   19,
+   21
   ]
  },
  "ig_posted": [
@@ -2277,7 +2279,8 @@
   "kaiso_edajima.mp4",
   "milchugo_senkaku.mp4",
   "kusou_scramble411.mp4",
-  "kanbu_nensai.mp4"
+  "kanbu_nensai.mp4",
+  "iritai_kamoku.mp4"
  ],
  "th_cycle_n": 0,
  "note_fail": {},
