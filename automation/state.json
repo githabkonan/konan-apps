@@ -879,7 +879,8 @@
    "kusou_scramble411.mp4": "2026-09-15T07:33:49.617038",
    "kanbu_nensai.mp4": "2026-09-15T19:10:23.925538",
    "iritai_kamoku.mp4": "2026-09-15T21:36:28.964855",
-   "kusou_scramble_naiwake.mp4": "2026-09-16T07:15:26.136362"
+   "kusou_scramble_naiwake.mp4": "2026-09-16T07:15:26.136362",
+   "sanzai_20260916_1235.mp4": "2026-09-16T15:57:16.807765"
   },
   "instagram": {
    "otsu6_news.mp4": "2026-08-21T20:22:38.289102",
@@ -1754,7 +1755,8 @@
    21
   ],
   "2026-09-16": [
-   7
+   7,
+   12
   ]
  },
  "ig_posted": [
@@ -2290,7 +2292,8 @@
   "kusou_scramble411.mp4",
   "kanbu_nensai.mp4",
   "iritai_kamoku.mp4",
-  "kusou_scramble_naiwake.mp4"
+  "kusou_scramble_naiwake.mp4",
+  "sanzai_20260916_1235.mp4"
  ],
  "th_cycle_n": 0,
  "note_fail": {},
@@ -2491,11 +2494,10 @@
   },
   "2026-09-16": {
    "main": [
-    7,
-    19,
-    21
+    12,
+    19
    ],
-   "note": 12
+   "note": null
   }
  }
 }
