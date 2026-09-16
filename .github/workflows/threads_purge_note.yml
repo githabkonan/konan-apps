@@ -1,0 +1,43 @@
+name: threads_purge_note
+# 2026-09-16 konan「サクッとチョコビ(note用)の投稿を削除してからアプリの投稿に切り替える」。
+# @sakuttotyokobi の既存投稿を Threads API で削除する一回きりの作業。dry_run=true なら一覧だけ。
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "true=一覧のみ / false=削除する"
+        default: "true"
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: List and delete
+        env:
+          UID: ${{ secrets.NOTE_THREADS_USER_ID }}
+          TOK: ${{ secrets.NOTE_THREADS_ACCESS_TOKEN }}
+          DRY: ${{ github.event.inputs.dry_run }}
+        run: |
+          python3 - <<'PY'
+          import os, json, urllib.request, urllib.parse
+          uid, tok, dry = os.environ["UID"], os.environ["TOK"], os.environ.get("DRY","true") != "false"
+          base = "https://graph.threads.net/v1.0"
+          def get(url):
+              with urllib.request.urlopen(url, timeout=60) as r: return json.load(r)
+          ids, url = [], f"{base}/{uid}/threads?" + urllib.parse.urlencode({"fields":"id,text,timestamp,permalink","limit":100,"access_token":tok})
+          while url:
+              d = get(url); ids += d.get("data", []); url = d.get("paging", {}).get("next")
+          print(f"対象 {len(ids)} 件 (dry_run={dry})")
+          for it in ids: print(" ", it.get("timestamp","")[:10], it.get("id"), (it.get("text") or "")[:50].replace("\n"," "))
+          if dry: raise SystemExit(0)
+          ok = ng = 0
+          for it in ids:
+              req = urllib.request.Request(f"{base}/{it['id']}?access_token={tok}", method="DELETE")
+              try:
+                  with urllib.request.urlopen(req, timeout=60) as r: body = r.read().decode()[:80]
+                  ok += 1; print("  削除OK", it["id"], body)
+              except urllib.error.HTTPError as e:
+                  ng += 1; print("  削除NG", it["id"], e.code, e.read().decode()[:160])
+          print(f"削除 {ok} / 失敗 {ng}")
+          PY

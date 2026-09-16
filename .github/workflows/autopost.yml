@@ -87,14 +87,15 @@ jobs:
           THREADS_DAILY_SLOTS: "3"   # さくさく(アプリ)=7/19/21時。note枠(12時)は別勘定
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
-          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
-          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          # 2026-09-16 konan: さくさく(@tyokobisakusaku)が本人確認ロックで非公開になったため、
+          # アプリ投稿の宛先を さくっとチョコビ(@sakuttotyokobi)に切替。ロック解除後に戻す。
+          THREADS_USER_ID: ${{ secrets.NOTE_THREADS_USER_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.NOTE_THREADS_ACCESS_TOKEN }}
           # note集客は別アカ @sakuttotyokobi。未設定なら note枠は作られない(さくさくには絶対に出さない)
           # 【2026-08-30 konan指示】「ノート投稿も1日1投稿毎日昼の12:00ね。他のアプリ宣伝の
           # スレッドとは全くの別だから」。12時は さくさくの候補から自動で外れる(TH_ACTIVE_HOURS)
-          NOTE_THREADS_HOUR: "12"
-          NOTE_THREADS_USER_ID: ${{ secrets.NOTE_THREADS_USER_ID }}
-          NOTE_THREADS_ACCESS_TOKEN: ${{ secrets.NOTE_THREADS_ACCESS_TOKEN }}
+          # note枠は停止(2026-09-16 konan「noteは売れてないので削除してアプリ投稿に切替」)。
+          # NOTE_THREADS_* を渡さない = NOTE_READY が False になり note 枠は動かない。
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
