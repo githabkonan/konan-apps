@@ -1618,6 +1618,120 @@
       "yt_thumb": "sleephack_20260916_0253_thumb.jpg",
       "credits": "BGM: こおろぎ「はりきっちゃう時のテーマ」(DOVA-SYNDROME) / 音声: VOICEVOX / 映像: Pexels",
       "hold_for_konan": true
+    },
+    {
+      "app": "自衛官入隊試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6772919770",
+      "video": "iritai_20260916_1235.mp4",
+      "cover": "covers/cta_iritai.jpg",
+      "ig_caption": "自衛官の採用試験、1次の教養問題と作文を通過した後にも2次試験がある。心理検査・適性試験・身体検査があって、どれか一つで落ちる人が多い。\n#自衛隊 #入隊 #就職",
+      "threads_text": "自衛官の採用試験は1次だけじゃない。教養と作文を通過しても、2次の心理・適性・身体で落ちる人が多い。1次が通ったと思ったら次の準備を始めるのが早い。https://apps.apple.com/jp/app/id6772919770",
+      "yt_title": "【知らないと詰む】1次を通過したら、その先がある。#shorts #自衛隊",
+      "yt_desc": "自衛官の採用試験は1次だけじゃない。教養と作文を通過しても、2次の心理・適性・身体で落ちる人が多い。\n#自衛隊 #入隊 #就職\nhttps://apps.apple.com/jp/app/id6772919770\n\nBGM: 作戦開始 - こおろぎ (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "自衛隊",
+        "入隊",
+        "採用試験",
+        "就職"
+      ],
+      "yt_thumb": "iritai_20260916_1235_thumb.jpg",
+      "credits": "BGM: 作戦開始 - こおろぎ (DOVA-SYNDROME) / 音声: VOICEVOX"
+    },
+    {
+      "app": "自衛官陸曹昇任試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
+      "video": "rikuso_20260916_1235.mp4",
+      "cover": "covers/cta_rikuso.jpg",
+      "ig_caption": "陸上自衛隊で陸曹になると、士長より上の階級への道が開く。昇任試験は年に何度もあるわけじゃない。タイミングを逃すとそのまま年が過ぎる。\n#自衛隊 #陸上自衛隊 #昇任",
+      "threads_text": "陸自の陸曹昇任は、一度入口を逃すと次まで待つことになる。階段は5段あって下から順番に上がる。記述式も選択式もある試験の構成を知っておいて損はない。https://apps.apple.com/jp/app/id6774074604",
+      "yt_title": "【陸曹になると】上に5段階の扉が開く。入口は1回だけ。#shorts #自衛隊",
+      "yt_desc": "陸上自衛隊の昇任、入口は何度もあるわけじゃない。階段は5段あって下から順番に上がる。\n#自衛隊 #陸上自衛隊 #昇任\nhttps://apps.apple.com/jp/app/id6774074604\n\nBGM: massive damage - KK (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "自衛隊",
+        "陸上自衛隊",
+        "昇任試験",
+        "陸曹"
+      ],
+      "yt_thumb": "rikuso_20260916_1235_thumb.jpg",
+      "credits": "BGM: massive damage - KK (DOVA-SYNDROME) / 音声: VOICEVOX"
+    },
+    {
+      "app": "自衛官空曹昇任試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6789531149",
+      "video": "kusou_20260916_1235.mp4",
+      "cover": "covers/cta_kusou.jpg",
+      "ig_caption": "航空自衛隊は陸や海と同じ3曹でも、制服の構造が違う。階級章の付く場所も異なる。「同じ自衛官」のつもりで陸の情報を見ていると、空自では通用しない知識になることがある。\n#自衛隊 #航空自衛隊 #空曹",
+      "threads_text": "航空自衛隊の昇任試験は、陸や海の制度と細かいところが違う。同じ3曹でも制服の構造が異なるように、試験の仕組みも微妙にズレている。空自専用で確認しておくほうがいい。https://apps.apple.com/jp/app/id6789531149",
+      "yt_title": "【空自だけ違う】同じ3曹でも、階級章の付く場所が違う。#shorts #空曹",
+      "yt_desc": "航空自衛隊の昇任試験は、陸や海の制度と細かいところが違う。空自専用で確認しておくほうがいい。\n#自衛隊 #航空自衛隊 #空曹\nhttps://apps.apple.com/jp/app/id6789531149\n\nBGM: 極東の羊、テレキャスターと踊る - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "自衛隊",
+        "航空自衛隊",
+        "昇任試験",
+        "空曹"
+      ],
+      "yt_thumb": "kusou_20260916_1235_thumb.jpg",
+      "credits": "BGM: 極東の羊、テレキャスターと踊る - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX"
+    },
+    {
+      "app": "自衛官海曹昇任試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6789518576",
+      "video": "kaiso_20260916_1235.mp4",
+      "cover": "covers/cta_kaiso.jpg",
+      "ig_caption": "海上自衛隊の海曹は全員が艦艇乗組員というわけじゃない。陸上勤務もあれば補給拠点の整備もある。昇任試験の出題範囲も、専門分野だけじゃなく共通科目がある。\n#自衛隊 #海上自衛隊 #海曹",
+      "threads_text": "海上自衛隊の昇任試験、「艦に乗ってる人がやるもの」と思われがちだが陸勤めの海曹も受ける。出題範囲に共通科目があって、専門だけ詰めても抜けがある。https://apps.apple.com/jp/app/id6789518576",
+      "yt_title": "【海自の海曹】全員が艦の上にいるわけじゃない。#shorts #海曹",
+      "yt_desc": "海上自衛隊の昇任試験は艦乗りだけのものじゃない。出題範囲に共通科目があって、専門だけ詰めても抜けがある。\n#自衛隊 #海上自衛隊 #海曹\nhttps://apps.apple.com/jp/app/id6789518576\n\nBGM: ながれぼし - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "自衛隊",
+        "海上自衛隊",
+        "昇任試験",
+        "海曹"
+      ],
+      "yt_thumb": "kaiso_20260916_1235_thumb.jpg",
+      "credits": "BGM: ながれぼし - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX"
+    },
+    {
+      "app": "TASK LEVELING",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6791684373",
+      "video": "task_20260916_1235.mp4",
+      "cover": "covers/cta_sololevel.jpg",
+      "ig_caption": "HBRの研究で、ゲームが人を動かす仕組みが明らかになった。ミッションの明確さ・即時フィードバック・レベル設計。現実のタスクに同じ設計を持ち込むと、動き方が変わる。\n#タスク管理 #生産性 #習慣",
+      "threads_text": "「ゲームなら何時間でもできるのに、仕事は10分で飽きる」のは意志力の問題じゃない。HBRの研究が示すのは、ゲームの設計が脳の動き方に合っているということ。タスク管理をゲーム化した仕組みがある。https://apps.apple.com/jp/app/id6791684373",
+      "yt_title": "【HBR研究】ゲームなら動けるのに、現実で動けない理由。#shorts #タスク管理",
+      "yt_desc": "ゲームが人を動かす仕組みをHBRが研究している。ミッションの明確さ・即時フィードバック・レベル設計が鍵。\n#タスク管理 #生産性 #習慣\nhttps://apps.apple.com/jp/app/id6791684373\n\nBGM: アトリエと電脳世界 - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "タスク管理",
+        "生産性",
+        "習慣化",
+        "仕事術"
+      ],
+      "yt_thumb": "task_20260916_1235_thumb.jpg",
+      "credits": "BGM: アトリエと電脳世界 - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX"
+    },
+    {
+      "app": "散財シミュレーションRPG",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/id6787874159",
+      "video": "sanzai_20260916_1235.mp4",
+      "cover": "covers/cta_sanzai.jpg",
+      "ig_caption": "消費者庁のデータによると、20代の金銭トラブルの多くは初めての一人暮らしや就職後の最初の1〜2年に集中している。知識より先に「やってみる感覚」を作る方が早い場合がある。\n#お金 #節約 #一人暮らし",
+      "threads_text": "消費者庁も言っているとおり、お金の失敗は初めての経験でやらかすパターンが多い。知識より先に「失敗してみる感覚」を作る方が早い場合がある。ゲームで先に経験しておく仕組みがある。https://apps.apple.com/jp/app/id6787874159",
+      "yt_title": "【消費者庁も言ってる】お金の失敗は、初めての1回が一番痛い。#shorts #お金",
+      "yt_desc": "お金の失敗は初めての経験でやらかすパターンが多い。先に経験しておく仕組みがある。\n#お金 #節約 #金融リテラシー\nhttps://apps.apple.com/jp/app/id6787874159\n\nBGM: 8-bit Aggressive1 - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成",
+      "yt_tags": [
+        "お金",
+        "節約",
+        "金融リテラシー",
+        "一人暮らし"
+      ],
+      "yt_thumb": "sanzai_20260916_1235_thumb.jpg",
+      "credits": "BGM: 8-bit Aggressive1 - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX"
     }
   ]
 }
