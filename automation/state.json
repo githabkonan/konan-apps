@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-09-16",
- "yt_count": 2,
- "last_yt_seq": 6204,
+ "yt_count": 3,
+ "last_yt_seq": 6211,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -470,7 +470,8 @@
   "rikuso_kotokokagakko.mp4",
   "kaiso_mogami24.mp4",
   "kusou_scramble_naiwake.mp4",
-  "nyutai_v4.mp4"
+  "nyutai_v4.mp4",
+  "kusou_v4.mp4"
  ],
  "hist": {
   "threads": {
@@ -880,7 +881,8 @@
    "kanbu_nensai.mp4": "2026-09-15T19:10:23.925538",
    "iritai_kamoku.mp4": "2026-09-15T21:36:28.964855",
    "kusou_scramble_naiwake.mp4": "2026-09-16T07:15:26.136362",
-   "sanzai_20260916_1235.mp4": "2026-09-16T15:57:16.807765"
+   "sanzai_20260916_1235.mp4": "2026-09-16T15:57:16.807765",
+   "task_20260916_1235.mp4": "2026-09-16T19:02:20.386677"
   },
   "instagram": {
    "otsu6_news.mp4": "2026-08-21T20:22:38.289102",
@@ -1337,10 +1339,11 @@
    "kanbu_nensai.mp4": "2026-09-15T12:19:42.230251",
    "kaiso_mogami24.mp4": "2026-09-15T19:10:23.925538",
    "milchugo_wujing.mp4": "2026-09-16T07:15:26.136362",
-   "iritai_2kai.mp4": "2026-09-16T12:29:49.820841"
+   "iritai_2kai.mp4": "2026-09-16T12:29:49.820841",
+   "kusou_20260916_1235.mp4": "2026-09-16T19:02:20.386677"
   }
  },
- "last_yt_ts": "2026-09-16T12:29:49.820841",
+ "last_yt_ts": "2026-09-16T19:02:20.386677",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -1556,7 +1559,8 @@
  },
  "yt_apps_today": [
   "6789531149",
-  "6772919770"
+  "6772919770",
+  "6789531149"
  ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
@@ -1756,7 +1760,8 @@
   ],
   "2026-09-16": [
    7,
-   12
+   12,
+   19
   ]
  },
  "ig_posted": [
@@ -2214,7 +2219,8 @@
   "kanbu_nensai.mp4",
   "kaiso_mogami24.mp4",
   "milchugo_wujing.mp4",
-  "iritai_2kai.mp4"
+  "iritai_2kai.mp4",
+  "kusou_20260916_1235.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
@@ -2293,7 +2299,8 @@
   "kanbu_nensai.mp4",
   "iritai_kamoku.mp4",
   "kusou_scramble_naiwake.mp4",
-  "sanzai_20260916_1235.mp4"
+  "sanzai_20260916_1235.mp4",
+  "task_20260916_1235.mp4"
  ],
  "th_cycle_n": 0,
  "note_fail": {},
