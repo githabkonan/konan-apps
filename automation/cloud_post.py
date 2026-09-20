@@ -375,8 +375,8 @@ def ig_caption(post):
     # 返信で外に出るにはMeta審査が要るので、当面はこちら側から観客を渡すしかない。
     # IGは1日2.2万再生あり、同じ@名なのでタップ不要で辿れる。ハンドル1行だけ足す。
     if not pool or not tail:
-        return "\n".join([base, "Threads @tyokobisakusaku"])[:2200]
-    tail = tail + ["Threads @tyokobisakusaku"]
+        return "\n".join([base, "Threads @sakuttotyokobi"])[:2200]
+    tail = tail + ["Threads @sakuttotyokobi"]
     used = STATE.setdefault("ig_var", {})
     i = int(used.get(key, -1)) + 1
     used[key] = i
@@ -385,7 +385,7 @@ def ig_caption(post):
     body = re.sub(r"#\S+", "", body)             # タグは元キャプションの並びを使う
     body = "\n".join(l.rstrip() for l in body.split("\n") if l.strip())
     if not body:
-        return "\n".join([base, "Threads @tyokobisakusaku"])[:2200]
+        return "\n".join([base, "Threads @sakuttotyokobi"])[:2200]
     # 【2026-08-23 IG一次調査】ハッシュタグは1投稿5個まで(2025年仕様)。超過分は落とす
     tail2, ntag = [], 0
     for l in tail:
@@ -418,6 +418,9 @@ def threads_account(post):
     """投稿の中身から出し先アカウントを決める。**手元にあるトークンで決めない。**
 
     konan 2026-08-28「ノートの宣伝投稿はサクッとじゃないの?」
+    【2026-09-20 konan 確定】@tyokobisakusaku(さくさく)は凍結で廃止。アプリ宣伝は @sakuttotyokobi に完全移行し、
+    THREADS_USER_ID/ACCESS_TOKEN には workflow 側で @sakuttotyokobi の資格情報(secrets.NOTE_THREADS_*)を渡している。
+    note 枠は廃止(NOTE_THREADS_* を env に渡さないので NOTE_READY=False)。以下は旧設計の説明:
     アプリ宣伝=@tyokobisakusaku(さくさく) / note集客=@sakuttotyokobi(さくっと)で
     商品ごとに導線を分ける、が konan の設計。さくっとのトークンが無いからといって
     さくさくに出すのは違反(実際にそれで誤投稿した)。無いなら**出さない**。
@@ -564,7 +567,7 @@ def publish_youtube(post):
     # **フォロワーが1人で配信先が無い**こと(threads_diag.py の実測)。
     # 会話に入る(返信)にはMeta審査が要るので、当面の無料の入口はここしかない。
     # YouTubeは1日8.7万再生出ているので、説明欄が唯一まとまった観客に触れる面になる。
-    desc += "\n\nThreads: https://www.threads.com/@tyokobisakusaku"
+    desc += "\n\nThreads: https://www.threads.com/@sakuttotyokobi"
     # 【2026-08-28 konan指示】note の宣伝も投稿工場に載せる。YT説明欄は唯一まとまった
     # 観客に触れる面(1日8.7万再生)で、審査も要らず貼り替えも効く。最新記事1本だけ出す
     if NOTE_NOTES and NOTE_NOTES[0].get("url"):
