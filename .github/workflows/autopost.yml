@@ -85,8 +85,10 @@ jobs:
           # (2026-08-30 に6へ上げて konan 差し戻し)。枠数と日次上限は必ず同じ数字にする
           # 2026-09-16: さくさくが規定違反で停止(1日3本の同型宣伝が原因と推定・8月にもスパム削除4件)。
           # 残った @sakuttotyokobi を守るため 1日2本に落とす。
-          THREADS_MAX_PER_DAY: "2"
-          THREADS_DAILY_SLOTS: "2"   # 2026-09-20: アプリ宣伝は @sakuttotyokobi に完全移行(旧さくさくは凍結で廃止)。移行直後なので 2本/日で慣らす。note枠は廃止
+          # 【2026-09-23 konan指示「6時 12時 18時 で 1日3投稿にしてスレッドも」】2→3。枠は cloud_post.py の TH_HOUR_RANK 先頭 6/12/18。
+          # 9/16 に2へ落とした理由(同型宣伝の連投で旧アカが凍結)は残っている。言い回しの作り置き(threads_variants.json)を切らさないこと。
+          THREADS_MAX_PER_DAY: "3"
+          THREADS_DAILY_SLOTS: "3"   # 2026-09-20: アプリ宣伝は @sakuttotyokobi に完全移行(旧さくさくは凍結で廃止)。移行直後なので 2本/日で慣らす。note枠は廃止
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           # 2026-09-16 konan: さくさく(@tyokobisakusaku)が本人確認ロックで非公開になったため、
