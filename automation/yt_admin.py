@@ -109,8 +109,88 @@ def set_private(tok, vid):
     return json.load(urllib.request.urlopen(req, timeout=60))["status"]["privacyStatus"]
 
 
+PR_TAG = "#PR"
+# 全角・半角のゆらぎで既存の PR 付き動画に二重付与しないよう両方を検知する
+PR_TAG_ALTS = ("#PR", "＃PR", "#Pr", "#pr", "＃Pr", "＃pr")
+
+
+def _has_pr(title):
+    return any(t in title for t in PR_TAG_ALTS)
+
+
+def _video_snippet(tok, vid):
+    """videos.update は snippet の必須項目(title/categoryId)を含めて送る必要があるので現行値を取得する。"""
+    d = _get(f"{API}/videos", tok, part="snippet", id=vid)
+    items = d.get("items", [])
+    return items[0]["snippet"] if items else None
+
+
+def set_title(tok, vid, new_title):
+    """タイトルだけを書き換える。categoryId など他の必須項目は現行値を保持。"""
+    sn = _video_snippet(tok, vid)
+    if not sn:
+        return None
+    sn["title"] = new_title[:100]
+    body = json.dumps({"id": vid, "snippet": sn}).encode()
+    req = urllib.request.Request(f"{API}/videos?part=snippet", data=body, method="PUT",
+                                 headers={"Authorization": f"Bearer {tok}",
+                                          "Content-Type": "application/json; charset=UTF-8"})
+    return json.load(urllib.request.urlopen(req, timeout=60))["snippet"]["title"]
+
+
+def _title_with_pr(title):
+    """既存タイトルに ' #PR' を足す(100字制限内、全角/半角どちらかで既に含まれていればそのまま)。"""
+    if _has_pr(title):
+        return title
+    if len(title) > 96:
+        return title[:96] + " " + PR_TAG
+    return title + " " + PR_TAG
+
+
+def apply_pr_bulk(tok, videos, dry=True, limit=None):
+    """タイトルに #PR が無い動画に一括で追加。dry=True は変更対象の列挙のみ。
+    limit で件数を絞る(クォータ管理)。1件 videos.update = 50 unit + videos.list = 1 unit。
+    """
+    targets = [v for v in videos if not _has_pr(v["title"])]
+    if limit:
+        targets = targets[:limit]
+    print(f"対象: {len(targets)}本(全 {len(videos)} 中、既に #PR 済みは除外)")
+    if dry:
+        for v in targets[:5]:
+            print(f"  DRY {v['id']}: {v['title'][:50]}  →  {_title_with_pr(v['title'])[:60]}")
+        if len(targets) > 5:
+            print(f"  … 他 {len(targets)-5} 本")
+        return 0, 0, 0, len(targets)
+    updated, failed = 0, 0
+    for i, v in enumerate(targets, 1):
+        new = _title_with_pr(v["title"])
+        try:
+            set_title(tok, v["id"], new)
+            updated += 1
+            print(f"  [{i}/{len(targets)}] OK {v['id']}: +#PR")
+        except Exception as e:
+            failed += 1
+            body = getattr(e, "read", lambda: b"")()
+            msg = body[:300].decode("utf-8", "replace") if body else ""
+            print(f"  [{i}/{len(targets)}] FAIL {v['id']}: {e} {msg}")
+            # クォータ超過 (quotaExceeded) は即座に打ち切る
+            if "quotaExceeded" in msg or "rateLimitExceeded" in msg:
+                print(f"  → クォータ超過で中断({updated} 本更新済み、残 {len(targets) - i} 本)")
+                return updated, failed, len(targets) - i, len(targets)
+    return updated, failed, 0, len(targets)
+
+
 def main(argv):
     apply = "--apply" in argv
+    apply_pr = "--apply-pr" in argv
+    dry_pr = "--dry-pr" in argv
+    pr_limit = None
+    for a in argv:
+        if a.startswith("--pr-limit="):
+            try:
+                pr_limit = int(a.split("=", 1)[1])
+            except ValueError:
+                pass
     forced = []
     for a in argv:
         if a.startswith("--video-ids="):
@@ -134,6 +214,17 @@ def main(argv):
 
     vids = all_uploads(tok)
     print(f"アップロード総数: {len(vids)}")
+
+    # 【2026-09-27 F-413】景表法対策: タイトルに #PR を一括追加(--dry-pr で確認、--apply-pr で実行)
+    if dry_pr or apply_pr:
+        if apply_pr and not can_edit:
+            print("NG 権限不足: --apply-pr には youtube.force-ssl 必要")
+            return 2
+        u, f, remain, total = apply_pr_bulk(tok, vids, dry=not apply_pr, limit=pr_limit)
+        if apply_pr:
+            print(f"\n=== #PR 一括追加 完了: 更新 {u} / 失敗 {f} / 残 {remain} / 対象 {total} ===")
+        return 0 if f == 0 else 1
+
     pr = prices([m.group(1) for v in vids for m in [APP_ID.search(v["desc"])] if m])
 
     bad = []

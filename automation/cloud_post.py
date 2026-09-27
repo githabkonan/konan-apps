@@ -13,6 +13,13 @@
 """
 import json, os, sys, time, datetime, urllib.parse, urllib.request, re, hashlib
 
+# 【2026-09-26 F-413】景表法ステマ規制(2023-10-01施行)対策。
+# YouTube タイトル末尾の #shorts の後ろと、Instagram キャプションの
+# 既存ハッシュタグ列の先頭に `#PR` を1個だけ追加する(konan 2026-09-27 指示)。
+# Threads は konan 側でプロフィール明示 + 手動で対応。
+# 消費者庁Q11: 「PR」の記載は「事業者の表示であることが明瞭となっている例」として運用基準に明示。
+PR_TAG = "#PR"
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 Q = json.load(open(os.path.join(HERE, "post_queue.json")))
 BASE = Q["video_base"].rstrip("/")
@@ -389,14 +396,22 @@ def ig_caption(post):
     if not body:
         return "\n".join([base, "Threads @sakuttotyokobi"])[:2200]
     # 【2026-08-23 IG一次調査】ハッシュタグは1投稿5個まで(2025年仕様)。超過分は落とす
+    # 【2026-09-27 F-413】景表法対策で #PR をタグ列の先頭に強制付与(既存タグは4個までに減る)
     tail2, ntag = [], 0
+    pr_inserted = False
     for l in tail:
         if l.lstrip().startswith("#"):
-            tags = [t for t in l.split() if t.startswith("#")][: max(0, 5 - ntag)]
+            tags = [t for t in l.split() if t.startswith("#")]
+            if not pr_inserted:
+                tags = [PR_TAG] + [t for t in tags if t != PR_TAG]
+                pr_inserted = True
+            tags = tags[: max(0, 5 - ntag)]
             ntag += len(tags)
             if tags: tail2.append(" ".join(tags))
         else:
             tail2.append(l)
+    if not pr_inserted:
+        tail2.append(PR_TAG)
     return "\n".join([body] + tail2)[:2200]
 
 
@@ -563,7 +578,11 @@ def publish_youtube(post):
                 {"client_id": cid_, "client_secret": sec, "refresh_token": ref, "grant_type": "refresh_token"})["access_token"]
     video_url = f"{BASE}/{post['video']}"
     data = urllib.request.urlopen(video_url, timeout=180).read()
-    title = post.get("yt_title") or (post["ig_caption"].split("\n")[0][:95] + " #shorts")
+    # 【2026-09-27 F-413】景表法対策。タイトル末尾に #PR を追加(既に含まれていなければ)。
+    # 100文字制限内に収めるため、主文は 88字までに丸めて " #shorts #PR" を付ける
+    title = post.get("yt_title") or (post["ig_caption"].split("\n")[0][:88] + " #shorts #PR")
+    if PR_TAG not in title:
+        title = (title[:96] + " " + PR_TAG) if len(title) > 96 else (title + " " + PR_TAG)
     desc = post.get("yt_desc") or (post["ig_caption"] + "\n" + post.get("appstore_url", ""))
     # 【2026-08-22】Threadsが1投稿1〜5再生から動かない原因は本数でも中身でもなく
     # **フォロワーが1人で配信先が無い**こと(threads_diag.py の実測)。
