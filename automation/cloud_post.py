@@ -365,6 +365,22 @@ def threads_text(post):
     return pool[i % len(pool)].strip()[:500]
 
 
+def _ensure_pr(caption):
+    """【2026-09-27 F-536】どの経路で作ったキャプションにも #PR を必ず入れる。
+    ig_caption() は言い回しの作り置きが無い投稿だと PR 付与の手前で return していて、
+    在庫の全件が #PR 無しで Instagram に出ていた。送信の直前でも同じ関数を通す。
+    タグの行があればその先頭(タグは5個まで)、無ければ末尾に1行足す。"""
+    if PR_TAG in caption or "＃PR" in caption:
+        return caption
+    lines = caption.split("\n")
+    for i, l in enumerate(lines):
+        if l.lstrip().startswith("#"):
+            tags = [t for t in l.split() if t.startswith("#")]
+            lines[i] = " ".join(([PR_TAG] + tags)[:5])
+            return "\n".join(lines)
+    return "\n".join(lines + [PR_TAG])
+
+
 def ig_caption(post):
     """IGのキャプション。本文だけ言い回しを差し替え、CTA(検索語)とタグは元のまま残す。
 
@@ -384,7 +400,7 @@ def ig_caption(post):
     # 返信で外に出るにはMeta審査が要るので、当面はこちら側から観客を渡すしかない。
     # IGは1日2.2万再生あり、同じ@名なのでタップ不要で辿れる。ハンドル1行だけ足す。
     if not pool or not tail:
-        return "\n".join([base, "Threads @sakuttotyokobi"])[:2200]
+        return _ensure_pr("\n".join([base, "Threads @sakuttotyokobi"]))[:2200]
     tail = tail + ["Threads @sakuttotyokobi"]
     used = STATE.setdefault("ig_var", {})
     i = int(used.get(key, -1)) + 1
@@ -394,7 +410,7 @@ def ig_caption(post):
     body = re.sub(r"#\S+", "", body)             # タグは元キャプションの並びを使う
     body = "\n".join(l.rstrip() for l in body.split("\n") if l.strip())
     if not body:
-        return "\n".join([base, "Threads @sakuttotyokobi"])[:2200]
+        return _ensure_pr("\n".join([base, "Threads @sakuttotyokobi"]))[:2200]
     # 【2026-08-23 IG一次調査】ハッシュタグは1投稿5個まで(2025年仕様)。超過分は落とす
     # 【2026-09-27 F-413】景表法対策で #PR をタグ列の先頭に強制付与(既存タグは4個までに減る)
     tail2, ntag = [], 0
@@ -548,7 +564,7 @@ def publish_instagram(post):
     ig = os.environ["IG_USER_ID"]; tok = os.environ["IG_TOKEN"]
     B = "https://graph.instagram.com/v21.0"
     video_url = f"{BASE}/{post['video']}"
-    params = {"media_type": "REELS", "video_url": video_url, "caption": ig_caption(post),
+    params = {"media_type": "REELS", "video_url": video_url, "caption": _ensure_pr(ig_caption(post)),
               "share_to_feed": "true", "access_token": tok}
     if post.get("cover"):
         params["cover_url"] = f"{BASE}/{post['cover']}"
