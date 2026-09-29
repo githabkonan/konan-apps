@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-09-30",
- "yt_count": 0,
- "last_yt_seq": null,
+ "yt_count": 1,
+ "last_yt_seq": 6534,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -510,7 +510,8 @@
   "milchugo_wujing.mp4",
   "milchugo_senkaku.mp4",
   "qc3_20260916_0253.mp4",
-  "shoubo6_20260921_1709.mp4"
+  "shoubo6_20260921_1709.mp4",
+  "sololevel_20260922_0050.mp4"
  ],
  "hist": {
   "threads": {
@@ -952,7 +953,8 @@
    "yobi_20260920_1943.mp4": "2026-09-28T18:19:56.682943",
    "rikuso_kotokokagakko.mp4": "2026-09-29T08:56:07.036719",
    "mileigo_20260916_1136.mp4": "2026-09-29T14:17:09.194257",
-   "kaiso_mogami24.mp4": "2026-09-29T19:28:25.396202"
+   "kaiso_mogami24.mp4": "2026-09-29T19:28:25.396202",
+   "milchugo_v4.mp4": "2026-09-30T06:28:30.859789"
   },
   "instagram": {
    "otsu6_news.mp4": "2026-08-21T20:22:38.289102",
@@ -1449,10 +1451,11 @@
    "task_20260916_1235.mp4": "2026-09-28T18:19:56.682943",
    "eigonoh_20260916_1136.mp4": "2026-09-29T08:56:07.036719",
    "ryokaku_20260916_0253.mp4": "2026-09-29T14:17:09.194257",
-   "rikuso_20260916_0253.mp4": "2026-09-29T19:28:25.396202"
+   "rikuso_20260916_0253.mp4": "2026-09-29T19:28:25.396202",
+   "kaiso_20260916_0253.mp4": "2026-09-30T06:28:30.859789"
   }
  },
- "last_yt_ts": "2026-09-29T19:28:25.396202",
+ "last_yt_ts": "2026-09-30T06:28:30.859789",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -1666,7 +1669,9 @@
   "qc3_recall.mp4": 0,
   "lifecontrol_seikatsu_reset_20260803_1600.mp4": 0
  },
- "yt_apps_today": [],
+ "yt_apps_today": [
+  "6791684373"
+ ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
   "sololevel_ui_20260805_1315.mp4": 0,
@@ -1925,7 +1930,9 @@
    12,
    18
   ],
-  "2026-09-30": []
+  "2026-09-30": [
+   6
+  ]
  },
  "ig_posted": [
   "otsu6_news.mp4",
@@ -2422,7 +2429,8 @@
   "task_20260916_1235.mp4",
   "eigonoh_20260916_1136.mp4",
   "ryokaku_20260916_0253.mp4",
-  "rikuso_20260916_0253.mp4"
+  "rikuso_20260916_0253.mp4",
+  "kaiso_20260916_0253.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
@@ -2533,7 +2541,8 @@
   "yobi_20260920_1943.mp4",
   "rikuso_kotokokagakko.mp4",
   "mileigo_20260916_1136.mp4",
-  "kaiso_mogami24.mp4"
+  "kaiso_mogami24.mp4",
+  "milchugo_v4.mp4"
  ],
  "th_cycle_n": 0,
  "note_fail": {},
