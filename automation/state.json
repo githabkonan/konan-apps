@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-09-29",
- "yt_count": 1,
- "last_yt_seq": 6512,
+ "yt_count": 2,
+ "last_yt_seq": 6518,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -508,7 +508,8 @@
   "kamotsu_20260916_0253.mp4",
   "sleephack_20260916_0253.mp4",
   "milchugo_wujing.mp4",
-  "milchugo_senkaku.mp4"
+  "milchugo_senkaku.mp4",
+  "qc3_20260916_0253.mp4"
  ],
  "hist": {
   "threads": {
@@ -948,7 +949,8 @@
    "kanbu_20260920_1943.mp4": "2026-09-28T06:08:59.450723",
    "nyutai_v4.mp4": "2026-09-28T12:02:03.633106",
    "yobi_20260920_1943.mp4": "2026-09-28T18:19:56.682943",
-   "rikuso_kotokokagakko.mp4": "2026-09-29T08:56:07.036719"
+   "rikuso_kotokokagakko.mp4": "2026-09-29T08:56:07.036719",
+   "mileigo_20260916_1136.mp4": "2026-09-29T14:17:09.194257"
   },
   "instagram": {
    "otsu6_news.mp4": "2026-08-21T20:22:38.289102",
@@ -1443,10 +1445,11 @@
    "milchugo_20260916_1136.mp4": "2026-09-28T06:08:59.450723",
    "kusou_20260922_0050.mp4": "2026-09-28T12:02:03.633106",
    "task_20260916_1235.mp4": "2026-09-28T18:19:56.682943",
-   "eigonoh_20260916_1136.mp4": "2026-09-29T08:56:07.036719"
+   "eigonoh_20260916_1136.mp4": "2026-09-29T08:56:07.036719",
+   "ryokaku_20260916_0253.mp4": "2026-09-29T14:17:09.194257"
   }
  },
- "last_yt_ts": "2026-09-29T08:56:07.036719",
+ "last_yt_ts": "2026-09-29T14:17:09.194257",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -1661,7 +1664,8 @@
   "lifecontrol_seikatsu_reset_20260803_1600.mp4": 0
  },
  "yt_apps_today": [
-  "6793817475"
+  "6793817475",
+  "6780823003"
  ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
@@ -1917,7 +1921,8 @@
    18
   ],
   "2026-09-29": [
-   6
+   6,
+   12
   ]
  },
  "ig_posted": [
@@ -2413,7 +2418,8 @@
   "milchugo_20260916_1136.mp4",
   "kusou_20260922_0050.mp4",
   "task_20260916_1235.mp4",
-  "eigonoh_20260916_1136.mp4"
+  "eigonoh_20260916_1136.mp4",
+  "ryokaku_20260916_0253.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
@@ -2522,7 +2528,8 @@
   "kanbu_20260920_1943.mp4",
   "nyutai_v4.mp4",
   "yobi_20260920_1943.mp4",
-  "rikuso_kotokokagakko.mp4"
+  "rikuso_kotokokagakko.mp4",
+  "mileigo_20260916_1136.mp4"
  ],
  "th_cycle_n": 0,
  "note_fail": {},
