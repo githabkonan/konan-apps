@@ -2112,6 +2112,102 @@
       ],
       "yt_thumb": "qc2_20261001_1213_thumb.jpg",
       "credits": "BGM: shuffle shuffle - KK (DOVA-SYNDROME) / 音声: VOICEVOX"
+    },
+    {
+      "app": "CCNA試験対策 200-301",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/ccna%E8%A9%A6%E9%A8%93%E5%AF%BE%E7%AD%96-200-301/id6808085723",
+      "video": "ccna_20261001_1347.mp4",
+      "cover": "covers/ccna_20261001_1347_cover.jpg",
+      "ig_caption": "192.168.10.0/26。使えるホストは何台？ 答えは62台。ホスト部は6ビットで2の6乗=64、ネットワークアドレスとブロードキャストアドレスを引いて62。\n#CCNA #ネットワーク #サブネット\nBGM: おどれグロッケンシュピール - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成(FLUX) / 本アプリは Cisco Systems, Inc. とは関係のない独立した学習教材です。CCNA は Cisco Systems, Inc. の登録商標です。",
+      "threads_text": "192.168.10.0/26 で使えるホストは何台？ 答えは62台。ホスト部は32−26=6ビットで2の6乗=64、そこからネットワークアドレスとブロードキャストアドレスの2つを引く。サブネット計算を秒数つきで練習できるアプリがある。https://apps.apple.com/jp/app/ccna%E8%A9%A6%E9%A8%93%E5%AF%BE%E7%AD%96-200-301/id6808085723",
+      "yt_title": "【悲報】ネットワーク新人、サブネット計算で固まる。 #shorts",
+      "yt_desc": "#CCNA #ネットワーク #サブネット\nhttps://apps.apple.com/jp/app/ccna%E8%A9%A6%E9%A8%93%E5%AF%BE%E7%AD%96-200-301/id6808085723\n\nBGM: おどれグロッケンシュピール - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成(FLUX) / 本アプリは Cisco Systems, Inc. とは関係のない独立した学習教材です。CCNA は Cisco Systems, Inc. の登録商標です。",
+      "yt_tags": [
+        "CCNA",
+        "ネットワーク",
+        "サブネット",
+        "IT資格"
+      ],
+      "yt_thumb": "ccna_20261001_1347_thumb.jpg",
+      "credits": "BGM: おどれグロッケンシュピール - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成(FLUX) / 本アプリは Cisco Systems, Inc. とは関係のない独立した学習教材です。CCNA は Cisco Systems, Inc. の登録商標です。"
+    },
+    {
+      "app": "消防設備士 乙6 試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/%E6%B6%88%E9%98%B2%E8%A8%AD%E5%82%99%E5%A3%AB-%E4%B9%996-%E8%A9%A6%E9%A8%93%E5%AF%BE%E7%AD%96/id6783586555",
+      "video": "shoubo6_20261001_1347.mp4",
+      "cover": "covers/shoubo6_20261001_1347_cover.jpg",
+      "ig_caption": "消火器の丸い絵表示は、普通火災=白、油火災=黄色、電気火災=青。消火器の技術上の規格を定める省令で定められている(東京消防庁の資料より)。\n#消火器 #消防設備士 #乙6\nBGM: いつもの風景 - KK (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成(FLUX)・図解は自作 / 出典: 東京消防庁「消火器の取扱い要領」 https://www.tfd.metro.tokyo.lg.jp/content/000022482.pdf",
+      "threads_text": "消火器の丸い絵表示は、普通火災=白、油火災=黄色、電気火災=青と、省令で定められている(東京消防庁の資料より)。消防設備士の乙6を学べるアプリがある。https://apps.apple.com/jp/app/%E6%B6%88%E9%98%B2%E8%A8%AD%E5%82%99%E5%A3%AB-%E4%B9%996-%E8%A9%A6%E9%A8%93%E5%AF%BE%E7%AD%96/id6783586555",
+      "yt_title": "【悲報】消火器の丸いマーク、意味を知らないまま通り過ぎている。 #shorts",
+      "yt_desc": "#消火器 #消防設備士 #乙6\nhttps://apps.apple.com/jp/app/%E6%B6%88%E9%98%B2%E8%A8%AD%E5%82%99%E5%A3%AB-%E4%B9%996-%E8%A9%A6%E9%A8%93%E5%AF%BE%E7%AD%96/id6783586555\n\nBGM: いつもの風景 - KK (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成(FLUX)・図解は自作 / 出典: 東京消防庁「消火器の取扱い要領」 https://www.tfd.metro.tokyo.lg.jp/content/000022482.pdf",
+      "yt_tags": [
+        "消火器",
+        "消防設備士",
+        "乙6",
+        "防災"
+      ],
+      "yt_thumb": "shoubo6_20261001_1347_thumb.jpg",
+      "credits": "BGM: いつもの風景 - KK (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成(FLUX)・図解は自作 / 出典: 東京消防庁「消火器の取扱い要領」 https://www.tfd.metro.tokyo.lg.jp/content/000022482.pdf"
+    },
+    {
+      "app": "消防設備士 甲4 試験対策",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/%E6%B6%88%E9%98%B2%E8%A8%AD%E5%82%99%E5%A3%AB-%E7%94%B24-%E8%A9%A6%E9%A8%93%E5%AF%BE%E7%AD%96/id6786774938",
+      "video": "shoubo4_20261001_1347.mp4",
+      "cover": "covers/shoubo4_20261001_1347_cover.jpg",
+      "ig_caption": "消防庁の点検要領では、スポット型の煙感知器は加煙試験器、スポット型の熱感知器は加熱試験器で確認する。甲種の実技には鑑別等がある(消防試験研究センター)。\n#消防設備士 #甲4 #感知器\nBGM: HIRAHIRA - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成(FLUX) / 出典: 消防庁 点検要領 第11 自動火災報知設備 https://www.fdma.go.jp/mission/prevention/items/youryou11_1.pdf ・ 消防試験研究センター https://www.shoubo-shiken.or.jp/shoubou/annai/subject.html",
+      "threads_text": "消防庁の点検要領では、スポット型の煙感知器は所定の加煙試験器、スポット型の熱感知器は所定の加熱試験器で確認する。消防設備士の甲4を学べるアプリがある。https://apps.apple.com/jp/app/%E6%B6%88%E9%98%B2%E8%A8%AD%E5%82%99%E5%A3%AB-%E7%94%B24-%E8%A9%A6%E9%A8%93%E5%AF%BE%E7%AD%96/id6786774938",
+      "yt_title": "【悲報】天井の感知器、実は点検で何かを当てられている。 #shorts",
+      "yt_desc": "#消防設備士 #甲4 #感知器\nhttps://apps.apple.com/jp/app/%E6%B6%88%E9%98%B2%E8%A8%AD%E5%82%99%E5%A3%AB-%E7%94%B24-%E8%A9%A6%E9%A8%93%E5%AF%BE%E7%AD%96/id6786774938\n\nBGM: HIRAHIRA - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成(FLUX) / 出典: 消防庁 点検要領 第11 自動火災報知設備 https://www.fdma.go.jp/mission/prevention/items/youryou11_1.pdf ・ 消防試験研究センター https://www.shoubo-shiken.or.jp/shoubou/annai/subject.html",
+      "yt_tags": [
+        "消防設備士",
+        "甲4",
+        "感知器",
+        "防災"
+      ],
+      "yt_thumb": "shoubo4_20261001_1347_thumb.jpg",
+      "credits": "BGM: HIRAHIRA - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成(FLUX) / 出典: 消防庁 点検要領 第11 自動火災報知設備 https://www.fdma.go.jp/mission/prevention/items/youryou11_1.pdf ・ 消防試験研究センター https://www.shoubo-shiken.or.jp/shoubou/annai/subject.html"
+    },
+    {
+      "app": "韓国語脳トレーナー",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/%E9%9F%93%E5%9B%BD%E8%AA%9E%E8%84%B3%E3%83%88%E3%83%AC%E3%83%BC%E3%83%8A%E3%83%BC/id6793410091",
+      "video": "kankoku_20261001_1347.mp4",
+      "cover": "covers/kankoku_20261001_1347_cover.jpg",
+      "ig_caption": "「写真撮ってくれる？」は 사진 좀 찍어 줄래요?(サジン チョム ッチゴ ジュルレヨ)。同じ型で 뭐 좀 추천해 줄래요?(何かおすすめしてくれる？)。\n#韓国語 #韓国旅行 #旅行韓国語\nBGM: 春のキッチン - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成(FLUX)",
+      "threads_text": "「写真撮ってくれる？」は 사진 좀 찍어 줄래요?(サジン チョム ッチゴ ジュルレヨ)。同じ型で 뭐 좀 추천해 줄래요?(ムォ チョム チュチョネ ジュルレヨ)は「何かおすすめしてくれる？」。同じ型で単語を入れ替えて反復できる韓国語のアプリがある。https://apps.apple.com/jp/app/%E9%9F%93%E5%9B%BD%E8%AA%9E%E8%84%B3%E3%83%88%E3%83%AC%E3%83%BC%E3%83%8A%E3%83%BC/id6793410091",
+      "yt_title": "【悲報】韓国旅行、「写真撮ってくれる？」が言えず固まる。 #shorts",
+      "yt_desc": "#韓国語 #韓国旅行 #旅行韓国語\nhttps://apps.apple.com/jp/app/%E9%9F%93%E5%9B%BD%E8%AA%9E%E8%84%B3%E3%83%88%E3%83%AC%E3%83%BC%E3%83%8A%E3%83%BC/id6793410091\n\nBGM: 春のキッチン - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成(FLUX)",
+      "yt_tags": [
+        "韓国語",
+        "韓国旅行",
+        "旅行韓国語",
+        "ハングル"
+      ],
+      "yt_thumb": "kankoku_20261001_1347_thumb.jpg",
+      "credits": "BGM: 春のキッチン - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成(FLUX)"
+    },
+    {
+      "app": "ショートスリーパー育成プログラム",
+      "type": "app",
+      "appstore_url": "https://apps.apple.com/jp/app/%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%B9%E3%83%AA%E3%83%BC%E3%83%91%E3%83%BC%E8%82%B2%E6%88%90%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0/id6803121721",
+      "video": "sleephack_20261001_1347.mp4",
+      "cover": "covers/sleephack_20261001_1347_cover.jpg",
+      "ig_caption": "厚生労働省の睡眠チェックシートは、床上時間(寝床で過ごした時間)と睡眠時間(実際に眠っていた時間)を別の欄に書く。\n#睡眠 #睡眠記録\nBGM: 自宅にて - KK (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成(FLUX) / 出典: 厚生労働省 睡眠チェックシート https://kennet.mhlw.go.jp/tools/wp/wp-content/themes/targis_mhlw/pdf/check-sleep.pdf",
+      "threads_text": "厚生労働省の睡眠チェックシートは、床上時間(寝床で過ごした時間)と睡眠時間(実際に眠っていた時間)を別の欄に書く。睡眠を記録して数字で見るアプリがある。https://apps.apple.com/jp/app/%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%B9%E3%83%AA%E3%83%BC%E3%83%91%E3%83%BC%E8%82%B2%E6%88%90%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0/id6803121721",
+      "yt_title": "【悲報】布団にいた時間、睡眠時間じゃなかった。 #shorts",
+      "yt_desc": "#睡眠 #睡眠記録\nhttps://apps.apple.com/jp/app/%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%B9%E3%83%AA%E3%83%BC%E3%83%91%E3%83%BC%E8%82%B2%E6%88%90%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0/id6803121721\n\nBGM: 自宅にて - KK (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成(FLUX) / 出典: 厚生労働省 睡眠チェックシート https://kennet.mhlw.go.jp/tools/wp/wp-content/themes/targis_mhlw/pdf/check-sleep.pdf",
+      "yt_tags": [
+        "睡眠",
+        "睡眠記録",
+        "睡眠チェックシート",
+        "生活習慣"
+      ],
+      "yt_thumb": "sleephack_20261001_1347_thumb.jpg",
+      "credits": "BGM: 自宅にて - KK (DOVA-SYNDROME) / 音声: VOICEVOX / 画像: AI生成(FLUX) / 出典: 厚生労働省 睡眠チェックシート https://kennet.mhlw.go.jp/tools/wp/wp-content/themes/targis_mhlw/pdf/check-sleep.pdf",
+      "hold_for_konan": true
     }
   ]
 }
