@@ -2038,25 +2038,6 @@
       "credits": "BGM: 8-bit Aggressive1 - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX / 本アプリはCisco Systems, Inc.とは関係のない独立した学習教材です。CCNAはCisco Systems, Inc.の登録商標です。"
     },
     {
-      "app": "自衛官陸曹昇任試験対策",
-      "type": "app",
-      "appstore_url": "https://apps.apple.com/jp/app/id6774074604",
-      "video": "rikuso_20261001_1213.mp4",
-      "cover": "covers/cta_rikuso_20260920.jpg",
-      "ig_caption": "リクソウの昇任試験、分野が多い。全部一気は勤務と並行では追いつかない。分野ごとに区切って積み上げていく方が続く。分野別に問題が並んでいて間違えた問題に戻れるアプリがある。\n#自衛隊 #陸曹 #昇任試験\nBGM: 審判の日 - KK (DOVA-SYNDROME) / 音声: VOICEVOX",
-      "threads_text": "リクソウの昇任試験、分野が多い。全部一気は勤務と並行では追いつかない。分野別に問題が並んでいて間違えた問題に戻れる、陸曹昇任試験の対策アプリがある。https://apps.apple.com/jp/app/id6774074604",
-      "yt_title": "【実情】陸曹昇任試験、分野が多すぎて全部一気は無理な件 #shorts",
-      "yt_desc": "#自衛隊 #陸曹 #昇任試験\nhttps://apps.apple.com/jp/app/id6774074604\n\nBGM: 審判の日 - KK (DOVA-SYNDROME) / 音声: VOICEVOX",
-      "yt_tags": [
-        "自衛隊",
-        "陸曹",
-        "昇任試験",
-        "試験対策"
-      ],
-      "yt_thumb": "rikuso_20261001_1213_thumb.jpg",
-      "credits": "BGM: 審判の日 - KK (DOVA-SYNDROME) / 音声: VOICEVOX"
-    },
-    {
       "app": "一陸技 試験対策",
       "type": "app",
       "appstore_url": "https://apps.apple.com/jp/app/id6798504295",
@@ -2074,25 +2055,6 @@
       ],
       "yt_thumb": "rikugi_20261001_1213_thumb.jpg",
       "credits": "BGM: Escort - もっぴーさうんど (DOVA-SYNDROME) / 音声: VOICEVOX"
-    },
-    {
-      "app": "QC検定2級 総合対策",
-      "type": "app",
-      "appstore_url": "https://apps.apple.com/jp/app/id6788352237",
-      "video": "qc2_20261001_1213.mp4",
-      "cover": "covers/cta_qc2_20260922.jpg",
-      "ig_caption": "QC検定2級、関数電卓は持ち込み禁止。使えるのはルートのボタンがついた電卓だけ。平方根を手で扱える力と手法選択の判断力が同時に問われる試験だ。\n#QC検定 #品質管理 #試験対策\nBGM: shuffle shuffle - KK (DOVA-SYNDROME) / 音声: VOICEVOX",
-      "threads_text": "QC検定2級、関数電卓は持ち込み禁止。使えるのはルート付き電卓だけ。平方根を手で扱える力と手法選択の判断力を同時に問われる。QC検定2級の総合対策アプリがある。https://apps.apple.com/jp/app/id6788352237",
-      "yt_title": "【罠】QC検定2級、関数電卓は持ち込み禁止な件 #shorts",
-      "yt_desc": "#QC検定 #品質管理 #試験対策\nhttps://apps.apple.com/jp/app/id6788352237\n\nBGM: shuffle shuffle - KK (DOVA-SYNDROME) / 音声: VOICEVOX",
-      "yt_tags": [
-        "QC検定",
-        "品質管理",
-        "QC2級",
-        "試験対策"
-      ],
-      "yt_thumb": "qc2_20261001_1213_thumb.jpg",
-      "credits": "BGM: shuffle shuffle - KK (DOVA-SYNDROME) / 音声: VOICEVOX"
     }
   ]
 }
