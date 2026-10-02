@@ -1,0 +1,36 @@
+name: autopost-keeper
+# 【F-552・2026-10-02】GitHub の schedule('17,47 * * * *' = 48回/日)は実測で 4〜5回/日しか発火しない
+# (10/1〜10/2: schedule 4 / dispatch 8)。残りは Mac の gapfill(launchd 15分毎)が埋めていたが、
+# Mac がスリープすると止まり、10/2 は 09:13→12:10 と 14:37→18:00 の2回、Threads/YT の枠を落とした。
+# autopost が終わるたびにこの keeper が 45分待ち、その間に誰も autopost を走らせていなければ1回だけ dispatch する。
+# = GitHub の中だけで次のランが必ず来る(Mac 不要)。投稿本数は cloud_post.py の不足分計算で決まるので増えない。
+# keeper は最新の1本だけが待つ(cancel-in-progress)。公開リポジトリなので Actions 分数は無料。
+on:
+  workflow_run:
+    workflows: [autopost]
+    types: [completed]
+concurrency:
+  group: autopost-keeper
+  cancel-in-progress: true
+permissions:
+  actions: write
+jobs:
+  keep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - name: Wait, then dispatch autopost if nobody else did
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          sleep 2700
+          last=$(gh run list --repo "$REPO" --workflow autopost --limit 1 --json createdAt --jq '.[0].createdAt')
+          age=$(( ( $(date +%s) - $(date -d "$last" +%s) ) / 60 ))
+          echo "last autopost run: $last (${age}min ago)"
+          if [ "$age" -ge 40 ]; then
+            gh workflow run autopost --repo "$REPO" --ref main
+            echo "dispatched"
+          else
+            echo "skip: a run started ${age}min ago"
+          fi
