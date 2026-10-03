@@ -5,10 +5,17 @@ name: autopost-keeper
 # autopost が終わるたびにこの keeper が 45分待ち、その間に誰も autopost を走らせていなければ1回だけ dispatch する。
 # = GitHub の中だけで次のランが必ず来る(Mac 不要)。投稿本数は cloud_post.py の不足分計算で決まるので増えない。
 # keeper は最新の1本だけが待つ(cancel-in-progress)。公開リポジトリなので Actions 分数は無料。
+# 【F-553・2026-10-03】keeper が dispatch した autopost は actor=github-actions[bot] なので、
+# 完了しても workflow_run が発火しない(GITHUB_TOKEN 起因のイベントは新しいランを作らない)。
+# 実測 10/2-10/3: keeper は schedule 起動の autopost の後だけ3回動き、各1回 dispatch して連鎖が切れた
+# (07:09→09:44 JST などの空白が残った)。→ keeper は最後に自分自身を workflow_dispatch で起こし直す
+# (workflow_dispatch だけは GITHUB_TOKEN からでも新しいランを作れる)。止めたい時は
+# リポジトリ変数 KEEPER_OFF=1(gh variable set KEEPER_OFF -b 1 -R <repo>)。
 on:
   workflow_run:
     workflows: [autopost]
     types: [completed]
+  workflow_dispatch: {}
 concurrency:
   group: autopost-keeper
   cancel-in-progress: true
@@ -23,6 +30,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           REPO: ${{ github.repository }}
+        if: ${{ vars.KEEPER_OFF != '1' }}
         run: |
           sleep 2700
           last=$(gh run list --repo "$REPO" --workflow autopost --limit 1 --json createdAt --jq '.[0].createdAt')
@@ -34,3 +42,11 @@ jobs:
           else
             echo "skip: a run started ${age}min ago"
           fi
+      - name: Re-arm keeper (self-chain)
+        if: ${{ vars.KEEPER_OFF != '1' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          gh workflow run autopost-keeper --repo "$REPO" --ref main
+          echo "re-armed"
