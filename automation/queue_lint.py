@@ -233,6 +233,22 @@ def lint(path, bad_keys=None):
                 errs.append(f"{tag}: yt_descにハッシュタグが無い")
             if url and url not in yd:
                 errs.append(f"{tag}: yt_descにApp StoreのURLが無い")
+        # 【2026-10-08 F-563・法的リスク】読み上げ話者のクレジット。各キャラ規約が「VOICEVOX:<キャラ名>」を
+        # 動画内か説明欄に求める。青山龍星は企業・個人事業主の利用に事前申請が要るため新規公開しない
+        # (再投稿も公開に当たる)。許可した話者名が IG・Threads・YouTube の文面すべてに無い投稿は隔離する。
+        if is_queue and p.get("video"):
+            OKV = ("VOICEVOX:雀松朱司", "VOICEVOX:ずんだもん", "VOICEVOX:春日部つむぎ",
+                   "VOICEVOX:冥鳴ひまり", "VOICEVOX:雨晴はう", "VOICEVOX:麒ヶ島宗麟", "VOICEVOX:黒沢冴白")
+            fields = [("ig_caption", p.get("ig_caption", "")), ("threads_text", p.get("threads_text", ""))]
+            if p.get("yt_desc"):
+                fields.append(("yt_desc", p.get("yt_desc", "")))
+            for fk, fv in fields:
+                if "青山龍星" in (fv or ""):
+                    errs.append(f"{tag}: {fk} が青山龍星(事前申請が要る話者)— 公開しない(F-563)")
+                    break
+                if not any(x in (fv or "") for x in OKV):
+                    errs.append(f"{tag}: {fk} に読み上げ話者のクレジット(VOICEVOX:<キャラ名>)が無い — 隔離(F-563)")
+                    break
         v = p.get("video")
         if v:
             prev = seen_video.get(v)
