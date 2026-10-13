@@ -1,7 +1,7 @@
 {
- "yt_date": "2026-10-13",
- "yt_count": 1,
- "last_yt_seq": 6846,
+ "yt_date": "2026-10-14",
+ "yt_count": 0,
+ "last_yt_seq": null,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -1781,9 +1781,7 @@
   "qc3_recall.mp4": 0,
   "lifecontrol_seikatsu_reset_20260803_1600.mp4": 0
  },
- "yt_apps_today": [
-  "6808085723"
- ],
+ "yt_apps_today": [],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
   "sololevel_ui_20260805_1315.mp4": 0,
@@ -2111,7 +2109,8 @@
    6,
    12,
    18
-  ]
+  ],
+  "2026-10-14": []
  },
  "ig_posted": [
   "otsu6_news.mp4",
@@ -2751,7 +2750,8 @@
   "2026-10-10": [],
   "2026-10-11": [],
   "2026-10-12": [],
-  "2026-10-13": []
+  "2026-10-13": [],
+  "2026-10-14": []
  },
  "th_slot_plan": {
   "2026-08-30": {
@@ -3104,6 +3104,14 @@
    "note": null
   },
   "2026-10-13": {
+   "main": [
+    6,
+    12,
+    18
+   ],
+   "note": null
+  },
+  "2026-10-14": {
    "main": [
     6,
     12,
