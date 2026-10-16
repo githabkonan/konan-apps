@@ -239,7 +239,8 @@ def lint(path, bad_keys=None):
         if is_queue and p.get("video"):
             OKV = ("VOICEVOX:雀松朱司", "VOICEVOX:ずんだもん", "VOICEVOX:春日部つむぎ",
                    "VOICEVOX:冥鳴ひまり", "VOICEVOX:雨晴はう", "VOICEVOX:麒ヶ島宗麟", "VOICEVOX:黒沢冴白")
-            fields = [("ig_caption", p.get("ig_caption", "")), ("threads_text", p.get("threads_text", ""))]
+            # Threads は文字だけの投稿(音声なし)なのでクレジット不要(2026-10-16 konan)
+            fields = [("ig_caption", p.get("ig_caption", ""))]
             if p.get("yt_desc"):
                 fields.append(("yt_desc", p.get("yt_desc", "")))
             for fk, fv in fields:

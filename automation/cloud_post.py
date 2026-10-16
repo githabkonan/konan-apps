@@ -441,6 +441,9 @@ def _split_body_and_url(post):
     text = threads_text(post)
     urls = _URL_RE.findall(text)
     body = _URL_RE.sub("", text)
+    # 【2026-10-16 konan「スレッドで音声なんて使われてないのにVOICEVOXの表記がある」】
+    # Threads は文字だけの投稿(音声なし)なので、在庫に残る話者クレジット行はここで落とす。
+    body = "\n".join(l for l in body.split("\n") if "VOICEVOX" not in l)
     body = re.sub(r"[ \t]+\n", "\n", body).strip()
     body = re.sub(r"\n{3,}", "\n\n", body)
     url = post.get("appstore_url") or post.get("url") or (urls[0].rstrip(")。、") if urls else "")
