@@ -30,14 +30,14 @@
   <tr><td>進捗（達成ミッション・レベル・HP・連続記録・カスタムミッション）</td><td>ゲーム機能の提供</td><td>端末内ローカルのみ</td></tr>
   <tr><td>App Store での購入状態</td><td>アプリの利用開始判定</td><td>端末内ローカル／Apple App Store</td></tr>
 </table>
-<p>本アプリは Apple の HealthKit を使用せず、ヘルスケアアプリ等から健康データを読み取ることもありません。入力された情報を含め、氏名・住所・メールアドレス・電話番号・位置情報・デバイス固有識別子等の情報は、開発者のサーバーに一切送信・保存されません。本アプリは外部サーバーへの通信を行わず、第三者の解析サービス（アクセス解析・行動トラッキング等）や広告SDKを一切使用していません。</p>
+<p>本アプリは Apple の HealthKit を使用せず、ヘルスケアアプリ等から健康データを読み取ることもありません。入力された情報を含め、氏名・住所・メールアドレス・電話番号・位置情報・デバイス固有識別子等の情報は、開発者のサーバーに一切送信・保存されません。バージョン1.2.1以降の本アプリは外部サーバーへの通信を一切行いません(1.2.0以前は表示用フォントを Google Fonts から読み込んでおり、その際 Google に端末のIPアドレスが送られていました。<a href="https://policies.google.com/privacy">Google プライバシーポリシー</a>)。第三者の解析サービス（アクセス解析・行動トラッキング等）や広告SDKを一切使用していません。</p>
 
 <h2>2. 購入について</h2>
 <p>本アプリは買い切りで、App Store を通じて決済されます。アプリ内での追加の課金・サブスクリプションはありません。決済は App Store(Apple)が行い、開発者がクレジットカード番号等の決済情報を取得・保存することはありません。</p>
 <ul>
   <li><strong>Apple Inc.</strong> — App Store 決済処理および購入情報の管理。<a href="https://www.apple.com/jp/legal/privacy/" target="_blank" rel="noopener">Apple プライバシーポリシー</a></li>
 </ul>
-<p>機種変更や再インストール後は、アプリ内の「購入を復元（Restore Purchases）」から無料で登録状態を復元できます。</p>
+<p>本アプリは買い切りのため、機種変更や再インストールの際は App Store から同じ Apple ID で無料で再ダウンロードできます。</p>
 
 <h2>3. 第三者への情報提供</h2>
 <p>本アプリは個人情報を収集しないため、第三者に販売・提供・貸与する個人情報はありません。広告配信・第三者解析も行いません。</p>
@@ -78,7 +78,7 @@
   <tr><td>Progress (completed missions, level, HP, streak, custom missions)</td><td>Providing the game features</td><td>On your device only</td></tr>
 </table>
 <p>The app does not use Apple HealthKit and does not read health data from the Health app or any other app. No information — including what you enter and details such as your name, address, email address, phone number, location or device identifiers — is ever sent to or stored on the developer's servers. The app does not use any third-party analytics services (usage analytics, behavior tracking, etc.) or advertising SDKs.</p>
-<p>The app loads its display fonts from Google Fonts (fonts.googleapis.com and fonts.gstatic.com). None of the information above is included in that request, but, as with any web request, Google receives your device's IP address. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></p>
+<p>From version 1.2.1 the app makes no network connections at all. Versions 1.2.0 and earlier loaded display fonts from Google Fonts (fonts.googleapis.com and fonts.gstatic.com); none of the information above was included, but Google received your device's IP address. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></p>
 
 <h2>2. Purchases</h2>
 <p>The app is a one-time purchase, paid through the App Store. There are no additional in-app charges or subscriptions. Payment is handled by Apple, and the developer never receives or stores payment information such as credit card numbers.</p>
