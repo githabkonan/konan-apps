@@ -2292,7 +2292,7 @@
    "video": "ccna_20261007_0541.mp4",
    "cover": "covers/cta_ccna200301.jpg",
    "ig_caption": "IPv6の「::」、2回使うとどうなる？ RFC 4291 は「::」を1アドレスに1回だけと決めている。2つあると0が何グループ分か決まらないから。例: 2001:db8:0:0:0:0:2:1 → 2001:db8::2:1(RFC 5952)。\n#CCNA #IPv6 #ネットワーク\n出典: RFC 4291 Sec.2.2 https://www.rfc-editor.org/rfc/rfc4291.txt / RFC 5952 Sec.4.2.1 https://www.rfc-editor.org/rfc/rfc5952.txt / BGM: ヒダマリトロニカ - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX:雀松朱司(CV:狐狗狸ラク) / 画像: AI生成(FLUX.2 klein)・図は自作 / 本アプリは Cisco Systems, Inc. とは関係のない独立した学習教材です。CCNA は Cisco Systems, Inc. の登録商標です。",
-   "threads_text": "IPv6の「::」を2回使うとどうなる？ RFC 4291 は「::」を1アドレスに1回だけと決めている。2つあると0が何グループ分か決まらないから。例: 2001:db8:0:0:0:0:2:1 → 2001:db8::2:1(RFC 5952)。CCNAの勉強ができるアプリがある。https://apps.apple.com/jp/app/id6808085723\n本アプリは Cisco Systems, Inc. とは関係のない独立した学習教材です。CCNA は Cisco Systems, Inc. の登録商標です。\n音声: VOICEVOX:雀松朱司(CV:狐狗狸ラク)",
+   "threads_text": "PHPに重大な欠陥が2件見つかった。通称PHP2Shell、危険度は10点中9.2。ログインなしで、外からサーバーのプログラムを動かされうる。修正版は2026年10月21日に公開されたが、攻撃の手口はその前に出回っていた。さくら、pixiv、Cygamesなどが緊急メンテに入った。アプリ側が直るまでの間、ネットワーク側でできるのは、開ける口を必要な分だけにして、通す通信をACLで絞ること。CCNAで最初に習う考え方が、こういう日にそのまま効く。https://apps.apple.com/jp/app/id6808085723",
    "yt_title": "【豆知識】IPv6の「::」、2回使うとどうなる？ #CCNA #shorts",
    "yt_desc": "#CCNA #IPv6 #ネットワーク\nhttps://apps.apple.com/jp/app/id6808085723\n\n出典: RFC 4291 Sec.2.2 https://www.rfc-editor.org/rfc/rfc4291.txt / RFC 5952 Sec.4.2.1 https://www.rfc-editor.org/rfc/rfc5952.txt / BGM: ヒダマリトロニカ - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX:雀松朱司(CV:狐狗狸ラク) / 画像: AI生成(FLUX.2 klein)・図は自作 / 本アプリは Cisco Systems, Inc. とは関係のない独立した学習教材です。CCNA は Cisco Systems, Inc. の登録商標です。",
    "yt_tags": [
@@ -2302,7 +2302,8 @@
     "IPv6アドレス"
    ],
    "credits": "出典: RFC 4291 Sec.2.2 https://www.rfc-editor.org/rfc/rfc4291.txt / RFC 5952 Sec.4.2.1 https://www.rfc-editor.org/rfc/rfc5952.txt / BGM: ヒダマリトロニカ - しゃろう (DOVA-SYNDROME) / 音声: VOICEVOX:雀松朱司(CV:狐狗狸ラク) / 画像: AI生成(FLUX.2 klein)・図は自作 / 本アプリは Cisco Systems, Inc. とは関係のない独立した学習教材です。CCNA は Cisco Systems, Inc. の登録商標です。",
-   "yt_thumb": "ccna_20261007_0541_thumb.jpg"
+   "yt_thumb": "ccna_20261007_0541_thumb.jpg",
+   "pin": "2026-10-23 7"
   },
   {
    "app": "QC検定3級 総合対策",
