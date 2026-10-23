@@ -33,8 +33,22 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
+      # 【F-586・2026-10-23】apt のミラーが詰まるとこの手順だけで32〜37分止まり、ジョブ全体の
+      # timeout(40分)で投稿前に打ち切られていた(10/22 だけで3本)。apt は時間を区切り、
+      # 詰まったら PyPI の静的ビルドへ切り替えて /usr/local/bin/ffmpeg に置く(後段は PATH で拾う)。
       - name: Install ffmpeg (narration gate)
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+        timeout-minutes: 9
+        run: |
+          sudo rm -f /var/lib/man-db/auto-update
+          APT="-o Acquire::http::Timeout=20 -o Acquire::Retries=2"
+          if timeout 150 sudo apt-get $APT update -qq && timeout 210 sudo apt-get $APT install -y -qq --no-install-recommends ffmpeg; then
+            echo "ffmpeg: apt"
+          else
+            echo "::warning::apt が詰まった → imageio-ffmpeg の静的ビルドに切替"
+            pip install -q imageio-ffmpeg
+            sudo ln -sf "$(python3 -c 'import imageio_ffmpeg;print(imageio_ffmpeg.get_ffmpeg_exe())')" /usr/local/bin/ffmpeg
+          fi
+          ffmpeg -hide_banner -version | head -1
       - name: Narration gate (ナレ無し動画を隔離・他は流す)
         run: python3 automation/video_preflight.py
       # 【F-409】有料アプリを「無料」と紹介する投稿を配信ラインで止める(価格はApp Storeに実照会)
