@@ -49,6 +49,16 @@ if __name__ == "__main__":
         print(f"FAIL appid_gate: {a} / {v} の ID {bad} は実在しない(同アプリの実在ID = {good})")
     for a, v, bad in unpub:
         print(f"WARN appid_gate: {a} / {v} の ID {bad} はストアに無い(未公開なら配信で除外される)")
+    # 改名済みアプリの旧名(2026-10-24: Threads に「英語脳トレーナー」が出た実害)
+    OLD_NAMES = ["英語脳トレーナー", "地球人生シミュレーター"]
+    import os
+    here = os.path.dirname(os.path.abspath(__file__))
+    for fn in ("post_queue.json", "app_names.json"):
+        txt = open(os.path.join(here, fn), encoding="utf-8").read()
+        for o in OLD_NAMES:
+            if o in txt:
+                print(f"FAIL appid_gate: {fn} に旧アプリ名「{o}」が {txt.count(o)} 箇所残っている")
+                wrong.append(o)
     if wrong:
         sys.exit(1)
     print(f"OK appid_gate: 誤ID 0 本(未公開 {len(unpub)} 本)")
