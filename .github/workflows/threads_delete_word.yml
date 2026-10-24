@@ -17,7 +17,7 @@ jobs:
           DRY: ${{ github.event.inputs.dry_run }}
         run: |
           python3 - <<'PY'
-          import os, json, urllib.request, urllib.parse
+          import os, json, urllib.request, urllib.parse, urllib.error
           uid, tok, w, dry = os.environ["UID"], os.environ["TOK"], os.environ["WORD"], os.environ["DRY"] != "false"
           base = "https://graph.threads.net/v1.0"
           url = f"{base}/{uid}/threads?" + urllib.parse.urlencode({"fields":"id,text,timestamp","limit":100,"access_token":tok})
@@ -31,6 +31,9 @@ jobs:
           for p in hits:
               print(" ", p["timestamp"], p["id"], p["text"][-60:].replace("\n", " "))
               if not dry:
-                  r = urllib.request.urlopen(urllib.request.Request(f"{base}/{p['id']}?access_token={tok}", method="DELETE"), timeout=60)
-                  print("   削除", r.read().decode()[:60])
+                  try:
+                      r = urllib.request.urlopen(urllib.request.Request(f"{base}/{p['id']}?access_token={tok}", method="DELETE"), timeout=60)
+                      print("   削除", r.read().decode()[:60])
+                  except urllib.error.HTTPError as e:
+                      print("   失敗", e.code, e.read().decode()[:300])
           PY
