@@ -81,6 +81,16 @@ def _video_ok(p):
     return p.get("app") in VIDEO_OK
 
 
+# 文字枠から外す判定は「アプリそのもの」=ID で見る。旧名の在庫(「ひた単」「kankokugonoh」)も同じアプリなので一緒に外す。
+VIDEO_OK_IDS = {_m.group(1) for _p in POSTS if _p.get("app") in VIDEO_OK
+                for _m in [re.search(r"id(\d+)", _p.get("appstore_url") or "")] if _m}
+
+
+def _monopoly_app(p):
+    m = re.search(r"id(\d+)", p.get("appstore_url") or "")
+    return bool(m and m.group(1) in VIDEO_OK_IDS)
+
+
 # 【2026-08-21 konan 指摘】「ショートスリーパーのやつはアプリが公開されるまであげなくていい
 # ゆうたやんけ、何勝手にあげてんの」= まだ App Store に無いアプリの宣伝動画を2本公開していた。
 # 見た人が検索しても何も出ない=集客にならず、チャンネルの信用だけ削る。
@@ -995,7 +1005,8 @@ for _h in _slots:
     # 旧: 枠ごとに売上上位アプリを固定割り当て(上位2枠は常に同じアプリ)、18h経てば同じ投稿が再登場。
     # 14投稿=14アプリで1アプリ1本しかないため上位が延々と戻り、予備自衛官補だけが10回出ていた。
     # 新: 全アプリを1本ずつ出し切るまで同じアプリを出さない。売上は周回内の並び順にだけ効かせる。
-    _all_th = [p_ for p_ in POSTS if p_.get("threads_text")]
+    # 【2026-10-28 15:30 konan】検索独占アプリは動画側だけで宣伝する。文字枠(Threads)は競合ありアプリ(=直リンクが効く)に使う。
+    _all_th = [p_ for p_ in POSTS if p_.get("threads_text") and not _monopoly_app(p_)]
     if not _all_th:
         print(f"  threads: {_h}時枠 投稿候補が無い=見送り"); continue
     _all_th = _threads_sorted(_all_th)
