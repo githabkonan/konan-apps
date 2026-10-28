@@ -2,7 +2,21 @@
  "note": "konan 2026-10-28 19:04-19:07: 10/29-11/04 は全媒体1日1本・全部ワンライフ。ネタはマーケター。マーケター以前の在庫は使わない。時刻は researcher 19:14 調査(Buffer 2026 + 自社YT189本実測)",
  "until": "2026-11-05",
  "app": "ワンライフ：80億分の1の人生",
- "hours": {"threads": 9, "youtube": 19, "instagram": 18, "x_manual": 9, "yt_community_manual": 7},
+ "hours": {
+  "threads": 9,
+  "youtube": 19,
+  "instagram": 18,
+  "x_manual": 9,
+  "yt_community_manual": 7
+ },
  "threads_from": 16,
- "allow_videos": []
+ "allow_videos": [
+  "onelife_ichibyou_20261028_2314.mp4",
+  "onelife_kuchi_20261028_2314.mp4",
+  "onelife_kyoudai_20261028_2314.mp4",
+  "onelife_namae_20261028_2314.mp4",
+  "onelife_oinai_20261028_2314.mp4",
+  "onelife_save_20261028_2314.mp4",
+  "onelife_yottsu_20261028_2314.mp4"
+ ]
 }

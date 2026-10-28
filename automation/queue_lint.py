@@ -237,8 +237,11 @@ def lint(path, bad_keys=None):
         # 動画内か説明欄に求める。青山龍星は企業・個人事業主の利用に事前申請が要るため新規公開しない
         # (再投稿も公開に当たる)。許可した話者名が IG・Threads・YouTube の文面すべてに無い投稿は隔離する。
         if is_queue and p.get("video"):
+            # 【2026-10-28 19:50 konan「VOICEVOX の声はどれもあかん」】新作は AivisSpeech まお・おちつき(ACML 1.0=商用可・
+            # クレジット任意。audio-gen/zundamon_tts.py 参照)。義務ではないが出所を書く方針は変えず「音声: AivisSpeech: まお」を要求する。
             OKV = ("VOICEVOX:雀松朱司", "VOICEVOX:ずんだもん", "VOICEVOX:春日部つむぎ",
-                   "VOICEVOX:冥鳴ひまり", "VOICEVOX:雨晴はう", "VOICEVOX:麒ヶ島宗麟", "VOICEVOX:黒沢冴白")
+                   "VOICEVOX:冥鳴ひまり", "VOICEVOX:雨晴はう", "VOICEVOX:麒ヶ島宗麟", "VOICEVOX:黒沢冴白",
+                   "AivisSpeech: まお")
             # Threads は文字だけの投稿(音声なし)なのでクレジット不要(2026-10-16 konan)
             fields = [("ig_caption", p.get("ig_caption", ""))]
             if p.get("yt_desc"):
@@ -248,7 +251,7 @@ def lint(path, bad_keys=None):
                     errs.append(f"{tag}: {fk} が青山龍星(事前申請が要る話者)— 公開しない(F-563)")
                     break
                 if not any(x in (fv or "") for x in OKV):
-                    errs.append(f"{tag}: {fk} に読み上げ話者のクレジット(VOICEVOX:<キャラ名>)が無い — 隔離(F-563)")
+                    errs.append(f"{tag}: {fk} に読み上げ話者のクレジット(VOICEVOX:<キャラ名> / AivisSpeech: まお)が無い — 隔離(F-563)")
                     break
         v = p.get("video")
         if v:
