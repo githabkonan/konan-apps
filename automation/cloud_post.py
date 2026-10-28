@@ -74,18 +74,33 @@ try:
     VIDEO_OK = {a for a, v in _SM.items() if v.get("video_ok")}
     # 【2026-10-28 18:54 konan「動画系はショートスリーパー、ミリタリー中国語は抜いて」】独占でも出さない。文字枠にも戻さない。
     VIDEO_BLOCKED = {a for a, v in _SM.items() if v.get("blocked")}
+    # 実験で動画OKにしたアプリ(experiment_until)は文字枠から外さない(ワンライフは文字の主役のまま)
+    _EXP_APPS = {a for a, v in _SM.items() if v.get("experiment_until")}
 except Exception as e:
     print(f"WARN search_monopoly.json を読めない({e}) — 動画媒体は全件見送り")
     VIDEO_OK = set()
     VIDEO_BLOCKED = set()
+    _EXP_APPS = set()
+
+
+# 【2026-10-28 19:07 konan 実験】「動画も文字も一日1回・全部ワンライフ」「マーケターが書いてないやつは使い回さず捨てる」
+# automation/experiment.json が期限内なら: 動画は allow_videos(マーケター企画の新作)だけ・全媒体1日1本・時刻は hours。
+try:
+    EXP = json.load(open(os.path.join(HERE, "experiment.json")))
+    if datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9))).date().isoformat() >= EXP.get("until", ""):
+        EXP = None
+except Exception:
+    EXP = None
 
 
 def _video_ok(p):
+    if EXP:
+        return p.get("app") == EXP["app"] and p.get("video") in set(EXP.get("allow_videos") or [])
     return p.get("app") in VIDEO_OK
 
 
 # 文字枠から外す判定は「アプリそのもの」=ID で見る。旧名の在庫(「ひた単」「kankokugonoh」)も同じアプリなので一緒に外す。
-VIDEO_OK_IDS = {_m.group(1) for _p in POSTS if _p.get("app") in (VIDEO_OK | VIDEO_BLOCKED)
+VIDEO_OK_IDS = {_m.group(1) for _p in POSTS if _p.get("app") in ((VIDEO_OK - _EXP_APPS) | VIDEO_BLOCKED)
                 for _m in [re.search(r"id(\d+)", _p.get("appstore_url") or "")] if _m}
 
 
@@ -273,7 +288,11 @@ except Exception:
 # 【2026-09-23 konan指示「6時 12時 18時 で 1日3投稿にしてスレッドも」】全媒体の先頭3枠を 6/12/18 に揃える。
 # 旧 7/12/19(2026-08-29)は撤回。cron は :17/:47 なので、実際の投稿は各時刻の17分ごろ。
 IG_HOUR_RANK = [6, 12, 18, 19, 7, 20, 11, 21, 8, 13, 22, 10, 17, 9, 16, 23, 15, 14]
+if EXP:
+    IG_MAX_PER_DAY = 1
 IG_ACTIVE_HOURS = IG_HOUR_RANK[:max(0, IG_MAX_PER_DAY)]
+if EXP:
+    IG_ACTIVE_HOURS = [int(EXP["hours"]["instagram"])]
 IG_ACTIVE_HOURS += [h for h in _PIN_HOURS if h not in IG_ACTIVE_HOURS]  # pin の時刻も枠にする
 _ig_today = _today_count("instagram")
 _ig_slot_target = sum(1 for h in IG_ACTIVE_HOURS if now.hour >= h)
@@ -399,6 +418,8 @@ def threads_text(post):
     if native:
         used = STATE.setdefault("th_native", {})
         i = int(used.get(post.get("app"), -1)) + 1
+        if EXP and post.get("app") == EXP["app"]:
+            i = max(i, int(EXP.get("threads_from", 0)))  # マーケター以前の原稿は使わない
         used[post.get("app")] = i
         if i >= len(native):
             print(f"WARN text_posts.json の {post.get('app')} を一周した(新しい原稿を足すこと)")
@@ -889,6 +910,9 @@ NOTE_HOUR = int(os.environ.get("NOTE_THREADS_HOUR", "21")) if (NOTE_NOTES and NO
 # 増やすなら v4 の判断(1本あたりの伸び)を覆す実測が要る。上限の余りを理由にしないこと。
 THREADS_DAILY_SLOTS = int(os.environ.get("THREADS_DAILY_SLOTS", "4"))
 TH_ACTIVE_HOURS = [h for h in TH_HOUR_RANK if h != NOTE_HOUR][:THREADS_DAILY_SLOTS]
+if EXP:
+    THREADS_DAILY_SLOTS = 1
+    TH_ACTIVE_HOURS = [int(EXP["hours"]["threads"])]
 # 【2026-08-31】pin の時刻を枠として足す。Threads は「枠の時間でなければ投稿しない」ので、
 # 枠数だけ増やしても pin の時刻(konan の言う「今」)には出ない。時刻そのものを枠にする。
 TH_ACTIVE_HOURS += [h for h in _PIN_HOURS if h not in TH_ACTIVE_HOURS and h != NOTE_HOUR]
@@ -1132,7 +1156,7 @@ def _yt_daily_budget():
     return max(1, min(cap, -(-len(left) // days)))
 
 
-YT_TODAY_MAX = _yt_daily_budget()
+YT_TODAY_MAX = 1 if EXP else _yt_daily_budget()
 
 
 # 【2026-08-26 konan指示「時間も一番バズりやすい時間にしろ」】6-24時の均等配分をやめ、
@@ -1187,6 +1211,8 @@ def _yt_next(priority_only, avoid):
 
 if os.environ.get("YT_REFRESH_TOKEN") and YT_WIN_START <= now.hour <= YT_WIN_END:
     _target = _yt_pace_target()
+    if EXP:
+        _target = 1 if now.hour >= int(EXP["hours"]["youtube"]) else 0
     _behind = _target - STATE.get("yt_count", 0)
     _yt_pin = _pinned("youtube")
     if _yt_pin and not _video_ok(_yt_pin):
