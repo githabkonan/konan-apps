@@ -27,13 +27,17 @@ LOCAL = os.path.join(HERE, "state.json")
 def merge(local, remote):
     out = dict(remote)
     out.update({k: v for k, v in local.items()
-                if k not in ("yt_posted", "hist", "yt_count", "yt_date", "th_var")})
+                if k not in ("yt_posted", "hist", "yt_count", "yt_date", "th_var", "th_native")})
 
     # Threads の言い回し送り(何番まで使ったか)は大きい方を採る = 同じ文を二度出さない安全側
     th = dict(remote.get("th_var", {}))
     for key, i in (local.get("th_var", {}) or {}).items():
         th[key] = max(int(i), int(th.get(key, -1)))
     out["th_var"] = th
+    thn = dict(remote.get("th_native", {}))
+    for key, i in (local.get("th_native", {}) or {}).items():
+        thn[key] = max(int(i), int(thn.get(key, -1)))
+    out["th_native"] = thn
 
     # 【F-442・2026-08-27】th_slots(枠の消化記録)は日付ごとに和集合。片方にしか無くても
     # 消化済み扱い=同じ枠をもう一度出さない安全側。丸ごと上書きだと古い側が勝った時に

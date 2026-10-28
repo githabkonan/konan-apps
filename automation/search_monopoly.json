@@ -1,0 +1,305 @@
+{
+ "updated": "2026-10-28T15:12",
+ "rule": "video_ok = CTA語のApp Store検索(JP上位25件)に自社以外が0本",
+ "apps": {
+  "ひた単": {
+   "term": "ひた単",
+   "mine_found": true,
+   "others": 21,
+   "top_others": [
+    "みんなの英単語帳 - 受験勉強のための単語帳メーカー -",
+    "短期バイトならショットワークス すぐ働ける単発バイト探し",
+    "スポットバイトル - すぐに働ける単発バイト探し"
+   ],
+   "video_ok": false,
+   "checked": "2026-10-28T15:12"
+  },
+  "自衛官入隊試験対策": {
+   "term": "自衛官入隊試験対策",
+   "mine_found": true,
+   "others": 21,
+   "top_others": [
+    "任期制自衛官採用試験　対策",
+    "一般曹候補生採用試験　対策",
+    "公務員試験 面接対策｜市役所・県庁・特別区・警察・消防・教員"
+   ],
+   "video_ok": false,
+   "checked": "2026-10-28T15:12"
+  },
+  "自衛官海曹昇任試験対策": {
+   "term": "海曹昇任",
+   "mine_found": true,
+   "others": 8,
+   "top_others": [
+    "3等海曹昇任筆記試験　対策",
+    "3等海曹昇任試験 問題集",
+    "自衛官陸曹昇任試験対策"
+   ],
+   "video_ok": false,
+   "checked": "2026-10-28T15:12"
+  },
+  "自衛官一般幹部候補生試験対策": {
+   "term": "自衛官一般幹部候補生試験対策",
+   "mine_found": true,
+   "others": 2,
+   "top_others": [
+    "自衛隊幹部候補生・幹部候補曹採用試験　対策",
+    "消防昇任試験対策アプリ"
+   ],
+   "video_ok": false,
+   "checked": "2026-10-28T15:12"
+  },
+  "kankokugonoh": {
+   "term": "kankokugonoh",
+   "mine_found": false,
+   "others": 0,
+   "top_others": [],
+   "video_ok": false,
+   "checked": "2026-10-28T15:12"
+  },
+  "自衛官空曹昇任試験対策": {
+   "term": "空曹昇任",
+   "mine_found": true,
+   "others": 8,
+   "top_others": [
+    "3等空曹昇任筆記試験　対策",
+    "3等空曹昇任試験 問題集",
+    "自衛官陸曹昇任試験対策"
+   ],
+   "video_ok": false,
+   "checked": "2026-10-28T15:12"
+  },
+  "ミリタリー英語トレーナー": {
+   "term": "ミリタリー英語",
+   "mine_found": true,
+   "others": 1,
+   "top_others": [
+    "NATOフォネティックコード 欧文通話表 英語発音練習"
+   ],
+   "video_ok": false,
+   "checked": "2026-10-28T15:12"
+  },
+  "推しログ:推し活の記録帳": {
+   "term": "推しログ:推し活の記録帳",
+   "mine_found": true,
+   "others": 24,
+   "top_others": [
+    "SNS風日記・メモ帳 シークログ - 秘密の独り言や推し活",
+    "シンプルノート - メモ帳・ノート管理(めも帳)のメモアプリ",
+    "推し活アプリ Pics - 推し管理・記録するカレンダー日記"
+   ],
+   "video_ok": false,
+   "checked": "2026-10-28T15:12"
+  },
+  "QC検定3級 総合対策": {
+   "term": "QC検定3級",
+   "mine_found": true,
+   "others": 23,
+   "top_others": [
+    "QC検定®3級 秒トレ：忘却曲線で覚える品質管理検定®3級",
+    "QC検定 3級試験対策クイズ",
+    "QC検定®3級 試験対策 問題集"
+   ],
+   "video_ok": false,
+   "checked": "2026-10-28T15:12"
+  },
+  "自衛官陸曹昇任試験対策": {
+   "term": "陸曹昇任",
+   "mine_found": true,
+   "others": 2,
+   "top_others": [
+    "3等陸曹昇任筆記試験　対策",
+    "3等陸曹昇任試験 問題集"
+   ],
+   "video_ok": false,
+   "checked": "2026-10-28T15:12"
+  },
+  "TASK LEVELING": {
+   "term": "TASK LEVELING",
+   "mine_found": true,
+   "others": 5,
+   "top_others": [
+    "solo-leveling",
+    "Level Journey: Life RPG",
+    "SideQuest - Task RPG"
+   ],
+   "video_ok": false,
+   "checked": "2026-10-28T15:12"
+  },
+  "運行管理者(貨物) 試験対策": {
+   "term": "運行管理者",
+   "mine_found": false,
+   "others": 20,
+   "top_others": [
+    "運行管理者 ｜資格試験対策問題集 | 貨物 | 旅客",
+    "運行管理者 貨物",
+    "運行管理者  資格試験対策｜D-Learning"
+   ],
+   "video_ok": false,
+   "checked": "2026-10-28T15:12"
+  },
+  "予備自衛官補 採用試験対策": {
+   "term": "予備自衛官補",
+   "mine_found": true,
+   "others": 0,
+   "top_others": [],
+   "video_ok": true,
+   "checked": "2026-10-28T15:12"
+  },
+  "ミリタリー中国語トレーナー": {
+   "term": "ミリタリー中国語",
+   "mine_found": true,
+   "others": 0,
+   "top_others": [],
+   "video_ok": true,
+   "checked": "2026-10-28T15:12"
+  },
+  "ショートスリーパー育成プログラム": {
+   "term": "ショートスリーパー育成プログラム",
+   "mine_found": true,
+   "others": 0,
+   "top_others": [],
+   "video_ok": true,
+   "checked": "2026-10-28T15:12"
+  },
+  "海上保安学校 学生採用試験対策": {
+   "term": "海上保安学校",
+   "mine_found": true,
+   "others": 0,
+   "top_others": [],
+   "video_ok": true,
+   "checked": "2026-10-28T15:12"
+  },
+  "一陸技 試験対策": {
+   "term": "一陸技",
+   "mine_found": true,
+   "others": 15,
+   "top_others": [
+    "第一級陸上無線技術士　試験対策",
+    "第一級陸上無線技術士 試験対策過去問集",
+    "一・二陸技"
+   ],
+   "video_ok": false,
+   "checked": "2026-10-28T15:12"
+  },
+  "運行管理者(旅客) 試験対策": {
+   "term": "運行管理者 旅客",
+   "mine_found": false,
+   "others": 19,
+   "top_others": [
+    "運行管理者 旅客",
+    "運行管理者（旅客） 過去問 2026",
+    "公論出版－運行管理者 重要問題厳選集 旅客編 '26-'27"
+   ],
+   "video_ok": false,
+   "checked": "2026-10-28T15:12"
+  },
+  "消防設備士 乙6 試験対策": {
+   "term": "消防設備士 乙6",
+   "mine_found": false,
+   "others": 23,
+   "top_others": [
+    "消防設備士乙6類【過去問ドリル】",
+    "消防設備士乙種第6類 合格ドリル",
+    "消防設備士 乙種6類 試験対策 問題集"
+   ],
+   "video_ok": false,
+   "checked": "2026-10-28T15:12"
+  },
+  "消防設備士 甲4 試験対策": {
+   "term": "消防設備士 甲4",
+   "mine_found": true,
+   "others": 22,
+   "top_others": [
+    "消防設備士第4類【甲乙対応】（過去問ドリル)",
+    "消防設備士 乙6 甲4 試験対策 一問一答",
+    "消防設備士 4類（甲4・乙4）合格ドリル｜一問一答・模擬試験"
+   ],
+   "video_ok": false,
+   "checked": "2026-10-28T15:12"
+  },
+  "散財シミュレーションRPG": {
+   "term": "散財シミュレーションRPG",
+   "mine_found": true,
+   "others": 0,
+   "top_others": [],
+   "video_ok": true,
+   "checked": "2026-10-28T15:12"
+  },
+  "QC検定2級 総合対策": {
+   "term": "QC検定2級",
+   "mine_found": true,
+   "others": 24,
+   "top_others": [
+    "QC検定®2級 試験対策 問題集",
+    "QC検定 2級試験対策クイズ",
+    "QC検定2級 試験対策・問題集"
+   ],
+   "video_ok": false,
+   "checked": "2026-10-28T15:12"
+  },
+  "韓国語脳トレーナー": {
+   "term": "韓国語脳トレーナー",
+   "mine_found": true,
+   "others": 0,
+   "top_others": [],
+   "video_ok": true,
+   "checked": "2026-10-28T15:12"
+  },
+  "CCNA試験対策 200-301": {
+   "term": "CCNA",
+   "mine_found": true,
+   "others": 22,
+   "top_others": [
+    "CCNA 200-301 試験対策 2026",
+    "CCNA対策 最新版",
+    "SkillStack - スキマ時間でIT資格合格"
+   ],
+   "video_ok": false,
+   "checked": "2026-10-28T15:12"
+  },
+  "自衛官一般幹部候補生試験対策 幹部候補曹対応": {
+   "term": "自衛官一般幹部候補生試験対策",
+   "mine_found": true,
+   "others": 2,
+   "top_others": [
+    "自衛隊幹部候補生・幹部候補曹採用試験　対策",
+    "消防昇任試験対策アプリ"
+   ],
+   "video_ok": false,
+   "checked": "2026-10-28T15:12"
+  },
+  "ワンライフ：80億分の1の人生": {
+   "term": "ワンライフ",
+   "mine_found": true,
+   "others": 20,
+   "top_others": [
+    "わんLIFE",
+    "Microsoft OneDrive",
+    "80億分の1 - 人生シミュレーター"
+   ],
+   "video_ok": false,
+   "checked": "2026-10-28T15:12"
+  },
+  "BIO HACK：健康年齢": {
+   "term": "BIO HACK",
+   "mine_found": true,
+   "others": 21,
+   "top_others": [
+    "BioHack Studios Members",
+    "BioHack Track: Peptide & GLP-1",
+    "BioHacker: AI健康コーチ"
+   ],
+   "video_ok": false,
+   "checked": "2026-10-28T15:12"
+  },
+  "ひたすら英単語 - ひた単": {
+   "term": "ひたすら英単語",
+   "mine_found": true,
+   "others": 0,
+   "top_others": [],
+   "video_ok": true,
+   "checked": "2026-10-28T15:12"
+  }
+ }
+}

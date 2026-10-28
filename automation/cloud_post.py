@@ -63,6 +63,24 @@ if _bad:
         print(f"WARN quarantine.json を読めない({e}) — 隔離なしで続行")
 
 
+# 【2026-10-28 konan 指示】動画は直リンクで飛ばず、視聴者は App Store で検索して来る。
+# 検索で競合が1本でも出るアプリを動画で宣伝すると客が競合に流れる。
+# → YouTube / Instagram(動画)は search_monopoly.json で video_ok のアプリだけ出す。
+#   Threads 等の文字投稿(直リンク)はこの制限を受けない。
+# 判定は claude-tools/scripts/search_monopoly_gate.py(App Store 検索の実測)。
+# 判定表が読めない時は動画を出さない(競合へ流す宣伝を出すより、出さない方が損が小さい)。
+try:
+    VIDEO_OK = {a for a, v in json.load(open(os.path.join(HERE, "search_monopoly.json")))["apps"].items()
+                if v.get("video_ok")}
+except Exception as e:
+    print(f"WARN search_monopoly.json を読めない({e}) — 動画媒体は全件見送り")
+    VIDEO_OK = set()
+
+
+def _video_ok(p):
+    return p.get("app") in VIDEO_OK
+
+
 # 【2026-08-21 konan 指摘】「ショートスリーパーのやつはアプリが公開されるまであげなくていい
 # ゆうたやんけ、何勝手にあげてんの」= まだ App Store に無いアプリの宣伝動画を2本公開していた。
 # 見た人が検索しても何も出ない=集客にならず、チャンネルの信用だけ削る。
@@ -338,6 +356,14 @@ try:
 except Exception:
     THREADS_VARIANTS = {}
 try:
+    TEXT_FOCUS = json.load(open(os.path.join(HERE, "text_focus.json")))
+except Exception:
+    TEXT_FOCUS = {}
+try:
+    TEXT_POSTS = json.load(open(os.path.join(HERE, "text_posts.json")))["apps"]
+except Exception:
+    TEXT_POSTS = {}
+try:
     THREADS_REPLIES = json.load(open(os.path.join(HERE, "threads_replies.json")))
 except Exception:
     THREADS_REPLIES = {}
@@ -354,6 +380,16 @@ def threads_text(post):
     候補は手元のローカルLLMで作り置きしてある(scripts/threads_variants.py → threads_variants.json)。
     どこまで使ったかは state.json に持つので、作り置きを一周するまで同じ文は二度出ない。
     """
+    # 【2026-10-28 konan「文字用は文字用で作成して手を抜かず」】動画台本由来の言い回しより、
+    # 文字専用に書いた原稿(text_posts.json の threads)を先に使う。アプリ単位で一周するまで同じ文は出ない。
+    native = (TEXT_POSTS.get(post.get("app")) or {}).get("threads") or []
+    if native:
+        used = STATE.setdefault("th_native", {})
+        i = int(used.get(post.get("app"), -1)) + 1
+        used[post.get("app")] = i
+        if i >= len(native):
+            print(f"WARN text_posts.json の {post.get('app')} を一周した(新しい原稿を足すこと)")
+        return native[i % len(native)].strip()[:500]
     base = (post.get("threads_text") or "").strip()
     key = post.get("video") or post.get("app")
     pool = THREADS_VARIANTS.get(key) or []
@@ -780,6 +816,8 @@ def pick(platform, start_idx):
         p = POSTS[rot[(start_idx + k) % R]]
         if not cooled(platform, p):
             continue
+        if platform in ("youtube", "instagram") and not _video_ok(p):
+            continue
         # 【2026-08-22 konan指摘】1ランの中で同じアプリを二度出さない。
         # 並べ替え(_spread_by_app)だけだと在庫の多いアプリが同じランに二度来ることがある。
         # ここは最後の砦なので、アプリが尽きた時だけ(=候補が全部使用済みの時だけ)緩める。
@@ -973,7 +1011,15 @@ for _h in _slots:
         print(f"  threads: 全{len(_all_th)}アプリを一巡したので次の周回({STATE['th_cycle_n']})に入る")
     # 【F-442・2026-08-27】同文二重投稿ガード(最後の砦)。枠記録(th_slots)が何かの理由で
     # 消えても、同じ動画の18h以内の再投稿はここで止める(hist は毎回確実に保存されている)。
-    tp = _pinned("threads") or next((p_ for p_ in _pool if cooled("threads", p_)), None)
+    # 【2026-10-28 konan】集中モード: 直近7日で突出して売れているアプリに、既存の枠の一部を回す。
+    # 枠の総数(THREADS_DAILY_SLOTS)は増やさない=中身の入替えだけ(konan「何投稿もすると分散する」)。
+    # 判定は claude-tools/scripts/text_focus.py(毎日・ASC 実売上)。
+    tp = _pinned("threads")
+    if tp is None and TEXT_FOCUS.get("app") and _h in TH_ACTIVE_HOURS[:int(TEXT_FOCUS.get("slots", 0))]:
+        tp = next((p_ for p_ in POSTS if p_.get("app") == TEXT_FOCUS["app"] and cooled("threads", p_)), None)
+        if tp is not None:
+            print(f"  threads: {_h}時枠は集中モード → {TEXT_FOCUS['app']}(7日シェア {TEXT_FOCUS.get('share')})")
+    tp = tp or next((p_ for p_ in _pool if cooled("threads", p_)), None)
     if tp is None:
         _th_done.append(_h); save_state()
         print(f"  threads: {_h}時枠 周回内に出せる投稿が無い=見送り"); continue
@@ -994,6 +1040,8 @@ for _h in _slots:
 
 # Instagram: バズりやすい時間帯の枠(IG_ACTIVE_HOURS)だけに投稿(rotation: seq)
 _ig_pin = _pinned("instagram")
+if _ig_pin and not _video_ok(_ig_pin):
+    print(f"  instagram: pin {_ig_pin.get('app')} は検索で競合あり=動画に出さない"); _ig_pin = None
 for i in range(max(IG_PER_RUN, 1 if _ig_pin else 0)):
     ip = _ig_pin if (i == 0 and _ig_pin) else pick("instagram", seq * 5 + i)
     if ip is None:
@@ -1113,6 +1161,8 @@ def _yt_next(priority_only, avoid):
         p = POSTS[ROTATION_WEIGHTED[(seq + k) % _R]]
         if p.get("video") in YT_POSTED:
             continue
+        if not _video_ok(p):
+            continue
         if priority_only and _app_id(p) not in KONAN_PRIORITY:
             continue
         if _app_id(p) in avoid:
@@ -1125,6 +1175,8 @@ if os.environ.get("YT_REFRESH_TOKEN") and YT_WIN_START <= now.hour <= YT_WIN_END
     _target = _yt_pace_target()
     _behind = _target - STATE.get("yt_count", 0)
     _yt_pin = _pinned("youtube")
+    if _yt_pin and not _video_ok(_yt_pin):
+        print(f"  youtube: pin {_yt_pin.get('app')} は検索で競合あり=動画に出さない"); _yt_pin = None
     if _behind <= 0 and not _yt_pin:
         print(f"  youtube: ペース内({STATE.get('yt_count',0)}/{_target}本"
               f" 本日上限{YT_TODAY_MAX}本)=今は見送り")
