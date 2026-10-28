@@ -70,11 +70,14 @@ if _bad:
 # 判定は claude-tools/scripts/search_monopoly_gate.py(App Store 検索の実測)。
 # 判定表が読めない時は動画を出さない(競合へ流す宣伝を出すより、出さない方が損が小さい)。
 try:
-    VIDEO_OK = {a for a, v in json.load(open(os.path.join(HERE, "search_monopoly.json")))["apps"].items()
-                if v.get("video_ok")}
+    _SM = json.load(open(os.path.join(HERE, "search_monopoly.json")))["apps"]
+    VIDEO_OK = {a for a, v in _SM.items() if v.get("video_ok")}
+    # 【2026-10-28 18:54 konan「動画系はショートスリーパー、ミリタリー中国語は抜いて」】独占でも出さない。文字枠にも戻さない。
+    VIDEO_BLOCKED = {a for a, v in _SM.items() if v.get("blocked")}
 except Exception as e:
     print(f"WARN search_monopoly.json を読めない({e}) — 動画媒体は全件見送り")
     VIDEO_OK = set()
+    VIDEO_BLOCKED = set()
 
 
 def _video_ok(p):
@@ -82,7 +85,7 @@ def _video_ok(p):
 
 
 # 文字枠から外す判定は「アプリそのもの」=ID で見る。旧名の在庫(「ひた単」「kankokugonoh」)も同じアプリなので一緒に外す。
-VIDEO_OK_IDS = {_m.group(1) for _p in POSTS if _p.get("app") in VIDEO_OK
+VIDEO_OK_IDS = {_m.group(1) for _p in POSTS if _p.get("app") in (VIDEO_OK | VIDEO_BLOCKED)
                 for _m in [re.search(r"id(\d+)", _p.get("appstore_url") or "")] if _m}
 
 
