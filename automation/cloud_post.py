@@ -856,7 +856,7 @@ def pick(platform, start_idx):
 # 【2026-08-29 konan指示「7:00、12:00、19:00にしろ。あわせろ」】全媒体で時刻を揃える。
 # この並びから note の時間(NOTE_THREADS_HOUR)を除いた先頭 THREADS_DAILY_SLOTS 個が
 # **さくさく(アプリ)専用**の枠。note集客(さくっと)はこの並びから枠を取らない。
-TH_HOUR_RANK = [6, 12, 18, 19, 7, 21, 8, 22, 13, 20, 23, 9, 14, 17, 11, 10, 16, 15, 0, 1, 2, 3, 4, 5]
+TH_HOUR_RANK = [6, 12, 18, 23, 19, 7, 21, 8, 22, 13, 20, 9, 14, 17, 11, 10, 16, 15, 0, 1, 2, 3, 4, 5]
 
 # 【2026-08-28 konan指示】「ノートの宣伝も投稿工場の内容に組み込む」
 # note有料記事の集客ポストは note工場が output/<slug>/05_sns_posts.md に5本作っている。
@@ -884,7 +884,7 @@ NOTE_HOUR = int(os.environ.get("NOTE_THREADS_HOUR", "21")) if (NOTE_NOTES and NO
 # (Threads=2〜3本/日・[[feedback_konan_script_format_v4]])。旧24本/日の物量路線は自滅だった。
 # 【2026-08-30】ここを一度 6 に上げたが konan 差し戻し。「上限が広い」は増やす根拠にならない。
 # 増やすなら v4 の判断(1本あたりの伸び)を覆す実測が要る。上限の余りを理由にしないこと。
-THREADS_DAILY_SLOTS = int(os.environ.get("THREADS_DAILY_SLOTS", "3"))
+THREADS_DAILY_SLOTS = int(os.environ.get("THREADS_DAILY_SLOTS", "4"))
 TH_ACTIVE_HOURS = [h for h in TH_HOUR_RANK if h != NOTE_HOUR][:THREADS_DAILY_SLOTS]
 # 【2026-08-31】pin の時刻を枠として足す。Threads は「枠の時間でなければ投稿しない」ので、
 # 枠数だけ増やしても pin の時刻(konan の言う「今」)には出ない。時刻そのものを枠にする。
