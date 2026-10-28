@@ -1,305 +1,395 @@
 {
- "updated": "2026-10-28T15:12",
- "rule": "video_ok = CTA語のApp Store検索(JP上位25件)に自社以外が0本",
+ "updated": "2026-10-28T15:33",
+ "rule": "video_ok = CTA語のApp Store検索(JP上位25件)に、題名か説明冒頭が題材語で被る他社が0本(無関係アプリは数えない・konan 10/28 15:32)",
  "apps": {
   "ひた単": {
    "term": "ひた単",
    "mine_found": true,
-   "others": 21,
+   "others": 10,
    "top_others": [
-    "みんなの英単語帳 - 受験勉強のための単語帳メーカー -",
+    "みんなの英単語帳 - 受験勉強のための単語帳メーカー - [英単語/単語]",
+    "熟語消し—単語消しの暇つぶしさがしゲーム [単語]",
+    "ニュースで英語学習！StudyNow(リスニング対応) [英語]"
+   ],
+   "unrelated": 11,
+   "unrelated_top": [
     "短期バイトならショットワークス すぐ働ける単発バイト探し",
-    "スポットバイトル - すぐに働ける単発バイト探し"
+    "スポットバイトル - すぐに働ける単発バイト探し",
+    "格安航空券 ソラハピ 航空券・飛行機チケットを格安で予約"
    ],
    "video_ok": false,
-   "checked": "2026-10-28T15:12"
+   "checked": "2026-10-28T15:33"
   },
   "自衛官入隊試験対策": {
    "term": "自衛官入隊試験対策",
    "mine_found": true,
-   "others": 21,
+   "others": 9,
    "top_others": [
-    "任期制自衛官採用試験　対策",
-    "一般曹候補生採用試験　対策",
-    "公務員試験 面接対策｜市役所・県庁・特別区・警察・消防・教員"
+    "任期制自衛官採用試験　対策 [自衛官/任期制/採用試験]",
+    "一般曹候補生採用試験　対策 [自衛隊/曹候補/採用試験]",
+    "公務員試験 面接対策｜市役所・県庁・特別区・警察・消防・教員 [自衛官]"
+   ],
+   "unrelated": 7,
+   "unrelated_top": [
+    "自衛消防技術試験対策アプリ",
+    "自衛消防技術試験　試験対策",
+    "自衛消防技術試験対策クイズ"
    ],
    "video_ok": false,
-   "checked": "2026-10-28T15:12"
+   "checked": "2026-10-28T15:33"
   },
   "自衛官海曹昇任試験対策": {
    "term": "海曹昇任",
    "mine_found": true,
-   "others": 8,
+   "others": 6,
    "top_others": [
-    "3等海曹昇任筆記試験　対策",
-    "3等海曹昇任試験 問題集",
-    "自衛官陸曹昇任試験対策"
+    "3等海曹昇任筆記試験　対策 [海曹/昇任/自衛]",
+    "3等海曹昇任試験 問題集 [海曹/昇任]",
+    "3等陸曹昇任筆記試験　対策 [昇任/自衛]"
    ],
+   "unrelated": 0,
+   "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-10-28T15:12"
+   "checked": "2026-10-28T15:33"
   },
   "自衛官一般幹部候補生試験対策": {
    "term": "自衛官一般幹部候補生試験対策",
    "mine_found": true,
-   "others": 2,
+   "others": 1,
    "top_others": [
-    "自衛隊幹部候補生・幹部候補曹採用試験　対策",
+    "自衛隊幹部候補生・幹部候補曹採用試験　対策 [幹部候補/自衛/幹部]"
+   ],
+   "unrelated": 1,
+   "unrelated_top": [
     "消防昇任試験対策アプリ"
    ],
    "video_ok": false,
-   "checked": "2026-10-28T15:12"
+   "checked": "2026-10-28T15:33"
   },
   "kankokugonoh": {
    "term": "kankokugonoh",
    "mine_found": false,
    "others": 0,
    "top_others": [],
+   "unrelated": 0,
+   "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-10-28T15:12"
+   "checked": "2026-10-28T15:33"
   },
   "自衛官空曹昇任試験対策": {
    "term": "空曹昇任",
    "mine_found": true,
-   "others": 8,
+   "others": 6,
    "top_others": [
-    "3等空曹昇任筆記試験　対策",
-    "3等空曹昇任試験 問題集",
-    "自衛官陸曹昇任試験対策"
+    "3等空曹昇任筆記試験　対策 [空曹/昇任/自衛]",
+    "3等空曹昇任試験 問題集 [空曹/昇任]",
+    "3等陸曹昇任筆記試験　対策 [昇任/自衛]"
    ],
+   "unrelated": 0,
+   "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-10-28T15:12"
+   "checked": "2026-10-28T15:33"
   },
   "ミリタリー英語トレーナー": {
-   "term": "ミリタリー英語",
+   "term": "ミリタリー英語トレーナー",
    "mine_found": true,
-   "others": 1,
-   "top_others": [
-    "NATOフォネティックコード 欧文通話表 英語発音練習"
-   ],
-   "video_ok": false,
-   "checked": "2026-10-28T15:12"
+   "others": 0,
+   "top_others": [],
+   "unrelated": 0,
+   "unrelated_top": [],
+   "video_ok": true,
+   "checked": "2026-10-28T15:33"
   },
   "推しログ:推し活の記録帳": {
    "term": "推しログ:推し活の記録帳",
    "mine_found": true,
-   "others": 24,
+   "others": 15,
    "top_others": [
-    "SNS風日記・メモ帳 シークログ - 秘密の独り言や推し活",
+    "SNS風日記・メモ帳 シークログ - 秘密の独り言や推し活 [推し]",
+    "推し活アプリ Pics - 推し管理・記録するカレンダー日記 [推し]",
+    "人のめも-メモリオ-家族や親戚の記録、顧客管理、推し活メモ [推し]"
+   ],
+   "unrelated": 9,
+   "unrelated_top": [
     "シンプルノート - メモ帳・ノート管理(めも帳)のメモアプリ",
-    "推し活アプリ Pics - 推し管理・記録するカレンダー日記"
+    "momochy日記帳 写真とログのかわいい日記帳アプリ",
+    "かんたん日記帳!人気のかわいいカレンダー日記アプリ"
    ],
    "video_ok": false,
-   "checked": "2026-10-28T15:12"
+   "checked": "2026-10-28T15:33"
   },
   "QC検定3級 総合対策": {
    "term": "QC検定3級",
    "mine_found": true,
-   "others": 23,
+   "others": 20,
    "top_others": [
-    "QC検定®3級 秒トレ：忘却曲線で覚える品質管理検定®3級",
-    "QC検定 3級試験対策クイズ",
-    "QC検定®3級 試験対策 問題集"
+    "QC検定®3級 秒トレ：忘却曲線で覚える品質管理検定®3級 [QC検定/品質管理]",
+    "QC検定 3級試験対策クイズ [QC検定]",
+    "QC検定®3級 試験対策 問題集 [QC検定/品質管理]"
+   ],
+   "unrelated": 3,
+   "unrelated_top": [
+    "シンプルToDoリスト・タスク - 洗練されたタスクアプリ",
+    "継続する技術｜ダイエットも筋トレも記録・習慣化で目標達成",
+    "統計検定３級 用語集"
    ],
    "video_ok": false,
-   "checked": "2026-10-28T15:12"
+   "checked": "2026-10-28T15:33"
   },
   "自衛官陸曹昇任試験対策": {
    "term": "陸曹昇任",
    "mine_found": true,
    "others": 2,
    "top_others": [
-    "3等陸曹昇任筆記試験　対策",
-    "3等陸曹昇任試験 問題集"
+    "3等陸曹昇任筆記試験　対策 [陸曹/昇任/自衛]",
+    "3等陸曹昇任試験 問題集 [陸曹/昇任]"
    ],
+   "unrelated": 0,
+   "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-10-28T15:12"
+   "checked": "2026-10-28T15:33"
   },
   "TASK LEVELING": {
    "term": "TASK LEVELING",
    "mine_found": true,
-   "others": 5,
+   "others": 3,
    "top_others": [
-    "solo-leveling",
-    "Level Journey: Life RPG",
-    "SideQuest - Task RPG"
+    "solo-leveling [タスク/レベル/RPG/Level]",
+    "Level Journey: Life RPG [RPG/Task/Level]",
+    "SideQuest - Task RPG [タスク/レベル/RPG/Task]"
+   ],
+   "unrelated": 2,
+   "unrelated_top": [
+    "Slacker to Slayer",
+    "Main Quest: Time Log"
    ],
    "video_ok": false,
-   "checked": "2026-10-28T15:12"
+   "checked": "2026-10-28T15:33"
   },
   "運行管理者(貨物) 試験対策": {
    "term": "運行管理者",
    "mine_found": false,
-   "others": 20,
+   "others": 18,
    "top_others": [
-    "運行管理者 ｜資格試験対策問題集 | 貨物 | 旅客",
-    "運行管理者 貨物",
-    "運行管理者  資格試験対策｜D-Learning"
+    "運行管理者 ｜資格試験対策問題集 | 貨物 | 旅客 [運行管理]",
+    "運行管理者 貨物 [運行管理]",
+    "運行管理者  資格試験対策｜D-Learning [運行管理]"
+   ],
+   "unrelated": 2,
+   "unrelated_top": [
+    "NCS運行支援",
+    "Yahoo!カーナビ"
    ],
    "video_ok": false,
-   "checked": "2026-10-28T15:12"
+   "checked": "2026-10-28T15:33"
   },
   "予備自衛官補 採用試験対策": {
    "term": "予備自衛官補",
    "mine_found": true,
    "others": 0,
    "top_others": [],
+   "unrelated": 0,
+   "unrelated_top": [],
    "video_ok": true,
-   "checked": "2026-10-28T15:12"
+   "checked": "2026-10-28T15:33"
   },
   "ミリタリー中国語トレーナー": {
    "term": "ミリタリー中国語",
    "mine_found": true,
    "others": 0,
    "top_others": [],
+   "unrelated": 0,
+   "unrelated_top": [],
    "video_ok": true,
-   "checked": "2026-10-28T15:12"
+   "checked": "2026-10-28T15:33"
   },
   "ショートスリーパー育成プログラム": {
    "term": "ショートスリーパー育成プログラム",
    "mine_found": true,
    "others": 0,
    "top_others": [],
+   "unrelated": 0,
+   "unrelated_top": [],
    "video_ok": true,
-   "checked": "2026-10-28T15:12"
+   "checked": "2026-10-28T15:33"
   },
   "海上保安学校 学生採用試験対策": {
    "term": "海上保安学校",
    "mine_found": true,
    "others": 0,
    "top_others": [],
+   "unrelated": 0,
+   "unrelated_top": [],
    "video_ok": true,
-   "checked": "2026-10-28T15:12"
+   "checked": "2026-10-28T15:33"
   },
   "一陸技 試験対策": {
    "term": "一陸技",
    "mine_found": true,
-   "others": 15,
+   "others": 11,
    "top_others": [
-    "第一級陸上無線技術士　試験対策",
-    "第一級陸上無線技術士 試験対策過去問集",
-    "一・二陸技"
+    "第一級陸上無線技術士　試験対策 [陸上無線/陸技/無線技術士/無線]",
+    "第一級陸上無線技術士 試験対策過去問集 [陸上無線/陸技/無線技術士/無線]",
+    "一・二陸技 [陸上無線/陸技/無線技術士/無線]"
+   ],
+   "unrelated": 4,
+   "unrelated_top": [
+    "心理咨询-抑郁焦虑和情感咨询平台",
+    "LOCKLY®",
+    "网货帮"
    ],
    "video_ok": false,
-   "checked": "2026-10-28T15:12"
+   "checked": "2026-10-28T15:33"
   },
   "運行管理者(旅客) 試験対策": {
    "term": "運行管理者 旅客",
    "mine_found": false,
    "others": 19,
    "top_others": [
-    "運行管理者 旅客",
-    "運行管理者（旅客） 過去問 2026",
-    "公論出版－運行管理者 重要問題厳選集 旅客編 '26-'27"
+    "運行管理者 旅客 [運行管理]",
+    "運行管理者（旅客） 過去問 2026 [運行管理]",
+    "公論出版－運行管理者 重要問題厳選集 旅客編 '26-'27 [運行管理]"
    ],
+   "unrelated": 0,
+   "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-10-28T15:12"
+   "checked": "2026-10-28T15:33"
   },
   "消防設備士 乙6 試験対策": {
    "term": "消防設備士 乙6",
    "mine_found": false,
    "others": 23,
    "top_others": [
-    "消防設備士乙6類【過去問ドリル】",
-    "消防設備士乙種第6類 合格ドリル",
-    "消防設備士 乙種6類 試験対策 問題集"
+    "消防設備士乙6類【過去問ドリル】 [消防設備]",
+    "消防設備士乙種第6類 合格ドリル [消防設備]",
+    "消防設備士 乙種6類 試験対策 問題集 [消防設備]"
    ],
+   "unrelated": 0,
+   "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-10-28T15:12"
+   "checked": "2026-10-28T15:33"
   },
   "消防設備士 甲4 試験対策": {
    "term": "消防設備士 甲4",
    "mine_found": true,
    "others": 22,
    "top_others": [
-    "消防設備士第4類【甲乙対応】（過去問ドリル)",
-    "消防設備士 乙6 甲4 試験対策 一問一答",
-    "消防設備士 4類（甲4・乙4）合格ドリル｜一問一答・模擬試験"
+    "消防設備士第4類【甲乙対応】（過去問ドリル) [消防設備]",
+    "消防設備士 乙6 甲4 試験対策 一問一答 [消防設備]",
+    "消防設備士 4類（甲4・乙4）合格ドリル｜一問一答・模擬試験 [消防設備]"
    ],
+   "unrelated": 0,
+   "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-10-28T15:12"
+   "checked": "2026-10-28T15:33"
   },
   "散財シミュレーションRPG": {
    "term": "散財シミュレーションRPG",
    "mine_found": true,
    "others": 0,
    "top_others": [],
+   "unrelated": 0,
+   "unrelated_top": [],
    "video_ok": true,
-   "checked": "2026-10-28T15:12"
+   "checked": "2026-10-28T15:33"
   },
   "QC検定2級 総合対策": {
    "term": "QC検定2級",
    "mine_found": true,
    "others": 24,
    "top_others": [
-    "QC検定®2級 試験対策 問題集",
-    "QC検定 2級試験対策クイズ",
-    "QC検定2級 試験対策・問題集"
+    "QC検定®2級 試験対策 問題集 [QC検定/品質管理]",
+    "QC検定 2級試験対策クイズ [QC検定/品質管理]",
+    "QC検定2級 試験対策・問題集 [QC検定/品質管理]"
    ],
+   "unrelated": 0,
+   "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-10-28T15:12"
+   "checked": "2026-10-28T15:33"
   },
   "韓国語脳トレーナー": {
    "term": "韓国語脳トレーナー",
    "mine_found": true,
    "others": 0,
    "top_others": [],
+   "unrelated": 0,
+   "unrelated_top": [],
    "video_ok": true,
-   "checked": "2026-10-28T15:12"
+   "checked": "2026-10-28T15:33"
   },
   "CCNA試験対策 200-301": {
    "term": "CCNA",
    "mine_found": true,
    "others": 22,
    "top_others": [
-    "CCNA 200-301 試験対策 2026",
-    "CCNA対策 最新版",
-    "SkillStack - スキマ時間でIT資格合格"
+    "CCNA 200-301 試験対策 2026 [CCNA/Cisco/ネットワーク]",
+    "CCNA対策 最新版 [CCNA/Cisco/ネットワーク]",
+    "SkillStack - スキマ時間でIT資格合格 [IT資格]"
    ],
+   "unrelated": 0,
+   "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-10-28T15:12"
+   "checked": "2026-10-28T15:33"
   },
   "自衛官一般幹部候補生試験対策 幹部候補曹対応": {
    "term": "自衛官一般幹部候補生試験対策",
    "mine_found": true,
-   "others": 2,
+   "others": 1,
    "top_others": [
-    "自衛隊幹部候補生・幹部候補曹採用試験　対策",
+    "自衛隊幹部候補生・幹部候補曹採用試験　対策 [幹部候補/自衛/幹部]"
+   ],
+   "unrelated": 1,
+   "unrelated_top": [
     "消防昇任試験対策アプリ"
    ],
    "video_ok": false,
-   "checked": "2026-10-28T15:12"
+   "checked": "2026-10-28T15:33"
   },
   "ワンライフ：80億分の1の人生": {
    "term": "ワンライフ",
    "mine_found": true,
-   "others": 20,
+   "others": 11,
    "top_others": [
+    "80億分の1 - 人生シミュレーター [人生/80億/億分の1/シミュレ]",
+    "双日ライフワンの住まいサポートアプリ [ライフ]",
+    "わんこライフ : 可愛いわんちゃんを育てる犬の育成パズルゲーム [ライフ]"
+   ],
+   "unrelated": 9,
+   "unrelated_top": [
     "わんLIFE",
     "Microsoft OneDrive",
-    "80億分の1 - 人生シミュレーター"
+    "OneTouch Reveal®"
    ],
    "video_ok": false,
-   "checked": "2026-10-28T15:12"
+   "checked": "2026-10-28T15:33"
   },
   "BIO HACK：健康年齢": {
    "term": "BIO HACK",
    "mine_found": true,
-   "others": 21,
+   "others": 12,
    "top_others": [
-    "BioHack Studios Members",
-    "BioHack Track: Peptide & GLP-1",
-    "BioHacker: AI健康コーチ"
+    "BioHack Studios Members [BioHack/BIOHACK]",
+    "BioHack Track: Peptide & GLP-1 [BioHack/BIOHACK]",
+    "BioHacker: AI健康コーチ [BioHack/BIOHACK]"
+   ],
+   "unrelated": 9,
+   "unrelated_top": [
+    "SuperAge：生物学的年齢",
+    "Bio-Calculator",
+    "Pulsy"
    ],
    "video_ok": false,
-   "checked": "2026-10-28T15:12"
+   "checked": "2026-10-28T15:33"
   },
   "ひたすら英単語 - ひた単": {
    "term": "ひたすら英単語",
    "mine_found": true,
    "others": 0,
    "top_others": [],
+   "unrelated": 0,
+   "unrelated_top": [],
    "video_ok": true,
-   "checked": "2026-10-28T15:12"
+   "checked": "2026-10-28T15:33"
   }
  }
 }
