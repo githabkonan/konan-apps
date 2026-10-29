@@ -93,6 +93,12 @@ except Exception:
     EXP = None
 
 
+def _exp_hours(k):
+    """experiment.json の hours[k] を時刻のリストで返す(数値1つでもリストでも可)。"""
+    v = EXP["hours"][k]
+    return sorted(int(x) for x in (v if isinstance(v, list) else [v]))
+
+
 def _video_ok(p):
     if EXP:
         return p.get("app") == EXP["app"] and p.get("video") in set(EXP.get("allow_videos") or [])
@@ -289,10 +295,10 @@ except Exception:
 # 旧 7/12/19(2026-08-29)は撤回。cron は :17/:47 なので、実際の投稿は各時刻の17分ごろ。
 IG_HOUR_RANK = [6, 12, 18, 19, 7, 20, 11, 21, 8, 13, 22, 10, 17, 9, 16, 23, 15, 14]
 if EXP:
-    IG_MAX_PER_DAY = 1
+    IG_MAX_PER_DAY = len(_exp_hours("instagram"))
 IG_ACTIVE_HOURS = IG_HOUR_RANK[:max(0, IG_MAX_PER_DAY)]
 if EXP:
-    IG_ACTIVE_HOURS = [int(EXP["hours"]["instagram"])]
+    IG_ACTIVE_HOURS = _exp_hours("instagram")
 IG_ACTIVE_HOURS += [h for h in _PIN_HOURS if h not in IG_ACTIVE_HOURS]  # pin の時刻も枠にする
 _ig_today = _today_count("instagram")
 _ig_slot_target = sum(1 for h in IG_ACTIVE_HOURS if now.hour >= h)
@@ -911,8 +917,8 @@ NOTE_HOUR = int(os.environ.get("NOTE_THREADS_HOUR", "21")) if (NOTE_NOTES and NO
 THREADS_DAILY_SLOTS = int(os.environ.get("THREADS_DAILY_SLOTS", "4"))
 TH_ACTIVE_HOURS = [h for h in TH_HOUR_RANK if h != NOTE_HOUR][:THREADS_DAILY_SLOTS]
 if EXP:
-    THREADS_DAILY_SLOTS = 1
-    TH_ACTIVE_HOURS = [int(EXP["hours"]["threads"])]
+    TH_ACTIVE_HOURS = _exp_hours("threads")
+    THREADS_DAILY_SLOTS = len(TH_ACTIVE_HOURS)
 # 【2026-08-31】pin の時刻を枠として足す。Threads は「枠の時間でなければ投稿しない」ので、
 # 枠数だけ増やしても pin の時刻(konan の言う「今」)には出ない。時刻そのものを枠にする。
 TH_ACTIVE_HOURS += [h for h in _PIN_HOURS if h not in TH_ACTIVE_HOURS and h != NOTE_HOUR]
@@ -1156,7 +1162,7 @@ def _yt_daily_budget():
     return max(1, min(cap, -(-len(left) // days)))
 
 
-YT_TODAY_MAX = 1 if EXP else _yt_daily_budget()
+YT_TODAY_MAX = len(_exp_hours("youtube")) if EXP else _yt_daily_budget()
 
 
 # 【2026-08-26 konan指示「時間も一番バズりやすい時間にしろ」】6-24時の均等配分をやめ、
@@ -1212,7 +1218,7 @@ def _yt_next(priority_only, avoid):
 if os.environ.get("YT_REFRESH_TOKEN") and YT_WIN_START <= now.hour <= YT_WIN_END:
     _target = _yt_pace_target()
     if EXP:
-        _target = 1 if now.hour >= int(EXP["hours"]["youtube"]) else 0
+        _target = sum(1 for h in _exp_hours("youtube") if now.hour >= h)
     _behind = _target - STATE.get("yt_count", 0)
     _yt_pin = _pinned("youtube")
     if _yt_pin and not _video_ok(_yt_pin):
