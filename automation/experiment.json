@@ -1,5 +1,5 @@
 {
- "note": "konan 2026-10-28 19:04-19:07: 10/29-11/04 は全媒体1日1本・全部ワンライフ。ネタはマーケター。マーケター以前の在庫は使わない。時刻は researcher 19:14 調査(Buffer 2026 + 自社YT189本実測) / 10/29 11:42 konan: 1本戦略やめ YT3・IG2・X2・Threads2・YT投稿タブ2。時刻は researcher 11:45(自社YT200本+総務省時間帯+Buffer) / 10/29 21:02 konan「声キモすぎ、前の声に戻して」→ 雀松朱司で再レンダするまで動画配信を一時停止(allow_videos_hold)",
+ "note": "konan 2026-10-28 19:04-19:07: 10/29-11/04 は全媒体1日1本・全部ワンライフ。ネタはマーケター。マーケター以前の在庫は使わない。時刻は researcher 19:14 調査(Buffer 2026 + 自社YT189本実測) / 10/29 11:42 konan: 1本戦略やめ YT3・IG2・X2・Threads2・YT投稿タブ2。時刻は researcher 11:45(自社YT200本+総務省時間帯+Buffer) / 10/29 21:02 konan「声キモすぎ、前の声に戻して」→ 雀松朱司で再レンダするまで動画配信を一時停止(allow_videos_hold) / 21:30 雀松朱司・約15〜21秒で再レンダ完了 → 配信再開",
  "until": "2026-11-05",
  "app": "ワンライフ：80億分の1の人生",
  "hours": {
@@ -26,8 +26,7 @@
   ]
  },
  "threads_from": 16,
- "allow_videos": [],
- "allow_videos_hold": [
+ "allow_videos": [
   "onelife_ichibyou_20261028_2314.mp4",
   "onelife_kuchi_20261028_2314.mp4",
   "onelife_kyoudai_20261028_2314.mp4",
