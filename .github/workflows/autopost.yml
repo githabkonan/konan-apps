@@ -101,7 +101,8 @@ jobs:
           # 残った @sakuttotyokobi を守るため 1日2本に落とす。
           # 【2026-09-23 konan指示「6時 12時 18時 で 1日3投稿にしてスレッドも」】2→3。枠は cloud_post.py の TH_HOUR_RANK 先頭 6/12/18。
           # 9/16 に2へ落とした理由(同型宣伝の連投で旧アカが凍結)は残っている。言い回しの作り置き(threads_variants.json)を切らさないこと。
-          THREADS_MAX_PER_DAY: "3"
+          # 2026-10-30 @sakuttotyokobi が人間確認で停止中のため 0。確認通過後は "2" で再開する。
+          THREADS_MAX_PER_DAY: "0"
           THREADS_DAILY_SLOTS: "4"   # 2026-10-28 konan「深夜枠も欲しい」→ 23時を追加。 2026-09-20: アプリ宣伝は @sakuttotyokobi に完全移行(旧さくさくは凍結で廃止)。移行直後なので 2本/日で慣らす。note枠は廃止
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
