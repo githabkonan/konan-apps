@@ -1,29 +1,29 @@
 {
- "updated": "2026-10-30T05:40",
+ "updated": "2026-10-31T05:40",
  "rule": "video_ok = CTA語のApp Store検索(JP上位25件)に、題名か説明冒頭が題材語で被る他社が0本(無関係アプリは数えない・konan 10/28 15:32)",
  "apps": {
   "ひた単": {
    "term": "ひた単",
    "mine_found": true,
-   "others": 5,
+   "others": 10,
    "top_others": [
     "みんなの英単語帳 - 受験勉強のための単語帳メーカー - [英単語/単語]",
     "熟語消し—単語消しの暇つぶしさがしゲーム [単語]",
     "ニュースで英語学習！StudyNow(リスニング対応) [英語]"
    ],
-   "unrelated": 11,
+   "unrelated": 10,
    "unrelated_top": [
     "短期バイトならショットワークス すぐ働ける単発バイト探し",
     "スポットバイトル - すぐに働ける単発バイト探し",
-    "その日バイト探しアプリ！日払い単発短期雇用｜ジョブスポその日"
+    "転職・バイトは求人ボックス｜派遣・パート・在宅のお仕事を検索"
    ],
    "video_ok": false,
-   "checked": "2026-10-30T05:40"
+   "checked": "2026-10-31T05:40"
   },
   "自衛官入隊試験対策": {
    "term": "自衛官入隊試験対策",
    "mine_found": true,
-   "others": 9,
+   "others": 11,
    "top_others": [
     "任期制自衛官採用試験　対策 [自衛官/任期制/採用試験]",
     "一般曹候補生採用試験　対策 [自衛隊/曹候補/採用試験]",
@@ -36,7 +36,7 @@
     "自衛消防技術試験対策クイズ"
    ],
    "video_ok": false,
-   "checked": "2026-10-30T05:40"
+   "checked": "2026-10-31T05:40"
   },
   "自衛官海曹昇任試験対策": {
    "term": "海曹昇任",
@@ -50,19 +50,20 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-10-30T05:40"
+   "checked": "2026-10-31T05:40"
   },
   "自衛官一般幹部候補生試験対策": {
    "term": "自衛官一般幹部候補生試験対策",
    "mine_found": true,
-   "others": 1,
+   "others": 2,
    "top_others": [
-    "自衛隊幹部候補生・幹部候補曹採用試験　対策 [幹部候補/自衛/幹部]"
+    "自衛隊幹部候補生・幹部候補曹採用試験　対策 [幹部候補/自衛/幹部]",
+    "RMB - 自衛隊試験対策 [幹部候補/自衛/幹部]"
    ],
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-10-30T05:40"
+   "checked": "2026-10-31T05:40"
   },
   "kankokugonoh": {
    "term": "kankokugonoh",
@@ -72,7 +73,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-10-30T05:40"
+   "checked": "2026-10-31T05:40"
   },
   "自衛官空曹昇任試験対策": {
    "term": "空曹昇任",
@@ -86,7 +87,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-10-30T05:40"
+   "checked": "2026-10-31T05:40"
   },
   "ミリタリー英語トレーナー": {
    "term": "ミリタリー英語",
@@ -98,7 +99,7 @@
     "NATOフォネティックコード 欧文通話表 英語発音練習"
    ],
    "video_ok": true,
-   "checked": "2026-10-30T05:40"
+   "checked": "2026-10-31T05:40"
   },
   "推しログ:推し活の記録帳": {
    "term": "推しログ:推し活の記録帳",
@@ -116,7 +117,7 @@
     "かんたん日記帳!人気のかわいいカレンダー日記アプリ"
    ],
    "video_ok": false,
-   "checked": "2026-10-30T05:40"
+   "checked": "2026-10-31T05:40"
   },
   "QC検定3級 総合対策": {
    "term": "QC検定3級",
@@ -134,7 +135,7 @@
     "統計検定３級 用語集"
    ],
    "video_ok": false,
-   "checked": "2026-10-30T05:40"
+   "checked": "2026-10-31T05:40"
   },
   "自衛官陸曹昇任試験対策": {
    "term": "陸曹昇任",
@@ -147,7 +148,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-10-30T05:40"
+   "checked": "2026-10-31T05:40"
   },
   "TASK LEVELING": {
    "term": "TASK LEVELING",
@@ -155,8 +156,8 @@
    "others": 3,
    "top_others": [
     "solo-leveling [タスク/レベル/RPG/Level]",
-    "SideQuest - Task RPG [タスク/レベル/RPG/Task]",
-    "Level Journey: Life RPG [RPG/Task/Level]"
+    "Level Journey: Life RPG [RPG/Task/Level]",
+    "SideQuest - Task RPG [タスク/レベル/RPG/Task]"
    ],
    "unrelated": 2,
    "unrelated_top": [
@@ -164,12 +165,12 @@
     "Main Quest: Time Log"
    ],
    "video_ok": false,
-   "checked": "2026-10-30T05:40"
+   "checked": "2026-10-31T05:40"
   },
   "運行管理者(貨物) 試験対策": {
    "term": "運行管理者",
    "mine_found": false,
-   "others": 19,
+   "others": 17,
    "top_others": [
     "運行管理者 ｜資格試験対策問題集 | 貨物 | 旅客 [運行管理]",
     "運行管理者 貨物 [運行管理]",
@@ -182,7 +183,7 @@
     "Taxi-Board（タクシーボード）｜タクシー売上管理"
    ],
    "video_ok": false,
-   "checked": "2026-10-30T05:40"
+   "checked": "2026-10-31T05:40"
   },
   "予備自衛官補 採用試験対策": {
    "term": "予備自衛官補",
@@ -192,7 +193,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": true,
-   "checked": "2026-10-30T05:40"
+   "checked": "2026-10-31T05:40"
   },
   "ミリタリー中国語トレーナー": {
    "term": "ミリタリー中国語",
@@ -202,7 +203,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-10-30T05:40",
+   "checked": "2026-10-31T05:40",
    "blocked": true
   },
   "ショートスリーパー育成プログラム": {
@@ -213,7 +214,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-10-30T05:40",
+   "checked": "2026-10-31T05:40",
    "blocked": true
   },
   "海上保安学校 学生採用試験対策": {
@@ -224,7 +225,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": true,
-   "checked": "2026-10-30T05:40"
+   "checked": "2026-10-31T05:40"
   },
   "一陸技 試験対策": {
    "term": "一陸技",
@@ -242,7 +243,7 @@
     "网货帮"
    ],
    "video_ok": false,
-   "checked": "2026-10-30T05:40"
+   "checked": "2026-10-31T05:40"
   },
   "運行管理者(旅客) 試験対策": {
    "term": "運行管理者 旅客",
@@ -251,12 +252,14 @@
    "top_others": [
     "運行管理者（旅客） 過去問 2026 [運行管理]",
     "運行管理者 旅客 [運行管理]",
-    "公論出版－運行管理者 重要問題厳選集 旅客編 '26-'27 [運行管理]"
+    "運行管理者試験 旅客 合格ドリル [運行管理]"
    ],
-   "unrelated": 0,
-   "unrelated_top": [],
+   "unrelated": 1,
+   "unrelated_top": [
+    "おかしんアプリ"
+   ],
    "video_ok": false,
-   "checked": "2026-10-30T05:40"
+   "checked": "2026-10-31T05:40"
   },
   "消防設備士 乙6 試験対策": {
    "term": "消防設備士 乙6",
@@ -272,7 +275,7 @@
     "EMERGENCY HQ: 消防士レスキューゲーム"
    ],
    "video_ok": false,
-   "checked": "2026-10-30T05:40"
+   "checked": "2026-10-31T05:40"
   },
   "消防設備士 甲4 試験対策": {
    "term": "消防設備士 甲4",
@@ -286,7 +289,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-10-30T05:40"
+   "checked": "2026-10-31T05:40"
   },
   "散財シミュレーションRPG": {
    "term": "散財シミュレーションRPG",
@@ -296,7 +299,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": true,
-   "checked": "2026-10-30T05:40"
+   "checked": "2026-10-31T05:40"
   },
   "QC検定2級 総合対策": {
    "term": "QC検定2級",
@@ -310,7 +313,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-10-30T05:40"
+   "checked": "2026-10-31T05:40"
   },
   "韓国語脳トレーナー": {
    "term": "韓国語脳トレーナー",
@@ -320,7 +323,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": true,
-   "checked": "2026-10-30T05:40"
+   "checked": "2026-10-31T05:40"
   },
   "CCNA試験対策 200-301": {
    "term": "CCNA",
@@ -334,56 +337,57 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-10-30T05:40"
+   "checked": "2026-10-31T05:40"
   },
   "自衛官一般幹部候補生試験対策 幹部候補曹対応": {
    "term": "自衛官一般幹部候補生試験対策",
    "mine_found": true,
-   "others": 1,
+   "others": 2,
    "top_others": [
-    "自衛隊幹部候補生・幹部候補曹採用試験　対策 [幹部候補/自衛/幹部]"
+    "自衛隊幹部候補生・幹部候補曹採用試験　対策 [幹部候補/自衛/幹部]",
+    "RMB - 自衛隊試験対策 [幹部候補/自衛/幹部]"
    ],
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-10-30T05:40"
+   "checked": "2026-10-31T05:40"
   },
   "ワンライフ：80億分の1の人生": {
    "term": "ワンライフ",
    "mine_found": true,
-   "others": 7,
+   "others": 13,
    "top_others": [
     "2択でスカッとストーリー [人生]",
-    "双日ライフワンの住まいサポートアプリ [ライフ]",
-    "80億分の1 - 人生シミュレーター [人生/80億/億分の1/シミュレ]"
+    "80億分の1の人生 - 8B Re Life [人生/80億/億分の1/シミュレ/生まれ]",
+    "双日ライフワンの住まいサポートアプリ [ライフ]"
    ],
-   "unrelated": 13,
+   "unrelated": 8,
    "unrelated_top": [
     "わんLIFE",
     "Microsoft OneDrive",
     "OneTouch Reveal®"
    ],
    "video_ok": true,
-   "checked": "2026-10-30T05:40",
+   "checked": "2026-10-31T05:40",
    "experiment_until": "2026-11-05"
   },
   "BIO HACK：健康年齢": {
    "term": "BIO HACK",
    "mine_found": true,
-   "others": 12,
+   "others": 15,
    "top_others": [
     "BioHack Studios Members [BioHack/BIOHACK]",
     "BioHack Track: Peptide & GLP-1 [BioHack/BIOHACK]",
     "BioHacker: AI健康コーチ [BioHack/BIOHACK]"
    ],
-   "unrelated": 8,
+   "unrelated": 6,
    "unrelated_top": [
-    "SuperAge：生物学的年齢",
     "Bio-Calculator",
-    "Pulsy"
+    "Pulsy",
+    "VOYENA-Notes, Journal & Ideas"
    ],
    "video_ok": false,
-   "checked": "2026-10-30T05:40"
+   "checked": "2026-10-31T05:40"
   },
   "ひたすら英単語 - ひた単": {
    "term": "ひたすら英単語",
@@ -393,7 +397,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": true,
-   "checked": "2026-10-30T05:40"
+   "checked": "2026-10-31T05:40"
   }
  }
 }
