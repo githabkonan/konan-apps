@@ -1142,6 +1142,8 @@ YT_HORIZON = os.environ.get("YT_HORIZON", "2026-09-01T22:00")   # v4: 8/26〜9/1
 
 
 YT_PER_APP_PER_DAY = int(os.environ.get("YT_PER_APP_PER_DAY", "2"))   # 1アプリ2本/日まで(2026-08-23)
+if EXP:  # 実験中は全枠が同じアプリ。枠数まで出す(10/30 19時枠が2本目止まりで欠けた)
+    YT_PER_APP_PER_DAY = max(YT_PER_APP_PER_DAY, len(_exp_hours("youtube")))
 
 
 def _yt_daily_budget():
