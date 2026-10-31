@@ -375,7 +375,8 @@ if _used is not None:
     print(f"  ig quota: {_used}/{_cap} 使用済 → 今回投稿可能 {IG_PER_RUN}本(安全余白{IG_SAFETY_MARGIN})")
 else:
     IG_PER_RUN = min(IG_PER_RUN, 1)
-_th_used, _th_cap = threads_quota()   # _get の定義後に呼ぶ
+# 【2026-10-31】上限0=停止中のアカウント。トークンに触らない(本人確認中に叩き続けない)
+_th_used, _th_cap = threads_quota() if THREADS_MAX_PER_DAY > 0 else (None, None)   # _get の定義後に呼ぶ
 if _th_used is not None:
     THREADS_PER_RUN = min(THREADS_PER_RUN, max(0, _th_cap - _th_used - 10))
     print(f"  threads quota: {_th_used}/{_th_cap} 使用済(公式上限)")
@@ -922,6 +923,12 @@ if EXP:
 # 【2026-08-31】pin の時刻を枠として足す。Threads は「枠の時間でなければ投稿しない」ので、
 # 枠数だけ増やしても pin の時刻(konan の言う「今」)には出ない。時刻そのものを枠にする。
 TH_ACTIVE_HOURS += [h for h in _PIN_HOURS if h not in TH_ACTIVE_HOURS and h != NOTE_HOUR]
+# 【2026-10-31】THREADS_MAX_PER_DAY=0 は停止の指示。枠の判定は日次上限を見ないので、EXP の hours が
+# 0 を上書きして停止中のアカウントへ45分おきに投稿を試み、ラン全体が失敗扱いになっていた。
+if THREADS_MAX_PER_DAY <= 0:
+    TH_ACTIVE_HOURS = []
+    THREADS_DAILY_SLOTS = 0
+    print("  threads: 上限0のため停止中(枠なし)")
 
 
 def _note_post():
@@ -973,7 +980,7 @@ _th_done = STATE.setdefault("th_slots", {}).setdefault(_today_jst, [])        # 
 _note_done = STATE.setdefault("th_slots_note", {}).setdefault(_today_jst, []) # さくっと(note)
 def _slot_ledger(h):
     return _note_done if (NOTE_HOUR is not None and h == NOTE_HOUR) else _th_done
-if os.environ.get("THREADS_ACCESS_TOKEN") and STATE.get("th_pending_replies"):
+if THREADS_MAX_PER_DAY > 0 and os.environ.get("THREADS_ACCESS_TOKEN") and STATE.get("th_pending_replies"):
     _threads_flush_replies(os.environ["THREADS_USER_ID"], os.environ["THREADS_ACCESS_TOKEN"], "main")
 if NOTE_READY and STATE.get("th_pending_replies"):
     _threads_flush_replies(os.environ["NOTE_THREADS_USER_ID"], os.environ["NOTE_THREADS_ACCESS_TOKEN"], "note")
