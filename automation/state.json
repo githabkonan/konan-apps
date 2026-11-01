@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-11-01",
- "yt_count": 2,
- "last_yt_seq": 7308,
+ "yt_count": 3,
+ "last_yt_seq": 7315,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -611,7 +611,8 @@
   "onelife_namae_20261028_2314.mp4",
   "onelife_5sai_20261028_1916.mp4",
   "onelife_jidai_20261028_1916.mp4",
-  "onelife_nikki_20261028_1916.mp4"
+  "onelife_nikki_20261028_1916.mp4",
+  "onelife_oya_20261028_1916.mp4"
  ],
  "hist": {
   "threads": {
@@ -1719,7 +1720,7 @@
    "onelife_5sai_20261028_1916.mp4": "2026-11-01T12:32:04.402576"
   }
  },
- "last_yt_ts": "2026-11-01T12:32:04.402576",
+ "last_yt_ts": "2026-11-01T19:34:09.889971",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -1935,6 +1936,7 @@
   "ccna_20261007_0541.mp4": 0
  },
  "yt_apps_today": [
+  "6823197281",
   "6823197281",
   "6823197281"
  ],
