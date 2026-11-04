@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-11-05",
- "yt_count": 0,
- "last_yt_seq": null,
+ "yt_count": 1,
+ "last_yt_seq": 7398,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -621,7 +621,8 @@
   "onelife_bunbo_20261029_1142.mp4",
   "onelife_mitodoke_20261029_1142.mp4",
   "onelife_nenshu_20261029_1142.mp4",
-  "onelife_yubi_20261029_1142.mp4"
+  "onelife_yubi_20261029_1142.mp4",
+  "kankokugonoh_arigatou_20261028_1519.mp4"
  ],
  "hist": {
   "threads": {
@@ -1733,10 +1734,11 @@
    "onelife_nikki_20261028_1916.mp4": "2026-11-03T12:07:06.476562",
    "onelife_oya_20261028_1916.mp4": "2026-11-03T21:10:54.233094",
    "onelife_onaidoshipage_20261029_1328.mp4": "2026-11-04T12:12:17.626903",
-   "onelife_baisoku_20261028_1916.mp4": "2026-11-04T21:19:39.570364"
+   "onelife_baisoku_20261028_1916.mp4": "2026-11-04T21:19:39.570364",
+   "mileigo_wilco_20261028_1715.mp4": "2026-11-05T06:37:16.205274"
   }
  },
- "last_yt_ts": "2026-11-04T19:03:52.993092",
+ "last_yt_ts": "2026-11-05T06:37:16.205274",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -1951,7 +1953,9 @@
   "lifecontrol_seikatsu_reset_20260803_1600.mp4": 0,
   "ccna_20261007_0541.mp4": 0
  },
- "yt_apps_today": [],
+ "yt_apps_today": [
+  "6793410091"
+ ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
   "sololevel_ui_20260805_1315.mp4": 0,
@@ -2966,7 +2970,8 @@
   "onelife_nikki_20261028_1916.mp4",
   "onelife_oya_20261028_1916.mp4",
   "onelife_onaidoshipage_20261029_1328.mp4",
-  "onelife_baisoku_20261028_1916.mp4"
+  "onelife_baisoku_20261028_1916.mp4",
+  "mileigo_wilco_20261028_1715.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
