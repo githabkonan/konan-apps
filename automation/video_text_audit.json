@@ -1665,5 +1665,91 @@
  "onelife_maiban_20261029_1328.mp4:5102202": {
   "ok": true,
   "hits": []
+ },
+ "hitatan_pilot2_20261104.mp4:4954699": {
+  "ok": true,
+  "hits": []
+ },
+ "ht_commute_20261104.mp4:4540070": {
+  "ok": true,
+  "hits": []
+ },
+ "ht_lockscreen_20261104.mp4:3911281": {
+  "ok": true,
+  "hits": []
+ },
+ "ht_restart_20261104.mp4:4426110": {
+  "ok": true,
+  "hits": []
+ },
+ "ht_subtitle_20261104.mp4:4215410": {
+  "ok": true,
+  "hits": []
+ },
+ "ht_travel_20261104.mp4:4622799": {
+  "ok": true,
+  "hits": []
+ },
+ "jcg_oct_20261104.mp4:4860283": {
+  "ok": true,
+  "hits": []
+ },
+ "jcg_suiri_20261104.mp4:4470319": {
+  "ok": true,
+  "hits": []
+ },
+ "jcg_sukima_20261104.mp4:4368566": {
+  "ok": true,
+  "hits": [
+   "円価格[机に向かう時間は 足りない 机に向かう時間は 足りない 10円 教養問題120間を スマホで解けるアプリ 107 教養問題]"
+  ],
+  "ack": "2026-11-05 全コマ目視: 字幕に価格表記なし。yobi_mock=置き時計の文字盤、jcg_sukima=ぼかしたスマホ画面をOCRが¥/円と誤読"
+ },
+ "jcg_written_20261104.mp4:4100511": {
+  "ok": true,
+  "hits": []
+ },
+ "kr_hangul_20261104.mp4:4032078": {
+  "ok": true,
+  "hits": []
+ },
+ "kr_oshi_20261104.mp4:4641537": {
+  "ok": true,
+  "hits": []
+ },
+ "kr_travel_20261104.mp4:4492964": {
+  "ok": true,
+  "hits": []
+ },
+ "mil_crisis_20261104.mp4:4519404": {
+  "ok": true,
+  "hits": []
+ },
+ "mil_phonetic_20261104.mp4:3728231": {
+  "ok": true,
+  "hits": []
+ },
+ "mil_sayagain_20261104.mp4:4853112": {
+  "ok": true,
+  "hits": []
+ },
+ "yobi_kamoku_20261104.mp4:4529948": {
+  "ok": true,
+  "hits": []
+ },
+ "yobi_mock_20261104.mp4:4357291": {
+  "ok": true,
+  "hits": [
+   "¥表記[本番の40分を 先に体験しておけ ¥10 -9 9 7 A0） o ⅚ 本番の40分を 先に体験し]"
+  ],
+  "ack": "2026-11-05 全コマ目視: 字幕に価格表記なし。yobi_mock=置き時計の文字盤、jcg_sukima=ぼかしたスマホ画面をOCRが¥/円と誤読"
+ },
+ "yobi_ninki_20261104.mp4:4050069": {
+  "ok": true,
+  "hits": []
+ },
+ "yobi_written_20261104.mp4:4649950": {
+  "ok": true,
+  "hits": []
  }
 }
