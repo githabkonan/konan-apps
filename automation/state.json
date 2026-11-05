@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-11-05",
- "yt_count": 3,
- "last_yt_seq": 7410,
+ "yt_count": 4,
+ "last_yt_seq": 7411,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -624,7 +624,8 @@
   "onelife_yubi_20261029_1142.mp4",
   "kankokugonoh_arigatou_20261028_1519.mp4",
   "yobi_hiyake_20261028_1715.mp4",
-  "kankokugonoh_jimaku_20261028_1715.mp4"
+  "kankokugonoh_jimaku_20261028_1715.mp4",
+  "mileigo_wilco_20261028_1715.mp4"
  ],
  "hist": {
   "threads": {
@@ -1739,10 +1740,11 @@
    "onelife_baisoku_20261028_1916.mp4": "2026-11-04T21:19:39.570364",
    "mileigo_wilco_20261028_1715.mp4": "2026-11-05T06:37:16.205274",
    "jcg_suiri_20261104.mp4": "2026-11-05T12:29:24.285001",
-   "ht_travel_20261104.mp4": "2026-11-05T18:30:54.639881"
+   "ht_travel_20261104.mp4": "2026-11-05T18:30:54.639881",
+   "mil_crisis_20261104.mp4": "2026-11-05T19:16:05.479248"
   }
  },
- "last_yt_ts": "2026-11-05T18:30:54.639881",
+ "last_yt_ts": "2026-11-05T19:16:05.479248",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -1960,7 +1962,8 @@
  "yt_apps_today": [
   "6793410091",
   "6778490302",
-  "6793410091"
+  "6793410091",
+  "6793729335"
  ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
@@ -2979,7 +2982,8 @@
   "onelife_baisoku_20261028_1916.mp4",
   "mileigo_wilco_20261028_1715.mp4",
   "jcg_suiri_20261104.mp4",
-  "ht_travel_20261104.mp4"
+  "ht_travel_20261104.mp4",
+  "mil_crisis_20261104.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
