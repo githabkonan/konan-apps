@@ -1,15 +1,18 @@
 {
- "updated": "2026-11-08T05:40",
- "since": "2026-11-01",
- "total_jpy": 27024,
+ "updated": "2026-11-09T05:40",
+ "since": "2026-11-02",
+ "total_jpy": 27517,
  "app": "ワンライフ：80億分の1の人生",
- "share": 0.717,
- "slots": 2,
+ "share": 0.66,
+ "slots": 1,
  "by_app": {
-  "ワンライフ：80億分の1の人生": 19374,
-  "一陸技 試験対策": 2550,
-  "?jsdf-rikuso-shiken-001": 2550,
+  "ワンライフ：80億分の1の人生": 18167,
   "?jsdf-rikusou-001": 2550,
-  "?unkankamotsu_ios_20260728": 0
+  "?jsdf-rikuso-shiken-001": 2550,
+  "?jsdfyobi-ios-2026": 2550,
+  "一陸技 試験対策": 1275,
+  "?sololevel-001": 425,
+  "?unkankamotsu_ios_20260728": 0,
+  "?jsdf-kaiso-001": 0
  }
 }
