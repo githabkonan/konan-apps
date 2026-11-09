@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-11-09",
- "yt_count": 1,
- "last_yt_seq": 7494,
+ "yt_count": 2,
+ "last_yt_seq": 7500,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -638,7 +638,8 @@
   "yobi_ninki_20261104.mp4",
   "kr_travel_20261104.mp4",
   "hitatan_jisho_20261028_1715.mp4",
-  "hitatan_pilot2_20261104.mp4"
+  "hitatan_pilot2_20261104.mp4",
+  "jcg_suiri_20261104.mp4"
  ],
  "hist": {
   "threads": {
@@ -1767,10 +1768,11 @@
    "hitatan_virus_20261028_1715.mp4": "2026-11-08T12:08:01.415518",
    "ht_lockscreen_20261104.mp4": "2026-11-08T18:08:33.391147",
    "jcg_oct_20261104.mp4": "2026-11-08T19:38:56.513285",
-   "kr_oshi_20261104.mp4": "2026-11-09T06:41:03.518796"
+   "kr_oshi_20261104.mp4": "2026-11-09T06:41:03.518796",
+   "kankokugonoh_suuji_20261028_1715.mp4": "2026-11-09T12:39:44.139026"
   }
  },
- "last_yt_ts": "2026-11-09T06:41:03.518796",
+ "last_yt_ts": "2026-11-09T12:39:44.139026",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -1986,7 +1988,8 @@
   "ccna_20261007_0541.mp4": 0
  },
  "yt_apps_today": [
-  "6791685174"
+  "6791685174",
+  "6809466190"
  ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
@@ -3023,7 +3026,8 @@
   "hitatan_virus_20261028_1715.mp4",
   "ht_lockscreen_20261104.mp4",
   "jcg_oct_20261104.mp4",
-  "kr_oshi_20261104.mp4"
+  "kr_oshi_20261104.mp4",
+  "kankokugonoh_suuji_20261028_1715.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
