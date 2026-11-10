@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-11-10",
- "yt_count": 2,
- "last_yt_seq": 7524,
+ "yt_count": 3,
+ "last_yt_seq": 7530,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -643,7 +643,8 @@
   "ht_subtitle_20261104.mp4",
   "jcg_written_20261104.mp4",
   "ht_lockscreen_20261104.mp4",
-  "jcg_oct_20261104.mp4"
+  "jcg_oct_20261104.mp4",
+  "ht_travel_20261104.mp4"
  ],
  "hist": {
   "threads": {
@@ -1777,10 +1778,11 @@
    "kr_travel_20261104.mp4": "2026-11-09T18:39:46.443508",
    "mil_sayagain_20261104.mp4": "2026-11-09T19:41:33.644267",
    "yobi_kamoku_20261104.mp4": "2026-11-10T06:08:02.620973",
-   "mil_phonetic_20261104.mp4": "2026-11-10T12:41:48.565114"
+   "mil_phonetic_20261104.mp4": "2026-11-10T12:41:48.565114",
+   "hitatan_20261027_2209.mp4": "2026-11-10T18:40:02.252639"
   }
  },
- "last_yt_ts": "2026-11-10T12:41:48.565114",
+ "last_yt_ts": "2026-11-10T18:40:02.252639",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -1997,7 +1999,8 @@
  },
  "yt_apps_today": [
   "6791685174",
-  "6809466190"
+  "6809466190",
+  "6791685174"
  ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
@@ -3040,7 +3043,8 @@
   "kr_travel_20261104.mp4",
   "mil_sayagain_20261104.mp4",
   "yobi_kamoku_20261104.mp4",
-  "mil_phonetic_20261104.mp4"
+  "mil_phonetic_20261104.mp4",
+  "hitatan_20261027_2209.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
