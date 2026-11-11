@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11T05:40",
+ "updated": "2026-11-12T05:40",
  "rule": "video_ok = CTA語のApp Store検索(JP上位25件)に、題名か説明冒頭が題材語で被る他社が0本(無関係アプリは数えない・konan 10/28 15:32)",
  "apps": {
   "ひた単": {
@@ -18,7 +18,7 @@
     "その日バイト探しアプリ！日払い単発短期雇用｜ジョブスポその日"
    ],
    "video_ok": false,
-   "checked": "2026-11-11T05:40"
+   "checked": "2026-11-12T05:40"
   },
   "自衛官入隊試験対策": {
    "term": "自衛官入隊試験対策",
@@ -36,7 +36,7 @@
     "自衛消防技術試験対策クイズ"
    ],
    "video_ok": false,
-   "checked": "2026-11-11T05:40"
+   "checked": "2026-11-12T05:40"
   },
   "自衛官海曹昇任試験対策": {
    "term": "海曹昇任",
@@ -50,7 +50,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-11-11T05:40"
+   "checked": "2026-11-12T05:40"
   },
   "自衛官一般幹部候補生試験対策": {
    "term": "自衛官一般幹部候補生試験対策",
@@ -63,7 +63,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-11-11T05:40"
+   "checked": "2026-11-12T05:40"
   },
   "kankokugonoh": {
    "term": "kankokugonoh",
@@ -73,7 +73,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-11-11T05:40"
+   "checked": "2026-11-12T05:40"
   },
   "自衛官空曹昇任試験対策": {
    "term": "空曹昇任",
@@ -87,7 +87,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-11-11T05:40"
+   "checked": "2026-11-12T05:40"
   },
   "ミリタリー英語トレーナー": {
    "term": "ミリタリー英語",
@@ -99,7 +99,7 @@
     "NATOフォネティックコード 欧文通話表 英語発音練習"
    ],
    "video_ok": true,
-   "checked": "2026-11-11T05:40"
+   "checked": "2026-11-12T05:40"
   },
   "推しログ:推し活の記録帳": {
    "term": "推しログ:推し活の記録帳",
@@ -117,7 +117,7 @@
     "momochy日記帳 写真とログのかわいい日記帳アプリ"
    ],
    "video_ok": false,
-   "checked": "2026-11-11T05:40"
+   "checked": "2026-11-12T05:40"
   },
   "QC検定3級 総合対策": {
    "term": "QC検定3級",
@@ -134,7 +134,7 @@
     "継続する技術｜ダイエットも筋トレも記録・習慣化で目標達成"
    ],
    "video_ok": false,
-   "checked": "2026-11-11T05:40"
+   "checked": "2026-11-12T05:40"
   },
   "自衛官陸曹昇任試験対策": {
    "term": "陸曹昇任",
@@ -147,7 +147,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-11-11T05:40"
+   "checked": "2026-11-12T05:40"
   },
   "TASK LEVELING": {
    "term": "TASK LEVELING",
@@ -163,7 +163,7 @@
     "Main Quest: Time Log"
    ],
    "video_ok": false,
-   "checked": "2026-11-11T05:40"
+   "checked": "2026-11-12T05:40"
   },
   "運行管理者(貨物) 試験対策": {
    "term": "運行管理者",
@@ -181,7 +181,7 @@
     "ドライブサポーター by NAVITIME (カーナビ)"
    ],
    "video_ok": false,
-   "checked": "2026-11-11T05:40"
+   "checked": "2026-11-12T05:40"
   },
   "予備自衛官補 採用試験対策": {
    "term": "予備自衛官補",
@@ -191,7 +191,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": true,
-   "checked": "2026-11-11T05:40"
+   "checked": "2026-11-12T05:40"
   },
   "ミリタリー中国語トレーナー": {
    "term": "ミリタリー中国語",
@@ -201,7 +201,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-11-11T05:40",
+   "checked": "2026-11-12T05:40",
    "blocked": true
   },
   "ショートスリーパー育成プログラム": {
@@ -212,7 +212,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-11-11T05:40",
+   "checked": "2026-11-12T05:40",
    "blocked": true
   },
   "海上保安学校 学生採用試験対策": {
@@ -223,7 +223,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": true,
-   "checked": "2026-11-11T05:40"
+   "checked": "2026-11-12T05:40"
   },
   "一陸技 試験対策": {
    "term": "一陸技",
@@ -241,7 +241,7 @@
     "网货帮"
    ],
    "video_ok": false,
-   "checked": "2026-11-11T05:40"
+   "checked": "2026-11-12T05:40"
   },
   "運行管理者(旅客) 試験対策": {
    "term": "運行管理者 旅客",
@@ -255,7 +255,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-11-11T05:40"
+   "checked": "2026-11-12T05:40"
   },
   "消防設備士 乙6 試験対策": {
    "term": "消防設備士 乙6",
@@ -269,7 +269,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-11-11T05:40"
+   "checked": "2026-11-12T05:40"
   },
   "消防設備士 甲4 試験対策": {
    "term": "消防設備士 甲4",
@@ -283,7 +283,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-11-11T05:40"
+   "checked": "2026-11-12T05:40"
   },
   "散財シミュレーションRPG": {
    "term": "散財シミュレーションRPG",
@@ -293,7 +293,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": true,
-   "checked": "2026-11-11T05:40"
+   "checked": "2026-11-12T05:40"
   },
   "QC検定2級 総合対策": {
    "term": "QC検定2級",
@@ -311,7 +311,7 @@
     "統計検定2級対策 一問一答"
    ],
    "video_ok": false,
-   "checked": "2026-11-11T05:40"
+   "checked": "2026-11-12T05:40"
   },
   "韓国語脳トレーナー": {
    "term": "韓国語脳トレーナー",
@@ -321,7 +321,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": true,
-   "checked": "2026-11-11T05:40"
+   "checked": "2026-11-12T05:40"
   },
   "CCNA試験対策 200-301": {
    "term": "CCNA",
@@ -335,7 +335,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-11-11T05:40"
+   "checked": "2026-11-12T05:40"
   },
   "自衛官一般幹部候補生試験対策 幹部候補曹対応": {
    "term": "自衛官一般幹部候補生試験対策",
@@ -348,7 +348,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": false,
-   "checked": "2026-11-11T05:40"
+   "checked": "2026-11-12T05:40"
   },
   "ワンライフ：80億分の1の人生": {
    "term": "ワンライフ",
@@ -366,7 +366,7 @@
     "OneTouch Reveal®"
    ],
    "video_ok": false,
-   "checked": "2026-11-11T05:40"
+   "checked": "2026-11-12T05:40"
   },
   "BIO HACK：健康年齢": {
    "term": "BIO HACK",
@@ -384,7 +384,7 @@
     "Leaply - 毎日の習慣づくり"
    ],
    "video_ok": false,
-   "checked": "2026-11-11T05:40"
+   "checked": "2026-11-12T05:40"
   },
   "ひたすら英単語 - ひた単": {
    "term": "ひたすら英単語",
@@ -394,7 +394,7 @@
    "unrelated": 0,
    "unrelated_top": [],
    "video_ok": true,
-   "checked": "2026-11-11T05:40"
+   "checked": "2026-11-12T05:40"
   }
  }
 }
