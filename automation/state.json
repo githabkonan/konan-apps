@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-11-13",
- "yt_count": 1,
- "last_yt_seq": 7590,
+ "yt_count": 2,
+ "last_yt_seq": 7596,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -654,7 +654,8 @@
   "yobi_kijun_20261112.mp4",
   "kr_drama_20261112.mp4",
   "mil_niner_20261112.mp4",
-  "yobi_offline_20261112.mp4"
+  "yobi_offline_20261112.mp4",
+  "kr_speed_20261112.mp4"
  ],
  "hist": {
   "threads": {
@@ -1799,10 +1800,11 @@
    "hitatan_20261028_0413.mp4": "2026-11-12T12:25:07.833329",
    "jcgexam_shirofune_20261028_1519.mp4": "2026-11-12T18:14:43.852852",
    "hitatan_20261028_0556.mp4": "2026-11-12T19:44:56.219465",
-   "jcgexam_gaikyoku_20261028_1715.mp4": "2026-11-13T06:03:20.425851"
+   "jcgexam_gaikyoku_20261028_1715.mp4": "2026-11-13T06:03:20.425851",
+   "jcg_sukima_20261104.mp4": "2026-11-13T12:00:47.422148"
   }
  },
- "last_yt_ts": "2026-11-13T06:03:20.425851",
+ "last_yt_ts": "2026-11-13T12:00:47.422148",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -2018,7 +2020,8 @@
   "ccna_20261007_0541.mp4": 0
  },
  "yt_apps_today": [
-  "6778490302"
+  "6778490302",
+  "6793410091"
  ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
@@ -3075,7 +3078,8 @@
   "hitatan_20261028_0413.mp4",
   "jcgexam_shirofune_20261028_1519.mp4",
   "hitatan_20261028_0556.mp4",
-  "jcgexam_gaikyoku_20261028_1715.mp4"
+  "jcgexam_gaikyoku_20261028_1715.mp4",
+  "jcg_sukima_20261104.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
