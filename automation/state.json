@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-11-14",
- "yt_count": 3,
- "last_yt_seq": 7626,
+ "yt_count": 4,
+ "last_yt_seq": 7627,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -660,7 +660,8 @@
   "yobi_shakai_20261112.mp4",
   "kr_pattern_20261112.mp4",
   "jcg_hanni_20261112.mp4",
-  "ht_sleep_20261112.mp4"
+  "ht_sleep_20261112.mp4",
+  "ht_kaji_20261112.mp4"
  ],
  "hist": {
   "threads": {
@@ -1811,10 +1812,11 @@
    "kr_speed_20261112.mp4": "2026-11-13T19:33:08.371656",
    "yobi_kijun_20261112.mp4": "2026-11-14T06:41:35.985088",
    "kr_drama_20261112.mp4": "2026-11-14T12:05:01.710541",
-   "mil_niner_20261112.mp4": "2026-11-14T18:20:07.096835"
+   "mil_niner_20261112.mp4": "2026-11-14T18:20:07.096835",
+   "yobi_offline_20261112.mp4": "2026-11-14T19:05:19.011419"
   }
  },
- "last_yt_ts": "2026-11-14T18:20:07.096835",
+ "last_yt_ts": "2026-11-14T19:05:19.011419",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -2032,6 +2034,7 @@
  "yt_apps_today": [
   "6793410091",
   "6809466190",
+  "6791685174",
   "6791685174"
  ],
  "ig_var": {
@@ -3096,7 +3099,8 @@
   "kr_speed_20261112.mp4",
   "yobi_kijun_20261112.mp4",
   "kr_drama_20261112.mp4",
-  "mil_niner_20261112.mp4"
+  "mil_niner_20261112.mp4",
+  "yobi_offline_20261112.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
