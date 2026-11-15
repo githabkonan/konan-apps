@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-11-16",
- "yt_count": 0,
- "last_yt_seq": null,
+ "yt_count": 1,
+ "last_yt_seq": 7662,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -665,7 +665,8 @@
   "jcg_choseki_20261112.mp4",
   "ht_speed_20261112.mp4",
   "jcg_kaiji_20261112.mp4",
-  "ht_auto_20261112.mp4"
+  "ht_auto_20261112.mp4",
+  "jcg_20261028_0413.mp4"
  ],
  "hist": {
   "threads": {
@@ -1821,10 +1822,11 @@
    "mil_gorei_20261112.mp4": "2026-11-15T06:34:57.823244",
    "yobi_shakai_20261112.mp4": "2026-11-15T12:33:27.218983",
    "kr_pattern_20261112.mp4": "2026-11-15T18:34:34.041173",
-   "hitatan_yougaku_20261028_1519.mp4": "2026-11-15T19:00:35.056397"
+   "hitatan_yougaku_20261028_1519.mp4": "2026-11-15T19:00:35.056397",
+   "jcgexam_shio_20261028_1715.mp4": "2026-11-16T06:04:47.922309"
   }
  },
- "last_yt_ts": "2026-11-15T19:00:35.056397",
+ "last_yt_ts": "2026-11-16T06:04:47.922309",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -2039,7 +2041,9 @@
   "lifecontrol_seikatsu_reset_20260803_1600.mp4": 0,
   "ccna_20261007_0541.mp4": 0
  },
- "yt_apps_today": [],
+ "yt_apps_today": [
+  "6809466190"
+ ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
   "sololevel_ui_20260805_1315.mp4": 0,
@@ -3109,7 +3113,8 @@
   "mil_gorei_20261112.mp4",
   "yobi_shakai_20261112.mp4",
   "kr_pattern_20261112.mp4",
-  "hitatan_yougaku_20261028_1519.mp4"
+  "hitatan_yougaku_20261028_1519.mp4",
+  "jcgexam_shio_20261028_1715.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
