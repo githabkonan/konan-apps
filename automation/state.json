@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-11-20",
- "yt_count": 0,
- "last_yt_seq": null,
+ "yt_count": 1,
+ "last_yt_seq": 7758,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -681,7 +681,8 @@
   "kr_shokuji_20261118.mp4",
   "kr_kana_20261118.mp4",
   "yobi_nigate_20261118.mp4",
-  "mil_suika_20261118.mp4"
+  "mil_suika_20261118.mp4",
+  "kr_moshimo_5phrase_20261118.mp4"
  ],
  "hist": {
   "threads": {
@@ -1853,10 +1854,11 @@
    "kr_hatsuwa_20261118.mp4": "2026-11-19T06:32:20.316282",
    "kr_shokuji_20261118.mp4": "2026-11-19T12:32:22.001197",
    "mil_radiocheck_20261118.mp4": "2026-11-19T18:33:33.543217",
-   "yobi_secret_20261118.mp4": "2026-11-19T19:23:27.629322"
+   "yobi_secret_20261118.mp4": "2026-11-19T19:23:27.629322",
+   "yobi_nigate_20261118.mp4": "2026-11-20T06:44:55.093592"
   }
  },
- "last_yt_ts": "2026-11-19T19:23:27.629322",
+ "last_yt_ts": "2026-11-20T06:44:55.093592",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -2071,7 +2073,9 @@
   "lifecontrol_seikatsu_reset_20260803_1600.mp4": 0,
   "ccna_20261007_0541.mp4": 0
  },
- "yt_apps_today": [],
+ "yt_apps_today": [
+  "6793410091"
+ ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
   "sololevel_ui_20260805_1315.mp4": 0,
@@ -3161,7 +3165,8 @@
   "kr_hatsuwa_20261118.mp4",
   "kr_shokuji_20261118.mp4",
   "mil_radiocheck_20261118.mp4",
-  "yobi_secret_20261118.mp4"
+  "yobi_secret_20261118.mp4",
+  "yobi_nigate_20261118.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
