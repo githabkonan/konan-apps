@@ -1,18 +1,20 @@
 {
- "updated": "2026-11-20T05:40",
- "since": "2026-11-13",
- "total_jpy": 20177,
+ "updated": "2026-11-21T05:40",
+ "since": "2026-11-14",
+ "total_jpy": 26042,
  "app": "ワンライフ：80億分の1の人生",
- "share": 0.789,
+ "share": 0.837,
  "slots": 2,
  "by_app": {
-  "ワンライフ：80億分の1の人生": 15927,
+  "ワンライフ：80億分の1の人生": 21792,
   "?jsdfyobi-ios-2026": 2550,
   "CCNA試験対策 200-301": 1275,
   "?sololevel-001": 425,
   "?unkankamotsu_ios_20260728": 0,
   "?jsdf-rikuso-shiken-001": 0,
   "?kankokugonoh-001": 0,
-  "一陸技 試験対策": 0
+  "一陸技 試験対策": 0,
+  "?konan-unkanryokaku": 0,
+  "?psptesty-v1": 0
  }
 }
