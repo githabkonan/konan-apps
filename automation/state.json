@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-11-22",
- "yt_count": 3,
- "last_yt_seq": 7818,
+ "yt_count": 4,
+ "last_yt_seq": 7819,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -692,7 +692,8 @@
   "yobi_card_20261119.mp4",
   "hitatan_virus_20261028_1715.mp4",
   "ht_commute_20261104.mp4",
-  "jcg_october_20261118.mp4"
+  "jcg_october_20261118.mp4",
+  "jcg_kisho_20261118.mp4"
  ],
  "hist": {
   "threads": {
@@ -1875,10 +1876,11 @@
    "mil_hatsuwa_20261119.mp4": "2026-11-21T19:23:45.374771",
    "ht_dopamine_20261118.mp4": "2026-11-22T06:38:27.570441",
    "ht_basic_20261118.mp4": "2026-11-22T12:40:13.442885",
-   "ht_resume_20261118.mp4": "2026-11-22T18:09:44.813880"
+   "ht_resume_20261118.mp4": "2026-11-22T18:09:44.813880",
+   "ht_spell_20261118.mp4": "2026-11-22T19:40:02.758236"
   }
  },
- "last_yt_ts": "2026-11-22T18:09:44.813880",
+ "last_yt_ts": "2026-11-22T19:40:02.758236",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -2096,6 +2098,7 @@
  "yt_apps_today": [
   "6791685174",
   "6791685174",
+  "6809466190",
   "6809466190"
  ],
  "ig_var": {
@@ -3200,7 +3203,8 @@
   "mil_hatsuwa_20261119.mp4",
   "ht_dopamine_20261118.mp4",
   "ht_basic_20261118.mp4",
-  "ht_resume_20261118.mp4"
+  "ht_resume_20261118.mp4",
+  "ht_spell_20261118.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
