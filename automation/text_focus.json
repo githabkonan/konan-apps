@@ -1,16 +1,18 @@
 {
- "updated": "2026-11-23T05:40",
- "since": "2026-11-16",
- "total_jpy": 21112,
+ "updated": "2026-11-24T05:40",
+ "since": "2026-11-17",
+ "total_jpy": 21707,
  "app": "ワンライフ：80億分の1の人生",
- "share": 1.0,
+ "share": 0.941,
  "slots": 4,
  "by_app": {
-  "ワンライフ：80億分の1の人生": 21112,
-  "一陸技 試験対策": 0,
+  "ワンライフ：80億分の1の人生": 20432,
+  "一陸技 試験対策": 1275,
   "?konan-unkanryokaku": 0,
   "?psptesty-v1": 0,
   "?unkankamotsu_ios_20260728": 0,
-  "?jsdf-rikusou-001": 0
+  "?jsdf-rikusou-001": 0,
+  "?jsdf-kusou-001": 0,
+  "?jsdf-rikuso-shiken-001": 0
  }
 }
