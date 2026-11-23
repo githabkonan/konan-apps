@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-11-24",
- "yt_count": 0,
- "last_yt_seq": null,
+ "yt_count": 1,
+ "last_yt_seq": 7854,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -696,7 +696,8 @@
   "jcg_kisho_20261118.mp4",
   "ht_dopamine_20261118.mp4",
   "ht_basic_20261118.mp4",
-  "jcg_konkyo_20261118.mp4"
+  "jcg_konkyo_20261118.mp4",
+  "ht_resume_20261118.mp4"
  ],
  "hist": {
   "threads": {
@@ -1884,10 +1885,11 @@
    "ht_swipe_20261118.mp4": "2026-11-23T06:06:08.423432",
    "jcg_october_20261118.mp4": "2026-11-23T12:12:32.356129",
    "yobi_card_20261119.mp4": "2026-11-23T18:14:36.819544",
-   "kr_moshimo_oshi_20261118.mp4": "2026-11-23T19:44:47.893228"
+   "kr_moshimo_oshi_20261118.mp4": "2026-11-23T19:44:47.893228",
+   "ht_moshimo_lookword_20261118.mp4": "2026-11-24T06:20:03.280688"
   }
  },
- "last_yt_ts": "2026-11-23T18:14:36.819544",
+ "last_yt_ts": "2026-11-24T06:20:03.280688",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -2102,7 +2104,9 @@
   "lifecontrol_seikatsu_reset_20260803_1600.mp4": 0,
   "ccna_20261007_0541.mp4": 0
  },
- "yt_apps_today": [],
+ "yt_apps_today": [
+  "6791685174"
+ ],
  "ig_var": {
   "game_kakikyuuka_20260816_0400.mp4": 0,
   "sololevel_ui_20260805_1315.mp4": 0,
@@ -3212,7 +3216,8 @@
   "ht_swipe_20261118.mp4",
   "jcg_october_20261118.mp4",
   "yobi_card_20261119.mp4",
-  "kr_moshimo_oshi_20261118.mp4"
+  "kr_moshimo_oshi_20261118.mp4",
+  "ht_moshimo_lookword_20261118.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
