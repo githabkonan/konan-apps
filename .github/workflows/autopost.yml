@@ -102,14 +102,18 @@ jobs:
           # 【2026-09-23 konan指示「6時 12時 18時 で 1日3投稿にしてスレッドも」】2→3。枠は cloud_post.py の TH_HOUR_RANK 先頭 6/12/18。
           # 9/16 に2へ落とした理由(同型宣伝の連投で旧アカが凍結)は残っている。言い回しの作り置き(threads_variants.json)を切らさないこと。
           # 2026-10-30 @sakuttotyokobi が人間確認で停止中のため 0。確認通過後は "2" で再開する。
-          THREADS_MAX_PER_DAY: "0"
-          THREADS_DAILY_SLOTS: "4"   # 2026-10-28 konan「深夜枠も欲しい」→ 23時を追加。 2026-09-20: アプリ宣伝は @sakuttotyokobi に完全移行(旧さくさくは凍結で廃止)。移行直後なので 2本/日で慣らす。note枠は廃止
+          # 2026-11-25 konan が新アカ @unknownfreedom.1 を作成し「アプリの集客」に使うと指示。公式API接続済み(secrets.UF_THREADS_*)。
+          # 立ち上げは 1本/日・1枠(6時)。枠数と日次上限は同じ数字にする。増やす条件は 1本あたり再生>20(F-436)。
+          # 旧2アカは同型宣伝の連投で停止している。text_posts.json の未投稿原稿を切らさないこと。
+          THREADS_MAX_PER_DAY: "1"
+          THREADS_DAILY_SLOTS: "1"   # (旧4) 2026-10-28 konan「深夜枠も欲しい」→ 23時を追加。 2026-09-20: アプリ宣伝は @sakuttotyokobi に完全移行(旧さくさくは凍結で廃止)。移行直後なので 2本/日で慣らす。note枠は廃止
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           # 2026-09-16 konan: さくさく(@tyokobisakusaku)が本人確認ロックで非公開になったため、
           # アプリ投稿の宛先を さくっとチョコビ(@sakuttotyokobi)に切替。ロック解除後に戻す。
-          THREADS_USER_ID: ${{ secrets.NOTE_THREADS_USER_ID }}
-          THREADS_ACCESS_TOKEN: ${{ secrets.NOTE_THREADS_ACCESS_TOKEN }}
+          # 2026-11-25: 宛先を @unknownfreedom.1 に切替(@sakuttotyokobi は 10/30 から本人確認で停止中)。
+          THREADS_USER_ID: ${{ secrets.UF_THREADS_USER_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.UF_THREADS_ACCESS_TOKEN }}
           # note集客は別アカ @sakuttotyokobi。未設定なら note枠は作られない(さくさくには絶対に出さない)
           # 【2026-08-30 konan指示】「ノート投稿も1日1投稿毎日昼の12:00ね。他のアプリ宣伝の
           # スレッドとは全くの別だから」。12時は さくさくの候補から自動で外れる(TH_ACTIVE_HOURS)
