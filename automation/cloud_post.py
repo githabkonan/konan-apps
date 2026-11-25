@@ -101,7 +101,12 @@ def _exp_hours(k):
 
 def _video_ok(p):
     if EXP:
-        return p.get("app") == EXP["app"] and p.get("video") in set(EXP.get("allow_videos") or [])
+        # 【2026-11-25 konan「スレッドではワンライフ、インスタとYouTubeではひたたん」】動画のアプリは video_app(無ければ app)。
+        # allow_videos のキーが無い時は、そのアプリの動画を全部許可する(空リストは従来どおり「1本も出さない」)。
+        if p.get("app") != EXP.get("video_app", EXP["app"]):
+            return False
+        _al = EXP.get("allow_videos")
+        return True if _al is None else p.get("video") in set(_al)
     return p.get("app") in VIDEO_OK
 
 
@@ -1066,6 +1071,12 @@ for _h in _slots:
     # 枠の総数(THREADS_DAILY_SLOTS)は増やさない=中身の入替えだけ(konan「何投稿もすると分散する」)。
     # 判定は claude-tools/scripts/text_focus.py(毎日・ASC 実売上)。
     tp = _pinned("threads")
+    if tp is None and EXP:
+        # 【2026-11-25 konan】期間中の Threads は EXP["app"] だけ。出せない時は他アプリで埋めず、その枠を見送る。
+        tp = next((p_ for p_ in POSTS if p_.get("app") == EXP["app"] and p_.get("threads_text") and cooled("threads", p_)), None)
+        if tp is None:
+            _th_done.append(_h); save_state()
+            print(f"  threads: {_h}時枠 {EXP['app']} に出せる投稿が無い=見送り(期間中は他アプリで埋めない)"); continue
     if tp is None and TEXT_FOCUS.get("app") and _h in TH_ACTIVE_HOURS[:int(TEXT_FOCUS.get("slots", 0))]:
         tp = next((p_ for p_ in POSTS if p_.get("app") == TEXT_FOCUS["app"] and cooled("threads", p_)), None)
         if tp is not None:
