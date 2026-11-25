@@ -1,7 +1,7 @@
 {
  "yt_date": "2026-11-25",
- "yt_count": 1,
- "last_yt_seq": 7878,
+ "yt_count": 2,
+ "last_yt_seq": 7884,
  "yt_posted": [
   "koushu4_news.mp4",
   "news_jieitai.mp4",
@@ -699,7 +699,8 @@
   "jcg_konkyo_20261118.mp4",
   "ht_resume_20261118.mp4",
   "ht_spell_20261118.mp4",
-  "ht_swipe_20261118.mp4"
+  "ht_swipe_20261118.mp4",
+  "ht_moshimo_lookword_20261118.mp4"
  ],
  "hist": {
   "threads": {
@@ -1892,10 +1893,11 @@
    "jcg_kisho_20261118.mp4": "2026-11-24T12:30:44.113658",
    "ht_moshimo_kikinagashi_20261118.mp4": "2026-11-24T18:02:04.590715",
    "ht_moshimo_short_20261118.mp4": "2026-11-24T19:32:09.098313",
-   "jcg_konkyo_20261118.mp4": "2026-11-25T06:37:46.083690"
+   "jcg_konkyo_20261118.mp4": "2026-11-25T06:37:46.083690",
+   "ht_moshimo_neru_20261118.mp4": "2026-11-25T12:11:59.362000"
   }
  },
- "last_yt_ts": "2026-11-25T06:37:46.083690",
+ "last_yt_ts": "2026-11-25T12:11:59.362000",
  "th_var": {
   "iritai_fuan_v3.mp4": 1,
   "kaiso_fune_v3.mp4": 0,
@@ -2111,6 +2113,7 @@
   "ccna_20261007_0541.mp4": 0
  },
  "yt_apps_today": [
+  "6791685174",
   "6791685174"
  ],
  "ig_var": {
@@ -3228,7 +3231,8 @@
   "jcg_kisho_20261118.mp4",
   "ht_moshimo_kikinagashi_20261118.mp4",
   "ht_moshimo_short_20261118.mp4",
-  "jcg_konkyo_20261118.mp4"
+  "jcg_konkyo_20261118.mp4",
+  "ht_moshimo_neru_20261118.mp4"
  ],
  "th_rep": {
   "iritai_soukoho_20260730_1205.mp4": 0,
